@@ -1,0 +1,954 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Launcher d'applications</title>
+  <style>
+    :root {
+      --bg: #101214;
+      --panel: rgba(20, 23, 27, 0.78);
+      --panel-strong: rgba(25, 29, 34, 0.92);
+      --text: #f4f0e8;
+      --muted: #b8c0c9;
+      --line: rgba(255, 255, 255, 0.16);
+      --accent: #70d6ff;
+      --accent-2: #ffcf5a;
+      --danger: #ff7a90;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      color: var(--text);
+      background: var(--bg);
+      overflow-x: hidden;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    .stage {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(120deg, rgba(11, 16, 20, 0.34), rgba(6, 7, 9, 0.82)),
+        var(--active-image, linear-gradient(135deg, #1f3b52, #332b46 46%, #483326));
+      background-position: center;
+      background-size: cover;
+      transform: scale(1.04);
+      transition: background 360ms ease, filter 360ms ease;
+    }
+
+    .stage::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 18% 12%, rgba(112, 214, 255, 0.18), transparent 30%),
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+      background-size: auto, 42px 42px, 42px 42px;
+      pointer-events: none;
+    }
+
+    .shell {
+      width: min(1440px, calc(100% - 32px));
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: 22px 0;
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr) 340px;
+      gap: 16px;
+    }
+
+    .sidebar,
+    .content,
+    .details {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(22px);
+    }
+
+    .sidebar,
+    .details {
+      border-radius: 8px;
+      align-self: start;
+      position: sticky;
+      top: 22px;
+      max-height: calc(100vh - 44px);
+      overflow: auto;
+    }
+
+    .sidebar {
+      padding: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #70d6ff, #ffcf5a);
+      color: #111;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 1.12rem;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 0.86rem;
+      margin-top: 3px;
+    }
+
+    .search {
+      position: relative;
+      margin-bottom: 18px;
+    }
+
+    .search input,
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.24);
+      color: var(--text);
+      outline: none;
+    }
+
+    .search input {
+      height: 42px;
+      padding: 0 12px 0 38px;
+    }
+
+    .search svg {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+    }
+
+    .nav-title {
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      margin: 18px 0 10px;
+    }
+
+    .category-list {
+      display: grid;
+      gap: 7px;
+    }
+
+    .category-button {
+      width: 100%;
+      min-height: 42px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      padding: 0 11px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--text);
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .category-button:hover,
+    .category-button.active {
+      border-color: var(--line);
+      background: rgba(255, 255, 255, 0.09);
+    }
+
+    .category-meta {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      min-width: 0;
+    }
+
+    .category-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--category-color);
+      flex: 0 0 auto;
+    }
+
+    .category-count {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .quick-actions {
+      display: grid;
+      gap: 8px;
+      margin-top: 22px;
+    }
+
+    .icon-button,
+    .primary-button,
+    .ghost-button {
+      min-height: 40px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.08);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .primary-button {
+      border-color: rgba(112, 214, 255, 0.46);
+      background: linear-gradient(135deg, rgba(112, 214, 255, 0.28), rgba(255, 207, 90, 0.18));
+      font-weight: 700;
+    }
+
+    .ghost-button:hover,
+    .icon-button:hover,
+    .primary-button:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .content {
+      border-radius: 8px;
+      padding: 20px;
+      min-width: 0;
+    }
+
+    .toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .toolbar h2 {
+      font-size: clamp(1.6rem, 4vw, 3.4rem);
+      line-height: 0.95;
+      max-width: 760px;
+    }
+
+    .toolbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 0 0 auto;
+    }
+
+    .icon-button {
+      width: 40px;
+      padding: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 14px;
+    }
+
+    .app-card {
+      min-height: 320px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      color: var(--text);
+      background: var(--panel-strong);
+      display: grid;
+      grid-template-rows: 154px 1fr;
+      cursor: pointer;
+      text-align: left;
+      padding: 0;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .app-card:hover,
+    .app-card.active {
+      transform: translateY(-3px);
+      border-color: color-mix(in srgb, var(--accent) 70%, white 10%);
+      background: rgba(34, 39, 46, 0.94);
+    }
+
+    .app-image {
+      position: relative;
+      background:
+        linear-gradient(135deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.42)),
+        var(--card-image);
+      background-position: center;
+      background-size: cover;
+    }
+
+    .app-image::after {
+      content: attr(data-initials);
+      position: absolute;
+      right: 12px;
+      bottom: 10px;
+      min-width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      color: #121417;
+      background: var(--accent-2);
+      font-weight: 900;
+    }
+
+    .app-body {
+      padding: 14px;
+      display: grid;
+      gap: 10px;
+      align-content: start;
+    }
+
+    .tag {
+      width: fit-content;
+      max-width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 9px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.05);
+      font-size: 0.77rem;
+      overflow-wrap: anywhere;
+    }
+
+    .app-card h3 {
+      font-size: 1.08rem;
+      line-height: 1.15;
+    }
+
+    .app-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    .details {
+      padding: 18px;
+    }
+
+    .hero-preview {
+      aspect-ratio: 16 / 10;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(135deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.42)),
+        var(--detail-image);
+      background-position: center;
+      background-size: cover;
+      margin-bottom: 14px;
+    }
+
+    .details h2 {
+      font-size: 1.45rem;
+      margin-bottom: 8px;
+    }
+
+    .details p {
+      color: var(--muted);
+      line-height: 1.55;
+      margin-bottom: 14px;
+    }
+
+    .meta-list {
+      display: grid;
+      gap: 9px;
+      margin: 16px 0;
+    }
+
+    .meta-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+      padding-bottom: 8px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .meta-item strong {
+      color: var(--text);
+      font-weight: 600;
+      text-align: right;
+      overflow-wrap: anywhere;
+    }
+
+    .details-actions {
+      display: grid;
+      grid-template-columns: 1fr 44px;
+      gap: 8px;
+    }
+
+    .empty {
+      border: 1px dashed var(--line);
+      border-radius: 8px;
+      padding: 36px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    dialog {
+      width: min(620px, calc(100% - 24px));
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--text);
+      background: #171b20;
+      box-shadow: var(--shadow);
+      padding: 0;
+    }
+
+    dialog::backdrop {
+      background: rgba(0, 0, 0, 0.62);
+      backdrop-filter: blur(6px);
+    }
+
+    .modal-head,
+    .modal-foot {
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .modal-foot {
+      border-top: 1px solid var(--line);
+      border-bottom: 0;
+      justify-content: flex-end;
+    }
+
+    .form {
+      padding: 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .field {
+      display: grid;
+      gap: 6px;
+    }
+
+    .field.wide {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .field input,
+    .field select {
+      height: 40px;
+      padding: 0 10px;
+    }
+
+    .field textarea {
+      min-height: 92px;
+      resize: vertical;
+      padding: 10px;
+    }
+
+    @media (max-width: 1120px) {
+      .shell {
+        grid-template-columns: 240px minmax(0, 1fr);
+      }
+
+      .details {
+        grid-column: 1 / -1;
+        position: static;
+        max-height: none;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .shell {
+        width: min(100% - 20px, 720px);
+        grid-template-columns: 1fr;
+        padding: 10px 0;
+      }
+
+      .sidebar {
+        position: static;
+        max-height: none;
+      }
+
+      .toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .toolbar-actions {
+        width: 100%;
+      }
+
+      .toolbar-actions .ghost-button {
+        flex: 1;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="stage" id="stage"></div>
+
+  <main class="shell">
+    <aside class="sidebar" aria-label="Navigation du launcher">
+      <div class="brand">
+        <div class="brand-mark">L</div>
+        <div>
+          <h1>Mon Launcher</h1>
+          <p class="subtitle">Applications, jeux et outils</p>
+        </div>
+      </div>
+
+      <label class="search" aria-label="Rechercher une application">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="m21 21-4.35-4.35m1.35-5.15a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <input id="searchInput" type="search" placeholder="Rechercher">
+      </label>
+
+      <div class="nav-title">Types</div>
+      <nav class="category-list" id="categoryList"></nav>
+
+      <div class="quick-actions">
+        <button class="primary-button" id="addButton" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          Ajouter une appli
+        </button>
+        <button class="ghost-button" id="resetButton" type="button">Réinitialiser les exemples</button>
+      </div>
+    </aside>
+
+    <section class="content" aria-live="polite">
+      <div class="toolbar">
+        <div>
+          <p class="subtitle" id="resultCount"></p>
+          <h2 id="viewTitle">Toutes tes applications</h2>
+        </div>
+        <div class="toolbar-actions">
+          <button class="icon-button" id="sortButton" type="button" title="Trier par nom" aria-label="Trier par nom">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 7h12M4 12h9M4 17h15M18 5v14m0 0 3-3m-3 3-3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="ghost-button" id="randomButton" type="button">Ambiance au hasard</button>
+        </div>
+      </div>
+      <div class="grid" id="appGrid"></div>
+    </section>
+
+    <aside class="details" id="details" aria-label="Détails de l'application"></aside>
+  </main>
+
+  <dialog id="appDialog">
+    <form method="dialog" id="appForm">
+      <div class="modal-head">
+        <h2>Ajouter une application</h2>
+        <button class="icon-button" value="cancel" type="submit" aria-label="Fermer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="form">
+        <div class="field">
+          <label for="nameField">Nom</label>
+          <input id="nameField" name="name" required>
+        </div>
+        <div class="field">
+          <label for="categoryField">Type</label>
+          <select id="categoryField" name="category">
+            <option>Jeux</option>
+            <option>Applications</option>
+            <option>Création</option>
+            <option>Travail</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="field wide">
+          <label for="descriptionField">Description</label>
+          <textarea id="descriptionField" name="description" required></textarea>
+        </div>
+        <div class="field wide">
+          <label for="linkField">Lien d'ouverture</label>
+          <input id="linkField" name="link" placeholder="https://..., steam://..., file:///C:/...">
+        </div>
+        <div class="field wide">
+          <label for="imageField">Image de fond</label>
+          <input id="imageField" name="image" placeholder="https://... ou chemin local utilisable par le navigateur">
+        </div>
+        <div class="field">
+          <label for="accentField">Couleur principale</label>
+          <input id="accentField" name="accent" type="color" value="#70d6ff">
+        </div>
+        <div class="field">
+          <label for="statusField">Statut</label>
+          <input id="statusField" name="status" placeholder="Installé, cloud, favori...">
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button class="ghost-button" value="cancel" type="submit">Annuler</button>
+        <button class="primary-button" value="default" type="submit">Ajouter</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script>
+    const starterApps = [
+      {
+        id: "adhd-rpg",
+        name: "ADHD RPG",
+        category: "Applications",
+        description: "RPG de productivite avec quetes, focus, repos et recompenses.",
+        link: "https://adhd-rpg.vercel.app",
+        status: "Vercel",
+        accent: "#75d66f",
+        image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        id: "multiverse-breach",
+        name: "Multiverse Breach",
+        category: "Jeux",
+        description: "Experience multivers orientee jeu, avec ambiance de faille et menace dimensionnelle.",
+        link: "https://multiverse-breach.vercel.app",
+        status: "Vercel",
+        accent: "#9b7cff",
+        image: "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        id: "cainos",
+        name: "CainOS",
+        category: "Simulation",
+        description: "Terminal interactif et simulation narrative de type mainframe.",
+        link: "https://cainos.vercel.app",
+        status: "Vercel",
+        accent: "#56f09c",
+        image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        id: "jigsaw-mastermind",
+        name: "Jigsaw Mastermind",
+        category: "Jeux",
+        description: "Jeu de logique et de pieges mentaux, pense pour une ambiance puzzle sombre.",
+        link: "https://jigsaw-mastermind.vercel.app",
+        status: "Vercel",
+        accent: "#ef4444",
+        image: "https://images.unsplash.com/photo-1606503153255-59d8b8b82176?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        id: "apertire-enrichment-os",
+        name: "Apertire Enrichment OS",
+        category: "Simulation",
+        description: "Interface d'enrichissement et de tests inspiree science-fiction.",
+        link: "https://apertire-enrichment-os.vercel.app",
+        status: "Vercel",
+        accent: "#ff9f43",
+        image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        id: "hellbound-hotel-manager",
+        name: "Hellbound Hotel Manager",
+        category: "Jeux",
+        description: "Gestion d'hotel infernal avec decisions, clients et ambiance surnaturelle.",
+        link: "https://hellbound-hotel-manager.vercel.app",
+        status: "Vercel",
+        accent: "#ff5d73",
+        image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        id: "combine-administrator-simulator",
+        name: "Combine Administrator Simulator",
+        category: "Simulation",
+        description: "Simulation d'administration dystopique avec interface de controle.",
+        link: "https://combine-administrator-simulator.vercel.app",
+        status: "Vercel",
+        accent: "#70d6ff",
+        image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=1200&q=80"
+      }
+    ];
+
+    const categoryColors = {
+      "Tous": "#70d6ff",
+      "Jeux": "#ff6b6b",
+      "Applications": "#70d6ff",
+      "Création": "#ffcf5a",
+      "Simulation": "#9b7cff",
+      "Travail": "#8be28b",
+      "Autre": "#d0a2ff"
+    };
+
+    const storeKey = "personal-launcher-apps-v2";
+    const stage = document.getElementById("stage");
+    const grid = document.getElementById("appGrid");
+    const details = document.getElementById("details");
+    const categoryList = document.getElementById("categoryList");
+    const resultCount = document.getElementById("resultCount");
+    const viewTitle = document.getElementById("viewTitle");
+    const searchInput = document.getElementById("searchInput");
+    const appDialog = document.getElementById("appDialog");
+    const appForm = document.getElementById("appForm");
+
+    let apps = loadApps();
+    let activeCategory = "Tous";
+    let selectedId = apps[0]?.id;
+    let sortAscending = true;
+
+    function loadApps() {
+      const saved = localStorage.getItem(storeKey);
+      return saved ? JSON.parse(saved) : starterApps;
+    }
+
+    function saveApps() {
+      localStorage.setItem(storeKey, JSON.stringify(apps));
+    }
+
+    function cssImage(app) {
+      if (app.image) {
+        return `url("${app.image}")`;
+      }
+
+      return `linear-gradient(135deg, ${app.accent || "#70d6ff"}, #232a31 52%, #101214)`;
+    }
+
+    function initials(name) {
+      return name
+        .split(/\s+/)
+        .slice(0, 2)
+        .map((word) => word[0]?.toUpperCase() || "")
+        .join("");
+    }
+
+    function filteredApps() {
+      const query = searchInput.value.trim().toLowerCase();
+      return apps
+        .filter((app) => activeCategory === "Tous" || app.category === activeCategory)
+        .filter((app) => {
+          const haystack = `${app.name} ${app.category} ${app.description} ${app.status}`.toLowerCase();
+          return haystack.includes(query);
+        })
+        .sort((a, b) => sortAscending ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name));
+    }
+
+    function renderCategories() {
+      const counts = apps.reduce((acc, app) => {
+        acc[app.category] = (acc[app.category] || 0) + 1;
+        return acc;
+      }, { Tous: apps.length });
+
+      const categories = ["Tous", ...Object.keys(counts).filter((item) => item !== "Tous").sort()];
+      categoryList.innerHTML = categories.map((category) => `
+        <button class="category-button ${category === activeCategory ? "active" : ""}" type="button" data-category="${category}" style="--category-color: ${categoryColors[category] || categoryColors.Autre}">
+          <span class="category-meta">
+            <span class="category-dot"></span>
+            <span>${category}</span>
+          </span>
+          <span class="category-count">${counts[category]}</span>
+        </button>
+      `).join("");
+    }
+
+    function renderGrid() {
+      const visibleApps = filteredApps();
+      resultCount.textContent = `${visibleApps.length} application${visibleApps.length > 1 ? "s" : ""}`;
+      viewTitle.textContent = activeCategory === "Tous" ? "Toutes tes applications" : activeCategory;
+
+      if (!visibleApps.length) {
+        grid.innerHTML = `<div class="empty">Aucune application ne correspond à cette recherche.</div>`;
+        renderDetails(null);
+        return;
+      }
+
+      if (!visibleApps.some((app) => app.id === selectedId)) {
+        selectedId = visibleApps[0].id;
+      }
+
+      grid.innerHTML = visibleApps.map((app) => `
+        <button class="app-card ${app.id === selectedId ? "active" : ""}" type="button" data-id="${app.id}" style="--accent: ${app.accent}; --accent-2: ${app.accent}; --card-image: ${cssImage(app)}">
+          <div class="app-image" data-initials="${initials(app.name)}"></div>
+          <div class="app-body">
+            <span class="tag">${app.category}</span>
+            <h3>${app.name}</h3>
+            <p>${app.description}</p>
+          </div>
+        </button>
+      `).join("");
+
+      renderDetails(apps.find((app) => app.id === selectedId));
+    }
+
+    function renderDetails(app) {
+      if (!app) {
+        details.innerHTML = `<div class="empty">Sélectionne ou ajoute une application.</div>`;
+        return;
+      }
+
+      document.documentElement.style.setProperty("--active-image", cssImage(app));
+      document.documentElement.style.setProperty("--accent", app.accent || "#70d6ff");
+      details.style.setProperty("--detail-image", cssImage(app));
+
+      details.innerHTML = `
+        <div class="hero-preview"></div>
+        <span class="tag">${app.category}</span>
+        <h2>${app.name}</h2>
+        <p>${app.description}</p>
+        <div class="meta-list">
+          <div class="meta-item"><span>Statut</span><strong>${app.status || "Non renseigné"}</strong></div>
+          <div class="meta-item"><span>Lien</span><strong>${app.link || "A configurer"}</strong></div>
+        </div>
+        <div class="details-actions">
+          <a class="primary-button" href="${app.link || "#"}" ${app.link ? "" : "aria-disabled='true'"}>Ouvrir</a>
+          <button class="icon-button" type="button" id="deleteButton" title="Supprimer" aria-label="Supprimer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 7h16M10 11v6M14 11v6M6 7l1 14h10l1-14M9 7V4h6v3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      `;
+    }
+
+    function render() {
+      renderCategories();
+      renderGrid();
+    }
+
+    categoryList.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-category]");
+      if (!button) return;
+      activeCategory = button.dataset.category;
+      render();
+    });
+
+    grid.addEventListener("mouseover", (event) => {
+      const card = event.target.closest("[data-id]");
+      if (!card) return;
+      const app = apps.find((item) => item.id === card.dataset.id);
+      if (app) {
+        document.documentElement.style.setProperty("--active-image", cssImage(app));
+      }
+    });
+
+    grid.addEventListener("click", (event) => {
+      const card = event.target.closest("[data-id]");
+      if (!card) return;
+      selectedId = card.dataset.id;
+      renderGrid();
+    });
+
+    details.addEventListener("click", (event) => {
+      const deleteButton = event.target.closest("#deleteButton");
+      if (!deleteButton || !selectedId) return;
+      apps = apps.filter((app) => app.id !== selectedId);
+      selectedId = apps[0]?.id;
+      saveApps();
+      render();
+    });
+
+    searchInput.addEventListener("input", renderGrid);
+
+    document.getElementById("sortButton").addEventListener("click", () => {
+      sortAscending = !sortAscending;
+      renderGrid();
+    });
+
+    document.getElementById("randomButton").addEventListener("click", () => {
+      const visibleApps = filteredApps();
+      const randomApp = visibleApps[Math.floor(Math.random() * visibleApps.length)];
+      if (!randomApp) return;
+      selectedId = randomApp.id;
+      renderGrid();
+    });
+
+    document.getElementById("addButton").addEventListener("click", () => {
+      appForm.reset();
+      appDialog.showModal();
+    });
+
+    document.getElementById("resetButton").addEventListener("click", () => {
+      apps = starterApps;
+      selectedId = apps[0]?.id;
+      saveApps();
+      render();
+    });
+
+    appForm.addEventListener("submit", (event) => {
+      if (event.submitter?.value === "cancel") return;
+      event.preventDefault();
+      const formData = new FormData(appForm);
+      const app = {
+        id: `${Date.now()}-${String(formData.get("name")).toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+        name: String(formData.get("name")).trim(),
+        category: String(formData.get("category")).trim() || "Autre",
+        description: String(formData.get("description")).trim(),
+        link: String(formData.get("link")).trim(),
+        image: String(formData.get("image")).trim(),
+        accent: String(formData.get("accent")).trim() || "#70d6ff",
+        status: String(formData.get("status")).trim()
+      };
+
+      apps = [app, ...apps];
+      selectedId = app.id;
+      activeCategory = "Tous";
+      saveApps();
+      appDialog.close();
+      render();
+    });
+
+    render();
+  </script>
+</body>
+</html>
