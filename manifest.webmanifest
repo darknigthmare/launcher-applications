@@ -1,0 +1,19 @@
+{
+  "name": "Mon Launcher",
+  "short_name": "Launcher",
+  "description": "Applications, jeux et outils réunis dans un seul catalogue.",
+  "lang": "fr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#101214",
+  "theme_color": "#101214",
+  "icons": [
+    {
+      "src": "/assets/launcher-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
