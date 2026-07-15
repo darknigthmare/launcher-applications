@@ -3,7 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Launcher d'applications</title>
+  <meta name="description" content="Un launcher personnel pour retrouver rapidement mes applications, jeux et outils publiés sur Vercel.">
+  <meta name="theme-color" content="#101214">
+  <meta property="og:title" content="Mon Launcher">
+  <meta property="og:description" content="Applications, jeux et outils réunis dans un seul catalogue.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://launcher-applications.vercel.app/">
+  <link rel="canonical" href="https://launcher-applications.vercel.app/">
+  <link rel="icon" href="assets/launcher-icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <title>Mon Launcher — Applications, jeux et outils</title>
   <style>
     :root {
       --bg: #101214;
@@ -36,6 +45,11 @@
     select,
     textarea {
       font: inherit;
+    }
+
+    :where(button, a, input, select, textarea):focus-visible {
+      outline: 3px solid color-mix(in srgb, var(--accent) 78%, white 22%);
+      outline-offset: 3px;
     }
 
     .stage {
@@ -148,7 +162,6 @@
       border-radius: 8px;
       background: rgba(0, 0, 0, 0.24);
       color: var(--text);
-      outline: none;
     }
 
     .search input {
@@ -268,6 +281,11 @@
       font-weight: 700;
     }
 
+    :where(.primary-button, .ghost-button, .icon-button):disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+
     .ghost-button:hover,
     .icon-button:hover,
     .primary-button:hover {
@@ -282,6 +300,7 @@
 
     .toolbar {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
       gap: 14px;
@@ -325,6 +344,22 @@
       text-align: left;
       padding: 0;
       transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+      position: relative;
+    }
+
+    .card-select {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      border: 0;
+      border-radius: inherit;
+      padding: 0;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .card-select:focus-visible {
+      outline-offset: -4px;
     }
 
     .app-card:hover,
@@ -388,12 +423,17 @@
       border-color: rgba(251, 113, 133, 0.48);
     }
 
+    .status-pill.local {
+      color: var(--muted);
+    }
+
     .card-actions {
       position: absolute;
       right: 10px;
       bottom: 10px;
       display: flex;
       gap: 6px;
+      z-index: 2;
     }
 
     .mini-action {
@@ -508,8 +548,12 @@
 
     .details-actions {
       display: grid;
-      grid-template-columns: 1fr 44px 44px 44px;
+      grid-template-columns: 1fr 44px;
       gap: 8px;
+    }
+
+    body.admin-mode .details-actions {
+      grid-template-columns: 1fr 44px 44px 44px;
     }
 
     .showcase {
@@ -554,6 +598,18 @@
       padding: 36px;
       color: var(--muted);
       text-align: center;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
     dialog {
@@ -620,7 +676,7 @@
       padding: 10px;
     }
 
-    @media (max-width: 1120px) {
+    @media (max-width: 1320px) {
       .shell {
         grid-template-columns: 240px minmax(0, 1fr);
       }
@@ -651,6 +707,7 @@
 
       .toolbar-actions {
         width: 100%;
+        flex-wrap: wrap;
       }
 
       .toolbar-actions .ghost-button {
@@ -659,6 +716,17 @@
 
       .grid {
         grid-template-columns: 1fr;
+      }
+
+      .tag-list {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 6px;
+        scrollbar-width: thin;
+      }
+
+      .tag-filter {
+        flex: 0 0 auto;
       }
 
       .form {
@@ -671,6 +739,17 @@
 
       .showcase-image {
         min-height: 260px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
       }
     }
   </style>
@@ -702,21 +781,21 @@
       <div class="tag-list" id="tagList"></div>
 
       <div class="quick-actions">
-        <button class="primary-button" id="addButton" type="button">
+        <button class="primary-button admin-only" id="addButton" type="button">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           </svg>
           Ajouter une appli
         </button>
-        <button class="ghost-button" id="adminButton" type="button">Mode admin</button>
-        <button class="ghost-button" id="resetButton" type="button">Réinitialiser les exemples</button>
+        <button class="ghost-button" id="adminButton" type="button" aria-pressed="false">Mode édition</button>
+        <button class="ghost-button admin-only" id="resetButton" type="button">Restaurer le catalogue</button>
       </div>
     </aside>
 
-    <section class="content" aria-live="polite">
+    <section class="content">
       <div class="toolbar">
         <div>
-          <p class="subtitle" id="resultCount"></p>
+          <p class="subtitle" id="resultCount" role="status" aria-live="polite"></p>
           <h2 id="viewTitle">Toutes tes applications</h2>
         </div>
         <div class="toolbar-actions">
@@ -735,11 +814,11 @@
     <aside class="details" id="details" aria-label="Détails de l'application"></aside>
   </main>
 
-  <dialog id="appDialog">
-    <form method="dialog" id="appForm">
+  <dialog id="appDialog" aria-labelledby="appDialogTitle">
+    <form id="appForm">
       <div class="modal-head">
-        <h2>Ajouter une application</h2>
-        <button class="icon-button" value="cancel" type="submit" aria-label="Fermer">
+        <h2 id="appDialogTitle">Ajouter une application</h2>
+        <button class="icon-button" id="closeAppDialogButton" type="button" aria-label="Fermer">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           </svg>
@@ -795,13 +874,13 @@
         </div>
       </div>
       <div class="modal-foot">
-        <button class="ghost-button" value="cancel" type="submit">Annuler</button>
-        <button class="primary-button" value="default" type="submit">Ajouter</button>
+        <button class="ghost-button" id="cancelAppButton" type="button">Annuler</button>
+        <button class="primary-button" id="submitAppButton" type="submit">Ajouter</button>
       </div>
     </form>
   </dialog>
 
-  <dialog class="showcase" id="showcaseDialog">
+  <dialog class="showcase" id="showcaseDialog" aria-labelledby="showcaseTitle">
     <div class="modal-head">
       <h2 id="showcaseTitle">Mode vitrine</h2>
       <button class="icon-button" id="closeShowcaseButton" type="button" aria-label="Fermer">
@@ -817,7 +896,7 @@
     const starterApps = [
       {
         id: "adhd-rpg",
-        name: "ADHD RPG",
+        name: "NeuroQuest — ADHD RPG",
         category: "Applications",
         description: "Un RPG d'organisation qui transforme les taches, routines et moments de focus en progression lisible.",
         pitch: "NeuroQuest donne une forme ludique aux journees difficiles sans perdre le cote utile.",
@@ -879,6 +958,19 @@
         status: "Vercel",
         accent: "#22d3ee",
         image: "assets/previews/manga-finder.png"
+      },
+      {
+        id: "media-gatherer",
+        name: "MediaGatherer",
+        category: "Applications",
+        description: "Un agrégateur multi-sources pour rechercher, collecter et organiser des photos, vidéos et profils publics.",
+        pitch: "Media Finder, recherche inversée et Person Finder réunis dans un même espace de collecte.",
+        tags: ["Médias", "Recherche", "Multi-sources", "Outil"],
+        icon: "MG",
+        link: "https://media-gatherer.vercel.app",
+        status: "Vercel",
+        accent: "#28a8ff",
+        image: "assets/previews/media-gatherer.png"
       },
       {
         id: "budgetia",
@@ -947,7 +1039,7 @@
       },
       {
         id: "apertire-enrichment-os",
-        name: "Apertire Enrichment OS",
+        name: "Aperture Enrichment OS",
         category: "Simulation",
         description: "Un faux systeme d'enrichissement scientifique, entre laboratoire froid et humour de test.",
         pitch: "Une interface propre, clinique, presque trop calme pour etre rassurante.",
@@ -1012,6 +1104,8 @@
 
     const storeKey = "personal-launcher-apps-v5";
     const favoriteKey = "personal-launcher-favorites-v1";
+    const removedStarterKey = "personal-launcher-removed-starters-v1";
+    const allowedLaunchProtocols = new Set(["https:", "http:", "steam:", "file:"]);
     const stage = document.getElementById("stage");
     const grid = document.getElementById("appGrid");
     const details = document.getElementById("details");
@@ -1026,6 +1120,7 @@
     const showcaseBody = document.getElementById("showcaseBody");
     const showcaseTitle = document.getElementById("showcaseTitle");
 
+    const removedStarterIds = loadRemovedStarterIds();
     let apps = loadApps();
     let favorites = loadFavorites();
     let onlineStatus = {};
@@ -1046,34 +1141,114 @@
       }[char]));
     }
 
-    function normalizeApp(app) {
-      const fallback = starterApps.find((item) => item.id === app.id) || {};
-      const tags = Array.isArray(app.tags) ? app.tags : String(app.tags || "").split(",").map((tag) => tag.trim()).filter(Boolean);
+    function sanitizeAccent(value) {
+      const color = String(value || "").trim();
+      return /^#[0-9a-f]{6}$/i.test(color) ? color : "#70d6ff";
+    }
+
+    function sanitizeLaunchUrl(value) {
+      const raw = String(value || "").trim();
+      if (!raw) return "";
+
+      try {
+        const url = new URL(raw, document.baseURI);
+        return allowedLaunchProtocols.has(url.protocol) ? url.href : "";
+      } catch (error) {
+        return "";
+      }
+    }
+
+    function sanitizeImageUrl(value) {
+      const raw = String(value || "").trim();
+      if (!raw) return "";
+
+      try {
+        const url = new URL(raw, document.baseURI);
+        const isLocalFile = location.protocol === "file:" && url.protocol === "file:";
+        return ["https:", "http:"].includes(url.protocol) || isLocalFile ? url.href : "";
+      } catch (error) {
+        return "";
+      }
+    }
+
+    function normalizeApp(app = {}) {
+      const source = app && typeof app === "object" ? app : {};
+      const fallback = starterApps.find((item) => item.id === source.id) || {};
+      const rawTags = Array.isArray(source.tags) ? source.tags : String(source.tags || "").split(",");
+      const tags = [...new Set(rawTags.map((tag) => String(tag).trim()).filter(Boolean))].slice(0, 10);
+      const name = String(source.name || fallback.name || "Application").trim().slice(0, 80);
       return {
         ...fallback,
-        ...app,
+        ...source,
+        id: String(source.id || fallback.id || `app-${Date.now()}`),
+        name,
+        category: String(source.category || fallback.category || "Autre").trim().slice(0, 40),
+        description: String(source.description || fallback.description || "").trim().slice(0, 600),
+        pitch: String(source.pitch || fallback.pitch || source.description || fallback.description || "").trim().slice(0, 280),
         tags,
-        icon: app.icon || fallback.icon || initials(app.name || fallback.name || "APP"),
-        pitch: app.pitch || fallback.pitch || app.description || fallback.description || ""
+        icon: String(source.icon || fallback.icon || initials(name)).trim().slice(0, 5),
+        link: sanitizeLaunchUrl(source.link || fallback.link),
+        image: sanitizeImageUrl(source.image || fallback.image),
+        accent: sanitizeAccent(source.accent || fallback.accent),
+        status: String(source.status || fallback.status || "").trim().slice(0, 40)
       };
     }
 
+    function safeReadArray(key) {
+      try {
+        const saved = localStorage.getItem(key);
+        if (saved === null) return null;
+        const parsed = JSON.parse(saved);
+        return Array.isArray(parsed) ? parsed : null;
+      } catch (error) {
+        console.warn(`Stockage ignoré pour ${key}:`, error);
+        return null;
+      }
+    }
+
+    function safeWrite(key, value) {
+      try {
+        localStorage.setItem(key, JSON.stringify(value));
+        return true;
+      } catch (error) {
+        console.warn(`Impossible d'enregistrer ${key}:`, error);
+        return false;
+      }
+    }
+
+    function loadRemovedStarterIds() {
+      return new Set((safeReadArray(removedStarterKey) || []).map(String));
+    }
+
     function loadApps() {
-      const saved = localStorage.getItem(storeKey);
-      return saved ? JSON.parse(saved).map(normalizeApp) : starterApps.map(normalizeApp);
+      const saved = safeReadArray(storeKey);
+      if (!saved) return starterApps.map(normalizeApp);
+
+      const loaded = saved.filter((app) => app && typeof app === "object").map(normalizeApp);
+      const knownIds = new Set(loaded.map((app) => app.id));
+      starterApps.forEach((starter) => {
+        if (!knownIds.has(starter.id) && !removedStarterIds.has(starter.id)) {
+          loaded.push(normalizeApp(starter));
+        }
+      });
+      return loaded;
     }
 
     function loadFavorites() {
-      const saved = localStorage.getItem(favoriteKey);
-      return new Set(saved ? JSON.parse(saved) : []);
+      const appIds = new Set(apps.map((app) => app.id));
+      return new Set((safeReadArray(favoriteKey) || []).map(String).filter((id) => appIds.has(id)));
     }
 
     function saveApps() {
-      localStorage.setItem(storeKey, JSON.stringify(apps));
+      safeWrite(storeKey, apps);
     }
 
     function saveFavorites() {
-      localStorage.setItem(favoriteKey, JSON.stringify([...favorites]));
+      safeWrite(favoriteKey, [...favorites]);
+    }
+
+    function saveRemovedStarterIds() {
+      safeWrite(removedStarterKey, [...removedStarterIds]);
     }
 
     function initials(name) {
@@ -1085,18 +1260,30 @@
     }
 
     function cssImage(app) {
-      if (app.image) {
-        return `url("${app.image}")`;
+      const image = sanitizeImageUrl(app.image);
+      if (image) {
+        return `url(${JSON.stringify(image)})`;
       }
 
-      return `linear-gradient(135deg, ${app.accent || "#70d6ff"}, #232a31 52%, #101214)`;
+      return `linear-gradient(135deg, ${sanitizeAccent(app.accent)}, #232a31 52%, #101214)`;
     }
 
     function statusLabel(app) {
-      const state = onlineStatus[app.id] || "checking";
-      if (state === "online") return "En ligne";
-      if (state === "offline") return "Hors ligne";
-      return "Test...";
+      const state = onlineStatus[app.id];
+      if (state === "online") return "Joignable";
+      if (state === "offline") return "Injoignable";
+      if (!app.link) return "Sans lien";
+      if (!/^https?:/i.test(app.link)) return "Lien local";
+      return "Vérification...";
+    }
+
+    function statusClass(app) {
+      if (onlineStatus[app.id]) return onlineStatus[app.id];
+      return /^https?:/i.test(app.link) ? "checking" : "local";
+    }
+
+    function normalizeSearch(value) {
+      return String(value || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
     }
 
     function allTags() {
@@ -1104,12 +1291,12 @@
     }
 
     function filteredApps() {
-      const query = searchInput.value.trim().toLowerCase();
+      const query = normalizeSearch(searchInput.value.trim());
       return apps
         .filter((app) => activeCategory === "Tous" || (activeCategory === "Favoris" ? favorites.has(app.id) : app.category === activeCategory))
         .filter((app) => activeTag === "Tous" || (app.tags || []).includes(activeTag))
         .filter((app) => {
-          const haystack = `${app.name} ${app.category} ${app.description} ${app.pitch} ${app.status} ${(app.tags || []).join(" ")}`.toLowerCase();
+          const haystack = normalizeSearch(`${app.name} ${app.category} ${app.description} ${app.pitch} ${app.status} ${(app.tags || []).join(" ")}`);
           return haystack.includes(query);
         })
         .sort((a, b) => {
@@ -1127,7 +1314,7 @@
 
       const categories = ["Tous", "Favoris", ...Object.keys(counts).filter((item) => !["Tous", "Favoris"].includes(item)).sort()];
       categoryList.innerHTML = categories.map((category) => `
-        <button class="category-button ${category === activeCategory ? "active" : ""}" type="button" data-category="${escapeHtml(category)}" style="--category-color: ${categoryColors[category] || categoryColors.Autre}">
+        <button class="category-button ${category === activeCategory ? "active" : ""}" type="button" data-category="${escapeHtml(category)}" aria-pressed="${category === activeCategory}" style="--category-color: ${categoryColors[category] || categoryColors.Autre}">
           <span class="category-meta">
             <span class="category-dot"></span>
             <span>${escapeHtml(category)}</span>
@@ -1140,7 +1327,7 @@
     function renderTags() {
       const tags = ["Tous", ...allTags()];
       tagList.innerHTML = tags.map((tag) => `
-        <button class="tag-filter ${tag === activeTag ? "active" : ""}" type="button" data-tag="${escapeHtml(tag)}">${escapeHtml(tag)}</button>
+        <button class="tag-filter ${tag === activeTag ? "active" : ""}" type="button" data-tag="${escapeHtml(tag)}" aria-pressed="${tag === activeTag}">${escapeHtml(tag)}</button>
       `).join("");
     }
 
@@ -1160,19 +1347,20 @@
       }
 
       grid.innerHTML = visibleApps.map((app) => `
-        <article class="app-card ${app.id === selectedId ? "active" : ""}" role="button" tabindex="0" data-id="${escapeHtml(app.id)}" style="--accent: ${app.accent}; --accent-2: ${app.accent}; --card-image: ${cssImage(app)}">
+        <article class="app-card ${app.id === selectedId ? "active" : ""}" data-id="${escapeHtml(app.id)}">
+          <button class="card-select" type="button" data-action="select" data-id="${escapeHtml(app.id)}" aria-pressed="${app.id === selectedId}" aria-label="Afficher les détails de ${escapeHtml(app.name)}"></button>
           <div class="app-image">
             <div class="app-topbar">
               <span class="app-icon">${escapeHtml(app.icon)}</span>
-              <span class="status-pill ${onlineStatus[app.id] || "checking"}">${statusLabel(app)}</span>
+              <span class="status-pill ${statusClass(app)}">${statusLabel(app)}</span>
             </div>
             <div class="card-actions">
-              <button class="mini-action favorite-button ${favorites.has(app.id) ? "active" : ""}" type="button" data-action="favorite" data-id="${escapeHtml(app.id)}" title="Favori" aria-label="Favori">
+              <button class="mini-action favorite-button ${favorites.has(app.id) ? "active" : ""}" type="button" data-action="favorite" data-id="${escapeHtml(app.id)}" title="Favori" aria-label="${favorites.has(app.id) ? "Retirer" : "Ajouter"} ${escapeHtml(app.name)} ${favorites.has(app.id) ? "des" : "aux"} favoris" aria-pressed="${favorites.has(app.id)}">
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="${favorites.has(app.id) ? "currentColor" : "none"}" aria-hidden="true">
                   <path d="m12 3 2.9 5.88 6.49.94-4.7 4.58 1.11 6.46L12 17.81l-5.8 3.05 1.11-6.46-4.7-4.58 6.49-.94L12 3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
                 </svg>
               </button>
-              <button class="mini-action admin-only" type="button" data-action="edit" data-id="${escapeHtml(app.id)}" title="Modifier" aria-label="Modifier">
+              <button class="mini-action admin-only" type="button" data-action="edit" data-id="${escapeHtml(app.id)}" title="Modifier" aria-label="Modifier ${escapeHtml(app.name)}">
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   <path d="M4 20h4L18.5 9.5a2.12 2.12 0 0 0-3-3L5 17v3Zm12-15 3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -1191,6 +1379,13 @@
         </article>
       `).join("");
 
+      grid.querySelectorAll(".app-card").forEach((card, index) => {
+        const app = visibleApps[index];
+        card.style.setProperty("--accent", sanitizeAccent(app.accent));
+        card.style.setProperty("--accent-2", sanitizeAccent(app.accent));
+        card.style.setProperty("--card-image", cssImage(app));
+      });
+
       renderDetails(apps.find((app) => app.id === selectedId));
     }
 
@@ -1201,8 +1396,13 @@
       }
 
       document.documentElement.style.setProperty("--active-image", cssImage(app));
-      document.documentElement.style.setProperty("--accent", app.accent || "#70d6ff");
+      document.documentElement.style.setProperty("--accent", sanitizeAccent(app.accent));
       details.style.setProperty("--detail-image", cssImage(app));
+      details.setAttribute("aria-label", `Détails de ${app.name}`);
+
+      const openControl = app.link
+        ? `<a class="primary-button" href="${escapeHtml(app.link)}" target="_blank" rel="noopener noreferrer">Ouvrir</a>`
+        : `<button class="primary-button" type="button" disabled>Sans lien</button>`;
 
       details.innerHTML = `
         <div class="hero-preview"></div>
@@ -1219,8 +1419,8 @@
           <div class="meta-item"><span>Lien</span><strong>${escapeHtml(app.link || "A configurer")}</strong></div>
         </div>
         <div class="details-actions">
-          <a class="primary-button" href="${escapeHtml(app.link || "#")}" ${app.link ? "target='_blank' rel='noreferrer'" : "aria-disabled='true'"}>Ouvrir</a>
-          <button class="icon-button" type="button" id="detailFavoriteButton" title="Favori" aria-label="Favori">
+          ${openControl}
+          <button class="icon-button" type="button" id="detailFavoriteButton" title="Favori" aria-label="${favorites.has(app.id) ? "Retirer des favoris" : "Ajouter aux favoris"}" aria-pressed="${favorites.has(app.id)}">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="${favorites.has(app.id) ? "currentColor" : "none"}" aria-hidden="true">
               <path d="m12 3 2.9 5.88 6.49.94-4.7 4.58 1.11 6.46L12 17.81l-5.8 3.05 1.11-6.46-4.7-4.58 6.49-.94L12 3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
             </svg>
@@ -1243,6 +1443,9 @@
       if (!app) return;
       showcaseTitle.textContent = app.name;
       showcaseBody.style.setProperty("--showcase-image", cssImage(app));
+      const openControl = app.link
+        ? `<a class="primary-button" href="${escapeHtml(app.link)}" target="_blank" rel="noopener noreferrer">Ouvrir</a>`
+        : `<button class="primary-button" type="button" disabled>Sans lien</button>`;
       showcaseBody.innerHTML = `
         <div class="showcase-image"></div>
         <div class="showcase-copy">
@@ -1254,7 +1457,7 @@
           <h2>${escapeHtml(app.name)}</h2>
           <p class="pitch">${escapeHtml(app.pitch)}</p>
           <p>${escapeHtml(app.description)}</p>
-          <a class="primary-button" href="${escapeHtml(app.link)}" target="_blank" rel="noreferrer">Ouvrir</a>
+          ${openControl}
         </div>
       `;
       showcaseDialog.showModal();
@@ -1264,6 +1467,7 @@
       editingId = app?.id || null;
       appForm.reset();
       document.querySelector("#appDialog .modal-head h2").textContent = app ? "Modifier une application" : "Ajouter une application";
+      document.getElementById("submitAppButton").textContent = app ? "Enregistrer" : "Ajouter";
       document.getElementById("nameField").value = app?.name || "";
       document.getElementById("categoryField").value = app?.category || "Autre";
       document.getElementById("descriptionField").value = app?.description || "";
@@ -1274,6 +1478,7 @@
       document.getElementById("tagsField").value = (app?.tags || []).join(", ");
       document.getElementById("accentField").value = app?.accent || "#70d6ff";
       document.getElementById("statusField").value = app?.status || "";
+      ["nameField", "descriptionField", "linkField", "imageField"].forEach((id) => document.getElementById(id).setCustomValidity(""));
       appDialog.showModal();
     }
 
@@ -1294,17 +1499,35 @@
       renderGrid();
     }
 
+    function selectApp(id, revealDetails = false) {
+      if (!apps.some((app) => app.id === id)) return;
+      selectedId = id;
+      renderGrid();
+      if (revealDetails && window.matchMedia("(max-width: 1320px)").matches) {
+        requestAnimationFrame(() => details.scrollIntoView({ behavior: "smooth", block: "start" }));
+      }
+    }
+
     async function checkOnlineStatus() {
-      await Promise.all(apps.filter((app) => app.link?.startsWith("https://")).map(async (app) => {
-        onlineStatus[app.id] = "checking";
+      const webApps = apps.filter((app) => /^https?:/i.test(app.link));
+      apps.forEach((app) => {
+        onlineStatus[app.id] = /^https?:/i.test(app.link) ? "checking" : "local";
+      });
+      renderGrid();
+
+      await Promise.allSettled(webApps.map(async (app) => {
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 6000);
         try {
-          await fetch(app.link, { mode: "no-cors", cache: "no-store" });
+          await fetch(app.link, { mode: "no-cors", cache: "no-store", signal: controller.signal });
           onlineStatus[app.id] = "online";
         } catch (error) {
           onlineStatus[app.id] = "offline";
+        } finally {
+          clearTimeout(timeout);
         }
-        renderGrid();
       }));
+      renderGrid();
     }
 
     categoryList.addEventListener("click", (event) => {
@@ -1322,12 +1545,24 @@
     });
 
     grid.addEventListener("mouseover", (event) => {
-      const card = event.target.closest("[data-id]");
+      const card = event.target.closest(".app-card");
       if (!card) return;
       const app = apps.find((item) => item.id === card.dataset.id);
       if (app) {
         document.documentElement.style.setProperty("--active-image", cssImage(app));
       }
+    });
+
+    grid.addEventListener("focusin", (event) => {
+      const card = event.target.closest(".app-card");
+      if (!card) return;
+      const app = apps.find((item) => item.id === card.dataset.id);
+      if (app) document.documentElement.style.setProperty("--active-image", cssImage(app));
+    });
+
+    grid.addEventListener("mouseleave", () => {
+      const selectedApp = apps.find((app) => app.id === selectedId);
+      if (selectedApp) document.documentElement.style.setProperty("--active-image", cssImage(selectedApp));
     });
 
     grid.addEventListener("click", (event) => {
@@ -1338,13 +1573,16 @@
         if (!app) return;
         if (actionButton.dataset.action === "favorite") toggleFavorite(app.id);
         if (actionButton.dataset.action === "edit") openEditor(app);
+        if (actionButton.dataset.action === "select") selectApp(app.id, true);
         return;
       }
+    });
 
-      const card = event.target.closest("[data-id]");
-      if (!card) return;
-      selectedId = card.dataset.id;
-      renderGrid();
+    grid.addEventListener("keydown", (event) => {
+      const selectButton = event.target.closest('[data-action="select"]');
+      if (!selectButton || !["Enter", " "].includes(event.key)) return;
+      event.preventDefault();
+      selectApp(selectButton.dataset.id, true);
     });
 
     details.addEventListener("click", (event) => {
@@ -1359,8 +1597,16 @@
       }
       const deleteButton = event.target.closest("#deleteButton");
       if (!deleteButton || !selectedId) return;
+      const deletedApp = apps.find((app) => app.id === selectedId);
+      if (!deletedApp || !window.confirm(`Supprimer ${deletedApp.name} du launcher ?`)) return;
+      const deletedId = selectedId;
       apps = apps.filter((app) => app.id !== selectedId);
-      favorites.delete(selectedId);
+      favorites.delete(deletedId);
+      delete onlineStatus[deletedId];
+      if (starterApps.some((app) => app.id === deletedId)) {
+        removedStarterIds.add(deletedId);
+        saveRemovedStarterIds();
+      }
       selectedId = apps[0]?.id;
       saveApps();
       saveFavorites();
@@ -1369,8 +1615,12 @@
 
     searchInput.addEventListener("input", renderGrid);
 
-    document.getElementById("sortButton").addEventListener("click", () => {
+    const sortButton = document.getElementById("sortButton");
+    sortButton.addEventListener("click", () => {
       sortAscending = !sortAscending;
+      const label = `Trier par nom, ordre ${sortAscending ? "croissant" : "décroissant"}`;
+      sortButton.title = label;
+      sortButton.setAttribute("aria-label", label);
       renderGrid();
     });
 
@@ -1378,44 +1628,69 @@
       const visibleApps = filteredApps();
       const randomApp = visibleApps[Math.floor(Math.random() * visibleApps.length)];
       if (!randomApp) return;
-      selectedId = randomApp.id;
-      renderGrid();
+      selectApp(randomApp.id, true);
     });
 
     document.getElementById("showcaseButton").addEventListener("click", () => renderShowcase());
     document.getElementById("closeShowcaseButton").addEventListener("click", () => showcaseDialog.close());
+    document.getElementById("closeAppDialogButton").addEventListener("click", () => appDialog.close());
+    document.getElementById("cancelAppButton").addEventListener("click", () => appDialog.close());
 
     document.getElementById("addButton").addEventListener("click", () => openEditor());
 
     document.getElementById("adminButton").addEventListener("click", (event) => {
       adminMode = !adminMode;
-      event.currentTarget.textContent = adminMode ? "Quitter admin" : "Mode admin";
+      event.currentTarget.textContent = adminMode ? "Quitter l'édition" : "Mode édition";
+      event.currentTarget.setAttribute("aria-pressed", String(adminMode));
       render();
     });
 
     document.getElementById("resetButton").addEventListener("click", () => {
+      if (!window.confirm("Restaurer le catalogue d'origine ? Les ajouts, modifications et favoris locaux seront supprimés.")) return;
       apps = starterApps.map(normalizeApp);
+      favorites.clear();
+      removedStarterIds.clear();
+      onlineStatus = {};
       selectedId = apps[0]?.id;
       activeCategory = "Tous";
       activeTag = "Tous";
       saveApps();
+      saveFavorites();
+      saveRemovedStarterIds();
       render();
       checkOnlineStatus();
     });
 
     appForm.addEventListener("submit", (event) => {
-      if (event.submitter?.value === "cancel") return;
       event.preventDefault();
       const formData = new FormData(appForm);
       const name = String(formData.get("name")).trim();
+      const description = String(formData.get("description")).trim();
+      const rawLink = String(formData.get("link")).trim();
+      const rawImage = String(formData.get("image")).trim();
+      const nameField = document.getElementById("nameField");
+      const descriptionField = document.getElementById("descriptionField");
+      const linkField = document.getElementById("linkField");
+      const imageField = document.getElementById("imageField");
+
+      nameField.setCustomValidity(name ? "" : "Saisis un nom.");
+      descriptionField.setCustomValidity(description ? "" : "Saisis une description.");
+      linkField.setCustomValidity(rawLink && !sanitizeLaunchUrl(rawLink) ? "Utilise un lien http, https, steam ou file valide." : "");
+      imageField.setCustomValidity(rawImage && !sanitizeImageUrl(rawImage) ? "Utilise une image http, https ou un chemin relatif valide." : "");
+      if (!appForm.checkValidity()) {
+        appForm.reportValidity();
+        return;
+      }
+
+      const slug = normalizeSearch(name).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "application";
       const app = normalizeApp({
-        id: editingId || `${Date.now()}-${name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+        id: editingId || `${Date.now()}-${slug}`,
         name,
         category: String(formData.get("category")).trim() || "Autre",
-        description: String(formData.get("description")).trim(),
+        description,
         pitch: String(formData.get("pitch")).trim(),
-        link: String(formData.get("link")).trim(),
-        image: String(formData.get("image")).trim(),
+        link: rawLink,
+        image: rawImage,
         icon: String(formData.get("icon")).trim(),
         tags: String(formData.get("tags")).split(",").map((tag) => tag.trim()).filter(Boolean),
         accent: String(formData.get("accent")).trim() || "#70d6ff",
@@ -1433,8 +1708,24 @@
       checkOnlineStatus();
     });
 
+    ["nameField", "descriptionField", "linkField", "imageField"].forEach((id) => {
+      document.getElementById(id).addEventListener("input", (event) => event.currentTarget.setCustomValidity(""));
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k") {
+        event.preventDefault();
+        searchInput.focus();
+        searchInput.select();
+      }
+    });
+
     render();
     checkOnlineStatus();
+
+    if ("serviceWorker" in navigator && location.protocol !== "file:") {
+      window.addEventListener("load", () => navigator.serviceWorker.register("/sw.js").catch((error) => console.warn("Service worker indisponible:", error)));
+    }
   </script>
 </body>
 </html>
