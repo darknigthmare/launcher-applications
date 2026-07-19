@@ -1,10 +1,11 @@
-const CACHE_NAME = "launcher-shell-v2";
+const CACHE_NAME = "launcher-shell-v3";
 const APP_SHELL = [
   "/",
   "/index.html",
   "/manifest.webmanifest",
   "/assets/launcher-icon.svg",
   "/assets/previews/adhd-rpg.png",
+  "/assets/previews/another-day-z.png",
   "/assets/previews/apertire-enrichment-os.png",
   "/assets/previews/budgetia.png",
   "/assets/previews/cainos.png",
@@ -20,7 +21,9 @@ const APP_SHELL = [
   "/assets/previews/shadow-codec-ops.png",
   "/assets/previews/umbrella-hive-manager.png",
   "/assets/previews/xenomorph-tamagotchi.png",
-  "/assets/previews/xion-operator-node.png"
+  "/assets/previews/xion-operator-node.png",
+  "/assets/previews/yautja-la-longue-chasse.png",
+  "/assets/previews/yomi-no-kage.png"
 ];
 
 self.addEventListener("install", (event) => {
