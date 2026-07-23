@@ -379,11 +379,13 @@
 
     .app-image {
       position: relative;
+      overflow: hidden;
       background:
         linear-gradient(135deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.42)),
         var(--card-image);
       background-position: center;
       background-size: cover;
+      transition: background-image 220ms ease;
     }
 
     .app-topbar {
@@ -397,17 +399,57 @@
     }
 
     .app-icon {
-      min-width: 42px;
+      width: 42px;
       height: 42px;
-      padding: 0 9px;
       border: 1px solid rgba(255, 255, 255, 0.24);
       border-radius: 8px;
       display: grid;
       place-items: center;
-      color: #101214;
-      background: var(--accent-2);
+      color: var(--accent-2);
+      background: rgba(6, 9, 12, 0.82);
       font-weight: 900;
       box-shadow: 0 10px 26px rgba(0, 0, 0, 0.32);
+      backdrop-filter: blur(14px);
+    }
+
+    .app-icon svg {
+      width: 26px;
+      height: 26px;
+      display: block;
+    }
+
+    .media-dots {
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+      z-index: 2;
+      display: flex;
+      gap: 6px;
+      padding: 5px 7px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.56);
+      backdrop-filter: blur(14px);
+    }
+
+    .media-dot {
+      width: 8px;
+      height: 8px;
+      border: 0;
+      border-radius: 50%;
+      padding: 0;
+      background: rgba(255, 255, 255, 0.38);
+      cursor: pointer;
+      transition: transform 160ms ease, background 160ms ease;
+    }
+
+    .media-dot:hover,
+    .media-dot:focus-visible {
+      transform: scale(1.25);
+    }
+
+    .media-dot.active {
+      background: var(--accent-2);
     }
 
     .status-pill {
@@ -512,12 +554,54 @@
       aspect-ratio: 16 / 10;
       border-radius: 8px;
       border: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
       background:
         linear-gradient(135deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.42)),
         var(--detail-image);
       background-position: center;
       background-size: cover;
       margin-bottom: 14px;
+      transition: background-image 220ms ease;
+    }
+
+    .detail-media-controls {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      pointer-events: none;
+    }
+
+    .gallery-arrow {
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 8px;
+      color: var(--text);
+      background: rgba(0, 0, 0, 0.58);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      pointer-events: auto;
+      backdrop-filter: blur(14px);
+    }
+
+    .detail-media-dots {
+      position: absolute;
+      left: 50%;
+      bottom: 10px;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 7px;
+      padding: 6px 8px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.58);
+      pointer-events: auto;
+      backdrop-filter: blur(14px);
     }
 
     .details h2 {
@@ -874,11 +958,15 @@
           <input id="linkField" name="link" placeholder="https://..., steam://..., file:///C:/...">
         </div>
         <div class="field wide">
-          <label for="imageField">Image de fond</label>
+          <label for="presentationField">Image de présentation</label>
+          <input id="presentationField" name="presentation" placeholder="https://... ou chemin local utilisable par le navigateur">
+        </div>
+        <div class="field wide">
+          <label for="imageField">Capture d'écran</label>
           <input id="imageField" name="image" placeholder="https://... ou chemin local utilisable par le navigateur">
         </div>
         <div class="field">
-          <label for="iconField">Icône</label>
+          <label for="iconField">Initiales de secours</label>
           <input id="iconField" name="icon" placeholder="NQ, MB, OS...">
         </div>
         <div class="field">
@@ -926,6 +1014,7 @@
         link: "https://adhd-rpg.vercel.app",
         status: "Vercel",
         accent: "#75d66f",
+        presentation: "assets/presentations/adhd-rpg.png",
         image: "assets/previews/adhd-rpg.png"
       },
       {
@@ -952,6 +1041,7 @@
         link: "https://cainos.vercel.app",
         status: "Vercel",
         accent: "#56f09c",
+        presentation: "assets/presentations/cainos.png",
         image: "assets/previews/cainos.png"
       },
       {
@@ -965,6 +1055,7 @@
         link: "https://la-petite-fiole.vercel.app",
         status: "Vercel",
         accent: "#c084fc",
+        presentation: "assets/presentations/la-petite-fiole.png",
         image: "assets/previews/la-petite-fiole.png"
       },
       {
@@ -991,6 +1082,7 @@
         link: "https://media-gatherer.vercel.app",
         status: "Vercel",
         accent: "#28a8ff",
+        presentation: "assets/presentations/media-gatherer.png",
         image: "assets/previews/media-gatherer.png"
       },
       {
@@ -1004,6 +1096,7 @@
         link: "https://budgetia.vercel.app",
         status: "Vercel",
         accent: "#34d399",
+        presentation: "assets/presentations/budgetia.png",
         image: "assets/previews/budgetia.png"
       },
       {
@@ -1017,6 +1110,7 @@
         link: "https://can-i-eat-it-five.vercel.app",
         status: "Vercel",
         accent: "#f59e0b",
+        presentation: "assets/presentations/can-i-eat-it.png",
         image: "assets/previews/can-i-eat-it.png"
       },
       {
@@ -1069,6 +1163,7 @@
         link: "https://apertire-enrichment-os.vercel.app",
         status: "Vercel",
         accent: "#ff9f43",
+        presentation: "assets/presentations/apertire-enrichment-os.png",
         image: "assets/previews/apertire-enrichment-os.png"
       },
       {
@@ -1134,6 +1229,7 @@
         link: "https://spinframe-three.vercel.app",
         status: "Vercel",
         accent: "#ff5c4d",
+        presentation: "assets/presentations/spinframe.png",
         image: "assets/previews/spinframe.png"
       },
       {
@@ -1173,6 +1269,7 @@
         link: "https://fossil-frontier.vercel.app",
         status: "Vercel",
         accent: "#d9ad67",
+        presentation: "assets/presentations/fossil-frontier.png",
         image: "assets/previews/fossil-frontier.png"
       },
       {
@@ -1212,6 +1309,7 @@
         link: "https://genescan-bioarena.vercel.app",
         status: "Vercel",
         accent: "#5cf2b0",
+        presentation: "assets/presentations/genomescan-bioarena.png",
         image: "assets/previews/genomescan-bioarena.png"
       },
       {
@@ -1264,6 +1362,7 @@
         link: "https://chroma-forge-chi.vercel.app",
         status: "Vercel",
         accent: "#ff5c91",
+        presentation: "assets/presentations/chroma-forge.png",
         image: "assets/previews/chroma-forge.png"
       },
       {
@@ -1316,6 +1415,7 @@
         link: "https://xion-operator-node.vercel.app",
         status: "Vercel",
         accent: "#5df4a7",
+        presentation: "assets/presentations/xion-operator-node.png",
         image: "assets/previews/xion-operator-node.png"
       },
       {
@@ -1344,10 +1444,11 @@
       "Autre": "#d0a2ff"
     };
 
-    const storeKey = "personal-launcher-apps-v6";
+    const storeKey = "personal-launcher-apps-v7";
     const favoriteKey = "personal-launcher-favorites-v1";
     const removedStarterKey = "personal-launcher-removed-starters-v1";
     const allowedLaunchProtocols = new Set(["https:", "http:", "steam:", "file:"]);
+    const appIconIds = new Set(starterApps.map((app) => app.id));
     const stage = document.getElementById("stage");
     const grid = document.getElementById("appGrid");
     const details = document.getElementById("details");
@@ -1372,6 +1473,7 @@
     let sortAscending = true;
     let adminMode = false;
     let editingId = null;
+    const mediaViewById = new Map();
 
     function escapeHtml(value) {
       return String(value ?? "").replace(/[&<>"']/g, (char) => ({
@@ -1430,6 +1532,7 @@
         tags,
         icon: String(source.icon || fallback.icon || initials(name)).trim().slice(0, 5),
         link: sanitizeLaunchUrl(source.link || fallback.link),
+        presentation: sanitizeImageUrl(source.presentation || fallback.presentation || source.image || fallback.image),
         image: sanitizeImageUrl(source.image || fallback.image),
         accent: sanitizeAccent(source.accent || fallback.accent),
         status: String(source.status || fallback.status || "").trim().slice(0, 40)
@@ -1501,13 +1604,29 @@
         .join("") || "AP";
     }
 
-    function cssImage(app) {
-      const image = sanitizeImageUrl(app.image);
+    function mediaImages(app) {
+      const images = [sanitizeImageUrl(app.presentation), sanitizeImageUrl(app.image)].filter(Boolean);
+      return images.filter((image, index) => images.indexOf(image) === index);
+    }
+
+    function currentMediaIndex(app) {
+      const images = mediaImages(app);
+      return Math.min(mediaViewById.get(app.id) || 0, Math.max(images.length - 1, 0));
+    }
+
+    function cssImage(app, index = currentMediaIndex(app)) {
+      const image = mediaImages(app)[index];
       if (image) {
         return `url(${JSON.stringify(image)})`;
       }
 
       return `linear-gradient(135deg, ${sanitizeAccent(app.accent)}, #232a31 52%, #101214)`;
+    }
+
+    function appIconMarkup(app) {
+      if (!appIconIds.has(app.id)) return escapeHtml(app.icon);
+      const href = `assets/app-icons.svg#icon-${app.id}`;
+      return `<svg aria-hidden="true" focusable="false"><use href="${escapeHtml(href)}"></use></svg>`;
     }
 
     function statusLabel(app) {
@@ -1588,38 +1707,58 @@
         selectedId = visibleApps[0].id;
       }
 
-      grid.innerHTML = visibleApps.map((app) => `
-        <article class="app-card ${app.id === selectedId ? "active" : ""}" data-id="${escapeHtml(app.id)}">
-          <button class="card-select" type="button" data-action="select" data-id="${escapeHtml(app.id)}" aria-pressed="${app.id === selectedId}" aria-label="Afficher les détails de ${escapeHtml(app.name)}"></button>
-          <div class="app-image">
-            <div class="app-topbar">
-              <span class="app-icon">${escapeHtml(app.icon)}</span>
-              <span class="status-pill ${statusClass(app)}">${statusLabel(app)}</span>
+      grid.innerHTML = visibleApps.map((app) => {
+        const images = mediaImages(app);
+        const activeMediaIndex = currentMediaIndex(app);
+        return `
+          <article class="app-card ${app.id === selectedId ? "active" : ""}" data-id="${escapeHtml(app.id)}">
+            <button class="card-select" type="button" data-action="select" data-id="${escapeHtml(app.id)}" aria-pressed="${app.id === selectedId}" aria-label="Afficher les détails de ${escapeHtml(app.name)}"></button>
+            <div class="app-image">
+              <div class="app-topbar">
+                <span class="app-icon">${appIconMarkup(app)}</span>
+                <span class="status-pill ${statusClass(app)}">${statusLabel(app)}</span>
+              </div>
+              ${images.length > 1 ? `
+                <div class="media-dots" role="group" aria-label="Visuels de ${escapeHtml(app.name)}">
+                  ${images.map((image, index) => `
+                    <button
+                      class="media-dot ${index === activeMediaIndex ? "active" : ""}"
+                      type="button"
+                      data-action="media"
+                      data-id="${escapeHtml(app.id)}"
+                      data-index="${index}"
+                      title="${index === 0 ? "Illustration" : "Capture d'écran"}"
+                      aria-label="Voir ${index === 0 ? "l'illustration" : "la capture d'écran"} de ${escapeHtml(app.name)}"
+                      aria-pressed="${index === activeMediaIndex}"
+                    ></button>
+                  `).join("")}
+                </div>
+              ` : ""}
+              <div class="card-actions">
+                <button class="mini-action favorite-button ${favorites.has(app.id) ? "active" : ""}" type="button" data-action="favorite" data-id="${escapeHtml(app.id)}" title="Favori" aria-label="${favorites.has(app.id) ? "Retirer" : "Ajouter"} ${escapeHtml(app.name)} ${favorites.has(app.id) ? "des" : "aux"} favoris" aria-pressed="${favorites.has(app.id)}">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="${favorites.has(app.id) ? "currentColor" : "none"}" aria-hidden="true">
+                    <path d="m12 3 2.9 5.88 6.49.94-4.7 4.58 1.11 6.46L12 17.81l-5.8 3.05 1.11-6.46-4.7-4.58 6.49-.94L12 3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <button class="mini-action admin-only" type="button" data-action="edit" data-id="${escapeHtml(app.id)}" title="Modifier" aria-label="Modifier ${escapeHtml(app.name)}">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M4 20h4L18.5 9.5a2.12 2.12 0 0 0-3-3L5 17v3Zm12-15 3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
             </div>
-            <div class="card-actions">
-              <button class="mini-action favorite-button ${favorites.has(app.id) ? "active" : ""}" type="button" data-action="favorite" data-id="${escapeHtml(app.id)}" title="Favori" aria-label="${favorites.has(app.id) ? "Retirer" : "Ajouter"} ${escapeHtml(app.name)} ${favorites.has(app.id) ? "des" : "aux"} favoris" aria-pressed="${favorites.has(app.id)}">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="${favorites.has(app.id) ? "currentColor" : "none"}" aria-hidden="true">
-                  <path d="m12 3 2.9 5.88 6.49.94-4.7 4.58 1.11 6.46L12 17.81l-5.8 3.05 1.11-6.46-4.7-4.58 6.49-.94L12 3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-                </svg>
-              </button>
-              <button class="mini-action admin-only" type="button" data-action="edit" data-id="${escapeHtml(app.id)}" title="Modifier" aria-label="Modifier ${escapeHtml(app.name)}">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M4 20h4L18.5 9.5a2.12 2.12 0 0 0-3-3L5 17v3Zm12-15 3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </button>
+            <div class="app-body">
+              <div class="tag-row">
+                <span class="tag">${escapeHtml(app.category)}</span>
+                ${(app.tags || []).slice(0, 2).map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}
+              </div>
+              <h3>${escapeHtml(app.name)}</h3>
+              <p class="pitch">${escapeHtml(app.pitch)}</p>
+              <p>${escapeHtml(app.description)}</p>
             </div>
-          </div>
-          <div class="app-body">
-            <div class="tag-row">
-              <span class="tag">${escapeHtml(app.category)}</span>
-              ${(app.tags || []).slice(0, 2).map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}
-            </div>
-            <h3>${escapeHtml(app.name)}</h3>
-            <p class="pitch">${escapeHtml(app.pitch)}</p>
-            <p>${escapeHtml(app.description)}</p>
-          </div>
-        </article>
-      `).join("");
+          </article>
+        `;
+      }).join("");
 
       grid.querySelectorAll(".app-card").forEach((card, index) => {
         const app = visibleApps[index];
@@ -1637,9 +1776,14 @@
         return;
       }
 
-      document.documentElement.style.setProperty("--active-image", cssImage(app));
+      const images = mediaImages(app);
+      const activeMediaIndex = currentMediaIndex(app);
+      const previousMediaIndex = (activeMediaIndex - 1 + images.length) % images.length;
+      const nextMediaIndex = (activeMediaIndex + 1) % images.length;
+
+      document.documentElement.style.setProperty("--active-image", cssImage(app, 0));
       document.documentElement.style.setProperty("--accent", sanitizeAccent(app.accent));
-      details.style.setProperty("--detail-image", cssImage(app));
+      details.style.setProperty("--detail-image", cssImage(app, activeMediaIndex));
       details.setAttribute("aria-label", `Détails de ${app.name}`);
 
       const openControl = app.link
@@ -1647,7 +1791,34 @@
         : `<button class="primary-button" type="button" disabled>Sans lien</button>`;
 
       details.innerHTML = `
-        <div class="hero-preview"></div>
+        <div class="hero-preview" role="img" aria-label="${activeMediaIndex === 0 ? "Illustration" : "Capture d'écran"} de ${escapeHtml(app.name)}">
+          ${images.length > 1 ? `
+            <div class="detail-media-controls">
+              <button class="gallery-arrow" type="button" data-detail-media="${previousMediaIndex}" title="Image précédente" aria-label="Voir l'image précédente">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="m15 18-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <button class="gallery-arrow" type="button" data-detail-media="${nextMediaIndex}" title="Image suivante" aria-label="Voir l'image suivante">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <div class="detail-media-dots" role="group" aria-label="Visuels de ${escapeHtml(app.name)}">
+                ${images.map((image, index) => `
+                  <button
+                    class="media-dot ${index === activeMediaIndex ? "active" : ""}"
+                    type="button"
+                    data-detail-media="${index}"
+                    title="${index === 0 ? "Illustration" : "Capture d'écran"}"
+                    aria-label="Voir ${index === 0 ? "l'illustration" : "la capture d'écran"}"
+                    aria-pressed="${index === activeMediaIndex}"
+                  ></button>
+                `).join("")}
+              </div>
+            </div>
+          ` : ""}
+        </div>
         <div class="tag-row">
           <span class="tag">${escapeHtml(app.category)}</span>
           ${(app.tags || []).map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}
@@ -1684,14 +1855,14 @@
     function renderShowcase(app = apps.find((item) => item.id === selectedId)) {
       if (!app) return;
       showcaseTitle.textContent = app.name;
-      showcaseBody.style.setProperty("--showcase-image", cssImage(app));
+      showcaseBody.style.setProperty("--showcase-image", cssImage(app, 0));
       const openControl = app.link
         ? `<a class="primary-button" href="${escapeHtml(app.link)}" target="_blank" rel="noopener noreferrer">Ouvrir</a>`
         : `<button class="primary-button" type="button" disabled>Sans lien</button>`;
       showcaseBody.innerHTML = `
         <div class="showcase-image"></div>
         <div class="showcase-copy">
-          <div class="app-icon">${escapeHtml(app.icon)}</div>
+          <div class="app-icon">${appIconMarkup(app)}</div>
           <div class="tag-row">
             <span class="tag">${escapeHtml(app.category)}</span>
             ${(app.tags || []).map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}
@@ -1715,12 +1886,13 @@
       document.getElementById("descriptionField").value = app?.description || "";
       document.getElementById("pitchField").value = app?.pitch || "";
       document.getElementById("linkField").value = app?.link || "";
+      document.getElementById("presentationField").value = app?.presentation || "";
       document.getElementById("imageField").value = app?.image || "";
       document.getElementById("iconField").value = app?.icon || "";
       document.getElementById("tagsField").value = (app?.tags || []).join(", ");
       document.getElementById("accentField").value = app?.accent || "#70d6ff";
       document.getElementById("statusField").value = app?.status || "";
-      ["nameField", "descriptionField", "linkField", "imageField"].forEach((id) => document.getElementById(id).setCustomValidity(""));
+      ["nameField", "descriptionField", "linkField", "presentationField", "imageField"].forEach((id) => document.getElementById(id).setCustomValidity(""));
       appDialog.showModal();
     }
 
@@ -1813,6 +1985,11 @@
         event.stopPropagation();
         const app = apps.find((item) => item.id === actionButton.dataset.id);
         if (!app) return;
+        if (actionButton.dataset.action === "media") {
+          mediaViewById.set(app.id, Number(actionButton.dataset.index) || 0);
+          renderGrid();
+          return;
+        }
         if (actionButton.dataset.action === "favorite") toggleFavorite(app.id);
         if (actionButton.dataset.action === "edit") openEditor(app);
         if (actionButton.dataset.action === "select") selectApp(app.id, true);
@@ -1829,6 +2006,12 @@
 
     details.addEventListener("click", (event) => {
       const selectedApp = apps.find((app) => app.id === selectedId);
+      const mediaButton = event.target.closest("[data-detail-media]");
+      if (mediaButton && selectedApp) {
+        mediaViewById.set(selectedApp.id, Number(mediaButton.dataset.detailMedia) || 0);
+        renderGrid();
+        return;
+      }
       if (event.target.closest("#detailFavoriteButton") && selectedApp) {
         toggleFavorite(selectedApp.id);
         return;
@@ -1909,15 +2092,18 @@
       const name = String(formData.get("name")).trim();
       const description = String(formData.get("description")).trim();
       const rawLink = String(formData.get("link")).trim();
+      const rawPresentation = String(formData.get("presentation")).trim();
       const rawImage = String(formData.get("image")).trim();
       const nameField = document.getElementById("nameField");
       const descriptionField = document.getElementById("descriptionField");
       const linkField = document.getElementById("linkField");
+      const presentationField = document.getElementById("presentationField");
       const imageField = document.getElementById("imageField");
 
       nameField.setCustomValidity(name ? "" : "Saisis un nom.");
       descriptionField.setCustomValidity(description ? "" : "Saisis une description.");
       linkField.setCustomValidity(rawLink && !sanitizeLaunchUrl(rawLink) ? "Utilise un lien http, https, steam ou file valide." : "");
+      presentationField.setCustomValidity(rawPresentation && !sanitizeImageUrl(rawPresentation) ? "Utilise une image http, https ou un chemin relatif valide." : "");
       imageField.setCustomValidity(rawImage && !sanitizeImageUrl(rawImage) ? "Utilise une image http, https ou un chemin relatif valide." : "");
       if (!appForm.checkValidity()) {
         appForm.reportValidity();
@@ -1932,6 +2118,7 @@
         description,
         pitch: String(formData.get("pitch")).trim(),
         link: rawLink,
+        presentation: rawPresentation,
         image: rawImage,
         icon: String(formData.get("icon")).trim(),
         tags: String(formData.get("tags")).split(",").map((tag) => tag.trim()).filter(Boolean),
@@ -1950,7 +2137,7 @@
       checkOnlineStatus();
     });
 
-    ["nameField", "descriptionField", "linkField", "imageField"].forEach((id) => {
+    ["nameField", "descriptionField", "linkField", "presentationField", "imageField"].forEach((id) => {
       document.getElementById(id).addEventListener("input", (event) => event.currentTarget.setCustomValidity(""));
     });
 

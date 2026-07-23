@@ -1,9 +1,22 @@
-const CACHE_NAME = "launcher-shell-v4";
+const CACHE_NAME = "launcher-shell-v5";
 const APP_SHELL = [
   "/",
   "/index.html",
   "/manifest.webmanifest",
   "/assets/launcher-icon.svg",
+  "/assets/app-icons.svg",
+  "/assets/presentations/adhd-rpg.png",
+  "/assets/presentations/apertire-enrichment-os.png",
+  "/assets/presentations/budgetia.png",
+  "/assets/presentations/cainos.png",
+  "/assets/presentations/can-i-eat-it.png",
+  "/assets/presentations/chroma-forge.png",
+  "/assets/presentations/fossil-frontier.png",
+  "/assets/presentations/genomescan-bioarena.png",
+  "/assets/presentations/la-petite-fiole.png",
+  "/assets/presentations/media-gatherer.png",
+  "/assets/presentations/spinframe.png",
+  "/assets/presentations/xion-operator-node.png",
   "/assets/previews/adhd-rpg.png",
   "/assets/previews/another-day-z.png",
   "/assets/previews/apertire-enrichment-os.png",
