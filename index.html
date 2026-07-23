@@ -300,11 +300,15 @@
 
     .toolbar {
       display: flex;
-      flex-wrap: wrap;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
+      flex-wrap: wrap;
       gap: 14px;
       margin-bottom: 18px;
+    }
+
+    .toolbar > div:first-child {
+      min-width: 0;
     }
 
     .toolbar h2 {
@@ -316,8 +320,12 @@
     .toolbar-actions {
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
       gap: 8px;
       flex: 0 0 auto;
+      max-width: 100%;
+      margin-left: auto;
     }
 
     .icon-button {
@@ -700,18 +708,31 @@
         max-height: none;
       }
 
+      .category-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .category-button {
+        padding-inline: 9px;
+      }
+
       .toolbar {
         align-items: flex-start;
         flex-direction: column;
       }
 
       .toolbar-actions {
+        display: grid;
+        grid-template-columns: 40px minmax(0, 1fr);
         width: 100%;
-        flex-wrap: wrap;
       }
 
       .toolbar-actions .ghost-button {
-        flex: 1;
+        width: 100%;
+      }
+
+      #showcaseButton {
+        grid-column: 1 / -1;
       }
 
       .grid {
@@ -896,7 +917,7 @@
     const starterApps = [
       {
         id: "adhd-rpg",
-        name: "NeuroQuest — ADHD RPG",
+        name: "NeuroQuest",
         category: "Applications",
         description: "Un RPG d'organisation qui transforme les taches, routines et moments de focus en progression lisible.",
         pitch: "NeuroQuest donne une forme ludique aux journees difficiles sans perdre le cote utile.",
@@ -909,12 +930,12 @@
       },
       {
         id: "multiverse-breach",
-        name: "Multiverse Breach",
+        name: "Brèche Multiverselle",
         category: "Jeux",
         description: "Une experience de faille dimensionnelle qui installe vite une tension de science-fiction.",
         pitch: "Un portail, une anomalie, et l'envie de comprendre ce qui traverse.",
         tags: ["Jeu", "Sci-fi", "Multivers", "Narratif"],
-        icon: "MB",
+        icon: "BM",
         link: "https://multiverse-breach.vercel.app",
         status: "Vercel",
         accent: "#9b7cff",
@@ -922,12 +943,12 @@
       },
       {
         id: "cainos",
-        name: "CainOS",
+        name: "C&A Mainframe Terminal",
         category: "Simulation",
         description: "Un terminal narratif sombre, pense comme une console d'acces a un systeme qui sait trop de choses.",
         pitch: "Un mainframe de lore a explorer comme une piece fermee dont chaque commande ouvre une porte.",
         tags: ["Terminal", "Lore", "Simulation", "Horreur"],
-        icon: "CO",
+        icon: "CA",
         link: "https://cainos.vercel.app",
         status: "Vercel",
         accent: "#56f09c",
@@ -948,7 +969,7 @@
       },
       {
         id: "manga-finder",
-        name: "Manga Finder",
+        name: "MangaFinder",
         category: "Applications",
         description: "Un moteur de recherche contextuel pour trouver des mangas a partir d'une ambiance, d'une scene ou d'une envie precise.",
         pitch: "Decris l'histoire que tu cherches, laisse les sources faire le tri.",
@@ -1000,12 +1021,12 @@
       },
       {
         id: "xenomorph-tamagotchi",
-        name: "Xenomorph Tamagotchi",
-        category: "Jeux",
-        description: "Un portail Weyland-Yutani pour gerer un specimen, choisir un profil corporate et survivre aux consequences.",
-        pitch: "Un compagnon de laboratoire qui a besoin d'attention, de protocole et d'un plan d'urgence.",
-        tags: ["Sci-fi", "Tamagotchi", "Gestion", "Horreur"],
-        icon: "XT",
+        name: "MU/TH/UR 6000",
+        category: "Simulation",
+        description: "Un mainframe Weyland-Yutani pour administrer un site, gerer un specimen et piloter les protocoles de recherche.",
+        pitch: "Une console corporate complete ou chaque experience augmente autant les donnees que le risque.",
+        tags: ["Sci-fi", "Mainframe", "Gestion", "Horreur"],
+        icon: "M6",
         link: "https://xenomorph-tamagotchi.vercel.app",
         status: "Vercel",
         accent: "#9ca3af",
@@ -1052,7 +1073,7 @@
       },
       {
         id: "umbrella-hive-manager",
-        name: "Umbrella Hive Manager",
+        name: "Red Queen Hive OS",
         category: "Simulation",
         description: "Une console Red Queen pour surveiller la Ruche, ses sites, ses capteurs biologiques et ses protocoles de securite.",
         pitch: "Un centre de controle corporate froid, verrouille, et pas tout a fait rassurant.",
@@ -1090,12 +1111,194 @@
         image: "assets/previews/combine-administrator-simulator.png"
       },
       {
+        id: "sg2d-expedition",
+        name: "SG2D Expedition",
+        category: "Jeux",
+        description: "Une expedition tactique en 2.5D avec campagne, exploration interstellaire et progression d'equipe.",
+        pitch: "Monte une nouvelle expedition et pars franchir l'inconnu depuis un poste de commandement epure.",
+        tags: ["Sci-fi", "Exploration", "Tactique", "2.5D"],
+        icon: "SG",
+        link: "https://sg2d.vercel.app",
+        status: "Vercel",
+        accent: "#72d4d2",
+        image: "assets/previews/sg2d-expedition.png"
+      },
+      {
+        id: "spinframe",
+        name: "SpinFrame",
+        category: "Création",
+        description: "Un studio creatif ou le mouvement d'une table tournante transforme les gestes en dessins et animations.",
+        pitch: "Choisis un outil, pose le crayon, puis laisse la rotation construire une oeuvre impossible a tracer autrement.",
+        tags: ["Dessin", "Animation", "Rythme", "Création"],
+        icon: "SF",
+        link: "https://spinframe-three.vercel.app",
+        status: "Vercel",
+        accent: "#ff5c4d",
+        image: "assets/previews/spinframe.png"
+      },
+      {
+        id: "vortex-command",
+        name: "Vortex Command",
+        category: "Jeux",
+        description: "Un RTS de defense mondiale ou forces, logistique et recherche affrontent un kaiju qui s'adapte.",
+        pitch: "Choisis une doctrine, mobilise les villes et lance le Protocole Leviathan avant la rupture.",
+        tags: ["RTS", "Kaiju", "Stratégie", "Défense"],
+        icon: "VC",
+        link: "https://vortex-command-darknigthmares-projects.vercel.app",
+        status: "Vercel protégé",
+        accent: "#29d7e8",
+        image: "assets/previews/vortex-command.png"
+      },
+      {
+        id: "ragtime-rumble",
+        name: "Ragtime Rumble",
+        category: "Jeux",
+        description: "Un boss rush musical qui melange combat, danse, riffs, memoire, tournee et duo local.",
+        pitch: "Choisis ton tempo, leve le rideau et bats chaque tete d'affiche sans quitter la mesure.",
+        tags: ["Rythme", "Boss Rush", "Cartoon", "Coop"],
+        icon: "RR",
+        link: "https://ragtime-rumble-complete-tour.vercel.app",
+        status: "Vercel",
+        accent: "#d44736",
+        image: "assets/previews/ragtime-rumble.png"
+      },
+      {
+        id: "fossil-frontier",
+        name: "Fossil Frontier",
+        category: "Jeux",
+        description: "Un jeu de paleontologie complet avec expeditions, fouilles, laboratoire, musee, campagne et cooperation.",
+        pitch: "Deterre le passe, restaure chaque squelette et transforme tes decouvertes en grand musee.",
+        tags: ["Paléontologie", "Gestion", "Exploration", "Musée"],
+        icon: "FF",
+        link: "https://fossil-frontier.vercel.app",
+        status: "Vercel",
+        accent: "#d9ad67",
+        image: "assets/previews/fossil-frontier.png"
+      },
+      {
+        id: "kaiju-rupture",
+        name: "KAIJU // RUPTURE",
+        category: "Jeux",
+        description: "Un jeu de destruction urbaine en 3D avec plusieurs villes, mutations, modes d'assaut et chaos procedural.",
+        pitch: "Tu n'es pas le heros de la ville : tu es la catastrophe qui la traverse.",
+        tags: ["Kaiju", "Destruction", "3D", "Arcade"],
+        icon: "KR",
+        link: "https://kaiju-rupture.vercel.app",
+        status: "Vercel",
+        accent: "#c7ff3d",
+        image: "assets/previews/kaiju-rupture.png"
+      },
+      {
+        id: "jurassic-arsenal",
+        name: "Jurassic Arsenal",
+        category: "Jeux",
+        description: "Une arene 3D ou des dinosaures lourdement armes affrontent six vagues avec des styles de combat distincts.",
+        pitch: "Choisis ton predateur, monte ton arsenal et nettoie l'arene.",
+        tags: ["Dinosaures", "Arène", "3D", "Action"],
+        icon: "JA",
+        link: "https://jurassic-arsenal.vercel.app",
+        status: "Vercel",
+        accent: "#b7ff3c",
+        image: "assets/previews/jurassic-arsenal.png"
+      },
+      {
+        id: "genomescan-bioarena",
+        name: "GenomeScan: BioArena",
+        category: "Jeux",
+        description: "Un scanner genetique qui transforme codes-barres et QR codes en creatures a combattre, capturer et faire evoluer.",
+        pitch: "Un code devient un ADN procedural, puis une nouvelle recrue pour ton bestiaire.",
+        tags: ["Scanner", "Créatures", "Combat", "Collection"],
+        icon: "GS",
+        link: "https://genescan-bioarena.vercel.app",
+        status: "Vercel",
+        accent: "#5cf2b0",
+        image: "assets/previews/genomescan-bioarena.png"
+      },
+      {
+        id: "triarche-ciel-rouge",
+        name: "TRIARCHE : Ciel Rouge",
+        category: "Jeux",
+        description: "Un jeu d'action et de survie asymetrique qui raconte une invasion depuis les camps alien et humain.",
+        pitch: "Pilote les machines d'invasion ou guide la resistance jusqu'au dernier signal.",
+        tags: ["Action", "Survie", "Campagne", "Asymétrique"],
+        icon: "TC",
+        link: "https://triarche-ciel-rouge.vercel.app",
+        status: "Vercel",
+        accent: "#70e0cc",
+        image: "assets/previews/triarche-ciel-rouge.png"
+      },
+      {
+        id: "hive-ascension",
+        name: "Hive Ascension",
+        category: "Jeux",
+        description: "Un cycle evolutif persistant qui traverse chaque metamorphose, de l'oeuf jusqu'a la reine et au RTS organique.",
+        pitch: "Survis, mute, conserve tes acquis et prends progressivement le controle du Hive.",
+        tags: ["Évolution", "Survie", "RTS", "Horreur"],
+        icon: "HA",
+        link: "https://hive-ascension.vercel.app",
+        status: "Vercel",
+        accent: "#b3ff2f",
+        image: "assets/previews/hive-ascension.png"
+      },
+      {
+        id: "snail-dette-immortelle",
+        name: "S.N.A.I.L. - La Dette Immortelle",
+        category: "Jeux",
+        description: "Un survival horror complet inspire du mythe de l'escargot immortel, avec campagne, survie et coop locale.",
+        pitch: "Tu as accepte la fortune et l'immortalite. La creature, elle, n'a jamais oublie ta position.",
+        tags: ["Survival Horror", "Campagne", "Coop", "Inévitable"],
+        icon: "SN",
+        link: "https://snail-la-dette-immortelle.vercel.app",
+        status: "Vercel",
+        accent: "#e45050",
+        image: "assets/previews/snail-dette-immortelle.png"
+      },
+      {
+        id: "chroma-forge",
+        name: "Chroma Forge",
+        category: "Création",
+        description: "Un atelier de fusion, collection et maitrise des couleurs avec defis, commandes et palettes personnelles.",
+        pitch: "Melange les pigments, reproduis des nuances et forge ta propre collection chromatique.",
+        tags: ["Couleur", "Création", "Atelier", "Collection"],
+        icon: "CF",
+        link: "https://chroma-forge-chi.vercel.app",
+        status: "Vercel",
+        accent: "#ff5c91",
+        image: "assets/previews/chroma-forge.png"
+      },
+      {
+        id: "yautja-la-longue-chasse",
+        name: "Yautja : La Longue Chasse",
+        category: "Jeux",
+        description: "Un jeu d'action 2D de chasse interstellaire, d'honneur, d'arsenal et de trophees.",
+        pitch: "Etudie une proie digne, choisis l'arme juste et reviens avec un trophee.",
+        tags: ["Action 2D", "Chasse", "Sci-fi", "Trophées"],
+        icon: "YC",
+        link: "https://yautja-la-longue-chasse.vercel.app",
+        status: "Vercel",
+        accent: "#e95132",
+        image: "assets/previews/yautja-la-longue-chasse.png"
+      },
+      {
+        id: "yomi-no-kage",
+        name: "Yomi no Kage - L'Ombre du Shogun",
+        category: "Jeux",
+        description: "Une chronique pixel-art qui alterne plateforme 2D et FPS retro dans un Japon feodal ravage par les morts.",
+        pitch: "Quand l'armee ne vient pas, l'ombre du shogun tranche l'impur.",
+        tags: ["Pixel Art", "FPS rétro", "Japon", "Horreur"],
+        icon: "YK",
+        link: "https://fait-un-jeux-pixel-qui-alterne.vercel.app",
+        status: "Vercel",
+        accent: "#c23b3b",
+        image: "assets/previews/yomi-no-kage.png"
+      },
+      {
         id: "iron-tempest",
         name: "Iron Tempest",
         category: "Jeux",
-        description: "Un prototype de combat de mechas jouable au clavier et a la souris, avec blindage a briser, point faible a exposer et arsenal a gerer.",
-        pitch: "Pilote Raven-07, neutralise le Titan Vorux et survis a l'expedition du secteur B-2.",
-        tags: ["Mecha", "Combat", "Sci-fi", "Prototype"],
+        description: "Un prototype narratif de combat en mecha entre tempete polaire, briefing tactique et intervention lourde.",
+        pitch: "Le relais B-2 s'est tu. Tempest est la seule unite encore dans la fenetre meteo.",
+        tags: ["Mecha", "Combat", "Narratif", "Sci-fi"],
         icon: "IT",
         link: "https://iron-tempest.vercel.app",
         status: "Vercel",
@@ -1106,27 +1309,14 @@
         id: "xion-operator-node",
         name: "XION // Operator Node",
         category: "Simulation",
-        description: "Une console tactique de resistance ou l'operateur supervise le vaisseau Mnemosyne, l'equipage, les missions et les lignes d'extraction.",
-        pitch: "Prepare l'operatif, limite la detection des Machines et ramene l'equipe du Voile.",
-        tags: ["Tactique", "Resistance", "Co-op", "Simulation"],
-        icon: "XO",
+        description: "Un noeud operateur pour surveiller un vaisseau, son equipage, ses missions et un reseau de resistance enfoui.",
+        pitch: "Lis le signal fantome, prepare l'equipe et garde Mnemosyne hors de portee.",
+        tags: ["Terminal", "Sci-fi", "Équipage", "Simulation"],
+        icon: "XN",
         link: "https://xion-operator-node.vercel.app",
         status: "Vercel",
-        accent: "#62f5ae",
+        accent: "#5df4a7",
         image: "assets/previews/xion-operator-node.png"
-      },
-      {
-        id: "yomi-no-kage",
-        name: "Yomi no Kage — L'Ombre du Shogun",
-        category: "Jeux",
-        description: "Un chapitre d'action pixel-art qui alterne combat 2D et FPS retro dans un Japon feodal ravage par une epidemie de morts-vivants.",
-        pitch: "Incarne Akio, traverse villages et sanctuaires, et affronte l'ombre qui devore le pays.",
-        tags: ["Pixel art", "Japon feodal", "Action", "Horreur"],
-        icon: "YK",
-        link: "https://fait-un-jeux-pixel-qui-alterne.vercel.app",
-        status: "Vercel",
-        accent: "#dc3545",
-        image: "assets/previews/yomi-no-kage.png"
       },
       {
         id: "another-day-z",
@@ -1140,19 +1330,6 @@
         status: "Vercel",
         accent: "#c59a55",
         image: "assets/previews/another-day-z.png"
-      },
-      {
-        id: "yautja-la-longue-chasse",
-        name: "Yautja : La Longue Chasse",
-        category: "Jeux",
-        description: "Un jeu d'action 2D de chasse interstellaire avec vaisseau-hub, arsenal, contrats, progression et trois missions completes.",
-        pitch: "Prepare ton chasseur, choisis une proie digne et reviens avec un trophee — ou ne reviens pas.",
-        tags: ["Action", "Chasse", "Sci-fi", "Fan game"],
-        icon: "YL",
-        link: "https://yautja-la-longue-chasse.vercel.app",
-        status: "Vercel",
-        accent: "#e65a35",
-        image: "assets/previews/yautja-la-longue-chasse.png"
       }
     ];
 
@@ -1167,7 +1344,7 @@
       "Autre": "#d0a2ff"
     };
 
-    const storeKey = "personal-launcher-apps-v5";
+    const storeKey = "personal-launcher-apps-v6";
     const favoriteKey = "personal-launcher-favorites-v1";
     const removedStarterKey = "personal-launcher-removed-starters-v1";
     const allowedLaunchProtocols = new Set(["https:", "http:", "steam:", "file:"]);
