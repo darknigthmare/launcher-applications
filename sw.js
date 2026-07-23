@@ -1,4 +1,4 @@
-const CACHE_NAME = "launcher-shell-v6";
+const CACHE_NAME = "launcher-shell-v7";
 const APP_SHELL = [
   "/",
   "/index.html",
@@ -16,6 +16,7 @@ const APP_SHELL = [
   "/assets/presentations/fossil-frontier.png",
   "/assets/presentations/genomescan-bioarena.png",
   "/assets/presentations/hellbound-hotel-manager.png",
+  "/assets/presentations/iron-tempest.png",
   "/assets/presentations/jigsaw-mastermind.png",
   "/assets/presentations/jurassic-arsenal.png",
   "/assets/presentations/la-petite-fiole.png",
@@ -27,10 +28,13 @@ const APP_SHELL = [
   "/assets/presentations/shadow-codec-ops.png",
   "/assets/presentations/snail-dette-immortelle.png",
   "/assets/presentations/spinframe.png",
+  "/assets/presentations/triarche-ciel-rouge.png",
   "/assets/presentations/umbrella-hive-manager.png",
   "/assets/presentations/vortex-command.png",
   "/assets/presentations/xenomorph-tamagotchi.png",
   "/assets/presentations/xion-operator-node.png",
+  "/assets/presentations/yautja-la-longue-chasse.png",
+  "/assets/presentations/yomi-no-kage.png",
   "/assets/previews/adhd-rpg.png",
   "/assets/previews/another-day-z.png",
   "/assets/previews/apertire-enrichment-os.png",
