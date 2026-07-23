@@ -1028,6 +1028,7 @@
         link: "https://multiverse-breach.vercel.app",
         status: "Vercel",
         accent: "#9b7cff",
+        presentation: "assets/presentations/multiverse-breach.png",
         image: "assets/previews/multiverse-breach.png"
       },
       {
@@ -1069,6 +1070,7 @@
         link: "https://manga-finder-orcin.vercel.app",
         status: "Vercel",
         accent: "#22d3ee",
+        presentation: "assets/presentations/manga-finder.png",
         image: "assets/previews/manga-finder.png"
       },
       {
@@ -1124,6 +1126,7 @@
         link: "https://xenomorph-tamagotchi.vercel.app",
         status: "Vercel",
         accent: "#9ca3af",
+        presentation: "assets/presentations/xenomorph-tamagotchi.png",
         image: "assets/previews/xenomorph-tamagotchi.png"
       },
       {
@@ -1137,6 +1140,7 @@
         link: "https://shadow-codec-ops.vercel.app",
         status: "Vercel",
         accent: "#38ef7d",
+        presentation: "assets/presentations/shadow-codec-ops.png",
         image: "assets/previews/shadow-codec-ops.png"
       },
       {
@@ -1150,6 +1154,7 @@
         link: "https://jigsaw-mastermind.vercel.app",
         status: "Vercel",
         accent: "#ef4444",
+        presentation: "assets/presentations/jigsaw-mastermind.png",
         image: "assets/previews/jigsaw-mastermind.png"
       },
       {
@@ -1177,6 +1182,7 @@
         link: "https://umbrella-hive-manager.vercel.app",
         status: "Vercel",
         accent: "#e11d48",
+        presentation: "assets/presentations/umbrella-hive-manager.png",
         image: "assets/previews/umbrella-hive-manager.png"
       },
       {
@@ -1190,6 +1196,7 @@
         link: "https://hellbound-hotel-manager.vercel.app",
         status: "Vercel",
         accent: "#ff5d73",
+        presentation: "assets/presentations/hellbound-hotel-manager.png",
         image: "assets/previews/hellbound-hotel-manager.png"
       },
       {
@@ -1203,6 +1210,7 @@
         link: "https://combine-administrator-simulator.vercel.app",
         status: "Vercel",
         accent: "#70d6ff",
+        presentation: "assets/presentations/combine-administrator-simulator.png",
         image: "assets/previews/combine-administrator-simulator.png"
       },
       {
@@ -1216,6 +1224,7 @@
         link: "https://sg2d.vercel.app",
         status: "Vercel",
         accent: "#72d4d2",
+        presentation: "assets/presentations/sg2d-expedition.png",
         image: "assets/previews/sg2d-expedition.png"
       },
       {
@@ -1243,6 +1252,7 @@
         link: "https://vortex-command-darknigthmares-projects.vercel.app",
         status: "Vercel protégé",
         accent: "#29d7e8",
+        presentation: "assets/presentations/vortex-command.png",
         image: "assets/previews/vortex-command.png"
       },
       {
@@ -1256,6 +1266,7 @@
         link: "https://ragtime-rumble-complete-tour.vercel.app",
         status: "Vercel",
         accent: "#d44736",
+        presentation: "assets/presentations/ragtime-rumble.png",
         image: "assets/previews/ragtime-rumble.png"
       },
       {
@@ -1296,6 +1307,7 @@
         link: "https://jurassic-arsenal.vercel.app",
         status: "Vercel",
         accent: "#b7ff3c",
+        presentation: "assets/presentations/jurassic-arsenal.png",
         image: "assets/previews/jurassic-arsenal.png"
       },
       {
@@ -1349,6 +1361,7 @@
         link: "https://snail-la-dette-immortelle.vercel.app",
         status: "Vercel",
         accent: "#e45050",
+        presentation: "assets/presentations/snail-dette-immortelle.png",
         image: "assets/previews/snail-dette-immortelle.png"
       },
       {
@@ -1520,6 +1533,8 @@
       const fallback = starterApps.find((item) => item.id === source.id) || {};
       const rawTags = Array.isArray(source.tags) ? source.tags : String(source.tags || "").split(",");
       const tags = [...new Set(rawTags.map((tag) => String(tag).trim()).filter(Boolean))].slice(0, 10);
+      const rawGallery = Array.isArray(source.gallery) ? source.gallery : (Array.isArray(fallback.gallery) ? fallback.gallery : []);
+      const gallery = [...new Set(rawGallery.map(sanitizeImageUrl).filter(Boolean))].slice(0, 10);
       const name = String(source.name || fallback.name || "Application").trim().slice(0, 80);
       return {
         ...fallback,
@@ -1534,6 +1549,7 @@
         link: sanitizeLaunchUrl(source.link || fallback.link),
         presentation: sanitizeImageUrl(source.presentation || fallback.presentation || source.image || fallback.image),
         image: sanitizeImageUrl(source.image || fallback.image),
+        gallery,
         accent: sanitizeAccent(source.accent || fallback.accent),
         status: String(source.status || fallback.status || "").trim().slice(0, 40)
       };
@@ -1605,8 +1621,18 @@
     }
 
     function mediaImages(app) {
-      const images = [sanitizeImageUrl(app.presentation), sanitizeImageUrl(app.image)].filter(Boolean);
+      const images = [
+        sanitizeImageUrl(app.presentation),
+        sanitizeImageUrl(app.image),
+        ...(Array.isArray(app.gallery) ? app.gallery.map(sanitizeImageUrl) : [])
+      ].filter(Boolean);
       return images.filter((image, index) => images.indexOf(image) === index);
+    }
+
+    function mediaLabel(index) {
+      if (index === 0) return "Illustration";
+      if (index === 1) return "Capture d'écran";
+      return `Vue ${index}`;
     }
 
     function currentMediaIndex(app) {
@@ -1727,8 +1753,8 @@
                       data-action="media"
                       data-id="${escapeHtml(app.id)}"
                       data-index="${index}"
-                      title="${index === 0 ? "Illustration" : "Capture d'écran"}"
-                      aria-label="Voir ${index === 0 ? "l'illustration" : "la capture d'écran"} de ${escapeHtml(app.name)}"
+                      title="${escapeHtml(mediaLabel(index))}"
+                      aria-label="Voir ${escapeHtml(mediaLabel(index).toLowerCase())} de ${escapeHtml(app.name)}"
                       aria-pressed="${index === activeMediaIndex}"
                     ></button>
                   `).join("")}
@@ -1791,7 +1817,7 @@
         : `<button class="primary-button" type="button" disabled>Sans lien</button>`;
 
       details.innerHTML = `
-        <div class="hero-preview" role="img" aria-label="${activeMediaIndex === 0 ? "Illustration" : "Capture d'écran"} de ${escapeHtml(app.name)}">
+        <div class="hero-preview" role="img" aria-label="${escapeHtml(mediaLabel(activeMediaIndex))} de ${escapeHtml(app.name)}">
           ${images.length > 1 ? `
             <div class="detail-media-controls">
               <button class="gallery-arrow" type="button" data-detail-media="${previousMediaIndex}" title="Image précédente" aria-label="Voir l'image précédente">
@@ -1810,8 +1836,8 @@
                     class="media-dot ${index === activeMediaIndex ? "active" : ""}"
                     type="button"
                     data-detail-media="${index}"
-                    title="${index === 0 ? "Illustration" : "Capture d'écran"}"
-                    aria-label="Voir ${index === 0 ? "l'illustration" : "la capture d'écran"}"
+                    title="${escapeHtml(mediaLabel(index))}"
+                    aria-label="Voir ${escapeHtml(mediaLabel(index).toLowerCase())}"
                     aria-pressed="${index === activeMediaIndex}"
                   ></button>
                 `).join("")}
@@ -1919,6 +1945,27 @@
       renderGrid();
       if (revealDetails && window.matchMedia("(max-width: 1320px)").matches) {
         requestAnimationFrame(() => details.scrollIntoView({ behavior: "smooth", block: "start" }));
+      }
+    }
+
+    async function loadAppGallery() {
+      try {
+        const response = await fetch("assets/app-gallery.json", { cache: "no-cache" });
+        if (!response.ok) return;
+        const data = await response.json();
+        const galleryMap = data.galleries || data.apps || data;
+        if (!galleryMap || typeof galleryMap !== "object") return;
+
+        apps = apps.map((app) => {
+          const entry = galleryMap[app.id];
+          const rawImages = Array.isArray(entry) ? entry : entry?.images;
+          if (!Array.isArray(rawImages)) return app;
+          const gallery = [...new Set(rawImages.map(sanitizeImageUrl).filter(Boolean))].slice(0, 10);
+          return { ...app, gallery };
+        });
+        renderGrid();
+      } catch (error) {
+        console.warn("Galeries supplémentaires indisponibles:", error);
       }
     }
 
@@ -2150,6 +2197,7 @@
     });
 
     render();
+    loadAppGallery();
     checkOnlineStatus();
 
     if ("serviceWorker" in navigator && location.protocol !== "file:") {
