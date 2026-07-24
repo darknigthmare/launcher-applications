@@ -1,4 +1,4 @@
-const CACHE_NAME = "launcher-shell-v7";
+const CACHE_NAME = "launcher-shell-v8";
 const APP_SHELL = [
   "/",
   "/index.html",
@@ -6,6 +6,8 @@ const APP_SHELL = [
   "/assets/launcher-icon.svg",
   "/assets/app-icons.svg",
   "/assets/app-gallery.json",
+  "/assets/social-features.css",
+  "/assets/social-features.js",
   "/assets/presentations/adhd-rpg.png",
   "/assets/presentations/apertire-enrichment-os.png",
   "/assets/presentations/budgetia.png",

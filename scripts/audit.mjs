@@ -23,15 +23,36 @@ async function exists(relativePath) {
 }
 
 const html = await readFile(path.join(root, "index.html"), "utf8");
-const scriptMatches = [...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/gi)];
-assert(scriptMatches.length === 1, "un seul script applicatif est présent");
+const scriptMatches = [...html.matchAll(/<script(?<attributes>[^>]*)>(?<body>[\s\S]*?)<\/script>/gi)]
+  .map((match) => ({
+    body: match.groups?.body || "",
+    src: match.groups?.attributes?.match(/\bsrc=["']([^"']+)["']/i)?.[1] || ""
+  }));
+const inlineScripts = scriptMatches.filter((script) => !script.src);
+const externalScripts = scriptMatches.filter((script) => script.src);
+assert(inlineScripts.length === 1, "un seul script applicatif intégré est présent");
+assert(
+  externalScripts.length === 1 && externalScripts[0].src === "assets/social-features.js",
+  "le module social attendu est le seul script externe"
+);
 
-if (scriptMatches[0]) {
+if (inlineScripts[0]) {
   try {
-    new vm.Script(scriptMatches[0][1], { filename: "index-inline.js" });
+    new vm.Script(inlineScripts[0].body, { filename: "index-inline.js" });
     checks.push("la syntaxe JavaScript intégrée est valide");
   } catch (error) {
     failures.push(`syntaxe JavaScript invalide: ${error.message}`);
+  }
+}
+
+for (const script of externalScripts) {
+  assert(await exists(script.src), `script externe présent: ${script.src}`);
+  if (!(await exists(script.src))) continue;
+  try {
+    new vm.Script(await readFile(path.join(root, script.src), "utf8"), { filename: script.src });
+    checks.push(`la syntaxe de ${script.src} est valide`);
+  } catch (error) {
+    failures.push(`${script.src} est invalide: ${error.message}`);
   }
 }
 
@@ -77,12 +98,17 @@ for (const preview of previewFiles) {
 
 assert(html.includes('name="description"'), "la description SEO est présente");
 assert(html.includes('rel="manifest"'), "le manifeste PWA est relié");
+assert(html.includes('href="assets/social-features.css"'), "la feuille de style sociale est reliée");
+assert(await exists("assets/social-features.css"), "la feuille de style sociale existe");
 assert(!html.includes('role="button" tabindex="0"'), "les cartes n'imitent plus un bouton non sémantique");
 assert(!html.includes("--card-image: ${cssImage(app)}"), "les URL d'images ne sont pas injectées dans un attribut HTML");
 assert(await exists("manifest.webmanifest"), "le manifeste PWA existe");
 assert(await exists("sw.js"), "le service worker existe");
 
 const serviceWorker = await readFile(path.join(root, "sw.js"), "utf8");
+for (const socialAsset of ["assets/social-features.css", "assets/social-features.js"]) {
+  assert(serviceWorker.includes(`/${socialAsset}`), `asset social préchargé hors ligne: ${socialAsset}`);
+}
 for (const preview of previewFiles) {
   assert(serviceWorker.includes(`/${preview}`), `aperçu préchargé hors ligne: ${preview}`);
 }

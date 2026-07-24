@@ -12,6 +12,7 @@
   <link rel="canonical" href="https://launcher-applications.vercel.app/">
   <link rel="icon" href="assets/launcher-icon.svg" type="image/svg+xml">
   <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="assets/social-features.css">
   <title>Mon Launcher — Applications, jeux et outils</title>
   <style>
     :root {
@@ -1001,6 +1002,7 @@
     <div class="showcase-body" id="showcaseBody"></div>
   </dialog>
 
+  <script src="assets/social-features.js"></script>
   <script>
     const starterApps = [
       {
@@ -1490,6 +1492,7 @@
     let sortAscending = true;
     let adminMode = false;
     let editingId = null;
+    let socialPanelController = null;
     const mediaViewById = new Map();
 
     function escapeHtml(value) {
@@ -1801,6 +1804,11 @@
     }
 
     function renderDetails(app) {
+      if (socialPanelController) {
+        socialPanelController.destroy();
+        socialPanelController = null;
+      }
+
       if (!app) {
         details.innerHTML = `<div class="empty">Sélectionne ou ajoute une application.</div>`;
         return;
@@ -1817,7 +1825,7 @@
       details.setAttribute("aria-label", `Détails de ${app.name}`);
 
       const openControl = app.link
-        ? `<a class="primary-button" href="${escapeHtml(app.link)}" target="_blank" rel="noopener noreferrer">Ouvrir</a>`
+        ? `<a class="primary-button" href="${escapeHtml(app.link)}" target="_blank" rel="noopener noreferrer" data-launch-app="${escapeHtml(app.id)}">Ouvrir</a>`
         : `<button class="primary-button" type="button" disabled>Sans lien</button>`;
 
       details.innerHTML = `
@@ -1879,7 +1887,18 @@
             </svg>
           </button>
         </div>
+        <div class="social-panel-mount" data-social-panel></div>
       `;
+
+      const socialMount = details.querySelector("[data-social-panel]");
+      if (socialMount && window.LauncherSocial) {
+        try {
+          socialPanelController = window.LauncherSocial.mountPanel(socialMount, app, { adminMode });
+        } catch (error) {
+          socialMount.innerHTML = `<p class="social-panel-error" role="status">Activité indisponible.</p>`;
+          console.warn("Panneau social indisponible:", error);
+        }
+      }
     }
 
     function renderShowcase(app = apps.find((item) => item.id === selectedId)) {
@@ -1887,7 +1906,7 @@
       showcaseTitle.textContent = app.name;
       showcaseBody.style.setProperty("--showcase-image", cssImage(app, 0));
       const openControl = app.link
-        ? `<a class="primary-button" href="${escapeHtml(app.link)}" target="_blank" rel="noopener noreferrer">Ouvrir</a>`
+        ? `<a class="primary-button" href="${escapeHtml(app.link)}" target="_blank" rel="noopener noreferrer" data-launch-app="${escapeHtml(app.id)}">Ouvrir</a>`
         : `<button class="primary-button" type="button" disabled>Sans lien</button>`;
       showcaseBody.innerHTML = `
         <div class="showcase-image"></div>
@@ -2087,6 +2106,12 @@
       saveApps();
       saveFavorites();
       render();
+    });
+
+    document.addEventListener("click", (event) => {
+      const launchLink = event.target.closest("[data-launch-app]");
+      if (!launchLink || !window.LauncherSocial) return;
+      window.LauncherSocial.recordVisit(launchLink.dataset.launchApp).catch(() => {});
     });
 
     searchInput.addEventListener("input", renderGrid);
