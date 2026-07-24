@@ -223,6 +223,27 @@
     "assets/screenshots/another-day-z/04.png",
     "assets/screenshots/another-day-z/05.png"
   ],
+  "hive-ascension-cycle": [
+    "assets/screenshots/hive-ascension-cycle/01.png",
+    "assets/screenshots/hive-ascension-cycle/02.png",
+    "assets/screenshots/hive-ascension-cycle/03.png",
+    "assets/screenshots/hive-ascension-cycle/04.png",
+    "assets/screenshots/hive-ascension-cycle/05.png"
+  ],
+  "miyabi-rhythm": [
+    "assets/screenshots/miyabi-rhythm/01.png",
+    "assets/screenshots/miyabi-rhythm/02.png",
+    "assets/screenshots/miyabi-rhythm/03.png",
+    "assets/screenshots/miyabi-rhythm/04.png",
+    "assets/screenshots/miyabi-rhythm/05.png"
+  ],
+  "kc-holographics": [
+    "assets/screenshots/kc-holographics/01.png",
+    "assets/screenshots/kc-holographics/02.png",
+    "assets/screenshots/kc-holographics/03.png",
+    "assets/screenshots/kc-holographics/04.png",
+    "assets/screenshots/kc-holographics/05.png"
+  ],
   "notes": {
     "vortex-command": "Déploiement protégé par Vercel ; les cinq vues ont été capturées via un accès temporaire authentifié, sans saisir d’identifiants."
   }
