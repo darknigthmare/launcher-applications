@@ -1,83 +1,37 @@
-const CACHE_NAME = "launcher-shell-v10";
+const CACHE_PREFIX = "launcher-";
+const CACHE_NAME = "launcher-shell-v11";
+const RUNTIME_CACHE = "launcher-media-runtime-v1";
+const MAX_RUNTIME_ENTRIES = 120;
 const APP_SHELL = [
-  "/",
   "/index.html",
   "/manifest.webmanifest",
   "/assets/launcher-icon.svg",
+  "/assets/launcher-icon-192.png",
+  "/assets/launcher-icon-512.png",
+  "/assets/apple-touch-icon.png",
   "/assets/app-icons.svg",
   "/assets/app-gallery.json",
   "/assets/social-features.css",
-  "/assets/social-features.js",
-  "/assets/presentations/adhd-rpg.png",
-  "/assets/presentations/apertire-enrichment-os.png",
-  "/assets/presentations/budgetia.png",
-  "/assets/presentations/cainos.png",
-  "/assets/presentations/can-i-eat-it.png",
-  "/assets/presentations/catrpg-neuf-royaumes.png",
-  "/assets/presentations/chroma-forge.png",
-  "/assets/presentations/combine-administrator-simulator.png",
-  "/assets/presentations/fossil-frontier.png",
-  "/assets/presentations/genomescan-bioarena.png",
-  "/assets/presentations/hellbound-hotel-manager.png",
-  "/assets/presentations/hive-ascension-cycle.png",
-  "/assets/presentations/iron-tempest.png",
-  "/assets/presentations/jigsaw-mastermind.png",
-  "/assets/presentations/jurassic-arsenal.png",
-  "/assets/presentations/la-petite-fiole.png",
-  "/assets/presentations/manga-finder.png",
-  "/assets/presentations/media-gatherer.png",
-  "/assets/presentations/miyabi-rhythm.png",
-  "/assets/presentations/multiverse-breach.png",
-  "/assets/presentations/kc-holographics.png",
-  "/assets/presentations/ragtime-rumble.png",
-  "/assets/presentations/sg2d-expedition.png",
-  "/assets/presentations/shadow-codec-ops.png",
-  "/assets/presentations/snail-dette-immortelle.png",
-  "/assets/presentations/spinframe.png",
-  "/assets/presentations/triarche-ciel-rouge.png",
-  "/assets/presentations/umbrella-hive-manager.png",
-  "/assets/presentations/vortex-command.png",
-  "/assets/presentations/xenomorph-tamagotchi.png",
-  "/assets/presentations/xion-operator-node.png",
-  "/assets/presentations/yautja-la-longue-chasse.png",
-  "/assets/presentations/yomi-no-kage.png",
-  "/assets/previews/adhd-rpg.png",
-  "/assets/previews/another-day-z.png",
-  "/assets/previews/apertire-enrichment-os.png",
-  "/assets/previews/budgetia.png",
-  "/assets/previews/cainos.png",
-  "/assets/previews/can-i-eat-it.png",
-  "/assets/previews/catrpg-neuf-royaumes.png",
-  "/assets/previews/chroma-forge.png",
-  "/assets/previews/combine-administrator-simulator.png",
-  "/assets/previews/fossil-frontier.png",
-  "/assets/previews/genomescan-bioarena.png",
-  "/assets/previews/hellbound-hotel-manager.png",
-  "/assets/previews/hive-ascension-cycle.png",
-  "/assets/previews/hive-ascension.png",
-  "/assets/previews/iron-tempest.png",
-  "/assets/previews/jigsaw-mastermind.png",
-  "/assets/previews/jurassic-arsenal.png",
-  "/assets/previews/kaiju-rupture.png",
-  "/assets/previews/la-petite-fiole.png",
-  "/assets/previews/manga-finder.png",
-  "/assets/previews/media-gatherer.png",
-  "/assets/previews/miyabi-rhythm.png",
-  "/assets/previews/multiverse-breach.png",
-  "/assets/previews/kc-holographics.png",
-  "/assets/previews/ragtime-rumble.png",
-  "/assets/previews/sg2d-expedition.png",
-  "/assets/previews/shadow-codec-ops.png",
-  "/assets/previews/snail-dette-immortelle.png",
-  "/assets/previews/spinframe.png",
-  "/assets/previews/triarche-ciel-rouge.png",
-  "/assets/previews/umbrella-hive-manager.png",
-  "/assets/previews/vortex-command.png",
-  "/assets/previews/xenomorph-tamagotchi.png",
-  "/assets/previews/xion-operator-node.png",
-  "/assets/previews/yautja-la-longue-chasse.png",
-  "/assets/previews/yomi-no-kage.png"
+  "/assets/social-features.js"
 ];
+
+function isCacheableResponse(response, expectedContentType = "") {
+  const contentType = response.headers.get("content-type") || "";
+  return response.ok
+    && !response.redirected
+    && response.type === "basic"
+    && (!expectedContentType || contentType.includes(expectedContentType));
+}
+
+async function storeRuntimeMedia(request, response) {
+  const cache = await caches.open(RUNTIME_CACHE);
+  await cache.put(request, response);
+  const keys = await cache.keys();
+  const overflow = keys.length - MAX_RUNTIME_ENTRIES;
+  if (overflow > 0) {
+    await Promise.all(keys.slice(0, overflow).map((key) => cache.delete(key)));
+  }
+}
 
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_SHELL)).then(() => self.skipWaiting()));
@@ -86,7 +40,11 @@ self.addEventListener("install", (event) => {
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys()
-      .then((keys) => Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))))
+      .then((keys) => Promise.all(
+        keys
+          .filter((key) => key.startsWith(CACHE_PREFIX) && ![CACHE_NAME, RUNTIME_CACHE].includes(key))
+          .map((key) => caches.delete(key))
+      ))
       .then(() => self.clients.claim())
   );
 });
@@ -97,23 +55,39 @@ self.addEventListener("fetch", (event) => {
   if (request.method !== "GET" || url.origin !== self.location.origin) return;
 
   if (request.mode === "navigate") {
-    event.respondWith(
-      fetch(request)
-        .then((response) => {
-          const copy = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put("/index.html", copy));
-          return response;
-        })
-        .catch(() => caches.match("/index.html"))
-    );
+    const networkResponse = fetch(request);
+    const updatePromise = networkResponse
+      .then((response) => {
+        if (!isCacheableResponse(response, "text/html")) return;
+        return caches.open(CACHE_NAME).then((cache) => cache.put("/index.html", response.clone()));
+      })
+      .catch(() => undefined);
+
+    event.waitUntil(updatePromise);
+    event.respondWith(networkResponse.catch(() => caches.match("/index.html")));
     return;
   }
 
-  event.respondWith(
-    caches.match(request).then((cached) => cached || fetch(request).then((response) => {
-      const copy = response.clone();
-      caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
-      return response;
-    }))
-  );
+  if (APP_SHELL.includes(url.pathname)) {
+    event.respondWith(caches.match(request).then((cached) => cached || fetch(request)));
+    return;
+  }
+
+  if (/^\/assets\/(?:previews|presentations|screenshots)\//.test(url.pathname)) {
+    const networkResponse = fetch(request);
+    const updatePromise = networkResponse
+      .then((response) => {
+        if (!isCacheableResponse(response, "image/")) return;
+        return storeRuntimeMedia(request, response.clone());
+      })
+      .catch(() => undefined);
+
+    event.waitUntil(updatePromise);
+    event.respondWith(
+      caches.open(RUNTIME_CACHE)
+        .then((cache) => cache.match(request))
+        .then((cached) => cached || networkResponse)
+    );
+    return;
+  }
 });
