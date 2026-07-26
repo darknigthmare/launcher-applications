@@ -1,4 +1,4 @@
-const CACHE_NAME = "launcher-shell-v9";
+const CACHE_NAME = "launcher-shell-v10";
 const APP_SHELL = [
   "/",
   "/index.html",
@@ -13,6 +13,7 @@ const APP_SHELL = [
   "/assets/presentations/budgetia.png",
   "/assets/presentations/cainos.png",
   "/assets/presentations/can-i-eat-it.png",
+  "/assets/presentations/catrpg-neuf-royaumes.png",
   "/assets/presentations/chroma-forge.png",
   "/assets/presentations/combine-administrator-simulator.png",
   "/assets/presentations/fossil-frontier.png",
@@ -46,6 +47,7 @@ const APP_SHELL = [
   "/assets/previews/budgetia.png",
   "/assets/previews/cainos.png",
   "/assets/previews/can-i-eat-it.png",
+  "/assets/previews/catrpg-neuf-royaumes.png",
   "/assets/previews/chroma-forge.png",
   "/assets/previews/combine-administrator-simulator.png",
   "/assets/previews/fossil-frontier.png",

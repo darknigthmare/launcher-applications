@@ -68,9 +68,10 @@ if (catalogueMatch) {
   }
 }
 
-assert(apps.length >= 20, "le catalogue contient au moins 20 applications");
+assert(apps.length >= 36, "le catalogue contient au moins 36 applications");
 const ids = new Set();
 const images = new Set();
+const presentations = new Set();
 for (const app of apps) {
   assert(Boolean(app?.id && app?.name && app?.category && app?.description), `champs obligatoires présents pour ${app?.id || "entrée inconnue"}`);
   assert(!ids.has(app.id), `identifiant unique: ${app.id}`);
@@ -83,9 +84,16 @@ for (const app of apps) {
     failures.push(`lien invalide pour ${app.id}: ${app.link}`);
   }
 
+  assert(Boolean(app.image), `aperçu renseigné pour ${app.id}`);
   if (app.image) {
     images.add(app.image.replaceAll("\\", "/"));
     assert(await exists(app.image), `aperçu présent pour ${app.id}`);
+  }
+
+  assert(Boolean(app.presentation), `présentation renseignée pour ${app.id}`);
+  if (app.presentation) {
+    presentations.add(app.presentation.replaceAll("\\", "/"));
+    assert(await exists(app.presentation), `présentation présente pour ${app.id}`);
   }
 }
 
@@ -94,6 +102,41 @@ const previewFiles = (await readdir(path.join(root, "assets", "previews")))
   .map((name) => `assets/previews/${name}`);
 for (const preview of previewFiles) {
   assert(images.has(preview), `aperçu référencé: ${preview}`);
+}
+
+const presentationFiles = (await readdir(path.join(root, "assets", "presentations")))
+  .filter((name) => name.toLowerCase().endsWith(".png"))
+  .map((name) => `assets/presentations/${name}`);
+for (const presentation of presentationFiles) {
+  assert(presentations.has(presentation), `présentation référencée: ${presentation}`);
+}
+
+const galleryDocument = JSON.parse(await readFile(path.join(root, "assets", "app-gallery.json"), "utf8"));
+const galleryMap = galleryDocument.galleries || galleryDocument.apps || galleryDocument;
+const galleryPaths = new Set();
+for (const app of apps) {
+  const entry = galleryMap[app.id];
+  const gallery = Array.isArray(entry) ? entry : entry?.images;
+  assert(Array.isArray(gallery) && gallery.length >= 5, `galerie complète pour ${app.id}`);
+  if (!Array.isArray(gallery)) continue;
+
+  assert(new Set(gallery).size === gallery.length, `galerie sans doublon pour ${app.id}`);
+  for (const image of gallery) {
+    assert(
+      typeof image === "string" && image.startsWith(`assets/screenshots/${app.id}/`),
+      `chemin de galerie attribué à ${app.id}: ${image}`
+    );
+    galleryPaths.add(String(image).replaceAll("\\", "/"));
+    assert(await exists(image), `image de galerie présente pour ${app.id}: ${image}`);
+  }
+}
+for (const id of Object.keys(galleryMap).filter((id) => id !== "notes")) {
+  assert(ids.has(id), `galerie attribuée à une application connue: ${id}`);
+}
+
+const iconSprite = await readFile(path.join(root, "assets", "app-icons.svg"), "utf8");
+for (const app of apps) {
+  assert(iconSprite.includes(`id="icon-${app.id}"`), `icône SVG présente pour ${app.id}`);
 }
 
 assert(html.includes('name="description"'), "la description SEO est présente");
@@ -111,6 +154,9 @@ for (const socialAsset of ["assets/social-features.css", "assets/social-features
 }
 for (const preview of previewFiles) {
   assert(serviceWorker.includes(`/${preview}`), `aperçu préchargé hors ligne: ${preview}`);
+}
+for (const presentation of presentations) {
+  assert(serviceWorker.includes(`/${presentation}`), `présentation préchargée hors ligne: ${presentation}`);
 }
 
 const manifest = JSON.parse(await readFile(path.join(root, "manifest.webmanifest"), "utf8"));
@@ -135,5 +181,8 @@ if (failures.length) {
   failures.forEach((failure) => console.error(`- ${failure}`));
   process.exitCode = 1;
 } else {
-  console.log(`Audit réussi: ${checks.length} contrôles, ${apps.length} applications, ${previewFiles.length} aperçus.`);
+  console.log(
+    `Audit réussi: ${checks.length} contrôles, ${apps.length} applications, ${previewFiles.length} aperçus, ` +
+    `${presentationFiles.length} présentations et ${galleryPaths.size} images de galerie.`
+  );
 }
