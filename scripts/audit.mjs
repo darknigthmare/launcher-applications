@@ -131,6 +131,7 @@ for (const app of apps) {
   if (app.presentation) {
     presentations.add(app.presentation.replaceAll("\\", "/"));
     assert(await exists(app.presentation), `présentation présente pour ${app.id}`);
+    assert(app.presentation !== app.image, `présentation distincte de l'aperçu pour ${app.id}`);
   }
 }
 
