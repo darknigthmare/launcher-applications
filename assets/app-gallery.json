@@ -251,6 +251,48 @@
     "assets/screenshots/catrpg-neuf-royaumes/04.png",
     "assets/screenshots/catrpg-neuf-royaumes/05.png"
   ],
+  "cells-at-work-immune-alert": [
+    "assets/screenshots/cells-at-work-immune-alert/01.png",
+    "assets/screenshots/cells-at-work-immune-alert/02.png",
+    "assets/screenshots/cells-at-work-immune-alert/03.png",
+    "assets/screenshots/cells-at-work-immune-alert/04.png",
+    "assets/screenshots/cells-at-work-immune-alert/05.png"
+  ],
+  "port-de-pluie-baie-vivante": [
+    "assets/screenshots/port-de-pluie-baie-vivante/01.png",
+    "assets/screenshots/port-de-pluie-baie-vivante/02.png",
+    "assets/screenshots/port-de-pluie-baie-vivante/03.png",
+    "assets/screenshots/port-de-pluie-baie-vivante/04.png",
+    "assets/screenshots/port-de-pluie-baie-vivante/05.png"
+  ],
+  "octo-arsenal": [
+    "assets/screenshots/octo-arsenal/01.png",
+    "assets/screenshots/octo-arsenal/02.png",
+    "assets/screenshots/octo-arsenal/03.png",
+    "assets/screenshots/octo-arsenal/04.png",
+    "assets/screenshots/octo-arsenal/05.png"
+  ],
+  "breach-blitz-spinoff": [
+    "assets/screenshots/breach-blitz-spinoff/01.png",
+    "assets/screenshots/breach-blitz-spinoff/02.png",
+    "assets/screenshots/breach-blitz-spinoff/03.png",
+    "assets/screenshots/breach-blitz-spinoff/04.png",
+    "assets/screenshots/breach-blitz-spinoff/05.png"
+  ],
+  "echelle-cosmique-evolution-totale": [
+    "assets/screenshots/echelle-cosmique-evolution-totale/01.png",
+    "assets/screenshots/echelle-cosmique-evolution-totale/02.png",
+    "assets/screenshots/echelle-cosmique-evolution-totale/03.png",
+    "assets/screenshots/echelle-cosmique-evolution-totale/04.png",
+    "assets/screenshots/echelle-cosmique-evolution-totale/05.png"
+  ],
+  "hellsync-choirbreach": [
+    "assets/screenshots/hellsync-choirbreach/01.png",
+    "assets/screenshots/hellsync-choirbreach/02.png",
+    "assets/screenshots/hellsync-choirbreach/03.png",
+    "assets/screenshots/hellsync-choirbreach/04.png",
+    "assets/screenshots/hellsync-choirbreach/05.png"
+  ],
   "notes": {
     "catrpg-neuf-royaumes": "Galerie dérivée du visuel officiel du dépôt, sans inventer de faux écrans de jeu."
   }

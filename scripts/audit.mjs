@@ -105,7 +105,7 @@ if (catalogueMatch) {
   }
 }
 
-assert(apps.length >= 36, "le catalogue contient au moins 36 applications");
+assert(apps.length >= 42, "le catalogue contient au moins 42 applications");
 const ids = new Set();
 const images = new Set();
 const presentations = new Set();

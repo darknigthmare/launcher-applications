@@ -37,7 +37,7 @@ L'audit valide la syntaxe JavaScript, les identifiants et URL du catalogue, les 
 ## Ajouter une application au catalogue partagé
 
 1. Ajouter son objet dans `starterApps` dans `index.html` avec un `id` unique.
-2. Ajouter son aperçu JPEG, PNG ou WebP sous `assets/previews/` avec une extension fidèle au format réel, et sa présentation sous `assets/presentations/` (ou réutiliser explicitement l'aperçu).
+2. Ajouter son aperçu JPEG, PNG ou WebP sous `assets/previews/` avec une extension fidèle au format réel, puis une présentation distincte sous `assets/presentations/`.
 3. Ajouter cinq vues à `assets/screenshots/<id>/` et référencer la galerie dans `assets/app-gallery.json`.
 4. Ajouter le symbole `icon-<id>` dans `assets/app-icons.svg`.
 5. Incrémenter `CACHE_NAME` dans `sw.js` si le shell applicatif change ; les médias sont mis en cache à la demande.
