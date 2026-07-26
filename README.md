@@ -32,13 +32,15 @@ Puis ouvrir `http://127.0.0.1:8000`.
 npm run audit
 ```
 
-L'audit valide la syntaxe JavaScript, les identifiants et URL du catalogue, les aperçus, les métadonnées et les fichiers PWA. Le même contrôle s'exécute sur GitHub Actions à chaque push et pull request vers `main`.
+L'audit valide la syntaxe JavaScript, les identifiants et URL du catalogue, les aperçus, les présentations, les galeries, les icônes, les métadonnées et les fichiers PWA. Le même contrôle s'exécute sur GitHub Actions à chaque push et pull request vers `main`.
 
 ## Ajouter une application au catalogue partagé
 
 1. Ajouter son objet dans `starterApps` dans `index.html` avec un `id` unique.
-2. Ajouter son aperçu PNG sous `assets/previews/`.
-3. Ajouter cet aperçu à `APP_SHELL` dans `sw.js`, puis incrémenter `CACHE_NAME`.
-4. Exécuter `npm run audit` et vérifier le rendu desktop/mobile.
+2. Ajouter son aperçu PNG sous `assets/previews/` et sa présentation sous `assets/presentations/` (ou réutiliser explicitement l'aperçu).
+3. Ajouter cinq vues à `assets/screenshots/<id>/` et référencer la galerie dans `assets/app-gallery.json`.
+4. Ajouter le symbole `icon-<id>` dans `assets/app-icons.svg`.
+5. Ajouter l'aperçu et la présentation à `APP_SHELL` dans `sw.js`, puis incrémenter `CACHE_NAME`.
+6. Exécuter `npm run audit` et vérifier le rendu desktop/mobile.
 
 Le mode édition de l'interface sert aux personnalisations locales. Pour publier une entrée à tous les visiteurs, elle doit être ajoutée au dépôt.

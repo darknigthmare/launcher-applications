@@ -244,7 +244,14 @@
     "assets/screenshots/kc-holographics/04.png",
     "assets/screenshots/kc-holographics/05.png"
   ],
+  "catrpg-neuf-royaumes": [
+    "assets/screenshots/catrpg-neuf-royaumes/01.png",
+    "assets/screenshots/catrpg-neuf-royaumes/02.png",
+    "assets/screenshots/catrpg-neuf-royaumes/03.png",
+    "assets/screenshots/catrpg-neuf-royaumes/04.png",
+    "assets/screenshots/catrpg-neuf-royaumes/05.png"
+  ],
   "notes": {
-    "vortex-command": "Déploiement protégé par Vercel ; les cinq vues ont été capturées via un accès temporaire authentifié, sans saisir d’identifiants."
+    "catrpg-neuf-royaumes": "Galerie dérivée du visuel officiel du dépôt, sans inventer de faux écrans de jeu."
   }
 }
