@@ -115,6 +115,35 @@ assert(
   inlineScriptBody.includes('popularityButton.setAttribute("aria-busy", String(popularityLoading))'),
   "le chargement de popularité est annoncé aux technologies d'assistance"
 );
+assert(
+  inlineScriptBody.includes('id="gameGenreList" role="group" aria-label="Genres de jeux"'),
+  "les sous-catégories de jeux forment un groupe accessible"
+);
+assert(
+  inlineScriptBody.includes('aria-controls="gameGenreList"'),
+  "la catégorie Jeux référence son groupe de genres"
+);
+assert(
+  inlineScriptBody.includes('activeCategory !== "Jeux" || activeGameGenre === "Tous" || gameGenreFor(app) === activeGameGenre'),
+  "le genre de jeu se combine aux autres filtres"
+);
+assert(
+  inlineScriptBody.includes('return gameGenreById.get(app.id) || "Autres";'),
+  "les jeux personnalisés non classés restent visibles dans Autres"
+);
+assert(
+  inlineScriptBody.includes('!apps.some((app) => gameGenreFor(app) === activeGameGenre)'),
+  "un genre devenu vide réinitialise le filtre Jeux"
+);
+assert(
+  inlineScriptBody.includes('const countLabel = `${count} jeu${count > 1 ? "x" : ""}`;') &&
+    inlineScriptBody.includes('aria-label="${escapeHtml(`${label}, ${countLabel}`)}"'),
+  "les compteurs de genres précisent leur unité dans le nom accessible"
+);
+assert(
+  inlineScriptBody.includes('?.focus({ preventScroll: true });'),
+  "le focus reste sur la catégorie après reconstruction de la navigation"
+);
 
 for (const script of externalScripts) {
   assert(await exists(script.src), `script externe présent: ${script.src}`);
@@ -129,6 +158,8 @@ for (const script of externalScripts) {
 
 const catalogueMatch = html.match(/const starterApps = (\[[\s\S]*?\n\s*\]);/);
 assert(Boolean(catalogueMatch), "le catalogue starterApps est détectable");
+const gameGenreMatch = html.match(/const GAME_GENRE_GROUPS = (\[[\s\S]*?\n\s*\]);/);
+assert(Boolean(gameGenreMatch), "la taxonomie des genres de jeux est détectable");
 
 let apps = [];
 if (catalogueMatch) {
@@ -139,7 +170,40 @@ if (catalogueMatch) {
   }
 }
 
+let gameGenreGroups = [];
+if (gameGenreMatch) {
+  try {
+    gameGenreGroups = vm.runInNewContext(`(${gameGenreMatch[1]})`, Object.create(null), { timeout: 1000 });
+  } catch (error) {
+    failures.push(`taxonomie des genres illisible: ${error.message}`);
+  }
+}
+
 assert(apps.length >= 46, "le catalogue contient au moins 46 applications");
+assert(gameGenreGroups.length === 8, "la navigation Jeux contient huit genres principaux");
+
+const starterGameIds = new Set(
+  apps.filter((app) => app?.category === "Jeux").map((app) => app.id)
+);
+const mappedGameIds = new Map();
+const genreNames = new Set();
+for (const group of gameGenreGroups) {
+  assert(Boolean(group?.name), "chaque genre possède un nom");
+  assert(!genreNames.has(group?.name), `genre unique: ${group?.name || "inconnu"}`);
+  genreNames.add(group?.name);
+  assert(Array.isArray(group?.ids) && group.ids.length > 0, `genre non vide: ${group?.name || "inconnu"}`);
+
+  for (const id of group?.ids || []) {
+    assert(starterGameIds.has(id), `le genre ${group.name} référence un jeu: ${id}`);
+    assert(!mappedGameIds.has(id), `genre principal unique pour ${id}`);
+    mappedGameIds.set(id, group.name);
+  }
+}
+for (const id of starterGameIds) {
+  assert(mappedGameIds.has(id), `genre principal renseigné pour ${id}`);
+}
+assert(mappedGameIds.size === starterGameIds.size, "la taxonomie couvre exactement tous les jeux du catalogue");
+
 const ids = new Set();
 const images = new Set();
 const presentations = new Set();
