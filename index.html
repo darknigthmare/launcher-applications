@@ -255,6 +255,53 @@
       font-size: 0.82rem;
     }
 
+    .category-group {
+      display: grid;
+      gap: 6px;
+    }
+
+    .game-genre-list {
+      display: grid;
+      gap: 4px;
+      margin: 0 0 4px 15px;
+      padding-left: 11px;
+      border-left: 1px solid color-mix(in srgb, var(--category-color) 42%, var(--line));
+    }
+
+    .game-genre-button {
+      width: 100%;
+      min-height: 38px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      padding: 6px 9px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      color: var(--muted);
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .game-genre-button:hover,
+    .game-genre-button.active {
+      color: var(--text);
+      border-color: var(--line);
+      background: rgba(255, 255, 255, 0.075);
+    }
+
+    .game-genre-label {
+      min-width: 0;
+      text-align: left;
+      line-height: 1.2;
+    }
+
+    .game-genre-count {
+      flex: 0 0 auto;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
     .quick-actions {
       display: grid;
       gap: 8px;
@@ -812,6 +859,19 @@
 
       .category-button {
         padding-inline: 9px;
+      }
+
+      .game-category-group {
+        grid-column: 1 / -1;
+      }
+
+      .game-genre-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-left: 9px;
+      }
+
+      .game-genre-button {
+        min-height: 42px;
       }
 
       .toolbar {
@@ -1666,6 +1726,86 @@
       }
     ];
 
+    const GAME_GENRE_GROUPS = [
+      {
+        name: "Action & tir",
+        ids: [
+          "kaiju-rupture",
+          "jurassic-arsenal",
+          "triarche-ciel-rouge",
+          "yautja-la-longue-chasse",
+          "yomi-no-kage",
+          "iron-tempest",
+          "cells-at-work-immune-alert",
+          "octo-arsenal",
+          "yautja-hive-warriors",
+          "yautja-apex-hunt"
+        ]
+      },
+      {
+        name: "Stratégie & tactique",
+        ids: [
+          "shadow-codec-ops",
+          "sg2d-expedition",
+          "vortex-command",
+          "valkyrie-sweeper-dark-siege"
+        ]
+      },
+      {
+        name: "Gestion & simulation",
+        ids: [
+          "la-petite-fiole",
+          "hellbound-hotel-manager",
+          "fossil-frontier"
+        ]
+      },
+      {
+        name: "Survie & horreur",
+        ids: [
+          "hive-ascension",
+          "snail-dette-immortelle",
+          "another-day-z",
+          "hive-ascension-cycle",
+          "dead-ground"
+        ]
+      },
+      {
+        name: "RPG & progression",
+        ids: [
+          "genomescan-bioarena",
+          "catrpg-neuf-royaumes",
+          "echelle-cosmique-evolution-totale"
+        ]
+      },
+      {
+        name: "Rythme & arcade",
+        ids: [
+          "ragtime-rumble",
+          "miyabi-rhythm",
+          "breach-blitz-spinoff",
+          "hellsync-choirbreach"
+        ]
+      },
+      {
+        name: "Aventure & exploration",
+        ids: [
+          "multiverse-breach",
+          "port-de-pluie-baie-vivante"
+        ]
+      },
+      {
+        name: "Puzzle & cartes",
+        ids: [
+          "jigsaw-mastermind",
+          "kc-holographics"
+        ]
+      }
+    ];
+
+    const gameGenreById = new Map(
+      GAME_GENRE_GROUPS.flatMap((group) => group.ids.map((id) => [id, group.name]))
+    );
+
     const categoryColors = {
       "Tous": "#70d6ff",
       "Favoris": "#ffcf5a",
@@ -1705,6 +1845,7 @@
     let favorites = loadFavorites();
     let onlineStatus = {};
     let activeCategory = "Tous";
+    let activeGameGenre = "Tous";
     let activeTag = "Tous";
     let selectedId = apps[0]?.id;
     let sortMode = "name";
@@ -1993,9 +2134,10 @@
       const query = normalizeSearch(searchInput.value.trim());
       return apps
         .filter((app) => activeCategory === "Tous" || (activeCategory === "Favoris" ? favorites.has(app.id) : app.category === activeCategory))
+        .filter((app) => activeCategory !== "Jeux" || activeGameGenre === "Tous" || gameGenreFor(app) === activeGameGenre)
         .filter((app) => activeTag === "Tous" || (app.tags || []).includes(activeTag))
         .filter((app) => {
-          const haystack = normalizeSearch(`${app.name} ${app.category} ${app.description} ${app.pitch} ${app.status} ${(app.tags || []).join(" ")}`);
+          const haystack = normalizeSearch(`${app.name} ${app.category} ${gameGenreFor(app)} ${app.description} ${app.pitch} ${app.status} ${(app.tags || []).join(" ")}`);
           return haystack.includes(query);
         })
         .sort((a, b) => {
@@ -2009,22 +2151,90 @@
         });
     }
 
+    function gameGenreFor(app) {
+      if (app?.category !== "Jeux") return "";
+      return gameGenreById.get(app.id) || "Autres";
+    }
+
+    function gameGenreCounts() {
+      return apps.reduce((counts, app) => {
+        if (app.category !== "Jeux") return counts;
+        const genre = gameGenreFor(app);
+        counts.Tous += 1;
+        counts[genre] = (counts[genre] || 0) + 1;
+        return counts;
+      }, { Tous: 0 });
+    }
+
+    function updateGameGenreControls() {
+      categoryList.querySelectorAll("[data-game-genre]").forEach((button) => {
+        const active = button.dataset.gameGenre === activeGameGenre;
+        button.classList.toggle("active", active);
+        button.setAttribute("aria-pressed", String(active));
+      });
+    }
+
     function renderCategories() {
+      if (
+        activeCategory === "Jeux" &&
+        activeGameGenre !== "Tous" &&
+        !apps.some((app) => gameGenreFor(app) === activeGameGenre)
+      ) {
+        activeGameGenre = "Tous";
+      }
+
       const counts = apps.reduce((acc, app) => {
         acc[app.category] = (acc[app.category] || 0) + 1;
         return acc;
       }, { Tous: apps.length, Favoris: favorites.size });
 
       const categories = ["Tous", "Favoris", ...Object.keys(counts).filter((item) => !["Tous", "Favoris"].includes(item)).sort()];
-      categoryList.innerHTML = categories.map((category) => `
-        <button class="category-button ${category === activeCategory ? "active" : ""}" type="button" data-category="${escapeHtml(category)}" aria-pressed="${category === activeCategory}" style="--category-color: ${categoryColors[category] || categoryColors.Autre}">
+      const genreCounts = gameGenreCounts();
+      const genres = [
+        "Tous",
+        ...GAME_GENRE_GROUPS.map((group) => group.name).filter((genre) => genreCounts[genre]),
+        ...(genreCounts.Autres ? ["Autres"] : [])
+      ];
+
+      categoryList.innerHTML = categories.map((category) => {
+        const active = category === activeCategory;
+        const gameCategoryAttributes = category === "Jeux"
+          ? ` aria-expanded="${active}"${active ? ' aria-controls="gameGenreList"' : ""}`
+          : "";
+        const categoryButton = `
+        <button class="category-button ${active ? "active" : ""}" type="button" data-category="${escapeHtml(category)}" aria-pressed="${active}"${gameCategoryAttributes} style="--category-color: ${categoryColors[category] || categoryColors.Autre}">
           <span class="category-meta">
             <span class="category-dot"></span>
             <span>${escapeHtml(category)}</span>
           </span>
           <span class="category-count">${counts[category] || 0}</span>
         </button>
-      `).join("");
+        `;
+
+        if (category !== "Jeux" || !active) return categoryButton;
+
+        const genreButtons = genres.map((genre) => {
+          const genreActive = genre === activeGameGenre;
+          const label = genre === "Tous" ? "Tous les jeux" : genre;
+          const count = genreCounts[genre] || 0;
+          const countLabel = `${count} jeu${count > 1 ? "x" : ""}`;
+          return `
+            <button class="game-genre-button ${genreActive ? "active" : ""}" type="button" data-game-genre="${escapeHtml(genre)}" aria-pressed="${genreActive}" aria-label="${escapeHtml(`${label}, ${countLabel}`)}">
+              <span class="game-genre-label">${escapeHtml(label)}</span>
+              <span class="game-genre-count">${count}</span>
+            </button>
+          `;
+        }).join("");
+
+        return `
+          <div class="category-group game-category-group" style="--category-color: ${categoryColors.Jeux}">
+            ${categoryButton}
+            <div class="game-genre-list" id="gameGenreList" role="group" aria-label="Genres de jeux">
+              ${genreButtons}
+            </div>
+          </div>
+        `;
+      }).join("");
     }
 
     function renderTags() {
@@ -2042,7 +2252,11 @@
           : " · tri par popularité"
         : "";
       resultCount.textContent = `${visibleApps.length} application${visibleApps.length > 1 ? "s" : ""}${popularityStatus}`;
-      viewTitle.textContent = activeCategory === "Tous" ? "Toutes tes applications" : activeCategory;
+      viewTitle.textContent = activeCategory === "Tous"
+        ? "Toutes tes applications"
+        : activeCategory === "Jeux" && activeGameGenre !== "Tous"
+          ? `Jeux · ${activeGameGenre}`
+          : activeCategory;
 
       if (!visibleApps.length) {
         grid.innerHTML = `<div class="empty">Aucune application ne correspond à cette recherche.</div>`;
@@ -2331,10 +2545,24 @@
     }
 
     categoryList.addEventListener("click", (event) => {
+      const genreButton = event.target.closest("[data-game-genre]");
+      if (genreButton) {
+        activeCategory = "Jeux";
+        activeGameGenre = genreButton.dataset.gameGenre;
+        updateGameGenreControls();
+        renderGrid();
+        return;
+      }
+
       const button = event.target.closest("[data-category]");
       if (!button) return;
-      activeCategory = button.dataset.category;
+      const nextCategory = button.dataset.category;
+      activeCategory = nextCategory;
+      activeGameGenre = "Tous";
       render();
+      Array.from(categoryList.querySelectorAll("[data-category]"))
+        .find((categoryButton) => categoryButton.dataset.category === nextCategory)
+        ?.focus({ preventScroll: true });
     });
 
     tagList.addEventListener("click", (event) => {
@@ -2495,6 +2723,7 @@
       onlineStatus = {};
       selectedId = apps[0]?.id;
       activeCategory = "Tous";
+      activeGameGenre = "Tous";
       activeTag = "Tous";
       saveApps();
       saveFavorites();
@@ -2546,6 +2775,7 @@
       apps = editingId ? apps.map((item) => item.id === editingId ? app : item) : [app, ...apps];
       selectedId = app.id;
       activeCategory = "Tous";
+      activeGameGenre = "Tous";
       activeTag = "Tous";
       editingId = null;
       saveApps();
