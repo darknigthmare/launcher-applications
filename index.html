@@ -330,6 +330,12 @@
       margin-left: auto;
     }
 
+    #popularityButton[aria-pressed="true"] {
+      color: #bbf7d0;
+      border-color: rgba(74, 222, 128, 0.46);
+      background: rgba(74, 222, 128, 0.12);
+    }
+
     .icon-button {
       width: 40px;
       padding: 0;
@@ -529,6 +535,12 @@
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
+    }
+
+    .popularity-tag {
+      color: #bbf7d0;
+      border-color: rgba(74, 222, 128, 0.36);
+      background: rgba(74, 222, 128, 0.08);
     }
 
     .pitch {
@@ -817,6 +829,7 @@
         width: 100%;
       }
 
+      #randomButton,
       #showcaseButton {
         grid-column: 1 / -1;
       }
@@ -911,6 +924,7 @@
               <path d="M4 7h12M4 12h9M4 17h15M18 5v14m0 0 3-3m-3 3-3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
+          <button class="ghost-button" id="popularityButton" type="button" aria-pressed="false" aria-busy="false">Popularité</button>
           <button class="ghost-button" id="randomButton" type="button">Ambiance au hasard</button>
           <button class="ghost-button" id="showcaseButton" type="button">Mode vitrine</button>
         </div>
@@ -1593,6 +1607,62 @@
         accent: "#e63b2e",
         presentation: "assets/presentations/hellsync-choirbreach.png",
         image: "assets/previews/hellsync-choirbreach.png"
+      },
+      {
+        id: "yautja-hive-warriors",
+        name: "PREDATOR: HIVE WARRIORS",
+        category: "Jeux",
+        description: "Un jeu d'action 3D façon musou où des guerriers Yautja affrontent des hordes xénomorphes, avec campagne, coop locale, éditeur de bataille, forge et salle des trophées.",
+        pitch: "Choisis ton chasseur, prépare son arsenal et taille une route à travers la ruche.",
+        tags: ["Action 3D", "Hordes", "Yautja", "Coop locale"],
+        icon: "HW",
+        link: "https://yautja-hive-warriors.vercel.app",
+        status: "Vercel",
+        accent: "#13c9f5",
+        presentation: "assets/presentations/yautja-hive-warriors.png",
+        image: "assets/previews/yautja-hive-warriors.jpg"
+      },
+      {
+        id: "yautja-apex-hunt",
+        name: "Yautja: Apex Hunt",
+        category: "Jeux",
+        description: "Une chasse aux monstres en 3D depuis un vaisseau-mère Yautja, avec visions tactiques, huit armes, contrats planétaires, boss, forge d'honneur et plus de vingt armures inspirées du lore.",
+        pitch: "Scanne la planète, sélectionne ton contrat et prouve ton honneur face aux proies suprêmes.",
+        tags: ["Chasse 3D", "Yautja", "Boss", "Lore"],
+        icon: "AH",
+        link: "https://yautja-apex-hunt.vercel.app",
+        status: "Vercel",
+        accent: "#5dde91",
+        presentation: "assets/presentations/yautja-apex-hunt.png",
+        image: "assets/previews/yautja-apex-hunt.jpg"
+      },
+      {
+        id: "valkyrie-sweeper-dark-siege",
+        name: "Valkyrie Sweeper: Dark Siege",
+        category: "Jeux",
+        description: "Un roguelite auto-battler de défense de citadelle avec vingt tourelles et pièges, Valkyries, drones compagnons, mercenaires, progression permanente et tour de cent étages.",
+        pitch: "Construis ton périmètre, déclenche l'Overdrive et empêche la citadelle de tomber.",
+        tags: ["Tower defense", "Rogue-lite", "Auto-battler", "Cyberpunk"],
+        icon: "VS",
+        link: "https://infernal-city-five.vercel.app",
+        status: "Vercel",
+        accent: "#00f0ff",
+        presentation: "assets/presentations/valkyrie-sweeper-dark-siege.png",
+        image: "assets/previews/valkyrie-sweeper-dark-siege.jpg"
+      },
+      {
+        id: "dead-ground",
+        name: "Dead Ground: Satellite Survival",
+        category: "Jeux",
+        description: "Un jeu de survie zombie géolocalisé où une position réelle devient une base fortifiée, avec communauté, météo, blessures, recherche, véhicule, avant-postes et campagne d'évacuation.",
+        pitch: "Choisis ton refuge, organise les survivants et rétablis le signal avant la prochaine vague.",
+        tags: ["Survie", "Zombies", "Géolocalisation", "PWA"],
+        icon: "DG",
+        link: "https://dead-ground.vercel.app",
+        status: "Vercel",
+        accent: "#bdf85b",
+        presentation: "assets/presentations/dead-ground.png",
+        image: "assets/previews/dead-ground.jpg"
       }
     ];
 
@@ -1611,6 +1681,8 @@
     const favoriteKey = "personal-launcher-favorites-v1";
     const removedStarterKey = "personal-launcher-removed-starters-v1";
     const allowedLaunchProtocols = new Set(["https:", "http:", "steam:", "file:"]);
+    const POPULARITY_WORKER_COUNT = 4;
+    const POPULARITY_REFRESH_INTERVAL_MS = 30_000;
     const appIconIds = new Set(starterApps.map((app) => app.id));
     const stage = document.getElementById("stage");
     const grid = document.getElementById("appGrid");
@@ -1625,6 +1697,8 @@
     const showcaseDialog = document.getElementById("showcaseDialog");
     const showcaseBody = document.getElementById("showcaseBody");
     const showcaseTitle = document.getElementById("showcaseTitle");
+    const sortButton = document.getElementById("sortButton");
+    const popularityButton = document.getElementById("popularityButton");
 
     const removedStarterIds = loadRemovedStarterIds();
     let apps = loadApps();
@@ -1633,11 +1707,15 @@
     let activeCategory = "Tous";
     let activeTag = "Tous";
     let selectedId = apps[0]?.id;
+    let sortMode = "name";
     let sortAscending = true;
+    let popularityLoadPromise = null;
+    let popularityLoadedAt = 0;
     let adminMode = false;
     let editingId = null;
     let socialPanelController = null;
     const mediaViewById = new Map();
+    const popularityById = new Map();
 
     function escapeHtml(value) {
       return String(value ?? "").replace(/[&<>"']/g, (char) => ({
@@ -1828,6 +1906,89 @@
       return [...new Set(apps.flatMap((app) => app.tags || []))].sort((a, b) => a.localeCompare(b));
     }
 
+    function popularityCount(appId) {
+      const count = Number(popularityById.get(appId));
+      return Number.isFinite(count) && count > 0 ? Math.floor(count) : 0;
+    }
+
+    function popularityLabel(appId) {
+      const count = popularityCount(appId);
+      return `${count.toLocaleString("fr-FR")} ouverture${count === 1 ? "" : "s"}`;
+    }
+
+    function updateSortControls() {
+      const popularityActive = sortMode === "popularity";
+      const popularityLoading = Boolean(popularityLoadPromise);
+      const nameLabel = popularityActive
+        ? `Revenir au tri par nom, ordre ${sortAscending ? "croissant" : "décroissant"}`
+        : `Trier par nom, ordre ${sortAscending ? "croissant" : "décroissant"}`;
+      const popularityControlLabel = popularityActive
+        ? "Désactiver le tri par popularité"
+        : "Trier par popularité selon les ouvertures";
+
+      sortButton.title = nameLabel;
+      sortButton.setAttribute("aria-label", nameLabel);
+      popularityButton.textContent = popularityLoading ? "Popularité…" : "Popularité";
+      popularityButton.title = popularityControlLabel;
+      popularityButton.setAttribute("aria-label", popularityControlLabel);
+      popularityButton.setAttribute("aria-pressed", String(popularityActive));
+      popularityButton.setAttribute("aria-busy", String(popularityLoading));
+    }
+
+    function loadPopularityStats() {
+      if (popularityLoadPromise) return popularityLoadPromise;
+
+      const appIds = [...new Set(apps.map((app) => app.id))];
+      const cacheIsFresh =
+        Date.now() - popularityLoadedAt < POPULARITY_REFRESH_INTERVAL_MS &&
+        appIds.every((appId) => popularityById.has(appId));
+
+      if (cacheIsFresh) return Promise.resolve();
+
+      if (!window.LauncherSocial || typeof window.LauncherSocial.getVisitCount !== "function") {
+        appIds.forEach((appId) => {
+          if (!popularityById.has(appId)) popularityById.set(appId, 0);
+        });
+        popularityLoadedAt = Date.now();
+        return Promise.resolve();
+      }
+
+      const queue = [...appIds];
+      const worker = async () => {
+        while (queue.length) {
+          const appId = queue.shift();
+          try {
+            const count = await window.LauncherSocial.getVisitCount(appId);
+            const numericCount = Number(count);
+            popularityById.set(
+              appId,
+              Number.isFinite(numericCount) && numericCount > 0
+                ? Math.floor(numericCount)
+                : 0
+            );
+          } catch {
+            if (!popularityById.has(appId)) popularityById.set(appId, 0);
+          }
+        }
+      };
+
+      const workerCount = Math.min(POPULARITY_WORKER_COUNT, queue.length);
+      popularityLoadPromise = Promise.all(
+        Array.from({ length: workerCount }, () => worker())
+      )
+        .then(() => {
+          popularityLoadedAt = Date.now();
+        })
+        .finally(() => {
+          popularityLoadPromise = null;
+          updateSortControls();
+          if (sortMode === "popularity") renderGrid();
+        });
+
+      updateSortControls();
+      return popularityLoadPromise;
+    }
+
     function filteredApps() {
       const query = normalizeSearch(searchInput.value.trim());
       return apps
@@ -1838,6 +1999,10 @@
           return haystack.includes(query);
         })
         .sort((a, b) => {
+          if (sortMode === "popularity") {
+            const popularityDelta = popularityCount(b.id) - popularityCount(a.id);
+            if (popularityDelta) return popularityDelta;
+          }
           const favDelta = Number(favorites.has(b.id)) - Number(favorites.has(a.id));
           if (favDelta) return favDelta;
           return sortAscending ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name);
@@ -1871,7 +2036,12 @@
 
     function renderGrid() {
       const visibleApps = filteredApps();
-      resultCount.textContent = `${visibleApps.length} application${visibleApps.length > 1 ? "s" : ""}`;
+      const popularityStatus = sortMode === "popularity"
+        ? popularityLoadPromise
+          ? " · chargement de la popularité"
+          : " · tri par popularité"
+        : "";
+      resultCount.textContent = `${visibleApps.length} application${visibleApps.length > 1 ? "s" : ""}${popularityStatus}`;
       viewTitle.textContent = activeCategory === "Tous" ? "Toutes tes applications" : activeCategory;
 
       if (!visibleApps.length) {
@@ -1888,7 +2058,7 @@
         const images = mediaImages(app);
         const activeMediaIndex = currentMediaIndex(app);
         return `
-          <article class="app-card ${app.id === selectedId ? "active" : ""}" data-id="${escapeHtml(app.id)}">
+          <article class="app-card ${app.id === selectedId ? "active" : ""}" data-id="${escapeHtml(app.id)}" data-popularity="${popularityCount(app.id)}">
             <button class="card-select" type="button" data-action="select" data-id="${escapeHtml(app.id)}" aria-pressed="${app.id === selectedId}" aria-label="Afficher les détails de ${escapeHtml(app.name)}"></button>
             <div class="app-image">
               <div class="app-topbar">
@@ -1927,6 +2097,7 @@
             <div class="app-body">
               <div class="tag-row">
                 <span class="tag">${escapeHtml(app.category)}</span>
+                ${sortMode === "popularity" && !popularityLoadPromise ? `<span class="tag popularity-tag">${popularityLabel(app.id)}</span>` : ""}
                 ${(app.tags || []).slice(0, 2).map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}
               </div>
               <h3>${escapeHtml(app.name)}</h3>
@@ -2101,6 +2272,7 @@
 
     function render() {
       document.body.classList.toggle("admin-mode", adminMode);
+      updateSortControls();
       renderCategories();
       renderTags();
       renderGrid();
@@ -2254,18 +2426,43 @@
 
     document.addEventListener("click", (event) => {
       const launchLink = event.target.closest("[data-launch-app]");
-      if (!launchLink || !window.LauncherSocial) return;
-      window.LauncherSocial.recordVisit(launchLink.dataset.launchApp).catch(() => {});
+      if (
+        !launchLink ||
+        !window.LauncherSocial ||
+        typeof window.LauncherSocial.recordVisit !== "function"
+      ) return;
+
+      const appId = launchLink.dataset.launchApp;
+      window.LauncherSocial.recordVisit(appId)
+        .then((count) => {
+          const numericCount = Number(count);
+          popularityById.set(
+            appId,
+            Number.isFinite(numericCount) && numericCount > 0
+              ? Math.floor(numericCount)
+              : 0
+          );
+          if (sortMode === "popularity") renderGrid();
+        })
+        .catch(() => {});
     });
 
     searchInput.addEventListener("input", renderGrid);
 
-    const sortButton = document.getElementById("sortButton");
     sortButton.addEventListener("click", () => {
-      sortAscending = !sortAscending;
-      const label = `Trier par nom, ordre ${sortAscending ? "croissant" : "décroissant"}`;
-      sortButton.title = label;
-      sortButton.setAttribute("aria-label", label);
+      if (sortMode === "name") {
+        sortAscending = !sortAscending;
+      } else {
+        sortMode = "name";
+      }
+      updateSortControls();
+      renderGrid();
+    });
+
+    popularityButton.addEventListener("click", () => {
+      sortMode = sortMode === "popularity" ? "name" : "popularity";
+      if (sortMode === "popularity") loadPopularityStats();
+      updateSortControls();
       renderGrid();
     });
 
