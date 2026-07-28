@@ -82,6 +82,40 @@ if (inlineScripts[0]) {
   }
 }
 
+const inlineScriptBody = inlineScripts[0]?.body || "";
+assert(
+  /<button\b(?=[^>]*\bid=["']popularityButton["'])(?=[^>]*\btype=["']button["'])(?=[^>]*\baria-pressed=["']false["'])[^>]*>/i.test(html),
+  "le contrôle de popularité est un bouton accessible"
+);
+assert(
+  inlineScriptBody.includes("const POPULARITY_WORKER_COUNT = 4;"),
+  "le chargement de popularité est limité à quatre workers"
+);
+assert(
+  inlineScriptBody.includes("window.LauncherSocial.getVisitCount(appId)"),
+  "la popularité utilise les vraies ouvertures partagées"
+);
+assert(
+  inlineScriptBody.includes('sortMode === "popularity"'),
+  "le tri par popularité est intégré au catalogue"
+);
+assert(
+  inlineScriptBody.includes('data-popularity="${popularityCount(app.id)}"'),
+  "les cartes exposent leur compteur de popularité"
+);
+assert(
+  (inlineScriptBody.match(/\bloadPopularityStats\(\)/g) || []).length === 2,
+  "les statistiques de popularité restent chargées à la demande"
+);
+assert(
+  /recordVisit\(appId\)[\s\S]*?popularityById\.set\(/.test(inlineScriptBody),
+  "un clic Ouvrir actualise le tri par popularité"
+);
+assert(
+  inlineScriptBody.includes('popularityButton.setAttribute("aria-busy", String(popularityLoading))'),
+  "le chargement de popularité est annoncé aux technologies d'assistance"
+);
+
 for (const script of externalScripts) {
   assert(await exists(script.src), `script externe présent: ${script.src}`);
   if (!(await exists(script.src))) continue;
@@ -105,7 +139,7 @@ if (catalogueMatch) {
   }
 }
 
-assert(apps.length >= 42, "le catalogue contient au moins 42 applications");
+assert(apps.length >= 46, "le catalogue contient au moins 46 applications");
 const ids = new Set();
 const images = new Set();
 const presentations = new Set();

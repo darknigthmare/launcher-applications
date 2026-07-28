@@ -275,4 +275,32 @@
       <path d="M6 4 3 2v5M18 4l3-2v5M7 20h10"/>
     </g>
   </symbol>
+  <symbol id="icon-yautja-hive-warriors" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m12 3 6 4-1 9-5 5-5-5-1-9 6-4Z"/>
+      <path d="M8 9h3l1 2 1-2h3M9 15l3 2 3-2M5 5 2 8l3 2M19 5l3 3-3 2"/>
+      <path d="m4 18 5-4M20 18l-5-4"/>
+    </g>
+  </symbol>
+  <symbol id="icon-yautja-apex-hunt" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="8"/>
+      <path d="M12 4v3M12 17v3M4 12h3M17 12h3"/>
+      <path d="m12 8 4 7H8l4-7ZM17.5 5.5l2-2M6.5 5.5l-2-2"/>
+    </g>
+  </symbol>
+  <symbol id="icon-valkyrie-sweeper-dark-siege" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m12 3 6 3v6c0 4-2.4 7-6 9-3.6-2-6-5-6-9V6l6-3Z"/>
+      <path d="M9 15V9h6v6M8 15h8M10 9V7h4v2"/>
+      <path d="m6 8-3-2 1 5 2 2M18 8l3-2-1 5-2 2"/>
+    </g>
+  </symbol>
+  <symbol id="icon-dead-ground" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 21s6-5.2 6-11a6 6 0 1 0-12 0c0 5.8 6 11 6 11Z"/>
+      <circle cx="12" cy="10" r="2"/>
+      <path d="M3 19h5M16 19h5M4 15l3 1M20 15l-3 1"/>
+    </g>
+  </symbol>
 </svg>
