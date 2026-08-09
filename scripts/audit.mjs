@@ -68,9 +68,16 @@ const scriptMatches = [...html.matchAll(/<script(?<attributes>[^>]*)>(?<body>[\s
 const inlineScripts = scriptMatches.filter((script) => !script.src);
 const externalScripts = scriptMatches.filter((script) => script.src);
 assert(inlineScripts.length === 1, "un seul script applicatif intégré est présent");
+const externalScriptSources = externalScripts.map((script) => script.src);
 assert(
-  externalScripts.length === 1 && externalScripts[0].src === "assets/social-features.js",
-  "le module social attendu est le seul script externe"
+  externalScriptSources.length === 2
+    && externalScriptSources.includes("assets/recent-games.js")
+    && externalScriptSources.includes("assets/social-features.js"),
+  "les modules du catalogue récent et social sont les deux scripts externes attendus"
+);
+assert(
+  html.indexOf('src="assets/recent-games.js"') < html.indexOf("const starterApps"),
+  "le catalogue récent est chargé avant le catalogue applicatif"
 );
 
 if (inlineScripts[0]) {
@@ -83,6 +90,10 @@ if (inlineScripts[0]) {
 }
 
 const inlineScriptBody = inlineScripts[0]?.body || "";
+assert(
+  inlineScriptBody.includes("window.LAUNCHER_RECENT_GAMES"),
+  "le catalogue applicatif intègre les jeux de assets/recent-games.js"
+);
 assert(
   /<button\b(?=[^>]*\bid=["']popularityButton["'])(?=[^>]*\btype=["']button["'])(?=[^>]*\baria-pressed=["']false["'])[^>]*>/i.test(html),
   "le contrôle de popularité est un bouton accessible"
@@ -116,29 +127,20 @@ assert(
   "le chargement de popularité est annoncé aux technologies d'assistance"
 );
 assert(
-  inlineScriptBody.includes('id="gameGenreList" role="group" aria-label="Genres de jeux"'),
-  "les sous-catégories de jeux forment un groupe accessible"
+  /id=["'][^"']*game[^"']*["'][^>]*role=["']group["']/i.test(html),
+  "la taxonomie Jeux forme un groupe accessible"
+);
+assert(html.includes("Jeux originaux"), "la sous-catégorie Jeux originaux est visible");
+assert(html.includes("Fan games"), "la sous-catégorie Fan games est visible");
+assert(inlineScriptBody.includes("activeGameKind"), "le type de jeu possède un état de filtre dédié");
+assert(inlineScriptBody.includes("data-game-kind"), "les contrôles de taxonomie exposent le type de jeu");
+assert(
+  inlineScriptBody.includes("gameKindFor(app)") && inlineScriptBody.includes("gameGenreFor(app)"),
+  "les types et genres de jeux se combinent aux autres filtres"
 );
 assert(
-  inlineScriptBody.includes('aria-controls="gameGenreList"'),
-  "la catégorie Jeux référence son groupe de genres"
-);
-assert(
-  inlineScriptBody.includes('activeCategory !== "Jeux" || activeGameGenre === "Tous" || gameGenreFor(app) === activeGameGenre'),
-  "le genre de jeu se combine aux autres filtres"
-);
-assert(
-  inlineScriptBody.includes('return gameGenreById.get(app.id) || "Autres";'),
-  "les jeux personnalisés non classés restent visibles dans Autres"
-);
-assert(
-  inlineScriptBody.includes('!apps.some((app) => gameGenreFor(app) === activeGameGenre)'),
-  "un genre devenu vide réinitialise le filtre Jeux"
-);
-assert(
-  inlineScriptBody.includes('const countLabel = `${count} jeu${count > 1 ? "x" : ""}`;') &&
-    inlineScriptBody.includes('aria-label="${escapeHtml(`${label}, ${countLabel}`)}"'),
-  "les compteurs de genres précisent leur unité dans le nom accessible"
+  inlineScriptBody.includes("baseGameFor(app)") || inlineScriptBody.includes("gameBaseFor(app)"),
+  "la franchise de base des fan-games participe à l'affichage ou à la recherche"
 );
 assert(
   inlineScriptBody.includes('?.focus({ preventScroll: true });'),
@@ -170,6 +172,27 @@ if (catalogueMatch) {
   }
 }
 
+let recentApps = [];
+if (await exists("assets/recent-games.js")) {
+  try {
+    const recentCatalogueSandbox = { window: {} };
+    recentCatalogueSandbox.globalThis = recentCatalogueSandbox.window;
+    recentCatalogueSandbox.self = recentCatalogueSandbox.window;
+    vm.runInNewContext(
+      await readFile(path.join(root, "assets", "recent-games.js"), "utf8"),
+      recentCatalogueSandbox,
+      { filename: "assets/recent-games.js", timeout: 1000 }
+    );
+    recentApps = recentCatalogueSandbox.window.LAUNCHER_RECENT_GAMES;
+    assert(Array.isArray(recentApps), "assets/recent-games.js expose un tableau LAUNCHER_RECENT_GAMES");
+    if (!Array.isArray(recentApps)) recentApps = [];
+  } catch (error) {
+    failures.push(`catalogue récent illisible: ${error.message}`);
+  }
+}
+assert(recentApps.length === 66, "le catalogue récent contient exactement 66 jeux");
+apps = [...apps, ...recentApps];
+
 let gameGenreGroups = [];
 if (gameGenreMatch) {
   try {
@@ -179,7 +202,8 @@ if (gameGenreMatch) {
   }
 }
 
-assert(apps.length >= 46, "le catalogue contient au moins 46 applications");
+assert(apps.length === 112, "le catalogue contient exactement 112 applications");
+assert(apps.filter((app) => app?.category === "Jeux").length === 99, "le catalogue contient exactement 99 jeux");
 assert(gameGenreGroups.length === 8, "la navigation Jeux contient huit genres principaux");
 
 const starterGameIds = new Set(
@@ -194,15 +218,51 @@ for (const group of gameGenreGroups) {
   assert(Array.isArray(group?.ids) && group.ids.length > 0, `genre non vide: ${group?.name || "inconnu"}`);
 
   for (const id of group?.ids || []) {
-    assert(starterGameIds.has(id), `le genre ${group.name} référence un jeu: ${id}`);
+    assert(starterGameIds.has(id), `le genre ${group.name} référence un jeu historique: ${id}`);
     assert(!mappedGameIds.has(id), `genre principal unique pour ${id}`);
     mappedGameIds.set(id, group.name);
   }
 }
 for (const id of starterGameIds) {
-  assert(mappedGameIds.has(id), `genre principal renseigné pour ${id}`);
+  const app = apps.find((entry) => entry.id === id);
+  const genre = app?.genre || mappedGameIds.get(id);
+  assert(genreNames.has(genre), `genre principal valide pour ${id}`);
 }
-assert(mappedGameIds.size === starterGameIds.size, "la taxonomie couvre exactement tous les jeux du catalogue");
+
+const recentGameIds = new Set(recentApps.filter((app) => app?.category === "Jeux").map((app) => app.id));
+for (const app of recentApps) {
+  assert(app?.category === "Jeux", `le jeu récent reste dans Jeux: ${app?.id || "entrée inconnue"}`);
+  assert(genreNames.has(app?.genre), `genre récent parmi les huit genres pour ${app?.id || "entrée inconnue"}`);
+}
+
+const validGameKinds = new Set(["Jeux originaux", "Fan games"]);
+const legacyFanGameBases = new Map([
+  ["shadow-codec-ops", "Metal Gear Solid"],
+  ["hellbound-hotel-manager", "Hazbin Hotel"],
+  ["hive-ascension", "Alien"],
+  ["yautja-la-longue-chasse", "Predator"],
+  ["another-day-z", "DayZ"],
+  ["hive-ascension-cycle", "Alien"],
+  ["kc-holographics", "Yu-Gi-Oh!"],
+  ["cells-at-work-immune-alert", "Cells at Work!"],
+  ["yautja-hive-warriors", "Alien vs. Predator"],
+  ["yautja-apex-hunt", "Predator"]
+]);
+for (const app of apps.filter((entry) => entry?.category === "Jeux")) {
+  const gameKind = app.gameKind || (legacyFanGameBases.has(app.id) ? "Fan games" : "Jeux originaux");
+  const baseGame = app.baseGame || legacyFanGameBases.get(app.id) || "";
+  assert(validGameKinds.has(gameKind), `type de jeu valide pour ${app.id}`);
+  if (recentGameIds.has(app.id)) {
+    assert(validGameKinds.has(app.gameKind), `type explicite du jeu récent ${app.id}`);
+  }
+  if (gameKind === "Fan games") {
+    assert(Boolean(String(baseGame).trim()), `jeu ou franchise de base renseigné pour le fan-game ${app.id}`);
+  }
+}
+assert(
+  apps.filter((app) => app?.category === "Jeux").every((app) => genreNames.has(app.genre || mappedGameIds.get(app.id))),
+  "la taxonomie couvre exactement les 99 jeux du catalogue"
+);
 
 const ids = new Set();
 const images = new Set();
@@ -296,8 +356,8 @@ assert(await exists("manifest.webmanifest"), "le manifeste PWA existe");
 assert(await exists("sw.js"), "le service worker existe");
 
 const serviceWorker = await readFile(path.join(root, "sw.js"), "utf8");
-for (const socialAsset of ["assets/social-features.css", "assets/social-features.js"]) {
-  assert(serviceWorker.includes(`/${socialAsset}`), `asset social préchargé hors ligne: ${socialAsset}`);
+for (const shellAsset of ["assets/recent-games.js", "assets/social-features.css", "assets/social-features.js"]) {
+  assert(serviceWorker.includes(`/${shellAsset}`), `asset dynamique préchargé hors ligne: ${shellAsset}`);
 }
 
 const appShellMatch = serviceWorker.match(/const APP_SHELL = (\[[\s\S]*?\]);/);

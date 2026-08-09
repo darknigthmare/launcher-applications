@@ -260,14 +260,20 @@
       gap: 6px;
     }
 
-    .game-genre-list {
+    .game-taxonomy-list {
       display: grid;
-      gap: 4px;
+      gap: 7px;
       margin: 0 0 4px 15px;
       padding-left: 11px;
       border-left: 1px solid color-mix(in srgb, var(--category-color) 42%, var(--line));
     }
 
+    .game-kind-group {
+      display: grid;
+      gap: 3px;
+    }
+
+    .game-kind-button,
     .game-genre-button {
       width: 100%;
       min-height: 38px;
@@ -283,11 +289,47 @@
       cursor: pointer;
     }
 
+    .game-kind-button {
+      color: color-mix(in srgb, var(--text) 88%, var(--muted));
+      font-weight: 700;
+    }
+
+    .game-kind-button:hover,
+    .game-kind-button.active,
     .game-genre-button:hover,
     .game-genre-button.active {
       color: var(--text);
       border-color: var(--line);
       background: rgba(255, 255, 255, 0.075);
+    }
+
+    .game-kind-button.active {
+      border-color: color-mix(in srgb, var(--category-color) 52%, var(--line));
+      background: color-mix(in srgb, var(--category-color) 12%, transparent);
+    }
+
+    .game-kind-button:disabled,
+    .game-genre-button:disabled {
+      opacity: 0.42;
+      cursor: default;
+    }
+
+    .game-genre-list {
+      display: grid;
+      gap: 3px;
+      margin-left: 12px;
+      padding-left: 9px;
+      border-left: 1px solid color-mix(in srgb, var(--category-color) 26%, var(--line));
+    }
+
+    .game-genre-button {
+      min-height: 34px;
+      padding-block: 5px;
+      font-size: 0.86rem;
+    }
+
+    .game-taxonomy-all {
+      margin-bottom: 1px;
     }
 
     .game-genre-label {
@@ -865,11 +907,16 @@
         grid-column: 1 / -1;
       }
 
-      .game-genre-list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+      .game-taxonomy-list {
         margin-left: 9px;
       }
 
+      .game-genre-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-left: 6px;
+      }
+
+      .game-kind-button,
       .game-genre-button {
         min-height: 42px;
       }
@@ -1077,6 +1124,7 @@
     <div class="showcase-body" id="showcaseBody"></div>
   </dialog>
 
+  <script src="assets/recent-games.js"></script>
   <script src="assets/social-features.js"></script>
   <script>
     const starterApps = [
@@ -1726,6 +1774,8 @@
       }
     ];
 
+    starterApps.push(...(window.LAUNCHER_RECENT_GAMES || []));
+
     const GAME_GENRE_GROUPS = [
       {
         name: "Action & tir",
@@ -1806,6 +1856,21 @@
       GAME_GENRE_GROUPS.flatMap((group) => group.ids.map((id) => [id, group.name]))
     );
 
+    const GAME_KINDS = ["Jeux originaux", "Fan games"];
+    const GAME_GENRE_NAMES = new Set(GAME_GENRE_GROUPS.map((group) => group.name));
+    const EXISTING_FAN_GAME_BASES = new Map([
+      ["shadow-codec-ops", "Metal Gear Solid"],
+      ["hellbound-hotel-manager", "Hazbin Hotel"],
+      ["cells-at-work-immune-alert", "Cells at Work!"],
+      ["kc-holographics", "Yu-Gi-Oh!"],
+      ["yautja-la-longue-chasse", "Predator"],
+      ["yautja-hive-warriors", "Alien vs. Predator"],
+      ["yautja-apex-hunt", "Predator"],
+      ["hive-ascension", "Alien"],
+      ["hive-ascension-cycle", "Alien"],
+      ["another-day-z", "DayZ"]
+    ]);
+
     const categoryColors = {
       "Tous": "#70d6ff",
       "Favoris": "#ffcf5a",
@@ -1845,6 +1910,7 @@
     let favorites = loadFavorites();
     let onlineStatus = {};
     let activeCategory = "Tous";
+    let activeGameKind = "Tous";
     let activeGameGenre = "Tous";
     let activeTag = "Tous";
     let selectedId = apps[0]?.id;
@@ -1914,6 +1980,9 @@
         category: String(source.category || fallback.category || "Autre").trim().slice(0, 40),
         description: String(source.description || fallback.description || "").trim().slice(0, 600),
         pitch: String(source.pitch || fallback.pitch || source.description || fallback.description || "").trim().slice(0, 280),
+        gameKind: String(source.gameKind || fallback.gameKind || "").trim().slice(0, 40),
+        genre: String(source.genre || fallback.genre || "").trim().slice(0, 60),
+        baseGame: String(source.baseGame || fallback.baseGame || "").trim().slice(0, 100),
         tags,
         icon: String(source.icon || fallback.icon || initials(name)).trim().slice(0, 5),
         link: sanitizeLaunchUrl(source.link || fallback.link),
@@ -2134,10 +2203,11 @@
       const query = normalizeSearch(searchInput.value.trim());
       return apps
         .filter((app) => activeCategory === "Tous" || (activeCategory === "Favoris" ? favorites.has(app.id) : app.category === activeCategory))
+        .filter((app) => activeCategory !== "Jeux" || activeGameKind === "Tous" || gameKindFor(app) === activeGameKind)
         .filter((app) => activeCategory !== "Jeux" || activeGameGenre === "Tous" || gameGenreFor(app) === activeGameGenre)
         .filter((app) => activeTag === "Tous" || (app.tags || []).includes(activeTag))
         .filter((app) => {
-          const haystack = normalizeSearch(`${app.name} ${app.category} ${gameGenreFor(app)} ${app.description} ${app.pitch} ${app.status} ${(app.tags || []).join(" ")}`);
+          const haystack = normalizeSearch(`${app.name} ${app.category} ${gameKindLabel(gameKindFor(app))} ${gameGenreFor(app)} ${gameBaseFor(app)} ${app.description} ${app.pitch} ${app.status} ${(app.tags || []).join(" ")}`);
           return haystack.includes(query);
         })
         .sort((a, b) => {
@@ -2151,24 +2221,83 @@
         });
     }
 
+    function gameKindFor(app) {
+      if (app?.category !== "Jeux") return "";
+      const declaredKind = normalizeSearch(app.gameKind || "");
+      if (declaredKind === "fan games" || declaredKind === "fan game" || declaredKind === "fangames" || declaredKind === "fangame") {
+        return "Fan games";
+      }
+      if (declaredKind === "jeux originaux" || declaredKind === "jeu original" || declaredKind === "jeux de base" || declaredKind === "jeu de base") {
+        return "Jeux originaux";
+      }
+      return EXISTING_FAN_GAME_BASES.has(app.id) ? "Fan games" : "Jeux originaux";
+    }
+
+    function gameKindLabel(kind) {
+      return kind === "Fan games" ? "Fan-games" : kind;
+    }
+
     function gameGenreFor(app) {
       if (app?.category !== "Jeux") return "";
-      return gameGenreById.get(app.id) || "Autres";
+      const declaredGenre = GAME_GENRE_GROUPS.find((group) => normalizeSearch(group.name) === normalizeSearch(app.genre || ""))?.name;
+      return declaredGenre || gameGenreById.get(app.id) || "Aventure & exploration";
     }
 
-    function gameGenreCounts() {
+    function gameBaseFor(app) {
+      if (gameKindFor(app) !== "Fan games") return "";
+      return String(app.baseGame || EXISTING_FAN_GAME_BASES.get(app.id) || "").trim();
+    }
+
+    function gameTaxonomyTagsMarkup(app) {
+      if (app?.category !== "Jeux") return "";
+      const baseGame = gameBaseFor(app);
+      return `
+        <span class="tag">${escapeHtml(gameKindLabel(gameKindFor(app)))}</span>
+        <span class="tag">${escapeHtml(gameGenreFor(app))}</span>
+        ${baseGame ? `<span class="tag">Base : ${escapeHtml(baseGame)}</span>` : ""}
+      `;
+    }
+
+    function gameTaxonomyMetaMarkup(app) {
+      if (app?.category !== "Jeux") return "";
+      const baseGame = gameBaseFor(app);
+      return `
+        <div class="meta-item"><span>Type de jeu</span><strong>${escapeHtml(gameKindLabel(gameKindFor(app)))}</strong></div>
+        <div class="meta-item"><span>Genre</span><strong>${escapeHtml(gameGenreFor(app))}</strong></div>
+        ${baseGame ? `<div class="meta-item"><span>Jeu / univers de base</span><strong>${escapeHtml(baseGame)}</strong></div>` : ""}
+      `;
+    }
+
+    function activeGameViewTitle() {
+      const titleParts = ["Jeux"];
+      if (activeGameKind !== "Tous") titleParts.push(gameKindLabel(activeGameKind));
+      if (activeGameGenre !== "Tous") titleParts.push(activeGameGenre);
+      return titleParts.join(" · ");
+    }
+
+    function gameTaxonomyCounts() {
+      const initialCounts = {
+        total: 0,
+        byKind: Object.fromEntries(GAME_KINDS.map((kind) => [kind, {
+          total: 0,
+          byGenre: Object.fromEntries(GAME_GENRE_GROUPS.map((group) => [group.name, 0]))
+        }]))
+      };
+
       return apps.reduce((counts, app) => {
         if (app.category !== "Jeux") return counts;
+        const kind = gameKindFor(app);
         const genre = gameGenreFor(app);
-        counts.Tous += 1;
-        counts[genre] = (counts[genre] || 0) + 1;
+        counts.total += 1;
+        counts.byKind[kind].total += 1;
+        counts.byKind[kind].byGenre[genre] += 1;
         return counts;
-      }, { Tous: 0 });
+      }, initialCounts);
     }
 
-    function updateGameGenreControls() {
-      categoryList.querySelectorAll("[data-game-genre]").forEach((button) => {
-        const active = button.dataset.gameGenre === activeGameGenre;
+    function updateGameTaxonomyControls() {
+      categoryList.querySelectorAll("[data-game-kind]").forEach((button) => {
+        const active = button.dataset.gameKind === activeGameKind && button.dataset.gameGenre === activeGameGenre;
         button.classList.toggle("active", active);
         button.setAttribute("aria-pressed", String(active));
       });
@@ -2177,9 +2306,17 @@
     function renderCategories() {
       if (
         activeCategory === "Jeux" &&
-        activeGameGenre !== "Tous" &&
-        !apps.some((app) => gameGenreFor(app) === activeGameGenre)
+        (
+          (activeGameKind !== "Tous" && !GAME_KINDS.includes(activeGameKind)) ||
+          (activeGameGenre !== "Tous" && !GAME_GENRE_NAMES.has(activeGameGenre)) ||
+          (activeGameKind !== "Tous" && activeGameGenre !== "Tous" && !apps.some((app) => (
+            app.category === "Jeux" &&
+            gameKindFor(app) === activeGameKind &&
+            gameGenreFor(app) === activeGameGenre
+          )))
+        )
       ) {
+        activeGameKind = "Tous";
         activeGameGenre = "Tous";
       }
 
@@ -2189,17 +2326,12 @@
       }, { Tous: apps.length, Favoris: favorites.size });
 
       const categories = ["Tous", "Favoris", ...Object.keys(counts).filter((item) => !["Tous", "Favoris"].includes(item)).sort()];
-      const genreCounts = gameGenreCounts();
-      const genres = [
-        "Tous",
-        ...GAME_GENRE_GROUPS.map((group) => group.name).filter((genre) => genreCounts[genre]),
-        ...(genreCounts.Autres ? ["Autres"] : [])
-      ];
+      const taxonomyCounts = gameTaxonomyCounts();
 
       categoryList.innerHTML = categories.map((category) => {
         const active = category === activeCategory;
         const gameCategoryAttributes = category === "Jeux"
-          ? ` aria-expanded="${active}"${active ? ' aria-controls="gameGenreList"' : ""}`
+          ? ` aria-expanded="${active}"${active ? ' aria-controls="gameTaxonomyList"' : ""}`
           : "";
         const categoryButton = `
         <button class="category-button ${active ? "active" : ""}" type="button" data-category="${escapeHtml(category)}" aria-pressed="${active}"${gameCategoryAttributes} style="--category-color: ${categoryColors[category] || categoryColors.Autre}">
@@ -2213,24 +2345,51 @@
 
         if (category !== "Jeux" || !active) return categoryButton;
 
-        const genreButtons = genres.map((genre) => {
-          const genreActive = genre === activeGameGenre;
-          const label = genre === "Tous" ? "Tous les jeux" : genre;
-          const count = genreCounts[genre] || 0;
-          const countLabel = `${count} jeu${count > 1 ? "x" : ""}`;
+        const allGamesActive = activeGameKind === "Tous" && activeGameGenre === "Tous";
+        const allGamesButton = `
+          <button class="game-kind-button game-taxonomy-all ${allGamesActive ? "active" : ""}" type="button" data-game-kind="Tous" data-game-genre="Tous" aria-pressed="${allGamesActive}" aria-label="${escapeHtml(`Tous les jeux, ${taxonomyCounts.total} jeux`)}">
+            <span class="game-genre-label">Tous les jeux</span>
+            <span class="game-genre-count">${taxonomyCounts.total}</span>
+          </button>
+        `;
+
+        const kindGroups = GAME_KINDS.map((kind, kindIndex) => {
+          const kindCounts = taxonomyCounts.byKind[kind];
+          const kindActive = activeGameKind === kind && activeGameGenre === "Tous";
+          const kindLabel = gameKindLabel(kind);
+          const genreListId = `gameGenreList-${kindIndex}`;
+          const genreButtons = GAME_GENRE_GROUPS.map((group) => {
+            const genre = group.name;
+            const genreActive = activeGameKind === kind && activeGameGenre === genre;
+            const count = kindCounts.byGenre[genre];
+            const countLabel = `${count} jeu${count > 1 ? "x" : ""}`;
+            return `
+              <button class="game-genre-button ${genreActive ? "active" : ""}" type="button" data-game-kind="${escapeHtml(kind)}" data-game-genre="${escapeHtml(genre)}" aria-pressed="${genreActive}" aria-label="${escapeHtml(`${kindLabel}, ${genre}, ${countLabel}`)}" ${count ? "" : "disabled"}>
+                <span class="game-genre-label">${escapeHtml(genre)}</span>
+                <span class="game-genre-count">${count}</span>
+              </button>
+            `;
+          }).join("");
+
           return `
-            <button class="game-genre-button ${genreActive ? "active" : ""}" type="button" data-game-genre="${escapeHtml(genre)}" aria-pressed="${genreActive}" aria-label="${escapeHtml(`${label}, ${countLabel}`)}">
-              <span class="game-genre-label">${escapeHtml(label)}</span>
-              <span class="game-genre-count">${count}</span>
-            </button>
+            <div class="game-kind-group">
+              <button class="game-kind-button ${kindActive ? "active" : ""}" type="button" data-game-kind="${escapeHtml(kind)}" data-game-genre="Tous" aria-pressed="${kindActive}" aria-expanded="true" aria-controls="${genreListId}" aria-label="${escapeHtml(`${kindLabel}, ${kindCounts.total} jeux`)}">
+                <span class="game-genre-label">${escapeHtml(kindLabel)}</span>
+                <span class="game-genre-count">${kindCounts.total}</span>
+              </button>
+              <div class="game-genre-list" id="${genreListId}" role="group" aria-label="Genres de ${escapeHtml(kindLabel)}">
+                ${genreButtons}
+              </div>
+            </div>
           `;
         }).join("");
 
         return `
           <div class="category-group game-category-group" style="--category-color: ${categoryColors.Jeux}">
             ${categoryButton}
-            <div class="game-genre-list" id="gameGenreList" role="group" aria-label="Genres de jeux">
-              ${genreButtons}
+            <div class="game-taxonomy-list" id="gameTaxonomyList" role="group" aria-label="Types et genres de jeux">
+              ${allGamesButton}
+              ${kindGroups}
             </div>
           </div>
         `;
@@ -2254,8 +2413,8 @@
       resultCount.textContent = `${visibleApps.length} application${visibleApps.length > 1 ? "s" : ""}${popularityStatus}`;
       viewTitle.textContent = activeCategory === "Tous"
         ? "Toutes tes applications"
-        : activeCategory === "Jeux" && activeGameGenre !== "Tous"
-          ? `Jeux · ${activeGameGenre}`
+        : activeCategory === "Jeux"
+          ? activeGameViewTitle()
           : activeCategory;
 
       if (!visibleApps.length) {
@@ -2311,6 +2470,7 @@
             <div class="app-body">
               <div class="tag-row">
                 <span class="tag">${escapeHtml(app.category)}</span>
+                ${gameTaxonomyTagsMarkup(app)}
                 ${sortMode === "popularity" && !popularityLoadPromise ? `<span class="tag popularity-tag">${popularityLabel(app.id)}</span>` : ""}
                 ${(app.tags || []).slice(0, 2).map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}
               </div>
@@ -2358,7 +2518,7 @@
         : `<button class="primary-button" type="button" disabled>Sans lien</button>`;
 
       details.innerHTML = `
-        <div class="hero-preview" role="img" aria-label="${escapeHtml(mediaLabel(activeMediaIndex))} de ${escapeHtml(app.name)}">
+        <div class="hero-preview" role="group" aria-label="Galerie de ${escapeHtml(app.name)} · ${escapeHtml(mediaLabel(activeMediaIndex))}">
           ${images.length > 1 ? `
             <div class="detail-media-controls">
               <button class="gallery-arrow" type="button" data-detail-media="${previousMediaIndex}" title="Image précédente" aria-label="Voir l'image précédente">
@@ -2388,12 +2548,14 @@
         </div>
         <div class="tag-row">
           <span class="tag">${escapeHtml(app.category)}</span>
+          ${gameTaxonomyTagsMarkup(app)}
           ${(app.tags || []).map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}
         </div>
         <h2>${escapeHtml(app.name)}</h2>
         <p class="pitch">${escapeHtml(app.pitch)}</p>
         <p>${escapeHtml(app.description)}</p>
         <div class="meta-list">
+          ${gameTaxonomyMetaMarkup(app)}
           <div class="meta-item"><span>Statut</span><strong>${statusLabel(app)}</strong></div>
           <div class="meta-item"><span>Plateforme</span><strong>${escapeHtml(app.status || "Non renseigné")}</strong></div>
           <div class="meta-item"><span>Lien</span><strong>${escapeHtml(app.link || "A configurer")}</strong></div>
@@ -2443,6 +2605,7 @@
           <div class="app-icon">${appIconMarkup(app)}</div>
           <div class="tag-row">
             <span class="tag">${escapeHtml(app.category)}</span>
+            ${gameTaxonomyTagsMarkup(app)}
             ${(app.tags || []).map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}
           </div>
           <h2>${escapeHtml(app.name)}</h2>
@@ -2545,11 +2708,12 @@
     }
 
     categoryList.addEventListener("click", (event) => {
-      const genreButton = event.target.closest("[data-game-genre]");
-      if (genreButton) {
+      const taxonomyButton = event.target.closest("[data-game-kind]");
+      if (taxonomyButton) {
         activeCategory = "Jeux";
-        activeGameGenre = genreButton.dataset.gameGenre;
-        updateGameGenreControls();
+        activeGameKind = taxonomyButton.dataset.gameKind;
+        activeGameGenre = taxonomyButton.dataset.gameGenre;
+        updateGameTaxonomyControls();
         renderGrid();
         return;
       }
@@ -2558,6 +2722,7 @@
       if (!button) return;
       const nextCategory = button.dataset.category;
       activeCategory = nextCategory;
+      activeGameKind = "Tous";
       activeGameGenre = "Tous";
       render();
       Array.from(categoryList.querySelectorAll("[data-category]"))
@@ -2723,6 +2888,7 @@
       onlineStatus = {};
       selectedId = apps[0]?.id;
       activeCategory = "Tous";
+      activeGameKind = "Tous";
       activeGameGenre = "Tous";
       activeTag = "Tous";
       saveApps();
@@ -2775,6 +2941,7 @@
       apps = editingId ? apps.map((item) => item.id === editingId ? app : item) : [app, ...apps];
       selectedId = app.id;
       activeCategory = "Tous";
+      activeGameKind = "Tous";
       activeGameGenre = "Tous";
       activeTag = "Tous";
       editingId = null;

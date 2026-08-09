@@ -266,14 +266,14 @@
   font-weight: 800;
 }
 
-.launcher-social__submit {
+.launcher-social .launcher-social__submit {
   padding: 0 15px;
   border: 1px solid transparent;
   color: #101214;
   background: var(--social-accent);
 }
 
-.launcher-social__submit:hover {
+.launcher-social .launcher-social__submit:hover {
   filter: brightness(1.08);
 }
 

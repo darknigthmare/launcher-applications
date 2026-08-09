@@ -589,6 +589,7 @@
     titleGroup.append(eyebrow, title);
 
     const visitCounter = createElement("div", "launcher-social__visits");
+    visitCounter.setAttribute("role", "status");
     visitCounter.setAttribute("aria-live", "polite");
     const visitValue = createElement("strong", "launcher-social__visit-value", "0");
     const visitLabel = createElement(
@@ -656,6 +657,7 @@
       "launcher-social__comments-count",
       "0"
     );
+    commentsCount.setAttribute("role", "status");
     commentsCount.setAttribute("aria-label", "0 commentaire");
     commentsHeading.append(commentsTitle, commentsCount);
 
