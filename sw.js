@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "launcher-";
-const CACHE_NAME = "launcher-shell-v16";
+const CACHE_NAME = "launcher-shell-v18";
 const RUNTIME_CACHE = "launcher-media-runtime-v1";
 const MAX_RUNTIME_ENTRIES = 120;
 const APP_SHELL = [
@@ -11,6 +11,7 @@ const APP_SHELL = [
   "/assets/apple-touch-icon.png",
   "/assets/app-icons.svg",
   "/assets/app-gallery.json",
+  "/assets/recent-games.js",
   "/assets/social-features.css",
   "/assets/social-features.js"
 ];

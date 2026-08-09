@@ -303,4 +303,466 @@
       <path d="M3 19h5M16 19h5M4 15l3 1M20 15l-3 1"/>
     </g>
   </symbol>
+  <symbol id="icon-le-seuil-noir-protocole-orphee" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 12 12 20.5 3.5 12 12 3.5Z"/>
+      <circle cx="12" cy="12" r="4.2" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">LS</text>
+  </symbol>
+  <symbol id="icon-le-registre-creux-les-epreuves-du-solde" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="4" width="16" height="16" rx="3"/>
+      <circle cx="12" cy="12" r="5" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">LR</text>
+  </symbol>
+  <symbol id="icon-echo-drive" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 12 12 20.5 3.5 12 12 3.5Z"/>
+      <circle cx="12" cy="12" r="4.2" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">ED</text>
+  </symbol>
+  <symbol id="icon-derriere-le-tain" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="5"/>
+      <circle cx="12" cy="12" r="5" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">DL</text>
+  </symbol>
+  <symbol id="icon-dustline-last-convoy" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 12 12 20.5 3.5 12 12 3.5Z"/>
+      <circle cx="12" cy="12" r="4.2" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">DL</text>
+  </symbol>
+  <symbol id="icon-fractal-chaos-recursive-rift" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="5" y="5" width="14" height="14" rx="3"/>
+      <circle cx="12" cy="12" r="5" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">FC</text>
+  </symbol>
+  <symbol id="icon-chord-of-dread" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 12 12 20.5 3.5 12 12 3.5Z"/>
+      <circle cx="12" cy="12" r="4.2" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">CO</text>
+  </symbol>
+  <symbol id="icon-croq-collect-le-tresor-au-fond-du-paquet" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="4" width="16" height="16" rx="5"/>
+      <circle cx="12" cy="12" r="5" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">CC</text>
+  </symbol>
+  <symbol id="icon-echo-forest" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 12 12 20.5 3.5 12 12 3.5Z"/>
+      <circle cx="12" cy="12" r="4.2" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">EF</text>
+  </symbol>
+  <symbol id="icon-l-envers-service-de-nuit" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="3"/>
+      <circle cx="12" cy="12" r="5" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">LE</text>
+  </symbol>
+  <symbol id="icon-carrion-walk-la-faim-des-rues" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 12 12 20.5 3.5 12 12 3.5Z"/>
+      <circle cx="12" cy="12" r="4.2" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">CW</text>
+  </symbol>
+  <symbol id="icon-feather-beat-parade-nuptiale" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="5" y="5" width="14" height="14" rx="5"/>
+      <circle cx="12" cy="12" r="5" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">FB</text>
+  </symbol>
+  <symbol id="icon-l-envers-du-salut" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 12 12 20.5 3.5 12 12 3.5Z"/>
+      <circle cx="12" cy="12" r="4.2" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">LE</text>
+  </symbol>
+  <symbol id="icon-chrono-recoil" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="4" width="16" height="16" rx="3"/>
+      <circle cx="12" cy="12" r="5" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">CR</text>
+  </symbol>
+  <symbol id="icon-dicebound-rpg" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 12 12 20.5 3.5 12 12 3.5Z"/>
+      <circle cx="12" cy="12" r="4.2" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">DR</text>
+  </symbol>
+  <symbol id="icon-fractal-chaos-studio" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="5"/>
+      <circle cx="12" cy="12" r="5" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">FC</text>
+  </symbol>
+  <symbol id="icon-echo-weave" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 12 12 20.5 3.5 12 12 3.5Z"/>
+      <circle cx="12" cy="12" r="4.2" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">EW</text>
+  </symbol>
+  <symbol id="icon-eclipse-frontline-afterfall" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="5" y="5" width="14" height="14" rx="3"/>
+      <circle cx="12" cy="12" r="5" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">EF</text>
+  </symbol>
+  <symbol id="icon-le-rocher-qui-te-connait" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 12 12 20.5 3.5 12 12 3.5Z"/>
+      <circle cx="12" cy="12" r="4.2" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">LR</text>
+  </symbol>
+  <symbol id="icon-lazarus-assembly" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="4" width="16" height="16" rx="5"/>
+      <circle cx="12" cy="12" r="5" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">LA</text>
+  </symbol>
+  <symbol id="icon-encrevivante-le-livre-qui-vous-regarde" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 12 12 20.5 3.5 12 12 3.5Z"/>
+      <circle cx="12" cy="12" r="4.2" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">EL</text>
+  </symbol>
+  <symbol id="icon-emu-simulator-la-longue-marche" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="3"/>
+      <circle cx="12" cy="12" r="5" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">ÉS</text>
+  </symbol>
+  <symbol id="icon-steel-stride-walker-front" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 12 12 20.5 3.5 12 12 3.5Z"/>
+      <circle cx="12" cy="12" r="4.2" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">SS</text>
+  </symbol>
+  <symbol id="icon-hearts-and-horns-maid-bar" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="5" y="5" width="14" height="14" rx="5"/>
+      <circle cx="12" cy="12" r="5" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">HH</text>
+  </symbol>
+  <symbol id="icon-world-hive-wars" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 12 12 20.5 3.5 12 12 3.5Z"/>
+      <circle cx="12" cy="12" r="4.2" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">WH</text>
+  </symbol>
+  <symbol id="icon-tiffany-pixelverse-omniverse" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="4" width="16" height="16" rx="3"/>
+      <circle cx="12" cy="12" r="5" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">TL</text>
+  </symbol>
+  <symbol id="icon-dead-feed" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 12 12 20.5 3.5 12 12 3.5Z"/>
+      <circle cx="12" cy="12" r="4.2" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">DF</text>
+  </symbol>
+  <symbol id="icon-xeno-trace" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="5"/>
+      <circle cx="12" cy="12" r="5" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">XT</text>
+  </symbol>
+  <symbol id="icon-digirift-go" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 12 12 20.5 3.5 12 12 3.5Z"/>
+      <circle cx="12" cy="12" r="4.2" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">DG</text>
+  </symbol>
+  <symbol id="icon-duel-spirits-worldbound" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="5" y="5" width="14" height="14" rx="3"/>
+      <circle cx="12" cy="12" r="5" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">DS</text>
+  </symbol>
+  <symbol id="icon-le-vide-doit-manger" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 12 12 20.5 3.5 12 12 3.5Z"/>
+      <circle cx="12" cy="12" r="4.2" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">LV</text>
+  </symbol>
+  <symbol id="icon-la-riviere-des-absents" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="4" width="16" height="16" rx="5"/>
+      <circle cx="12" cy="12" r="5" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">LR</text>
+  </symbol>
+  <symbol id="icon-voie-13-peage-de-nuit" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 12 12 20.5 3.5 12 12 3.5Z"/>
+      <circle cx="12" cy="12" r="4.2" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">V1</text>
+  </symbol>
+  <symbol id="icon-vesper-rite-les-dettes-de-la-maison-creuse" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="3"/>
+      <circle cx="12" cy="12" r="5" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">VR</text>
+  </symbol>
+  <symbol id="icon-tetracrypt-the-well" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 12 12 20.5 3.5 12 12 3.5Z"/>
+      <circle cx="12" cy="12" r="4.2" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">TT</text>
+  </symbol>
+  <symbol id="icon-suture-noire-les-heritiers-du-gouffre" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="5" y="5" width="14" height="14" rx="5"/>
+      <circle cx="12" cy="12" r="5" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">SN</text>
+  </symbol>
+  <symbol id="icon-spiralis-prototype" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 12 12 20.5 3.5 12 12 3.5Z"/>
+      <circle cx="12" cy="12" r="4.2" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">SP</text>
+  </symbol>
+  <symbol id="icon-souvenirs-retrouves" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="4" width="16" height="16" rx="3"/>
+      <circle cx="12" cy="12" r="5" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">SR</text>
+  </symbol>
+  <symbol id="icon-soleil-mort" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 12 12 20.5 3.5 12 12 3.5Z"/>
+      <circle cx="12" cy="12" r="4.2" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">SM</text>
+  </symbol>
+  <symbol id="icon-snake-no-signal" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="5"/>
+      <circle cx="12" cy="12" r="5" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">SN</text>
+  </symbol>
+  <symbol id="icon-rift-titan-protocol" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 12 12 20.5 3.5 12 12 3.5Z"/>
+      <circle cx="12" cy="12" r="4.2" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">RT</text>
+  </symbol>
+  <symbol id="icon-retro-room-prototype" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="5" y="5" width="14" height="14" rx="3"/>
+      <circle cx="12" cy="12" r="5" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">RR</text>
+  </symbol>
+  <symbol id="icon-pulse-rail" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 12 12 20.5 3.5 12 12 3.5Z"/>
+      <circle cx="12" cy="12" r="4.2" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">PR</text>
+  </symbol>
+  <symbol id="icon-nocturne-dead-frequency" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="4" width="16" height="16" rx="5"/>
+      <circle cx="12" cy="12" r="5" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">ND</text>
+  </symbol>
+  <symbol id="icon-neon-rift-racers" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 12 12 20.5 3.5 12 12 3.5Z"/>
+      <circle cx="12" cy="12" r="4.2" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">NR</text>
+  </symbol>
+  <symbol id="icon-neon-descent" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="3"/>
+      <circle cx="12" cy="12" r="5" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">ND</text>
+  </symbol>
+  <symbol id="icon-mr-bean-total-chaos-collection" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 12 12 20.5 3.5 12 12 3.5Z"/>
+      <circle cx="12" cy="12" r="4.2" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">MB</text>
+  </symbol>
+  <symbol id="icon-moustique-the-video-game" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="5" y="5" width="14" height="14" rx="5"/>
+      <circle cx="12" cy="12" r="5" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">MT</text>
+  </symbol>
+  <symbol id="icon-moonlit-maid-cafe-simulator" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 12 12 20.5 3.5 12 12 3.5Z"/>
+      <circle cx="12" cy="12" r="4.2" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">MM</text>
+  </symbol>
+  <symbol id="icon-meme-battle-internet-legends" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="4" width="16" height="16" rx="3"/>
+      <circle cx="12" cy="12" r="5" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">MB</text>
+  </symbol>
+  <symbol id="icon-manga-break-le-dernier-brouillon" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 12 12 20.5 3.5 12 12 3.5Z"/>
+      <circle cx="12" cy="12" r="4.2" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">MB</text>
+  </symbol>
+  <symbol id="icon-kidz-tv-after-hours" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="5"/>
+      <circle cx="12" cy="12" r="5" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">KT</text>
+  </symbol>
+  <symbol id="icon-harmonic-terraform" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 12 12 20.5 3.5 12 12 3.5Z"/>
+      <circle cx="12" cy="12" r="4.2" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">HT</text>
+  </symbol>
+  <symbol id="icon-gamevault-room-3d" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="5" y="5" width="14" height="14" rx="3"/>
+      <circle cx="12" cy="12" r="5" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">GR</text>
+  </symbol>
+  <symbol id="icon-black-gospel-the-ninth-cadaver" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 12 12 20.5 3.5 12 12 3.5Z"/>
+      <circle cx="12" cy="12" r="4.2" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">BG</text>
+  </symbol>
+  <symbol id="icon-bounce-arena-prototype-fan-jouable" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="4" width="16" height="16" rx="5"/>
+      <circle cx="12" cy="12" r="5" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">BA</text>
+  </symbol>
+  <symbol id="icon-black-signal-bastion-zero" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 12 12 20.5 3.5 12 12 3.5Z"/>
+      <circle cx="12" cy="12" r="4.2" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">BS</text>
+  </symbol>
+  <symbol id="icon-astral-dominion" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="3"/>
+      <circle cx="12" cy="12" r="5" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">AD</text>
+  </symbol>
+  <symbol id="icon-arcade-null-high-score-protocol" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 12 12 20.5 3.5 12 12 3.5Z"/>
+      <circle cx="12" cy="12" r="4.2" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">AN</text>
+  </symbol>
+  <symbol id="icon-good-morning-hollowbrook" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="5" y="5" width="14" height="14" rx="5"/>
+      <circle cx="12" cy="12" r="5" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">HL</text>
+  </symbol>
+  <symbol id="icon-petits-poissons-red-tide" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 12 12 20.5 3.5 12 12 3.5Z"/>
+      <circle cx="12" cy="12" r="4.2" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">PP</text>
+  </symbol>
+  <symbol id="icon-brigade-premier-degre" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="4" width="16" height="16" rx="3"/>
+      <circle cx="12" cy="12" r="5" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">BP</text>
+  </symbol>
+  <symbol id="icon-umbra-les-heures-noires" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 12 12 20.5 3.5 12 12 3.5Z"/>
+      <circle cx="12" cy="12" r="4.2" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">UL</text>
+  </symbol>
+  <symbol id="icon-nocturne-signal" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="5"/>
+      <circle cx="12" cy="12" r="5" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">NS</text>
+  </symbol>
+  <symbol id="icon-terra-testudo-les-mondes-dos" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.5 20.5 12 12 20.5 3.5 12 12 3.5Z"/>
+      <circle cx="12" cy="12" r="4.2" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">TT</text>
+  </symbol>
+  <symbol id="icon-strike-command-desert-thunder" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="5" y="5" width="14" height="14" rx="3"/>
+      <circle cx="12" cy="12" r="5" opacity=".45"/>
+    </g>
+    <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">SC</text>
+  </symbol>
 </svg>
