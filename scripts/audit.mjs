@@ -190,7 +190,7 @@ if (await exists("assets/recent-games.js")) {
     failures.push(`catalogue récent illisible: ${error.message}`);
   }
 }
-assert(recentApps.length === 66, "le catalogue récent contient exactement 66 jeux");
+assert(recentApps.length === 72, "le catalogue récent contient exactement 72 jeux");
 apps = [...apps, ...recentApps];
 
 let gameGenreGroups = [];
@@ -202,8 +202,8 @@ if (gameGenreMatch) {
   }
 }
 
-assert(apps.length === 112, "le catalogue contient exactement 112 applications");
-assert(apps.filter((app) => app?.category === "Jeux").length === 99, "le catalogue contient exactement 99 jeux");
+assert(apps.length === 118, "le catalogue contient exactement 118 applications");
+assert(apps.filter((app) => app?.category === "Jeux").length === 105, "le catalogue contient exactement 105 jeux");
 assert(gameGenreGroups.length === 8, "la navigation Jeux contient huit genres principaux");
 
 const starterGameIds = new Set(
@@ -241,7 +241,6 @@ const legacyFanGameBases = new Map([
   ["hellbound-hotel-manager", "Hazbin Hotel"],
   ["hive-ascension", "Alien"],
   ["yautja-la-longue-chasse", "Predator"],
-  ["another-day-z", "DayZ"],
   ["hive-ascension-cycle", "Alien"],
   ["kc-holographics", "Yu-Gi-Oh!"],
   ["cells-at-work-immune-alert", "Cells at Work!"],
@@ -261,8 +260,21 @@ for (const app of apps.filter((entry) => entry?.category === "Jeux")) {
 }
 assert(
   apps.filter((app) => app?.category === "Jeux").every((app) => genreNames.has(app.genre || mappedGameIds.get(app.id))),
-  "la taxonomie couvre exactement les 99 jeux du catalogue"
+  "la taxonomie couvre exactement les 105 jeux du catalogue"
 );
+
+const anotherDay = apps.find((app) => app?.id === "another-day-z");
+assert(Boolean(anotherDay), "AnotherDay original entry is present");
+assert((anotherDay?.gameKind || (legacyFanGameBases.has(anotherDay?.id) ? "Fan games" : "Jeux originaux")) === "Jeux originaux", "AnotherDay is an original game");
+assert(!String(anotherDay?.baseGame || legacyFanGameBases.get(anotherDay?.id) || "").trim(), "AnotherDay has no base game");
+
+const upcomingApps = apps.filter((app) => app?.status === "En préparation de publication");
+assert(upcomingApps.length === 6, "six jeux sont identifiés comme en préparation de publication");
+assert(upcomingApps.every((app) => !app.link), "les jeux en préparation n inventent aucun lien public");
+
+const resolvedGameKinds = apps.filter((app) => app?.category === "Jeux").map((app) => app.gameKind || (legacyFanGameBases.has(app.id) ? "Fan games" : "Jeux originaux"));
+assert(resolvedGameKinds.filter((kind) => kind === "Jeux originaux").length === 86, "le catalogue contient 86 jeux originaux");
+assert(resolvedGameKinds.filter((kind) => kind === "Fan games").length === 19, "le catalogue contient 19 fan-games");
 
 const ids = new Set();
 const images = new Set();
@@ -272,13 +284,16 @@ for (const app of apps) {
   assert(!ids.has(app.id), `identifiant unique: ${app.id}`);
   ids.add(app.id);
 
-  try {
-    const url = new URL(app.link);
-    assert(["https:", "http:", "steam:", "file:"].includes(url.protocol), `protocole autorisé pour ${app.id}`);
-  } catch {
-    failures.push(`lien invalide pour ${app.id}: ${app.link}`);
+  if (!app.link) {
+    assert(app.status === "En préparation de publication", `absence de lien justifiée pour ${app.id}`);
+  } else {
+    try {
+      const url = new URL(app.link);
+      assert(["https:", "http:", "steam:", "file:"].includes(url.protocol), `protocole autorisé pour ${app.id}`);
+    } catch {
+      failures.push(`lien invalide pour ${app.id}: ${app.link}`);
+    }
   }
-
   assert(Boolean(app.image), `aperçu renseigné pour ${app.id}`);
   if (app.image) {
     images.add(app.image.replaceAll("\\", "/"));

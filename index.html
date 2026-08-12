@@ -574,6 +574,12 @@
       color: var(--muted);
     }
 
+    .status-pill.preparing {
+      color: #fde68a;
+      border-color: rgba(250, 204, 21, 0.46);
+      background: rgba(66, 45, 8, 0.62);
+    }
+
     .card-actions {
       position: absolute;
       right: 10px;
@@ -1868,7 +1874,6 @@
       ["yautja-apex-hunt", "Predator"],
       ["hive-ascension", "Alien"],
       ["hive-ascension-cycle", "Alien"],
-      ["another-day-z", "DayZ"]
     ]);
 
     const categoryColors = {
@@ -2098,6 +2103,7 @@
       const state = onlineStatus[app.id];
       if (state === "online") return "Joignable";
       if (state === "offline") return "Injoignable";
+      if (!app.link && app.status === "En préparation de publication") return "En préparation";
       if (!app.link) return "Sans lien";
       if (!/^https?:/i.test(app.link)) return "Lien local";
       return "Vérification...";
@@ -2105,6 +2111,7 @@
 
     function statusClass(app) {
       if (onlineStatus[app.id]) return onlineStatus[app.id];
+      if (!app.link && app.status === "En préparation de publication") return "preparing";
       return /^https?:/i.test(app.link) ? "checking" : "local";
     }
 
@@ -2515,7 +2522,7 @@
 
       const openControl = app.link
         ? `<a class="primary-button" href="${escapeHtml(app.link)}" target="_blank" rel="noopener noreferrer" data-launch-app="${escapeHtml(app.id)}">Ouvrir</a>`
-        : `<button class="primary-button" type="button" disabled>Sans lien</button>`;
+        : `<button class="primary-button" type="button" disabled>${app.status === "En préparation de publication" ? "En préparation" : "Sans lien"}</button>`;
 
       details.innerHTML = `
         <div class="hero-preview" role="group" aria-label="Galerie de ${escapeHtml(app.name)} · ${escapeHtml(mediaLabel(activeMediaIndex))}">
@@ -2598,7 +2605,7 @@
       showcaseBody.style.setProperty("--showcase-image", cssImage(app, 0));
       const openControl = app.link
         ? `<a class="primary-button" href="${escapeHtml(app.link)}" target="_blank" rel="noopener noreferrer" data-launch-app="${escapeHtml(app.id)}">Ouvrir</a>`
-        : `<button class="primary-button" type="button" disabled>Sans lien</button>`;
+        : `<button class="primary-button" type="button" disabled>${app.status === "En préparation de publication" ? "En préparation" : "Sans lien"}</button>`;
       showcaseBody.innerHTML = `
         <div class="showcase-image"></div>
         <div class="showcase-copy">
