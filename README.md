@@ -85,7 +85,7 @@ Le fichier `assets/upcoming-games.json` fournit également des valeurs par défa
 1. Ajouter son objet dans `starterApps` dans `index.html`, ou dans `assets/recent-games.js`, avec un `id` unique.
 2. Renseigner `releaseState` (`upcoming` ou `published`) et `addedAt` au format ISO. Une entrée `published` doit avoir un lien ; une entrée `upcoming` ne doit pas en inventer.
 3. Pour un jeu, renseigner `gameKind`, l’un des huit `genre` et, pour un fan-game, `baseGame`.
-4. Ajouter un aperçu et une présentation distincte sous `assets/previews/` et `assets/presentations/`.
+4. Générer une présentation dédiée avec OpenAI `image_gen`, la placer sous `assets/presentations/`, puis enregistrer sa provenance et son SHA-256 dans `assets/openai-art-manifest.json`. Ajouter aussi un aperçu distinct sous `assets/previews/`.
 5. Ajouter au moins cinq vues sous `assets/screenshots/<id>/` et les référencer dans `assets/app-gallery.json`.
 6. Ajouter le symbole `icon-<id>` dans `assets/app-icons.svg`.
 7. Ajouter la version correspondante à `assets/catalogue-updates.js`, dans l’ordre décroissant des dates.

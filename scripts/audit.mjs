@@ -1,6 +1,7 @@
 import { access, readFile, readdir, stat } from "node:fs/promises";
 import { constants } from "node:fs";
 import { execFileSync } from "node:child_process";
+import { createHash } from "node:crypto";
 import path from "node:path";
 import vm from "node:vm";
 import { fileURLToPath } from "node:url";
@@ -427,6 +428,39 @@ for (const presentation of presentationFiles) {
   await assertRasterFormat(presentation);
 }
 
+const openAiArtPath = "assets/openai-art-manifest.json";
+assert(await exists(openAiArtPath), "le manifeste des illustrations OpenAI existe");
+let openAiArt = null;
+if (await exists(openAiArtPath)) {
+  try {
+    openAiArt = JSON.parse(await readFile(path.join(root, openAiArtPath), "utf8"));
+  } catch (error) {
+    failures.push("manifeste OpenAI illisible: " + error.message);
+  }
+}
+assert(openAiArt?.provider === "OpenAI", "le manifeste déclare OpenAI comme fournisseur");
+assert(openAiArt?.generator === "image_gen", "le manifeste déclare image_gen comme générateur");
+assert(Array.isArray(openAiArt?.apps), "le manifeste OpenAI expose une liste d'applications");
+const openAiEntries = Array.isArray(openAiArt?.apps) ? openAiArt.apps : [];
+assert(openAiEntries.length === apps.length, "une provenance OpenAI exactement par application");
+assert(new Set(openAiEntries.map((entry) => entry?.id)).size === apps.length, "les provenances OpenAI ont des IDs uniques");
+for (const app of apps) {
+  const entry = openAiEntries.find((candidate) => candidate?.id === app.id);
+  assert(Boolean(entry), `provenance OpenAI présente pour ${app.id}`);
+  if (!entry) continue;
+  assert(entry.provider === "OpenAI" && entry.generator === "image_gen", `générateur OpenAI valide pour ${app.id}`);
+  assert(entry.asset === app.presentation, `illustration OpenAI utilisée comme présentation pour ${app.id}`);
+  assert(Boolean(String(entry.generationRef || "").trim()), `référence de génération présente pour ${app.id}`);
+  assert(/^[a-f0-9]{64}$/.test(String(entry.sha256 || "")), `SHA-256 valide pour ${app.id}`);
+  if (await exists(entry.asset)) {
+    const digest = createHash("sha256").update(await readFile(path.join(root, entry.asset))).digest("hex");
+    assert(digest === entry.sha256, `SHA-256 fidèle pour ${app.id}`);
+  }
+}
+for (const entry of openAiEntries) {
+  assert(ids.has(entry?.id), `provenance OpenAI attribuée à une application connue: ${entry?.id || "inconnue"}`);
+}
+
 const galleryDocument = JSON.parse(await readFile(path.join(root, "assets", "app-gallery.json"), "utf8"));
 const galleryMap = galleryDocument.galleries || galleryDocument.apps || galleryDocument;
 const galleryPaths = new Set();
@@ -552,8 +586,9 @@ for (const asset of appShell) {
   assert(assetExists, `asset APP_SHELL présent: ${asset}`);
   if (assetExists) appShellBytes += (await stat(path.join(root, relativePath))).size;
 }
+assert(appShell.includes("/assets/openai-art-manifest.json"), "le manifeste OpenAI fait partie du shell hors ligne");
 assert(appShellBytes <= 5 * 1024 * 1024, "le préchargement APP_SHELL reste inférieur à 5 Mo");
-assert(serviceWorker.includes('const CACHE_NAME = "launcher-shell-v20"'), "le cache applicatif v1.4 utilise launcher-shell-v20");
+assert(serviceWorker.includes('const CACHE_NAME = "launcher-shell-v21"'), "le cache applicatif v1.5 utilise launcher-shell-v21");
 assert(serviceWorker.includes('const RUNTIME_CACHE = "launcher-media-runtime-v1"'), "le cache média différé est versionné");
 assert(serviceWorker.includes("const MAX_RUNTIME_ENTRIES = 120"), "le cache média différé est borné");
 assert(
