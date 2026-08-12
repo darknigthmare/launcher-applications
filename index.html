@@ -350,6 +350,45 @@
       margin-top: 22px;
     }
 
+    .availability-filter {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 7px;
+    }
+
+    .availability-button {
+      min-height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 7px 9px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.045);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      font-size: 0.8rem;
+      text-align: left;
+    }
+
+    .availability-button:hover,
+    .availability-button[aria-pressed="true"] {
+      color: var(--text);
+      border-color: color-mix(in srgb, var(--accent) 62%, var(--line));
+      background: color-mix(in srgb, var(--accent) 13%, transparent);
+    }
+
+    .availability-count {
+      min-width: 23px;
+      border-radius: 999px;
+      padding: 2px 6px;
+      background: rgba(255, 255, 255, 0.09);
+      color: var(--text);
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+    }
+
     .icon-button,
     .primary-button,
     .ghost-button {
@@ -638,6 +677,12 @@
       background: rgba(74, 222, 128, 0.08);
     }
 
+    .new-tag {
+      color: #fef3c7;
+      border-color: rgba(251, 191, 36, 0.48);
+      background: rgba(251, 191, 36, 0.1);
+    }
+
     .pitch {
       color: var(--text);
       font-size: 0.92rem;
@@ -877,6 +922,110 @@
       padding: 10px;
     }
 
+    .insight-dialog {
+      width: min(820px, calc(100% - 24px));
+      max-height: min(82vh, 760px);
+    }
+
+    .insight-body {
+      max-height: calc(82vh - 74px);
+      overflow: auto;
+      padding: 18px;
+    }
+
+    .health-summary {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .health-card {
+      min-height: 92px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 13px;
+      background: rgba(255, 255, 255, 0.045);
+      display: grid;
+      align-content: space-between;
+      gap: 8px;
+    }
+
+    .health-card span {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .health-card strong {
+      font-size: 1.55rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .health-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+      color: var(--muted);
+    }
+
+    .issue-section,
+    .release-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    .issue-section + .issue-section,
+    .release-card + .release-card { margin-top: 10px; }
+
+    .issue-section h3,
+    .release-card h3 {
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+
+    .issue-list,
+    .release-list {
+      margin: 0;
+      padding-left: 19px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .release-timeline {
+      position: relative;
+      display: grid;
+      gap: 10px;
+    }
+
+    .release-card {
+      display: grid;
+      grid-template-columns: minmax(92px, auto) 1fr;
+      gap: 14px;
+    }
+
+    .release-version {
+      color: var(--accent-2);
+      font-weight: 800;
+    }
+
+    .release-date {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .dialog-empty {
+      color: var(--muted);
+      text-align: center;
+      padding: 28px 10px;
+    }
+
     @media (max-width: 1320px) {
       .shell {
         grid-template-columns: 240px minmax(0, 1fr);
@@ -943,8 +1092,18 @@
       }
 
       #randomButton,
-      #showcaseButton {
+      #showcaseButton,
+      #updatesButton,
+      #healthButton {
         grid-column: 1 / -1;
+      }
+
+      .health-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .release-card {
+        grid-template-columns: 1fr;
       }
 
       .grid {
@@ -1010,6 +1169,9 @@
       <div class="nav-title">Types</div>
       <nav class="category-list" id="categoryList"></nav>
 
+      <div class="nav-title">Disponibilité</div>
+      <div class="availability-filter" id="availabilityFilter" role="group" aria-label="Filtrer par disponibilité"></div>
+
       <div class="nav-title">Tags</div>
       <div class="tag-list" id="tagList"></div>
 
@@ -1038,6 +1200,8 @@
             </svg>
           </button>
           <button class="ghost-button" id="popularityButton" type="button" aria-pressed="false" aria-busy="false">Popularité</button>
+          <button class="ghost-button" id="updatesButton" type="button" aria-haspopup="dialog">Mises à jour</button>
+          <button class="ghost-button" id="healthButton" type="button" aria-haspopup="dialog">Santé du catalogue</button>
           <button class="ghost-button" id="randomButton" type="button">Ambiance au hasard</button>
           <button class="ghost-button" id="showcaseButton" type="button">Mode vitrine</button>
         </div>
@@ -1130,7 +1294,38 @@
     <div class="showcase-body" id="showcaseBody"></div>
   </dialog>
 
+  <dialog class="insight-dialog" id="updatesDialog" aria-labelledby="updatesDialogTitle">
+    <div class="modal-head">
+      <div>
+        <p class="subtitle">Journal du launcher</p>
+        <h2 id="updatesDialogTitle">Mises à jour</h2>
+      </div>
+      <button class="icon-button" id="closeUpdatesButton" type="button" aria-label="Fermer les mises à jour">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <div class="insight-body" id="updatesBody"></div>
+  </dialog>
+
+  <dialog class="insight-dialog" id="healthDialog" aria-labelledby="healthDialogTitle">
+    <div class="modal-head">
+      <div>
+        <p class="subtitle">Diagnostic en direct</p>
+        <h2 id="healthDialogTitle">Santé du catalogue</h2>
+      </div>
+      <button class="icon-button" id="closeHealthButton" type="button" aria-label="Fermer la santé du catalogue">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <div class="insight-body" id="healthBody" aria-live="polite"></div>
+  </dialog>
+
   <script src="assets/recent-games.js"></script>
+  <script src="assets/catalogue-updates.js"></script>
   <script src="assets/social-features.js"></script>
   <script>
     const starterApps = [
@@ -1893,12 +2088,18 @@
     const allowedLaunchProtocols = new Set(["https:", "http:", "steam:", "file:"]);
     const POPULARITY_WORKER_COUNT = 4;
     const POPULARITY_REFRESH_INTERVAL_MS = 30_000;
+    const NEW_APP_WINDOW_DAYS = 45;
+    const LEGACY_ADDED_AT = "1970-01-01T00:00:00.000Z";
+    const MEDIA_HEALTH_WORKER_COUNT = 6;
+    const AVAILABILITY_FILTERS = ["Tous", "Disponible", "En préparation", "Nouveauté"];
+    const OFFICIAL_SYNC_FIELDS = ["link", "status", "releaseState", "addedAt"];
     const appIconIds = new Set(starterApps.map((app) => app.id));
     const stage = document.getElementById("stage");
     const grid = document.getElementById("appGrid");
     const details = document.getElementById("details");
     const categoryList = document.getElementById("categoryList");
     const tagList = document.getElementById("tagList");
+    const availabilityFilter = document.getElementById("availabilityFilter");
     const resultCount = document.getElementById("resultCount");
     const viewTitle = document.getElementById("viewTitle");
     const searchInput = document.getElementById("searchInput");
@@ -1907,6 +2108,10 @@
     const showcaseDialog = document.getElementById("showcaseDialog");
     const showcaseBody = document.getElementById("showcaseBody");
     const showcaseTitle = document.getElementById("showcaseTitle");
+    const updatesDialog = document.getElementById("updatesDialog");
+    const updatesBody = document.getElementById("updatesBody");
+    const healthDialog = document.getElementById("healthDialog");
+    const healthBody = document.getElementById("healthBody");
     const sortButton = document.getElementById("sortButton");
     const popularityButton = document.getElementById("popularityButton");
 
@@ -1918,6 +2123,7 @@
     let activeGameKind = "Tous";
     let activeGameGenre = "Tous";
     let activeTag = "Tous";
+    let activeAvailability = "Tous";
     let selectedId = apps[0]?.id;
     let sortMode = "name";
     let sortAscending = true;
@@ -1928,6 +2134,9 @@
     let socialPanelController = null;
     const mediaViewById = new Map();
     const popularityById = new Map();
+    const mediaHealthById = new Map();
+    let lastHealthCheck = null;
+    let healthRefreshPromise = null;
 
     function escapeHtml(value) {
       return String(value ?? "").replace(/[&<>"']/g, (char) => ({
@@ -1977,6 +2186,19 @@
       const rawGallery = Array.isArray(source.gallery) ? source.gallery : (Array.isArray(fallback.gallery) ? fallback.gallery : []);
       const gallery = [...new Set(rawGallery.map(sanitizeImageUrl).filter(Boolean))].slice(0, 10);
       const name = String(source.name || fallback.name || "Application").trim().slice(0, 80);
+      const link = sanitizeLaunchUrl(source.link || fallback.link);
+      const status = String(source.status || fallback.status || "").trim().slice(0, 40);
+      const declaredReleaseState = String(source.releaseState || fallback.releaseState || "").trim().toLowerCase();
+      const releaseState = link
+        ? "published"
+        : declaredReleaseState === "published" || declaredReleaseState === "upcoming"
+          ? declaredReleaseState
+          : normalizeSearch(status).includes("preparation")
+            ? "upcoming"
+            : "upcoming";
+      const rawAddedAt = String(source.addedAt || fallback.addedAt || "").trim();
+      const addedAtTime = Date.parse(rawAddedAt);
+      const addedAt = Number.isFinite(addedAtTime) ? new Date(addedAtTime).toISOString() : LEGACY_ADDED_AT;
       return {
         ...fallback,
         ...source,
@@ -1990,12 +2212,14 @@
         baseGame: String(source.baseGame || fallback.baseGame || "").trim().slice(0, 100),
         tags,
         icon: String(source.icon || fallback.icon || initials(name)).trim().slice(0, 5),
-        link: sanitizeLaunchUrl(source.link || fallback.link),
+        link,
         presentation: sanitizeImageUrl(source.presentation || fallback.presentation || source.image || fallback.image),
         image: sanitizeImageUrl(source.image || fallback.image),
         gallery,
         accent: sanitizeAccent(source.accent || fallback.accent),
-        status: String(source.status || fallback.status || "").trim().slice(0, 40)
+        status,
+        releaseState,
+        addedAt
       };
     }
 
@@ -2029,7 +2253,18 @@
       const saved = safeReadArray(storeKey);
       if (!saved) return starterApps.map(normalizeApp);
 
-      const loaded = saved.filter((app) => app && typeof app === "object").map(normalizeApp);
+      const starterById = new Map(starterApps.map((starter) => [String(starter.id), starter]));
+      const loaded = saved
+        .filter((app) => app && typeof app === "object")
+        .map((savedApp) => {
+          const starter = starterById.get(String(savedApp.id));
+          if (!starter) return normalizeApp(savedApp);
+          const synchronized = { ...savedApp };
+          OFFICIAL_SYNC_FIELDS.forEach((field) => {
+            synchronized[field] = starter[field] ?? "";
+          });
+          return normalizeApp(synchronized);
+        });
       const knownIds = new Set(loaded.map((app) => app.id));
       starterApps.forEach((starter) => {
         if (!knownIds.has(starter.id) && !removedStarterIds.has(starter.id)) {
@@ -2099,19 +2334,39 @@
       return `<svg aria-hidden="true" focusable="false"><use href="${escapeHtml(href)}"></use></svg>`;
     }
 
+    function availabilityFor(app) {
+      return app?.releaseState === "published" || Boolean(app?.link)
+        ? "Disponible"
+        : "En préparation";
+    }
+
+    function isNewApp(app, now = Date.now(), windowDays = NEW_APP_WINDOW_DAYS) {
+      const addedAt = Date.parse(app?.addedAt || "");
+      if (!Number.isFinite(addedAt)) return false;
+      const elapsed = now - addedAt;
+      return elapsed >= 0 && elapsed <= windowDays * 24 * 60 * 60 * 1000;
+    }
+
+    function visibleTags(app) {
+      return (app?.tags || []).filter((tag) => (
+        availabilityFor(app) !== "Disponible" ||
+        normalizeSearch(tag) !== "en preparation"
+      ));
+    }
+
     function statusLabel(app) {
+      if (availabilityFor(app) === "En préparation") return "En préparation";
       const state = onlineStatus[app.id];
       if (state === "online") return "Joignable";
       if (state === "offline") return "Injoignable";
-      if (!app.link && app.status === "En préparation de publication") return "En préparation";
       if (!app.link) return "Sans lien";
       if (!/^https?:/i.test(app.link)) return "Lien local";
       return "Vérification...";
     }
 
     function statusClass(app) {
+      if (availabilityFor(app) === "En préparation") return "preparing";
       if (onlineStatus[app.id]) return onlineStatus[app.id];
-      if (!app.link && app.status === "En préparation de publication") return "preparing";
       return /^https?:/i.test(app.link) ? "checking" : "local";
     }
 
@@ -2120,7 +2375,7 @@
     }
 
     function allTags() {
-      return [...new Set(apps.flatMap((app) => app.tags || []))].sort((a, b) => a.localeCompare(b));
+      return [...new Set(apps.flatMap(visibleTags))].sort((a, b) => a.localeCompare(b));
     }
 
     function popularityCount(appId) {
@@ -2212,7 +2467,11 @@
         .filter((app) => activeCategory === "Tous" || (activeCategory === "Favoris" ? favorites.has(app.id) : app.category === activeCategory))
         .filter((app) => activeCategory !== "Jeux" || activeGameKind === "Tous" || gameKindFor(app) === activeGameKind)
         .filter((app) => activeCategory !== "Jeux" || activeGameGenre === "Tous" || gameGenreFor(app) === activeGameGenre)
-        .filter((app) => activeTag === "Tous" || (app.tags || []).includes(activeTag))
+        .filter((app) => activeTag === "Tous" || visibleTags(app).includes(activeTag))
+        .filter((app) => (
+          activeAvailability === "Tous" ||
+          (activeAvailability === "Nouveauté" ? isNewApp(app) : availabilityFor(app) === activeAvailability)
+        ))
         .filter((app) => {
           const haystack = normalizeSearch(`${app.name} ${app.category} ${gameKindLabel(gameKindFor(app))} ${gameGenreFor(app)} ${gameBaseFor(app)} ${app.description} ${app.pitch} ${app.status} ${(app.tags || []).join(" ")}`);
           return haystack.includes(query);
@@ -2405,9 +2664,35 @@
 
     function renderTags() {
       const tags = ["Tous", ...allTags()];
+      if (!tags.includes(activeTag)) activeTag = "Tous";
       tagList.innerHTML = tags.map((tag) => `
         <button class="tag-filter ${tag === activeTag ? "active" : ""}" type="button" data-tag="${escapeHtml(tag)}" aria-pressed="${tag === activeTag}">${escapeHtml(tag)}</button>
       `).join("");
+    }
+
+    function renderAvailabilityFilters() {
+      const counts = {
+        Tous: apps.length,
+        Disponible: apps.filter((app) => availabilityFor(app) === "Disponible").length,
+        "En préparation": apps.filter((app) => availabilityFor(app) === "En préparation").length,
+        Nouveauté: apps.filter((app) => isNewApp(app)).length
+      };
+      availabilityFilter.innerHTML = AVAILABILITY_FILTERS.map((filter) => {
+        const active = filter === activeAvailability;
+        const detail = filter === "Nouveauté" ? ` des ${NEW_APP_WINDOW_DAYS} derniers jours` : "";
+        return `
+          <button
+            class="availability-button"
+            type="button"
+            data-availability="${escapeHtml(filter)}"
+            aria-pressed="${active}"
+            aria-label="${escapeHtml(`${filter}${detail}, ${counts[filter]} application${counts[filter] > 1 ? "s" : ""}`)}"
+          >
+            <span>${escapeHtml(filter)}</span>
+            <span class="availability-count" aria-hidden="true">${counts[filter]}</span>
+          </button>
+        `;
+      }).join("");
     }
 
     function renderGrid() {
@@ -2417,12 +2702,16 @@
           ? " · chargement de la popularité"
           : " · tri par popularité"
         : "";
-      resultCount.textContent = `${visibleApps.length} application${visibleApps.length > 1 ? "s" : ""}${popularityStatus}`;
-      viewTitle.textContent = activeCategory === "Tous"
+      const availabilityStatus = activeAvailability === "Tous" ? "" : ` · ${activeAvailability.toLowerCase()}`;
+      resultCount.textContent = `${visibleApps.length} application${visibleApps.length > 1 ? "s" : ""}${availabilityStatus}${popularityStatus}`;
+      const baseViewTitle = activeCategory === "Tous"
         ? "Toutes tes applications"
         : activeCategory === "Jeux"
           ? activeGameViewTitle()
           : activeCategory;
+      viewTitle.textContent = activeAvailability === "Tous"
+        ? baseViewTitle
+        : `${baseViewTitle} · ${activeAvailability}`;
 
       if (!visibleApps.length) {
         grid.innerHTML = `<div class="empty">Aucune application ne correspond à cette recherche.</div>`;
@@ -2477,9 +2766,10 @@
             <div class="app-body">
               <div class="tag-row">
                 <span class="tag">${escapeHtml(app.category)}</span>
+                ${isNewApp(app) ? '<span class="tag new-tag">Nouveau</span>' : ""}
                 ${gameTaxonomyTagsMarkup(app)}
                 ${sortMode === "popularity" && !popularityLoadPromise ? `<span class="tag popularity-tag">${popularityLabel(app.id)}</span>` : ""}
-                ${(app.tags || []).slice(0, 2).map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}
+                ${visibleTags(app).slice(0, 2).map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}
               </div>
               <h3>${escapeHtml(app.name)}</h3>
               <p class="pitch">${escapeHtml(app.pitch)}</p>
@@ -2522,7 +2812,7 @@
 
       const openControl = app.link
         ? `<a class="primary-button" href="${escapeHtml(app.link)}" target="_blank" rel="noopener noreferrer" data-launch-app="${escapeHtml(app.id)}">Ouvrir</a>`
-        : `<button class="primary-button" type="button" disabled>${app.status === "En préparation de publication" ? "En préparation" : "Sans lien"}</button>`;
+        : `<button class="primary-button" type="button" disabled>${availabilityFor(app) === "En préparation" ? "En préparation" : "Sans lien"}</button>`;
 
       details.innerHTML = `
         <div class="hero-preview" role="group" aria-label="Galerie de ${escapeHtml(app.name)} · ${escapeHtml(mediaLabel(activeMediaIndex))}">
@@ -2555,8 +2845,9 @@
         </div>
         <div class="tag-row">
           <span class="tag">${escapeHtml(app.category)}</span>
+          ${isNewApp(app) ? '<span class="tag new-tag">Nouveau</span>' : ""}
           ${gameTaxonomyTagsMarkup(app)}
-          ${(app.tags || []).map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}
+          ${visibleTags(app).map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}
         </div>
         <h2>${escapeHtml(app.name)}</h2>
         <p class="pitch">${escapeHtml(app.pitch)}</p>
@@ -2605,15 +2896,16 @@
       showcaseBody.style.setProperty("--showcase-image", cssImage(app, 0));
       const openControl = app.link
         ? `<a class="primary-button" href="${escapeHtml(app.link)}" target="_blank" rel="noopener noreferrer" data-launch-app="${escapeHtml(app.id)}">Ouvrir</a>`
-        : `<button class="primary-button" type="button" disabled>${app.status === "En préparation de publication" ? "En préparation" : "Sans lien"}</button>`;
+        : `<button class="primary-button" type="button" disabled>${availabilityFor(app) === "En préparation" ? "En préparation" : "Sans lien"}</button>`;
       showcaseBody.innerHTML = `
         <div class="showcase-image"></div>
         <div class="showcase-copy">
           <div class="app-icon">${appIconMarkup(app)}</div>
           <div class="tag-row">
             <span class="tag">${escapeHtml(app.category)}</span>
+            ${isNewApp(app) ? '<span class="tag new-tag">Nouveau</span>' : ""}
             ${gameTaxonomyTagsMarkup(app)}
-            ${(app.tags || []).map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}
+            ${visibleTags(app).map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}
           </div>
           <h2>${escapeHtml(app.name)}</h2>
           <p class="pitch">${escapeHtml(app.pitch)}</p>
@@ -2622,6 +2914,202 @@
         </div>
       `;
       showcaseDialog.showModal();
+    }
+
+    function formatDate(value, options = { dateStyle: "long" }) {
+      const time = Date.parse(value || "");
+      if (!Number.isFinite(time)) return "Date non renseignée";
+      return new Intl.DateTimeFormat("fr-FR", options).format(new Date(time));
+    }
+
+    function renderUpdates() {
+      const releases = Array.isArray(window.LAUNCHER_RELEASES) ? [...window.LAUNCHER_RELEASES] : [];
+      releases.sort((a, b) => Date.parse(b?.date || b?.publishedAt || "") - Date.parse(a?.date || a?.publishedAt || ""));
+      if (!releases.length) {
+        updatesBody.innerHTML = '<p class="dialog-empty">Le journal des mises à jour sera bientôt disponible.</p>';
+        return;
+      }
+
+      updatesBody.innerHTML = `
+        <div class="release-timeline" role="list" aria-label="Versions du launcher">
+          ${releases.map((release, index) => {
+            const version = String(release?.version || release?.tag || "Version").trim();
+            const title = String(release?.title || release?.name || "Améliorations du launcher").trim();
+            const rawItems = release?.highlights || release?.changes || release?.items || release?.notes || [];
+            const items = Array.isArray(rawItems) ? rawItems : [rawItems];
+            const releaseTitleId = `release-title-${index}`;
+            return `
+              <article class="release-card" role="listitem" aria-labelledby="${releaseTitleId}">
+                <div>
+                  <span class="release-version">${escapeHtml(version)}</span>
+                  <time class="release-date" datetime="${escapeHtml(release?.date || release?.publishedAt || "")}">
+                    ${escapeHtml(formatDate(release?.date || release?.publishedAt))}
+                  </time>
+                </div>
+                <div>
+                  <h3 id="${releaseTitleId}">${escapeHtml(title)}</h3>
+                  ${items.filter(Boolean).length ? `
+                    <ul class="release-list">
+                      ${items.filter(Boolean).map((item) => `<li>${escapeHtml(typeof item === "string" ? item : item?.label || item?.title || "")}</li>`).join("")}
+                    </ul>
+                  ` : ""}
+                </div>
+              </article>
+            `;
+          }).join("")}
+        </div>
+      `;
+    }
+
+    function mediaTargets(app) {
+      const targets = [
+        { label: "Illustration", url: sanitizeImageUrl(app.presentation) },
+        { label: "Capture", url: sanitizeImageUrl(app.image) },
+        ...(Array.isArray(app.gallery) ? app.gallery.map((url, index) => ({
+          label: `Galerie ${index + 1}`,
+          url: sanitizeImageUrl(url)
+        })) : [])
+      ];
+      const seen = new Set();
+      return targets.filter((target) => {
+        if (!target.url || seen.has(target.url)) return false;
+        seen.add(target.url);
+        return true;
+      });
+    }
+
+    function isSameOriginHttp(url) {
+      try {
+        const parsed = new URL(url, document.baseURI);
+        return ["http:", "https:"].includes(parsed.protocol) && parsed.origin === location.origin;
+      } catch (error) {
+        return false;
+      }
+    }
+
+    async function probeMediaHead(url) {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 5000);
+      try {
+        const response = await fetch(url, {
+          method: "HEAD",
+          cache: "no-store",
+          signal: controller.signal
+        });
+        return response.ok;
+      } catch (error) {
+        return false;
+      } finally {
+        clearTimeout(timeout);
+      }
+    }
+
+    async function checkMediaHealth() {
+      const queue = [];
+      mediaHealthById.clear();
+      apps.forEach((app) => {
+        const targets = mediaTargets(app);
+        const missing = [];
+        if (!sanitizeImageUrl(app.presentation)) missing.push("Illustration absente");
+        if (!sanitizeImageUrl(app.image)) missing.push("Capture absente");
+        mediaHealthById.set(app.id, { missing, checked: false });
+        targets.filter((target) => isSameOriginHttp(target.url)).forEach((target) => {
+          queue.push({ appId: app.id, ...target });
+        });
+      });
+
+      async function worker() {
+        while (queue.length) {
+          const target = queue.shift();
+          if (!target) return;
+          const available = await probeMediaHead(target.url);
+          if (!available) {
+            const entry = mediaHealthById.get(target.appId);
+            entry?.missing.push(`${target.label} introuvable`);
+          }
+        }
+      }
+
+      const workerCount = Math.min(MEDIA_HEALTH_WORKER_COUNT, queue.length);
+      await Promise.all(Array.from({ length: workerCount }, () => worker()));
+      mediaHealthById.forEach((entry) => {
+        entry.checked = true;
+        entry.missing = [...new Set(entry.missing)];
+      });
+    }
+
+    function healthSnapshot() {
+      const published = apps.filter((app) => availabilityFor(app) === "Disponible");
+      const upcoming = apps.filter((app) => availabilityFor(app) === "En préparation");
+      const reachable = published.filter((app) => onlineStatus[app.id] === "online").length;
+      const offlineApps = published.filter((app) => onlineStatus[app.id] === "offline");
+      const mediaIssues = apps
+        .map((app) => ({ app, missing: mediaHealthById.get(app.id)?.missing || [] }))
+        .filter((item) => item.missing.length);
+      return { published, upcoming, reachable, offlineApps, mediaIssues };
+    }
+
+    function updateHealthButton() {
+      const { offlineApps, mediaIssues } = healthSnapshot();
+      const issueCount = offlineApps.length + mediaIssues.length;
+      const label = issueCount ? `Santé du catalogue · ${issueCount}` : "Santé du catalogue";
+      document.getElementById("healthButton").textContent = label;
+      document.getElementById("healthButton").setAttribute(
+        "aria-label",
+        issueCount ? `Santé du catalogue, ${issueCount} problème${issueCount > 1 ? "s" : ""}` : label
+      );
+    }
+
+    function renderHealthDashboard({ busy = Boolean(healthRefreshPromise) } = {}) {
+      const { published, upcoming, reachable, offlineApps, mediaIssues } = healthSnapshot();
+      const lastCheck = lastHealthCheck
+        ? new Intl.DateTimeFormat("fr-FR", { dateStyle: "medium", timeStyle: "short" }).format(lastHealthCheck)
+        : "Jamais";
+      const offlineMarkup = offlineApps.length
+        ? `<ul class="issue-list">${offlineApps.map((app) => `<li>${escapeHtml(app.name)}</li>`).join("")}</ul>`
+        : '<p class="subtitle">Aucun jeu publié détecté hors ligne.</p>';
+      const mediaMarkup = mediaIssues.length
+        ? `<ul class="issue-list">${mediaIssues.map(({ app, missing }) => `<li><strong>${escapeHtml(app.name)}</strong> — ${escapeHtml(missing.join(", "))}</li>`).join("")}</ul>`
+        : `<p class="subtitle">${mediaHealthById.size ? "Aucun média manquant détecté." : "Le scan des médias démarrera à l’ouverture de ce tableau."}</p>`;
+
+      healthBody.innerHTML = `
+        <div class="health-summary" aria-label="Résumé de santé">
+          <div class="health-card"><span>Publiés</span><strong>${published.length}</strong></div>
+          <div class="health-card"><span>En préparation</span><strong>${upcoming.length}</strong></div>
+          <div class="health-card"><span>Joignables</span><strong>${reachable}</strong></div>
+          <div class="health-card"><span>Hors ligne</span><strong>${offlineApps.length}</strong></div>
+          <div class="health-card"><span>Médias manquants</span><strong>${mediaIssues.length}</strong></div>
+        </div>
+        <div class="health-meta">
+          <span>Dernière vérification : <strong>${escapeHtml(lastCheck)}</strong></span>
+          <button class="ghost-button" id="refreshHealthButton" type="button" aria-busy="${busy}" ${busy ? "disabled" : ""}>
+            ${busy ? "Vérification…" : "Actualiser"}
+          </button>
+        </div>
+        <section class="issue-section" aria-labelledby="offlineIssuesTitle">
+          <h3 id="offlineIssuesTitle">Jeux et applications hors ligne</h3>
+          ${offlineMarkup}
+        </section>
+        <section class="issue-section" aria-labelledby="mediaIssuesTitle">
+          <h3 id="mediaIssuesTitle">Médias manquants</h3>
+          ${mediaMarkup}
+        </section>
+      `;
+      updateHealthButton();
+    }
+
+    async function refreshHealthDashboard() {
+      if (healthRefreshPromise) return healthRefreshPromise;
+      healthRefreshPromise = Promise.all([checkOnlineStatus(), checkMediaHealth()])
+        .then(() => {
+          lastHealthCheck = new Date();
+        })
+        .finally(() => {
+          healthRefreshPromise = null;
+          renderHealthDashboard({ busy: false });
+        });
+      renderHealthDashboard({ busy: true });
+      return healthRefreshPromise;
     }
 
     function openEditor(app = null) {
@@ -2659,6 +3147,7 @@
       updateSortControls();
       renderCategories();
       renderTags();
+      renderAvailabilityFilters();
       renderGrid();
     }
 
@@ -2693,9 +3182,15 @@
     }
 
     async function checkOnlineStatus() {
-      const webApps = apps.filter((app) => /^https?:/i.test(app.link));
+      const webApps = apps.filter((app) => (
+        availabilityFor(app) === "Disponible" && /^https?:/i.test(app.link)
+      ));
       apps.forEach((app) => {
-        onlineStatus[app.id] = /^https?:/i.test(app.link) ? "checking" : "local";
+        onlineStatus[app.id] = availabilityFor(app) === "En préparation"
+          ? "preparing"
+          : /^https?:/i.test(app.link)
+            ? "checking"
+            : "local";
       });
       renderGrid();
 
@@ -2711,7 +3206,10 @@
           clearTimeout(timeout);
         }
       }));
+      lastHealthCheck = new Date();
       renderGrid();
+      updateHealthButton();
+      if (healthDialog.open) renderHealthDashboard();
     }
 
     categoryList.addEventListener("click", (event) => {
@@ -2741,6 +3239,13 @@
       const button = event.target.closest("[data-tag]");
       if (!button) return;
       activeTag = button.dataset.tag;
+      render();
+    });
+
+    availabilityFilter.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-availability]");
+      if (!button || !AVAILABILITY_FILTERS.includes(button.dataset.availability)) return;
+      activeAvailability = button.dataset.availability;
       render();
     });
 
@@ -2814,6 +3319,7 @@
       apps = apps.filter((app) => app.id !== selectedId);
       favorites.delete(deletedId);
       delete onlineStatus[deletedId];
+      mediaHealthById.delete(deletedId);
       if (starterApps.some((app) => app.id === deletedId)) {
         removedStarterIds.add(deletedId);
         saveRemovedStarterIds();
@@ -2875,6 +3381,20 @@
 
     document.getElementById("showcaseButton").addEventListener("click", () => renderShowcase());
     document.getElementById("closeShowcaseButton").addEventListener("click", () => showcaseDialog.close());
+    document.getElementById("updatesButton").addEventListener("click", () => {
+      renderUpdates();
+      updatesDialog.showModal();
+    });
+    document.getElementById("closeUpdatesButton").addEventListener("click", () => updatesDialog.close());
+    document.getElementById("healthButton").addEventListener("click", () => {
+      renderHealthDashboard();
+      healthDialog.showModal();
+      if (!mediaHealthById.size) refreshHealthDashboard();
+    });
+    document.getElementById("closeHealthButton").addEventListener("click", () => healthDialog.close());
+    healthBody.addEventListener("click", (event) => {
+      if (event.target.closest("#refreshHealthButton")) refreshHealthDashboard();
+    });
     document.getElementById("closeAppDialogButton").addEventListener("click", () => appDialog.close());
     document.getElementById("cancelAppButton").addEventListener("click", () => appDialog.close());
 
@@ -2893,11 +3413,17 @@
       favorites.clear();
       removedStarterIds.clear();
       onlineStatus = {};
+      mediaHealthById.clear();
+      lastHealthCheck = null;
       selectedId = apps[0]?.id;
       activeCategory = "Tous";
       activeGameKind = "Tous";
       activeGameGenre = "Tous";
       activeTag = "Tous";
+      activeAvailability = "Tous";
+      searchInput.value = "";
+      sortMode = "name";
+      sortAscending = true;
       saveApps();
       saveFavorites();
       saveRemovedStarterIds();
@@ -2942,15 +3468,21 @@
         icon: String(formData.get("icon")).trim(),
         tags: String(formData.get("tags")).split(",").map((tag) => tag.trim()).filter(Boolean),
         accent: String(formData.get("accent")).trim() || "#70d6ff",
-        status: String(formData.get("status")).trim()
+        status: String(formData.get("status")).trim(),
+        releaseState: rawLink ? "published" : "upcoming",
+        addedAt: editingId
+          ? apps.find((item) => item.id === editingId)?.addedAt || new Date().toISOString()
+          : new Date().toISOString()
       });
 
       apps = editingId ? apps.map((item) => item.id === editingId ? app : item) : [app, ...apps];
+      mediaHealthById.clear();
       selectedId = app.id;
       activeCategory = "Tous";
       activeGameKind = "Tous";
       activeGameGenre = "Tous";
       activeTag = "Tous";
+      activeAvailability = "Tous";
       editingId = null;
       saveApps();
       appDialog.close();
@@ -2971,6 +3503,8 @@
     });
 
     render();
+    renderUpdates();
+    renderHealthDashboard();
     loadAppGallery();
     checkOnlineStatus();
 

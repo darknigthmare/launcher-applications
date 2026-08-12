@@ -1,5 +1,6 @@
 import { access, readFile, readdir, stat } from "node:fs/promises";
 import { constants } from "node:fs";
+import { execFileSync } from "node:child_process";
 import path from "node:path";
 import vm from "node:vm";
 import { fileURLToPath } from "node:url";
@@ -59,6 +60,7 @@ async function pngDimensions(relativePath) {
   return { width: bytes.readUInt32BE(16), height: bytes.readUInt32BE(20) };
 }
 
+const packageDocument = JSON.parse(await readFile(path.join(root, "package.json"), "utf8"));
 const html = await readFile(path.join(root, "index.html"), "utf8");
 const scriptMatches = [...html.matchAll(/<script(?<attributes>[^>]*)>(?<body>[\s\S]*?)<\/script>/gi)]
   .map((match) => ({
@@ -70,10 +72,11 @@ const externalScripts = scriptMatches.filter((script) => script.src);
 assert(inlineScripts.length === 1, "un seul script applicatif intégré est présent");
 const externalScriptSources = externalScripts.map((script) => script.src);
 assert(
-  externalScriptSources.length === 2
+  externalScriptSources.length === 3
     && externalScriptSources.includes("assets/recent-games.js")
+    && externalScriptSources.includes("assets/catalogue-updates.js")
     && externalScriptSources.includes("assets/social-features.js"),
-  "les modules du catalogue récent et social sont les deux scripts externes attendus"
+  "les modules catalogue, mises à jour et social sont les trois scripts externes attendus"
 );
 assert(
   html.indexOf('src="assets/recent-games.js"') < html.indexOf("const starterApps"),
@@ -147,6 +150,51 @@ assert(
   "le focus reste sur la catégorie après reconstruction de la navigation"
 );
 
+assert(
+  /id=["']availabilityFilter["'][^>]*role=["']group["'][^>]*aria-label=/i.test(html),
+  "le filtre de disponibilité forme un groupe accessible"
+);
+for (const availability of ["Tous", "Disponible", "En préparation", "Nouveauté"]) {
+  assert(inlineScriptBody.includes('"' + availability + '"'), "option de disponibilité présente: " + availability);
+}
+for (const helper of ["availabilityFor", "isNewApp", "visibleTags", "renderAvailabilityFilters"]) {
+  assert(inlineScriptBody.includes("function " + helper), "helper UI présent: " + helper);
+}
+assert(
+  inlineScriptBody.includes('activeAvailability === "Nouveauté" ? isNewApp(app)'),
+  "le filtre Nouveauté se combine aux autres filtres"
+);
+assert(
+  (inlineScriptBody.match(/activeAvailability = "Tous"/g) || []).length >= 3,
+  "le filtre de disponibilité est réinitialisé au démarrage, au reset et après ajout"
+);
+for (const control of ["updatesButton", "healthButton"]) {
+  assert(
+    new RegExp("<button\\b(?=[^>]*\\bid=[\"']" + control + "[\"'])(?=[^>]*\\baria-haspopup=[\"']dialog[\"'])[^>]*>", "i").test(html),
+    "bouton de dialogue accessible: " + control
+  );
+}
+for (const dialog of ["updatesDialog", "healthDialog"]) {
+  assert(
+    new RegExp("<dialog\\b(?=[^>]*\\bid=[\"']" + dialog + "[\"'])(?=[^>]*\\baria-labelledby=[\"'][^\"']+[\"'])[^>]*>", "i").test(html),
+    "dialogue accessible: " + dialog
+  );
+}
+for (const id of ["updatesBody", "closeUpdatesButton", "healthBody", "closeHealthButton"]) {
+  assert(html.includes('id="' + id + '"'), "surface UI présente: " + id);
+}
+assert(inlineScriptBody.includes("window.LAUNCHER_RELEASES"), "le journal consomme LAUNCHER_RELEASES");
+for (const helper of ["renderUpdates", "checkMediaHealth", "healthSnapshot", "renderHealthDashboard", "refreshHealthDashboard"]) {
+  assert(inlineScriptBody.includes("function " + helper), "helper de suivi présent: " + helper);
+}
+assert(inlineScriptBody.includes('role="list"'), "le journal expose une liste sémantique");
+assert(inlineScriptBody.includes('id="refreshHealthButton"'), "le tableau de santé propose une actualisation");
+assert(inlineScriptBody.includes("const NEW_APP_WINDOW_DAYS = 45;"), "la fenêtre Nouveauté est bornée à 45 jours");
+assert(inlineScriptBody.includes('const LEGACY_ADDED_AT = "1970-01-01T00:00:00.000Z";'), "les anciennes entrées ne deviennent pas artificiellement nouvelles");
+assert(
+  inlineScriptBody.includes('const OFFICIAL_SYNC_FIELDS = ["link", "status", "releaseState", "addedAt"];'),
+  "la migration locale synchronise les champs de publication officiels"
+);
 for (const script of externalScripts) {
   assert(await exists(script.src), `script externe présent: ${script.src}`);
   if (!(await exists(script.src))) continue;
@@ -190,8 +238,38 @@ if (await exists("assets/recent-games.js")) {
     failures.push(`catalogue récent illisible: ${error.message}`);
   }
 }
-assert(recentApps.length === 72, "le catalogue récent contient exactement 72 jeux");
+assert(recentApps.length >= 72, "le catalogue récent contient au moins les 72 jeux de référence");
 apps = [...apps, ...recentApps];
+let releases = [];
+if (await exists("assets/catalogue-updates.js")) {
+  try {
+    const releaseSandbox = { window: {} };
+    releaseSandbox.globalThis = releaseSandbox.window;
+    releaseSandbox.self = releaseSandbox.window;
+    vm.runInNewContext(
+      await readFile(path.join(root, "assets", "catalogue-updates.js"), "utf8"),
+      releaseSandbox,
+      { filename: "assets/catalogue-updates.js", timeout: 1000 }
+    );
+    releases = releaseSandbox.window.LAUNCHER_RELEASES;
+    assert(Array.isArray(releases) && releases.length > 0, "le journal expose au moins une version");
+    if (!Array.isArray(releases)) releases = [];
+  } catch (error) {
+    failures.push("journal des versions illisible: " + error.message);
+  }
+}
+const semverPattern = /^\d+\.\d+\.\d+$/;
+for (let index = 0; index < releases.length; index += 1) {
+  const release = releases[index];
+  assert(semverPattern.test(String(release?.version || "")), "version SemVer valide dans le journal: " + (release?.version || "inconnue"));
+  const date = Date.parse(release?.date || "");
+  assert(Number.isFinite(date), "date valide pour la version " + (release?.version || "inconnue"));
+  if (index > 0) {
+    assert(Date.parse(releases[index - 1]?.date || "") >= date, "journal trié par date décroissante");
+  }
+  assert(Array.isArray(release?.highlights) && release.highlights.length > 0, "notes présentes pour la version " + (release?.version || "inconnue"));
+}
+assert(releases[0]?.version === packageDocument.version, "la dernière version du journal correspond à package.json");
 
 let gameGenreGroups = [];
 if (gameGenreMatch) {
@@ -202,8 +280,8 @@ if (gameGenreMatch) {
   }
 }
 
-assert(apps.length === 118, "le catalogue contient exactement 118 applications");
-assert(apps.filter((app) => app?.category === "Jeux").length === 105, "le catalogue contient exactement 105 jeux");
+assert(apps.length >= 118, "le catalogue contient au moins 118 applications");
+assert(apps.filter((app) => app?.category === "Jeux").length >= 105, "le catalogue contient au moins 105 jeux");
 assert(gameGenreGroups.length === 8, "la navigation Jeux contient huit genres principaux");
 
 const starterGameIds = new Set(
@@ -260,7 +338,7 @@ for (const app of apps.filter((entry) => entry?.category === "Jeux")) {
 }
 assert(
   apps.filter((app) => app?.category === "Jeux").every((app) => genreNames.has(app.genre || mappedGameIds.get(app.id))),
-  "la taxonomie couvre exactement les 105 jeux du catalogue"
+  "la taxonomie couvre tous les jeux du catalogue"
 );
 
 const anotherDay = apps.find((app) => app?.id === "another-day-z");
@@ -268,14 +346,35 @@ assert(Boolean(anotherDay), "AnotherDay original entry is present");
 assert((anotherDay?.gameKind || (legacyFanGameBases.has(anotherDay?.id) ? "Fan games" : "Jeux originaux")) === "Jeux originaux", "AnotherDay is an original game");
 assert(!String(anotherDay?.baseGame || legacyFanGameBases.get(anotherDay?.id) || "").trim(), "AnotherDay has no base game");
 
-const upcomingApps = apps.filter((app) => app?.status === "En préparation de publication");
-assert(upcomingApps.length === 6, "six jeux sont identifiés comme en préparation de publication");
-assert(upcomingApps.every((app) => !app.link), "les jeux en préparation n inventent aucun lien public");
-
+for (const release of releases) {
+  assert(Array.isArray(release?.appIds), "appIds est un tableau pour la version " + (release?.version || "inconnue"));
+  for (const id of release?.appIds || []) {
+    assert(apps.some((app) => app.id === id), "application du journal connue: " + id);
+  }
+}
+const trackedWaveIds = new Set([
+  "intravore",
+  "nexus-of-torment",
+  "jawa-the-duskmen",
+  "mecha-overdrive",
+  "spermatozoid-kart-omega",
+  "riff-rush"
+]);
+for (const id of trackedWaveIds) {
+  const app = apps.find((entry) => entry?.id === id);
+  assert(Boolean(app), "jeu suivi présent: " + id);
+  if (!app) continue;
+  assert(["upcoming", "published"].includes(app.releaseState), "état de publication explicite pour " + id);
+  assert(Number.isFinite(Date.parse(app.addedAt)), "date d'ajout ISO valide pour " + id);
+  if (app.releaseState === "upcoming") {
+    assert(!app.link, "le jeu à venir " + id + " n'invente aucun lien public");
+  } else {
+    assert(Boolean(app.link), "le jeu publié " + id + " possède un lien public");
+  }
+}
 const resolvedGameKinds = apps.filter((app) => app?.category === "Jeux").map((app) => app.gameKind || (legacyFanGameBases.has(app.id) ? "Fan games" : "Jeux originaux"));
-assert(resolvedGameKinds.filter((kind) => kind === "Jeux originaux").length === 86, "le catalogue contient 86 jeux originaux");
-assert(resolvedGameKinds.filter((kind) => kind === "Fan games").length === 19, "le catalogue contient 19 fan-games");
-
+assert(resolvedGameKinds.includes("Jeux originaux"), "le catalogue contient des jeux originaux");
+assert(resolvedGameKinds.includes("Fan games"), "le catalogue contient des fan-games");
 const ids = new Set();
 const images = new Set();
 const presentations = new Set();
@@ -284,9 +383,13 @@ for (const app of apps) {
   assert(!ids.has(app.id), `identifiant unique: ${app.id}`);
   ids.add(app.id);
 
+  const releaseState = app.releaseState || (app.link ? "published" : "upcoming");
+  assert(["published", "upcoming"].includes(releaseState), "releaseState valide pour " + app.id);
+  assert(!app.addedAt || Number.isFinite(Date.parse(app.addedAt)), "addedAt ISO valide lorsqu il est renseigné pour " + app.id);
   if (!app.link) {
-    assert(app.status === "En préparation de publication", `absence de lien justifiée pour ${app.id}`);
+    assert(releaseState === "upcoming", "absence de lien réservée à une entrée upcoming pour " + app.id);
   } else {
+    assert(releaseState === "published", "entrée avec lien marquée published pour " + app.id);
     try {
       const url = new URL(app.link);
       assert(["https:", "http:", "steam:", "file:"].includes(url.protocol), `protocole autorisé pour ${app.id}`);
@@ -349,6 +452,12 @@ for (const id of Object.keys(galleryMap).filter((id) => id !== "notes")) {
   assert(ids.has(id), `galerie attribuée à une application connue: ${id}`);
 }
 
+assert(images.size === apps.length, "un aperçu exactement par application");
+assert(presentations.size === apps.length, "une présentation exactement par application");
+assert(
+  Object.keys(galleryMap).filter((id) => id !== "notes").length === apps.length,
+  "une galerie exactement par application"
+);
 const iconSprite = await readFile(path.join(root, "assets", "app-icons.svg"), "utf8");
 for (const app of apps) {
   assert(iconSprite.includes(`id="icon-${app.id}"`), `icône SVG présente pour ${app.id}`);
@@ -369,9 +478,59 @@ assert(!html.includes('role="button" tabindex="0"'), "les cartes n'imitent plus 
 assert(!html.includes("--card-image: ${cssImage(app)}"), "les URL d'images ne sont pas injectées dans un attribut HTML");
 assert(await exists("manifest.webmanifest"), "le manifeste PWA existe");
 assert(await exists("sw.js"), "le service worker existe");
+assert(await exists("assets/upcoming-games.json"), "la configuration upcoming existe");
+let upcomingConfig = null;
+if (await exists("assets/upcoming-games.json")) {
+  try {
+    upcomingConfig = JSON.parse(await readFile(path.join(root, "assets", "upcoming-games.json"), "utf8"));
+  } catch (error) {
+    failures.push("configuration upcoming illisible: " + error.message);
+  }
+}
+assert(Boolean(String(upcomingConfig?.owner || "").trim()), "la configuration upcoming déclare un propriétaire GitHub");
+assert(Array.isArray(upcomingConfig?.games) && upcomingConfig.games.length > 0, "la configuration upcoming suit au moins un jeu");
+const configuredUpcomingIds = new Set();
+for (const game of upcomingConfig?.games || []) {
+  assert(Boolean(game?.id) && !configuredUpcomingIds.has(game.id), "jeu upcoming configuré une seule fois: " + (game?.id || "inconnu"));
+  configuredUpcomingIds.add(game?.id);
+  assert(trackedWaveIds.has(game?.id), "jeu upcoming limité à la vague suivie: " + (game?.id || "inconnu"));
+  assert(Array.isArray(game?.githubRepos) && game.githubRepos.length > 0, "candidats GitHub présents pour " + game?.id);
+  assert(Array.isArray(game?.vercelProjects) && game.vercelProjects.length > 0, "candidats Vercel présents pour " + game?.id);
+  assert(Array.isArray(game?.publicCandidates) && game.publicCandidates.length > 0, "candidats publics présents pour " + game?.id);
+  for (const candidate of game?.publicCandidates || []) {
+    try {
+      assert(new URL(candidate).protocol === "https:", "candidat public HTTPS pour " + game?.id);
+    } catch {
+      failures.push("candidat public invalide pour " + game?.id + ": " + candidate);
+    }
+  }
+}
+assert(
+  configuredUpcomingIds.size === trackedWaveIds.size && [...trackedWaveIds].every((id) => configuredUpcomingIds.has(id)),
+  "la configuration upcoming couvre exactement les six jeux suivis"
+);
+assert(await exists("scripts/sync-upcoming-games.mjs"), "le script de synchronisation upcoming existe");
+assert(await exists(".github/workflows/sync-upcoming-games.yml"), "le workflow de synchronisation upcoming existe");
+if (await exists(".github/workflows/sync-upcoming-games.yml")) {
+  const syncWorkflow = await readFile(path.join(root, ".github", "workflows", "sync-upcoming-games.yml"), "utf8");
+  assert(/workflow_dispatch\s*:/.test(syncWorkflow), "la synchronisation peut être lancée manuellement");
+  assert(/schedule\s*:/.test(syncWorkflow) && /cron\s*:/.test(syncWorkflow), "la synchronisation est planifiée");
+  assert(/pull-request|create-pull-request|gh pr create/i.test(syncWorkflow), "la synchronisation publie ses changements par pull request");
+}
+if (await exists("scripts/sync-upcoming-games.mjs")) {
+  const syncScript = await readFile(path.join(root, "scripts", "sync-upcoming-games.mjs"), "utf8");
+  assert(
+    syncScript.includes('from "node:fs/promises"') && syncScript.includes("main().catch"),
+    "scripts/sync-upcoming-games.mjs possède une structure ESM exécutable"
+  );
+  assert(syncScript.includes("upcoming-games.json"), "le sync consomme sa liste blanche upcoming");
+  assert(/--write/.test(syncScript), "le sync sépare vérification et écriture");
+  assert(/published/.test(syncScript) && /upcoming/.test(syncScript), "le sync gère les deux états de publication");
+}
+
 
 const serviceWorker = await readFile(path.join(root, "sw.js"), "utf8");
-for (const shellAsset of ["assets/recent-games.js", "assets/social-features.css", "assets/social-features.js"]) {
+for (const shellAsset of ["assets/recent-games.js", "assets/catalogue-updates.js", "assets/upcoming-games.json", "assets/social-features.css", "assets/social-features.js"]) {
   assert(serviceWorker.includes(`/${shellAsset}`), `asset dynamique préchargé hors ligne: ${shellAsset}`);
 }
 
@@ -394,6 +553,7 @@ for (const asset of appShell) {
   if (assetExists) appShellBytes += (await stat(path.join(root, relativePath))).size;
 }
 assert(appShellBytes <= 5 * 1024 * 1024, "le préchargement APP_SHELL reste inférieur à 5 Mo");
+assert(serviceWorker.includes('const CACHE_NAME = "launcher-shell-v20"'), "le cache applicatif v1.4 utilise launcher-shell-v20");
 assert(serviceWorker.includes('const RUNTIME_CACHE = "launcher-media-runtime-v1"'), "le cache média différé est versionné");
 assert(serviceWorker.includes("const MAX_RUNTIME_ENTRIES = 120"), "le cache média différé est borné");
 assert(

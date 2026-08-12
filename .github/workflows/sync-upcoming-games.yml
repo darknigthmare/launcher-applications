@@ -1,0 +1,74 @@
+name: Synchroniser les jeux en préparation
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: catalogue-publications
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le catalogue
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Installer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Vérifier les publications GitHub et Vercel
+        env:
+          GITHUB_TOKEN: ${{ secrets.CATALOG_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_TEAM_ID: ${{ vars.VERCEL_TEAM_ID }}
+          CATALOG_GITHUB_OWNER: ${{ vars.CATALOG_GITHUB_OWNER }}
+        run: npm run sync:upcoming
+
+      - name: Détecter les promotions
+        id: changes
+        shell: bash
+        run: |
+          if git diff --quiet -- assets/recent-games.js; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Auditer le catalogue synchronisé
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git diff --check
+          npm test
+          test "$(git diff --name-only)" = "assets/recent-games.js"
+
+      - name: Créer ou actualiser la pull request
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          BRANCH="automation/catalog-publications"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -C "$BRANCH"
+          git add assets/recent-games.js
+          git commit -m "chore: publier les jeux vérifiés"
+          git push --force-with-lease origin "$BRANCH"
+          PR_URL="$(gh pr list --head "$BRANCH" --state open --json url --jq '.[0].url')"
+          BODY="Publication automatique validée par identité GitHub, liaison Vercel, production READY/PROMOTED et contrôle HTTP. L’audit complet est passé avant cette PR."
+          if [ -n "$PR_URL" ]; then
+            gh pr edit "$PR_URL" --title "chore: publier les jeux vérifiés" --body "$BODY"
+          else
+            gh pr create --base main --head "$BRANCH" --title "chore: publier les jeux vérifiés" --body "$BODY"
+          fi
