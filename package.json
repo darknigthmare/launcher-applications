@@ -1,11 +1,13 @@
 {
   "name": "launcher-applications",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "private": true,
   "type": "module",
   "scripts": {
     "audit": "node scripts/audit.mjs",
-    "test": "npm run audit"
+    "test": "npm run audit",
+    "sync:upcoming": "node scripts/sync-upcoming-games.mjs --write",
+    "sync:check": "node scripts/sync-upcoming-games.mjs"
   },
   "engines": {
     "node": ">=20"

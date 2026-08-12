@@ -1,0 +1,12 @@
+{
+  "owner": "darknigthmare",
+  "teamId": "team_VrIjq2UWV6VaHZr7DdQFwvfu",
+  "games": [
+    {"id":"intravore","githubRepos":["intravore"],"vercelProjects":["intravore"],"publicCandidates":["https://intravore.vercel.app"]},
+    {"id":"nexus-of-torment","githubRepos":["nexus-of-torment"],"vercelProjects":["nexus-of-torment"],"publicCandidates":["https://nexus-of-torment.vercel.app"]},
+    {"id":"jawa-the-duskmen","githubRepos":["jawa-the-duskmen"],"vercelProjects":["jawa-the-duskmen"],"publicCandidates":["https://jawa-the-duskmen.vercel.app"]},
+    {"id":"mecha-overdrive","githubRepos":["mecha-overdrive"],"vercelProjects":["mecha-overdrive"],"publicCandidates":["https://mecha-overdrive.vercel.app"]},
+    {"id":"spermatozoid-kart-omega","githubRepos":["spermatozoid-kart-omega"],"vercelProjects":["spermatozoid-kart-omega"],"publicCandidates":["https://spermatozoid-kart-omega.vercel.app"]},
+    {"id":"riff-rush","githubRepos":["riff-rush"],"vercelProjects":["riff-rush"],"publicCandidates":["https://riff-rush.vercel.app"]}
+  ]
+}
