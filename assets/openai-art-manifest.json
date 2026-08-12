@@ -518,6 +518,22 @@
       }
     },
     {
+      "id": "elyra-grand-pas",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-3be220a6-6683-444a-9d27-70fb702c4d45",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/elyra-grand-pas.webp",
+      "sha256": "3ff2625a2dfdf460cf1fb004fd41aab4360860c350399767a81b4a800042c6db",
+      "promptBasis": {
+        "name": "Élyra — Le Grand Pas",
+        "category": "Jeux",
+        "genre": "Aventure & exploration",
+        "baseGame": "",
+        "pitch": "Marchez dans la vraie vie pour faire voyager votre avatar à travers les sentiers d’Élyra."
+      }
+    },
+    {
       "id": "eclipse-frontline-afterfall",
       "provider": "OpenAI",
       "generator": "image_gen",

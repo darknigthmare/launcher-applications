@@ -1,5 +1,31 @@
 window.LAUNCHER_RECENT_GAMES = [
   {
+    "id": "elyra-grand-pas",
+    "name": "Élyra — Le Grand Pas",
+    "category": "Jeux",
+    "gameKind": "Jeux originaux",
+    "genre": "Aventure & exploration",
+    "baseGame": "",
+    "description": "Aventure mobile pixel-art bienveillante où les pas du joueur font avancer son avatar, dévoilent des rencontres et développent un refuge vivant.",
+    "pitch": "Marchez dans la vraie vie pour faire voyager votre avatar à travers les sentiers d’Élyra.",
+    "tags": [
+      "Jeu original",
+      "Aventure & exploration",
+      "Marche",
+      "Pixel-art",
+      "Bien-être",
+      "Mobile"
+    ],
+    "icon": "EG",
+    "link": "https://elyra-grand-pas.vercel.app",
+    "releaseState": "published",
+    "addedAt": "2026-08-12",
+    "status": "Vercel",
+    "accent": "#d96f50",
+    "presentation": "assets/presentations/elyra-grand-pas.webp",
+    "image": "assets/previews/elyra-grand-pas.webp"
+  },
+  {
     "id": "le-seuil-noir-protocole-orphee",
     "name": "Le Seuil Noir : Protocole Orphée",
     "category": "Jeux",
