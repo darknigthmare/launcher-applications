@@ -2,7 +2,7 @@
 
 Launcher personnel statique qui réunit mes applications, jeux et outils publiés sur Vercel.
 
-Le catalogue public compte **112 applications**, dont **99 jeux**.
+Le catalogue public compte **118 applications**, dont **105 jeux**.
 
 Version publique : [launcher-applications.vercel.app](https://launcher-applications.vercel.app/)
 
@@ -11,6 +11,7 @@ Version publique : [launcher-applications.vercel.app](https://launcher-applicati
 - catalogue visuel avec recherche tolérante aux accents, catégories et tags ;
 - navigation Jeux à deux niveaux : **Jeux originaux** ou **Fan games**, puis huit genres ;
 - franchise ou jeu de base indiqué pour chaque fan-game ;
+- statut visible « En préparation » pour les jeux catalogués avant leur publication ;
 - favoris, tri, sélection aléatoire et mode vitrine ;
 - mode édition pour ajouter ou modifier des entrées locales ;
 - migration du catalogue : les nouvelles applications officielles sont ajoutées sans écraser les personnalisations enregistrées ;

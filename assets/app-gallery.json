@@ -785,5 +785,47 @@
     "assets/screenshots/strike-command-desert-thunder/03.webp",
     "assets/screenshots/strike-command-desert-thunder/04.webp",
     "assets/screenshots/strike-command-desert-thunder/05.webp"
+  ],
+  "intravore": [
+    "assets/screenshots/intravore/01.webp",
+    "assets/screenshots/intravore/02.webp",
+    "assets/screenshots/intravore/03.webp",
+    "assets/screenshots/intravore/04.webp",
+    "assets/screenshots/intravore/05.webp"
+  ],
+  "nexus-of-torment": [
+    "assets/screenshots/nexus-of-torment/01.webp",
+    "assets/screenshots/nexus-of-torment/02.webp",
+    "assets/screenshots/nexus-of-torment/03.webp",
+    "assets/screenshots/nexus-of-torment/04.webp",
+    "assets/screenshots/nexus-of-torment/05.webp"
+  ],
+  "jawa-the-duskmen": [
+    "assets/screenshots/jawa-the-duskmen/01.webp",
+    "assets/screenshots/jawa-the-duskmen/02.webp",
+    "assets/screenshots/jawa-the-duskmen/03.webp",
+    "assets/screenshots/jawa-the-duskmen/04.webp",
+    "assets/screenshots/jawa-the-duskmen/05.webp"
+  ],
+  "mecha-overdrive": [
+    "assets/screenshots/mecha-overdrive/01.webp",
+    "assets/screenshots/mecha-overdrive/02.webp",
+    "assets/screenshots/mecha-overdrive/03.webp",
+    "assets/screenshots/mecha-overdrive/04.webp",
+    "assets/screenshots/mecha-overdrive/05.webp"
+  ],
+  "spermatozoid-kart-omega": [
+    "assets/screenshots/spermatozoid-kart-omega/01.webp",
+    "assets/screenshots/spermatozoid-kart-omega/02.webp",
+    "assets/screenshots/spermatozoid-kart-omega/03.webp",
+    "assets/screenshots/spermatozoid-kart-omega/04.webp",
+    "assets/screenshots/spermatozoid-kart-omega/05.webp"
+  ],
+  "riff-rush": [
+    "assets/screenshots/riff-rush/01.webp",
+    "assets/screenshots/riff-rush/02.webp",
+    "assets/screenshots/riff-rush/03.webp",
+    "assets/screenshots/riff-rush/04.webp",
+    "assets/screenshots/riff-rush/05.webp"
   ]
 }
