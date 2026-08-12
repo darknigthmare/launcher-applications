@@ -1,5 +1,16 @@
 window.LAUNCHER_RELEASES = [
   {
+    version: "1.5.0",
+    date: "2026-08-12",
+    title: "Illustrations OpenAI pour tout le catalogue",
+    highlights: [
+      "118 présentations couvertes par un manifeste OpenAI vérifiable.",
+      "SHA-256, référence de génération et fournisseur contrôlés par l'audit.",
+      "Captures fonctionnelles conservées séparément pour montrer le vrai produit."
+    ],
+    appIds: []
+  },
+  {
     version: "1.4.0",
     date: "2026-08-12",
     title: "Pilotage et suivi du catalogue",

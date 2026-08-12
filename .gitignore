@@ -1,2 +1,3 @@
 .vercel/
 .env*.local
+.openai-art-work/

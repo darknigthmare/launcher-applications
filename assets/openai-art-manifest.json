@@ -1,0 +1,1855 @@
+{
+  "schemaVersion": 1,
+  "provider": "OpenAI",
+  "generator": "image_gen",
+  "generatedAt": "2026-08-12",
+  "policy": "One dedicated OpenAI presentation artwork per launcher application.",
+  "apps": [
+    {
+      "id": "adhd-rpg",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-7f4330df-8240-458a-9849-a7cb2065c5f2",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/adhd-rpg.png",
+      "sha256": "4d1e63e44a0ebbcb108e0ac9e0173b7b248aacc127383ef883f9e0f54d09850a",
+      "promptBasis": {
+        "name": "NeuroQuest",
+        "category": "Applications",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "NeuroQuest donne une forme ludique aux journees difficiles sans perdre le cote utile."
+      }
+    },
+    {
+      "id": "another-day-z",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-56414535-0fd7-4a43-ba69-68cf85cae680",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/another-day-z.png",
+      "sha256": "f680b667097f9c0cc41c1eef5a753158021946fba9c136949ef18068ade4c1ec",
+      "promptBasis": {
+        "name": "AnotherDay'Z",
+        "category": "Jeux",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Maintiens la rame en mouvement, recueille des survivants et traverse les territoires infectes."
+      }
+    },
+    {
+      "id": "apertire-enrichment-os",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-dc5c8466-20bd-4755-9f5e-262193771d0a",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/apertire-enrichment-os.png",
+      "sha256": "ce4ad4a4ad36fbf554f79e7e45085880206b8392b90384444fe85fb4c2a75363",
+      "promptBasis": {
+        "name": "Aperture Enrichment OS",
+        "category": "Simulation",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Une interface propre, clinique, presque trop calme pour etre rassurante."
+      }
+    },
+    {
+      "id": "arcade-null-high-score-protocol",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-878a0ae2-f569-423f-ac00-0def127a5bfb",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/arcade-null-high-score-protocol.webp",
+      "sha256": "72b76fcf74718382e6effaf65438d5bf828bbd2652ce3a49c2e5d91e781f8a2a",
+      "promptBasis": {
+        "name": "ARCADE NULL — High Score Protocol",
+        "category": "Jeux",
+        "genre": "Rythme & arcade",
+        "baseGame": "",
+        "pitch": "Version 1.1.0 — jeu complet jouable dans un navigateur, sans dépendance externe."
+      }
+    },
+    {
+      "id": "astral-dominion",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-d3088784-d153-402e-b6cf-03f064f26d9a",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/astral-dominion.webp",
+      "sha256": "b24a24724eb061f761bfdc1ee33110868c6dfd6de558dc6b4108f837ca5d563e",
+      "promptBasis": {
+        "name": "ASTRAL DOMINION",
+        "category": "Jeux",
+        "genre": "Stratégie & tactique",
+        "baseGame": "",
+        "pitch": "Le projet ne dépend d’aucune licence existante et n’emploie aucun asset officiel ou protégé."
+      }
+    },
+    {
+      "id": "black-gospel-the-ninth-cadaver",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-d561738c-af79-40e9-bd97-6500872e8133",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/black-gospel-the-ninth-cadaver.webp",
+      "sha256": "4e124d6a29396cb2692064a9a78b0f67e4ccad7da94bd76bbd76d4b9c4489a2e",
+      "promptBasis": {
+        "name": "BLACK GOSPEL: THE NINTH CADAVER",
+        "category": "Jeux",
+        "genre": "Survie & horreur",
+        "baseGame": "",
+        "pitch": "BLACK GOSPEL est un rail shooter horrifique autonome inspiré du rythme des bornes d’arcade, mais construit autour d’une mécanique originale d’anatomie profane : les créatures possèdent des organes offensifs, des protections et un nœud d’âme qu’il faut exciser avant qu’une mauvaise mise à mort ne…"
+      }
+    },
+    {
+      "id": "black-signal-bastion-zero",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-61012e26-4c17-4937-b68f-e330da605494",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/black-signal-bastion-zero.webp",
+      "sha256": "ca525960bef730ccd69730fe9c3e7166b42c2fcdc16c18c5cac69c7052e59c64",
+      "promptBasis": {
+        "name": "BLACK SIGNAL: BASTION ZERO",
+        "category": "Jeux",
+        "genre": "Stratégie & tactique",
+        "baseGame": "",
+        "pitch": "FPS de survie en hordes 3D avec monstres 2D imposteurs, horreur cyber-démoniaque, liminale, zombie et cosmique. Le projet livre une boucle de jeu complète et immédiatement jouable : vagues à anomalies déterministes, boss, quatre armes, expérience, mutations, boutique, méta-progression, sauvegarde…"
+      }
+    },
+    {
+      "id": "bounce-arena-prototype-fan-jouable",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "bounce-arena-prototype-fan-jouable",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/bounce-arena-prototype-fan-jouable.webp",
+      "sha256": "2ece60a7c0c351fa672cceb2dbbbc9bbb895f92bcb0c44409632b6f12b48b642",
+      "promptBasis": {
+        "name": "Bounce Arena — édition fan complète",
+        "category": "Jeux",
+        "genre": "Rythme & arcade",
+        "baseGame": "Gogo’s Crazy Bones",
+        "pitch": "Bounce Arena est un jeu d’adresse, de physique et de collection hors ligne. Cette édition fan non officielle propose une campagne complète, des défis rejouables, une progression persistante et des contrôles adaptés à la souris, au tactile, au clavier et à la manette. Toute l’interface, le code, l…"
+      }
+    },
+    {
+      "id": "breach-blitz-spinoff",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-a9a2cf59-d3b8-431b-8103-6cec14b209af",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/breach-blitz-spinoff.png",
+      "sha256": "c10149103e7c9e96c2a400a667793bbd0f926e51ffb9baa97768a880ff5b9964",
+      "promptBasis": {
+        "name": "BREACH BLITZ",
+        "category": "Jeux",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Stabilise l'Ancre, traverse les micro-univers et tiens le rythme avant que la Brèche ne s'effondre."
+      }
+    },
+    {
+      "id": "brigade-premier-degre",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-a7fb4105-5e95-4950-8cf4-f4e4ece034d7",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/brigade-premier-degre.webp",
+      "sha256": "685282d04abdc38470008a5a64c410849a3b76b3212fd94d0b4b884379f496a3",
+      "promptBasis": {
+        "name": "Brigade Premier Degre",
+        "category": "Jeux",
+        "genre": "Aventure & exploration",
+        "baseGame": "",
+        "pitch": "Brigade Premier Degre est une expérience jouable publiée sur le web."
+      }
+    },
+    {
+      "id": "budgetia",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-c7578e78-c458-4683-bf20-b2d611998e24",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/budgetia.png",
+      "sha256": "ed61169670730722e1316a86afff2697a72864d622885083d0796df8337e5c89",
+      "promptBasis": {
+        "name": "Budgetia",
+        "category": "Applications",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Un budget lisible, des projets visibles, et moins de brouillard entre les chiffres."
+      }
+    },
+    {
+      "id": "cainos",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-f7616dd5-1827-4947-a7df-7525b21ee633",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/cainos.png",
+      "sha256": "32e303e836d321f5649095bd1b4c81a25e3cebbd0b5326d6ad2096693da216e6",
+      "promptBasis": {
+        "name": "C&A Mainframe Terminal",
+        "category": "Simulation",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Un mainframe de lore a explorer comme une piece fermee dont chaque commande ouvre une porte."
+      }
+    },
+    {
+      "id": "can-i-eat-it",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-e21fcd0b-8d65-424b-95bc-62e026deda4c",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/can-i-eat-it.png",
+      "sha256": "b839151df36566394cb4122ed5d3aa1a9349368922ce316d2333fd4343c9e44f",
+      "promptBasis": {
+        "name": "Can I Eat It",
+        "category": "Applications",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Scanne un menu, choisis un profil, et repere vite ce qui est sur, douteux ou bloque."
+      }
+    },
+    {
+      "id": "carrion-walk-la-faim-des-rues",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-c4f99160-a6bd-4f24-9c3d-9d13f91504c4",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/carrion-walk-la-faim-des-rues.webp",
+      "sha256": "47907fdf848e6fa59810b50d2685db480553980c254a43985c0efa6ce2be0d15",
+      "promptBasis": {
+        "name": "CARRION WALK — La Faim des Rues",
+        "category": "Jeux",
+        "genre": "Survie & horreur",
+        "baseGame": "",
+        "pitch": "CARRION WALK est une édition jouable de survie inversée dans laquelle le joueur incarne un zombie lent, vulnérable et en décomposition dans une ville systémique. La force vient de la patience, de la contamination et de la horde, pas d’un héros surpuissant."
+      }
+    },
+    {
+      "id": "catrpg-neuf-royaumes",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-b54b4cb2-8d2e-4282-b67b-eba55976ff7b",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/catrpg-neuf-royaumes.png",
+      "sha256": "f3b5d7647a1dd930c739da898013d1e3c63f71666987ccc0b20a7a9185ba35e2",
+      "promptBasis": {
+        "name": "CatRPG — Les Neuf Royaumes",
+        "category": "Jeux",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Transforme ton chat en héros, renforce votre Lien et restaure les Neuf Royaumes."
+      }
+    },
+    {
+      "id": "cells-at-work-immune-alert",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-83467b53-c23d-4e9d-94bc-638883c5536b",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/cells-at-work-immune-alert.png",
+      "sha256": "f6092d154e396375d185d3e374e6973d04f58d5285303513b4c41159db51bc1f",
+      "promptBasis": {
+        "name": "Cellules au travail — Alerte Immunitaire",
+        "category": "Jeux",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Livre l'oxygène, élimine les agents pathogènes, colmate les blessures et coordonne les défenses de l'organisme."
+      }
+    },
+    {
+      "id": "chord-of-dread",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-58df2040-f561-47bb-bbf4-4d46c6df62f1",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/chord-of-dread.webp",
+      "sha256": "ecc662e1861fa58145620242156e17ca4c211ddc4c6c126fc6c90b4e7e73a18c",
+      "promptBasis": {
+        "name": "CHORD OF DREAD",
+        "category": "Jeux",
+        "genre": "Rythme & arcade",
+        "baseGame": "",
+        "pitch": "Jeu autonome de survival horror rythmique à la première personne."
+      }
+    },
+    {
+      "id": "chroma-forge",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-a5294bf4-0bfe-4ecb-b428-fd1b4c3682a7",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/chroma-forge.png",
+      "sha256": "97c596da62a2fbea5ca68ae0a5538fbc56ff5a054b974c61c6e135c57ad1bb70",
+      "promptBasis": {
+        "name": "Chroma Forge",
+        "category": "Création",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Melange les pigments, reproduis des nuances et forge ta propre collection chromatique."
+      }
+    },
+    {
+      "id": "chrono-recoil",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-7e8e79ea-3333-45fa-aa92-db55073a20f9",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/chrono-recoil.webp",
+      "sha256": "9df201211c09e22ddc25381ae3be8303295d8108c3852405d5f7f84ac6690e9b",
+      "promptBasis": {
+        "name": "Chrono Recoil",
+        "category": "Jeux",
+        "genre": "Action & tir",
+        "baseGame": "",
+        "pitch": "Le jeu accepte une musique locale choisie par le joueur. L’analyse et la génération de la mission sont réalisées entièrement dans le navigateur, sans transfert du fichier audio."
+      }
+    },
+    {
+      "id": "combine-administrator-simulator",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-e9633bd2-c3a3-41b2-9632-71b5c9be7375",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/combine-administrator-simulator.png",
+      "sha256": "36defdb3cab62ab390ebd21ba53e9b440a41e33b487a3d5851fa4c977514f243",
+      "promptBasis": {
+        "name": "Combine Administrator Simulator",
+        "category": "Simulation",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Un tableau de bord autoritaire ou chaque bouton a l'air officiel et moralement suspect."
+      }
+    },
+    {
+      "id": "croq-collect-le-tresor-au-fond-du-paquet",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "croq-collect-le-tresor-au-fond-du-paquet",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/croq-collect-le-tresor-au-fond-du-paquet.webp",
+      "sha256": "fe51bdf5f95885ceae7c3bd6ed987309c5a150a14eec2e568ed52c53270eacfd",
+      "promptBasis": {
+        "name": "CROQ’COLLECT — Le trésor au fond du paquet",
+        "category": "Jeux",
+        "genre": "Aventure & exploration",
+        "baseGame": "",
+        "pitch": "Croq’Collect est un jeu 3D original où le joueur achète des paquets de céréales, prépare réellement chaque portion, termine le paquet puis ouvre la capsule cachée au fond pour enrichir sa vitrine de figurines."
+      }
+    },
+    {
+      "id": "dead-feed",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-0f6ff799-4b02-4471-8a34-2e77eb8a6880",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/dead-feed.webp",
+      "sha256": "9623de7411fff6bae07137c95587e3cb190f0671e6ffa597b749e72f7f859bfd",
+      "promptBasis": {
+        "name": "DEAD FEED — Le flux vous regarde",
+        "category": "Jeux",
+        "genre": "Survie & horreur",
+        "baseGame": "",
+        "pitch": "Jeu d’horreur interactif autonome dans un faux réseau de livestreams. Vous incarnez le modérateur de nuit chargé de surveiller plusieurs chaînes. La plupart du temps, il ne se passe rien. Parfois, un reflet ne suit pas la bonne personne, une porte apparaît dans un mur impossible ou le chat parle…"
+      }
+    },
+    {
+      "id": "dead-ground",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "dead-ground",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/dead-ground.png",
+      "sha256": "978422dfde7e4b1d4ce0143c4beca218f609ff6ce8d082ced6c53e2c55a0e1e2",
+      "promptBasis": {
+        "name": "Dead Ground: Satellite Survival",
+        "category": "Jeux",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Choisis ton refuge, organise les survivants et rétablis le signal avant la prochaine vague."
+      }
+    },
+    {
+      "id": "derriere-le-tain",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "derriere-le-tain",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/derriere-le-tain.webp",
+      "sha256": "2092034dc0ce0ac6d4c90cab2fd1bd02238aa121c91c4c856f9fd2559e5db761",
+      "promptBasis": {
+        "name": "DERRIÈRE LE TAIN",
+        "category": "Jeux",
+        "genre": "Survie & horreur",
+        "baseGame": "",
+        "pitch": "Jeu d’horreur à la première personne où les créatures n’existent visuellement que dans le miroir tenu au-dessus de l’épaule."
+      }
+    },
+    {
+      "id": "dicebound-rpg",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-71e03068-5f64-4e84-98b3-8f8b1fe80ef1",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/dicebound-rpg.webp",
+      "sha256": "4b2592bdd8be5e53e8c24877badde03df30accb7099c33fef44cb2ffe2b7ed0d",
+      "promptBasis": {
+        "name": "Dicebound RPG",
+        "category": "Jeux",
+        "genre": "RPG & progression",
+        "baseGame": "",
+        "pitch": "Le projet est une application web statique sans dépendance d'exécution, sans compte, sans télémétrie et sans service distant requis pour jouer."
+      }
+    },
+    {
+      "id": "digirift-go",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-f51da49e-ae26-4214-803a-d7f57933f9e1",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/digirift-go.webp",
+      "sha256": "2f726a786d315aada77e7dfe7bfc6473d5545b1ea05cb04b1e2b218fe0c8ef6a",
+      "promptBasis": {
+        "name": "DIGIRIFT GO",
+        "category": "Jeux",
+        "genre": "RPG & progression",
+        "baseGame": "Digimon",
+        "pitch": "Prototype mobile/PWA fan-made inspiré du principe d’un jeu de chasse géolocalisé, transposé dans un univers Digimon."
+      }
+    },
+    {
+      "id": "duel-spirits-worldbound",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-750b6989-b085-4b9e-805f-7b7c97b122a8",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/duel-spirits-worldbound.webp",
+      "sha256": "9d6c9c976e7a87a806b8a0f3657c7dd4d65adf61dc8410a82340c94754e2b376",
+      "promptBasis": {
+        "name": "Duel Spirits: Worldbound",
+        "category": "Jeux",
+        "genre": "RPG & progression",
+        "baseGame": "Yu-Gi-Oh!",
+        "pitch": "Prototype fan non officiel de jeu de chasse GPS, de capture et de duel de monstres, conçu comme une boucle « GO-like » autour des monstres de Yu-Gi-Oh!."
+      }
+    },
+    {
+      "id": "dustline-last-convoy",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-c3bef41c-a1b4-44bb-b579-5e0bcf75b04c",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/dustline-last-convoy.webp",
+      "sha256": "440056e49a34f493d003235ebbaface3c49dd14fc117bb24087934a628b9d1fa",
+      "promptBasis": {
+        "name": "DUSTLINE: LAST CONVOY",
+        "category": "Jeux",
+        "genre": "Stratégie & tactique",
+        "baseGame": "",
+        "pitch": "Jeu d’action et de conduite post-apocalyptique original en HTML5 Canvas. Le joueur pilote le Vesper, dernier véhicule capable d’escorter un cœur de purification de Cinder jusqu’à Haven."
+      }
+    },
+    {
+      "id": "echelle-cosmique-evolution-totale",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-48a6bce5-a79e-4bd4-b07f-5f50f55a528b",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/echelle-cosmique-evolution-totale.png",
+      "sha256": "6465cc4d56f137eb6c7326281ff03664bb258e6f453eb4ca85a749e1272ade3d",
+      "promptBasis": {
+        "name": "Échelle Cosmique — Évolution Totale",
+        "category": "Jeux",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Pars d'une membrane vivante, traverse les océans, domine la terre, absorbe les astres et dépasse l'Univers."
+      }
+    },
+    {
+      "id": "echo-drive",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-c354831b-d0e4-4709-87cc-11fc88aab192",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/echo-drive.webp",
+      "sha256": "608c43c087e738752eae05682a77e8fe0689c7e0fa40d30b22c143d59bdc286c",
+      "promptBasis": {
+        "name": "ECHO//DRIVE",
+        "category": "Jeux",
+        "genre": "Rythme & arcade",
+        "baseGame": "",
+        "pitch": "Le projet est original : il reprend l’idée générale d’un jeu piloté par la musique, mais n’utilise ni code, ni image, ni musique, ni marque provenant de Beat Hazard, Rift of the NecroDancer, Groove Coaster, Melody's Escape ou d’un autre jeu existant."
+      }
+    },
+    {
+      "id": "echo-forest",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-618a6d3e-fdcb-4732-ac63-f779aa65dba0",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/echo-forest.webp",
+      "sha256": "9441afbf4b3e0b84a957336506db0058831d71a7c1c7f8aa86b042f7065f0b2a",
+      "promptBasis": {
+        "name": "Echo Forest",
+        "category": "Jeux",
+        "genre": "Aventure & exploration",
+        "baseGame": "",
+        "pitch": "trois relais à calibrer sous pression, avec checkpoint après chaque activation ; - huit cassettes placées différemment selon la seed de l’expédition ; - quatre piles de secours pour gérer la lampe ; - IA en états roam, search et chase, sensible au bruit, à la distance, à la visibilité et à la l…"
+      }
+    },
+    {
+      "id": "echo-weave",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-f06a3fd1-6921-4b2f-bb00-d18388ecc13e",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/echo-weave.webp",
+      "sha256": "ef1cf2781edadf5cfde2d8ff0df2d1c00f2914a1a6c460bc7375a5324489bfa0",
+      "promptBasis": {
+        "name": "ECHO//WEAVE 2.0",
+        "category": "Jeux",
+        "genre": "Puzzle & cartes",
+        "baseGame": "",
+        "pitch": "ECHO//WEAVE est un jeu musical procédural local dans lequel la musique ne crée ni une piste à suivre, ni une pluie de notes, ni une arène de tir. Elle découpe le temps en phrases et transforme les gestes du joueur en mémoires autonomes."
+      }
+    },
+    {
+      "id": "eclipse-frontline-afterfall",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-643c5b10-bb62-49f1-8bfc-e6e78430c80c",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/eclipse-frontline-afterfall.webp",
+      "sha256": "9a377fc82bbe21ab79d82e6324ced7eb1047222bd92f76e6d5db5191f1c4d24b",
+      "promptBasis": {
+        "name": "Eclipse Frontline: Afterfall",
+        "category": "Jeux",
+        "genre": "Stratégie & tactique",
+        "baseGame": "",
+        "pitch": "Jeu original de survivor-like / bullet heaven 2D vu du dessus, conçu comme une expérience autonome sans reprendre l’univers, les personnages, les textes, les images ni le code d’une autre œuvre."
+      }
+    },
+    {
+      "id": "emu-simulator-la-longue-marche",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-573b4163-4a4c-42ed-a37e-4c00d779725b",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/emu-simulator-la-longue-marche.webp",
+      "sha256": "fafa8374f44522cfb59cd7398769cf6e7cf9975040e99443a53736c5b74de64a",
+      "promptBasis": {
+        "name": "Ému Simulator — La Longue Marche",
+        "category": "Jeux",
+        "genre": "Gestion & simulation",
+        "baseGame": "",
+        "pitch": "Jeu de survie-aventure en vue du dessus, jouable au clavier, à la manette ou sur écran tactile, sans dépendance d’exécution externe."
+      }
+    },
+    {
+      "id": "encrevivante-le-livre-qui-vous-regarde",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-6db02a62-a130-41fb-a758-e2c25b96d4d2",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/encrevivante-le-livre-qui-vous-regarde.webp",
+      "sha256": "1bef32325301906a600b2901cf315d14c49c35c9b14d1f8d377c4d1655c38b89",
+      "promptBasis": {
+        "name": "ENCREVIVANTE — Le Livre qui vous regarde",
+        "category": "Jeux",
+        "genre": "Aventure & exploration",
+        "baseGame": "",
+        "pitch": "ENCREVIVANTE est un jeu narratif original de type livre dont vous êtes le héros. La page de gauche porte le récit ; la page de droite met chaque lieu en mouvement sur Canvas. Les choix modifient les statistiques, les objets, les personnages préservés, les informations découvertes et la fin obtenue."
+      }
+    },
+    {
+      "id": "feather-beat-parade-nuptiale",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "feather-beat-parade-nuptiale",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/feather-beat-parade-nuptiale.webp",
+      "sha256": "57a43b4d0d039478e7eb4f11bebab74ed34f6327df5a4b84de44a66c8f3588b3",
+      "promptBasis": {
+        "name": "FEATHER BEAT — Parade nuptiale",
+        "category": "Jeux",
+        "genre": "Rythme & arcade",
+        "baseGame": "",
+        "pitch": "FEATHER BEAT est un jeu de rythme original jouable dans un navigateur, construit autour de parades nuptiales d’oiseaux. Le joueur frappe quatre directions comme dans un jeu de danse d’arcade, tandis que chaque réussite fait progresser la chorégraphie de l’oiseau, transforme le décor et alimente l…"
+      }
+    },
+    {
+      "id": "fossil-frontier",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-e996bc53-448e-4c99-8b77-a8872b799b33",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/fossil-frontier.png",
+      "sha256": "974c69d783f54940200561e2b1f6371dd4b2266d87bc0de18ce86dc8f3bc4ba8",
+      "promptBasis": {
+        "name": "Fossil Frontier",
+        "category": "Jeux",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Deterre le passe, restaure chaque squelette et transforme tes decouvertes en grand musee."
+      }
+    },
+    {
+      "id": "fractal-chaos-recursive-rift",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-45a1e522-fa25-44c0-910c-b17ecc84d7b5",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/fractal-chaos-recursive-rift.webp",
+      "sha256": "b91e3163fa3afba01149f04d58e894cea05532d59894511b3b8cf0d2cc719026",
+      "promptBasis": {
+        "name": "FRACTAL CHAOS — Recursive Rift",
+        "category": "Jeux",
+        "genre": "Action & tir",
+        "baseGame": "",
+        "pitch": "Fractal Chaos est un jeu d’action–roguelite original jouable dans un navigateur. Les armes ne sont pas des fusils ou des sorts classiques : le joueur matérialise des courbes récursives néon inspirées des courbes de Lévy, Dragon, Twin Dragon et Terdragon. Chaque tracé devient une zone de dégâts pe…"
+      }
+    },
+    {
+      "id": "fractal-chaos-studio",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "fractal-chaos-studio",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/fractal-chaos-studio.webp",
+      "sha256": "aa10afb0124971949e38ff209ea8c1041caae9bf0b496e7d7c16e26feccb04fd",
+      "promptBasis": {
+        "name": "Fractal Chaos Studio",
+        "category": "Jeux",
+        "genre": "Puzzle & cartes",
+        "baseGame": "",
+        "pitch": "Glisser ou flèches : déplacer la vue. - Molette, pincement, + / - : zoomer. - Double toucher ou R : recentrer. - Entrée : valider la mission ; H : demander un indice. - Ctrl/Cmd + Z, Ctrl/Cmd + Y : annuler et rétablir. - Manette : stick gauche pour déplacer, gâchettes pour zoomer, A pour valide…"
+      }
+    },
+    {
+      "id": "gamevault-room-3d",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-9c76efad-c7a5-4b1f-8e25-ec0ded57a1f1",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/gamevault-room-3d.webp",
+      "sha256": "ce15b57c932d4879d93eb7a463a94006c46b48fd3b0b27fb9e9ac7864f51ea8b",
+      "promptBasis": {
+        "name": "GameVault Room 3D",
+        "category": "Jeux",
+        "genre": "Gestion & simulation",
+        "baseGame": "",
+        "pitch": "Le mode web est une PWA responsive consacrée à l’exploration de la collection. L’application Electron ajoute l’indexation locale et le lancement réel de Steam, PCSX2, RPCS3, RetroArch, Dolphin et de profils personnalisés."
+      }
+    },
+    {
+      "id": "genomescan-bioarena",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-27094a0a-e61e-47bf-bb17-cd1f36076656",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/genomescan-bioarena.png",
+      "sha256": "6d719c3b0136c042d7abe982cd3ff56e64fdadb01b5a5921cb8c6f8260e4f2f9",
+      "promptBasis": {
+        "name": "GenomeScan: BioArena",
+        "category": "Jeux",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Un code devient un ADN procedural, puis une nouvelle recrue pour ton bestiaire."
+      }
+    },
+    {
+      "id": "good-morning-hollowbrook",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "good-morning-hollowbrook",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/good-morning-hollowbrook.webp",
+      "sha256": "b9cb9939affadba7d27382b172364ff8c5279ad2442833096f323968597757e8",
+      "promptBasis": {
+        "name": "HOLLOWBROOK — LE DERNIER ÉPISODE",
+        "category": "Jeux",
+        "genre": "Survie & horreur",
+        "baseGame": "",
+        "pitch": "Jeu d’horreur psychologique original en vue subjective. Evan Vale croit vivre dans une petite ville parfaite. En réalité, Hollowbrook est un immense plateau de télévision et chaque personne de son entourage joue un rôle. Le joueur l’ignore au début, puis découvre que sa routine, ses souvenirs et…"
+      }
+    },
+    {
+      "id": "harmonic-terraform",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-3cc2fd13-6da0-4d1a-9b47-0a8338c1335d",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/harmonic-terraform.webp",
+      "sha256": "f7eb339d5f048f588adebc90cd71abc64d504c5f3110f958e2b89f62a1dfbb75",
+      "promptBasis": {
+        "name": "HARMONIC TERRAFORM",
+        "category": "Jeux",
+        "genre": "Gestion & simulation",
+        "baseGame": "",
+        "pitch": "Production canonique : harmonic-terraform.vercel.app. Une réponse HTTP ou un déploiement Vercel Ready ne suffit pas à déclarer une version publiable : chaque révision doit aussi franchir le QA automatisé et le parcours navigateur décrits dans le runbook de release."
+      }
+    },
+    {
+      "id": "hearts-and-horns-maid-bar",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "hearts-and-horns-maid-bar",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/hearts-and-horns-maid-bar.webp",
+      "sha256": "5ea792d9b347e15c4c521a07ec7190fe4e5ce766818f8481175583aae6962aad",
+      "promptBasis": {
+        "name": "Hearts & Horns — Le Maid-Bar de Minuit",
+        "category": "Jeux",
+        "genre": "Gestion & simulation",
+        "baseGame": "",
+        "pitch": "Hearts & Horns est un jeu web complet mêlant gestion de bar, visual novel romantique, dating sim et mini-jeux. L’univers et les cinq héroïnes sont originaux. Tous les personnages romançables sont explicitement adultes."
+      }
+    },
+    {
+      "id": "hellbound-hotel-manager",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "hellbound-hotel-manager",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/hellbound-hotel-manager.png",
+      "sha256": "7c11669f113246e4d9477c7521462603f8f418aa148b9832ff32f374996f2c27",
+      "promptBasis": {
+        "name": "Hellbound Hotel Manager",
+        "category": "Jeux",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Check-in, contrats douteux, chambres impossibles : la gestion descend d'un etage."
+      }
+    },
+    {
+      "id": "hellsync-choirbreach",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "hellsync-choirbreach",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/hellsync-choirbreach.png",
+      "sha256": "8931f6d1645557ef477d0bf7fbd06cf030c5508cc65ba8cd98c6c39904adb3fe",
+      "promptBasis": {
+        "name": "HELLSYNC: CHOIRBREACH",
+        "category": "Jeux",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Importe un morceau : chaque grave, accent et rupture devient une créature, une attaque ou une mutation."
+      }
+    },
+    {
+      "id": "hive-ascension",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-f6e943b9-e7b0-4e5f-b870-8cc906851ffa",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/hive-ascension.png",
+      "sha256": "ad8692cfa16c6ed858866c7230efee2d9882915eea60dec5c19f8df4948b35b0",
+      "promptBasis": {
+        "name": "Hive Ascension",
+        "category": "Jeux",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Survis, mute, conserve tes acquis et prends progressivement le controle du Hive."
+      }
+    },
+    {
+      "id": "hive-ascension-cycle",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-0513c9ce-faba-4686-972a-f6a502d0c78f",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/hive-ascension-cycle.png",
+      "sha256": "fc428a2743f01556cfaaa180fd83bd7e56b56925514d294461320697378279b5",
+      "promptBasis": {
+        "name": "HIVE ASCENSION : Cycle Évolutif",
+        "category": "Jeux",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Change de vision, infiltre la station et développe une ruche capable de commander par phéromones."
+      }
+    },
+    {
+      "id": "intravore",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generatedAt": "2026-08-12",
+      "generationRef": "git:2420e0d",
+      "asset": "assets/presentations/intravore.webp",
+      "sha256": "e6215cab67fbd36d1e3a4dce99bf87dce87007d7ea8b59d1209957ed91fda5c4"
+    },
+    {
+      "id": "iron-tempest",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "iron-tempest",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/iron-tempest.png",
+      "sha256": "3193afbe3e51cbf7c471ca07d41fd55fc884c2fbe8d68f732238e252afccb5b1",
+      "promptBasis": {
+        "name": "Iron Tempest",
+        "category": "Jeux",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Le relais B-2 s'est tu. Tempest est la seule unite encore dans la fenetre meteo."
+      }
+    },
+    {
+      "id": "jawa-the-duskmen",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generatedAt": "2026-08-12",
+      "generationRef": "git:2420e0d",
+      "asset": "assets/presentations/jawa-the-duskmen.webp",
+      "sha256": "a00642e8e68bd82f936cbd04b66a8b2168e48ff25fc0f10bec16ce2dd3c181a1"
+    },
+    {
+      "id": "jigsaw-mastermind",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-e1afbb1d-6788-4801-86eb-849ea8e84b0e",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/jigsaw-mastermind.png",
+      "sha256": "99f6cc9d5dcb08fd95a8664c0f2c36faad953ab2ca22e32fe941ebe5d58a91d9",
+      "promptBasis": {
+        "name": "Jigsaw Mastermind",
+        "category": "Jeux",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Une table de puzzle sombre ou chaque decision ressemble a une confession."
+      }
+    },
+    {
+      "id": "jurassic-arsenal",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "jurassic-arsenal",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/jurassic-arsenal.png",
+      "sha256": "17c600eb6cf62ca9cabec7ad87db0eeef5685053a261f7cf076962051e84173f",
+      "promptBasis": {
+        "name": "Jurassic Arsenal",
+        "category": "Jeux",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Choisis ton predateur, monte ton arsenal et nettoie l'arene."
+      }
+    },
+    {
+      "id": "kaiju-rupture",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-9575138c-d10b-4911-8966-be7977e9d9df",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/kaiju-rupture.png",
+      "sha256": "d5b7970d28dbeb74f49192b227fcd413b0f5be720ccc26b9f07cc869ad3bdc15",
+      "promptBasis": {
+        "name": "KAIJU // RUPTURE",
+        "category": "Jeux",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Tu n'es pas le heros de la ville : tu es la catastrophe qui la traverse."
+      }
+    },
+    {
+      "id": "kc-holographics",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-b4377e36-a3e5-413c-a1a3-ac7062735044",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/kc-holographics.png",
+      "sha256": "04ba874ddadfe39fed882f8cbae912fdbb714e0f4ec562588ebf3815eb7ad3d2",
+      "promptBasis": {
+        "name": "Yu-Gi-Oh! 2.5D Duel Simulator",
+        "category": "Jeux",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Prépare ton deck, invoque tes cartes sur une arène holographique et affronte l'IA dans le navigateur."
+      }
+    },
+    {
+      "id": "kidz-tv-after-hours",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "kidz-tv-after-hours",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/kidz-tv-after-hours.webp",
+      "sha256": "095b4e6d5879e1fdcd3e6bc5ec3627c79e122be3b3d417c8a469f10bbb717f36",
+      "promptBasis": {
+        "name": "KIDZ-TV: AFTER HOURS — v2.1.0",
+        "category": "Jeux",
+        "genre": "Survie & horreur",
+        "baseGame": "",
+        "pitch": "KIDZ-TV: AFTER HOURS est un survival horror complet jouable dans un navigateur, construit autour d’un moteur raycast 3D et d’imposteurs 2D orientés vers la caméra. Le joueur explore les studios abandonnés d’une émission jeunesse fictive des années 1980–1990, traverse physiquement les téléviseurs…"
+      }
+    },
+    {
+      "id": "l-envers-du-salut",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-848617ac-d7f8-4061-9528-20855a75d9eb",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/l-envers-du-salut.webp",
+      "sha256": "f43dd8cbf0eed499dee3e1fda360b5002d3eefaa4f2d3f84122f0bd470b63cb3",
+      "promptBasis": {
+        "name": "L’Envers du Salut",
+        "category": "Jeux",
+        "genre": "Survie & horreur",
+        "baseGame": "",
+        "pitch": "Le Paradis se présente comme un lieu de paix, de beauté et de perfection. En réalité, il supprime les souvenirs, les contradictions et jusqu’à l’identité des âmes qu’il juge « impures ». L’Enfer, monstrueux en apparence, est devenu le dernier refuge de ceux qui refusent d’être effacés."
+      }
+    },
+    {
+      "id": "l-envers-service-de-nuit",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-a35d7507-0c2e-4ab0-8771-ff931391bf47",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/l-envers-service-de-nuit.webp",
+      "sha256": "c4943e0be1e9f538fd4b6f0f4e9210e69bb3fdb4b8c9bbf216c416ed030d3a1a",
+      "promptBasis": {
+        "name": "L’ENVERS — Service de nuit",
+        "category": "Jeux",
+        "genre": "Survie & horreur",
+        "baseGame": "",
+        "pitch": "La ville tient debout parce que quelqu’un ferme les bonnes portes."
+      }
+    },
+    {
+      "id": "la-petite-fiole",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-6b6839fe-157c-4225-83ee-d3944961e5d7",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/la-petite-fiole.png",
+      "sha256": "9e42c28ba166849fb7c8188872896ee142f90bb962bf2500ab0eeb3c22c89ffb",
+      "promptBasis": {
+        "name": "La Petite Fiole",
+        "category": "Jeux",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Un chaudron, un registre scelle, et une boutique qui sent deja l'aventure magique."
+      }
+    },
+    {
+      "id": "la-riviere-des-absents",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "la-riviere-des-absents",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/la-riviere-des-absents.webp",
+      "sha256": "0a4544dc82b9b2cbcc625b46aedaf593c75a3a133fb6c5c6d0978977f52671fd",
+      "promptBasis": {
+        "name": "La Rivière des Absents",
+        "category": "Jeux",
+        "genre": "Puzzle & cartes",
+        "baseGame": "",
+        "pitch": "Quatre poissons-mémoires — Aube, Miette, Silex et Noct — transportent les derniers souvenirs du village noyé de Valdormante. Le joueur doit les guider jusqu’à la mer avant que le Veilleur et sa barque hantée ne les rattrapent."
+      }
+    },
+    {
+      "id": "lazarus-assembly",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "lazarus-assembly",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/lazarus-assembly.webp",
+      "sha256": "90cb9cb074f1602e81e25a0062db685cf318b7b696f314fbf6e774d0851a422e",
+      "promptBasis": {
+        "name": "LAZARUS // ASSEMBLY",
+        "category": "Jeux",
+        "genre": "Gestion & simulation",
+        "baseGame": "",
+        "pitch": "Le projet ne se limite pas à un écran de démonstration : il comprend une campagne complète, une économie, un mini-jeu de réanimation, des besoins continus, une personnalité émergente, des missions, des événements, des améliorations, des sauvegardes et plusieurs conclusions."
+      }
+    },
+    {
+      "id": "le-registre-creux-les-epreuves-du-solde",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-bcbfd612-74bb-4808-a79f-42fe0a0be688",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/le-registre-creux-les-epreuves-du-solde.webp",
+      "sha256": "86b69e340284c77a42405642664614c86c799daa5c540e022ecde2318b9c0250",
+      "promptBasis": {
+        "name": "LE REGISTRE CREUX — Les Épreuves du Solde",
+        "category": "Jeux",
+        "genre": "Survie & horreur",
+        "baseGame": "",
+        "pitch": "Jeu d’horreur 3D original de compétition mortelle, jouable dans un navigateur de bureau au clavier et à la souris ou avec une manette standard. La campagne complète réunit quatre épreuves, des concurrents contrôlés par IA, une créature traquant le bruit, une mécanique de miroir, une finale compét…"
+      }
+    },
+    {
+      "id": "le-rocher-qui-te-connait",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-da82fbe3-c2b4-4b9b-a9d0-e8f8f6676336",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/le-rocher-qui-te-connait.webp",
+      "sha256": "6ef60699a29224b1d0fe776bf480ccef521bdb1d9c8cc5f88a427516a2c576ff",
+      "promptBasis": {
+        "name": "Le Rocher qui te connaît",
+        "category": "Jeux",
+        "genre": "Survie & horreur",
+        "baseGame": "",
+        "pitch": "Jeu d’horreur et d’humour noir en pseudo-3D rétro, jouable dans un navigateur moderne sur ordinateur et téléphone. Version professionnelle 1.1.0 du 9 août 2026."
+      }
+    },
+    {
+      "id": "le-seuil-noir-protocole-orphee",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-ed2fb75c-4a77-41e6-bde0-18405208373d",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/le-seuil-noir-protocole-orphee.webp",
+      "sha256": "3eb8649e7e4f9199e8787c9d137a5a5997cea1aaa0c6f150a466405bdff61a8e",
+      "promptBasis": {
+        "name": "Le Seuil Noir : Protocole Orphée",
+        "category": "Jeux",
+        "genre": "Aventure & exploration",
+        "baseGame": "",
+        "pitch": "Survival horror 3D narratif original, jouable intégralement dans un navigateur."
+      }
+    },
+    {
+      "id": "le-vide-doit-manger",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-fa3c182c-a2fd-4970-9a0d-86341dd42dc7",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/le-vide-doit-manger.webp",
+      "sha256": "5827e602867ece6da45844996664e20378138569d3b28a8662e48a02b457a1aa",
+      "promptBasis": {
+        "name": "Le Vide doit manger",
+        "category": "Jeux",
+        "genre": "Gestion & simulation",
+        "baseGame": "",
+        "pitch": "Un idle game cosmique original, jouable dans un navigateur, où une petite créature du Néant doit avaler tout ce que le joueur trouve. Chaque objet reste représenté dans son corps translucide et rejoint un catalogue intérieur permanent."
+      }
+    },
+    {
+      "id": "manga-break-le-dernier-brouillon",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-bc3b54c4-eb3c-473b-b18f-11946766e4ae",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/manga-break-le-dernier-brouillon.webp",
+      "sha256": "2261ae32918cad44ae3bcafeef08c9973d020e4cc60c30a0834706bdc4c2cdba",
+      "promptBasis": {
+        "name": "MANGA//BREAK — Le Dernier Brouillon",
+        "category": "Jeux",
+        "genre": "Action & tir",
+        "baseGame": "",
+        "pitch": "MANGA//BREAK est un jeu d’action 2D original dans lequel le joueur ne visite pas seulement un univers dessiné comme un manga : il combat à l’intérieur d’un véritable manuscrit japonais vivant. Les cases sont des arènes, les marges sont des zones dangereuses, les doubles pages accueillent les boss…"
+      }
+    },
+    {
+      "id": "manga-finder",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-23f918a5-2681-47e8-813d-4d4072ba0e59",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/manga-finder.png",
+      "sha256": "10c9d6a7113fec5a9d557bfc09de130cbd08b7127b5acb256500ca2f8f00e8a8",
+      "promptBasis": {
+        "name": "MangaFinder",
+        "category": "Applications",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Decris l'histoire que tu cherches, laisse les sources faire le tri."
+      }
+    },
+    {
+      "id": "mecha-overdrive",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generatedAt": "2026-08-12",
+      "generationRef": "git:2420e0d",
+      "asset": "assets/presentations/mecha-overdrive.webp",
+      "sha256": "ebef2300db2827b4477b0a84deda9cca3cb6c042d6f997a5e9147970a252a430"
+    },
+    {
+      "id": "media-gatherer",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "media-gatherer",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/media-gatherer.png",
+      "sha256": "9af35ca319b5b2bc4a3fba57ebff29d793678da91a119a3450e4c29bbe15cfb3",
+      "promptBasis": {
+        "name": "MediaGatherer",
+        "category": "Applications",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Media Finder, recherche inversée et Person Finder réunis dans un même espace de collecte."
+      }
+    },
+    {
+      "id": "meme-battle-internet-legends",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-80375f0c-2959-4bfd-a8bc-1233fbcbc7e1",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/meme-battle-internet-legends.webp",
+      "sha256": "1b9c9c00122580fbe03d59db943c5d9ad53a7615b7024c6e63a5e0b4f7cb54d5",
+      "promptBasis": {
+        "name": "MEME BATTLE — Internet Legends",
+        "category": "Jeux",
+        "genre": "Action & tir",
+        "baseGame": "Mèmes historiques d’Internet",
+        "pitch": "Jeu de combat 2D arcade fan-made dans lequel de véritables icônes historiques de la culture Internet s’affrontent : Trollface, Rage Guy, Forever Alone, Me Gusta, Nyan Cat, Trololo Man, Doge, Keyboard Cat, Grumpy Cat, This Is Fine, Philosoraptor et Dancing Banana."
+      }
+    },
+    {
+      "id": "miyabi-rhythm",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "miyabi-rhythm",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/miyabi-rhythm.png",
+      "sha256": "27584f2db3388851351f72e04b1b6f6991f18fc5fe0c8a4f282d1b5aa452b5d3",
+      "promptBasis": {
+        "name": "Miyabi Rhythm",
+        "category": "Jeux",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Choisis ton instrument, suis les pistes musicales et transforme le dojo au rythme de ta performance."
+      }
+    },
+    {
+      "id": "moonlit-maid-cafe-simulator",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-ebb7b394-a360-4e5c-9562-e0abf0d083a9",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/moonlit-maid-cafe-simulator.webp",
+      "sha256": "3c879a4a23e8cdf0f67cc273186936de776b5cea674ffa63b8d240dd68fa0e69",
+      "promptBasis": {
+        "name": "Moonlit Maid Café Simulator",
+        "category": "Jeux",
+        "genre": "Gestion & simulation",
+        "baseGame": "",
+        "pitch": "Jeu de gestion/service original jouable dans un navigateur, conçu comme un vertical slice professionnel sans dépendance externe obligatoire."
+      }
+    },
+    {
+      "id": "moustique-the-video-game",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "moustique-the-video-game",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/moustique-the-video-game.webp",
+      "sha256": "9863d5a82a1770e998e027418aae5a3843115540b836cd6b14f7a987e55ec8a5",
+      "promptBasis": {
+        "name": "MOUSTIQUE: THE VIDEO GAME",
+        "category": "Jeux",
+        "genre": "Action & tir",
+        "baseGame": "",
+        "pitch": "Jeu 3D original de vol, de furtivité et de survie domestique, jouable directement dans un navigateur."
+      }
+    },
+    {
+      "id": "mr-bean-total-chaos-collection",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-923b7373-fd63-43a5-9a86-145eef283f2c",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/mr-bean-total-chaos-collection.webp",
+      "sha256": "128e980dc18c2dcb24ca6d84a8a9e06554f8e0b889acbaa552b76ad5c5c22d3a",
+      "promptBasis": {
+        "name": "Mr Bean — Total Chaos Collection",
+        "category": "Jeux",
+        "genre": "Rythme & arcade",
+        "baseGame": "Mr Bean",
+        "pitch": "Jeu fan-made autonome en HTML5/Canvas réunissant 20 chapitres jouables inspirés des principales incarnations à l’écran de Mr Bean : les quatorze épisodes classiques, les deux longs métrages, la série animée — y compris sa quatrième saison diffusée en 2025 —, la cérémonie d’ouverture de Londres 20…"
+      }
+    },
+    {
+      "id": "multiverse-breach",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "multiverse-breach",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/multiverse-breach.png",
+      "sha256": "7e34105291a5db3cfc00e98cd14e6b1b21f7a1cd6678e2e0f630291f4b7f4cb3",
+      "promptBasis": {
+        "name": "Brèche Multiverselle",
+        "category": "Jeux",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Un portail, une anomalie, et l'envie de comprendre ce qui traverse."
+      }
+    },
+    {
+      "id": "neon-descent",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-28049fb5-8ebb-4241-9f9e-79db37876861",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/neon-descent.webp",
+      "sha256": "b43913f538e662fc0b0b4c4443cf3b47f7ba1957031d6903a10c13fa45c6d60e",
+      "promptBasis": {
+        "name": "NEON DESCENT: 03:33",
+        "category": "Jeux",
+        "genre": "Action & tir",
+        "baseGame": "",
+        "pitch": "Le prototype n’utilise aucun personnage, texte, niveau ni asset de Dante’s Inferno. L’univers, le scénario, les ennemis et les mécaniques sont originaux."
+      }
+    },
+    {
+      "id": "neon-rift-racers",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-7942fe1c-6b04-4920-90c9-24f71368a721",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/neon-rift-racers.webp",
+      "sha256": "cbd108fd2655f5efc47c4a5c7360cee3212b4c701d4c062ca6687b7299ac428c",
+      "promptBasis": {
+        "name": "Neon Rift Racers",
+        "category": "Jeux",
+        "genre": "Rythme & arcade",
+        "baseGame": "",
+        "pitch": "Jeu de course antigravité original inspiré par la sensation de vitesse des racers futuristes et des bolides à doubles propulseurs, sans utiliser les noms, personnages, véhicules ou environnements protégés de licences existantes."
+      }
+    },
+    {
+      "id": "nexus-of-torment",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generatedAt": "2026-08-12",
+      "generationRef": "git:2420e0d",
+      "asset": "assets/presentations/nexus-of-torment.webp",
+      "sha256": "ef84835b9109a64748f80bc6a6f8a437cefd5b6aff83fd86b0c4ebbac1fd7d53"
+    },
+    {
+      "id": "nocturne-dead-frequency",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "nocturne-dead-frequency",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/nocturne-dead-frequency.webp",
+      "sha256": "d3ca8b2cf70141851c373e55f6a90540129996568fe2f4e9b9e7efba5c00b2a8",
+      "promptBasis": {
+        "name": "NOCTURNE: Dead Frequency",
+        "category": "Jeux",
+        "genre": "Rythme & arcade",
+        "baseGame": "",
+        "pitch": "Prototype complet d'un jeu de rythme fusionné avec un survival horror, jouable directement dans un navigateur."
+      }
+    },
+    {
+      "id": "nocturne-signal",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "nocturne-signal",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/nocturne-signal.webp",
+      "sha256": "f39153c30f2cc37a85b29178fdaf0d3ceb6860b649d37dab3dec6764ab66eba5",
+      "promptBasis": {
+        "name": "NOCTURNE SIGNAL",
+        "category": "Jeux",
+        "genre": "Rythme & arcade",
+        "baseGame": "",
+        "pitch": "[](https://github.com/darknigthmare/nocturne-signal/actions/workflows/ci.yml)"
+      }
+    },
+    {
+      "id": "octo-arsenal",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-4c0ae8d7-0220-42c5-9514-8843b26a42ac",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/octo-arsenal.png",
+      "sha256": "b6472fe72c3b9f73315565135d54f7718ff76902e195fea909415c5e3e57c49b",
+      "promptBasis": {
+        "name": "OCTO//ARSENAL",
+        "category": "Jeux",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Huit bras. Huit armes. Aucune discrétion."
+      }
+    },
+    {
+      "id": "petits-poissons-red-tide",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-e6147715-44f0-4238-a820-b5e377a7afbe",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/petits-poissons-red-tide.webp",
+      "sha256": "f2a6999249ce79e71d6700cb68d2128938a6ec40de38c53c58a02b968e1a0b92",
+      "promptBasis": {
+        "name": "Petits Poissons: RED TIDE",
+        "category": "Jeux",
+        "genre": "Puzzle & cartes",
+        "baseGame": "Jeu de plateau Petits Poissons",
+        "pitch": "Le principe du plateau est volontairement conservé : les quatre poissons commencent ensemble sur la plaque centrale marquée de leurs quatre emplacements, cinq plaques les séparent de la mer, cinq autres séparent la barque des poissons, et le dé comporte quatre faces poisson ainsi que deux faces p…"
+      }
+    },
+    {
+      "id": "port-de-pluie-baie-vivante",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "port-de-pluie-baie-vivante",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/port-de-pluie-baie-vivante.png",
+      "sha256": "4a526e77630107e83357fbbddc4727bb178358c242f811a937b710eda159a48e",
+      "promptBasis": {
+        "name": "Port de Pluie — La Baie vivante",
+        "category": "Jeux",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Explore une côte vivante sans score, combat ni urgence, au rythme de la pluie, de la mer et des lumières du port."
+      }
+    },
+    {
+      "id": "pulse-rail",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-02d9fe92-3bf3-4363-aa46-c148b0df801a",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/pulse-rail.webp",
+      "sha256": "f46e95d569cbc474f931128b38d73dadc066f6820791284fc59b5c8a1a05bdd3",
+      "promptBasis": {
+        "name": "PULSE//RAIL",
+        "category": "Jeux",
+        "genre": "Rythme & arcade",
+        "baseGame": "",
+        "pitch": "Le projet est livré avec son code TypeScript, son build JavaScript prêt à lancer, ses tests automatisés, une piste de démonstration synthétisée localement et une documentation destinée à une reprise dans Codex."
+      }
+    },
+    {
+      "id": "ragtime-rumble",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-4b1551b9-7e6e-4b82-9525-cce17b1178c1",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/ragtime-rumble.png",
+      "sha256": "2fb6ebb8a2b24de917cbb303b722acd7ec5375be1dfec5197edda1e0e2e43e5b",
+      "promptBasis": {
+        "name": "Ragtime Rumble — Complete Tour",
+        "category": "Jeux",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Choisis ton tempo, leve le rideau et bats chaque tete d'affiche sans quitter la mesure."
+      }
+    },
+    {
+      "id": "retro-room-prototype",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-1d95ab47-a93d-4c55-b513-82f71e7c4b20",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/retro-room-prototype.webp",
+      "sha256": "bb8cbfea95b9687e2a72e5a001a87ba5197abbbf36502170af0d8e0ddeee0391",
+      "promptBasis": {
+        "name": "RETRO//ROOM — Prototype Codex 0.1",
+        "category": "Jeux",
+        "genre": "Gestion & simulation",
+        "baseGame": "",
+        "pitch": "RETRO//ROOM est le premier prototype jouable du concept de chambre 3D servant d’interface physique à une collection de jeux rétro."
+      }
+    },
+    {
+      "id": "riff-rush",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generatedAt": "2026-08-12",
+      "generationRef": "git:2420e0d",
+      "asset": "assets/presentations/riff-rush.webp",
+      "sha256": "9ea327ed8a573fb6f189bec04c05855960260edee1329cb02da1ad088148cee6"
+    },
+    {
+      "id": "rift-titan-protocol",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-63a3ff67-6d81-4120-b508-9a3b0bc2cd66",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/rift-titan-protocol.webp",
+      "sha256": "1d4ced0f3e333b52f8172585c654a5368111329168dbaa4b9b1775c1bb4d2e7d",
+      "promptBasis": {
+        "name": "RIFT//TITAN: PROTOCOL",
+        "category": "Jeux",
+        "genre": "Action & tir",
+        "baseGame": "",
+        "pitch": "Rail shooter 3D de science-fiction original, complet et jouable hors ligne. La caméra progresse automatiquement sur un rail cinématique pendant que le joueur affronte soldats, drones, créatures, exosquelettes et titans gargantuesques."
+      }
+    },
+    {
+      "id": "sg2d-expedition",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-e640508c-902e-48d0-8858-c3f8970e9556",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/sg2d-expedition.png",
+      "sha256": "e86b2b91cff9c2e680fbf2f25085ab0dd23d0730dc26fd6d22285925dfe0100a",
+      "promptBasis": {
+        "name": "SG2D Expedition",
+        "category": "Jeux",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Monte une nouvelle expedition et pars franchir l'inconnu depuis un poste de commandement epure."
+      }
+    },
+    {
+      "id": "shadow-codec-ops",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "shadow-codec-ops",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/shadow-codec-ops.png",
+      "sha256": "6ac4cc227f41f2b53d5e10dc2d18c99eb357842b8b910f556956d6add0cd7443",
+      "promptBasis": {
+        "name": "Shadow Codec Ops",
+        "category": "Jeux",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Une interface d'operation clandestine entre terminal militaire, frequences codec et side ops jouables."
+      }
+    },
+    {
+      "id": "snail-dette-immortelle",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "snail-dette-immortelle",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/snail-dette-immortelle.png",
+      "sha256": "33340e2843b95a26b91b35911ecf19d94b6cc21d26efbb284d062e42a272e766",
+      "promptBasis": {
+        "name": "S.N.A.I.L. - La Dette Immortelle",
+        "category": "Jeux",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Tu as accepte la fortune et l'immortalite. La creature, elle, n'a jamais oublie ta position."
+      }
+    },
+    {
+      "id": "snake-no-signal",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "snake-no-signal",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/snake-no-signal.webp",
+      "sha256": "e2b17af75f1b1cf38b7031f2b1718ff239ea97605cbfa0593f036db074ba1292",
+      "promptBasis": {
+        "name": "SNAKE // NO SIGNAL",
+        "category": "Jeux",
+        "genre": "Survie & horreur",
+        "baseGame": "",
+        "pitch": "Un jeu d’horreur 3D original qui transforme le Snake des anciens téléphones en cauchemar de survie, enfermé dans la mémoire d’un appareil qui ne devrait plus fonctionner."
+      }
+    },
+    {
+      "id": "soleil-mort",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-4abe25a7-ef21-484f-9c36-921a6bf539ff",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/soleil-mort.webp",
+      "sha256": "2efdbc1adc68aedf7510039d98604383aa1351949c7e75e474414b70367429dd",
+      "promptBasis": {
+        "name": "SOLEIL MORT",
+        "category": "Jeux",
+        "genre": "Survie & horreur",
+        "baseGame": "",
+        "pitch": "Prototype 3D d'horreur liminale inspiré du jeu « 1, 2, 3 Soleil »."
+      }
+    },
+    {
+      "id": "souvenirs-retrouves",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-e9198e13-9baf-4aff-9aa4-89fd8b7e7baa",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/souvenirs-retrouves.webp",
+      "sha256": "aafe8f851f1bb75ab841209dbb4f45cdaaff836ba90f547c45a6cddb2ccb778d",
+      "promptBasis": {
+        "name": "Souvenirs Retrouvés",
+        "category": "Jeux",
+        "genre": "Gestion & simulation",
+        "baseGame": "",
+        "pitch": "Prototype web complet d'une application de nostalgie interactive : un musée numérique où les utilisateurs retrouvent des objets et produits disparus, les manipulent en 3D et enregistrent leurs souvenirs."
+      }
+    },
+    {
+      "id": "spermatozoid-kart-omega",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generatedAt": "2026-08-12",
+      "generationRef": "git:2420e0d",
+      "asset": "assets/presentations/spermatozoid-kart-omega.webp",
+      "sha256": "c03115c5b0d7aca9fa577eaf09e8dd42c15b0f9611b62dd55e635c46d6ce7ccf"
+    },
+    {
+      "id": "spinframe",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-67879492-495c-4965-b6fa-7130cf28345d",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/spinframe.png",
+      "sha256": "142c3ca12a6fef0702024f42617acf89ef7b23dc78cd19f8d6dc3c074476638b",
+      "promptBasis": {
+        "name": "SpinFrame",
+        "category": "Création",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Choisis un outil, pose le crayon, puis laisse la rotation construire une oeuvre impossible a tracer autrement."
+      }
+    },
+    {
+      "id": "spiralis-prototype",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-3c164f08-d2eb-4732-818f-351e7b5f0a4c",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/spiralis-prototype.webp",
+      "sha256": "08a4f05ef181e855f2beb0cbb1d50438c201d8c4dee1490c99cb398bf24fcde3",
+      "promptBasis": {
+        "name": "SPIRALIS — Prototype Codex",
+        "category": "Jeux",
+        "genre": "Survie & horreur",
+        "baseGame": "",
+        "pitch": "Jeu d'horreur cosmique original inspiré du motif universel de la spirale, sans reprendre les personnages ni le scénario d'une œuvre existante."
+      }
+    },
+    {
+      "id": "steel-stride-walker-front",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-5b1b7bc5-4c05-4ec4-bbff-c68a8e4c4082",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/steel-stride-walker-front.webp",
+      "sha256": "6fc38059f4bbb6509f2a4a3020871e764cf3c2a43c208178d373ed1c214846f8",
+      "promptBasis": {
+        "name": "STEEL STRIDE: Walker Front",
+        "category": "Jeux",
+        "genre": "Action & tir",
+        "baseGame": "",
+        "pitch": "STEEL STRIDE est un twin-stick shooter tactique en vue de dessus centré sur des marcheurs de combat. Le projet est un jeu HTML5 autonome, sans dépendance externe, jouable au clavier/souris, à la manette ou sur écran tactile."
+      }
+    },
+    {
+      "id": "strike-command-desert-thunder",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-0ad2fa58-6412-41bf-a6be-1e8448bfddd7",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/strike-command-desert-thunder.webp",
+      "sha256": "8b4f84527dd2a21fc1fbe34e1524928c981e3300a30c16c6221cb11d2d0e583a",
+      "promptBasis": {
+        "name": "Strike Command: Desert Thunder 2.5D — Version 3.0",
+        "category": "Jeux",
+        "genre": "Action & tir",
+        "baseGame": "",
+        "pitch": "Jeu d’action tactique en hélicoptère réalisé en HTML5 Canvas, JavaScript et Web Audio. Le projet est un jeu web autonome : il n’utilise ni Unreal Engine ni l’univers Stargate."
+      }
+    },
+    {
+      "id": "suture-noire-les-heritiers-du-gouffre",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "suture-noire-les-heritiers-du-gouffre",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/suture-noire-les-heritiers-du-gouffre.webp",
+      "sha256": "fcaa6774d9e9443da5f01891c50692d78746783aee62cd9d77317f86afb6a253",
+      "promptBasis": {
+        "name": "SUTURE NOIRE — Les Héritiers du Gouffre",
+        "category": "Jeux",
+        "genre": "RPG & progression",
+        "baseGame": "",
+        "pitch": "Suture Noire est un jeu d’horreur tactique original, jouable dans le navigateur, où chaque créature est un organisme procédural unique. Le joueur explore un monastère biologique condamné, capture des Vestiges, puis consomme deux parents dans un rituel de fusion pour créer une nouvelle descendance…"
+      }
+    },
+    {
+      "id": "terra-testudo-les-mondes-dos",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-7249d88a-2877-428d-b9a8-e530dca37e6d",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/terra-testudo-les-mondes-dos.webp",
+      "sha256": "c32c900539cf1f000a02fa5d8db790648609cee71d55d8326ccfbc072dadd73a",
+      "promptBasis": {
+        "name": "Terra Testudo — Les Mondes-Dos",
+        "category": "Jeux",
+        "genre": "Gestion & simulation",
+        "baseGame": "",
+        "pitch": "Terra Testudo est un jeu de construction, d’exploration et de défense jouable dans un navigateur. Le joueur commence avec une petite maison sur le dos d’un tortillon, développe une ville vivante, nourrit la créature qui la porte, puis fait évoluer celle-ci jusqu’à la forme de tortue-monde elder c…"
+      }
+    },
+    {
+      "id": "tetracrypt-the-well",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-f7823a1b-262d-4618-90f6-460eff9fa545",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/tetracrypt-the-well.webp",
+      "sha256": "4eca8e9e228f5b0a223b05efb31444e33d2db884db07b9a64845268fe834e11a",
+      "promptBasis": {
+        "name": "TETRACRYPT: THE WELL",
+        "category": "Jeux",
+        "genre": "Puzzle & cartes",
+        "baseGame": "",
+        "pitch": "État : vertical slice complet et jouable, avec boucle de victoire, défaite, trois difficultés et interface ordinateur/mobile."
+      }
+    },
+    {
+      "id": "tiffany-pixelverse-omniverse",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-d07af244-103b-4bc0-96ba-172dedaf02a3",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/tiffany-pixelverse-omniverse.webp",
+      "sha256": "4055781b34414bdb402bc08863978695b15f3ef74359d2dcbadfb11e8a0435b4",
+      "promptBasis": {
+        "name": "Tiffany : Les Portes du Pixelverse — Édition Omniverse",
+        "category": "Jeux",
+        "genre": "Action & tir",
+        "baseGame": "40 franchises du jeu vidéo",
+        "pitch": "Jeu de plateforme et d’action 2D conçu comme un fan game familial privé pour Tiffany. L’aventure comprend 41 mondes, 42 armes, 41 reliques, des boss, des objectifs propres à chaque univers et une progression persistante d’un portail à l’autre."
+      }
+    },
+    {
+      "id": "triarche-ciel-rouge",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-f5d33c93-2f37-46b2-a934-66c0f23eaa4c",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/triarche-ciel-rouge.png",
+      "sha256": "07897d9a5a753e7a65b9a8a3001a87e58e2dd033a8b8b0ade236ba34e543899e",
+      "promptBasis": {
+        "name": "TRIARCHE : Ciel Rouge",
+        "category": "Jeux",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Pilote les machines d'invasion ou guide la resistance jusqu'au dernier signal."
+      }
+    },
+    {
+      "id": "umbra-les-heures-noires",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-c811acb6-4077-4129-a286-69b240885e79",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/umbra-les-heures-noires.webp",
+      "sha256": "744842425d705086acd388a890230ff3573b62ce5da42b40303db33b4c98bedc",
+      "promptBasis": {
+        "name": "UMBRA — Les Heures Noires",
+        "category": "Jeux",
+        "genre": "Survie & horreur",
+        "baseGame": "",
+        "pitch": "Date Lieu Archive --- --- --- 29 mai 1919 Príncipe Les étoiles déplacées 30 juin 1973 Sahara — Concorde 001 Plus vite que l’ombre 11 août 1999 France 11:11 14 octobre 2023 Nouveau-Mexique L’Anneau 8 avril 2024 États-Unis Les gens immobiles 12 août 2026 Espagne Demain dans six jours 2 août 2027 Lo…"
+      }
+    },
+    {
+      "id": "umbrella-hive-manager",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-d4a438fe-99b3-4a0f-91b3-761c2aa7644e",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/umbrella-hive-manager.png",
+      "sha256": "b09b44e9c59b701dbf2509c55bd64d698c0c4a252acdb0deab5cf0be46c9b35f",
+      "promptBasis": {
+        "name": "Red Queen Hive OS",
+        "category": "Simulation",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Un centre de controle corporate froid, verrouille, et pas tout a fait rassurant."
+      }
+    },
+    {
+      "id": "valkyrie-sweeper-dark-siege",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-2eb84e19-7460-4215-ad65-c8ca8029ccb3",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/valkyrie-sweeper-dark-siege.png",
+      "sha256": "fc877c0efb3dac105465f09aff85225b0368cd31a45eec31552207cf5132fc5f",
+      "promptBasis": {
+        "name": "Valkyrie Sweeper: Dark Siege",
+        "category": "Jeux",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Construis ton périmètre, déclenche l'Overdrive et empêche la citadelle de tomber."
+      }
+    },
+    {
+      "id": "vesper-rite-les-dettes-de-la-maison-creuse",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-d1f33c6f-a777-4203-b84a-ceaafab19b56",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/vesper-rite-les-dettes-de-la-maison-creuse.webp",
+      "sha256": "7bc320bf52bf87595dc18e7d060cfc64dcec3097802597bdbbc3e1dd092f15a5",
+      "promptBasis": {
+        "name": "VESPER//RITE — Les Dettes de la Maison-Creuse",
+        "category": "Jeux",
+        "genre": "RPG & progression",
+        "baseGame": "",
+        "pitch": "Type de source : folder - Déploiement web détecté : oui"
+      }
+    },
+    {
+      "id": "voie-13-peage-de-nuit",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-82f4ad04-9079-4026-96d7-c1d9f2b3554c",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/voie-13-peage-de-nuit.webp",
+      "sha256": "73aac8a73e9089ac9f819dbbb1aa26598d09bda38ed6bfb2b50ada8f471bace2",
+      "promptBasis": {
+        "name": "VOIE 13 — Péage de nuit",
+        "category": "Jeux",
+        "genre": "Gestion & simulation",
+        "baseGame": "",
+        "pitch": "Jeu 3D autonome d’inspection, de gestion et d’horreur liminale. Vous incarnez l’employé d’un péage isolé pendant le service de nuit. Chaque véhicule doit être contrôlé avant de recevoir l’un des trois verdicts : OUVRIR, REFUSER ou VERROUILLER."
+      }
+    },
+    {
+      "id": "vortex-command",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "vortex-command",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/vortex-command.png",
+      "sha256": "2f7463b8d634f94f3fd661aa792fa16199706ceb3679f552a4f160edc991a40b",
+      "promptBasis": {
+        "name": "Vortex Command",
+        "category": "Jeux",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Choisis une doctrine, mobilise les villes et lance le Protocole Leviathan avant la rupture."
+      }
+    },
+    {
+      "id": "world-hive-wars",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-8bf6ad99-c81d-43c2-9a0d-46b40ca17766",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/world-hive-wars.webp",
+      "sha256": "c12c1291576a390549c0e092679ab3383fcce475db0e02900c5eb2f867ba80fb",
+      "promptBasis": {
+        "name": "WORLD HIVE WARS",
+        "category": "Jeux",
+        "genre": "Stratégie & tactique",
+        "baseGame": "Alien",
+        "pitch": "La carte réelle devient le plateau de jeu. Le commandant explore son secteur, détecte des signaux, envoie une escouade récupérer des ressources, développe un bastion persistant puis défend celui-ci pendant des assauts de Xénomorphes en temps réel."
+      }
+    },
+    {
+      "id": "xeno-trace",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-a72bee76-2ceb-4069-93ee-dd468ccb8f3f",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/xeno-trace.webp",
+      "sha256": "86c78b0241e8d1b788d53c597f071b452b46073bcd0790fea43677180f540847",
+      "promptBasis": {
+        "name": "XENO//TRACE — Hive Signal",
+        "category": "Jeux",
+        "genre": "RPG & progression",
+        "baseGame": "Alien",
+        "pitch": "Prototype complet de jeu mobile géolocalisé de type chasse/collection, centré sur les Xénomorphes. Le projet est une PWA statique : aucun compte, serveur, abonnement, token cartographique ou asset externe n’est nécessaire pour lancer la version actuelle."
+      }
+    },
+    {
+      "id": "xenomorph-tamagotchi",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-3c2c0022-7100-41cd-9293-8f4ba60c4547",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/xenomorph-tamagotchi.png",
+      "sha256": "abd2e1c1c1c538c4a1fd36538638324a8340ff1595fcc71179bedf53baf23361",
+      "promptBasis": {
+        "name": "MU/TH/UR 6000",
+        "category": "Simulation",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Une console corporate complete ou chaque experience augmente autant les donnees que le risque."
+      }
+    },
+    {
+      "id": "xion-operator-node",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-5d5df982-8ebd-41b8-a131-37abc9603e15",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/xion-operator-node.png",
+      "sha256": "728d6685e82f0c9b891f5e7920797847ecabd497afb08ef574d4a4ebdf59f60c",
+      "promptBasis": {
+        "name": "XION // Operator Node",
+        "category": "Simulation",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Lis le signal fantome, prepare l'equipe et garde Mnemosyne hors de portee."
+      }
+    },
+    {
+      "id": "yautja-apex-hunt",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-0f3feeab-6370-4da4-bb22-5449e8cf6c63",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/yautja-apex-hunt.png",
+      "sha256": "6e72ab20358c8fa3eb6bf5203db0ac7402e5a605f64142b4c25a1908c6f4aa2a",
+      "promptBasis": {
+        "name": "Yautja: Apex Hunt",
+        "category": "Jeux",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Scanne la planète, sélectionne ton contrat et prouve ton honneur face aux proies suprêmes."
+      }
+    },
+    {
+      "id": "yautja-hive-warriors",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-4657c1d7-3c1e-40b6-a02d-d15a0d5bd878",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/yautja-hive-warriors.png",
+      "sha256": "9d9ead22829b41ccadb845f661ebeb87d083039e24d8f7cfc39c6d76b315fe54",
+      "promptBasis": {
+        "name": "PREDATOR: HIVE WARRIORS",
+        "category": "Jeux",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Choisis ton chasseur, prépare son arsenal et taille une route à travers la ruche."
+      }
+    },
+    {
+      "id": "yautja-la-longue-chasse",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-2858177f-5b3d-4afe-9c87-9f4500a4e933",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/yautja-la-longue-chasse.png",
+      "sha256": "306af9d36a55fd1d5584aeae0404f4107fdea5e39fb3646a2908e1c74f9312a9",
+      "promptBasis": {
+        "name": "Yautja : La Longue Chasse",
+        "category": "Jeux",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Etudie une proie digne, choisis l'arme juste et reviens avec un trophee."
+      }
+    },
+    {
+      "id": "yomi-no-kage",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-5bafc7a8-d8e8-45c3-aa26-fa32cb25a07d",
+      "generatedAt": "2026-08-12",
+      "asset": "assets/presentations/yomi-no-kage.png",
+      "sha256": "274fb7aa6784f44bf7b8683c6ff3c1e2863f28b8db1a585c2818ea3f0359a3e4",
+      "promptBasis": {
+        "name": "Yomi no Kage - L'Ombre du Shogun",
+        "category": "Jeux",
+        "genre": "",
+        "baseGame": "",
+        "pitch": "Quand l'armee ne vient pas, l'ombre du shogun tranche l'impur."
+      }
+    }
+  ]
+}
