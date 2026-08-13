@@ -464,12 +464,54 @@ for (const entry of openAiEntries) {
 const galleryDocument = JSON.parse(await readFile(path.join(root, "assets", "app-gallery.json"), "utf8"));
 const galleryMap = galleryDocument.galleries || galleryDocument.apps || galleryDocument;
 const galleryPaths = new Set();
+const previousPresentationPaths = new Set();
+const previousPresentationHashes = new Set();
+const appsWithoutPreviousPresentation = new Set([
+  "elyra-grand-pas",
+  "intravore",
+  "nexus-of-torment",
+  "jawa-the-duskmen",
+  "mecha-overdrive",
+  "spermatozoid-kart-omega",
+  "riff-rush"
+]);
 for (const app of apps) {
   const entry = galleryMap[app.id];
   const gallery = Array.isArray(entry) ? entry : entry?.images;
+  const previousPresentation = Array.isArray(entry) ? "" : String(entry?.previousPresentation || "").replaceAll("\\", "/");
   assert(Array.isArray(gallery) && gallery.length >= 5, `galerie complète pour ${app.id}`);
-  if (!Array.isArray(gallery)) continue;
 
+  if (appsWithoutPreviousPresentation.has(app.id)) {
+    assert(!previousPresentation, `absence historique explicitement autorisée pour ${app.id}`);
+  } else {
+    assert(Boolean(previousPresentation), `illustration précédente renseignée pour ${app.id}`);
+    if (previousPresentation) {
+      assert(
+        previousPresentation.startsWith("assets/presentations/previous/"),
+        `illustration précédente rangée dans le répertoire historique pour ${app.id}`
+      );
+      assert(!previousPresentationPaths.has(previousPresentation), `chemin d'illustration précédente unique pour ${app.id}`);
+      previousPresentationPaths.add(previousPresentation);
+      assert(previousPresentation !== app.presentation, `illustration précédente distincte de la présentation OpenAI pour ${app.id}`);
+      assert(previousPresentation !== app.image, `illustration précédente distincte de l'aperçu pour ${app.id}`);
+      assert(!gallery?.includes(previousPresentation), `illustration précédente séparée des captures pour ${app.id}`);
+      const previousPresentationExists = await exists(previousPresentation);
+      assert(previousPresentationExists, `illustration précédente présente pour ${app.id}`);
+      if (previousPresentationExists) {
+        await assertRasterFormat(previousPresentation);
+        const previousBytes = await readFile(path.join(root, previousPresentation));
+        const previousDigest = createHash("sha256").update(previousBytes).digest("hex");
+        assert(!previousPresentationHashes.has(previousDigest), `contenu d'illustration précédente unique pour ${app.id}`);
+        previousPresentationHashes.add(previousDigest);
+        if (await exists(app.presentation)) {
+          const currentDigest = createHash("sha256").update(await readFile(path.join(root, app.presentation))).digest("hex");
+          assert(previousDigest !== currentDigest, `ancien visuel réellement distinct de l'illustration OpenAI pour ${app.id}`);
+        }
+      }
+    }
+  }
+
+  if (!Array.isArray(gallery)) continue;
   assert(new Set(gallery).size === gallery.length, `galerie sans doublon pour ${app.id}`);
   for (const image of gallery) {
     assert(
@@ -482,6 +524,31 @@ for (const app of apps) {
     if (galleryImageExists) await assertRasterFormat(image);
   }
 }
+
+let previousPresentationFiles = [];
+const previousPresentationDirectory = "assets/presentations/previous";
+const previousPresentationDirectoryExists = await exists(previousPresentationDirectory);
+assert(previousPresentationDirectoryExists, "le répertoire des illustrations précédentes existe");
+if (previousPresentationDirectoryExists) {
+  previousPresentationFiles = (await readdir(path.join(root, previousPresentationDirectory)))
+    .filter((name) => rasterExtensionPattern.test(name))
+    .map((name) => `${previousPresentationDirectory}/${name}`);
+}
+assert(appsWithoutPreviousPresentation.size === 7, "sept applications sans historique explicitement autorisées");
+for (const id of appsWithoutPreviousPresentation) {
+  assert(ids.has(id), `exception historique attribuée à une application connue: ${id}`);
+}
+assert(previousPresentationPaths.size === 112, "exactement 112 illustrations précédentes référencées");
+assert(previousPresentationHashes.size === 112, "exactement 112 contenus historiques distincts");
+assert(
+  previousPresentationPaths.size === apps.length - appsWithoutPreviousPresentation.size,
+  "toutes les applications antérieures possèdent leur illustration précédente"
+);
+assert(previousPresentationFiles.length === 112, "exactement 112 fichiers historiques présents");
+for (const previousPresentationFile of previousPresentationFiles) {
+  assert(previousPresentationPaths.has(previousPresentationFile), `illustration précédente référencée: ${previousPresentationFile}`);
+  await assertRasterFormat(previousPresentationFile);
+}
 for (const id of Object.keys(galleryMap).filter((id) => id !== "notes")) {
   assert(ids.has(id), `galerie attribuée à une application connue: ${id}`);
 }
@@ -492,6 +559,9 @@ assert(
   Object.keys(galleryMap).filter((id) => id !== "notes").length === apps.length,
   "une galerie exactement par application"
 );
+assert(html.includes("previousPresentation"), "l'interface charge previousPresentation depuis les galeries");
+assert(html.includes("sanitizeImageUrl(app.previousPresentation)"), "l'illustration précédente participe au carrousel et au contrôle média");
+assert(html.includes("Illustration précédente"), "le libellé Illustration précédente est visible dans l'interface");
 const iconSprite = await readFile(path.join(root, "assets", "app-icons.svg"), "utf8");
 for (const app of apps) {
   assert(iconSprite.includes(`id="icon-${app.id}"`), `icône SVG présente pour ${app.id}`);
@@ -588,7 +658,7 @@ for (const asset of appShell) {
 }
 assert(appShell.includes("/assets/openai-art-manifest.json"), "le manifeste OpenAI fait partie du shell hors ligne");
 assert(appShellBytes <= 5 * 1024 * 1024, "le préchargement APP_SHELL reste inférieur à 5 Mo");
-assert(serviceWorker.includes('const CACHE_NAME = "launcher-shell-v22"'), "le cache applicatif v1.6 utilise launcher-shell-v22");
+assert(serviceWorker.includes('const CACHE_NAME = "launcher-shell-v23"'), "le cache applicatif v1.7 utilise launcher-shell-v23");
 assert(serviceWorker.includes('const RUNTIME_CACHE = "launcher-media-runtime-v1"'), "le cache média différé est versionné");
 assert(serviceWorker.includes("const MAX_RUNTIME_ENTRIES = 120"), "le cache média différé est borné");
 assert(
@@ -600,7 +670,8 @@ assert(serviceWorker.includes("!response.redirected"), "les redirections ne sont
 assert(serviceWorker.includes('response.type === "basic"'), "seules les réponses same-origin sont mises en cache");
 assert(serviceWorker.includes('isCacheableResponse(response, "text/html")'), "le fallback de navigation reste un document HTML");
 assert(serviceWorker.match(/event\.waitUntil\(updatePromise\)/g)?.length === 2, "les écritures différées prolongent les événements fetch");
-const mediaFiles = [...previewFiles, ...presentationFiles, ...galleryPaths];
+const mediaFiles = [...previewFiles, ...presentationFiles, ...previousPresentationPaths, ...galleryPaths];
+assert(new Set(mediaFiles).size === mediaFiles.length, "le compte total des médias ne contient aucun doublon");
 assert(
   !mediaFiles.some((asset) => serviceWorker.includes(`"/${asset}"`)),
   "les médias lourds ne bloquent pas l'installation hors ligne"
@@ -654,7 +725,8 @@ if (failures.length) {
 } else {
   console.log(
     `Audit réussi: ${checks.length} contrôles, ${apps.length} applications, ${previewFiles.length} aperçus, ` +
-    `${presentationFiles.length} présentations, ${galleryPaths.size} images de galerie et ` +
+    `${presentationFiles.length} présentations, ${previousPresentationPaths.size} illustrations précédentes, ` +
+    `${galleryPaths.size} images de galerie, ${mediaFiles.length} médias au total et ` +
     `${Math.round(appShellBytes / 1024)} Ko préchargés.`
   );
 }

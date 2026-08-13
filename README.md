@@ -2,9 +2,15 @@
 
 Launcher personnel statique qui réunit les applications, jeux et outils publiés sur Vercel.
 
-Le catalogue public contient au moins **118 applications**, dont au moins **105 jeux**. Les totaux peuvent évoluer automatiquement lorsque de nouvelles entrées sont ajoutées.
+Le catalogue public contient au moins **119 applications**, dont au moins **106 jeux**. Les totaux peuvent évoluer automatiquement lorsque de nouvelles entrées sont ajoutées.
 
 Version publique : [launcher-applications.vercel.app](https://launcher-applications.vercel.app/)
+
+## Version 1.7
+
+La version 1.7 conserve les illustrations OpenAI comme présentations principales et remet à disposition **112 anciens visuels** dans les galeries, sous le libellé **Illustration précédente**. Ces fichiers historiques résident dans `assets/presentations/previous/` et sont référencés par la propriété `previousPresentation` de `assets/app-gallery.json`.
+
+Sept applications n’ont pas d’illustration précédente, car leur visuel OpenAI était déjà leur première présentation : Élyra — Le Grand Pas, INTRAVORE, Nexus of Torment, JAWA: THE DUSKMEN, Mecha Overdrive, Spermatozoid Kart Omega et RIFF//RUSH.
 
 ## Version 1.4
 
@@ -47,7 +53,7 @@ Puis ouvrir `http://127.0.0.1:8000`.
 
     npm test
 
-L’audit valide la syntaxe, les identifiants et URL, la taxonomie, les états de publication, les dates d’ajout, le journal SemVer, tous les aperçus et présentations, les galeries (au moins cinq vues), les icônes, le manifeste, le service worker et le contrat de synchronisation. Il vérifie aussi que le shell PWA reste inférieur à 5 Mo.
+L’audit valide la syntaxe, les identifiants et URL, la taxonomie, les états de publication, les dates d’ajout, le journal SemVer, tous les aperçus et présentations, les 112 illustrations précédentes, les galeries (au moins cinq vues), les icônes, le manifeste, le service worker et le contrat de synchronisation. Il contrôle aussi que chaque ancien visuel est unique, lisible et différent de la présentation OpenAI active, que le compte média est cohérent et que le shell PWA reste inférieur à 5 Mo.
 
 Pour simuler la détection sans écrire :
 
@@ -86,7 +92,7 @@ Le fichier `assets/upcoming-games.json` fournit également des valeurs par défa
 2. Renseigner `releaseState` (`upcoming` ou `published`) et `addedAt` au format ISO. Une entrée `published` doit avoir un lien ; une entrée `upcoming` ne doit pas en inventer.
 3. Pour un jeu, renseigner `gameKind`, l’un des huit `genre` et, pour un fan-game, `baseGame`.
 4. Générer une présentation dédiée avec OpenAI `image_gen`, la placer sous `assets/presentations/`, puis enregistrer sa provenance et son SHA-256 dans `assets/openai-art-manifest.json`. Ajouter aussi un aperçu distinct sous `assets/previews/`.
-5. Ajouter au moins cinq vues sous `assets/screenshots/<id>/` et les référencer dans `assets/app-gallery.json`.
+5. Ajouter au moins cinq vues sous `assets/screenshots/<id>/` et les référencer dans `assets/app-gallery.json`. Si l’application remplace une présentation existante, déplacer l’ancien visuel sous `assets/presentations/previous/` et renseigner `previousPresentation` dans l’objet de galerie, à côté de `images`.
 6. Ajouter le symbole `icon-<id>` dans `assets/app-icons.svg`.
 7. Ajouter la version correspondante à `assets/catalogue-updates.js`, dans l’ordre décroissant des dates.
 8. Incrémenter `CACHE_NAME` dans `sw.js` si le shell change, puis exécuter `npm test` et vérifier le rendu desktop/mobile.
