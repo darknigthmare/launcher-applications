@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "launcher-";
-const CACHE_NAME = "launcher-shell-v22";
+const CACHE_NAME = "launcher-shell-v23";
 const RUNTIME_CACHE = "launcher-media-runtime-v1";
 const MAX_RUNTIME_ENTRIES = 120;
 const APP_SHELL = [

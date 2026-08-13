@@ -1,5 +1,16 @@
 window.LAUNCHER_RELEASES = [
   {
+    version: "1.7.0",
+    date: "2026-08-13",
+    title: "Retour des illustrations précédentes",
+    highlights: [
+      "112 illustrations historiques restaurées en complément des créations OpenAI actuelles.",
+      "Un choix Illustration précédente permet de retrouver les anciens visuels dans chaque galerie concernée.",
+      "Sept applications conservent uniquement leur première illustration OpenAI, faute de visuel antérieur."
+    ],
+    appIds: []
+  },
+  {
     version: "1.6.0",
     date: "2026-08-12",
     title: "Élyra rejoint le launcher",

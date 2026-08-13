@@ -1,838 +1,1190 @@
 {
-  "elyra-grand-pas": [
-    "assets/screenshots/elyra-grand-pas/01.webp",
-    "assets/screenshots/elyra-grand-pas/02.webp",
-    "assets/screenshots/elyra-grand-pas/03.webp",
-    "assets/screenshots/elyra-grand-pas/04.webp",
-    "assets/screenshots/elyra-grand-pas/05.webp"
-  ],
-  "adhd-rpg": [
-    "assets/screenshots/adhd-rpg/01.png",
-    "assets/screenshots/adhd-rpg/02.png",
-    "assets/screenshots/adhd-rpg/03.png",
-    "assets/screenshots/adhd-rpg/04.png",
-    "assets/screenshots/adhd-rpg/05.png"
-  ],
-  "multiverse-breach": [
-    "assets/screenshots/multiverse-breach/01.png",
-    "assets/screenshots/multiverse-breach/02.png",
-    "assets/screenshots/multiverse-breach/03.png",
-    "assets/screenshots/multiverse-breach/04.png",
-    "assets/screenshots/multiverse-breach/05.png"
-  ],
-  "cainos": [
-    "assets/screenshots/cainos/01.png",
-    "assets/screenshots/cainos/02.png",
-    "assets/screenshots/cainos/03.png",
-    "assets/screenshots/cainos/04.png",
-    "assets/screenshots/cainos/05.png"
-  ],
-  "la-petite-fiole": [
-    "assets/screenshots/la-petite-fiole/01.png",
-    "assets/screenshots/la-petite-fiole/02.png",
-    "assets/screenshots/la-petite-fiole/03.png",
-    "assets/screenshots/la-petite-fiole/04.png",
-    "assets/screenshots/la-petite-fiole/05.png"
-  ],
-  "manga-finder": [
-    "assets/screenshots/manga-finder/01.png",
-    "assets/screenshots/manga-finder/02.png",
-    "assets/screenshots/manga-finder/03.png",
-    "assets/screenshots/manga-finder/04.png",
-    "assets/screenshots/manga-finder/05.png"
-  ],
-  "media-gatherer": [
-    "assets/screenshots/media-gatherer/01.png",
-    "assets/screenshots/media-gatherer/02.png",
-    "assets/screenshots/media-gatherer/03.png",
-    "assets/screenshots/media-gatherer/04.png",
-    "assets/screenshots/media-gatherer/05.png"
-  ],
-  "budgetia": [
-    "assets/screenshots/budgetia/01.png",
-    "assets/screenshots/budgetia/02.png",
-    "assets/screenshots/budgetia/03.png",
-    "assets/screenshots/budgetia/04.png",
-    "assets/screenshots/budgetia/05.png"
-  ],
-  "can-i-eat-it": [
-    "assets/screenshots/can-i-eat-it/01.png",
-    "assets/screenshots/can-i-eat-it/02.png",
-    "assets/screenshots/can-i-eat-it/03.png",
-    "assets/screenshots/can-i-eat-it/04.png",
-    "assets/screenshots/can-i-eat-it/05.png"
-  ],
-  "xenomorph-tamagotchi": [
-    "assets/screenshots/xenomorph-tamagotchi/01.png",
-    "assets/screenshots/xenomorph-tamagotchi/02.png",
-    "assets/screenshots/xenomorph-tamagotchi/03.png",
-    "assets/screenshots/xenomorph-tamagotchi/04.png",
-    "assets/screenshots/xenomorph-tamagotchi/05.png"
-  ],
-  "shadow-codec-ops": [
-    "assets/screenshots/shadow-codec-ops/01.png",
-    "assets/screenshots/shadow-codec-ops/02.png",
-    "assets/screenshots/shadow-codec-ops/03.png",
-    "assets/screenshots/shadow-codec-ops/04.png",
-    "assets/screenshots/shadow-codec-ops/05.png"
-  ],
-  "jigsaw-mastermind": [
-    "assets/screenshots/jigsaw-mastermind/01.png",
-    "assets/screenshots/jigsaw-mastermind/02.png",
-    "assets/screenshots/jigsaw-mastermind/03.png",
-    "assets/screenshots/jigsaw-mastermind/04.png",
-    "assets/screenshots/jigsaw-mastermind/05.png"
-  ],
-  "apertire-enrichment-os": [
-    "assets/screenshots/apertire-enrichment-os/01.png",
-    "assets/screenshots/apertire-enrichment-os/02.png",
-    "assets/screenshots/apertire-enrichment-os/03.png",
-    "assets/screenshots/apertire-enrichment-os/04.png",
-    "assets/screenshots/apertire-enrichment-os/05.png"
-  ],
-  "umbrella-hive-manager": [
-    "assets/screenshots/umbrella-hive-manager/01.png",
-    "assets/screenshots/umbrella-hive-manager/02.png",
-    "assets/screenshots/umbrella-hive-manager/03.png",
-    "assets/screenshots/umbrella-hive-manager/04.png",
-    "assets/screenshots/umbrella-hive-manager/05.png"
-  ],
-  "hellbound-hotel-manager": [
-    "assets/screenshots/hellbound-hotel-manager/01.png",
-    "assets/screenshots/hellbound-hotel-manager/02.png",
-    "assets/screenshots/hellbound-hotel-manager/03.png",
-    "assets/screenshots/hellbound-hotel-manager/04.png",
-    "assets/screenshots/hellbound-hotel-manager/05.png"
-  ],
-  "combine-administrator-simulator": [
-    "assets/screenshots/combine-administrator-simulator/01.png",
-    "assets/screenshots/combine-administrator-simulator/02.png",
-    "assets/screenshots/combine-administrator-simulator/03.png",
-    "assets/screenshots/combine-administrator-simulator/04.png",
-    "assets/screenshots/combine-administrator-simulator/05.png"
-  ],
-  "sg2d-expedition": [
-    "assets/screenshots/sg2d-expedition/01.png",
-    "assets/screenshots/sg2d-expedition/02.png",
-    "assets/screenshots/sg2d-expedition/03.png",
-    "assets/screenshots/sg2d-expedition/04.png",
-    "assets/screenshots/sg2d-expedition/05.png"
-  ],
-  "spinframe": [
-    "assets/screenshots/spinframe/01.png",
-    "assets/screenshots/spinframe/02.png",
-    "assets/screenshots/spinframe/03.png",
-    "assets/screenshots/spinframe/04.png",
-    "assets/screenshots/spinframe/05.png"
-  ],
-  "vortex-command": [
-    "assets/screenshots/vortex-command/01.png",
-    "assets/screenshots/vortex-command/02.png",
-    "assets/screenshots/vortex-command/03.png",
-    "assets/screenshots/vortex-command/04.png",
-    "assets/screenshots/vortex-command/05.png"
-  ],
-  "ragtime-rumble": [
-    "assets/screenshots/ragtime-rumble/01.png",
-    "assets/screenshots/ragtime-rumble/02.png",
-    "assets/screenshots/ragtime-rumble/03.png",
-    "assets/screenshots/ragtime-rumble/04.png",
-    "assets/screenshots/ragtime-rumble/05.png"
-  ],
-  "fossil-frontier": [
-    "assets/screenshots/fossil-frontier/01.png",
-    "assets/screenshots/fossil-frontier/02.png",
-    "assets/screenshots/fossil-frontier/03.png",
-    "assets/screenshots/fossil-frontier/04.png",
-    "assets/screenshots/fossil-frontier/05.png"
-  ],
-  "kaiju-rupture": [
-    "assets/screenshots/kaiju-rupture/01.png",
-    "assets/screenshots/kaiju-rupture/02.png",
-    "assets/screenshots/kaiju-rupture/03.png",
-    "assets/screenshots/kaiju-rupture/04.png",
-    "assets/screenshots/kaiju-rupture/05.png"
-  ],
-  "jurassic-arsenal": [
-    "assets/screenshots/jurassic-arsenal/01.png",
-    "assets/screenshots/jurassic-arsenal/02.png",
-    "assets/screenshots/jurassic-arsenal/03.png",
-    "assets/screenshots/jurassic-arsenal/04.png",
-    "assets/screenshots/jurassic-arsenal/05.png"
-  ],
-  "genomescan-bioarena": [
-    "assets/screenshots/genomescan-bioarena/01.png",
-    "assets/screenshots/genomescan-bioarena/02.png",
-    "assets/screenshots/genomescan-bioarena/03.png",
-    "assets/screenshots/genomescan-bioarena/04.png",
-    "assets/screenshots/genomescan-bioarena/05.png"
-  ],
-  "triarche-ciel-rouge": [
-    "assets/screenshots/triarche-ciel-rouge/01.png",
-    "assets/screenshots/triarche-ciel-rouge/02.png",
-    "assets/screenshots/triarche-ciel-rouge/03.png",
-    "assets/screenshots/triarche-ciel-rouge/04.png",
-    "assets/screenshots/triarche-ciel-rouge/05.png"
-  ],
-  "hive-ascension": [
-    "assets/screenshots/hive-ascension/01.png",
-    "assets/screenshots/hive-ascension/02.png",
-    "assets/screenshots/hive-ascension/03.png",
-    "assets/screenshots/hive-ascension/04.png",
-    "assets/screenshots/hive-ascension/05.png"
-  ],
-  "snail-dette-immortelle": [
-    "assets/screenshots/snail-dette-immortelle/01.png",
-    "assets/screenshots/snail-dette-immortelle/02.png",
-    "assets/screenshots/snail-dette-immortelle/03.png",
-    "assets/screenshots/snail-dette-immortelle/04.png",
-    "assets/screenshots/snail-dette-immortelle/05.png"
-  ],
-  "chroma-forge": [
-    "assets/screenshots/chroma-forge/01.png",
-    "assets/screenshots/chroma-forge/02.png",
-    "assets/screenshots/chroma-forge/03.png",
-    "assets/screenshots/chroma-forge/04.png",
-    "assets/screenshots/chroma-forge/05.png"
-  ],
-  "yautja-la-longue-chasse": [
-    "assets/screenshots/yautja-la-longue-chasse/01.png",
-    "assets/screenshots/yautja-la-longue-chasse/02.png",
-    "assets/screenshots/yautja-la-longue-chasse/03.png",
-    "assets/screenshots/yautja-la-longue-chasse/04.png",
-    "assets/screenshots/yautja-la-longue-chasse/05.png"
-  ],
-  "yomi-no-kage": [
-    "assets/screenshots/yomi-no-kage/01.png",
-    "assets/screenshots/yomi-no-kage/02.png",
-    "assets/screenshots/yomi-no-kage/03.png",
-    "assets/screenshots/yomi-no-kage/04.png",
-    "assets/screenshots/yomi-no-kage/05.png"
-  ],
-  "iron-tempest": [
-    "assets/screenshots/iron-tempest/01.png",
-    "assets/screenshots/iron-tempest/02.png",
-    "assets/screenshots/iron-tempest/03.png",
-    "assets/screenshots/iron-tempest/04.png",
-    "assets/screenshots/iron-tempest/05.png"
-  ],
-  "xion-operator-node": [
-    "assets/screenshots/xion-operator-node/01.png",
-    "assets/screenshots/xion-operator-node/02.png",
-    "assets/screenshots/xion-operator-node/03.png",
-    "assets/screenshots/xion-operator-node/04.png",
-    "assets/screenshots/xion-operator-node/05.png"
-  ],
-  "another-day-z": [
-    "assets/screenshots/another-day-z/01.png",
-    "assets/screenshots/another-day-z/02.png",
-    "assets/screenshots/another-day-z/03.png",
-    "assets/screenshots/another-day-z/04.png",
-    "assets/screenshots/another-day-z/05.png"
-  ],
-  "hive-ascension-cycle": [
-    "assets/screenshots/hive-ascension-cycle/01.png",
-    "assets/screenshots/hive-ascension-cycle/02.png",
-    "assets/screenshots/hive-ascension-cycle/03.png",
-    "assets/screenshots/hive-ascension-cycle/04.png",
-    "assets/screenshots/hive-ascension-cycle/05.png"
-  ],
-  "miyabi-rhythm": [
-    "assets/screenshots/miyabi-rhythm/01.png",
-    "assets/screenshots/miyabi-rhythm/02.png",
-    "assets/screenshots/miyabi-rhythm/03.png",
-    "assets/screenshots/miyabi-rhythm/04.png",
-    "assets/screenshots/miyabi-rhythm/05.png"
-  ],
-  "kc-holographics": [
-    "assets/screenshots/kc-holographics/01.png",
-    "assets/screenshots/kc-holographics/02.png",
-    "assets/screenshots/kc-holographics/03.png",
-    "assets/screenshots/kc-holographics/04.png",
-    "assets/screenshots/kc-holographics/05.png"
-  ],
-  "catrpg-neuf-royaumes": [
-    "assets/screenshots/catrpg-neuf-royaumes/01.png",
-    "assets/screenshots/catrpg-neuf-royaumes/02.png",
-    "assets/screenshots/catrpg-neuf-royaumes/03.png",
-    "assets/screenshots/catrpg-neuf-royaumes/04.png",
-    "assets/screenshots/catrpg-neuf-royaumes/05.png"
-  ],
-  "cells-at-work-immune-alert": [
-    "assets/screenshots/cells-at-work-immune-alert/01.png",
-    "assets/screenshots/cells-at-work-immune-alert/02.png",
-    "assets/screenshots/cells-at-work-immune-alert/03.png",
-    "assets/screenshots/cells-at-work-immune-alert/04.png",
-    "assets/screenshots/cells-at-work-immune-alert/05.png"
-  ],
-  "port-de-pluie-baie-vivante": [
-    "assets/screenshots/port-de-pluie-baie-vivante/01.png",
-    "assets/screenshots/port-de-pluie-baie-vivante/02.png",
-    "assets/screenshots/port-de-pluie-baie-vivante/03.png",
-    "assets/screenshots/port-de-pluie-baie-vivante/04.png",
-    "assets/screenshots/port-de-pluie-baie-vivante/05.png"
-  ],
-  "octo-arsenal": [
-    "assets/screenshots/octo-arsenal/01.png",
-    "assets/screenshots/octo-arsenal/02.png",
-    "assets/screenshots/octo-arsenal/03.png",
-    "assets/screenshots/octo-arsenal/04.png",
-    "assets/screenshots/octo-arsenal/05.png"
-  ],
-  "breach-blitz-spinoff": [
-    "assets/screenshots/breach-blitz-spinoff/01.png",
-    "assets/screenshots/breach-blitz-spinoff/02.png",
-    "assets/screenshots/breach-blitz-spinoff/03.png",
-    "assets/screenshots/breach-blitz-spinoff/04.png",
-    "assets/screenshots/breach-blitz-spinoff/05.png"
-  ],
-  "echelle-cosmique-evolution-totale": [
-    "assets/screenshots/echelle-cosmique-evolution-totale/01.png",
-    "assets/screenshots/echelle-cosmique-evolution-totale/02.png",
-    "assets/screenshots/echelle-cosmique-evolution-totale/03.png",
-    "assets/screenshots/echelle-cosmique-evolution-totale/04.png",
-    "assets/screenshots/echelle-cosmique-evolution-totale/05.png"
-  ],
-  "hellsync-choirbreach": [
-    "assets/screenshots/hellsync-choirbreach/01.png",
-    "assets/screenshots/hellsync-choirbreach/02.png",
-    "assets/screenshots/hellsync-choirbreach/03.png",
-    "assets/screenshots/hellsync-choirbreach/04.png",
-    "assets/screenshots/hellsync-choirbreach/05.png"
-  ],
-  "yautja-hive-warriors": [
-    "assets/screenshots/yautja-hive-warriors/01.png",
-    "assets/screenshots/yautja-hive-warriors/02.png",
-    "assets/screenshots/yautja-hive-warriors/03.png",
-    "assets/screenshots/yautja-hive-warriors/04.png",
-    "assets/screenshots/yautja-hive-warriors/05.png"
-  ],
-  "yautja-apex-hunt": [
-    "assets/screenshots/yautja-apex-hunt/01.png",
-    "assets/screenshots/yautja-apex-hunt/02.png",
-    "assets/screenshots/yautja-apex-hunt/03.png",
-    "assets/screenshots/yautja-apex-hunt/04.png",
-    "assets/screenshots/yautja-apex-hunt/05.png"
-  ],
-  "valkyrie-sweeper-dark-siege": [
-    "assets/screenshots/valkyrie-sweeper-dark-siege/01.png",
-    "assets/screenshots/valkyrie-sweeper-dark-siege/02.png",
-    "assets/screenshots/valkyrie-sweeper-dark-siege/03.png",
-    "assets/screenshots/valkyrie-sweeper-dark-siege/04.png",
-    "assets/screenshots/valkyrie-sweeper-dark-siege/05.png"
-  ],
-  "dead-ground": [
-    "assets/screenshots/dead-ground/01.png",
-    "assets/screenshots/dead-ground/02.png",
-    "assets/screenshots/dead-ground/03.png",
-    "assets/screenshots/dead-ground/04.png",
-    "assets/screenshots/dead-ground/05.png"
-  ],
   "notes": {
-    "catrpg-neuf-royaumes": "Galerie dérivée du visuel officiel du dépôt, sans inventer de faux écrans de jeu."
+    "previousPresentationSource": "git:c1a4e90",
+    "restoredCount": 112,
+    "restoredAt": "2026-08-13"
   },
-  "le-seuil-noir-protocole-orphee": [
-    "assets/screenshots/le-seuil-noir-protocole-orphee/01.webp",
-    "assets/screenshots/le-seuil-noir-protocole-orphee/02.webp",
-    "assets/screenshots/le-seuil-noir-protocole-orphee/03.webp",
-    "assets/screenshots/le-seuil-noir-protocole-orphee/04.webp",
-    "assets/screenshots/le-seuil-noir-protocole-orphee/05.webp"
-  ],
-  "le-registre-creux-les-epreuves-du-solde": [
-    "assets/screenshots/le-registre-creux-les-epreuves-du-solde/01.webp",
-    "assets/screenshots/le-registre-creux-les-epreuves-du-solde/02.webp",
-    "assets/screenshots/le-registre-creux-les-epreuves-du-solde/03.webp",
-    "assets/screenshots/le-registre-creux-les-epreuves-du-solde/04.webp",
-    "assets/screenshots/le-registre-creux-les-epreuves-du-solde/05.webp"
-  ],
-  "echo-drive": [
-    "assets/screenshots/echo-drive/01.webp",
-    "assets/screenshots/echo-drive/02.webp",
-    "assets/screenshots/echo-drive/03.webp",
-    "assets/screenshots/echo-drive/04.webp",
-    "assets/screenshots/echo-drive/05.webp"
-  ],
-  "derriere-le-tain": [
-    "assets/screenshots/derriere-le-tain/01.webp",
-    "assets/screenshots/derriere-le-tain/02.webp",
-    "assets/screenshots/derriere-le-tain/03.webp",
-    "assets/screenshots/derriere-le-tain/04.webp",
-    "assets/screenshots/derriere-le-tain/05.webp"
-  ],
-  "dustline-last-convoy": [
-    "assets/screenshots/dustline-last-convoy/01.webp",
-    "assets/screenshots/dustline-last-convoy/02.webp",
-    "assets/screenshots/dustline-last-convoy/03.webp",
-    "assets/screenshots/dustline-last-convoy/04.webp",
-    "assets/screenshots/dustline-last-convoy/05.webp"
-  ],
-  "fractal-chaos-recursive-rift": [
-    "assets/screenshots/fractal-chaos-recursive-rift/01.webp",
-    "assets/screenshots/fractal-chaos-recursive-rift/02.webp",
-    "assets/screenshots/fractal-chaos-recursive-rift/03.webp",
-    "assets/screenshots/fractal-chaos-recursive-rift/04.webp",
-    "assets/screenshots/fractal-chaos-recursive-rift/05.webp"
-  ],
-  "chord-of-dread": [
-    "assets/screenshots/chord-of-dread/01.webp",
-    "assets/screenshots/chord-of-dread/02.webp",
-    "assets/screenshots/chord-of-dread/03.webp",
-    "assets/screenshots/chord-of-dread/04.webp",
-    "assets/screenshots/chord-of-dread/05.webp"
-  ],
-  "croq-collect-le-tresor-au-fond-du-paquet": [
-    "assets/screenshots/croq-collect-le-tresor-au-fond-du-paquet/01.webp",
-    "assets/screenshots/croq-collect-le-tresor-au-fond-du-paquet/02.webp",
-    "assets/screenshots/croq-collect-le-tresor-au-fond-du-paquet/03.webp",
-    "assets/screenshots/croq-collect-le-tresor-au-fond-du-paquet/04.webp",
-    "assets/screenshots/croq-collect-le-tresor-au-fond-du-paquet/05.webp"
-  ],
-  "echo-forest": [
-    "assets/screenshots/echo-forest/01.webp",
-    "assets/screenshots/echo-forest/02.webp",
-    "assets/screenshots/echo-forest/03.webp",
-    "assets/screenshots/echo-forest/04.webp",
-    "assets/screenshots/echo-forest/05.webp"
-  ],
-  "l-envers-service-de-nuit": [
-    "assets/screenshots/l-envers-service-de-nuit/01.webp",
-    "assets/screenshots/l-envers-service-de-nuit/02.webp",
-    "assets/screenshots/l-envers-service-de-nuit/03.webp",
-    "assets/screenshots/l-envers-service-de-nuit/04.webp",
-    "assets/screenshots/l-envers-service-de-nuit/05.webp"
-  ],
-  "carrion-walk-la-faim-des-rues": [
-    "assets/screenshots/carrion-walk-la-faim-des-rues/01.webp",
-    "assets/screenshots/carrion-walk-la-faim-des-rues/02.webp",
-    "assets/screenshots/carrion-walk-la-faim-des-rues/03.webp",
-    "assets/screenshots/carrion-walk-la-faim-des-rues/04.webp",
-    "assets/screenshots/carrion-walk-la-faim-des-rues/05.webp"
-  ],
-  "feather-beat-parade-nuptiale": [
-    "assets/screenshots/feather-beat-parade-nuptiale/01.webp",
-    "assets/screenshots/feather-beat-parade-nuptiale/02.webp",
-    "assets/screenshots/feather-beat-parade-nuptiale/03.webp",
-    "assets/screenshots/feather-beat-parade-nuptiale/04.webp",
-    "assets/screenshots/feather-beat-parade-nuptiale/05.webp"
-  ],
-  "l-envers-du-salut": [
-    "assets/screenshots/l-envers-du-salut/01.webp",
-    "assets/screenshots/l-envers-du-salut/02.webp",
-    "assets/screenshots/l-envers-du-salut/03.webp",
-    "assets/screenshots/l-envers-du-salut/04.webp",
-    "assets/screenshots/l-envers-du-salut/05.webp"
-  ],
-  "chrono-recoil": [
-    "assets/screenshots/chrono-recoil/01.webp",
-    "assets/screenshots/chrono-recoil/02.webp",
-    "assets/screenshots/chrono-recoil/03.webp",
-    "assets/screenshots/chrono-recoil/04.webp",
-    "assets/screenshots/chrono-recoil/05.webp"
-  ],
-  "dicebound-rpg": [
-    "assets/screenshots/dicebound-rpg/01.webp",
-    "assets/screenshots/dicebound-rpg/02.webp",
-    "assets/screenshots/dicebound-rpg/03.webp",
-    "assets/screenshots/dicebound-rpg/04.webp",
-    "assets/screenshots/dicebound-rpg/05.webp"
-  ],
-  "fractal-chaos-studio": [
-    "assets/screenshots/fractal-chaos-studio/01.webp",
-    "assets/screenshots/fractal-chaos-studio/02.webp",
-    "assets/screenshots/fractal-chaos-studio/03.webp",
-    "assets/screenshots/fractal-chaos-studio/04.webp",
-    "assets/screenshots/fractal-chaos-studio/05.webp"
-  ],
-  "echo-weave": [
-    "assets/screenshots/echo-weave/01.webp",
-    "assets/screenshots/echo-weave/02.webp",
-    "assets/screenshots/echo-weave/03.webp",
-    "assets/screenshots/echo-weave/04.webp",
-    "assets/screenshots/echo-weave/05.webp"
-  ],
-  "eclipse-frontline-afterfall": [
-    "assets/screenshots/eclipse-frontline-afterfall/01.webp",
-    "assets/screenshots/eclipse-frontline-afterfall/02.webp",
-    "assets/screenshots/eclipse-frontline-afterfall/03.webp",
-    "assets/screenshots/eclipse-frontline-afterfall/04.webp",
-    "assets/screenshots/eclipse-frontline-afterfall/05.webp"
-  ],
-  "le-rocher-qui-te-connait": [
-    "assets/screenshots/le-rocher-qui-te-connait/01.webp",
-    "assets/screenshots/le-rocher-qui-te-connait/02.webp",
-    "assets/screenshots/le-rocher-qui-te-connait/03.webp",
-    "assets/screenshots/le-rocher-qui-te-connait/04.webp",
-    "assets/screenshots/le-rocher-qui-te-connait/05.webp"
-  ],
-  "lazarus-assembly": [
-    "assets/screenshots/lazarus-assembly/01.webp",
-    "assets/screenshots/lazarus-assembly/02.webp",
-    "assets/screenshots/lazarus-assembly/03.webp",
-    "assets/screenshots/lazarus-assembly/04.webp",
-    "assets/screenshots/lazarus-assembly/05.webp"
-  ],
-  "encrevivante-le-livre-qui-vous-regarde": [
-    "assets/screenshots/encrevivante-le-livre-qui-vous-regarde/01.webp",
-    "assets/screenshots/encrevivante-le-livre-qui-vous-regarde/02.webp",
-    "assets/screenshots/encrevivante-le-livre-qui-vous-regarde/03.webp",
-    "assets/screenshots/encrevivante-le-livre-qui-vous-regarde/04.webp",
-    "assets/screenshots/encrevivante-le-livre-qui-vous-regarde/05.webp"
-  ],
-  "emu-simulator-la-longue-marche": [
-    "assets/screenshots/emu-simulator-la-longue-marche/01.webp",
-    "assets/screenshots/emu-simulator-la-longue-marche/02.webp",
-    "assets/screenshots/emu-simulator-la-longue-marche/03.webp",
-    "assets/screenshots/emu-simulator-la-longue-marche/04.webp",
-    "assets/screenshots/emu-simulator-la-longue-marche/05.webp"
-  ],
-  "steel-stride-walker-front": [
-    "assets/screenshots/steel-stride-walker-front/01.webp",
-    "assets/screenshots/steel-stride-walker-front/02.webp",
-    "assets/screenshots/steel-stride-walker-front/03.webp",
-    "assets/screenshots/steel-stride-walker-front/04.webp",
-    "assets/screenshots/steel-stride-walker-front/05.webp"
-  ],
-  "hearts-and-horns-maid-bar": [
-    "assets/screenshots/hearts-and-horns-maid-bar/01.webp",
-    "assets/screenshots/hearts-and-horns-maid-bar/02.webp",
-    "assets/screenshots/hearts-and-horns-maid-bar/03.webp",
-    "assets/screenshots/hearts-and-horns-maid-bar/04.webp",
-    "assets/screenshots/hearts-and-horns-maid-bar/05.webp"
-  ],
-  "world-hive-wars": [
-    "assets/screenshots/world-hive-wars/01.webp",
-    "assets/screenshots/world-hive-wars/02.webp",
-    "assets/screenshots/world-hive-wars/03.webp",
-    "assets/screenshots/world-hive-wars/04.webp",
-    "assets/screenshots/world-hive-wars/05.webp"
-  ],
-  "tiffany-pixelverse-omniverse": [
-    "assets/screenshots/tiffany-pixelverse-omniverse/01.webp",
-    "assets/screenshots/tiffany-pixelverse-omniverse/02.webp",
-    "assets/screenshots/tiffany-pixelverse-omniverse/03.webp",
-    "assets/screenshots/tiffany-pixelverse-omniverse/04.webp",
-    "assets/screenshots/tiffany-pixelverse-omniverse/05.webp"
-  ],
-  "dead-feed": [
-    "assets/screenshots/dead-feed/01.webp",
-    "assets/screenshots/dead-feed/02.webp",
-    "assets/screenshots/dead-feed/03.webp",
-    "assets/screenshots/dead-feed/04.webp",
-    "assets/screenshots/dead-feed/05.webp"
-  ],
-  "xeno-trace": [
-    "assets/screenshots/xeno-trace/01.webp",
-    "assets/screenshots/xeno-trace/02.webp",
-    "assets/screenshots/xeno-trace/03.webp",
-    "assets/screenshots/xeno-trace/04.webp",
-    "assets/screenshots/xeno-trace/05.webp"
-  ],
-  "digirift-go": [
-    "assets/screenshots/digirift-go/01.webp",
-    "assets/screenshots/digirift-go/02.webp",
-    "assets/screenshots/digirift-go/03.webp",
-    "assets/screenshots/digirift-go/04.webp",
-    "assets/screenshots/digirift-go/05.webp"
-  ],
-  "duel-spirits-worldbound": [
-    "assets/screenshots/duel-spirits-worldbound/01.webp",
-    "assets/screenshots/duel-spirits-worldbound/02.webp",
-    "assets/screenshots/duel-spirits-worldbound/03.webp",
-    "assets/screenshots/duel-spirits-worldbound/04.webp",
-    "assets/screenshots/duel-spirits-worldbound/05.webp"
-  ],
-  "le-vide-doit-manger": [
-    "assets/screenshots/le-vide-doit-manger/01.webp",
-    "assets/screenshots/le-vide-doit-manger/02.webp",
-    "assets/screenshots/le-vide-doit-manger/03.webp",
-    "assets/screenshots/le-vide-doit-manger/04.webp",
-    "assets/screenshots/le-vide-doit-manger/05.webp"
-  ],
-  "la-riviere-des-absents": [
-    "assets/screenshots/la-riviere-des-absents/01.webp",
-    "assets/screenshots/la-riviere-des-absents/02.webp",
-    "assets/screenshots/la-riviere-des-absents/03.webp",
-    "assets/screenshots/la-riviere-des-absents/04.webp",
-    "assets/screenshots/la-riviere-des-absents/05.webp"
-  ],
-  "voie-13-peage-de-nuit": [
-    "assets/screenshots/voie-13-peage-de-nuit/01.webp",
-    "assets/screenshots/voie-13-peage-de-nuit/02.webp",
-    "assets/screenshots/voie-13-peage-de-nuit/03.webp",
-    "assets/screenshots/voie-13-peage-de-nuit/04.webp",
-    "assets/screenshots/voie-13-peage-de-nuit/05.webp"
-  ],
-  "vesper-rite-les-dettes-de-la-maison-creuse": [
-    "assets/screenshots/vesper-rite-les-dettes-de-la-maison-creuse/01.webp",
-    "assets/screenshots/vesper-rite-les-dettes-de-la-maison-creuse/02.webp",
-    "assets/screenshots/vesper-rite-les-dettes-de-la-maison-creuse/03.webp",
-    "assets/screenshots/vesper-rite-les-dettes-de-la-maison-creuse/04.webp",
-    "assets/screenshots/vesper-rite-les-dettes-de-la-maison-creuse/05.webp"
-  ],
-  "tetracrypt-the-well": [
-    "assets/screenshots/tetracrypt-the-well/01.webp",
-    "assets/screenshots/tetracrypt-the-well/02.webp",
-    "assets/screenshots/tetracrypt-the-well/03.webp",
-    "assets/screenshots/tetracrypt-the-well/04.webp",
-    "assets/screenshots/tetracrypt-the-well/05.webp"
-  ],
-  "suture-noire-les-heritiers-du-gouffre": [
-    "assets/screenshots/suture-noire-les-heritiers-du-gouffre/01.webp",
-    "assets/screenshots/suture-noire-les-heritiers-du-gouffre/02.webp",
-    "assets/screenshots/suture-noire-les-heritiers-du-gouffre/03.webp",
-    "assets/screenshots/suture-noire-les-heritiers-du-gouffre/04.webp",
-    "assets/screenshots/suture-noire-les-heritiers-du-gouffre/05.webp"
-  ],
-  "spiralis-prototype": [
-    "assets/screenshots/spiralis-prototype/01.webp",
-    "assets/screenshots/spiralis-prototype/02.webp",
-    "assets/screenshots/spiralis-prototype/03.webp",
-    "assets/screenshots/spiralis-prototype/04.webp",
-    "assets/screenshots/spiralis-prototype/05.webp"
-  ],
-  "souvenirs-retrouves": [
-    "assets/screenshots/souvenirs-retrouves/01.webp",
-    "assets/screenshots/souvenirs-retrouves/02.webp",
-    "assets/screenshots/souvenirs-retrouves/03.webp",
-    "assets/screenshots/souvenirs-retrouves/04.webp",
-    "assets/screenshots/souvenirs-retrouves/05.webp"
-  ],
-  "soleil-mort": [
-    "assets/screenshots/soleil-mort/01.webp",
-    "assets/screenshots/soleil-mort/02.webp",
-    "assets/screenshots/soleil-mort/03.webp",
-    "assets/screenshots/soleil-mort/04.webp",
-    "assets/screenshots/soleil-mort/05.webp"
-  ],
-  "snake-no-signal": [
-    "assets/screenshots/snake-no-signal/01.webp",
-    "assets/screenshots/snake-no-signal/02.webp",
-    "assets/screenshots/snake-no-signal/03.webp",
-    "assets/screenshots/snake-no-signal/04.webp",
-    "assets/screenshots/snake-no-signal/05.webp"
-  ],
-  "rift-titan-protocol": [
-    "assets/screenshots/rift-titan-protocol/01.webp",
-    "assets/screenshots/rift-titan-protocol/02.webp",
-    "assets/screenshots/rift-titan-protocol/03.webp",
-    "assets/screenshots/rift-titan-protocol/04.webp",
-    "assets/screenshots/rift-titan-protocol/05.webp"
-  ],
-  "retro-room-prototype": [
-    "assets/screenshots/retro-room-prototype/01.webp",
-    "assets/screenshots/retro-room-prototype/02.webp",
-    "assets/screenshots/retro-room-prototype/03.webp",
-    "assets/screenshots/retro-room-prototype/04.webp",
-    "assets/screenshots/retro-room-prototype/05.webp"
-  ],
-  "pulse-rail": [
-    "assets/screenshots/pulse-rail/01.webp",
-    "assets/screenshots/pulse-rail/02.webp",
-    "assets/screenshots/pulse-rail/03.webp",
-    "assets/screenshots/pulse-rail/04.webp",
-    "assets/screenshots/pulse-rail/05.webp"
-  ],
-  "nocturne-dead-frequency": [
-    "assets/screenshots/nocturne-dead-frequency/01.webp",
-    "assets/screenshots/nocturne-dead-frequency/02.webp",
-    "assets/screenshots/nocturne-dead-frequency/03.webp",
-    "assets/screenshots/nocturne-dead-frequency/04.webp",
-    "assets/screenshots/nocturne-dead-frequency/05.webp"
-  ],
-  "neon-rift-racers": [
-    "assets/screenshots/neon-rift-racers/01.webp",
-    "assets/screenshots/neon-rift-racers/02.webp",
-    "assets/screenshots/neon-rift-racers/03.webp",
-    "assets/screenshots/neon-rift-racers/04.webp",
-    "assets/screenshots/neon-rift-racers/05.webp"
-  ],
-  "neon-descent": [
-    "assets/screenshots/neon-descent/01.webp",
-    "assets/screenshots/neon-descent/02.webp",
-    "assets/screenshots/neon-descent/03.webp",
-    "assets/screenshots/neon-descent/04.webp",
-    "assets/screenshots/neon-descent/05.webp"
-  ],
-  "mr-bean-total-chaos-collection": [
-    "assets/screenshots/mr-bean-total-chaos-collection/01.webp",
-    "assets/screenshots/mr-bean-total-chaos-collection/02.webp",
-    "assets/screenshots/mr-bean-total-chaos-collection/03.webp",
-    "assets/screenshots/mr-bean-total-chaos-collection/04.webp",
-    "assets/screenshots/mr-bean-total-chaos-collection/05.webp"
-  ],
-  "moustique-the-video-game": [
-    "assets/screenshots/moustique-the-video-game/01.webp",
-    "assets/screenshots/moustique-the-video-game/02.webp",
-    "assets/screenshots/moustique-the-video-game/03.webp",
-    "assets/screenshots/moustique-the-video-game/04.webp",
-    "assets/screenshots/moustique-the-video-game/05.webp"
-  ],
-  "moonlit-maid-cafe-simulator": [
-    "assets/screenshots/moonlit-maid-cafe-simulator/01.webp",
-    "assets/screenshots/moonlit-maid-cafe-simulator/02.webp",
-    "assets/screenshots/moonlit-maid-cafe-simulator/03.webp",
-    "assets/screenshots/moonlit-maid-cafe-simulator/04.webp",
-    "assets/screenshots/moonlit-maid-cafe-simulator/05.webp"
-  ],
-  "meme-battle-internet-legends": [
-    "assets/screenshots/meme-battle-internet-legends/01.webp",
-    "assets/screenshots/meme-battle-internet-legends/02.webp",
-    "assets/screenshots/meme-battle-internet-legends/03.webp",
-    "assets/screenshots/meme-battle-internet-legends/04.webp",
-    "assets/screenshots/meme-battle-internet-legends/05.webp"
-  ],
-  "manga-break-le-dernier-brouillon": [
-    "assets/screenshots/manga-break-le-dernier-brouillon/01.webp",
-    "assets/screenshots/manga-break-le-dernier-brouillon/02.webp",
-    "assets/screenshots/manga-break-le-dernier-brouillon/03.webp",
-    "assets/screenshots/manga-break-le-dernier-brouillon/04.webp",
-    "assets/screenshots/manga-break-le-dernier-brouillon/05.webp"
-  ],
-  "kidz-tv-after-hours": [
-    "assets/screenshots/kidz-tv-after-hours/01.webp",
-    "assets/screenshots/kidz-tv-after-hours/02.webp",
-    "assets/screenshots/kidz-tv-after-hours/03.webp",
-    "assets/screenshots/kidz-tv-after-hours/04.webp",
-    "assets/screenshots/kidz-tv-after-hours/05.webp"
-  ],
-  "harmonic-terraform": [
-    "assets/screenshots/harmonic-terraform/01.webp",
-    "assets/screenshots/harmonic-terraform/02.webp",
-    "assets/screenshots/harmonic-terraform/03.webp",
-    "assets/screenshots/harmonic-terraform/04.webp",
-    "assets/screenshots/harmonic-terraform/05.webp"
-  ],
-  "gamevault-room-3d": [
-    "assets/screenshots/gamevault-room-3d/01.webp",
-    "assets/screenshots/gamevault-room-3d/02.webp",
-    "assets/screenshots/gamevault-room-3d/03.webp",
-    "assets/screenshots/gamevault-room-3d/04.webp",
-    "assets/screenshots/gamevault-room-3d/05.webp"
-  ],
-  "black-gospel-the-ninth-cadaver": [
-    "assets/screenshots/black-gospel-the-ninth-cadaver/01.webp",
-    "assets/screenshots/black-gospel-the-ninth-cadaver/02.webp",
-    "assets/screenshots/black-gospel-the-ninth-cadaver/03.webp",
-    "assets/screenshots/black-gospel-the-ninth-cadaver/04.webp",
-    "assets/screenshots/black-gospel-the-ninth-cadaver/05.webp"
-  ],
-  "bounce-arena-prototype-fan-jouable": [
-    "assets/screenshots/bounce-arena-prototype-fan-jouable/01.webp",
-    "assets/screenshots/bounce-arena-prototype-fan-jouable/02.webp",
-    "assets/screenshots/bounce-arena-prototype-fan-jouable/03.webp",
-    "assets/screenshots/bounce-arena-prototype-fan-jouable/04.webp",
-    "assets/screenshots/bounce-arena-prototype-fan-jouable/05.webp"
-  ],
-  "black-signal-bastion-zero": [
-    "assets/screenshots/black-signal-bastion-zero/01.webp",
-    "assets/screenshots/black-signal-bastion-zero/02.webp",
-    "assets/screenshots/black-signal-bastion-zero/03.webp",
-    "assets/screenshots/black-signal-bastion-zero/04.webp",
-    "assets/screenshots/black-signal-bastion-zero/05.webp"
-  ],
-  "astral-dominion": [
-    "assets/screenshots/astral-dominion/01.webp",
-    "assets/screenshots/astral-dominion/02.webp",
-    "assets/screenshots/astral-dominion/03.webp",
-    "assets/screenshots/astral-dominion/04.webp",
-    "assets/screenshots/astral-dominion/05.webp"
-  ],
-  "arcade-null-high-score-protocol": [
-    "assets/screenshots/arcade-null-high-score-protocol/01.webp",
-    "assets/screenshots/arcade-null-high-score-protocol/02.webp",
-    "assets/screenshots/arcade-null-high-score-protocol/03.webp",
-    "assets/screenshots/arcade-null-high-score-protocol/04.webp",
-    "assets/screenshots/arcade-null-high-score-protocol/05.webp"
-  ],
-  "good-morning-hollowbrook": [
-    "assets/screenshots/good-morning-hollowbrook/01.webp",
-    "assets/screenshots/good-morning-hollowbrook/02.webp",
-    "assets/screenshots/good-morning-hollowbrook/03.webp",
-    "assets/screenshots/good-morning-hollowbrook/04.webp",
-    "assets/screenshots/good-morning-hollowbrook/05.webp"
-  ],
-  "petits-poissons-red-tide": [
-    "assets/screenshots/petits-poissons-red-tide/01.webp",
-    "assets/screenshots/petits-poissons-red-tide/02.webp",
-    "assets/screenshots/petits-poissons-red-tide/03.webp",
-    "assets/screenshots/petits-poissons-red-tide/04.webp",
-    "assets/screenshots/petits-poissons-red-tide/05.webp"
-  ],
-  "brigade-premier-degre": [
-    "assets/screenshots/brigade-premier-degre/01.webp",
-    "assets/screenshots/brigade-premier-degre/02.webp",
-    "assets/screenshots/brigade-premier-degre/03.webp",
-    "assets/screenshots/brigade-premier-degre/04.webp",
-    "assets/screenshots/brigade-premier-degre/05.webp"
-  ],
-  "umbra-les-heures-noires": [
-    "assets/screenshots/umbra-les-heures-noires/01.webp",
-    "assets/screenshots/umbra-les-heures-noires/02.webp",
-    "assets/screenshots/umbra-les-heures-noires/03.webp",
-    "assets/screenshots/umbra-les-heures-noires/04.webp",
-    "assets/screenshots/umbra-les-heures-noires/05.webp"
-  ],
-  "nocturne-signal": [
-    "assets/screenshots/nocturne-signal/01.webp",
-    "assets/screenshots/nocturne-signal/02.webp",
-    "assets/screenshots/nocturne-signal/03.webp",
-    "assets/screenshots/nocturne-signal/04.webp",
-    "assets/screenshots/nocturne-signal/05.webp"
-  ],
-  "terra-testudo-les-mondes-dos": [
-    "assets/screenshots/terra-testudo-les-mondes-dos/01.webp",
-    "assets/screenshots/terra-testudo-les-mondes-dos/02.webp",
-    "assets/screenshots/terra-testudo-les-mondes-dos/03.webp",
-    "assets/screenshots/terra-testudo-les-mondes-dos/04.webp",
-    "assets/screenshots/terra-testudo-les-mondes-dos/05.webp"
-  ],
-  "strike-command-desert-thunder": [
-    "assets/screenshots/strike-command-desert-thunder/01.webp",
-    "assets/screenshots/strike-command-desert-thunder/02.webp",
-    "assets/screenshots/strike-command-desert-thunder/03.webp",
-    "assets/screenshots/strike-command-desert-thunder/04.webp",
-    "assets/screenshots/strike-command-desert-thunder/05.webp"
-  ],
-  "intravore": [
-    "assets/screenshots/intravore/01.webp",
-    "assets/screenshots/intravore/02.webp",
-    "assets/screenshots/intravore/03.webp",
-    "assets/screenshots/intravore/04.webp",
-    "assets/screenshots/intravore/05.webp"
-  ],
-  "nexus-of-torment": [
-    "assets/screenshots/nexus-of-torment/01.webp",
-    "assets/screenshots/nexus-of-torment/02.webp",
-    "assets/screenshots/nexus-of-torment/03.webp",
-    "assets/screenshots/nexus-of-torment/04.webp",
-    "assets/screenshots/nexus-of-torment/05.webp"
-  ],
-  "jawa-the-duskmen": [
-    "assets/screenshots/jawa-the-duskmen/01.webp",
-    "assets/screenshots/jawa-the-duskmen/02.webp",
-    "assets/screenshots/jawa-the-duskmen/03.webp",
-    "assets/screenshots/jawa-the-duskmen/04.webp",
-    "assets/screenshots/jawa-the-duskmen/05.webp"
-  ],
-  "mecha-overdrive": [
-    "assets/screenshots/mecha-overdrive/01.webp",
-    "assets/screenshots/mecha-overdrive/02.webp",
-    "assets/screenshots/mecha-overdrive/03.webp",
-    "assets/screenshots/mecha-overdrive/04.webp",
-    "assets/screenshots/mecha-overdrive/05.webp"
-  ],
-  "spermatozoid-kart-omega": [
-    "assets/screenshots/spermatozoid-kart-omega/01.webp",
-    "assets/screenshots/spermatozoid-kart-omega/02.webp",
-    "assets/screenshots/spermatozoid-kart-omega/03.webp",
-    "assets/screenshots/spermatozoid-kart-omega/04.webp",
-    "assets/screenshots/spermatozoid-kart-omega/05.webp"
-  ],
-  "riff-rush": [
-    "assets/screenshots/riff-rush/01.webp",
-    "assets/screenshots/riff-rush/02.webp",
-    "assets/screenshots/riff-rush/03.webp",
-    "assets/screenshots/riff-rush/04.webp",
-    "assets/screenshots/riff-rush/05.webp"
-  ]
+  "elyra-grand-pas": {
+    "images": [
+      "assets/screenshots/elyra-grand-pas/01.webp",
+      "assets/screenshots/elyra-grand-pas/02.webp",
+      "assets/screenshots/elyra-grand-pas/03.webp",
+      "assets/screenshots/elyra-grand-pas/04.webp",
+      "assets/screenshots/elyra-grand-pas/05.webp"
+    ]
+  },
+  "adhd-rpg": {
+    "previousPresentation": "assets/presentations/previous/adhd-rpg.png",
+    "images": [
+      "assets/screenshots/adhd-rpg/01.png",
+      "assets/screenshots/adhd-rpg/02.png",
+      "assets/screenshots/adhd-rpg/03.png",
+      "assets/screenshots/adhd-rpg/04.png",
+      "assets/screenshots/adhd-rpg/05.png"
+    ]
+  },
+  "multiverse-breach": {
+    "previousPresentation": "assets/presentations/previous/multiverse-breach.png",
+    "images": [
+      "assets/screenshots/multiverse-breach/01.png",
+      "assets/screenshots/multiverse-breach/02.png",
+      "assets/screenshots/multiverse-breach/03.png",
+      "assets/screenshots/multiverse-breach/04.png",
+      "assets/screenshots/multiverse-breach/05.png"
+    ]
+  },
+  "cainos": {
+    "previousPresentation": "assets/presentations/previous/cainos.png",
+    "images": [
+      "assets/screenshots/cainos/01.png",
+      "assets/screenshots/cainos/02.png",
+      "assets/screenshots/cainos/03.png",
+      "assets/screenshots/cainos/04.png",
+      "assets/screenshots/cainos/05.png"
+    ]
+  },
+  "la-petite-fiole": {
+    "previousPresentation": "assets/presentations/previous/la-petite-fiole.png",
+    "images": [
+      "assets/screenshots/la-petite-fiole/01.png",
+      "assets/screenshots/la-petite-fiole/02.png",
+      "assets/screenshots/la-petite-fiole/03.png",
+      "assets/screenshots/la-petite-fiole/04.png",
+      "assets/screenshots/la-petite-fiole/05.png"
+    ]
+  },
+  "manga-finder": {
+    "previousPresentation": "assets/presentations/previous/manga-finder.png",
+    "images": [
+      "assets/screenshots/manga-finder/01.png",
+      "assets/screenshots/manga-finder/02.png",
+      "assets/screenshots/manga-finder/03.png",
+      "assets/screenshots/manga-finder/04.png",
+      "assets/screenshots/manga-finder/05.png"
+    ]
+  },
+  "media-gatherer": {
+    "previousPresentation": "assets/presentations/previous/media-gatherer.png",
+    "images": [
+      "assets/screenshots/media-gatherer/01.png",
+      "assets/screenshots/media-gatherer/02.png",
+      "assets/screenshots/media-gatherer/03.png",
+      "assets/screenshots/media-gatherer/04.png",
+      "assets/screenshots/media-gatherer/05.png"
+    ]
+  },
+  "budgetia": {
+    "previousPresentation": "assets/presentations/previous/budgetia.png",
+    "images": [
+      "assets/screenshots/budgetia/01.png",
+      "assets/screenshots/budgetia/02.png",
+      "assets/screenshots/budgetia/03.png",
+      "assets/screenshots/budgetia/04.png",
+      "assets/screenshots/budgetia/05.png"
+    ]
+  },
+  "can-i-eat-it": {
+    "previousPresentation": "assets/presentations/previous/can-i-eat-it.png",
+    "images": [
+      "assets/screenshots/can-i-eat-it/01.png",
+      "assets/screenshots/can-i-eat-it/02.png",
+      "assets/screenshots/can-i-eat-it/03.png",
+      "assets/screenshots/can-i-eat-it/04.png",
+      "assets/screenshots/can-i-eat-it/05.png"
+    ]
+  },
+  "xenomorph-tamagotchi": {
+    "previousPresentation": "assets/presentations/previous/xenomorph-tamagotchi.png",
+    "images": [
+      "assets/screenshots/xenomorph-tamagotchi/01.png",
+      "assets/screenshots/xenomorph-tamagotchi/02.png",
+      "assets/screenshots/xenomorph-tamagotchi/03.png",
+      "assets/screenshots/xenomorph-tamagotchi/04.png",
+      "assets/screenshots/xenomorph-tamagotchi/05.png"
+    ]
+  },
+  "shadow-codec-ops": {
+    "previousPresentation": "assets/presentations/previous/shadow-codec-ops.png",
+    "images": [
+      "assets/screenshots/shadow-codec-ops/01.png",
+      "assets/screenshots/shadow-codec-ops/02.png",
+      "assets/screenshots/shadow-codec-ops/03.png",
+      "assets/screenshots/shadow-codec-ops/04.png",
+      "assets/screenshots/shadow-codec-ops/05.png"
+    ]
+  },
+  "jigsaw-mastermind": {
+    "previousPresentation": "assets/presentations/previous/jigsaw-mastermind.png",
+    "images": [
+      "assets/screenshots/jigsaw-mastermind/01.png",
+      "assets/screenshots/jigsaw-mastermind/02.png",
+      "assets/screenshots/jigsaw-mastermind/03.png",
+      "assets/screenshots/jigsaw-mastermind/04.png",
+      "assets/screenshots/jigsaw-mastermind/05.png"
+    ]
+  },
+  "apertire-enrichment-os": {
+    "previousPresentation": "assets/presentations/previous/apertire-enrichment-os.png",
+    "images": [
+      "assets/screenshots/apertire-enrichment-os/01.png",
+      "assets/screenshots/apertire-enrichment-os/02.png",
+      "assets/screenshots/apertire-enrichment-os/03.png",
+      "assets/screenshots/apertire-enrichment-os/04.png",
+      "assets/screenshots/apertire-enrichment-os/05.png"
+    ]
+  },
+  "umbrella-hive-manager": {
+    "previousPresentation": "assets/presentations/previous/umbrella-hive-manager.png",
+    "images": [
+      "assets/screenshots/umbrella-hive-manager/01.png",
+      "assets/screenshots/umbrella-hive-manager/02.png",
+      "assets/screenshots/umbrella-hive-manager/03.png",
+      "assets/screenshots/umbrella-hive-manager/04.png",
+      "assets/screenshots/umbrella-hive-manager/05.png"
+    ]
+  },
+  "hellbound-hotel-manager": {
+    "previousPresentation": "assets/presentations/previous/hellbound-hotel-manager.png",
+    "images": [
+      "assets/screenshots/hellbound-hotel-manager/01.png",
+      "assets/screenshots/hellbound-hotel-manager/02.png",
+      "assets/screenshots/hellbound-hotel-manager/03.png",
+      "assets/screenshots/hellbound-hotel-manager/04.png",
+      "assets/screenshots/hellbound-hotel-manager/05.png"
+    ]
+  },
+  "combine-administrator-simulator": {
+    "previousPresentation": "assets/presentations/previous/combine-administrator-simulator.png",
+    "images": [
+      "assets/screenshots/combine-administrator-simulator/01.png",
+      "assets/screenshots/combine-administrator-simulator/02.png",
+      "assets/screenshots/combine-administrator-simulator/03.png",
+      "assets/screenshots/combine-administrator-simulator/04.png",
+      "assets/screenshots/combine-administrator-simulator/05.png"
+    ]
+  },
+  "sg2d-expedition": {
+    "previousPresentation": "assets/presentations/previous/sg2d-expedition.png",
+    "images": [
+      "assets/screenshots/sg2d-expedition/01.png",
+      "assets/screenshots/sg2d-expedition/02.png",
+      "assets/screenshots/sg2d-expedition/03.png",
+      "assets/screenshots/sg2d-expedition/04.png",
+      "assets/screenshots/sg2d-expedition/05.png"
+    ]
+  },
+  "spinframe": {
+    "previousPresentation": "assets/presentations/previous/spinframe.png",
+    "images": [
+      "assets/screenshots/spinframe/01.png",
+      "assets/screenshots/spinframe/02.png",
+      "assets/screenshots/spinframe/03.png",
+      "assets/screenshots/spinframe/04.png",
+      "assets/screenshots/spinframe/05.png"
+    ]
+  },
+  "vortex-command": {
+    "previousPresentation": "assets/presentations/previous/vortex-command.png",
+    "images": [
+      "assets/screenshots/vortex-command/01.png",
+      "assets/screenshots/vortex-command/02.png",
+      "assets/screenshots/vortex-command/03.png",
+      "assets/screenshots/vortex-command/04.png",
+      "assets/screenshots/vortex-command/05.png"
+    ]
+  },
+  "ragtime-rumble": {
+    "previousPresentation": "assets/presentations/previous/ragtime-rumble.png",
+    "images": [
+      "assets/screenshots/ragtime-rumble/01.png",
+      "assets/screenshots/ragtime-rumble/02.png",
+      "assets/screenshots/ragtime-rumble/03.png",
+      "assets/screenshots/ragtime-rumble/04.png",
+      "assets/screenshots/ragtime-rumble/05.png"
+    ]
+  },
+  "fossil-frontier": {
+    "previousPresentation": "assets/presentations/previous/fossil-frontier.png",
+    "images": [
+      "assets/screenshots/fossil-frontier/01.png",
+      "assets/screenshots/fossil-frontier/02.png",
+      "assets/screenshots/fossil-frontier/03.png",
+      "assets/screenshots/fossil-frontier/04.png",
+      "assets/screenshots/fossil-frontier/05.png"
+    ]
+  },
+  "kaiju-rupture": {
+    "previousPresentation": "assets/presentations/previous/kaiju-rupture.png",
+    "images": [
+      "assets/screenshots/kaiju-rupture/01.png",
+      "assets/screenshots/kaiju-rupture/02.png",
+      "assets/screenshots/kaiju-rupture/03.png",
+      "assets/screenshots/kaiju-rupture/04.png",
+      "assets/screenshots/kaiju-rupture/05.png"
+    ]
+  },
+  "jurassic-arsenal": {
+    "previousPresentation": "assets/presentations/previous/jurassic-arsenal.png",
+    "images": [
+      "assets/screenshots/jurassic-arsenal/01.png",
+      "assets/screenshots/jurassic-arsenal/02.png",
+      "assets/screenshots/jurassic-arsenal/03.png",
+      "assets/screenshots/jurassic-arsenal/04.png",
+      "assets/screenshots/jurassic-arsenal/05.png"
+    ]
+  },
+  "genomescan-bioarena": {
+    "previousPresentation": "assets/presentations/previous/genomescan-bioarena.png",
+    "images": [
+      "assets/screenshots/genomescan-bioarena/01.png",
+      "assets/screenshots/genomescan-bioarena/02.png",
+      "assets/screenshots/genomescan-bioarena/03.png",
+      "assets/screenshots/genomescan-bioarena/04.png",
+      "assets/screenshots/genomescan-bioarena/05.png"
+    ]
+  },
+  "triarche-ciel-rouge": {
+    "previousPresentation": "assets/presentations/previous/triarche-ciel-rouge.png",
+    "images": [
+      "assets/screenshots/triarche-ciel-rouge/01.png",
+      "assets/screenshots/triarche-ciel-rouge/02.png",
+      "assets/screenshots/triarche-ciel-rouge/03.png",
+      "assets/screenshots/triarche-ciel-rouge/04.png",
+      "assets/screenshots/triarche-ciel-rouge/05.png"
+    ]
+  },
+  "hive-ascension": {
+    "previousPresentation": "assets/presentations/previous/hive-ascension.png",
+    "images": [
+      "assets/screenshots/hive-ascension/01.png",
+      "assets/screenshots/hive-ascension/02.png",
+      "assets/screenshots/hive-ascension/03.png",
+      "assets/screenshots/hive-ascension/04.png",
+      "assets/screenshots/hive-ascension/05.png"
+    ]
+  },
+  "snail-dette-immortelle": {
+    "previousPresentation": "assets/presentations/previous/snail-dette-immortelle.png",
+    "images": [
+      "assets/screenshots/snail-dette-immortelle/01.png",
+      "assets/screenshots/snail-dette-immortelle/02.png",
+      "assets/screenshots/snail-dette-immortelle/03.png",
+      "assets/screenshots/snail-dette-immortelle/04.png",
+      "assets/screenshots/snail-dette-immortelle/05.png"
+    ]
+  },
+  "chroma-forge": {
+    "previousPresentation": "assets/presentations/previous/chroma-forge.png",
+    "images": [
+      "assets/screenshots/chroma-forge/01.png",
+      "assets/screenshots/chroma-forge/02.png",
+      "assets/screenshots/chroma-forge/03.png",
+      "assets/screenshots/chroma-forge/04.png",
+      "assets/screenshots/chroma-forge/05.png"
+    ]
+  },
+  "yautja-la-longue-chasse": {
+    "previousPresentation": "assets/presentations/previous/yautja-la-longue-chasse.png",
+    "images": [
+      "assets/screenshots/yautja-la-longue-chasse/01.png",
+      "assets/screenshots/yautja-la-longue-chasse/02.png",
+      "assets/screenshots/yautja-la-longue-chasse/03.png",
+      "assets/screenshots/yautja-la-longue-chasse/04.png",
+      "assets/screenshots/yautja-la-longue-chasse/05.png"
+    ]
+  },
+  "yomi-no-kage": {
+    "previousPresentation": "assets/presentations/previous/yomi-no-kage.png",
+    "images": [
+      "assets/screenshots/yomi-no-kage/01.png",
+      "assets/screenshots/yomi-no-kage/02.png",
+      "assets/screenshots/yomi-no-kage/03.png",
+      "assets/screenshots/yomi-no-kage/04.png",
+      "assets/screenshots/yomi-no-kage/05.png"
+    ]
+  },
+  "iron-tempest": {
+    "previousPresentation": "assets/presentations/previous/iron-tempest.png",
+    "images": [
+      "assets/screenshots/iron-tempest/01.png",
+      "assets/screenshots/iron-tempest/02.png",
+      "assets/screenshots/iron-tempest/03.png",
+      "assets/screenshots/iron-tempest/04.png",
+      "assets/screenshots/iron-tempest/05.png"
+    ]
+  },
+  "xion-operator-node": {
+    "previousPresentation": "assets/presentations/previous/xion-operator-node.png",
+    "images": [
+      "assets/screenshots/xion-operator-node/01.png",
+      "assets/screenshots/xion-operator-node/02.png",
+      "assets/screenshots/xion-operator-node/03.png",
+      "assets/screenshots/xion-operator-node/04.png",
+      "assets/screenshots/xion-operator-node/05.png"
+    ]
+  },
+  "another-day-z": {
+    "previousPresentation": "assets/presentations/previous/another-day-z.png",
+    "images": [
+      "assets/screenshots/another-day-z/01.png",
+      "assets/screenshots/another-day-z/02.png",
+      "assets/screenshots/another-day-z/03.png",
+      "assets/screenshots/another-day-z/04.png",
+      "assets/screenshots/another-day-z/05.png"
+    ]
+  },
+  "hive-ascension-cycle": {
+    "previousPresentation": "assets/presentations/previous/hive-ascension-cycle.png",
+    "images": [
+      "assets/screenshots/hive-ascension-cycle/01.png",
+      "assets/screenshots/hive-ascension-cycle/02.png",
+      "assets/screenshots/hive-ascension-cycle/03.png",
+      "assets/screenshots/hive-ascension-cycle/04.png",
+      "assets/screenshots/hive-ascension-cycle/05.png"
+    ]
+  },
+  "miyabi-rhythm": {
+    "previousPresentation": "assets/presentations/previous/miyabi-rhythm.png",
+    "images": [
+      "assets/screenshots/miyabi-rhythm/01.png",
+      "assets/screenshots/miyabi-rhythm/02.png",
+      "assets/screenshots/miyabi-rhythm/03.png",
+      "assets/screenshots/miyabi-rhythm/04.png",
+      "assets/screenshots/miyabi-rhythm/05.png"
+    ]
+  },
+  "kc-holographics": {
+    "previousPresentation": "assets/presentations/previous/kc-holographics.png",
+    "images": [
+      "assets/screenshots/kc-holographics/01.png",
+      "assets/screenshots/kc-holographics/02.png",
+      "assets/screenshots/kc-holographics/03.png",
+      "assets/screenshots/kc-holographics/04.png",
+      "assets/screenshots/kc-holographics/05.png"
+    ]
+  },
+  "catrpg-neuf-royaumes": {
+    "previousPresentation": "assets/presentations/previous/catrpg-neuf-royaumes.png",
+    "images": [
+      "assets/screenshots/catrpg-neuf-royaumes/01.png",
+      "assets/screenshots/catrpg-neuf-royaumes/02.png",
+      "assets/screenshots/catrpg-neuf-royaumes/03.png",
+      "assets/screenshots/catrpg-neuf-royaumes/04.png",
+      "assets/screenshots/catrpg-neuf-royaumes/05.png"
+    ]
+  },
+  "cells-at-work-immune-alert": {
+    "previousPresentation": "assets/presentations/previous/cells-at-work-immune-alert.png",
+    "images": [
+      "assets/screenshots/cells-at-work-immune-alert/01.png",
+      "assets/screenshots/cells-at-work-immune-alert/02.png",
+      "assets/screenshots/cells-at-work-immune-alert/03.png",
+      "assets/screenshots/cells-at-work-immune-alert/04.png",
+      "assets/screenshots/cells-at-work-immune-alert/05.png"
+    ]
+  },
+  "port-de-pluie-baie-vivante": {
+    "previousPresentation": "assets/presentations/previous/port-de-pluie-baie-vivante.png",
+    "images": [
+      "assets/screenshots/port-de-pluie-baie-vivante/01.png",
+      "assets/screenshots/port-de-pluie-baie-vivante/02.png",
+      "assets/screenshots/port-de-pluie-baie-vivante/03.png",
+      "assets/screenshots/port-de-pluie-baie-vivante/04.png",
+      "assets/screenshots/port-de-pluie-baie-vivante/05.png"
+    ]
+  },
+  "octo-arsenal": {
+    "previousPresentation": "assets/presentations/previous/octo-arsenal.png",
+    "images": [
+      "assets/screenshots/octo-arsenal/01.png",
+      "assets/screenshots/octo-arsenal/02.png",
+      "assets/screenshots/octo-arsenal/03.png",
+      "assets/screenshots/octo-arsenal/04.png",
+      "assets/screenshots/octo-arsenal/05.png"
+    ]
+  },
+  "breach-blitz-spinoff": {
+    "previousPresentation": "assets/presentations/previous/breach-blitz-spinoff.png",
+    "images": [
+      "assets/screenshots/breach-blitz-spinoff/01.png",
+      "assets/screenshots/breach-blitz-spinoff/02.png",
+      "assets/screenshots/breach-blitz-spinoff/03.png",
+      "assets/screenshots/breach-blitz-spinoff/04.png",
+      "assets/screenshots/breach-blitz-spinoff/05.png"
+    ]
+  },
+  "echelle-cosmique-evolution-totale": {
+    "previousPresentation": "assets/presentations/previous/echelle-cosmique-evolution-totale.png",
+    "images": [
+      "assets/screenshots/echelle-cosmique-evolution-totale/01.png",
+      "assets/screenshots/echelle-cosmique-evolution-totale/02.png",
+      "assets/screenshots/echelle-cosmique-evolution-totale/03.png",
+      "assets/screenshots/echelle-cosmique-evolution-totale/04.png",
+      "assets/screenshots/echelle-cosmique-evolution-totale/05.png"
+    ]
+  },
+  "hellsync-choirbreach": {
+    "previousPresentation": "assets/presentations/previous/hellsync-choirbreach.png",
+    "images": [
+      "assets/screenshots/hellsync-choirbreach/01.png",
+      "assets/screenshots/hellsync-choirbreach/02.png",
+      "assets/screenshots/hellsync-choirbreach/03.png",
+      "assets/screenshots/hellsync-choirbreach/04.png",
+      "assets/screenshots/hellsync-choirbreach/05.png"
+    ]
+  },
+  "yautja-hive-warriors": {
+    "previousPresentation": "assets/presentations/previous/yautja-hive-warriors.png",
+    "images": [
+      "assets/screenshots/yautja-hive-warriors/01.png",
+      "assets/screenshots/yautja-hive-warriors/02.png",
+      "assets/screenshots/yautja-hive-warriors/03.png",
+      "assets/screenshots/yautja-hive-warriors/04.png",
+      "assets/screenshots/yautja-hive-warriors/05.png"
+    ]
+  },
+  "yautja-apex-hunt": {
+    "previousPresentation": "assets/presentations/previous/yautja-apex-hunt.png",
+    "images": [
+      "assets/screenshots/yautja-apex-hunt/01.png",
+      "assets/screenshots/yautja-apex-hunt/02.png",
+      "assets/screenshots/yautja-apex-hunt/03.png",
+      "assets/screenshots/yautja-apex-hunt/04.png",
+      "assets/screenshots/yautja-apex-hunt/05.png"
+    ]
+  },
+  "valkyrie-sweeper-dark-siege": {
+    "previousPresentation": "assets/presentations/previous/valkyrie-sweeper-dark-siege.png",
+    "images": [
+      "assets/screenshots/valkyrie-sweeper-dark-siege/01.png",
+      "assets/screenshots/valkyrie-sweeper-dark-siege/02.png",
+      "assets/screenshots/valkyrie-sweeper-dark-siege/03.png",
+      "assets/screenshots/valkyrie-sweeper-dark-siege/04.png",
+      "assets/screenshots/valkyrie-sweeper-dark-siege/05.png"
+    ]
+  },
+  "dead-ground": {
+    "previousPresentation": "assets/presentations/previous/dead-ground.png",
+    "images": [
+      "assets/screenshots/dead-ground/01.png",
+      "assets/screenshots/dead-ground/02.png",
+      "assets/screenshots/dead-ground/03.png",
+      "assets/screenshots/dead-ground/04.png",
+      "assets/screenshots/dead-ground/05.png"
+    ]
+  },
+  "le-seuil-noir-protocole-orphee": {
+    "previousPresentation": "assets/presentations/previous/le-seuil-noir-protocole-orphee.webp",
+    "images": [
+      "assets/screenshots/le-seuil-noir-protocole-orphee/01.webp",
+      "assets/screenshots/le-seuil-noir-protocole-orphee/02.webp",
+      "assets/screenshots/le-seuil-noir-protocole-orphee/03.webp",
+      "assets/screenshots/le-seuil-noir-protocole-orphee/04.webp",
+      "assets/screenshots/le-seuil-noir-protocole-orphee/05.webp"
+    ]
+  },
+  "le-registre-creux-les-epreuves-du-solde": {
+    "previousPresentation": "assets/presentations/previous/le-registre-creux-les-epreuves-du-solde.webp",
+    "images": [
+      "assets/screenshots/le-registre-creux-les-epreuves-du-solde/01.webp",
+      "assets/screenshots/le-registre-creux-les-epreuves-du-solde/02.webp",
+      "assets/screenshots/le-registre-creux-les-epreuves-du-solde/03.webp",
+      "assets/screenshots/le-registre-creux-les-epreuves-du-solde/04.webp",
+      "assets/screenshots/le-registre-creux-les-epreuves-du-solde/05.webp"
+    ]
+  },
+  "echo-drive": {
+    "previousPresentation": "assets/presentations/previous/echo-drive.webp",
+    "images": [
+      "assets/screenshots/echo-drive/01.webp",
+      "assets/screenshots/echo-drive/02.webp",
+      "assets/screenshots/echo-drive/03.webp",
+      "assets/screenshots/echo-drive/04.webp",
+      "assets/screenshots/echo-drive/05.webp"
+    ]
+  },
+  "derriere-le-tain": {
+    "previousPresentation": "assets/presentations/previous/derriere-le-tain.webp",
+    "images": [
+      "assets/screenshots/derriere-le-tain/01.webp",
+      "assets/screenshots/derriere-le-tain/02.webp",
+      "assets/screenshots/derriere-le-tain/03.webp",
+      "assets/screenshots/derriere-le-tain/04.webp",
+      "assets/screenshots/derriere-le-tain/05.webp"
+    ]
+  },
+  "dustline-last-convoy": {
+    "previousPresentation": "assets/presentations/previous/dustline-last-convoy.webp",
+    "images": [
+      "assets/screenshots/dustline-last-convoy/01.webp",
+      "assets/screenshots/dustline-last-convoy/02.webp",
+      "assets/screenshots/dustline-last-convoy/03.webp",
+      "assets/screenshots/dustline-last-convoy/04.webp",
+      "assets/screenshots/dustline-last-convoy/05.webp"
+    ]
+  },
+  "fractal-chaos-recursive-rift": {
+    "previousPresentation": "assets/presentations/previous/fractal-chaos-recursive-rift.webp",
+    "images": [
+      "assets/screenshots/fractal-chaos-recursive-rift/01.webp",
+      "assets/screenshots/fractal-chaos-recursive-rift/02.webp",
+      "assets/screenshots/fractal-chaos-recursive-rift/03.webp",
+      "assets/screenshots/fractal-chaos-recursive-rift/04.webp",
+      "assets/screenshots/fractal-chaos-recursive-rift/05.webp"
+    ]
+  },
+  "chord-of-dread": {
+    "previousPresentation": "assets/presentations/previous/chord-of-dread.webp",
+    "images": [
+      "assets/screenshots/chord-of-dread/01.webp",
+      "assets/screenshots/chord-of-dread/02.webp",
+      "assets/screenshots/chord-of-dread/03.webp",
+      "assets/screenshots/chord-of-dread/04.webp",
+      "assets/screenshots/chord-of-dread/05.webp"
+    ]
+  },
+  "croq-collect-le-tresor-au-fond-du-paquet": {
+    "previousPresentation": "assets/presentations/previous/croq-collect-le-tresor-au-fond-du-paquet.webp",
+    "images": [
+      "assets/screenshots/croq-collect-le-tresor-au-fond-du-paquet/01.webp",
+      "assets/screenshots/croq-collect-le-tresor-au-fond-du-paquet/02.webp",
+      "assets/screenshots/croq-collect-le-tresor-au-fond-du-paquet/03.webp",
+      "assets/screenshots/croq-collect-le-tresor-au-fond-du-paquet/04.webp",
+      "assets/screenshots/croq-collect-le-tresor-au-fond-du-paquet/05.webp"
+    ]
+  },
+  "echo-forest": {
+    "previousPresentation": "assets/presentations/previous/echo-forest.webp",
+    "images": [
+      "assets/screenshots/echo-forest/01.webp",
+      "assets/screenshots/echo-forest/02.webp",
+      "assets/screenshots/echo-forest/03.webp",
+      "assets/screenshots/echo-forest/04.webp",
+      "assets/screenshots/echo-forest/05.webp"
+    ]
+  },
+  "l-envers-service-de-nuit": {
+    "previousPresentation": "assets/presentations/previous/l-envers-service-de-nuit.webp",
+    "images": [
+      "assets/screenshots/l-envers-service-de-nuit/01.webp",
+      "assets/screenshots/l-envers-service-de-nuit/02.webp",
+      "assets/screenshots/l-envers-service-de-nuit/03.webp",
+      "assets/screenshots/l-envers-service-de-nuit/04.webp",
+      "assets/screenshots/l-envers-service-de-nuit/05.webp"
+    ]
+  },
+  "carrion-walk-la-faim-des-rues": {
+    "previousPresentation": "assets/presentations/previous/carrion-walk-la-faim-des-rues.webp",
+    "images": [
+      "assets/screenshots/carrion-walk-la-faim-des-rues/01.webp",
+      "assets/screenshots/carrion-walk-la-faim-des-rues/02.webp",
+      "assets/screenshots/carrion-walk-la-faim-des-rues/03.webp",
+      "assets/screenshots/carrion-walk-la-faim-des-rues/04.webp",
+      "assets/screenshots/carrion-walk-la-faim-des-rues/05.webp"
+    ]
+  },
+  "feather-beat-parade-nuptiale": {
+    "previousPresentation": "assets/presentations/previous/feather-beat-parade-nuptiale.webp",
+    "images": [
+      "assets/screenshots/feather-beat-parade-nuptiale/01.webp",
+      "assets/screenshots/feather-beat-parade-nuptiale/02.webp",
+      "assets/screenshots/feather-beat-parade-nuptiale/03.webp",
+      "assets/screenshots/feather-beat-parade-nuptiale/04.webp",
+      "assets/screenshots/feather-beat-parade-nuptiale/05.webp"
+    ]
+  },
+  "l-envers-du-salut": {
+    "previousPresentation": "assets/presentations/previous/l-envers-du-salut.webp",
+    "images": [
+      "assets/screenshots/l-envers-du-salut/01.webp",
+      "assets/screenshots/l-envers-du-salut/02.webp",
+      "assets/screenshots/l-envers-du-salut/03.webp",
+      "assets/screenshots/l-envers-du-salut/04.webp",
+      "assets/screenshots/l-envers-du-salut/05.webp"
+    ]
+  },
+  "chrono-recoil": {
+    "previousPresentation": "assets/presentations/previous/chrono-recoil.webp",
+    "images": [
+      "assets/screenshots/chrono-recoil/01.webp",
+      "assets/screenshots/chrono-recoil/02.webp",
+      "assets/screenshots/chrono-recoil/03.webp",
+      "assets/screenshots/chrono-recoil/04.webp",
+      "assets/screenshots/chrono-recoil/05.webp"
+    ]
+  },
+  "dicebound-rpg": {
+    "previousPresentation": "assets/presentations/previous/dicebound-rpg.webp",
+    "images": [
+      "assets/screenshots/dicebound-rpg/01.webp",
+      "assets/screenshots/dicebound-rpg/02.webp",
+      "assets/screenshots/dicebound-rpg/03.webp",
+      "assets/screenshots/dicebound-rpg/04.webp",
+      "assets/screenshots/dicebound-rpg/05.webp"
+    ]
+  },
+  "fractal-chaos-studio": {
+    "previousPresentation": "assets/presentations/previous/fractal-chaos-studio.webp",
+    "images": [
+      "assets/screenshots/fractal-chaos-studio/01.webp",
+      "assets/screenshots/fractal-chaos-studio/02.webp",
+      "assets/screenshots/fractal-chaos-studio/03.webp",
+      "assets/screenshots/fractal-chaos-studio/04.webp",
+      "assets/screenshots/fractal-chaos-studio/05.webp"
+    ]
+  },
+  "echo-weave": {
+    "previousPresentation": "assets/presentations/previous/echo-weave.webp",
+    "images": [
+      "assets/screenshots/echo-weave/01.webp",
+      "assets/screenshots/echo-weave/02.webp",
+      "assets/screenshots/echo-weave/03.webp",
+      "assets/screenshots/echo-weave/04.webp",
+      "assets/screenshots/echo-weave/05.webp"
+    ]
+  },
+  "eclipse-frontline-afterfall": {
+    "previousPresentation": "assets/presentations/previous/eclipse-frontline-afterfall.webp",
+    "images": [
+      "assets/screenshots/eclipse-frontline-afterfall/01.webp",
+      "assets/screenshots/eclipse-frontline-afterfall/02.webp",
+      "assets/screenshots/eclipse-frontline-afterfall/03.webp",
+      "assets/screenshots/eclipse-frontline-afterfall/04.webp",
+      "assets/screenshots/eclipse-frontline-afterfall/05.webp"
+    ]
+  },
+  "le-rocher-qui-te-connait": {
+    "previousPresentation": "assets/presentations/previous/le-rocher-qui-te-connait.webp",
+    "images": [
+      "assets/screenshots/le-rocher-qui-te-connait/01.webp",
+      "assets/screenshots/le-rocher-qui-te-connait/02.webp",
+      "assets/screenshots/le-rocher-qui-te-connait/03.webp",
+      "assets/screenshots/le-rocher-qui-te-connait/04.webp",
+      "assets/screenshots/le-rocher-qui-te-connait/05.webp"
+    ]
+  },
+  "lazarus-assembly": {
+    "previousPresentation": "assets/presentations/previous/lazarus-assembly.webp",
+    "images": [
+      "assets/screenshots/lazarus-assembly/01.webp",
+      "assets/screenshots/lazarus-assembly/02.webp",
+      "assets/screenshots/lazarus-assembly/03.webp",
+      "assets/screenshots/lazarus-assembly/04.webp",
+      "assets/screenshots/lazarus-assembly/05.webp"
+    ]
+  },
+  "encrevivante-le-livre-qui-vous-regarde": {
+    "previousPresentation": "assets/presentations/previous/encrevivante-le-livre-qui-vous-regarde.webp",
+    "images": [
+      "assets/screenshots/encrevivante-le-livre-qui-vous-regarde/01.webp",
+      "assets/screenshots/encrevivante-le-livre-qui-vous-regarde/02.webp",
+      "assets/screenshots/encrevivante-le-livre-qui-vous-regarde/03.webp",
+      "assets/screenshots/encrevivante-le-livre-qui-vous-regarde/04.webp",
+      "assets/screenshots/encrevivante-le-livre-qui-vous-regarde/05.webp"
+    ]
+  },
+  "emu-simulator-la-longue-marche": {
+    "previousPresentation": "assets/presentations/previous/emu-simulator-la-longue-marche.webp",
+    "images": [
+      "assets/screenshots/emu-simulator-la-longue-marche/01.webp",
+      "assets/screenshots/emu-simulator-la-longue-marche/02.webp",
+      "assets/screenshots/emu-simulator-la-longue-marche/03.webp",
+      "assets/screenshots/emu-simulator-la-longue-marche/04.webp",
+      "assets/screenshots/emu-simulator-la-longue-marche/05.webp"
+    ]
+  },
+  "steel-stride-walker-front": {
+    "previousPresentation": "assets/presentations/previous/steel-stride-walker-front.webp",
+    "images": [
+      "assets/screenshots/steel-stride-walker-front/01.webp",
+      "assets/screenshots/steel-stride-walker-front/02.webp",
+      "assets/screenshots/steel-stride-walker-front/03.webp",
+      "assets/screenshots/steel-stride-walker-front/04.webp",
+      "assets/screenshots/steel-stride-walker-front/05.webp"
+    ]
+  },
+  "hearts-and-horns-maid-bar": {
+    "previousPresentation": "assets/presentations/previous/hearts-and-horns-maid-bar.webp",
+    "images": [
+      "assets/screenshots/hearts-and-horns-maid-bar/01.webp",
+      "assets/screenshots/hearts-and-horns-maid-bar/02.webp",
+      "assets/screenshots/hearts-and-horns-maid-bar/03.webp",
+      "assets/screenshots/hearts-and-horns-maid-bar/04.webp",
+      "assets/screenshots/hearts-and-horns-maid-bar/05.webp"
+    ]
+  },
+  "world-hive-wars": {
+    "previousPresentation": "assets/presentations/previous/world-hive-wars.webp",
+    "images": [
+      "assets/screenshots/world-hive-wars/01.webp",
+      "assets/screenshots/world-hive-wars/02.webp",
+      "assets/screenshots/world-hive-wars/03.webp",
+      "assets/screenshots/world-hive-wars/04.webp",
+      "assets/screenshots/world-hive-wars/05.webp"
+    ]
+  },
+  "tiffany-pixelverse-omniverse": {
+    "previousPresentation": "assets/presentations/previous/tiffany-pixelverse-omniverse.webp",
+    "images": [
+      "assets/screenshots/tiffany-pixelverse-omniverse/01.webp",
+      "assets/screenshots/tiffany-pixelverse-omniverse/02.webp",
+      "assets/screenshots/tiffany-pixelverse-omniverse/03.webp",
+      "assets/screenshots/tiffany-pixelverse-omniverse/04.webp",
+      "assets/screenshots/tiffany-pixelverse-omniverse/05.webp"
+    ]
+  },
+  "dead-feed": {
+    "previousPresentation": "assets/presentations/previous/dead-feed.webp",
+    "images": [
+      "assets/screenshots/dead-feed/01.webp",
+      "assets/screenshots/dead-feed/02.webp",
+      "assets/screenshots/dead-feed/03.webp",
+      "assets/screenshots/dead-feed/04.webp",
+      "assets/screenshots/dead-feed/05.webp"
+    ]
+  },
+  "xeno-trace": {
+    "previousPresentation": "assets/presentations/previous/xeno-trace.webp",
+    "images": [
+      "assets/screenshots/xeno-trace/01.webp",
+      "assets/screenshots/xeno-trace/02.webp",
+      "assets/screenshots/xeno-trace/03.webp",
+      "assets/screenshots/xeno-trace/04.webp",
+      "assets/screenshots/xeno-trace/05.webp"
+    ]
+  },
+  "digirift-go": {
+    "previousPresentation": "assets/presentations/previous/digirift-go.webp",
+    "images": [
+      "assets/screenshots/digirift-go/01.webp",
+      "assets/screenshots/digirift-go/02.webp",
+      "assets/screenshots/digirift-go/03.webp",
+      "assets/screenshots/digirift-go/04.webp",
+      "assets/screenshots/digirift-go/05.webp"
+    ]
+  },
+  "duel-spirits-worldbound": {
+    "previousPresentation": "assets/presentations/previous/duel-spirits-worldbound.webp",
+    "images": [
+      "assets/screenshots/duel-spirits-worldbound/01.webp",
+      "assets/screenshots/duel-spirits-worldbound/02.webp",
+      "assets/screenshots/duel-spirits-worldbound/03.webp",
+      "assets/screenshots/duel-spirits-worldbound/04.webp",
+      "assets/screenshots/duel-spirits-worldbound/05.webp"
+    ]
+  },
+  "le-vide-doit-manger": {
+    "previousPresentation": "assets/presentations/previous/le-vide-doit-manger.webp",
+    "images": [
+      "assets/screenshots/le-vide-doit-manger/01.webp",
+      "assets/screenshots/le-vide-doit-manger/02.webp",
+      "assets/screenshots/le-vide-doit-manger/03.webp",
+      "assets/screenshots/le-vide-doit-manger/04.webp",
+      "assets/screenshots/le-vide-doit-manger/05.webp"
+    ]
+  },
+  "la-riviere-des-absents": {
+    "previousPresentation": "assets/presentations/previous/la-riviere-des-absents.webp",
+    "images": [
+      "assets/screenshots/la-riviere-des-absents/01.webp",
+      "assets/screenshots/la-riviere-des-absents/02.webp",
+      "assets/screenshots/la-riviere-des-absents/03.webp",
+      "assets/screenshots/la-riviere-des-absents/04.webp",
+      "assets/screenshots/la-riviere-des-absents/05.webp"
+    ]
+  },
+  "voie-13-peage-de-nuit": {
+    "previousPresentation": "assets/presentations/previous/voie-13-peage-de-nuit.webp",
+    "images": [
+      "assets/screenshots/voie-13-peage-de-nuit/01.webp",
+      "assets/screenshots/voie-13-peage-de-nuit/02.webp",
+      "assets/screenshots/voie-13-peage-de-nuit/03.webp",
+      "assets/screenshots/voie-13-peage-de-nuit/04.webp",
+      "assets/screenshots/voie-13-peage-de-nuit/05.webp"
+    ]
+  },
+  "vesper-rite-les-dettes-de-la-maison-creuse": {
+    "previousPresentation": "assets/presentations/previous/vesper-rite-les-dettes-de-la-maison-creuse.webp",
+    "images": [
+      "assets/screenshots/vesper-rite-les-dettes-de-la-maison-creuse/01.webp",
+      "assets/screenshots/vesper-rite-les-dettes-de-la-maison-creuse/02.webp",
+      "assets/screenshots/vesper-rite-les-dettes-de-la-maison-creuse/03.webp",
+      "assets/screenshots/vesper-rite-les-dettes-de-la-maison-creuse/04.webp",
+      "assets/screenshots/vesper-rite-les-dettes-de-la-maison-creuse/05.webp"
+    ]
+  },
+  "tetracrypt-the-well": {
+    "previousPresentation": "assets/presentations/previous/tetracrypt-the-well.webp",
+    "images": [
+      "assets/screenshots/tetracrypt-the-well/01.webp",
+      "assets/screenshots/tetracrypt-the-well/02.webp",
+      "assets/screenshots/tetracrypt-the-well/03.webp",
+      "assets/screenshots/tetracrypt-the-well/04.webp",
+      "assets/screenshots/tetracrypt-the-well/05.webp"
+    ]
+  },
+  "suture-noire-les-heritiers-du-gouffre": {
+    "previousPresentation": "assets/presentations/previous/suture-noire-les-heritiers-du-gouffre.webp",
+    "images": [
+      "assets/screenshots/suture-noire-les-heritiers-du-gouffre/01.webp",
+      "assets/screenshots/suture-noire-les-heritiers-du-gouffre/02.webp",
+      "assets/screenshots/suture-noire-les-heritiers-du-gouffre/03.webp",
+      "assets/screenshots/suture-noire-les-heritiers-du-gouffre/04.webp",
+      "assets/screenshots/suture-noire-les-heritiers-du-gouffre/05.webp"
+    ]
+  },
+  "spiralis-prototype": {
+    "previousPresentation": "assets/presentations/previous/spiralis-prototype.webp",
+    "images": [
+      "assets/screenshots/spiralis-prototype/01.webp",
+      "assets/screenshots/spiralis-prototype/02.webp",
+      "assets/screenshots/spiralis-prototype/03.webp",
+      "assets/screenshots/spiralis-prototype/04.webp",
+      "assets/screenshots/spiralis-prototype/05.webp"
+    ]
+  },
+  "souvenirs-retrouves": {
+    "previousPresentation": "assets/presentations/previous/souvenirs-retrouves.webp",
+    "images": [
+      "assets/screenshots/souvenirs-retrouves/01.webp",
+      "assets/screenshots/souvenirs-retrouves/02.webp",
+      "assets/screenshots/souvenirs-retrouves/03.webp",
+      "assets/screenshots/souvenirs-retrouves/04.webp",
+      "assets/screenshots/souvenirs-retrouves/05.webp"
+    ]
+  },
+  "soleil-mort": {
+    "previousPresentation": "assets/presentations/previous/soleil-mort.webp",
+    "images": [
+      "assets/screenshots/soleil-mort/01.webp",
+      "assets/screenshots/soleil-mort/02.webp",
+      "assets/screenshots/soleil-mort/03.webp",
+      "assets/screenshots/soleil-mort/04.webp",
+      "assets/screenshots/soleil-mort/05.webp"
+    ]
+  },
+  "snake-no-signal": {
+    "previousPresentation": "assets/presentations/previous/snake-no-signal.webp",
+    "images": [
+      "assets/screenshots/snake-no-signal/01.webp",
+      "assets/screenshots/snake-no-signal/02.webp",
+      "assets/screenshots/snake-no-signal/03.webp",
+      "assets/screenshots/snake-no-signal/04.webp",
+      "assets/screenshots/snake-no-signal/05.webp"
+    ]
+  },
+  "rift-titan-protocol": {
+    "previousPresentation": "assets/presentations/previous/rift-titan-protocol.webp",
+    "images": [
+      "assets/screenshots/rift-titan-protocol/01.webp",
+      "assets/screenshots/rift-titan-protocol/02.webp",
+      "assets/screenshots/rift-titan-protocol/03.webp",
+      "assets/screenshots/rift-titan-protocol/04.webp",
+      "assets/screenshots/rift-titan-protocol/05.webp"
+    ]
+  },
+  "retro-room-prototype": {
+    "previousPresentation": "assets/presentations/previous/retro-room-prototype.webp",
+    "images": [
+      "assets/screenshots/retro-room-prototype/01.webp",
+      "assets/screenshots/retro-room-prototype/02.webp",
+      "assets/screenshots/retro-room-prototype/03.webp",
+      "assets/screenshots/retro-room-prototype/04.webp",
+      "assets/screenshots/retro-room-prototype/05.webp"
+    ]
+  },
+  "pulse-rail": {
+    "previousPresentation": "assets/presentations/previous/pulse-rail.webp",
+    "images": [
+      "assets/screenshots/pulse-rail/01.webp",
+      "assets/screenshots/pulse-rail/02.webp",
+      "assets/screenshots/pulse-rail/03.webp",
+      "assets/screenshots/pulse-rail/04.webp",
+      "assets/screenshots/pulse-rail/05.webp"
+    ]
+  },
+  "nocturne-dead-frequency": {
+    "previousPresentation": "assets/presentations/previous/nocturne-dead-frequency.webp",
+    "images": [
+      "assets/screenshots/nocturne-dead-frequency/01.webp",
+      "assets/screenshots/nocturne-dead-frequency/02.webp",
+      "assets/screenshots/nocturne-dead-frequency/03.webp",
+      "assets/screenshots/nocturne-dead-frequency/04.webp",
+      "assets/screenshots/nocturne-dead-frequency/05.webp"
+    ]
+  },
+  "neon-rift-racers": {
+    "previousPresentation": "assets/presentations/previous/neon-rift-racers.webp",
+    "images": [
+      "assets/screenshots/neon-rift-racers/01.webp",
+      "assets/screenshots/neon-rift-racers/02.webp",
+      "assets/screenshots/neon-rift-racers/03.webp",
+      "assets/screenshots/neon-rift-racers/04.webp",
+      "assets/screenshots/neon-rift-racers/05.webp"
+    ]
+  },
+  "neon-descent": {
+    "previousPresentation": "assets/presentations/previous/neon-descent.webp",
+    "images": [
+      "assets/screenshots/neon-descent/01.webp",
+      "assets/screenshots/neon-descent/02.webp",
+      "assets/screenshots/neon-descent/03.webp",
+      "assets/screenshots/neon-descent/04.webp",
+      "assets/screenshots/neon-descent/05.webp"
+    ]
+  },
+  "mr-bean-total-chaos-collection": {
+    "previousPresentation": "assets/presentations/previous/mr-bean-total-chaos-collection.webp",
+    "images": [
+      "assets/screenshots/mr-bean-total-chaos-collection/01.webp",
+      "assets/screenshots/mr-bean-total-chaos-collection/02.webp",
+      "assets/screenshots/mr-bean-total-chaos-collection/03.webp",
+      "assets/screenshots/mr-bean-total-chaos-collection/04.webp",
+      "assets/screenshots/mr-bean-total-chaos-collection/05.webp"
+    ]
+  },
+  "moustique-the-video-game": {
+    "previousPresentation": "assets/presentations/previous/moustique-the-video-game.webp",
+    "images": [
+      "assets/screenshots/moustique-the-video-game/01.webp",
+      "assets/screenshots/moustique-the-video-game/02.webp",
+      "assets/screenshots/moustique-the-video-game/03.webp",
+      "assets/screenshots/moustique-the-video-game/04.webp",
+      "assets/screenshots/moustique-the-video-game/05.webp"
+    ]
+  },
+  "moonlit-maid-cafe-simulator": {
+    "previousPresentation": "assets/presentations/previous/moonlit-maid-cafe-simulator.webp",
+    "images": [
+      "assets/screenshots/moonlit-maid-cafe-simulator/01.webp",
+      "assets/screenshots/moonlit-maid-cafe-simulator/02.webp",
+      "assets/screenshots/moonlit-maid-cafe-simulator/03.webp",
+      "assets/screenshots/moonlit-maid-cafe-simulator/04.webp",
+      "assets/screenshots/moonlit-maid-cafe-simulator/05.webp"
+    ]
+  },
+  "meme-battle-internet-legends": {
+    "previousPresentation": "assets/presentations/previous/meme-battle-internet-legends.webp",
+    "images": [
+      "assets/screenshots/meme-battle-internet-legends/01.webp",
+      "assets/screenshots/meme-battle-internet-legends/02.webp",
+      "assets/screenshots/meme-battle-internet-legends/03.webp",
+      "assets/screenshots/meme-battle-internet-legends/04.webp",
+      "assets/screenshots/meme-battle-internet-legends/05.webp"
+    ]
+  },
+  "manga-break-le-dernier-brouillon": {
+    "previousPresentation": "assets/presentations/previous/manga-break-le-dernier-brouillon.webp",
+    "images": [
+      "assets/screenshots/manga-break-le-dernier-brouillon/01.webp",
+      "assets/screenshots/manga-break-le-dernier-brouillon/02.webp",
+      "assets/screenshots/manga-break-le-dernier-brouillon/03.webp",
+      "assets/screenshots/manga-break-le-dernier-brouillon/04.webp",
+      "assets/screenshots/manga-break-le-dernier-brouillon/05.webp"
+    ]
+  },
+  "kidz-tv-after-hours": {
+    "previousPresentation": "assets/presentations/previous/kidz-tv-after-hours.webp",
+    "images": [
+      "assets/screenshots/kidz-tv-after-hours/01.webp",
+      "assets/screenshots/kidz-tv-after-hours/02.webp",
+      "assets/screenshots/kidz-tv-after-hours/03.webp",
+      "assets/screenshots/kidz-tv-after-hours/04.webp",
+      "assets/screenshots/kidz-tv-after-hours/05.webp"
+    ]
+  },
+  "harmonic-terraform": {
+    "previousPresentation": "assets/presentations/previous/harmonic-terraform.webp",
+    "images": [
+      "assets/screenshots/harmonic-terraform/01.webp",
+      "assets/screenshots/harmonic-terraform/02.webp",
+      "assets/screenshots/harmonic-terraform/03.webp",
+      "assets/screenshots/harmonic-terraform/04.webp",
+      "assets/screenshots/harmonic-terraform/05.webp"
+    ]
+  },
+  "gamevault-room-3d": {
+    "previousPresentation": "assets/presentations/previous/gamevault-room-3d.webp",
+    "images": [
+      "assets/screenshots/gamevault-room-3d/01.webp",
+      "assets/screenshots/gamevault-room-3d/02.webp",
+      "assets/screenshots/gamevault-room-3d/03.webp",
+      "assets/screenshots/gamevault-room-3d/04.webp",
+      "assets/screenshots/gamevault-room-3d/05.webp"
+    ]
+  },
+  "black-gospel-the-ninth-cadaver": {
+    "previousPresentation": "assets/presentations/previous/black-gospel-the-ninth-cadaver.webp",
+    "images": [
+      "assets/screenshots/black-gospel-the-ninth-cadaver/01.webp",
+      "assets/screenshots/black-gospel-the-ninth-cadaver/02.webp",
+      "assets/screenshots/black-gospel-the-ninth-cadaver/03.webp",
+      "assets/screenshots/black-gospel-the-ninth-cadaver/04.webp",
+      "assets/screenshots/black-gospel-the-ninth-cadaver/05.webp"
+    ]
+  },
+  "bounce-arena-prototype-fan-jouable": {
+    "previousPresentation": "assets/presentations/previous/bounce-arena-prototype-fan-jouable.webp",
+    "images": [
+      "assets/screenshots/bounce-arena-prototype-fan-jouable/01.webp",
+      "assets/screenshots/bounce-arena-prototype-fan-jouable/02.webp",
+      "assets/screenshots/bounce-arena-prototype-fan-jouable/03.webp",
+      "assets/screenshots/bounce-arena-prototype-fan-jouable/04.webp",
+      "assets/screenshots/bounce-arena-prototype-fan-jouable/05.webp"
+    ]
+  },
+  "black-signal-bastion-zero": {
+    "previousPresentation": "assets/presentations/previous/black-signal-bastion-zero.webp",
+    "images": [
+      "assets/screenshots/black-signal-bastion-zero/01.webp",
+      "assets/screenshots/black-signal-bastion-zero/02.webp",
+      "assets/screenshots/black-signal-bastion-zero/03.webp",
+      "assets/screenshots/black-signal-bastion-zero/04.webp",
+      "assets/screenshots/black-signal-bastion-zero/05.webp"
+    ]
+  },
+  "astral-dominion": {
+    "previousPresentation": "assets/presentations/previous/astral-dominion.webp",
+    "images": [
+      "assets/screenshots/astral-dominion/01.webp",
+      "assets/screenshots/astral-dominion/02.webp",
+      "assets/screenshots/astral-dominion/03.webp",
+      "assets/screenshots/astral-dominion/04.webp",
+      "assets/screenshots/astral-dominion/05.webp"
+    ]
+  },
+  "arcade-null-high-score-protocol": {
+    "previousPresentation": "assets/presentations/previous/arcade-null-high-score-protocol.webp",
+    "images": [
+      "assets/screenshots/arcade-null-high-score-protocol/01.webp",
+      "assets/screenshots/arcade-null-high-score-protocol/02.webp",
+      "assets/screenshots/arcade-null-high-score-protocol/03.webp",
+      "assets/screenshots/arcade-null-high-score-protocol/04.webp",
+      "assets/screenshots/arcade-null-high-score-protocol/05.webp"
+    ]
+  },
+  "good-morning-hollowbrook": {
+    "previousPresentation": "assets/presentations/previous/good-morning-hollowbrook.webp",
+    "images": [
+      "assets/screenshots/good-morning-hollowbrook/01.webp",
+      "assets/screenshots/good-morning-hollowbrook/02.webp",
+      "assets/screenshots/good-morning-hollowbrook/03.webp",
+      "assets/screenshots/good-morning-hollowbrook/04.webp",
+      "assets/screenshots/good-morning-hollowbrook/05.webp"
+    ]
+  },
+  "petits-poissons-red-tide": {
+    "previousPresentation": "assets/presentations/previous/petits-poissons-red-tide.webp",
+    "images": [
+      "assets/screenshots/petits-poissons-red-tide/01.webp",
+      "assets/screenshots/petits-poissons-red-tide/02.webp",
+      "assets/screenshots/petits-poissons-red-tide/03.webp",
+      "assets/screenshots/petits-poissons-red-tide/04.webp",
+      "assets/screenshots/petits-poissons-red-tide/05.webp"
+    ]
+  },
+  "brigade-premier-degre": {
+    "previousPresentation": "assets/presentations/previous/brigade-premier-degre.webp",
+    "images": [
+      "assets/screenshots/brigade-premier-degre/01.webp",
+      "assets/screenshots/brigade-premier-degre/02.webp",
+      "assets/screenshots/brigade-premier-degre/03.webp",
+      "assets/screenshots/brigade-premier-degre/04.webp",
+      "assets/screenshots/brigade-premier-degre/05.webp"
+    ]
+  },
+  "umbra-les-heures-noires": {
+    "previousPresentation": "assets/presentations/previous/umbra-les-heures-noires.webp",
+    "images": [
+      "assets/screenshots/umbra-les-heures-noires/01.webp",
+      "assets/screenshots/umbra-les-heures-noires/02.webp",
+      "assets/screenshots/umbra-les-heures-noires/03.webp",
+      "assets/screenshots/umbra-les-heures-noires/04.webp",
+      "assets/screenshots/umbra-les-heures-noires/05.webp"
+    ]
+  },
+  "nocturne-signal": {
+    "previousPresentation": "assets/presentations/previous/nocturne-signal.webp",
+    "images": [
+      "assets/screenshots/nocturne-signal/01.webp",
+      "assets/screenshots/nocturne-signal/02.webp",
+      "assets/screenshots/nocturne-signal/03.webp",
+      "assets/screenshots/nocturne-signal/04.webp",
+      "assets/screenshots/nocturne-signal/05.webp"
+    ]
+  },
+  "terra-testudo-les-mondes-dos": {
+    "previousPresentation": "assets/presentations/previous/terra-testudo-les-mondes-dos.webp",
+    "images": [
+      "assets/screenshots/terra-testudo-les-mondes-dos/01.webp",
+      "assets/screenshots/terra-testudo-les-mondes-dos/02.webp",
+      "assets/screenshots/terra-testudo-les-mondes-dos/03.webp",
+      "assets/screenshots/terra-testudo-les-mondes-dos/04.webp",
+      "assets/screenshots/terra-testudo-les-mondes-dos/05.webp"
+    ]
+  },
+  "strike-command-desert-thunder": {
+    "previousPresentation": "assets/presentations/previous/strike-command-desert-thunder.webp",
+    "images": [
+      "assets/screenshots/strike-command-desert-thunder/01.webp",
+      "assets/screenshots/strike-command-desert-thunder/02.webp",
+      "assets/screenshots/strike-command-desert-thunder/03.webp",
+      "assets/screenshots/strike-command-desert-thunder/04.webp",
+      "assets/screenshots/strike-command-desert-thunder/05.webp"
+    ]
+  },
+  "intravore": {
+    "images": [
+      "assets/screenshots/intravore/01.webp",
+      "assets/screenshots/intravore/02.webp",
+      "assets/screenshots/intravore/03.webp",
+      "assets/screenshots/intravore/04.webp",
+      "assets/screenshots/intravore/05.webp"
+    ]
+  },
+  "nexus-of-torment": {
+    "images": [
+      "assets/screenshots/nexus-of-torment/01.webp",
+      "assets/screenshots/nexus-of-torment/02.webp",
+      "assets/screenshots/nexus-of-torment/03.webp",
+      "assets/screenshots/nexus-of-torment/04.webp",
+      "assets/screenshots/nexus-of-torment/05.webp"
+    ]
+  },
+  "jawa-the-duskmen": {
+    "images": [
+      "assets/screenshots/jawa-the-duskmen/01.webp",
+      "assets/screenshots/jawa-the-duskmen/02.webp",
+      "assets/screenshots/jawa-the-duskmen/03.webp",
+      "assets/screenshots/jawa-the-duskmen/04.webp",
+      "assets/screenshots/jawa-the-duskmen/05.webp"
+    ]
+  },
+  "mecha-overdrive": {
+    "images": [
+      "assets/screenshots/mecha-overdrive/01.webp",
+      "assets/screenshots/mecha-overdrive/02.webp",
+      "assets/screenshots/mecha-overdrive/03.webp",
+      "assets/screenshots/mecha-overdrive/04.webp",
+      "assets/screenshots/mecha-overdrive/05.webp"
+    ]
+  },
+  "spermatozoid-kart-omega": {
+    "images": [
+      "assets/screenshots/spermatozoid-kart-omega/01.webp",
+      "assets/screenshots/spermatozoid-kart-omega/02.webp",
+      "assets/screenshots/spermatozoid-kart-omega/03.webp",
+      "assets/screenshots/spermatozoid-kart-omega/04.webp",
+      "assets/screenshots/spermatozoid-kart-omega/05.webp"
+    ]
+  },
+  "riff-rush": {
+    "images": [
+      "assets/screenshots/riff-rush/01.webp",
+      "assets/screenshots/riff-rush/02.webp",
+      "assets/screenshots/riff-rush/03.webp",
+      "assets/screenshots/riff-rush/04.webp",
+      "assets/screenshots/riff-rush/05.webp"
+    ]
+  }
 }

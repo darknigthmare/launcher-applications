@@ -719,6 +719,24 @@
       transition: background-image 220ms ease;
     }
 
+    .detail-media-label {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 3;
+      max-width: calc(100% - 20px);
+      padding: 6px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.66);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      backdrop-filter: blur(14px);
+      pointer-events: none;
+    }
+
     .detail-media-controls {
       position: absolute;
       inset: 0;
@@ -2214,6 +2232,7 @@
         icon: String(source.icon || fallback.icon || initials(name)).trim().slice(0, 5),
         link,
         presentation: sanitizeImageUrl(source.presentation || fallback.presentation || source.image || fallback.image),
+        previousPresentation: sanitizeImageUrl(source.previousPresentation || fallback.previousPresentation),
         image: sanitizeImageUrl(source.image || fallback.image),
         gallery,
         accent: sanitizeAccent(source.accent || fallback.accent),
@@ -2300,18 +2319,11 @@
     }
 
     function mediaImages(app) {
-      const images = [
-        sanitizeImageUrl(app.presentation),
-        sanitizeImageUrl(app.image),
-        ...(Array.isArray(app.gallery) ? app.gallery.map(sanitizeImageUrl) : [])
-      ].filter(Boolean);
-      return images.filter((image, index) => images.indexOf(image) === index);
+      return mediaTargets(app).map((target) => target.url);
     }
 
-    function mediaLabel(index) {
-      if (index === 0) return "Illustration";
-      if (index === 1) return "Capture d'écran";
-      return `Vue ${index}`;
+    function mediaLabel(app, index) {
+      return mediaTargets(app)[index]?.label || `Vue ${index + 1}`;
     }
 
     function currentMediaIndex(app) {
@@ -2743,8 +2755,8 @@
                       data-action="media"
                       data-id="${escapeHtml(app.id)}"
                       data-index="${index}"
-                      title="${escapeHtml(mediaLabel(index))}"
-                      aria-label="Voir ${escapeHtml(mediaLabel(index).toLowerCase())} de ${escapeHtml(app.name)}"
+                      title="${escapeHtml(mediaLabel(app, index))}"
+                      aria-label="Voir ${escapeHtml(mediaLabel(app, index).toLowerCase())} de ${escapeHtml(app.name)}"
                       aria-pressed="${index === activeMediaIndex}"
                     ></button>
                   `).join("")}
@@ -2815,7 +2827,8 @@
         : `<button class="primary-button" type="button" disabled>${availabilityFor(app) === "En préparation" ? "En préparation" : "Sans lien"}</button>`;
 
       details.innerHTML = `
-        <div class="hero-preview" role="group" aria-label="Galerie de ${escapeHtml(app.name)} · ${escapeHtml(mediaLabel(activeMediaIndex))}">
+        <div class="hero-preview" role="group" aria-label="Galerie de ${escapeHtml(app.name)} · ${escapeHtml(mediaLabel(app, activeMediaIndex))}">
+          <span class="detail-media-label" aria-hidden="true">${escapeHtml(mediaLabel(app, activeMediaIndex))}</span>
           ${images.length > 1 ? `
             <div class="detail-media-controls">
               <button class="gallery-arrow" type="button" data-detail-media="${previousMediaIndex}" title="Image précédente" aria-label="Voir l'image précédente">
@@ -2834,8 +2847,8 @@
                     class="media-dot ${index === activeMediaIndex ? "active" : ""}"
                     type="button"
                     data-detail-media="${index}"
-                    title="${escapeHtml(mediaLabel(index))}"
-                    aria-label="Voir ${escapeHtml(mediaLabel(index).toLowerCase())}"
+                    title="${escapeHtml(mediaLabel(app, index))}"
+                    aria-label="Voir ${escapeHtml(mediaLabel(app, index).toLowerCase())}"
                     aria-pressed="${index === activeMediaIndex}"
                   ></button>
                 `).join("")}
@@ -2963,10 +2976,11 @@
 
     function mediaTargets(app) {
       const targets = [
-        { label: "Illustration", url: sanitizeImageUrl(app.presentation) },
-        { label: "Capture", url: sanitizeImageUrl(app.image) },
+        { label: "Illustration OpenAI", url: sanitizeImageUrl(app.presentation) },
+        { label: "Illustration précédente", url: sanitizeImageUrl(app.previousPresentation) },
+        { label: "Aperçu", url: sanitizeImageUrl(app.image) },
         ...(Array.isArray(app.gallery) ? app.gallery.map((url, index) => ({
-          label: `Galerie ${index + 1}`,
+          label: `Capture ${index + 1}`,
           url: sanitizeImageUrl(url)
         })) : [])
       ];
@@ -3173,7 +3187,10 @@
           const rawImages = Array.isArray(entry) ? entry : entry?.images;
           if (!Array.isArray(rawImages)) return app;
           const gallery = [...new Set(rawImages.map(sanitizeImageUrl).filter(Boolean))].slice(0, 10);
-          return { ...app, gallery };
+          const previousPresentation = Array.isArray(entry)
+            ? ""
+            : sanitizeImageUrl(entry?.previousPresentation);
+          return normalizeApp({ ...app, previousPresentation, gallery });
         });
         renderGrid();
       } catch (error) {
