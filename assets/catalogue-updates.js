@@ -1,5 +1,16 @@
 window.LAUNCHER_RELEASES = [
   {
+    version: "1.8.0",
+    date: "2026-08-13",
+    title: "Élyra ouvre les sept mondes",
+    highlights: [
+      "Élyra devient Chroniques du Grand Pas, une campagne complète à travers sept univers originaux.",
+      "La nouvelle animation de marche combine une spritesheet quatre poses, parallaxe, météo et décors vivants.",
+      "L’Atlas, les rencontres à choix, les quêtes quotidiennes, le Journal et le Refuge évolutif sont désormais jouables."
+    ],
+    appIds: ["elyra-grand-pas"]
+  },
+  {
     version: "1.7.0",
     date: "2026-08-13",
     title: "Retour des illustrations précédentes",

@@ -1,19 +1,20 @@
 window.LAUNCHER_RECENT_GAMES = [
   {
     "id": "elyra-grand-pas",
-    "name": "Élyra — Le Grand Pas",
+    "name": "Élyra — Chroniques du Grand Pas",
     "category": "Jeux",
     "gameKind": "Jeux originaux",
     "genre": "Aventure & exploration",
     "baseGame": "",
-    "description": "Aventure mobile pixel-art bienveillante où les pas du joueur font avancer son avatar, dévoilent des rencontres et développent un refuge vivant.",
-    "pitch": "Marchez dans la vraie vie pour faire voyager votre avatar à travers les sentiers d’Élyra.",
+    "description": "Aventure mobile pixel-art complète où les pas font progresser une exploratrice à travers sept univers — fantasy, cyberpunk, horreur, science-fiction, jungle et monde céleste — avec quêtes, rencontres à choix et refuge évolutif.",
+    "pitch": "Un pas dans la vraie vie, une nouvelle histoire dans l’un des sept mondes d’Élyra.",
     "tags": [
       "Jeu original",
       "Aventure & exploration",
       "Marche",
       "Pixel-art",
-      "Bien-être",
+      "Multi-univers",
+      "RPG",
       "Mobile"
     ],
     "icon": "EG",
