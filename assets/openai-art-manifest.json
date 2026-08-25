@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "provider": "OpenAI",
   "generator": "image_gen",
-  "generatedAt": "2026-08-12",
+  "generatedAt": "2026-08-25",
   "policy": "One dedicated OpenAI presentation artwork per launcher application.",
   "apps": [
     {
@@ -1865,6 +1865,118 @@
         "genre": "",
         "baseGame": "",
         "pitch": "Quand l'armee ne vient pas, l'ombre du shogun tranche l'impur."
+      }
+    },
+    {
+      "id": "backrooms-liminal-escape",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-86775a72-a763-4039-92c9-83f28e49d117",
+      "generatedAt": "2026-08-25",
+      "asset": "assets/presentations/backrooms-liminal-escape.webp",
+      "sha256": "d63d0eef3c63668aa9ceb15eb12f78238355d550b629411fcb3f8ae624e68e4d",
+      "promptBasis": {
+        "name": "Backrooms — Liminal Escape",
+        "category": "Jeux",
+        "genre": "Survie & horreur",
+        "baseGame": "The Backrooms",
+        "pitch": "Gère ta lumière et trouve une sortie dans des espaces liminaux impossibles."
+      }
+    },
+    {
+      "id": "malaise-party",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-511ec2da-5aa5-402a-9aa0-031cdcbab58a",
+      "generatedAt": "2026-08-25",
+      "asset": "assets/presentations/malaise-party.webp",
+      "sha256": "bdcb7ced6472f24abe04691db6994e7bd8e2725b58053500e2070d43e58bcf95",
+      "promptBasis": {
+        "name": "MALAISE PARTY — Le Studio des Absents",
+        "category": "Jeux",
+        "genre": "Survie & horreur",
+        "baseGame": "",
+        "pitch": "Survis à une émission pour enfants abandonnée qui refuse de s’arrêter."
+      }
+    },
+    {
+      "id": "neon-clash-arena-protocol",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-a2b22036-813d-40fd-8196-2167ac450067",
+      "generatedAt": "2026-08-25",
+      "asset": "assets/presentations/neon-clash-arena-protocol.webp",
+      "sha256": "c475d4a606d932795856969ddef91001570dcc30e44e9036249c4d5d786bbb1d",
+      "promptBasis": {
+        "name": "NEON//CLASH: ARENA PROTOCOL",
+        "category": "Jeux",
+        "genre": "Action & tir",
+        "baseGame": "",
+        "pitch": "Casse le rythme adverse et impose ton protocole dans l’arène néon."
+      }
+    },
+    {
+      "id": "planck-antimatter-dominion",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-163aa924-ff7b-43fb-b909-71ea096fd6b8",
+      "generatedAt": "2026-08-25",
+      "asset": "assets/presentations/planck-antimatter-dominion.webp",
+      "sha256": "a44110e214cf723bcdaa89906e25e80355c5061df037647942b8f5ac9d2a582f",
+      "promptBasis": {
+        "name": "PLANCK: ANTIMATTER DOMINION",
+        "category": "Jeux",
+        "genre": "Stratégie & tactique",
+        "baseGame": "",
+        "pitch": "Étends ton réseau et transforme l’antimatière en domination spatiale."
+      }
+    },
+    {
+      "id": "the-house-of-the-dead-25d",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-78b1c641-bcfc-4397-a981-54f8eaeb0949",
+      "generatedAt": "2026-08-25",
+      "asset": "assets/presentations/the-house-of-the-dead-25d.webp",
+      "sha256": "00b1596b1b3d33175e5cb30bc1a001e51a76b187c8cdcc6ab906b0bc2e9388c9",
+      "promptBasis": {
+        "name": "The House of the Dead 2.5D",
+        "category": "Jeux",
+        "genre": "Action & tir",
+        "baseGame": "The House of the Dead",
+        "pitch": "Traverse un sanatorium gothique sur une ligne de tir 2.5D."
+      }
+    },
+    {
+      "id": "gearstorm-boss-circuit",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-08e1c994-7bb6-43f1-afc2-7923e6b8bacc",
+      "generatedAt": "2026-08-25",
+      "asset": "assets/presentations/gearstorm-boss-circuit.webp",
+      "sha256": "b7e9bf914054558eeb68529237f58aefccb4b0f9ad5e295b81273cc8c69a997c",
+      "promptBasis": {
+        "name": "GEARSTORM Boss Circuit",
+        "category": "Jeux",
+        "genre": "Action & tir",
+        "baseGame": "",
+        "pitch": "Adapte ta forme et brise six colosses dans l’œil de la tempête."
+      }
+    },
+    {
+      "id": "aliens-tantalus-frontier",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-fc5f8e33-83f8-47db-a8fd-4542a04c063b",
+      "generatedAt": "2026-08-25",
+      "asset": "assets/presentations/aliens-tantalus-frontier.webp",
+      "sha256": "42b9d8a8da4194c3d1b24409a695b00b3bfcab92585db9c276d5bbbbce43b5c2",
+      "promptBasis": {
+        "name": "ALIENS: TANTALUS FRONTIER",
+        "category": "Jeux",
+        "genre": "Aventure & exploration",
+        "baseGame": "Aliens: Dark Descent",
+        "pitch": "Explore Tantalus, protège ton escouade et ouvre les secteurs perdus."
       }
     }
   ]

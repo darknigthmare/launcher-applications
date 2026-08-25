@@ -2,9 +2,20 @@
 
 Launcher personnel statique qui réunit les applications, jeux et outils publiés sur Vercel.
 
-Le catalogue public contient au moins **119 applications**, dont au moins **106 jeux**. Les totaux peuvent évoluer automatiquement lorsque de nouvelles entrées sont ajoutées.
+Le catalogue public contient au moins **126 applications**, dont au moins **113 jeux**. Les totaux peuvent évoluer automatiquement lorsque de nouvelles entrées sont ajoutées.
 
 Version publique : [launcher-applications.vercel.app](https://launcher-applications.vercel.app/)
+
+## Version 1.9 — Treize jeux disponibles
+
+La vague du 25 août 2026 sépare dans leurs propres dépôts et déploiements sept créations récentes : Backrooms — Liminal Escape, MALAISE PARTY, NEON//CLASH, PLANCK, Nexus of Torment, RIFF//RUSH et SPERM RUSH: Genesis Grand Prix.
+
+Elle ajoute au launcher sept jeux jusque-là absents — les quatre premiers ci-dessus, The House of the Dead 2.5D, GEARSTORM Boss Circuit et ALIENS: Tantalus Frontier — puis publie les six entrées encore marquées en préparation : INTRAVORE, Nexus of Torment, JAWA: The Duskmen, Mecha Overdrive, SPERM RUSH et RIFF//RUSH. L’identifiant historique \`spermatozoid-kart-omega\` est conservé pour ne pas casser les médias et favoris existants, tandis que la fiche affiche le titre canonique SPERM RUSH: Genesis Grand Prix.
+
+Le launcher compte désormais **126 applications**, **113 jeux**, **126 aperçus**, **126 présentations OpenAI** et **630 captures de galerie**.
+
+---
+
 
 ## Version 1.7
 
@@ -53,7 +64,7 @@ Puis ouvrir `http://127.0.0.1:8000`.
 
     npm test
 
-L’audit valide la syntaxe, les identifiants et URL, la taxonomie, les états de publication, les dates d’ajout, le journal SemVer, tous les aperçus et présentations, les 112 illustrations précédentes, les galeries (au moins cinq vues), les icônes, le manifeste, le service worker et le contrat de synchronisation. Il contrôle aussi que chaque ancien visuel est unique, lisible et différent de la présentation OpenAI active, que le compte média est cohérent et que le shell PWA reste inférieur à 5 Mo.
+L’audit valide la syntaxe, les identifiants et URL, la taxonomie, les états de publication, les dates d’ajout, le journal SemVer, tous les aperçus et présentations, les 112 illustrations précédentes, les galeries (au moins cinq vues), les icônes, le manifeste, le service worker et le contrat de synchronisation. Il contrôle aussi que chaque ancien visuel est unique, lisible et différent de la présentation OpenAI active, que les quatorze applications créées sans illustration antérieure sont explicitement identifiées, que le compte média est cohérent et que le shell PWA reste inférieur à 5 Mo.
 
 Pour simuler la détection sans écrire :
 

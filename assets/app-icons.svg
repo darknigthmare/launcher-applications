@@ -815,4 +815,56 @@
     </g>
     <text x="12" y="13.7" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="5.2" font-weight="800">EG</text>
   </symbol>
+  <symbol id="icon-backrooms-liminal-escape" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 20V4h14v16M9 20V8h7v12M12 12h.01"/>
+      <path d="M3 20h18" opacity=".55"/>
+    </g>
+    <text x="12.5" y="17.3" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="4.3" font-weight="800">BL</text>
+  </symbol>
+  <symbol id="icon-malaise-party" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 12s3.2-5 9-5 9 5 9 5-3.2 5-9 5-9-5-9-5Z"/>
+      <circle cx="12" cy="12" r="2.6"/>
+      <path d="M6 4h12M8 20h8" opacity=".5"/>
+    </g>
+    <text x="12" y="13.4" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="3.4" font-weight="800">MP</text>
+  </symbol>
+  <symbol id="icon-neon-clash-arena-protocol" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m5 5 14 14M19 5 5 19M8 3 3 8M16 3l5 5M3 16l5 5M21 16l-5 5"/>
+      <circle cx="12" cy="12" r="3.1" opacity=".45"/>
+    </g>
+    <text x="12" y="13.5" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="3.5" font-weight="800">NC</text>
+  </symbol>
+  <symbol id="icon-planck-antimatter-dominion" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <ellipse cx="12" cy="12" rx="9" ry="4.5" transform="rotate(30 12 12)"/>
+      <ellipse cx="12" cy="12" rx="9" ry="4.5" transform="rotate(-30 12 12)"/>
+      <circle cx="12" cy="12" r="2.1"/>
+      <circle cx="19" cy="8" r="1"/>
+    </g>
+  </symbol>
+  <symbol id="icon-the-house-of-the-dead-25d" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="7"/>
+      <path d="M12 2v5M12 17v5M2 12h5M17 12h5"/>
+      <circle cx="12" cy="12" r="2" opacity=".5"/>
+    </g>
+  </symbol>
+  <symbol id="icon-gearstorm-boss-circuit" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="6.5"/>
+      <circle cx="12" cy="12" r="2.4"/>
+      <path d="M12 2v3.5M12 18.5V22M2 12h3.5M18.5 12H22M4.9 4.9l2.5 2.5M16.6 16.6l2.5 2.5M19.1 4.9l-2.5 2.5M7.4 16.6l-2.5 2.5"/>
+    </g>
+  </symbol>
+  <symbol id="icon-aliens-tantalus-frontier" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 18 8 6l4 12 4-12 4 12"/>
+      <path d="M6 14h12M8 18h8" opacity=".55"/>
+      <circle cx="12" cy="5" r="1.5"/>
+    </g>
+    <text x="12" y="13.2" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="3.5" font-weight="800">AT</text>
+  </symbol>
 </svg>

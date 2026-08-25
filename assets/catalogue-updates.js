@@ -1,5 +1,22 @@
 window.LAUNCHER_RELEASES = [
   {
+    version: "1.9.0",
+    date: "2026-08-25",
+    title: "Treize jeux prennent la route",
+    highlights: [
+      "Backrooms, Malaise Party, NEON//CLASH, PLANCK, Nexus of Torment, RIFF//RUSH et SPERM RUSH sont désormais séparés dans leurs propres dépôts GitHub et productions Vercel.",
+      "Backrooms, Malaise Party, NEON//CLASH, PLANCK, House of the Dead 2.5D, GEARSTORM et ALIENS Tantalus Frontier rejoignent le catalogue.",
+      "INTRAVORE, Nexus of Torment, JAWA, Mecha Overdrive, SPERM RUSH et RIFF//RUSH passent de En préparation à Disponible."
+    ],
+    appIds: [
+      "backrooms-liminal-escape", "malaise-party", "neon-clash-arena-protocol",
+      "planck-antimatter-dominion", "the-house-of-the-dead-25d",
+      "gearstorm-boss-circuit", "aliens-tantalus-frontier", "intravore",
+      "nexus-of-torment", "jawa-the-duskmen", "mecha-overdrive",
+      "spermatozoid-kart-omega", "riff-rush"
+    ]
+  },
+  {
     version: "1.8.0",
     date: "2026-08-13",
     title: "Élyra ouvre les sept mondes",

@@ -1186,5 +1186,68 @@
       "assets/screenshots/riff-rush/04.webp",
       "assets/screenshots/riff-rush/05.webp"
     ]
+  },
+  "backrooms-liminal-escape": {
+    "images": [
+      "assets/screenshots/backrooms-liminal-escape/01.webp",
+      "assets/screenshots/backrooms-liminal-escape/02.webp",
+      "assets/screenshots/backrooms-liminal-escape/03.webp",
+      "assets/screenshots/backrooms-liminal-escape/04.webp",
+      "assets/screenshots/backrooms-liminal-escape/05.webp"
+    ]
+  },
+  "malaise-party": {
+    "images": [
+      "assets/screenshots/malaise-party/01.webp",
+      "assets/screenshots/malaise-party/02.webp",
+      "assets/screenshots/malaise-party/03.webp",
+      "assets/screenshots/malaise-party/04.webp",
+      "assets/screenshots/malaise-party/05.webp"
+    ]
+  },
+  "neon-clash-arena-protocol": {
+    "images": [
+      "assets/screenshots/neon-clash-arena-protocol/01.webp",
+      "assets/screenshots/neon-clash-arena-protocol/02.webp",
+      "assets/screenshots/neon-clash-arena-protocol/03.webp",
+      "assets/screenshots/neon-clash-arena-protocol/04.webp",
+      "assets/screenshots/neon-clash-arena-protocol/05.webp"
+    ]
+  },
+  "planck-antimatter-dominion": {
+    "images": [
+      "assets/screenshots/planck-antimatter-dominion/01.webp",
+      "assets/screenshots/planck-antimatter-dominion/02.webp",
+      "assets/screenshots/planck-antimatter-dominion/03.webp",
+      "assets/screenshots/planck-antimatter-dominion/04.webp",
+      "assets/screenshots/planck-antimatter-dominion/05.webp"
+    ]
+  },
+  "the-house-of-the-dead-25d": {
+    "images": [
+      "assets/screenshots/the-house-of-the-dead-25d/01.webp",
+      "assets/screenshots/the-house-of-the-dead-25d/02.webp",
+      "assets/screenshots/the-house-of-the-dead-25d/03.webp",
+      "assets/screenshots/the-house-of-the-dead-25d/04.webp",
+      "assets/screenshots/the-house-of-the-dead-25d/05.webp"
+    ]
+  },
+  "gearstorm-boss-circuit": {
+    "images": [
+      "assets/screenshots/gearstorm-boss-circuit/01.webp",
+      "assets/screenshots/gearstorm-boss-circuit/02.webp",
+      "assets/screenshots/gearstorm-boss-circuit/03.webp",
+      "assets/screenshots/gearstorm-boss-circuit/04.webp",
+      "assets/screenshots/gearstorm-boss-circuit/05.webp"
+    ]
+  },
+  "aliens-tantalus-frontier": {
+    "images": [
+      "assets/screenshots/aliens-tantalus-frontier/01.webp",
+      "assets/screenshots/aliens-tantalus-frontier/02.webp",
+      "assets/screenshots/aliens-tantalus-frontier/03.webp",
+      "assets/screenshots/aliens-tantalus-frontier/04.webp",
+      "assets/screenshots/aliens-tantalus-frontier/05.webp"
+    ]
   }
 }

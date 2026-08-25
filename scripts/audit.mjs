@@ -239,7 +239,7 @@ if (await exists("assets/recent-games.js")) {
     failures.push(`catalogue récent illisible: ${error.message}`);
   }
 }
-assert(recentApps.length >= 72, "le catalogue récent contient au moins les 72 jeux de référence");
+assert(recentApps.length >= 80, "le catalogue récent contient au moins les 80 jeux de référence");
 apps = [...apps, ...recentApps];
 let releases = [];
 if (await exists("assets/catalogue-updates.js")) {
@@ -281,8 +281,8 @@ if (gameGenreMatch) {
   }
 }
 
-assert(apps.length >= 118, "le catalogue contient au moins 118 applications");
-assert(apps.filter((app) => app?.category === "Jeux").length >= 105, "le catalogue contient au moins 105 jeux");
+assert(apps.length >= 126, "le catalogue contient au moins 126 applications");
+assert(apps.filter((app) => app?.category === "Jeux").length >= 113, "le catalogue contient au moins 113 jeux");
 assert(gameGenreGroups.length === 8, "la navigation Jeux contient huit genres principaux");
 
 const starterGameIds = new Set(
@@ -473,7 +473,14 @@ const appsWithoutPreviousPresentation = new Set([
   "jawa-the-duskmen",
   "mecha-overdrive",
   "spermatozoid-kart-omega",
-  "riff-rush"
+  "riff-rush",
+  "backrooms-liminal-escape",
+  "malaise-party",
+  "neon-clash-arena-protocol",
+  "planck-antimatter-dominion",
+  "the-house-of-the-dead-25d",
+  "gearstorm-boss-circuit",
+  "aliens-tantalus-frontier"
 ]);
 for (const app of apps) {
   const entry = galleryMap[app.id];
@@ -534,7 +541,7 @@ if (previousPresentationDirectoryExists) {
     .filter((name) => rasterExtensionPattern.test(name))
     .map((name) => `${previousPresentationDirectory}/${name}`);
 }
-assert(appsWithoutPreviousPresentation.size === 7, "sept applications sans historique explicitement autorisées");
+assert(appsWithoutPreviousPresentation.size === 14, "quatorze applications sans historique explicitement autorisées");
 for (const id of appsWithoutPreviousPresentation) {
   assert(ids.has(id), `exception historique attribuée à une application connue: ${id}`);
 }
@@ -658,7 +665,7 @@ for (const asset of appShell) {
 }
 assert(appShell.includes("/assets/openai-art-manifest.json"), "le manifeste OpenAI fait partie du shell hors ligne");
 assert(appShellBytes <= 5 * 1024 * 1024, "le préchargement APP_SHELL reste inférieur à 5 Mo");
-assert(serviceWorker.includes('const CACHE_NAME = "launcher-shell-v24"'), "le cache applicatif v1.8 utilise launcher-shell-v24");
+assert(serviceWorker.includes('const CACHE_NAME = "launcher-shell-v25"'), "le cache applicatif v1.9 utilise launcher-shell-v25");
 assert(serviceWorker.includes('const RUNTIME_CACHE = "launcher-media-runtime-v1"'), "le cache média différé est versionné");
 assert(serviceWorker.includes("const MAX_RUNTIME_ENTRIES = 120"), "le cache média différé est borné");
 assert(
