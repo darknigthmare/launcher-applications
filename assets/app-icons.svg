@@ -867,4 +867,31 @@
     </g>
     <text x="12" y="13.2" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="3.5" font-weight="800">AT</text>
   </symbol>
+  <symbol id="icon-jingle-duel" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="9" y="3" width="6" height="11" rx="3"/>
+      <path d="M6 11a6 6 0 0 0 12 0M12 17v4M8 21h8M17 5v5l3-1.5V5"/>
+    </g>
+    <text x="12" y="13.3" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="3.2" font-weight="800">JD</text>
+  </symbol>
+  <symbol id="icon-black-case-inventory-protocol" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="6" width="18" height="14" rx="2"/><path d="M9 6V4h6v2M8 10h3v3H8zM13 10h3v6h-3zM8 15h3v2H8z"/>
+    </g>
+    <text x="18" y="18.2" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="3.1" font-weight="800">BC</text>
+  </symbol>
+  <symbol id="icon-vitrineverse" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 4h16v16H4zM4 12h16M8 4v16M16 4v16"/>
+      <path d="M10 9h4M10 17h4" opacity=".55"/>
+    </g>
+    <text x="12" y="13.4" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="3.1" font-weight="800">VV</text>
+  </symbol>
+  <symbol id="icon-pip-le-tresor-des-huit-pattes" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="13" r="4"/><circle cx="12" cy="7" r="2.5"/>
+      <path d="M9 10 5 7M8 12H3M8.5 15 4 18M10 17l-2 4M15 10l4-3M16 12h5M15.5 15l4.5 3M14 17l2 4"/>
+    </g>
+    <text x="12" y="14.1" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="2.8" font-weight="800">PIP</text>
+  </symbol>
 </svg>

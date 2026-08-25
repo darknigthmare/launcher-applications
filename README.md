@@ -2,9 +2,19 @@
 
 Launcher personnel statique qui réunit les applications, jeux et outils publiés sur Vercel.
 
-Le catalogue public contient au moins **126 applications**, dont au moins **113 jeux**. Les totaux peuvent évoluer automatiquement lorsque de nouvelles entrées sont ajoutées.
+Le catalogue public contient **130 applications**, dont **117 jeux**.
 
 Version publique : [launcher-applications.vercel.app](https://launcher-applications.vercel.app/)
+
+## Version 1.10 — Quatre créations retrouvent leur vitrine
+
+Jingle Duel, BLACK CASE — Inventory Protocol, VITRINE//VERSE et PIP : Le Trésor des Huit Pattes rejoignent le launcher après leur séparation en projets dédiés.
+
+Chaque fiche réunit une présentation originale générée par OpenAI avec sa provenance vérifiable, un aperçu distinct et cinq captures du vrai jeu. Les publications pointent vers leurs productions Vercel respectives.
+
+Le launcher compte désormais **130 applications**, **117 jeux**, **130 aperçus**, **130 présentations OpenAI**, **650 captures de galerie** et **1 022 médias uniques** au total.
+
+---
 
 ## Version 1.9 — Treize jeux disponibles
 
@@ -64,7 +74,7 @@ Puis ouvrir `http://127.0.0.1:8000`.
 
     npm test
 
-L’audit valide la syntaxe, les identifiants et URL, la taxonomie, les états de publication, les dates d’ajout, le journal SemVer, tous les aperçus et présentations, les 112 illustrations précédentes, les galeries (au moins cinq vues), les icônes, le manifeste, le service worker et le contrat de synchronisation. Il contrôle aussi que chaque ancien visuel est unique, lisible et différent de la présentation OpenAI active, que les quatorze applications créées sans illustration antérieure sont explicitement identifiées, que le compte média est cohérent et que le shell PWA reste inférieur à 5 Mo.
+L’audit valide la syntaxe, les identifiants et URL, la taxonomie, les états de publication, les dates d’ajout, le journal SemVer, tous les aperçus et présentations, les 112 illustrations précédentes, les galeries (au moins cinq vues), les icônes, le manifeste, le service worker et le contrat de synchronisation. Il contrôle aussi que chaque ancien visuel est unique, lisible et différent de la présentation OpenAI active, que les dix-huit applications créées sans illustration antérieure sont explicitement identifiées, que le compte média est cohérent et que le shell PWA reste inférieur à 5 Mo.
 
 Pour simuler la détection sans écrire :
 

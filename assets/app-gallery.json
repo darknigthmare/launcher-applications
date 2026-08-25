@@ -1249,5 +1249,41 @@
       "assets/screenshots/aliens-tantalus-frontier/04.webp",
       "assets/screenshots/aliens-tantalus-frontier/05.webp"
     ]
+  },
+  "jingle-duel": {
+    "images": [
+      "assets/screenshots/jingle-duel/01.webp",
+      "assets/screenshots/jingle-duel/02.webp",
+      "assets/screenshots/jingle-duel/03.webp",
+      "assets/screenshots/jingle-duel/04.webp",
+      "assets/screenshots/jingle-duel/05.webp"
+    ]
+  },
+  "black-case-inventory-protocol": {
+    "images": [
+      "assets/screenshots/black-case-inventory-protocol/01.webp",
+      "assets/screenshots/black-case-inventory-protocol/02.webp",
+      "assets/screenshots/black-case-inventory-protocol/03.webp",
+      "assets/screenshots/black-case-inventory-protocol/04.webp",
+      "assets/screenshots/black-case-inventory-protocol/05.webp"
+    ]
+  },
+  "vitrineverse": {
+    "images": [
+      "assets/screenshots/vitrineverse/01.webp",
+      "assets/screenshots/vitrineverse/02.webp",
+      "assets/screenshots/vitrineverse/03.webp",
+      "assets/screenshots/vitrineverse/04.webp",
+      "assets/screenshots/vitrineverse/05.webp"
+    ]
+  },
+  "pip-le-tresor-des-huit-pattes": {
+    "images": [
+      "assets/screenshots/pip-le-tresor-des-huit-pattes/01.webp",
+      "assets/screenshots/pip-le-tresor-des-huit-pattes/02.webp",
+      "assets/screenshots/pip-le-tresor-des-huit-pattes/03.webp",
+      "assets/screenshots/pip-le-tresor-des-huit-pattes/04.webp",
+      "assets/screenshots/pip-le-tresor-des-huit-pattes/05.webp"
+    ]
   }
 }

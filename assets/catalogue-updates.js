@@ -1,5 +1,19 @@
 window.LAUNCHER_RELEASES = [
   {
+    version: "1.10.0",
+    date: "2026-08-26",
+    title: "Quatre créations retrouvent leur vitrine",
+    highlights: [
+      "Jingle Duel, BLACK CASE, VITRINE//VERSE et PIP disposent chacun de leur publication dédiée.",
+      "Chaque jeu reçoit une présentation OpenAI traçable, un aperçu et cinq captures du vrai jeu.",
+      "Le catalogue atteint 130 applications, dont 117 jeux, et 1 022 médias uniques."
+    ],
+    appIds: [
+      "jingle-duel", "black-case-inventory-protocol",
+      "vitrineverse", "pip-le-tresor-des-huit-pattes"
+    ]
+  },
+  {
     version: "1.9.0",
     date: "2026-08-25",
     title: "Treize jeux prennent la route",

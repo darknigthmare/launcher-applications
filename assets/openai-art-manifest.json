@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "provider": "OpenAI",
   "generator": "image_gen",
-  "generatedAt": "2026-08-25",
+  "generatedAt": "2026-08-26",
   "policy": "One dedicated OpenAI presentation artwork per launcher application.",
   "apps": [
     {
@@ -1977,6 +1977,70 @@
         "genre": "Aventure & exploration",
         "baseGame": "Aliens: Dark Descent",
         "pitch": "Explore Tantalus, protège ton escouade et ouvre les secteurs perdus."
+      }
+    },
+    {
+      "id": "jingle-duel",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-ce3ecc4c-82ff-4729-ac7a-32339e85959f",
+      "generatedAt": "2026-08-26",
+      "asset": "assets/presentations/jingle-duel.webp",
+      "sha256": "79687a385f17b343ff2bfcaa5761647a9d73f4de80e1fc21732a8bc9b5cff3b3",
+      "promptBasis": {
+        "name": "Jingle Duel",
+        "category": "Jeux",
+        "genre": "Rythme & arcade",
+        "baseGame": "",
+        "pitch": "Écoute un jingle original, reproduis-le au micro et vise le score parfait."
+      }
+    },
+    {
+      "id": "black-case-inventory-protocol",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-320931ab-b6b2-4db5-8a5d-9ad0bbb6369f",
+      "generatedAt": "2026-08-26",
+      "asset": "assets/presentations/black-case-inventory-protocol.webp",
+      "sha256": "1c8a137cd658bfbf21c226746f2cfba0037852982b8d70c89ba4a7acd1b605ba",
+      "promptBasis": {
+        "name": "BLACK CASE — Inventory Protocol",
+        "category": "Jeux",
+        "genre": "Puzzle & cartes",
+        "baseGame": "",
+        "pitch": "Range, pivote et combine ton équipement pour résoudre chaque mallette tactique."
+      }
+    },
+    {
+      "id": "vitrineverse",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-acd29b2a-30eb-4d23-9551-066cd18f001b",
+      "generatedAt": "2026-08-26",
+      "asset": "assets/presentations/vitrineverse.webp",
+      "sha256": "7fe0b7e6f870148248582e4c7014a13f2152fdac1236245b4983cd54373f5a5f",
+      "promptBasis": {
+        "name": "VITRINE//VERSE",
+        "category": "Jeux",
+        "genre": "Gestion & simulation",
+        "baseGame": "",
+        "pitch": "Collectionne, expose et transforme ta pièce en galerie de rêve."
+      }
+    },
+    {
+      "id": "pip-le-tresor-des-huit-pattes",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-f2fc23fb-ea8c-4a87-978a-ce78a8142fc9",
+      "generatedAt": "2026-08-26",
+      "asset": "assets/presentations/pip-le-tresor-des-huit-pattes.webp",
+      "sha256": "e9a019a945420d2d3df6c90841c7c470b66b5bbbe68b70b028f6cff1c45e6ded",
+      "promptBasis": {
+        "name": "PIP : Le Trésor des Huit Pattes",
+        "category": "Jeux",
+        "genre": "Aventure & exploration",
+        "baseGame": "",
+        "pitch": "Équipe huit outils, explore trois régions et révèle le trésor de PIP."
       }
     }
   ]
