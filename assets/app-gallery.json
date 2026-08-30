@@ -1321,5 +1321,59 @@
       "assets/screenshots/veilbound-les-visages-du-monde-brise/04.png",
       "assets/screenshots/veilbound-les-visages-du-monde-brise/05.png"
     ]
+  },
+  "scp-foundation-site-director": {
+    "images": [
+      "assets/screenshots/scp-foundation-site-director/01.png",
+      "assets/screenshots/scp-foundation-site-director/02.png",
+      "assets/screenshots/scp-foundation-site-director/03.png",
+      "assets/screenshots/scp-foundation-site-director/04.png",
+      "assets/screenshots/scp-foundation-site-director/05.png"
+    ]
+  },
+  "soma-massilia": {
+    "images": [
+      "assets/screenshots/soma-massilia/01.png",
+      "assets/screenshots/soma-massilia/02.png",
+      "assets/screenshots/soma-massilia/03.png",
+      "assets/screenshots/soma-massilia/04.png",
+      "assets/screenshots/soma-massilia/05.png"
+    ]
+  },
+  "avp-hunt-hive-tcg": {
+    "images": [
+      "assets/screenshots/avp-hunt-hive-tcg/01.png",
+      "assets/screenshots/avp-hunt-hive-tcg/02.png",
+      "assets/screenshots/avp-hunt-hive-tcg/03.png",
+      "assets/screenshots/avp-hunt-hive-tcg/04.png",
+      "assets/screenshots/avp-hunt-hive-tcg/05.png"
+    ]
+  },
+  "echobound": {
+    "images": [
+      "assets/screenshots/echobound/01.png",
+      "assets/screenshots/echobound/02.png",
+      "assets/screenshots/echobound/03.png",
+      "assets/screenshots/echobound/04.png",
+      "assets/screenshots/echobound/05.png"
+    ]
+  },
+  "deadwall-last-enclosure": {
+    "images": [
+      "assets/screenshots/deadwall-last-enclosure/01.png",
+      "assets/screenshots/deadwall-last-enclosure/02.png",
+      "assets/screenshots/deadwall-last-enclosure/03.png",
+      "assets/screenshots/deadwall-last-enclosure/04.png",
+      "assets/screenshots/deadwall-last-enclosure/05.png"
+    ]
+  },
+  "aziz-la-lumiere-dort": {
+    "images": [
+      "assets/screenshots/aziz-la-lumiere-dort/01.png",
+      "assets/screenshots/aziz-la-lumiere-dort/02.png",
+      "assets/screenshots/aziz-la-lumiere-dort/03.png",
+      "assets/screenshots/aziz-la-lumiere-dort/04.png",
+      "assets/screenshots/aziz-la-lumiere-dort/05.png"
+    ]
   }
 }

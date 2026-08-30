@@ -918,4 +918,36 @@
       <path d="m12 3-1 5 2 2-2 3 2 2-1 5M7.8 9.2l2 1M16.2 9.2l-2 1"/>
     </g>
   </symbol>
+  <symbol id="icon-scp-foundation-site-director" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2.5 20 6v5.5c0 5-3.2 8.3-8 10-4.8-1.7-8-5-8-10V6Z"/><path d="M8 9h8v7H8zM10 9V7.5h4V9M12 11.5v2"/>
+    </g>
+  </symbol>
+  <symbol id="icon-soma-massilia" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="5" r="2.5"/><circle cx="6" cy="17" r="2.5"/><circle cx="18" cy="17" r="2.5"/><path d="m10.8 7.2-3.6 7.6M13.2 7.2l3.6 7.6M8.5 17h7"/>
+    </g>
+  </symbol>
+  <symbol id="icon-avp-hunt-hive-tcg" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="3" width="16" height="18" rx="2"/><path d="m8 16 4-9 4 9M9.5 13h5"/>
+    </g>
+    <text x="12" y="19" text-anchor="middle" fill="currentColor" font-family="system-ui, sans-serif" font-size="3.2" font-weight="800">TCG</text>
+  </symbol>
+  <symbol id="icon-echobound" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="9"/><path d="M4 12h3l2-5 3 10 2.5-7 2 4H20"/>
+    </g>
+  </symbol>
+  <symbol id="icon-deadwall-last-enclosure" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 20V8h4V5h4v3h4V5h4v3h2v12M3 13h18M7 13v7M12 13v7M17 13v7"/>
+    </g>
+  </symbol>
+  <symbol id="icon-aziz-la-lumiere-dort" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m12 3 8 17H4Z"/><path d="M12 7v8M9 15h6M7 20l2-5h6l2 5"/>
+      <circle cx="12" cy="11" r="1.4"/>
+    </g>
+  </symbol>
 </svg>

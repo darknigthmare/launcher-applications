@@ -2,10 +2,21 @@
 
 Launcher personnel statique qui réunit les applications, jeux et outils publiés sur Vercel.
 
-Le catalogue public contient **134 applications**, dont **121 jeux**.
+Le catalogue public contient **140 applications**, dont **127 jeux**.
 
 Version publique : [launcher-applications.vercel.app](https://launcher-applications.vercel.app/)
 
+## Version 1.12 — Six créations sortent des archives
+
+SCP Foundation: Site Director — Deep Protocol, SOMA//MASSILIA, AVP: HUNT // HIVE TCG, ECHObound, DEADWALL et AZIZ — LA LUMIÈRE DORT rejoignent le launcher après leur séparation en dépôts GitHub et productions Vercel dédiés.
+
+Chaque fiche réunit une présentation originale générée par OpenAI, un aperçu distinct et cinq captures du vrai jeu. Lorsque l’API image_gen ne fournit pas d’identifiant de génération, la provenance associe explicitement le thread Codex source au SHA-256 du fichier local au lieu d’inventer un identifiant.
+
+Le launcher compte désormais **140 applications**, **127 jeux**, **140 aperçus**, **140 présentations OpenAI**, **700 captures de galerie** et **1 092 médias uniques** au total.
+
+---
+
+## Version 1.11 — Quatre archives deviennent quatre mondes jouables
 ## Version 1.11 — Quatre archives deviennent quatre mondes jouables
 
 ECHO RIFT, OMBRE//GEEK, SON OF A…! — Legacy Forge et VEILBOUND — Les Visages du Monde Brisé rejoignent le launcher après leur séparation en dépôts GitHub et productions Vercel dédiés.
@@ -85,7 +96,7 @@ Puis ouvrir `http://127.0.0.1:8000`.
 
     npm test
 
-L’audit valide la syntaxe, les identifiants et URL, la taxonomie, les états de publication, les dates d’ajout, le journal SemVer, tous les aperçus et présentations, les 112 illustrations précédentes, les galeries (au moins cinq vues), les icônes, le manifeste, le service worker et le contrat de synchronisation. Il contrôle aussi que chaque ancien visuel est unique, lisible et différent de la présentation OpenAI active, que les vingt-deux applications créées sans illustration antérieure sont explicitement identifiées, que le compte média est cohérent et que le shell PWA reste inférieur à 5 Mo.
+L’audit valide la syntaxe, les identifiants et URL, la taxonomie, les états de publication, les dates d’ajout, le journal SemVer, tous les aperçus et présentations, les 112 illustrations précédentes, les galeries (au moins cinq vues), les icônes, le manifeste, le service worker et le contrat de synchronisation. Il contrôle aussi que chaque ancien visuel est unique, lisible et différent de la présentation OpenAI active, que les vingt-huit applications créées sans illustration antérieure sont explicitement identifiées, que le compte média est cohérent et que le shell PWA reste inférieur à 5 Mo.
 
 Pour simuler la détection sans écrire :
 

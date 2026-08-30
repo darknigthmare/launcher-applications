@@ -1,5 +1,19 @@
 window.LAUNCHER_RELEASES = [
   {
+    version: "1.12.0",
+    date: "2026-08-30",
+    title: "Six créations sortent des archives",
+    highlights: [
+      "SCP Site Director, SOMA//MASSILIA, AVP: HUNT // HIVE TCG, ECHObound, DEADWALL et AZIZ disposent chacun de leur dépôt GitHub et de leur production Vercel.",
+      "Chaque jeu reçoit une présentation OpenAI traçable, un aperçu distinct et cinq captures issues du vrai jeu.",
+      "Le catalogue atteint 140 applications, dont 127 jeux, et 1 092 médias uniques."
+    ],
+    appIds: [
+      "scp-foundation-site-director", "soma-massilia", "avp-hunt-hive-tcg",
+      "echobound", "deadwall-last-enclosure", "aziz-la-lumiere-dort"
+    ]
+  },
+  {
     version: "1.11.0",
     date: "2026-08-30",
     title: "Quatre archives deviennent quatre mondes jouables",

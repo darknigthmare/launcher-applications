@@ -16,8 +16,8 @@ manifest_path = (ROOT / args.manifest).resolve()
 out_dir = (ROOT / args.out).resolve()
 manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
 entries = manifest.get("apps", [])
-if len(entries) != 134 or len({entry.get("id") for entry in entries}) != 134:
-    raise RuntimeError("OpenAI manifest must contain 134 unique applications")
+if len(entries) != 140 or len({entry.get("id") for entry in entries}) != 140:
+    raise RuntimeError("OpenAI manifest must contain 140 unique applications")
 
 out_dir.mkdir(parents=True, exist_ok=True)
 font = ImageFont.load_default()

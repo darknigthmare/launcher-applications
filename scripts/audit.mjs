@@ -281,8 +281,8 @@ if (gameGenreMatch) {
   }
 }
 
-assert(apps.length === 134, "le catalogue contient exactement 134 applications");
-assert(apps.filter((app) => app?.category === "Jeux").length === 121, "le catalogue contient exactement 121 jeux");
+assert(apps.length === 140, "le catalogue contient exactement 140 applications");
+assert(apps.filter((app) => app?.category === "Jeux").length === 127, "le catalogue contient exactement 127 jeux");
 assert(gameGenreGroups.length === 8, "la navigation Jeux contient huit genres principaux");
 
 const starterGameIds = new Set(
@@ -488,7 +488,13 @@ const appsWithoutPreviousPresentation = new Set([
   "echo-rift",
   "ombre-geek",
   "son-of-a-legacy-forge",
-  "veilbound-les-visages-du-monde-brise"
+  "veilbound-les-visages-du-monde-brise",
+  "scp-foundation-site-director",
+  "soma-massilia",
+  "avp-hunt-hive-tcg",
+  "echobound",
+  "deadwall-last-enclosure",
+  "aziz-la-lumiere-dort"
 ]);
 for (const app of apps) {
   const entry = galleryMap[app.id];
@@ -549,7 +555,7 @@ if (previousPresentationDirectoryExists) {
     .filter((name) => rasterExtensionPattern.test(name))
     .map((name) => `${previousPresentationDirectory}/${name}`);
 }
-assert(appsWithoutPreviousPresentation.size === 22, "vingt-deux applications sans historique explicitement autorisées");
+assert(appsWithoutPreviousPresentation.size === 28, "vingt-huit applications sans historique explicitement autorisées");
 for (const id of appsWithoutPreviousPresentation) {
   assert(ids.has(id), `exception historique attribuée à une application connue: ${id}`);
 }
@@ -570,9 +576,9 @@ for (const id of Object.keys(galleryMap).filter((id) => id !== "notes")) {
 
 assert(images.size === apps.length, "un aperçu exactement par application");
 assert(presentations.size === apps.length, "une présentation exactement par application");
-assert(images.size === 134, "exactement 134 aperçus référencés");
-assert(presentations.size === 134, "exactement 134 présentations référencées");
-assert(galleryPaths.size === 670, "exactement 670 captures de galerie référencées");
+assert(images.size === 140, "exactement 140 aperçus référencés");
+assert(presentations.size === 140, "exactement 140 présentations référencées");
+assert(galleryPaths.size === 700, "exactement 700 captures de galerie référencées");
 assert(
   Object.keys(galleryMap).filter((id) => id !== "notes").length === apps.length,
   "une galerie exactement par application"
@@ -676,7 +682,7 @@ for (const asset of appShell) {
 }
 assert(appShell.includes("/assets/openai-art-manifest.json"), "le manifeste OpenAI fait partie du shell hors ligne");
 assert(appShellBytes <= 5 * 1024 * 1024, "le préchargement APP_SHELL reste inférieur à 5 Mo");
-assert(serviceWorker.includes('const CACHE_NAME = "launcher-shell-v27"'), "le cache applicatif v1.11 utilise launcher-shell-v27");
+assert(serviceWorker.includes('const CACHE_NAME = "launcher-shell-v28"'), "le cache applicatif v1.12 utilise launcher-shell-v28");
 assert(serviceWorker.includes('const RUNTIME_CACHE = "launcher-media-runtime-v1"'), "le cache média différé est versionné");
 assert(serviceWorker.includes("const MAX_RUNTIME_ENTRIES = 120"), "le cache média différé est borné");
 assert(
@@ -689,7 +695,7 @@ assert(serviceWorker.includes('response.type === "basic"'), "seules les réponse
 assert(serviceWorker.includes('isCacheableResponse(response, "text/html")'), "le fallback de navigation reste un document HTML");
 assert(serviceWorker.match(/event\.waitUntil\(updatePromise\)/g)?.length === 2, "les écritures différées prolongent les événements fetch");
 const mediaFiles = [...previewFiles, ...presentationFiles, ...previousPresentationPaths, ...galleryPaths];
-assert(mediaFiles.length === 1050, "exactement 1 050 médias référencés");
+assert(mediaFiles.length === 1092, "exactement 1 092 médias référencés");
 assert(new Set(mediaFiles).size === mediaFiles.length, "le compte total des médias ne contient aucun doublon");
 assert(
   !mediaFiles.some((asset) => serviceWorker.includes(`"/${asset}"`)),

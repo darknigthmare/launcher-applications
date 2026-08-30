@@ -2106,6 +2106,112 @@
         "baseGame": "",
         "pitch": "Change de masque, maîtrise huit formes et réunis les Sceaux du Monde Brisé."
       }
+    },
+    {
+      "id": "scp-foundation-site-director",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "codex-imagegen:thread:01a03961-40b2-7ba0-8efb-0b3d81822816:sha256:31bace73aaef656424227e1aa2170a876f0e1d60ced06ebbf21ec843c8afa311",
+      "generatedAt": "2026-08-30",
+      "asset": "assets/presentations/scp-foundation-site-director.png",
+      "sha256": "31bace73aaef656424227e1aa2170a876f0e1d60ced06ebbf21ec843c8afa311",
+      "provenanceNote": "Le résultat image_gen exposait image_url sans identifiant de génération; le thread source et le SHA-256 local forment la référence vérifiable.",
+      "promptBasis": {
+        "name": "SCP Foundation: Site Director — Deep Protocol",
+        "category": "Jeux",
+        "genre": "Gestion & simulation",
+        "baseGame": "SCP Foundation",
+        "pitch": "Bâtis la couverture, sécurise les anomalies et maintiens ton Site en vie pendant chaque crise."
+      }
+    },
+    {
+      "id": "soma-massilia",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "codex-imagegen:thread:01a03961-40b2-7ba0-8efb-0b3d81822816:sha256:4f37366f73980b4edb4237c7ef6df0cbca367bbe51dd7b2205951869ea6116d0",
+      "generatedAt": "2026-08-30",
+      "asset": "assets/presentations/soma-massilia.png",
+      "sha256": "4f37366f73980b4edb4237c7ef6df0cbca367bbe51dd7b2205951869ea6116d0",
+      "provenanceNote": "Le résultat image_gen exposait image_url sans identifiant de génération; le thread source et le SHA-256 local forment la référence vérifiable.",
+      "promptBasis": {
+        "name": "SOMA//MASSILIA — La Chair sous Licence",
+        "category": "Jeux",
+        "genre": "RPG & progression",
+        "baseGame": "",
+        "pitch": "Choisis un corps loué, signe sous contrainte et pirate la clause qui possède encore ton pouls."
+      }
+    },
+    {
+      "id": "avp-hunt-hive-tcg",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "codex-imagegen:thread:01a03961-40b2-7ba0-8efb-0b3d81822816:sha256:28ac187abecd92d84a587bb4e117801fcc0b1bcb44cfff36566d613f2454b68c",
+      "generatedAt": "2026-08-30",
+      "asset": "assets/presentations/avp-hunt-hive-tcg.png",
+      "sha256": "28ac187abecd92d84a587bb4e117801fcc0b1bcb44cfff36566d613f2454b68c",
+      "provenanceNote": "Le résultat image_gen exposait image_url sans identifiant de génération; le thread source et le SHA-256 local forment la référence vérifiable.",
+      "promptBasis": {
+        "name": "AVP: HUNT // HIVE TCG",
+        "category": "Jeux",
+        "genre": "Puzzle & cartes",
+        "baseGame": "Alien vs. Predator",
+        "pitch": "Construis ton deck, maîtrise les trois voies et impose la Ruche ou la Chasse."
+      }
+    },
+    {
+      "id": "echobound",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "codex-imagegen:thread:01a03961-40b2-7ba0-8efb-0b3d81822816:sha256:0ff7b3e3239123623ec0d6f8d436e530e9a965c9ec100d491272a315f8393455",
+      "generatedAt": "2026-08-30",
+      "asset": "assets/presentations/echobound.png",
+      "sha256": "0ff7b3e3239123623ec0d6f8d436e530e9a965c9ec100d491272a315f8393455",
+      "provenanceNote": "Le résultat image_gen exposait image_url sans identifiant de génération; le thread source et le SHA-256 local forment la référence vérifiable.",
+      "promptBasis": {
+        "name": "ECHObound — Édition Codex Professionnelle",
+        "category": "Jeux",
+        "genre": "Aventure & exploration",
+        "baseGame": "",
+        "pitch": "Réveille Nox Arca, lie-toi à une créature et rends une âme à la Cité des Échos."
+      }
+    },
+    {
+      "id": "deadwall-last-enclosure",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "codex-imagegen:thread:01a03961-40b2-7ba0-8efb-0b3d81822816:sha256:b28d8206c02fdb10d3b7db7bcf90d95549c6f072f512a40cd45c0753fb32cc2f",
+      "generatedAt": "2026-08-30",
+      "asset": "assets/presentations/deadwall-last-enclosure.png",
+      "sha256": "b28d8206c02fdb10d3b7db7bcf90d95549c6f072f512a40cd45c0753fb32cc2f",
+      "provenanceNote": "Le résultat image_gen exposait image_url sans identifiant de génération; le thread source et le SHA-256 local forment la référence vérifiable.",
+      "promptBasis": {
+        "name": "DEADWALL — La Dernière Enceinte",
+        "category": "Jeux",
+        "genre": "Gestion & simulation",
+        "baseGame": "",
+        "pitch": "Récolte, industrialise et transforme la dernière enceinte en mégacité imprenable."
+      }
+    },
+    {
+      "id": "aziz-la-lumiere-dort",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "codex-imagegen:thread:01a03961-40b2-7ba0-8efb-0b3d81822816:sha256:6f17f1f8470ea85d050ed6166083e1edf9a700d19c55d8029ea7a67bb5794869",
+      "generatedAt": "2026-08-30",
+      "asset": "assets/presentations/aziz-la-lumiere-dort.png",
+      "sha256": "6f17f1f8470ea85d050ed6166083e1edf9a700d19c55d8029ea7a67bb5794869",
+      "provenanceNote": "Le résultat image_gen exposait image_url sans identifiant de génération; le thread source et le SHA-256 local forment la référence vérifiable.",
+      "sourceConversation": "6a836e8a-1dd4-83eb-869f-a9c75777e85e",
+      "sourceMessage": "68c70402-083a-474c-a913-8646cac6db7d",
+      "announcedArchiveSha256": "6f4c4362c5565d47d71fa380d439fcdb671f08fb4490c1d3b312f420938f2a7e",
+      "sourceRecovery": "L’archive annoncée était absente du cache; la reconstruction est documentée dans le dépôt du jeu.",
+      "promptBasis": {
+        "name": "AZIZ — LA LUMIÈRE DORT",
+        "category": "Jeux",
+        "genre": "Survie & horreur",
+        "baseGame": "",
+        "pitch": "Sous Gizeh, maintiens le grand projecteur allumé avant que les fresques ne libèrent leurs ombres."
+      }
     }
   ]
 }
