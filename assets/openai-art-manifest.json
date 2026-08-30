@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "provider": "OpenAI",
   "generator": "image_gen",
-  "generatedAt": "2026-08-26",
+  "generatedAt": "2026-08-28",
   "policy": "One dedicated OpenAI presentation artwork per launcher application.",
   "apps": [
     {
@@ -2041,6 +2041,70 @@
         "genre": "Aventure & exploration",
         "baseGame": "",
         "pitch": "Équipe huit outils, explore trois régions et révèle le trésor de PIP."
+      }
+    },
+    {
+      "id": "echo-rift",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-add7e1f9-4804-47f7-9706-265c9184d21e",
+      "generatedAt": "2026-08-28",
+      "asset": "assets/presentations/echo-rift.png",
+      "sha256": "8d8c1744a04a4372606c6c846e57ffc4f1bf6d1e4baaa1d8fa16104e78a6c81b",
+      "promptBasis": {
+        "name": "ECHO RIFT",
+        "category": "Jeux",
+        "genre": "Rythme & arcade",
+        "baseGame": "",
+        "pitch": "Reconnais les échos, traverse la faille et sauve les cinq secteurs de l’Archive."
+      }
+    },
+    {
+      "id": "ombre-geek",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-6844eef9-69c4-4490-b0ce-7cef4395a6a3",
+      "generatedAt": "2026-08-28",
+      "asset": "assets/presentations/ombre-geek.png",
+      "sha256": "64add474ecc0f713e6cf10c089febd1c04119cf6017613657fca3f92170d3b1a",
+      "promptBasis": {
+        "name": "OMBRE//GEEK",
+        "category": "Jeux",
+        "genre": "Puzzle & cartes",
+        "baseGame": "",
+        "pitch": "Déchiffre les silhouettes, complète ta collection et domine les six modes de jeu."
+      }
+    },
+    {
+      "id": "son-of-a-legacy-forge",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-2b5a9ef7-220f-4c95-ad58-514deafbd5aa",
+      "generatedAt": "2026-08-28",
+      "asset": "assets/presentations/son-of-a-legacy-forge.png",
+      "sha256": "8524b85267b2867f7045143d53e71203dd58fc16fdb358086a6ba66b32068cfe",
+      "promptBasis": {
+        "name": "SON OF A…! — Legacy Forge",
+        "category": "Jeux",
+        "genre": "RPG & progression",
+        "baseGame": "",
+        "pitch": "Fusionne deux lignées, forge leur héritier et bâtis une dynastie à travers les Fractures."
+      }
+    },
+    {
+      "id": "veilbound-les-visages-du-monde-brise",
+      "provider": "OpenAI",
+      "generator": "image_gen",
+      "generationRef": "exec-a72d94a8-9cfc-40c6-bbeb-2c75c837750f",
+      "generatedAt": "2026-08-28",
+      "asset": "assets/presentations/veilbound-les-visages-du-monde-brise.png",
+      "sha256": "3991c7143633a23a54805e201db37ff3ecf1bc600733e5f29bfbdfda764deaa7",
+      "promptBasis": {
+        "name": "VEILBOUND — Les Visages du Monde Brisé",
+        "category": "Jeux",
+        "genre": "Aventure & exploration",
+        "baseGame": "",
+        "pitch": "Change de masque, maîtrise huit formes et réunis les Sceaux du Monde Brisé."
       }
     }
   ]

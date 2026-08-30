@@ -1,5 +1,19 @@
 window.LAUNCHER_RELEASES = [
   {
+    version: "1.11.0",
+    date: "2026-08-30",
+    title: "Quatre archives deviennent quatre mondes jouables",
+    highlights: [
+      "ECHO RIFT, OMBRE//GEEK, SON OF A…! — Legacy Forge et VEILBOUND disposent chacun de leur dépôt GitHub et de leur production Vercel vérifiée.",
+      "Chaque jeu reçoit une présentation OpenAI traçable, un aperçu et cinq captures issues du vrai jeu.",
+      "Le catalogue atteint 134 applications, dont 121 jeux, et 1 050 médias uniques."
+    ],
+    appIds: [
+      "echo-rift", "ombre-geek", "son-of-a-legacy-forge",
+      "veilbound-les-visages-du-monde-brise"
+    ]
+  },
+  {
     version: "1.10.0",
     date: "2026-08-26",
     title: "Quatre créations retrouvent leur vitrine",

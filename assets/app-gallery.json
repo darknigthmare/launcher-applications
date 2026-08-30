@@ -1285,5 +1285,41 @@
       "assets/screenshots/pip-le-tresor-des-huit-pattes/04.webp",
       "assets/screenshots/pip-le-tresor-des-huit-pattes/05.webp"
     ]
+  },
+  "echo-rift": {
+    "images": [
+      "assets/screenshots/echo-rift/01.png",
+      "assets/screenshots/echo-rift/02.png",
+      "assets/screenshots/echo-rift/03.png",
+      "assets/screenshots/echo-rift/04.png",
+      "assets/screenshots/echo-rift/05.png"
+    ]
+  },
+  "ombre-geek": {
+    "images": [
+      "assets/screenshots/ombre-geek/01.png",
+      "assets/screenshots/ombre-geek/02.png",
+      "assets/screenshots/ombre-geek/03.png",
+      "assets/screenshots/ombre-geek/04.png",
+      "assets/screenshots/ombre-geek/05.png"
+    ]
+  },
+  "son-of-a-legacy-forge": {
+    "images": [
+      "assets/screenshots/son-of-a-legacy-forge/01.png",
+      "assets/screenshots/son-of-a-legacy-forge/02.png",
+      "assets/screenshots/son-of-a-legacy-forge/03.png",
+      "assets/screenshots/son-of-a-legacy-forge/04.png",
+      "assets/screenshots/son-of-a-legacy-forge/05.png"
+    ]
+  },
+  "veilbound-les-visages-du-monde-brise": {
+    "images": [
+      "assets/screenshots/veilbound-les-visages-du-monde-brise/01.png",
+      "assets/screenshots/veilbound-les-visages-du-monde-brise/02.png",
+      "assets/screenshots/veilbound-les-visages-du-monde-brise/03.png",
+      "assets/screenshots/veilbound-les-visages-du-monde-brise/04.png",
+      "assets/screenshots/veilbound-les-visages-du-monde-brise/05.png"
+    ]
   }
 }

@@ -2,9 +2,20 @@
 
 Launcher personnel statique qui réunit les applications, jeux et outils publiés sur Vercel.
 
-Le catalogue public contient **130 applications**, dont **117 jeux**.
+Le catalogue public contient **134 applications**, dont **121 jeux**.
 
 Version publique : [launcher-applications.vercel.app](https://launcher-applications.vercel.app/)
+
+## Version 1.11 — Quatre archives deviennent quatre mondes jouables
+
+ECHO RIFT, OMBRE//GEEK, SON OF A…! — Legacy Forge et VEILBOUND — Les Visages du Monde Brisé rejoignent le launcher après leur séparation en dépôts GitHub et productions Vercel dédiés.
+
+Chaque fiche réunit une présentation originale générée par OpenAI avec sa provenance vérifiable, un aperçu et cinq captures du vrai jeu. Les liens publics ont été contrôlés individuellement, notamment les alias spécifiques d’Echo Rift et de Veilbound.
+
+Le launcher compte désormais **134 applications**, **121 jeux**, **134 aperçus**, **134 présentations OpenAI**, **670 captures de galerie** et **1 050 médias uniques** au total.
+
+---
+
 
 ## Version 1.10 — Quatre créations retrouvent leur vitrine
 
@@ -74,7 +85,7 @@ Puis ouvrir `http://127.0.0.1:8000`.
 
     npm test
 
-L’audit valide la syntaxe, les identifiants et URL, la taxonomie, les états de publication, les dates d’ajout, le journal SemVer, tous les aperçus et présentations, les 112 illustrations précédentes, les galeries (au moins cinq vues), les icônes, le manifeste, le service worker et le contrat de synchronisation. Il contrôle aussi que chaque ancien visuel est unique, lisible et différent de la présentation OpenAI active, que les dix-huit applications créées sans illustration antérieure sont explicitement identifiées, que le compte média est cohérent et que le shell PWA reste inférieur à 5 Mo.
+L’audit valide la syntaxe, les identifiants et URL, la taxonomie, les états de publication, les dates d’ajout, le journal SemVer, tous les aperçus et présentations, les 112 illustrations précédentes, les galeries (au moins cinq vues), les icônes, le manifeste, le service worker et le contrat de synchronisation. Il contrôle aussi que chaque ancien visuel est unique, lisible et différent de la présentation OpenAI active, que les vingt-deux applications créées sans illustration antérieure sont explicitement identifiées, que le compte média est cohérent et que le shell PWA reste inférieur à 5 Mo.
 
 Pour simuler la détection sans écrire :
 
