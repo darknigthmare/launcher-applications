@@ -212,7 +212,7 @@
       "screenshotFreshness": "up-to-date",
       "captureVerifiedAt": "2026-11-01T11:38:51.485Z",
       "reviewer": null,
-      "notes": "Cinq interfaces réelles 3.10.0 : accueil, Codec, moteur Side Ops/Phaser, campagne et CQC Versus embarqué. Aucune sauvegarde fabriquée. Un aperçu du Codec remplace l'ancien. L'illustration conceptuelle reste hors galerie publique dans l'attente d'une revue 1:1.",
+      "notes": "Cinq vues réelles Shadow Codec 3.10 : accueil, transmission Codec, panneau de missions Side Ops (pas un combat simulé), Campaign Ops et CQC Versus intégré. Le moteur Phaser est chargé mais son rendu headless était sombre. Original intégral archivé; fidélité des affiches non certifiée.",
       "screenshotCaptureProof": "docs/media-proof/shadow-codec-3100-modules-2026-11-01.json"
     },
     {

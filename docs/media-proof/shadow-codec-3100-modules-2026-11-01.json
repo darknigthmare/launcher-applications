@@ -82,26 +82,23 @@
     {
       "slot": 3,
       "module": "sideops",
-      "label": "Side Ops — véritable mission Phaser latérale",
-      "kind": "real-sideops-engine",
+      "label": "Side Ops — opérations, infiltration et briefings",
+      "kind": "native-sideops-operations",
       "path": "assets/screenshots/shadow-codec-ops/03.png",
-      "sha256": "e35ff68e7e87530cea4cc0abc6412f89a493c4e76a36c50fcdf6a0a120d342af",
-      "bytes": 82180,
+      "bytes": 196106,
+      "sha256": "c9b42493021b2dac4a80768fa97dae5d197ea825c47496d906d0ca3b7d220c72",
       "appState": {
         "route": "sideops",
         "version": "3.10.0",
-        "heading": "Shadow Moses Operation",
-        "htmlLength": 10409,
-        "bodyTextLength": 118,
-        "hasError": false,
-        "title": "Shadow Codec Ops",
-        "canvasVisible": true,
+        "versionEvidence": "existing source/deployment proof; Side Ops view has no BUILD label",
+        "operationsVisible": true,
+        "missions": 31,
+        "missionCanvasBooted": true,
         "canvasWidth": 960,
-        "canvasHeight": 540,
-        "cqcLoaded": false,
-        "cqcCanvas": false,
-        "cqcTitle": null
-      }
+        "canvasHeight": 540
+      },
+      "visualReview": "La vue précédente de canvas sombre a été remplacée par le tableau d'opérations effectivement ouvert.",
+      "sourceRoute": "https://shadow-codec-ops.vercel.app/?module=sideops"
     },
     {
       "slot": 4,
@@ -155,6 +152,9 @@
   "limitations": [
     "Five native views including CQC iframe, not proof of completing each operation or the full CQC campaign",
     "Software WebGL screenshots do not measure actual GPU performance",
-    "Source and deployment versions verified by runtime build label; art fidelity 1:1 needs separate review"
-  ]
+    "Source and deployment versions verified by runtime build label; art fidelity 1:1 needs separate review",
+    "La troisième vue est le tableau natif des opérations. Le rendu du niveau Side Ops en mode headless apparaissait presque vide : aucun faux combat n'a été publié."
+  ],
+  "sideOpsGameplayCaptured": false,
+  "sideOpsEngineLoaded": true
 }
