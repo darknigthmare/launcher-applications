@@ -10,16 +10,18 @@ Un titre de page HTML et un HTTP 200 prouvent l'identité de l'application servi
 
 | ID | Jeu | Accès | Captures validées dans cette vague |
 | --- | --- | --- | --- |
-| `mass-effect-relay-chronicles` | Mass Effect — Relay Chronicles | https://masseffectrelaychronicles.vercel.app/ | En attente de capture native |
+| `mass-effect-relay-chronicles` | Mass Effect — Relay Chronicles | https://masseffectrelaychronicles.vercel.app/ | Cinq vues réelles : création, personnalisation, dialogue Anderson, Normandy 2D/3D et équipement ([preuve](media-proof/mass-effect-relay-native-2026-11-01.json)). Rendu réel, **pas canon 1:1 certifié** |
 | `resident-evil-bow-protocol` | Resident Evil — B.O.W. Protocol | https://resident-evil-bow-protocol.vercel.app/ | Écran d’entrée + cinq vues de menu R20 vérifiées ([preuves](media-proof/resident-evil-bow-r20-2026-11-01.json)) ; **pas une capture de combat** |
 | `digital-circus-encore` | Digital Circus — Encore | https://digital-circus-encore.vercel.app/ | En attente de capture native ; distinct de l'interface CainOS |
-| `yugioh-25d-holograms` | Yu-Gi-Oh! 2.5D Hologram Duel | https://yugioh-25d-holograms.vercel.app/ | En attente de capture native |
+| `yugioh-25d-holograms` | Yu-Gi-Oh! 2.5D Hologram Duel | https://yugioh-25d-holograms.vercel.app/ | Cinq vues vérifiées du simulateur : deck, solo, Atlas, duel compact et Vue Réelle ([preuve](media-proof/yugioh-hologram-native-2026-11-01.json)). **Aucune certification des modèles 1:1** |
 | `riftcasters-3d` | Riftcasters 3D — Convergence | https://riftcasters-3d.vercel.app/ | En attente de capture WebGL ; arena-survivor autonome |
 | `riftcasters-chaos-anglers` | Riftcasters 3D — Modern Skies | https://riftcasters-chaos-anglers.vercel.app/ | En attente ; K-13 et Greywater, **distinct** de Convergence |
 | `reclaimed-after-dark` | Reclaimed: After Dark | https://reclaimed-after-dark.vercel.app/ | En attente de capture native |
 | `deadline-outbreak` | DEADLINE: Outbreak | https://deadline-outbreak.vercel.app/ | **Écran titre, aperçu + cinq images natives vérifiées** — [preuve](media-proof/deadline-outbreak-native-2026-11-01.json) |
 | `ragtime-rumble-complete-tour` | Ragtime Rumble — Complete Tour | https://ragtime-rumble-complete-tour.vercel.app/ | En attente ; distinct de l'édition historique Ragtime Rumble |
 | `silent-hill-halo-of-flesh` | Silent Hill: Halo of Flesh | https://silent-hill-halo-of-flesh-darknigthmares-projects.vercel.app/ | En attente ; dernier déploiement `ERROR`, publication antérieure accessible |
+
+La revue native des médias du 1er novembre a validé plusieurs jeux réellement joués au lieu de leur inventer des images promotionnelles : Mass Effect et Yu-Gi-Oh! sont désormais illustrés par leurs propres rendus. Les autres fiches sans images restent strictement sans capture publique validée.
 
 Le relevé HTTP et les titres de ces pages ont été testés dans les [exécutions GitHub Actions de découverte](https://github.com/darknigthmare/launcher-applications/actions/workflows/verify-missing-games.yml) ; les fiches ne promettent pas d'interactions non vérifiées.
 
