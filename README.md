@@ -6,6 +6,22 @@ Le catalogue public contient **140 applications**, dont **127 jeux**.
 
 Version publique : [launcher-applications.vercel.app](https://launcher-applications.vercel.app/)
 
+## Version 1.13 — Actualisation des fiches et séparation des archives (1er novembre 2026)
+
+Cette mise à jour conserve les **140 fiches existantes** et leur historique. Trois URL qui n'apparaissent pas dans la liste des domaines de leur projet Vercel sont remplacées par des alias stables officiellement attachés aux projets. Onze descriptions et accroches gagnent en précision diégétique d'après leurs sources GitHub.
+
+Les **112 illustrations précédentes** ne sont plus chargées ni listées par les galeries publiques : `assets/app-gallery.json` ne conserve que les captures et `assets/app-gallery-admin.json` indexe les anciens visuels, consultables depuis le mode édition local. **Attention : le mode édition n'est pas authentifié, et les fichiers ainsi que le dépôt demeurent publics.** Une véritable exclusivité administrateur nécessitera une authentification et un stockage privé des originaux.
+
+Les 700 captures déjà répertoriées ne sont pas déclarées nouvelles : leur actualisation nécessite une capture réelle des builds et une revue visuelle, documentées dans [l'audit du 1er novembre](docs/LAUNCHER_FIDELITY_AUDIT_2026-11-01.md). Les illustrations de remplacement ne doivent pas être marquées « fidèles 1:1 » sans comparaison vérifiable.
+
+Pour contrôler les **140 URL publiques** sans modifier les alias à l'aveugle :
+
+    npm run links:check
+
+Le contrôle HTTP est également prévu quotidiennement via GitHub Actions et conserve un rapport en artefact. Il ne certifie pas à lui seul que le lien pointe sur le dernier contenu fonctionnel.
+
+---
+
 ## Version 1.12 — Six créations sortent des archives
 
 SCP Foundation: Site Director — Deep Protocol, SOMA//MASSILIA, AVP: HUNT // HIVE TCG, ECHObound, DEADWALL et AZIZ — LA LUMIÈRE DORT rejoignent le launcher après leur séparation en dépôts GitHub et productions Vercel dédiés.
@@ -135,7 +151,7 @@ Le fichier `assets/upcoming-games.json` fournit également des valeurs par défa
 2. Renseigner `releaseState` (`upcoming` ou `published`) et `addedAt` au format ISO. Une entrée `published` doit avoir un lien ; une entrée `upcoming` ne doit pas en inventer.
 3. Pour un jeu, renseigner `gameKind`, l’un des huit `genre` et, pour un fan-game, `baseGame`.
 4. Générer une présentation dédiée avec OpenAI `image_gen`, la placer sous `assets/presentations/`, puis enregistrer sa provenance et son SHA-256 dans `assets/openai-art-manifest.json`. Ajouter aussi un aperçu distinct sous `assets/previews/`.
-5. Ajouter au moins cinq vues sous `assets/screenshots/<id>/` et les référencer dans `assets/app-gallery.json`. Si l’application remplace une présentation existante, déplacer l’ancien visuel sous `assets/presentations/previous/` et renseigner `previousPresentation` dans l’objet de galerie, à côté de `images`.
+5. Ajouter au moins cinq vues sous `assets/screenshots/<id>/` et les référencer dans `assets/app-gallery-admin.json`. Si l’application remplace une présentation existante, déplacer l’ancien visuel sous `assets/presentations/previous/` et renseigner `previousPresentation` dans l’objet de galerie, à côté de `images`.
 6. Ajouter le symbole `icon-<id>` dans `assets/app-icons.svg`.
 7. Ajouter la version correspondante à `assets/catalogue-updates.js`, dans l’ordre décroissant des dates.
 8. Incrémenter `CACHE_NAME` dans `sw.js` si le shell change, puis exécuter `npm test` et vérifier le rendu desktop/mobile.
