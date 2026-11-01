@@ -86,8 +86,8 @@
       "label": "Encore — affrontement réel en entraînement",
       "kind": "real-2d-fight",
       "path": "assets/screenshots/cainos/05.png",
-      "sha256": "2e1e23bfcf85e9cfefee8244c22822dfe711361ac9738ca3004b1cc9a6751a44",
-      "bytes": 84931,
+      "sha256": "fdf1ade2c0007164ae1380fd2a949caad10b5cb716dabf0d1e986930f23520cd",
+      "bytes": 292586,
       "appState": {
         "valid": true,
         "mode": "fight",
@@ -97,12 +97,36 @@
           "pomni",
           "jax"
         ]
+      },
+      "visualReview": "arena-framed",
+      "visualEvidence": {
+        "gameScreen": "fight",
+        "phase": "fight",
+        "frame": 58,
+        "fighters": [
+          "pomni",
+          "jax"
+        ],
+        "canvas": {
+          "width": 1280,
+          "height": 720
+        },
+        "bounds": {
+          "top": 115,
+          "bottom": 604.984375,
+          "left": 204.4375,
+          "right": 1075.546875,
+          "height": 489.984375
+        },
+        "samples": 2304,
+        "colors": 138
       }
     }
   ],
   "limitations": [
     "Only one training fight started and rendered, not certification of all nine modes",
     "Game art is source-native but not 1:1 canonical proof",
-    "CainOS first-use calibration uses a fresh temporary browser profile"
+    "CainOS first-use calibration uses a fresh temporary browser profile",
+    "The camera is centered on the actual game arena; the training laboratory below the arena is not the primary image."
   ]
 }
