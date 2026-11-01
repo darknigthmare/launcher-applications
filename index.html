@@ -3177,6 +3177,28 @@
       }
     }
 
+
+    // Archives are never loaded by the public gallery.
+    // This is UI separation, not authentication: the static assets are public.
+    async function loadAdminArchives() {
+      if (!adminMode) return;
+      try {
+        const response = await fetch("assets/app-gallery-admin.json", { cache: "no-cache" });
+        if (!response.ok) throw new Error("Archives indisponibles");
+        const data = await response.json();
+        const archive = data.previousPresentations || {};
+        if (!adminMode) return;
+        apps = apps.map((app) => normalizeApp({
+          ...app,
+          previousPresentation: sanitizeImageUrl(archive[app.id])
+        }));
+        mediaViewById.clear();
+        renderGrid();
+      } catch (error) {
+        console.warn("Archives visuelles non chargées:", error);
+      }
+    }
+
     async function loadAppGallery() {
       try {
         const response = await fetch("assets/app-gallery.json", { cache: "no-cache" });
@@ -3190,12 +3212,11 @@
           const rawImages = Array.isArray(entry) ? entry : entry?.images;
           if (!Array.isArray(rawImages)) return app;
           const gallery = [...new Set(rawImages.map(sanitizeImageUrl).filter(Boolean))].slice(0, 10);
-          const previousPresentation = Array.isArray(entry)
-            ? ""
-            : sanitizeImageUrl(entry?.previousPresentation);
-          return normalizeApp({ ...app, previousPresentation, gallery });
+          // The public gallery is deliberately free of archival artwork.
+          return normalizeApp({ ...app, previousPresentation: "", gallery });
         });
         renderGrid();
+        if (adminMode) await loadAdminArchives();
       } catch (error) {
         console.warn("Galeries supplémentaires indisponibles:", error);
       }
@@ -3423,9 +3444,13 @@
     document.getElementById("adminButton").addEventListener("click", (event) => {
       adminMode = !adminMode;
       mediaViewById.clear();
+      if (!adminMode) {
+        apps = apps.map((app) => normalizeApp({ ...app, previousPresentation: "" }));
+      }
       event.currentTarget.textContent = adminMode ? "Quitter l'édition" : "Mode édition";
       event.currentTarget.setAttribute("aria-pressed", String(adminMode));
       render();
+      if (adminMode) void loadAdminArchives();
     });
 
     document.getElementById("resetButton").addEventListener("click", () => {
