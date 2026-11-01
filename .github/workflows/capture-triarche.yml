@@ -1,0 +1,62 @@
+name: Launcher — recapture native TRIARCHE (5 scènes)
+
+on:
+  pull_request:
+    paths:
+      - "scripts/capture-triarche.mjs"
+      - ".github/workflows/capture-triarche.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: launcher-triarche-capture
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'codex/launcher-links-media-fidelity-20261101'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Récupérer la branche candidate
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 1
+      - name: Configurer Node 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Vérifier le script de capture
+        run: node --check scripts/capture-triarche.mjs
+      - name: Capturer cinq vraies scènes depuis la production du jeu
+        run: node scripts/capture-triarche.mjs
+      - name: Vérifier la cohérence du catalogue après recapture
+        run: npm test
+      - name: Conserver les preuves visuelles
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: triarch-gameplay-${{ github.run_number }}
+          path: |
+            docs/media-proof/triarch-gameplay-2026-11-01.json
+            assets/screenshots/triarche-ciel-rouge/*.png
+            assets/previews/triarche-ciel-rouge.jpg
+          if-no-files-found: warn
+      - name: Ajouter les captures natives et les archives à la PR
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/screenshots/triarche-ciel-rouge assets/screenshots/previous/triarche-ciel-rouge \
+            assets/previews/triarche-ciel-rouge.jpg assets/previews/previous/triarche-ciel-rouge.jpg \
+            assets/app-gallery-admin.json docs/media-proof/triarch-gameplay-2026-11-01.json \
+            docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json
+          if git diff --cached --quiet; then
+            echo "Captures déjà à jour."
+            exit 0
+          fi
+          git commit -m "media(triarche): replace menu-only gallery with live gameplay evidence"
+          git push origin "HEAD:${{ github.event.pull_request.head.ref }}"
