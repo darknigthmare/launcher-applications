@@ -2822,7 +2822,8 @@
       "reviewer": null,
       "accessPolicy": "local-download",
       "notes": "Capture native du véritable HTML 0.44.2 (5 PNG et aperçu JPEG) : menu campagnes, préparation et trois scènes de combat. Pas de production Vercel inventée, aucune fidélité inter-franchise 1:1 présumée.",
-      "screenshotCaptureProof": "docs/media-proof/derniere-ligne-local-0442-2026-11-01.json"
+      "screenshotCaptureProof": "docs/media-proof/derniere-ligne-local-0442-2026-11-01.json",
+      "mediaPendingReview": false
     },
     {
       "id": "fallout-marseille-mistral",
