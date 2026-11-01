@@ -54,6 +54,15 @@ for (const [id,url] of bundles) {
       console.log("AUGUST_DETAIL "+JSON.stringify({id,term,selected,detail}));
     }
   }
+  if(id==="august-2-restored-collection") {
+    const links=[["soleil","DON’T LOOK WHEN THEY SAY"],["maid-cafe","Maid Café Simulator Deluxe"]];
+    for(const [anchor,expected] of links){
+      await browser.call("Page.navigate",{url:url+"#"+anchor});
+      await browser.sleep(900);
+      const loaded=await browser.evaluate("({href:location.href,title:document.querySelector('#title')?.textContent?.trim()||'',text:document.body.innerText.slice(-250)})");
+      console.log("AUGUST_DEEPLINK "+JSON.stringify({anchor,expected,...loaded,valid:loaded.title.includes(expected)}));
+    }
+  }
   console.log("AUGUST_BUNDLE "+JSON.stringify({id,url,sourceTitle,htmlLength:body.length,pageTitle:evidence.title,headingCount:evidence.headings.length,cardCount:evidence.candidateCards.length,firstCards:evidence.candidateCards.slice(0,35),headings:evidence.headings.slice(0,15),links:evidence.links.slice(0,15),bodyStart:evidence.bodyText.slice(0,700)}));
  }catch(error){console.log("AUGUST_BUNDLE_ERROR "+JSON.stringify({id,url,error:String(error?.message||error)}));}
  finally{if(browser)await browser.close().catch(()=>{});}
