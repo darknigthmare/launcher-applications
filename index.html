@@ -848,6 +848,15 @@
       gap: 14px;
     }
 
+    .capture-proof {
+      color: var(--muted);
+      font-size: 0.77rem;
+      line-height: 1.4;
+      padding: 9px 12px;
+      border: 1px solid var(--line);
+      border-top: 0;
+    }
+
     .admin-only {
       display: none;
     }
@@ -2203,6 +2212,10 @@
       const tags = [...new Set(rawTags.map((tag) => String(tag).trim()).filter(Boolean))].slice(0, 10);
       const rawGallery = Array.isArray(source.gallery) ? source.gallery : (Array.isArray(fallback.gallery) ? fallback.gallery : []);
       const gallery = [...new Set(rawGallery.map(sanitizeImageUrl).filter(Boolean))].slice(0, 10);
+      const galleryLabels = (Array.isArray(source.galleryLabels) ? source.galleryLabels : [])
+        .map((label) => String(label || "").trim().slice(0, 90)).slice(0, 10);
+      const previousScreenshots = (Array.isArray(source.previousScreenshots) ? source.previousScreenshots : [])
+        .map(sanitizeImageUrl).filter(Boolean).slice(0, 10);
       const name = String(source.name || fallback.name || "Application").trim().slice(0, 80);
       const link = sanitizeLaunchUrl(source.link || fallback.link);
       const status = String(source.status || fallback.status || "").trim().slice(0, 40);
@@ -2233,8 +2246,15 @@
         link,
         presentation: sanitizeImageUrl(source.presentation || fallback.presentation || source.image || fallback.image),
         previousPresentation: sanitizeImageUrl(source.previousPresentation || fallback.previousPresentation),
+        previousPreview: sanitizeImageUrl(source.previousPreview || fallback.previousPreview),
+        previousScreenshots,
         image: sanitizeImageUrl(source.image || fallback.image),
         gallery,
+        galleryLabels,
+        captureType: String(source.captureType || "").trim().slice(0, 40),
+        captureVersion: String(source.captureVersion || "").trim().slice(0, 40),
+        captureDate: String(source.captureDate || "").trim().slice(0, 20),
+        presentationReview: String(source.presentationReview || "").trim().slice(0, 40),
         accent: sanitizeAccent(source.accent || fallback.accent),
         status,
         releaseState,
@@ -2276,9 +2296,14 @@
       const loaded = saved
         .filter((app) => app && typeof app === "object")
         .map((savedApp) => {
-          const starter = starterById.get(String(savedApp.id));
-          if (!starter) return normalizeApp(savedApp);
-          const synchronized = { ...savedApp };
+          // Never trust archived URLs from an older localStorage catalogue.
+          const clean = { ...savedApp };
+          delete clean.previousPresentation;
+          delete clean.previousPreview;
+          delete clean.previousScreenshots;
+          const starter = starterById.get(String(clean.id));
+          if (!starter) return normalizeApp(clean);
+          const synchronized = { ...clean };
           OFFICIAL_SYNC_FIELDS.forEach((field) => {
             synchronized[field] = starter[field] ?? "";
           });
@@ -2299,7 +2324,8 @@
     }
 
     function saveApps() {
-      safeWrite(storeKey, apps);
+      // Editor-only archive paths must not be cached in the public catalogue state.
+      safeWrite(storeKey, apps.map(({ previousPresentation, previousPreview, previousScreenshots, ...app }) => app));
     }
 
     function saveFavorites() {
@@ -2856,6 +2882,9 @@
             </div>
           ` : ""}
         </div>
+        ${app.captureType === "real-gameplay" && app.captureVersion && app.captureDate
+          ? `<p class="capture-proof">Images prises dans le jeu · version ${escapeHtml(app.captureVersion)} · ${escapeHtml(app.captureDate)}</p>`
+          : ""}
         <div class="tag-row">
           <span class="tag">${escapeHtml(app.category)}</span>
           ${isNewApp(app) ? '<span class="tag new-tag">Nouveau</span>' : ""}
@@ -2976,14 +3005,29 @@
 
     function mediaTargets(app) {
       const targets = [
-        { label: "Illustration officielle", url: sanitizeImageUrl(app.presentation) },
+        ...(app.presentationReview !== "pending-fidelity" ? [{
+          label: "Illustration conceptuelle",
+          url: sanitizeImageUrl(app.presentation)
+        }] : []),
+        { label: app.captureType === "real-gameplay" ? "Aperçu du jeu réel" : "Aperçu", url: sanitizeImageUrl(app.image) },
+        ...(Array.isArray(app.gallery) ? app.gallery.map((url, index) => ({
+          label: app.galleryLabels?.[index] || `Capture ${index + 1}`,
+          url: sanitizeImageUrl(url)
+        })) : []),
+        ...(adminMode && app.presentationReview === "pending-fidelity" ? [{
+          label: "Concept en attente de fidélité · archive",
+          url: sanitizeImageUrl(app.presentation)
+        }] : []),
         ...(adminMode && app.previousPresentation ? [{
-          label: "Archive visuelle · mode édition",
+          label: "Ancienne illustration · archive",
           url: sanitizeImageUrl(app.previousPresentation)
         }] : []),
-        { label: "Aperçu", url: sanitizeImageUrl(app.image) },
-        ...(Array.isArray(app.gallery) ? app.gallery.map((url, index) => ({
-          label: `Capture ${index + 1}`,
+        ...(adminMode && app.previousPreview ? [{
+          label: "Ancien aperçu · archive",
+          url: sanitizeImageUrl(app.previousPreview)
+        }] : []),
+        ...(adminMode && Array.isArray(app.previousScreenshots) ? app.previousScreenshots.map((url, index) => ({
+          label: `Ancienne capture ${index + 1} · archive`,
           url: sanitizeImageUrl(url)
         })) : [])
       ];
@@ -3187,10 +3231,14 @@
         if (!response.ok) throw new Error("Archives indisponibles");
         const data = await response.json();
         const archive = data.previousPresentations || {};
+        const previewHistory = data.previousPreviews || {};
+        const screenshotHistory = data.previousScreenshots || {};
         if (!adminMode) return;
         apps = apps.map((app) => normalizeApp({
           ...app,
-          previousPresentation: sanitizeImageUrl(archive[app.id])
+          previousPresentation: sanitizeImageUrl(archive[app.id]),
+          previousPreview: sanitizeImageUrl(previewHistory[app.id]),
+          previousScreenshots: Array.isArray(screenshotHistory[app.id]) ? screenshotHistory[app.id] : []
         }));
         mediaViewById.clear();
         renderGrid();
@@ -3213,7 +3261,16 @@
           if (!Array.isArray(rawImages)) return app;
           const gallery = [...new Set(rawImages.map(sanitizeImageUrl).filter(Boolean))].slice(0, 10);
           // The public gallery is deliberately free of archival artwork.
-          return normalizeApp({ ...app, previousPresentation: "", gallery });
+          return normalizeApp({
+            ...app,
+            previousPresentation: "", previousPreview: "", previousScreenshots: [],
+            gallery,
+            galleryLabels: Array.isArray(entry?.labels) ? entry.labels : [],
+            captureType: String(entry?.captureType || ""),
+            captureVersion: String(entry?.captureVersion || ""),
+            captureDate: String(entry?.captureDate || ""),
+            presentationReview: String(entry?.presentationReview || "")
+          });
         });
         renderGrid();
         if (adminMode) await loadAdminArchives();
@@ -3445,7 +3502,9 @@
       adminMode = !adminMode;
       mediaViewById.clear();
       if (!adminMode) {
-        apps = apps.map((app) => normalizeApp({ ...app, previousPresentation: "" }));
+        apps = apps.map((app) => normalizeApp({
+          ...app, previousPresentation: "", previousPreview: "", previousScreenshots: []
+        }));
       }
       event.currentTarget.textContent = adminMode ? "Quitter l'édition" : "Mode édition";
       event.currentTarget.setAttribute("aria-pressed", String(adminMode));
