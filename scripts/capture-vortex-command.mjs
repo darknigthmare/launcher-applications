@@ -56,7 +56,13 @@ async function take(i,label,panel) {
   return bytes;
 }
 try {
-  await b.waitFor("Boolean(window.vortexCommand && window.vortexCommand.state && document.getElementById('start-button'))");
+  try {
+    await b.waitFor("Boolean(window.vortexCommand && window.vortexCommand.state && document.getElementById('start-button'))",10000);
+  } catch(error) {
+    const diagnostic=await b.evaluate("({title:document.title,href:location.href,body:document.body?.innerText?.slice(0,650),hasStart:!!document.getElementById('start-button'),scripts:[...document.scripts].map(x=>x.src).slice(0,8),ready:document.readyState})");
+    console.error("VORTEX PUBLIC ALIAS CONTENT CHECK "+JSON.stringify(diagnostic));
+    throw new Error("Stable alias does not serve a verified playable Vortex game: "+JSON.stringify(diagnostic));
+  }
   const main=await b.evaluate("({title:document.title,build:document.querySelector('#start-screen .start-header')?.textContent||'',systems:[...vortexCommand.systems.keys()],canvasWidth:vortexCommand.canvas.width,canvasHeight:vortexCommand.canvas.height})");
   if(!main.title.includes("Vortex Command")||!main.build.includes("BUILD 1.0")||main.systems.length<10) {
     throw Error("Unverified or incompatible deployed Vortex build "+JSON.stringify(main));
