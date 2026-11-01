@@ -2652,7 +2652,7 @@
       "mediaPendingReview": false,
       "discoveredAt": "2026-11-01",
       "identityVerification": "HTML product title matched on public host, HTTP 200 without Vercel login, GitHub Actions discovery audit",
-      "notes": "5 vues réelles du simulateur : decks, parcours solo, atlas de Terrain, duel compact et Vue Réelle. Ne certifie ni avatars ni modèles 1:1 aux illustrations.",
+      "notes": "5 vues réelles du simulateur : decks, parcours solo, atlas de Terrain, duel compact et Vue Arène (Vue Réelle 3D encore à capturer). Ne certifie ni avatars ni modèles 1:1 aux illustrations.",
       "screenshotCaptureProof": "docs/media-proof/yugioh-hologram-native-2026-11-01.json"
     },
     {
