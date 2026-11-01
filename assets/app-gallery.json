@@ -1531,5 +1531,21 @@
     "presentationReview": "pending-fidelity",
     "labels": [],
     "captureNote": "Jeu local dont les fichiers et les instructions sont vérifiés. Pas de screenshot du build produit."
+  },
+  "dont-look-when-they-say-soleil": {
+    "images": [],
+    "labels": [],
+    "captureType": "pending-source-review",
+    "presentationReview": "pending-fidelity",
+    "captureSource": "https://jeux-restaures-aout-2026.vercel.app/#soleil",
+    "captureNote": "Mini-jeu réellement jouable dans une collection publique. Le hash est vérifié en navigateur ; aucun PNG ou écran 1:1 validé pour cette fiche."
+  },
+  "maid-cafe-simulator-deluxe": {
+    "images": [],
+    "labels": [],
+    "captureType": "pending-source-review",
+    "presentationReview": "pending-fidelity",
+    "captureSource": "https://jeux-restaures-aout-2026.vercel.app/#maid-cafe",
+    "captureNote": "Mini-jeu réellement jouable dans une collection publique. Le hash est vérifié en navigateur ; aucun PNG ou écran 1:1 validé pour cette fiche."
   }
 }
