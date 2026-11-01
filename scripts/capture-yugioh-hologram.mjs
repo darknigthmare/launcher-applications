@@ -59,7 +59,11 @@ try {
 
   await click("#btn-campaign-back");
   await b.waitFor("!document.getElementById('start-modal')?.classList.contains('hidden')",15000);
-  await click("#btn-open-field-atlas");
+  // Opening the campaign sometimes focuses the avatar picker after return.
+  // Dispatch the actual registered menu button event, allowing openDialog() to
+  // close whichever preceding modal owns focus, without editing game state.
+  const openedAtlas=await b.evaluate("(()=>{const e=document.getElementById('btn-open-field-atlas');if(!e)throw Error('Missing atlas button');e.click();return {open:!document.getElementById('field-atlas-modal').classList.contains('hidden'),modals:[...document.querySelectorAll('.modal-overlay:not(.hidden)')].map(x=>x.id)}})()");
+  console.log("YU-GI-OH ATLAS OPEN ACTION "+JSON.stringify(openedAtlas));
   await b.sleep(700);
   const atlasProbe=await b.evaluate("(()=>({open:!document.getElementById('field-atlas-modal')?.classList.contains('hidden'),start:!document.getElementById('start-modal')?.classList.contains('hidden'),summary:document.getElementById('field-atlas-summary')?.textContent.trim(),itemCount:document.getElementById('field-atlas-list')?.children.length,active:document.activeElement?.id,dialog:[...document.querySelectorAll('.modal-overlay')].filter(x=>!x.classList.contains('hidden')).map(x=>x.id)}))()");
   console.log("YU-GI-OH FIELD ATLAS "+JSON.stringify(atlasProbe));
