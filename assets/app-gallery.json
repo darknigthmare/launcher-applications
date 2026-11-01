@@ -1465,5 +1465,33 @@
     "presentationReview": "pending-fidelity",
     "labels": [],
     "captureNote": "Fiche publiable avec lien vérifié; aucun visuel du gameplay accepté avant capture sur une vraie version et vérification."
+  },
+  "diva-pulse": {
+    "images": [],
+    "labels": [],
+    "captureType": "pending-source-review",
+    "presentationReview": "pending-fidelity",
+    "captureNote": "Jeu distribué via son dépôt GitHub. Aucune capture de gameplay ou illustration 1:1 n'est certifiée ; accès local via les instructions de l'auteur."
+  },
+  "derniere-ligne-zero-repli": {
+    "images": [],
+    "labels": [],
+    "captureType": "pending-source-review",
+    "presentationReview": "pending-fidelity",
+    "captureNote": "Jeu distribué via son dépôt GitHub. Aucune capture de gameplay ou illustration 1:1 n'est certifiée ; accès local via les instructions de l'auteur."
+  },
+  "fallout-marseille-mistral": {
+    "images": [],
+    "labels": [],
+    "captureType": "pending-source-review",
+    "presentationReview": "pending-fidelity",
+    "captureNote": "Jeu distribué via son dépôt GitHub. Aucune capture de gameplay ou illustration 1:1 n'est certifiée ; accès local via les instructions de l'auteur."
+  },
+  "parallaxe-protocole-9": {
+    "images": [],
+    "labels": [],
+    "captureType": "pending-source-review",
+    "presentationReview": "pending-fidelity",
+    "captureNote": "Jeu distribué via son dépôt GitHub. Aucune capture de gameplay ou illustration 1:1 n'est certifiée ; accès local via les instructions de l'auteur."
   }
 }
