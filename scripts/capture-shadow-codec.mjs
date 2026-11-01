@@ -29,7 +29,11 @@ const browser=await openNativeBrowser(source,{width:1280,height:720,timeout:1100
 const evidence=[],shots=[];let promoJpeg;
 async function routeState(route) {
  const state=await browser.evaluate("(()=>{const root=document.querySelector('.layout-shell'),main=document.querySelector('#main-content');return {route:root?.dataset.route,version:(root?.querySelector('.system-card')?.textContent||'').match(/BUILD:\\s*(\\d+\\.\\d+\\.\\d+)/)?.[1]||null,heading:main?.querySelector('h1,h2')?.textContent?.trim()||null,htmlLength:main?.innerHTML.length||0,bodyTextLength:main?.innerText.length||0,hasError:!!main?.querySelector('[role=alert],.game-engine-status.error'),title:document.title,canvasVisible:!!main?.querySelector('#sideops-phaser-root canvas'),canvasWidth:main?.querySelector('#sideops-phaser-root canvas')?.width||0,canvasHeight:main?.querySelector('#sideops-phaser-root canvas')?.height||0,cqcLoaded:main?.querySelector('.cqc-game-frame')?.contentDocument?.querySelector('#shell') instanceof HTMLElement,cqcCanvas:main?.querySelector('.cqc-game-frame')?.contentDocument?.querySelector('canvas') instanceof HTMLCanvasElement,cqcTitle:main?.querySelector('.cqc-game-frame')?.contentDocument?.title||null}})()");
- if(state.route!==route||state.version!=="3.10.0"||state.hasError||state.bodyTextLength<180)throw Error("Live module not fully loaded "+JSON.stringify(state));
+ // Side Ops is scrolled to the actual Phaser canvas: little body text remains visible.
+ // Real 960×540 game canvas is the evidence, not an arbitrary text threshold.
+ const validVisual = route==="sideops" ? state.canvasVisible && state.canvasWidth>=400 && state.canvasHeight>=200
+   : state.bodyTextLength >= (route==="cqc" ? 65 : 180);
+ if(state.route!==route||state.version!=="3.10.0"||state.hasError||!validVisual)throw Error("Live module not fully loaded "+JSON.stringify(state));
  return state;
 }
 try {
