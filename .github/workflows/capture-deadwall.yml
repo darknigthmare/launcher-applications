@@ -1,11 +1,12 @@
 name: Launcher — recapture native DEADWALL
 
 on:
-  pull_request:
-    paths:
-      - "scripts/capture-deadwall.mjs"
-      - ".github/workflows/capture-deadwall.yml"
   workflow_dispatch:
+    inputs:
+      acknowledge:
+        description: "Autoriser explicitement une nouvelle campagne de recapture DEADWALL"
+        required: true
+        type: boolean
 
 permissions:
   contents: write
@@ -16,13 +17,13 @@ concurrency:
 
 jobs:
   capture:
-    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'codex/launcher-links-media-fidelity-20261101'
+    if: github.ref_name == 'codex/launcher-links-media-fidelity-20261101' && inputs.acknowledge == true
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.ref }}
+          ref: ${{ github.ref_name }}
           fetch-depth: 1
       - uses: actions/setup-node@v4
         with:
@@ -56,4 +57,4 @@ jobs:
             docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "media(deadwall): replace 1.0 menu captures with native D-17 gameplay"
-          git push origin "HEAD:${{ github.event.pull_request.head.ref }}"
+          git push origin "HEAD:${{ github.ref_name }}"
