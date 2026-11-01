@@ -619,6 +619,49 @@ for (const app of apps) {
   assert(item.historicalIllustrationStored === Boolean(archiveMap[app.id]), `archive suivie pour ${app.id}`);
   assert(item.artFidelity === "not-reviewed", `aucune fidélité 1:1 certifiée sans contrôle visuel pour ${app.id}`);
 }
+// Every newly recovered game promoted to an illustrated card must have
+// source-native frames matching its gallery, in-game labels and SHA-256.
+// A mere screenshot filename or HTTP 200 never certifies playable content.
+for (const app of recoveredWithNativeMedia) {
+  const record = fidelityItems.get(app.id);
+  const gallery = galleryMap[app.id];
+  const evidencePath = record?.screenshotCaptureProof;
+  assert(Boolean(evidencePath) && await exists(evidencePath),
+    `preuve des scènes natives conservée pour ${app.id}`);
+  if (!evidencePath || !(await exists(evidencePath))) continue;
+  const evidence = JSON.parse(await readFile(path.join(root, evidencePath), "utf8"));
+  assert(evidence.notGeneratedArt === true,
+    `captures réellement produites par un moteur pour ${app.id}`);
+  assert(Array.isArray(evidence.scenes) && evidence.scenes.length === 5,
+    `cinq scènes de provenance native pour ${app.id}`);
+  assert(Array.isArray(gallery?.images) && gallery.images.length === 5 &&
+    Array.isArray(gallery?.labels) && gallery.labels.length === 5,
+    `galerie native structurée pour ${app.id}`);
+  for (let index = 0; index < 5; index++) {
+    const scene = evidence.scenes?.[index];
+    const relativePath = gallery?.images?.[index];
+    assert(scene?.path === relativePath && scene?.label === gallery?.labels?.[index],
+      `source et légende de la vraie capture ${index + 1} de ${app.id}`);
+    assert(Boolean(relativePath) && await exists(relativePath),
+      `fichier de la capture réelle ${index + 1} de ${app.id}`);
+    if (!relativePath || !(await exists(relativePath))) continue;
+    const pixels = await readFile(path.join(root, relativePath));
+    assert(scene?.sha256 === createHash("sha256").update(pixels).digest("hex"),
+      `empreinte SHA-256 de la capture réelle ${index + 1} de ${app.id}`);
+    assert(pixels.subarray(0, 8).toString("hex") === "89504e470d0a1a0a",
+      `capture réelle ${index + 1} de ${app.id} est un PNG`);
+  }
+  for (const [label,media] of [["présentation",evidence.presentation],["aperçu",evidence.preview]]) {
+    if (!media?.sha256 || !media?.path) continue;
+    assert(await exists(media.path), `${label} source-native de ${app.id} conservé`);
+    if (await exists(media.path)) {
+      const bytes = await readFile(path.join(root, media.path));
+      assert(createHash("sha256").update(bytes).digest("hex") === media.sha256,
+        `empreinte de ${label} de ${app.id} conforme à la preuve`);
+    }
+  }
+}
+
 const galleryPaths = new Set();
 const previousPresentationPaths = new Set();
 const previousPresentationHashes = new Set();
