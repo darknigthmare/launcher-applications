@@ -1,0 +1,65 @@
+name: Launcher — images natives Ragtime Complete Tour
+
+on:
+  pull_request:
+    paths:
+      - "scripts/capture-ragtime-complete-tour.mjs"
+      - ".github/workflows/capture-ragtime-complete-tour.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: launcher-ragtime-complete-native
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'codex/launcher-links-media-fidelity-20261101'
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - name: Read exact PR branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Check browser capture source
+        run: |
+          node --check scripts/browser-capture-common.mjs
+          node --check scripts/capture-ragtime-complete-tour.mjs
+      - name: Open actual latest published edition and capture 5 game frames
+        run: node scripts/capture-ragtime-complete-tour.mjs
+      - name: Validate all launcher media contracts and link classifier
+        run: npm test
+      - name: Preserve source-native screenshots and evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ragtime-complete-native-${{ github.run_number }}
+          path: |
+            docs/media-proof/ragtime-complete-tour-native-2026-11-01.json
+            assets/screenshots/ragtime-rumble-complete-tour/*.png
+            assets/presentations/ragtime-rumble-complete-tour.png
+            assets/previews/ragtime-rumble-complete-tour.jpg
+          if-no-files-found: warn
+      - name: Commit verified source images and proof to PR
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/screenshots/ragtime-rumble-complete-tour \
+            assets/presentations/ragtime-rumble-complete-tour.png \
+            assets/previews/ragtime-rumble-complete-tour.jpg \
+            assets/recent-games.js assets/app-gallery.json assets/source-native-media-manifest.json \
+            docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json \
+            docs/media-proof/ragtime-complete-tour-native-2026-11-01.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "media(ragtime): source-native Complete Tour and first Maestro combat"
+          git fetch origin "refs/heads/${{ github.event.pull_request.head.ref }}"
+          git rebase FETCH_HEAD
+          git push origin "HEAD:${{ github.event.pull_request.head.ref }}"
