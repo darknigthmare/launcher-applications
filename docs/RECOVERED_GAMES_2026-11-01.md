@@ -2,7 +2,7 @@
 
 ## Principe
 
-La PR [#17](https://github.com/darknigthmare/launcher-applications/pull/17) préserve les **140 fiches préexistantes** et ajoute **15 fiches de jeux distincts**. Il y a donc **155 fiches dont 142 jeux**. Chaque fiche dispose d'une identité source et d'un lien réel. Aucun dépôt de test, pack d'assets privé, copie de sauvegarde ou projet non jouable n'est artificiellement présenté comme un nouveau jeu.
+La PR [#17](https://github.com/darknigthmare/launcher-applications/pull/17) préserve les **140 fiches préexistantes** et ajoute **17 fiches de jeux distincts** : dix productions Vercel, cinq éditions locales GitHub et deux mini-jeux autonomes restaurés dans les anthologies d’août. Il y a donc **157 fiches dont 144 jeux**. Chaque fiche dispose d'une identité source et d'un lien réel. Aucun dépôt de test, pack d'assets privé, copie de sauvegarde ou projet non jouable n'est artificiellement présenté comme un nouveau jeu.
 
 Un titre de page HTML et un HTTP 200 prouvent l'identité de l'application servie et l'accès au document, **pas le fonctionnement de toutes ses mécaniques**. Le dernier déploiement Vercel, les images natives et la conformité aux références s'auditent séparément.
 
@@ -36,6 +36,17 @@ Le relevé HTTP et les titres de ces pages ont été testés dans les [exécutio
 | `massilia-cyberpunk` | [Massilia Cyberpunk](https://github.com/darknigthmare/massilia-cyberpunk) · 0.72 | Déploiement local avec Python et données IGN/OSM ; distinct de SOMA//MASSILIA |
 
 Le bouton de ces fiches indique **« Fichiers et installation »** et le badge **« Jeu à télécharger »**. Une adresse GitHub n'est jamais présentée comme un lien « jouer directement dans le navigateur ».
+
+## Deux mini-jeux autonomes retrouvés dans les anthologies d'août
+
+Ces jeux possèdent chacun leurs commandes et règles identifiables dans le catalogue restauré. Ils restent hébergés dans un même site de collection : ne pas les confondre avec une nouvelle production Vercel indépendante.
+
+| ID | Accès et provenance | Ce qui distingue le jeu |
+| --- | --- | --- |
+| `dont-look-when-they-say-soleil` | https://jeux-restaures-aout-2026.vercel.app/#soleil | Épreuve de réaction au signal « SOLEIL », distincte de SOLEIL MORT |
+| `maid-cafe-simulator-deluxe` | https://jeux-restaures-aout-2026.vercel.app/#maid-cafe | Service arcade chronométré, distinct de Moonlit Maid Café |
+
+Aucune capture n'est déclarée validée pour ces deux mini-jeux ; elles restent dans la file de revue des médias. L'[inventaire détaillé](MEDIA_FIDELITY_MATRIX_2026-11-01.json) conserve les 17 identités sans doublons ni faux visuels.
 
 ## Projets examinés mais volontairement exclus
 
