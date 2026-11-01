@@ -9,16 +9,20 @@
 - 19 URL utilisaient déjà une adresse différente du nom exact du projet : la plupart sont des alias légitimes, notamment les domaines historiquement suffixés, raccourcis et `eager-curie.vercel.app`. Ils ne doivent pas être réécrits sans preuve.
 - Une URL qui retourne 200 n'établit ni la fraîcheur d'un jeu ni la fidélité de son illustration. Les informations de source et de production sont suivies séparément.
 
-## Quatre liens corrigés après vérification des domaines Vercel
+## Destinations corrigées après vérification de leur identité
 
-| Jeu | Ancien lien | Alias stable présent sur le projet |
+Le premier rapprochement par nom de projet avait remplacé quatre URL historiques par des domaines d'équipe **protégés par Vercel SSO**. Un HTTP 200 redirigé vers `vercel.com/login` n'ouvre pas un jeu. Le second audit a testé les huit adresses, leur titre HTML et la destination finale.
+
+| Jeu | URL retenue | Validation |
 | --- | --- | --- |
-| Brèche Multiverselle | `https://multiverse-breach.vercel.app` | `https://multiverse-breach-darknigthmares-projects.vercel.app` |
-| Vortex Command | `https://vortex-command.vercel.app` | `https://vortex-command-darknigthmares-projects.vercel.app` |
-| PREDATOR: HIVE WARRIORS | `https://yautja-hive-warriors.vercel.app` | `https://yautja-hive-warriors-darknigthmares-projects.vercel.app` |
-| Malaise Party | `https://malaise-party.vercel.app` (404 en audit GitHub Actions) | `https://malaise-party-darknigthmares-projects.vercel.app` (joignable lors du second audit) |
+| Brèche Multiverselle | `https://multiverse-breach.vercel.app` | 200 et titre `Multiverse Breach - Retro Smash Crossover` |
+| Vortex Command | `https://vortex-command.vercel.app` | 200, titre `Vortex Command — Protocole Léviathan`, moteur 1.0.0 lancé et capturé |
+| PREDATOR: HIVE WARRIORS | `https://yautja-hive-warriors.vercel.app` | 200 et titre `HIVE WARRIORS — La chasse commence` |
+| Malaise Party | `https://malaise-party-darknigthmares-projects.vercel.app` | **Connexion Vercel requise**, ancienne adresse historique en 404 ; accès non présenté comme public |
 
-Les trois premiers projets ont un déploiement Vercel récent marqué `READY`. Pour Malaise Party, le dernier déploiement est en `ERROR` mais une publication précédente du même commit est en `READY`; la nouvelle URL pointe vers le domaine déclaré du projet, sans certifier une nouvelle livraison. Le second audit réseau a bien constaté l'accès HTTP au nouvel alias. Un parcours de jeu réel reste un contrôle distinct.
+Le nouveau contrôleur classe **139 URL accessibles sans redirection Vercel SSO détectée** et **une URL à authentifier**, contre 140 réponses HTTP positives trompeuses dans l'ancien contrôle. Une réponse HTTP et un titre correspondant ne prouvent pas la fraîcheur du build ni l'exécution de toutes les missions.
+
+[Rapport comparatif des huit liens et du SSO](LINK_IDENTITY_SSO_2026-11-01.md). [Contrôle réseau final](https://github.com/darknigthmare/launcher-applications/actions/runs/41314151948).
 
 ## Aliases particuliers conservés volontairement
 
@@ -31,7 +35,7 @@ Les trois premiers projets ont un déploiement Vercel récent marqué `READY`. P
 
 ## Anomalies et restrictions observées
 
-- Le premier scan HTTP des 140 liens a retourné **139 URL joignables et une 404** pour `malaise-party.vercel.app`. Le second scan a ensuite obtenu **140 URL joignables, sans erreur ni lien manquant**, avec son rapport en artefact GitHub Actions ([exécution 4](https://github.com/darknigthmare/launcher-applications/actions/runs/41293686597)).
+- L'ancien scan HTTP annonçait d'abord **139 joignables et une 404**, puis 140 réponses positives ; quatre étaient en réalité des redirections SSO. Le nouveau scan d'identité classe 139 adresses sans redirection SSO détectée, 1 adresse protégée et aucun 404.
 - Le dernier déploiement Vercel signalé pour **Can I Eat It** était en `ERROR`. L'alias historique est néanmoins toujours déclaré sur le projet. Ne pas remplacer une adresse connue par l'URL du déploiement échoué.
 - Le dernier déploiement du projet **Silent Hill: Halo of Flesh** était également en `ERROR`. Ce projet ne figure pas encore au catalogue ; une création de fiche serait prématurée sans production confirmée, illustrations et captures.
 - Projets publiés sur Vercel mais pas intégrés comme nouvelles fiches dans ce lot : Mass Effect Relay Chronicles, Digital Circus Encore, Resident Evil B.O.W. Protocol, Riftcasters 3D, ainsi que plusieurs projets de développement, schéma et test. Leur publication ne suffit pas à inventer les visuels ou à prétendre que leurs mécaniques sont finies.
@@ -78,8 +82,10 @@ La [matrice exhaustive](MEDIA_FIDELITY_MATRIX_2026-11-01.json) suit 140 fiches, 
 | WORLD HIVE WARS | 5 | 0.45.0, une véritable nouvelle campagne en simulation privée ; carte, Bastion, défense, escouade et Codex, sans capture de CONTACT | [Interfaces de campagne 0.45](media-proof/world-hive-045-campaign-2026-11-01.json) | Cinq anciens WebP et aperçu WebP |
 | Shadow Codec Ops | 5 | 3.10, modules Codec et campagne, tableau de 31 Side Ops, CQC Versus réel. L'image de la mission Phaser non lisible a été remplacée par le menu d'opérations et n'est **pas** présentée comme du combat | [Modules Shadow 3.10](media-proof/shadow-codec-3100-modules-2026-11-01.json) | Cinq PNG historiques et aperçu JPG |
 | CainOS / Digital Circus — Encore | 5 | CainOS v0.98 après calibration utilisateur, archives C&A, neuf modes, 14 combattants, douze arènes et duel 2D Pomni/Jax recadré sur l'arène | [CainOS & Encore 0.7](media-proof/cainos-encore-070-2026-11-01.json) | Cinq anciens PNG et aperçu JPG |
+| AVP: HUNT // HIVE TCG | 5 | Runtime 1.0.0, duel sur trois voies, collection 158 cartes, decks de 30, boosters et huit opérations | [Duel et contenu TCG](media-proof/avp-tcg-gameplay-2026-11-01.json) | Cinq anciens visuels et aperçu |
+| Vortex Command | 5 | Runtime RTS 1.0.0, titan émergé, interface anatomie, six districts civils, R&D et carte du monde | [RTS Vortex réel](media-proof/vortex-command-rts-2026-11-01.json) | Cinq PNG précédents et aperçu JPG |
 
-**35 nouvelles captures sur 700**, donc **665 captures non révisées**. Les 7 galeries reçoivent un aperçu actuel distinct, un mode de preuve et des titres de scène ; les anciennes images ne sont pas supprimées. Les illustrations promotionnelles des 7 jeux restent écartées de la galerie publique tant que leur fidélité n'est pas contrôlée. Les fichiers physiques restent publics et le « mode édition » n'est pas une authentification.
+**45 nouvelles captures sur 700**, donc **655 captures non révisées**. Les 9 galeries reçoivent un aperçu actuel distinct, un mode de preuve et des titres de scène ; les anciennes images ne sont pas supprimées. Les illustrations promotionnelles des 9 jeux restent en attente de fidélité 1:1. Les fichiers physiques restent publics et le « mode édition » n'est pas une authentification.
 
 Les cinq captures de WORLD HIVE WARS sont des vues de la campagne réelle : l'entrée, l'onboarding et les cinq changements de poste passent par l'interface du jeu, avec une nouvelle sauvegarde privée, **sans fournir de données GPS**. Elles ne constituent pas des captures du combat CONTACT.
 
@@ -100,9 +106,9 @@ Une proposition d'illustration pour TRIARCHE a été générée dans la conversa
 
 ## Reprises prioritaires, distinctes des modifications livrées
 
-- **P0 — Liens :** exécuter `npm run links:check` dans un environnement avec accès réseau et examiner le rapport HTTP complet ; vérifier les parcours jouables des alias à identité ambiguë.
+- **P0 — Liens :** 139 adresses sans SSO détecté, Malaise Party avec connexion Vercel requise ; continuer les parcours jouables et vérifier la version de production de chaque jeu.
 - **P0 — Confidentialité :** authentifier le mode administrateur et protéger le stockage des archives si les fichiers doivent réellement être privés.
-- **P1 — Captures :** revoir et recapturer les galeries de WORLD HIVE WARS, TRIARCHE, DEADWALL, MOUSTIQUE, Yautja: Apex Hunt, La Longue Chasse, Vortex Command, Shadow Codec Ops, CainOS et des autres jeux modifiés après août.
+- **P1 — Captures :** poursuivre les 655 captures historiques : Yautja La Longue Chasse, HIVE ASCENSION, ALIENS Tantalus Frontier, Malaise Party (derrière SSO), et les autres jeux modifiés après août.
 - **P1 — Visuels :** revue comparative 1:1 des 140 présentations et 140 aperçus, puis remplacement par vagues de fichiers approuvés ; conserver les anciens dans l'archive.
 - **P2 — Nouvelles fiches :** ajouter les nouveaux projets réellement publiés seulement après vérification de leur gameplay, crédits, liens, médias et sources.
 
