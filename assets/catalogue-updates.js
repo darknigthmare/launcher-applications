@@ -6,7 +6,8 @@ window.LAUNCHER_RELEASES = [
     highlights: [
       "Dix-sept jeux oubliés rejoignent les 140 fiches existantes : dix productions Vercel identifiées, cinq éditions GitHub locales et deux mini-jeux d’anthologies d’août. Le catalogue candidat compte 157 fiches dont 144 jeux.",
       "Chaque nouvelle fiche donne un contexte diégétique et distingue les liens Jouer de ceux vers Fichiers et installation. Les médias non vérifiés ne sont pas présentés comme une fidélité 1:1.",
-      "DEADLINE: Outbreak et Resident Evil: B.O.W. Protocol bénéficient de véritables écrans et captures du moteur. Dernière Ligne 0.44.2 rejoint les galeries natives : cinq scènes de sa vraie campagne (deux interfaces et trois vues du combat), avec SHA source, empreintes des images et aperçu — pas de faux déploiement Vercel."
+      "DEADLINE: Outbreak et Resident Evil: B.O.W. Protocol bénéficient de véritables écrans et captures du moteur. Dernière Ligne 0.44.2 rejoint les galeries natives : cinq scènes de sa vraie campagne (deux interfaces et trois vues du combat), avec SHA source, empreintes des images et aperçu — pas de faux déploiement Vercel.",
+      "Ragtime Rumble Complete Tour 3.2.0-alpha.3 fournit cinq captures source-native du vrai menu, de la Tournée, de l'éditeur, du combat Maestro Bellows et de la pause. Le catalogue compte 80 captures certifiées comme issues des moteurs de jeux, sans prétendre que les modèles sont fidèles 1:1."
     ],
     appIds: [
       "mass-effect-relay-chronicles", "resident-evil-bow-protocol", "digital-circus-encore",
