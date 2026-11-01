@@ -55,6 +55,12 @@ try {
   await browser.sleep(980);
   const active=await browser.evaluate("(()=>({title:document.title,phase:document.getElementById('shell')?.dataset?.phase,text:document.body.innerText.slice(0,1800),buttons:[...document.querySelectorAll('button')].filter(x=>x.getClientRects().length>0&&!x.closest('[hidden],.hidden')).slice(0,100).map(x=>({id:x.id,text:x.innerText?.trim().slice(0,88),disabled:x.disabled})),screen:[...document.querySelectorAll('.screen-active')].map(x=>({id:x.id,cls:x.className}))}))()");
   console.log("HORDE AFTER TRAINING INSPECTION "+JSON.stringify(active));
+  await clickReal("startWaveBtn");
+  await browser.sleep(1150);
+  const combat=await browser.evaluate("(()=>({title:document.title,phase:document.getElementById('shell')?.dataset?.phase,text:document.body.innerText.slice(0,1300),buttons:[...document.querySelectorAll('button')].filter(x=>x.getClientRects().length>0&&!x.closest('[hidden],.hidden')).slice(0,70).map(x=>({id:x.id,text:x.innerText?.trim().slice(0,76),disabled:x.disabled})),screen:[...document.querySelectorAll('.screen-active')].map(x=>({id:x.id,cls:x.className})),gameCanvas:document.getElementById('game')?.getBoundingClientRect().toJSON()}))()");
+  console.log("HORDE REAL COMBAT INSPECTION "+JSON.stringify(combat));
+  await writeFile(resolve(root,".reports/horde-current/combat-inspection.json"),JSON.stringify(combat,null,2)+"\n");
+  await writeFile(resolve(root,".reports/horde-current/combat-native.png"),await browser.capture("png"));
   await writeFile(resolve(root,".reports/horde-current/after-training-inspection.json"),JSON.stringify(active,null,2)+"\n");
   await writeFile(resolve(root,".reports/horde-current/after-training-native.png"),await browser.capture("png"));
   console.log("HORDE LOCAL INSPECTION "+JSON.stringify({title:report.title,protocol:report.urlProtocol,buttons:report.buttons.slice(0,30),canvases:report.canvases,scripts:report.scripts,sections:report.visibleSections,errorTexts:report.errorTexts}));
