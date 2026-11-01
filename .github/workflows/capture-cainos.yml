@@ -1,12 +1,12 @@
 name: Launcher — captures natives CainOS et Encore
 
 on:
-  pull_request:
-    paths:
-      - "scripts/capture-cainos.mjs"
-      - "scripts/refresh-cainos-arena.mjs"
-      - ".github/workflows/capture-cainos.yml"
   workflow_dispatch:
+    inputs:
+      acknowledge:
+        description: "Recapturer CainOS uniquement sur autorisation"
+        required: true
+        type: boolean
 
 permissions:
   contents: write
@@ -17,14 +17,14 @@ concurrency:
 
 jobs:
   capture:
-    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'codex/launcher-links-media-fidelity-20261101'
+    if: github.ref_name == 'codex/launcher-links-media-fidelity-20261101' && inputs.acknowledge == true
     runs-on: ubuntu-latest
     timeout-minutes: 14
     steps:
       - name: Checkout target branch
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.ref }}
+          ref: ${{ github.ref_name }}
           fetch-depth: 1
       - name: Use Node 24
         uses: actions/setup-node@v4
@@ -63,4 +63,4 @@ jobs:
             docs/media-proof/cainos-encore-070-2026-11-01.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "media(cainos): replace boot-only gallery with calibrated OS and real Encore combat"
-          git push origin "HEAD:${{ github.event.pull_request.head.ref }}"
+          git push origin "HEAD:${{ github.ref_name }}"
