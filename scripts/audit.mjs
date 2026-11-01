@@ -346,6 +346,23 @@ assert(new Set(recoveredApps.map((app) => app.id)).size === recoveredApps.length
 assert(apps.length === 140 + recoveredApps.length, "les 140 applications initiales sont complétées par tous les jeux retrouvés");
 assert(apps.filter((app) => app?.category === "Jeux").length === 127 + recoveredApps.length,
   "le nombre de jeux intègre les nouvelles fiches vérifiées");
+const offlineGithubGameIds = [
+  "diva-pulse", "derniere-ligne-zero-repli",
+  "fallout-marseille-mistral", "parallaxe-protocole-9"
+];
+for (const id of offlineGithubGameIds) {
+  const app = recoveredApps.find((entry) => entry.id === id);
+  assert(Boolean(app), `jeu hors Vercel retrouvé : ${id}`);
+  if (!app) continue;
+  assert(app.accessPolicy === "local-download", `fichiers à télécharger clairement étiquetés pour ${id}`);
+  assert(app.mediaPendingReview === true && !app.image && !app.presentation,
+    `aucun écran ou illustration fictive pour le jeu local ${id}`);
+  assert(app.link?.startsWith("https://github.com/darknigthmare/") && app.sourceRepository === app.link,
+    `le vrai dépôt du jeu est associé à ${id}`);
+  assert(app.releaseState === "published" && app.status?.includes("téléchargement local"),
+    `distribution locale cohérente avec le statut de ${id}`);
+}
+
 assert(gameGenreGroups.length === 8, "la navigation Jeux contient huit genres principaux");
 
 const starterGameIds = new Set(
