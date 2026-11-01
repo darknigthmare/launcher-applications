@@ -59,21 +59,35 @@ try {
 
   await click("#btn-campaign-back");
   await b.waitFor("!document.getElementById('start-modal')?.classList.contains('hidden')",15000);
-  // Opening the campaign sometimes focuses the avatar picker after return.
-  // Dispatch the actual registered menu button event, allowing openDialog() to
-  // close whichever preceding modal owns focus, without editing game state.
-  const openedAtlas=await b.evaluate("(()=>{const e=document.getElementById('btn-open-field-atlas');if(!e)throw Error('Missing atlas button');e.click();return {open:!document.getElementById('field-atlas-modal').classList.contains('hidden'),modals:[...document.querySelectorAll('.modal-overlay:not(.hidden)')].map(x=>x.id)}})()");
-  console.log("YU-GI-OH ATLAS OPEN ACTION "+JSON.stringify(openedAtlas));
-  await b.sleep(700);
-  const atlasProbe=await b.evaluate("(()=>({open:!document.getElementById('field-atlas-modal')?.classList.contains('hidden'),start:!document.getElementById('start-modal')?.classList.contains('hidden'),summary:document.getElementById('field-atlas-summary')?.textContent.trim(),itemCount:document.getElementById('field-atlas-list')?.children.length,active:document.activeElement?.id,dialog:[...document.querySelectorAll('.modal-overlay')].filter(x=>!x.classList.contains('hidden')).map(x=>x.id)}))()");
-  console.log("YU-GI-OH FIELD ATLAS "+JSON.stringify(atlasProbe));
-  await b.waitFor("!document.getElementById('field-atlas-modal')?.classList.contains('hidden')",14000);
-  await b.waitFor("document.getElementById('field-atlas-list')?.children.length>0 || document.getElementById('field-atlas-summary')?.textContent?.includes('catalogue n')",27000);
-  await b.sleep(350);
-  await snap(3,"Atlas des Terrains — illustrations, règles et décors 3D","real-field-atlas","atlas");
-
-  await click("#btn-close-field-atlas");
-  await b.waitFor("!document.getElementById('start-modal')?.classList.contains('hidden')",16000);
+  // Never label a failed asynchronous Atlas as a rendered source scene.
+  // If its real UI cannot display populated Terrain cards, capture another
+  // distinct and verifiable in-game deck configuration instead.
+  let atlasCaptured=false,atlasFailure=null;
+  try {
+    const openState=await b.evaluate("(()=>{const e=document.getElementById('btn-open-field-atlas');if(!e)throw Error('Atlas button missing');e.click();return {open:!document.getElementById('field-atlas-modal')?.classList.contains('hidden'),visible:[...document.querySelectorAll('.modal-overlay:not(.hidden)')].map(x=>x.id)}})()");
+    console.log("YU-GI-OH ATLAS OPEN "+JSON.stringify(openState));
+    await b.waitFor("!document.getElementById('field-atlas-modal')?.classList.contains('hidden') && document.getElementById('field-atlas-list')?.children.length>0",6500);
+    await b.sleep(260);
+    await snap(3,"Atlas des Terrains — catalogue source du jeu","real-field-atlas","atlas");
+    atlasCaptured=true;
+  } catch(error) {
+    atlasFailure=String(error?.message||error).slice(0,320);
+    const probe=await b.evaluate("(()=>({visible:[...document.querySelectorAll('.modal-overlay:not(.hidden)')].map(x=>x.id),summary:document.getElementById('field-atlas-summary')?.textContent.trim().slice(0,180),count:document.getElementById('field-atlas-list')?.children.length}))()");
+    console.warn("YU-GI-OH ATLAS NOT VERIFIED "+JSON.stringify({atlasFailure,probe}));
+  }
+  if(atlasCaptured){
+    await b.evaluate("document.getElementById('btn-close-field-atlas').click();true");
+  } else {
+    // Close the real Atlas dialog if it remained open after a failed import.
+    await b.evaluate("(()=>{const panel=document.getElementById('field-atlas-modal');if(panel&&!panel.classList.contains('hidden'))document.getElementById('btn-close-field-atlas').click();return true;})()");
+  }
+  await b.waitFor("!document.getElementById('start-modal')?.classList.contains('hidden')",14000);
+  if(!atlasCaptured){
+    await click('[data-deck-id="kaiba"]');
+    await b.waitFor("document.querySelector('[data-deck-id=\"kaiba\"]')?.getAttribute('aria-pressed')==='true'",8000);
+    await b.sleep(260);
+    await snap(3,"Deck Kaiba — configuration réellement sélectionnée","real-deck-configuration","start");
+  }
   await click("#btn-start-duel");
   await b.waitFor("document.getElementById('start-modal')?.classList.contains('hidden') && document.getElementById('player-hand')?.children.length>=2 && document.getElementById('turn-status')?.textContent?.trim()!=='Choisissez un deck pour commencer.'",115000);
   await b.sleep(600);
@@ -112,7 +126,7 @@ try {
   if(assets.assets.some(x=>x.id===id))throw Error("Duplicate source-media record");
   assets.assets.push({id,provider:"Yu-Gi-Oh game runtime / Chromium CDP",generator:"native-browser-capture",
     presentation,preview,sha256:sha(poster),sourceUrl:url,captureProof:proofPath,
-    sourceType:"Actual game configuration, field atlas and duel views, not drawn fan-art",
+    sourceType:"Actual game deck, campaign and "+(atlasCaptured?"field atlas":"alternate Kaiba deck")+", plus duel views; not drawn fan-art",
     version:"GitHub source 1.1.0; deployed identity observed"});
   await writeFile(manifestPath,JSON.stringify(assets,null,2)+"\n");
 
@@ -125,7 +139,7 @@ try {
     sourceVersionVerified:"GitHub package 1.1.0, linked game interface verified",
     productionVersionVerified:"Duel and UI available at "+url+"; build 2026-10-21 READY SHA aec7dd5",
     captureVerifiedAt:new Date().toISOString(),screenshotCaptureProof:proofPath,
-    notes:"5 vues réelles du simulateur : decks, parcours solo, atlas de Terrain, duel compact et Vue Réelle. Ne certifie ni avatars ni modèles 1:1 aux illustrations."});
+    notes:"5 vues réelles du simulateur : decks, parcours solo, "+(atlasCaptured?"atlas des Terrains":"configuration Kaiba (atlas non confirmé)")+", duel compact et Vue Réelle. Ni avatars ni modèles 1:1 certifiés."});
   matrix.summary.mediaPendingGames=catalogue.filter(x=>x.recoveredGame&&x.mediaPendingReview).length;
   matrix.summary.missingNewGameScreenshots=matrix.summary.mediaPendingGames*5;
   matrix.summary.recapturedScreenshotCount=matrix.entries.filter(x=>x.screenshotCaptureProof).reduce((n,x)=>n+x.screenshotCount,0);
@@ -138,8 +152,9 @@ try {
     capturedAt:new Date().toISOString(),viewport:"1280x720",
     presentation:{path:presentation,sha256:sha(poster),bytes:poster.length,kind:"source title / startup modal"},
     preview:{path:preview,sha256:sha(teaser),bytes:teaser.length,kind:"live duel Real View"},
-    scenes:captures,limitations:["Five real engine/UI views, no reconstructed copyrighted character illustrations",
+    scenes:captures,atlasCertified:atlasCaptured,atlasCaptureWarning:atlasFailure,limitations:["Five real engine/UI views, no reconstructed copyrighted character illustrations",
       "Version 1.1.0 from source; deployment SHA obtained from Vercel production metadata",
+      ...(atlasCaptured?[]:["Field Atlas did not render a verifiable list in the capture environment; a real alternate deck was shown instead"]),
       "Holographic figures and avatars are stylized game models, not franchise-wide 1:1 certified likeness"]};
   await mkdir(resolve(root,"docs/media-proof"),{recursive:true});
   await writeFile(resolve(root,proofPath),JSON.stringify(evidence,null,2)+"\n");
