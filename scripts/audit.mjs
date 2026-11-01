@@ -193,7 +193,7 @@ assert(inlineScriptBody.includes('id="refreshHealthButton"'), "le tableau de san
 assert(inlineScriptBody.includes("const NEW_APP_WINDOW_DAYS = 45;"), "la fenêtre Nouveauté est bornée à 45 jours");
 assert(inlineScriptBody.includes('const LEGACY_ADDED_AT = "1970-01-01T00:00:00.000Z";'), "les anciennes entrées ne deviennent pas artificiellement nouvelles");
 assert(
-  inlineScriptBody.includes('const OFFICIAL_SYNC_FIELDS = ["link", "status", "releaseState", "addedAt", "description", "pitch", "accessPolicy"];'),
+  inlineScriptBody.includes('const OFFICIAL_SYNC_FIELDS = ["link", "status", "releaseState", "addedAt", "description", "pitch", "accessPolicy", "mediaPendingReview"];'),
   "la migration locale synchronise les champs de publication officiels"
 );
 // Execute the real launcher hydration function in isolation with representative
