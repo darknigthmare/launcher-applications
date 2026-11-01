@@ -682,6 +682,49 @@ if (await exists(yautjaApexProofPath)) {
   }
 }
 
+// Validate actual MOUSTIQUE WebGL2 screenshots and explicitly staged QA camera views.
+const moustiqueId = "moustique-the-video-game";
+const moustiqueProofPath = "docs/media-proof/moustique-webgl2-2026-11-01.json";
+assert(await exists(moustiqueProofPath), "preuve des nouvelles captures WebGL2 MOUSTIQUE");
+if (await exists(moustiqueProofPath)) {
+  const evidence = JSON.parse(await readFile(path.join(root, moustiqueProofPath), "utf8"));
+  const record = galleryMap[moustiqueId];
+  const archivedShots = archiveDocument.previousScreenshots?.[moustiqueId] || [];
+  const archivedPreview = archiveDocument.previousPreviews?.[moustiqueId];
+  const row = fidelityMatrix.entries?.find((item) => item.id === moustiqueId);
+  const active = apps.find((item) => item.id === moustiqueId);
+  assert(evidence.notGeneratedArt === true && evidence.captureType === "real-webgl2-engine", "images MOUSTIQUE générées par le moteur WebGL2, non synthétisées");
+  assert(evidence.version === "4.14.1-R11" && evidence.source === "https://moustique-the-video-game.vercel.app/", "version et URL de production MOUSTIQUE");
+  assert(String(evidence.rendererMode || "").startsWith("WebGL 2"), "vrai renderer GPU logiciel WebGL2, non logique de repli");
+  assert(evidence.stagingDisclosure?.includes("Slots 2-5"), "cadrages de QA annoncés séparément du gameplay");
+  assert(record?.captureType === "real-engine-qa" && record.captureVersion === evidence.version, "origine et version du rendu clairement désignées");
+  assert(record?.presentationReview === "pending-fidelity", "illustration MOUSTIQUE en attente de fidélité");
+  assert(Array.isArray(record?.images) && record.images.length === 5 && record.labels?.length === 5, "cinq images MOUSTIQUE et légendes");
+  assert(Array.isArray(evidence.scenes) && evidence.scenes.length === 5, "cinq preuves MOUSTIQUE");
+  assert(archivedShots.length === 5 && archivedPreview && await exists(archivedPreview), "les six visuels WebP MOUSTIQUE archivés");
+  assert(row?.screenshotCaptureProof === moustiqueProofPath && row?.screenshotFreshness === "up-to-date", "suivi MOUSTIQUE à jour");
+  assert(active?.image === evidence.preview?.path && row?.preview === evidence.preview?.path, "aperçu de production et matrice raccordés");
+  if (active?.image && await exists(active.image)) {
+    const previewBytes = await readFile(path.join(root, active.image));
+    assert(createHash("sha256").update(previewBytes).digest("hex") === evidence.preview.sha256, "empreinte de l'aperçu corrigé MOUSTIQUE");
+    assert(previewBytes.subarray(0, 3).toString("hex") === "ffd8ff", "aperçu MOUSTIQUE JPEG lisible");
+  }
+  for (let i = 0; i < 5; i++) {
+    const shot = evidence.scenes[i];
+    const pathImage = record.images[i];
+    const original = archivedShots[i];
+    assert(shot.path === pathImage && shot.label === record.labels[i], `MOUSTIQUE capture ${i + 1} bien identifiée`);
+    assert(shot.rendererMode === "webgl2" && shot.webgl2, `MOUSTIQUE capture ${i + 1} sur le moteur WebGL2`);
+    assert(i === 0 ? shot.kind === "real-gameplay" && shot.state === "playing" : shot.kind === "qa-camera-real-render" && shot.state === "paused", `MOUSTIQUE capture ${i + 1} classifiée honnêtement`);
+    assert(await exists(original), `ancienne image WebP MOUSTIQUE ${i + 1} conservée`);
+    if (await exists(pathImage)) {
+      const bytes = await readFile(path.join(root, pathImage));
+      assert(createHash("sha256").update(bytes).digest("hex") === shot.sha256, `MOUSTIQUE screenshot ${i + 1} empreinte fidèle`);
+      assert(bytes.subarray(0, 8).toString("hex") === "89504e470d0a1a0a" && bytes.readUInt32BE(16) === 1280 && bytes.readUInt32BE(20) === 720, `MOUSTIQUE screenshot ${i + 1} dimensions natives correctes`);
+    }
+  }
+}
+
 let previousPresentationFiles = [];
 const previousPresentationDirectory = "assets/presentations/previous";
 const previousPresentationDirectoryExists = await exists(previousPresentationDirectory);
