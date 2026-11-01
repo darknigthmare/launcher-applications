@@ -603,6 +603,10 @@ for (const app of apps) {
   const item = fidelityItems.get(app.id);
   assert(Boolean(item), `fiche média présente pour ${app.id}`);
   if (!item) continue;
+  if (app.recoveredGame) {
+    assert(item.mediaPendingReview === Boolean(app.mediaPendingReview),
+      `fiche média retrouvée correctement marquée à vérifier pour ${app.id}`);
+  }
   assert(item.productionLink === (app.link || null), `lien officiel suivi pour ${app.id}`);
   assert(item.presentation === app.presentation, `présentation suivie pour ${app.id}`);
   assert(item.preview === app.image, `aperçu suivi pour ${app.id}`);
