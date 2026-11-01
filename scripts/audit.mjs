@@ -329,8 +329,12 @@ if (gameGenreMatch) {
   }
 }
 
-assert(apps.length === 140, "le catalogue contient exactement 140 applications");
-assert(apps.filter((app) => app?.category === "Jeux").length === 127, "le catalogue contient exactement 127 jeux");
+const pendingMediaApps = apps.filter((app) => app.mediaPendingReview === true);
+const establishedApps = apps.filter((app) => app.mediaPendingReview !== true);
+assert(establishedApps.length === 140, "les 140 applications historiques sont préservées");
+assert(pendingMediaApps.length === 10, "les dix jeux retrouvés sont sans visuels 1:1 inventés");
+assert(apps.length === 150, "le nouveau catalogue contient 150 applications");
+assert(apps.filter((app) => app?.category === "Jeux").length === 137, "le catalogue contient 137 jeux");
 assert(gameGenreGroups.length === 8, "la navigation Jeux contient huit genres principaux");
 
 const starterGameIds = new Set(
@@ -446,6 +450,12 @@ for (const app of apps) {
       failures.push(`lien invalide pour ${app.id}: ${app.link}`);
     }
   }
+  if (app.mediaPendingReview) {
+    assert(!app.image && !app.presentation, `aucun visuel synthétique ou non vérifié n'est attribué à ${app.id}`);
+    assert(app.category === "Jeux" && releaseState === "published" && Boolean(app.link),
+      `jeu sans visuel authentifié avec lien publié et catégorie Jeux: ${app.id}`);
+    continue;
+  }
   assert(Boolean(app.image), `aperçu renseigné pour ${app.id}`);
   if (app.image) {
     images.add(app.image.replaceAll("\\", "/"));
@@ -490,9 +500,9 @@ assert(openAiArt?.provider === "OpenAI", "le manifeste déclare OpenAI comme fou
 assert(openAiArt?.generator === "image_gen", "le manifeste déclare image_gen comme générateur");
 assert(Array.isArray(openAiArt?.apps), "le manifeste OpenAI expose une liste d'applications");
 const openAiEntries = Array.isArray(openAiArt?.apps) ? openAiArt.apps : [];
-assert(openAiEntries.length === apps.length, "une provenance OpenAI exactement par application");
-assert(new Set(openAiEntries.map((entry) => entry?.id)).size === apps.length, "les provenances OpenAI ont des IDs uniques");
-for (const app of apps) {
+assert(openAiEntries.length === establishedApps.length, "les 140 provenances d'art historique OpenAI sont conservées");
+assert(new Set(openAiEntries.map((entry) => entry?.id)).size === establishedApps.length, "les provenances OpenAI historiques ont des IDs uniques");
+for (const app of establishedApps) {
   const entry = openAiEntries.find((candidate) => candidate?.id === app.id);
   assert(Boolean(entry), `provenance OpenAI présente pour ${app.id}`);
   if (!entry) continue;
@@ -514,7 +524,7 @@ const galleryMap = galleryDocument.galleries || galleryDocument.apps || galleryD
 const archiveDocument = JSON.parse(await readFile(path.join(root, "assets", "app-gallery-admin.json"), "utf8"));
 const archiveMap = archiveDocument.previousPresentations || {};
 const fidelityMatrix = JSON.parse(await readFile(path.join(root, "docs", "MEDIA_FIDELITY_MATRIX_2026-11-01.json"), "utf8"));
-assert(fidelityMatrix.summary?.entries === apps.length, "matrice de fidélité renseignée pour les 140 applications");
+assert(fidelityMatrix.summary?.entries === apps.length, "matrice de fidélité renseignée pour les 150 applications");
 const fidelityItems = new Map((fidelityMatrix.entries || []).map((item) => [item.id, item]));
 assert(fidelityItems.size === apps.length, "une seule fiche de revue média par application");
 assert(fidelityItems.get("malaise-party")?.accessPolicy === "vercel-sso", "Malaise Party est identifié comme protégé par Vercel SSO");
@@ -535,7 +545,12 @@ for (const app of apps) {
   assert(item.productionLink === (app.link || null), `lien officiel suivi pour ${app.id}`);
   assert(item.presentation === app.presentation, `présentation suivie pour ${app.id}`);
   assert(item.preview === app.image, `aperçu suivi pour ${app.id}`);
-  assert(item.screenshotCount === 5, `cinq captures historiques suivies pour ${app.id}`);
+  assert(item.screenshotCount === (app.mediaPendingReview ? 0 : 5), `nombre de captures cohérent avec la validation média de ${app.id}`);
+  if (app.mediaPendingReview) {
+    assert(item.screenshotFreshness === "awaiting-first-capture", `jeu retrouvé sans capture artificielle: ${app.id}`);
+    assert(!item.screenshotCaptureProof && !item.presentation && !item.preview,
+      `aucune référence média fictive n'est ajoutée à ${app.id}`);
+  }
   assert(item.historicalIllustrationStored === Boolean(archiveMap[app.id]), `archive suivie pour ${app.id}`);
   assert(item.artFidelity === "not-reviewed", `aucune fidélité 1:1 certifiée sans contrôle visuel pour ${app.id}`);
 }
@@ -543,6 +558,7 @@ const galleryPaths = new Set();
 const previousPresentationPaths = new Set();
 const previousPresentationHashes = new Set();
 const appsWithoutPreviousPresentation = new Set([
+  ...pendingMediaApps.map((app) => app.id),
   "elyra-grand-pas",
   "intravore",
   "nexus-of-torment",
@@ -577,7 +593,8 @@ for (const app of apps) {
   const gallery = Array.isArray(entry) ? entry : entry?.images;
   assert(!entry?.previousPresentation, `le catalogue public ne dévoile pas les archives pour ${app.id}`);
   const previousPresentation = String(archiveMap[app.id] || "").replaceAll("\\", "/");
-  assert(Array.isArray(gallery) && gallery.length >= 5, `galerie complète pour ${app.id}`);
+  assert(Array.isArray(gallery) && (app.mediaPendingReview ? gallery.length === 0 : gallery.length >= 5),
+    `galerie conforme au statut de preuve pour ${app.id}`);
 
   if (appsWithoutPreviousPresentation.has(app.id)) {
     assert(!previousPresentation, `absence historique explicitement autorisée pour ${app.id}`);
@@ -943,7 +960,8 @@ if (previousPresentationDirectoryExists) {
     .filter((name) => rasterExtensionPattern.test(name))
     .map((name) => `${previousPresentationDirectory}/${name}`);
 }
-assert(appsWithoutPreviousPresentation.size === 28, "vingt-huit applications sans historique explicitement autorisées");
+assert(appsWithoutPreviousPresentation.size === 28 + pendingMediaApps.length,
+  "les 28 exceptions historiques et les nouveaux jeux sans version précédente sont explicitement autorisés");
 for (const id of appsWithoutPreviousPresentation) {
   assert(ids.has(id), `exception historique attribuée à une application connue: ${id}`);
 }
@@ -963,8 +981,8 @@ for (const id of Object.keys(galleryMap).filter((id) => id !== "notes")) {
   assert(ids.has(id), `galerie attribuée à une application connue: ${id}`);
 }
 
-assert(images.size === apps.length, "un aperçu exactement par application");
-assert(presentations.size === apps.length, "une présentation exactement par application");
+assert(images.size === establishedApps.length, "un aperçu pour chaque fiche historique sans inventer les nouveaux");
+assert(presentations.size === establishedApps.length, "une présentation pour chaque fiche historique sans visuel fictif");
 assert(images.size === 140, "exactement 140 aperçus référencés");
 assert(presentations.size === 140, "exactement 140 présentations référencées");
 assert(galleryPaths.size === 700, "exactement 700 captures de galerie référencées");
@@ -981,6 +999,7 @@ assert(html.includes("Ancienne capture"), "les anciennes captures restent dispon
 assert(html.includes("previousScreenshots"), "l'application supporte les captures historiques séparées");
 const iconSprite = await readFile(path.join(root, "assets", "app-icons.svg"), "utf8");
 for (const app of apps) {
+  if (app.mediaPendingReview) continue; // Le monogramme textuel fonctionne tant que l'icône fidèle n'est pas validée.
   assert(iconSprite.includes(`id="icon-${app.id}"`), `icône SVG présente pour ${app.id}`);
 }
 
