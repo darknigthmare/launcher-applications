@@ -2711,5 +2711,37 @@ window.LAUNCHER_RECENT_GAMES = [
     "sourceRepository": "https://github.com/darknigthmare/Parallaxe_Protocole9",
     "sourceVersion": "0.4.1",
     "recoveredGame": true
+  },
+  {
+    "category": "Jeux",
+    "releaseState": "published",
+    "addedAt": "2026-11-01",
+    "status": "GitHub · téléchargement local",
+    "mediaPendingReview": true,
+    "presentation": "",
+    "image": "",
+    "id": "massilia-cyberpunk",
+    "name": "MASSILIA CYBERPUNK — MARSEILLE AUGMENTÉE",
+    "gameKind": "Jeux originaux",
+    "genre": "Aventure & exploration",
+    "baseGame": "",
+    "icon": "MC",
+    "link": "https://github.com/darknigthmare/massilia-cyberpunk",
+    "description": "Marseille ne dort plus sous ses néons. Ouvre le Cortex tactique, intercepte les contacts radio et prépare une surcharge netrunner avant de traverser les rues de la ville augmentée. Le dépôt v0.72 suit le relief IGN, les bâtiments OSM et les corridors du centre. Pour jouer, télécharge la copie complète et lance-la localement avec Python ; les façades sans relevé restent des interprétations, jamais des copies architecturales garanties 1:1.",
+    "pitch": "Branche le Cortex, parcours Marseille sous surveillance et écoute les signaux de la ville.",
+    "tags": [
+      "Jeu original",
+      "Cyberpunk",
+      "Marseille",
+      "Netrunner",
+      "Exploration",
+      "3D",
+      "Jeu local"
+    ],
+    "accent": "#45dbcb",
+    "accessPolicy": "local-download",
+    "sourceRepository": "https://github.com/darknigthmare/massilia-cyberpunk",
+    "sourceVersion": "0.72",
+    "recoveredGame": true
   }
 ];
