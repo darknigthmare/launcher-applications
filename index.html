@@ -2120,11 +2120,16 @@
     const MEDIA_HEALTH_WORKER_COUNT = 6;
     const AVAILABILITY_FILTERS = ["Tous", "Disponible", "En préparation", "Nouveauté"];
     const OFFICIAL_SYNC_FIELDS = ["link", "status", "releaseState", "addedAt", "description", "pitch"];
+    // Only replace known obsolete official media paths: preserve intentional local customizations.
+    const OFFICIAL_PREVIEW_MIGRATIONS = new Map([
+      ["world-hive-wars", "assets/previews/world-hive-wars.webp"],
+      ["moustique-the-video-game", "assets/previews/moustique-the-video-game.webp"]
+    ]);
     // Never flash unreviewed promotional artwork before the asynchronous gallery loads.
     const PENDING_VISUAL_REVIEWS = new Set([
       "triarche-ciel-rouge", "deadwall-last-enclosure",
       "yautja-apex-hunt", "moustique-the-video-game",
-      "world-hive-wars"
+      "world-hive-wars", "shadow-codec-ops"
     ]);
     const appIconIds = new Set(starterApps.map((app) => app.id));
     const stage = document.getElementById("stage");
@@ -2313,6 +2318,14 @@
           OFFICIAL_SYNC_FIELDS.forEach((field) => {
             synchronized[field] = starter[field] ?? "";
           });
+          const oldPreview = OFFICIAL_PREVIEW_MIGRATIONS.get(String(clean.id));
+          if (oldPreview) {
+            const formerUrl = new URL(oldPreview, document.baseURI).href;
+            const savedPreview = sanitizeImageUrl(clean.image);
+            if (!savedPreview || savedPreview === formerUrl || String(clean.image).trim() === oldPreview) {
+              synchronized.image = starter.image;
+            }
+          }
           return normalizeApp(synchronized);
         });
       const knownIds = new Set(loaded.map((app) => app.id));
@@ -2888,12 +2901,14 @@
             </div>
           ` : ""}
         </div>
-        ${["real-gameplay", "real-engine-qa", "real-ui-navigation"].includes(app.captureType) && app.captureVersion && app.captureDate
+        ${["real-gameplay", "real-engine-qa", "real-ui-navigation", "real-module-ui"].includes(app.captureType) && app.captureVersion && app.captureDate
           ? `<p class="capture-proof">${app.captureType === "real-engine-qa"
               ? "Images du moteur 3D · une scène jouable et quatre cadrages de QA"
               : app.captureType === "real-ui-navigation"
                 ? "Interfaces natives du jeu · campagne en simulation privée, sans GPS"
-                : "Images prises dans le jeu"} · version ${escapeHtml(app.captureVersion)} · ${escapeHtml(app.captureDate)}</p>`
+                : app.captureType === "real-module-ui"
+                  ? "Interfaces natives du terminal · Codec, Side Ops, campagne et CQC"
+                  : "Images prises dans le jeu"} · version ${escapeHtml(app.captureVersion)} · ${escapeHtml(app.captureDate)}</p>`
           : ""}
         <div class="tag-row">
           <span class="tag">${escapeHtml(app.category)}</span>
@@ -3021,7 +3036,9 @@
         }] : []),
         { label: app.captureType === "real-gameplay" ? "Aperçu du jeu réel" : app.captureType === "real-engine-qa"
           ? "Rendu natif WebGL2 · cadrage QA" : app.captureType === "real-ui-navigation"
-            ? "Aperçu de la campagne · interface réelle" : "Aperçu", url: sanitizeImageUrl(app.image) },
+            ? "Aperçu de la campagne · interface réelle"
+            : app.captureType === "real-module-ui"
+              ? "Aperçu du terminal Codec" : "Aperçu", url: sanitizeImageUrl(app.image) },
         ...(Array.isArray(app.gallery) ? app.gallery.map((url, index) => ({
           label: app.galleryLabels?.[index] || `Capture ${index + 1}`,
           url: sanitizeImageUrl(url)
