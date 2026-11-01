@@ -135,11 +135,19 @@
       "assets/screenshots/previous/yautja-apex-hunt/03.png",
       "assets/screenshots/previous/yautja-apex-hunt/04.png",
       "assets/screenshots/previous/yautja-apex-hunt/05.png"
+    ],
+    "moustique-the-video-game": [
+      "assets/screenshots/previous/moustique-the-video-game/01.webp",
+      "assets/screenshots/previous/moustique-the-video-game/02.webp",
+      "assets/screenshots/previous/moustique-the-video-game/03.webp",
+      "assets/screenshots/previous/moustique-the-video-game/04.webp",
+      "assets/screenshots/previous/moustique-the-video-game/05.webp"
     ]
   },
   "previousPreviews": {
     "triarche-ciel-rouge": "assets/previews/previous/triarche-ciel-rouge.jpg",
     "deadwall-last-enclosure": "assets/previews/previous/deadwall-last-enclosure.png",
-    "yautja-apex-hunt": "assets/previews/previous/yautja-apex-hunt.jpg"
+    "yautja-apex-hunt": "assets/previews/previous/yautja-apex-hunt.jpg",
+    "moustique-the-video-game": "assets/previews/previous/moustique-the-video-game.webp"
   }
 }

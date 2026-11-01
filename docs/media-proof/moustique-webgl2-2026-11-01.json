@@ -1,0 +1,163 @@
+{
+  "captureType": "real-webgl2-engine",
+  "notGeneratedArt": true,
+  "source": "https://moustique-the-video-game.vercel.app/",
+  "version": "4.14.1-R11",
+  "capturedAt": "2026-11-01T10:49:59.858Z",
+  "viewport": "1280x720",
+  "rendererMode": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+  "stagingReference": "darknigthmare/moustique-the-video-game/tests/capture_scenes.py",
+  "stagingDisclosure": "Slot 1 is actual free-flight gameplay. Slots 2-5 are real engine renders with QA camera placement, not screenshots of natural player progression.",
+  "preview": {
+    "path": "assets/previews/moustique-the-video-game.jpg",
+    "bytes": 40362,
+    "sha256": "4fce871af58d4d1254b1c2c520d6024f63a295141282faf97ae6ed6bf046b3c2"
+  },
+  "archives": {
+    "previousScreenshots": [
+      "assets/screenshots/previous/moustique-the-video-game/01.webp",
+      "assets/screenshots/previous/moustique-the-video-game/02.webp",
+      "assets/screenshots/previous/moustique-the-video-game/03.webp",
+      "assets/screenshots/previous/moustique-the-video-game/04.webp",
+      "assets/screenshots/previous/moustique-the-video-game/05.webp"
+    ],
+    "previousPreview": "assets/previews/previous/moustique-the-video-game.webp"
+  },
+  "scenes": [
+    {
+      "label": "Maison vivante — vol libre et HUD",
+      "kind": "real-gameplay",
+      "slot": 1,
+      "path": "assets/screenshots/moustique-the-video-game/01.png",
+      "bytes": 250133,
+      "sha256": "6490b57b386de158b9a3bc8dc4969b27b2a62d9b70e087f891188fc70b65b145",
+      "state": "playing",
+      "freeFlight": true,
+      "rendererMode": "webgl2",
+      "webgl2": true,
+      "time": 0.12,
+      "camera": {
+        "pos": {
+          "x": 10.552936154136043,
+          "y": 5.449555314623448,
+          "z": -11.122198777068954
+        },
+        "target": {
+          "x": 10.151214025025594,
+          "y": 5.4499086228312335,
+          "z": -10.769294826275681
+        }
+      },
+      "spider": false
+    },
+    {
+      "label": "Maison — fenêtres et profondeur nocturne",
+      "kind": "qa-camera-real-render",
+      "slot": 2,
+      "path": "assets/screenshots/moustique-the-video-game/02.png",
+      "bytes": 257480,
+      "sha256": "da21afb2b6794a0577cd3b0ac92ecff1cd714583156854044802deb406a9a333",
+      "state": "paused",
+      "freeFlight": true,
+      "rendererMode": "webgl2",
+      "webgl2": true,
+      "time": 4,
+      "camera": {
+        "pos": {
+          "x": 8.35,
+          "y": 6.35,
+          "z": -7.6
+        },
+        "target": {
+          "x": 10,
+          "y": 7.8,
+          "z": -20
+        }
+      },
+      "spider": false
+    },
+    {
+      "label": "Balcon — extérieur, végétation et horizon",
+      "kind": "qa-camera-real-render",
+      "slot": 3,
+      "path": "assets/screenshots/moustique-the-video-game/03.png",
+      "bytes": 360113,
+      "sha256": "aad6a29f55a084a523cc3c2daf13e8ff156648da60ad6f8fa29ce0bcb56b0de3",
+      "state": "paused",
+      "freeFlight": true,
+      "rendererMode": "webgl2",
+      "webgl2": true,
+      "time": 18,
+      "camera": {
+        "pos": {
+          "x": 12.5,
+          "y": 4.6,
+          "z": 5.55
+        },
+        "target": {
+          "x": 24,
+          "y": 1,
+          "z": 5.55
+        }
+      },
+      "spider": false
+    },
+    {
+      "label": "Meuble de service — supports et mobilier",
+      "kind": "qa-camera-real-render",
+      "slot": 4,
+      "path": "assets/screenshots/moustique-the-video-game/04.png",
+      "bytes": 169707,
+      "sha256": "16495b23c077e4ccfba8960c54c15b280438d0db86609e73b7fe26bcf9beb39f",
+      "state": "paused",
+      "freeFlight": true,
+      "rendererMode": "webgl2",
+      "webgl2": true,
+      "time": 24,
+      "camera": {
+        "pos": {
+          "x": -4.5,
+          "y": 3.2,
+          "z": 9.2
+        },
+        "target": {
+          "x": -3,
+          "y": 2.6,
+          "z": 10.55
+        }
+      },
+      "spider": false
+    },
+    {
+      "label": "Araignée — chambre et anatomie à huit pattes",
+      "kind": "qa-camera-real-render",
+      "slot": 5,
+      "path": "assets/screenshots/moustique-the-video-game/05.png",
+      "bytes": 136147,
+      "sha256": "724ea290670acb643f3f804513a437de2fa037a95bddfd9ed58187d07448e8c7",
+      "state": "paused",
+      "freeFlight": true,
+      "rendererMode": "webgl2",
+      "webgl2": true,
+      "time": 24,
+      "camera": {
+        "pos": {
+          "x": -10.65,
+          "y": 7.55,
+          "z": 3.15
+        },
+        "target": {
+          "x": -10.65,
+          "y": 7.55,
+          "z": 5.46
+        }
+      },
+      "spider": true
+    }
+  ],
+  "limitations": [
+    "WebGL2 via ANGLE/SwiftShader, no GPU hardware evidence",
+    "Camera-framed QA visuals are not uncontrolled gameplay",
+    "Promotional keyart 1:1 has not been certified"
+  ]
+}

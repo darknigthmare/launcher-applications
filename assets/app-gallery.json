@@ -878,12 +878,25 @@
   },
   "moustique-the-video-game": {
     "images": [
-      "assets/screenshots/moustique-the-video-game/01.webp",
-      "assets/screenshots/moustique-the-video-game/02.webp",
-      "assets/screenshots/moustique-the-video-game/03.webp",
-      "assets/screenshots/moustique-the-video-game/04.webp",
-      "assets/screenshots/moustique-the-video-game/05.webp"
-    ]
+      "assets/screenshots/moustique-the-video-game/01.png",
+      "assets/screenshots/moustique-the-video-game/02.png",
+      "assets/screenshots/moustique-the-video-game/03.png",
+      "assets/screenshots/moustique-the-video-game/04.png",
+      "assets/screenshots/moustique-the-video-game/05.png"
+    ],
+    "labels": [
+      "Maison vivante — vol libre et HUD",
+      "Maison — fenêtres et profondeur nocturne",
+      "Balcon — extérieur, végétation et horizon",
+      "Meuble de service — supports et mobilier",
+      "Araignée — chambre et anatomie à huit pattes"
+    ],
+    "captureType": "real-engine-qa",
+    "captureSource": "https://moustique-the-video-game.vercel.app/",
+    "captureVersion": "4.14.1-R11",
+    "captureDate": "2026-11-01",
+    "captureProof": "docs/media-proof/moustique-webgl2-2026-11-01.json",
+    "presentationReview": "pending-fidelity"
   },
   "moonlit-maid-cafe-simulator": {
     "images": [

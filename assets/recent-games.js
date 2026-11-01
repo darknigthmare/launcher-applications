@@ -1539,7 +1539,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "status": "Vercel",
     "accent": "#a149e9",
     "presentation": "assets/presentations/moustique-the-video-game.webp",
-    "image": "assets/previews/moustique-the-video-game.webp"
+    "image": "assets/previews/moustique-the-video-game.jpg"
   },
   {
     "id": "moonlit-maid-cafe-simulator",
