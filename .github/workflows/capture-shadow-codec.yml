@@ -1,4 +1,4 @@
-name: Launcher — capture native Shadow Codec Ops 3.7
+name: Launcher — capture native Shadow Codec Ops 3.10
 
 on:
   pull_request:
@@ -32,7 +32,7 @@ jobs:
         run: |
           node --check scripts/browser-capture-common.mjs
           node --check scripts/capture-shadow-codec.mjs
-      - name: Capture 3.7 live modules and Phaser scene from production
+      - name: Capture 3.10 live modules and Phaser scene from production
         run: node scripts/capture-shadow-codec.mjs
       - name: Audit updated launcher and archive consistency
         run: npm test
@@ -42,7 +42,7 @@ jobs:
         with:
           name: shadow-codec-native-${{ github.run_number }}
           path: |
-            docs/media-proof/shadow-codec-370-modules-2026-11-01.json
+            docs/media-proof/shadow-codec-3100-modules-2026-11-01.json
             assets/screenshots/shadow-codec-ops/*.png
             assets/previews/shadow-codec-ops.jpg
           if-no-files-found: warn
@@ -54,7 +54,7 @@ jobs:
           git add assets/screenshots/shadow-codec-ops assets/screenshots/previous/shadow-codec-ops \
             assets/previews/shadow-codec-ops.jpg assets/previews/previous/shadow-codec-ops.jpg \
             assets/app-gallery.json assets/app-gallery-admin.json \
-            docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json docs/media-proof/shadow-codec-370-modules-2026-11-01.json
+            docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json docs/media-proof/shadow-codec-3100-modules-2026-11-01.json
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "media(shadow-codec): update five 3.7 native module screens and preserve prior captures"
+          git commit -m "media(shadow-codec): update five 3.10 native module screens and preserve prior captures"
           git push origin "HEAD:${{ github.event.pull_request.head.ref }}"
