@@ -1,11 +1,12 @@
 name: Launcher — captures authentiques Dernière Ligne 0.44.2
 
 on:
-  pull_request:
-    paths:
-      - "scripts/capture-horde-local.mjs"
-      - ".github/workflows/capture-horde-local.yml"
   workflow_dispatch:
+    inputs:
+      acknowledge:
+        description: "Autoriser explicitement une nouvelle inspection ou recapture du jeu local"
+        required: true
+        type: boolean
 
 permissions:
   contents: write
@@ -16,14 +17,14 @@ concurrency:
 
 jobs:
   capture:
-    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'codex/launcher-links-media-fidelity-20261101'
+    if: github.ref_name == 'codex/launcher-links-media-fidelity-20261101' && inputs.acknowledge == true
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - name: Récupérer la branche de la PR
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.ref }}
+          ref: ${{ github.ref_name }}
           fetch-depth: 1
       - name: Récupérer le vrai jeu HTML 0.44.2
         uses: actions/checkout@v4
@@ -75,4 +76,4 @@ jobs:
           git commit -m "media(horde): verified 0.44.2 menu, camp and playable night gameplay"
           git fetch origin "refs/heads/${{ github.event.pull_request.head.ref }}"
           git rebase "origin/${{ github.event.pull_request.head.ref }}"
-          git push origin "HEAD:${{ github.event.pull_request.head.ref }}"
+          git push origin "HEAD:${{ github.ref_name }}"
