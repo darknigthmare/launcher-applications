@@ -1,11 +1,12 @@
 name: Launcher — retrouver le vrai menu Resident Evil B.O.W.
 
 on:
-  pull_request:
-    paths:
-      - "scripts/capture-recovered-bow.mjs"
-      - ".github/workflows/capture-recovered-bow.yml"
   workflow_dispatch:
+    inputs:
+      acknowledge:
+        description: "Autoriser explicitement une nouvelle recapture B.O.W. Protocol"
+        required: true
+        type: boolean
 
 permissions:
   contents: write
@@ -16,13 +17,13 @@ concurrency:
 
 jobs:
   capture:
-    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'codex/launcher-links-media-fidelity-20261101'
+    if: github.ref_name == 'codex/launcher-links-media-fidelity-20261101' && inputs.acknowledge == true
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.ref }}
+          ref: ${{ github.ref_name }}
           fetch-depth: 1
       - uses: actions/setup-node@v4
         with:
@@ -59,4 +60,4 @@ jobs:
           git commit -m "media(bow): actual Resident Evil R20 title, specimens and player menu gallery"
           git fetch origin "refs/heads/${{ github.event.pull_request.head.ref }}"
           git rebase "origin/${{ github.event.pull_request.head.ref }}"
-          git push origin "HEAD:${{ github.event.pull_request.head.ref }}"
+          git push origin "HEAD:${{ github.ref_name }}"
