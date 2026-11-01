@@ -16,9 +16,9 @@
 | Brèche Multiverselle | `https://multiverse-breach.vercel.app` | `https://multiverse-breach-darknigthmares-projects.vercel.app` |
 | Vortex Command | `https://vortex-command.vercel.app` | `https://vortex-command-darknigthmares-projects.vercel.app` |
 | PREDATOR: HIVE WARRIORS | `https://yautja-hive-warriors.vercel.app` | `https://yautja-hive-warriors-darknigthmares-projects.vercel.app` |
-| Malaise Party | `https://malaise-party.vercel.app` (404 en audit GitHub Actions) | `https://malaise-party-darknigthmares-projects.vercel.app` (à tester en HTTP) |
+| Malaise Party | `https://malaise-party.vercel.app` (404 en audit GitHub Actions) | `https://malaise-party-darknigthmares-projects.vercel.app` (joignable lors du second audit) |
 
-Les trois premiers projets ont un déploiement Vercel récent marqué `READY`. Pour Malaise Party, le dernier déploiement est en `ERROR` mais une publication précédente du même commit est en `READY`; la nouvelle URL pointe vers le domaine déclaré du projet, sans certifier une nouvelle livraison. La vérification HTTP et un parcours réel restent des contrôles distincts.
+Les trois premiers projets ont un déploiement Vercel récent marqué `READY`. Pour Malaise Party, le dernier déploiement est en `ERROR` mais une publication précédente du même commit est en `READY`; la nouvelle URL pointe vers le domaine déclaré du projet, sans certifier une nouvelle livraison. Le second audit réseau a bien constaté l'accès HTTP au nouvel alias. Un parcours de jeu réel reste un contrôle distinct.
 
 ## Aliases particuliers conservés volontairement
 
@@ -31,7 +31,7 @@ Les trois premiers projets ont un déploiement Vercel récent marqué `READY`. P
 
 ## Anomalies et restrictions observées
 
-- Le premier scan HTTP des 140 liens a retourné **139 URL joignables et une 404** pour `malaise-party.vercel.app`. Une seconde passe est requise après son remplacement par le domaine Vercel rattaché au projet.
+- Le premier scan HTTP des 140 liens a retourné **139 URL joignables et une 404** pour `malaise-party.vercel.app`. Le second scan a ensuite obtenu **140 URL joignables, sans erreur ni lien manquant**, avec son rapport en artefact GitHub Actions ([exécution 4](https://github.com/darknigthmare/launcher-applications/actions/runs/41293686597)).
 - Le dernier déploiement Vercel signalé pour **Can I Eat It** était en `ERROR`. L'alias historique est néanmoins toujours déclaré sur le projet. Ne pas remplacer une adresse connue par l'URL du déploiement échoué.
 - Le dernier déploiement du projet **Silent Hill: Halo of Flesh** était également en `ERROR`. Ce projet ne figure pas encore au catalogue ; une création de fiche serait prématurée sans production confirmée, illustrations et captures.
 - Projets publiés sur Vercel mais pas intégrés comme nouvelles fiches dans ce lot : Mass Effect Relay Chronicles, Digital Circus Encore, Resident Evil B.O.W. Protocol, Riftcasters 3D, ainsi que plusieurs projets de développement, schéma et test. Leur publication ne suffit pas à inventer les visuels ou à prétendre que leurs mécaniques sont finies.
@@ -86,6 +86,6 @@ Une proposition d'illustration pour TRIARCHE a été générée dans la conversa
 
 ## Suivi technique
 
-- `npm test` : audit statique des fichiers, galeries, manifestes et chemins.
+- `npm test` : audit statique des fichiers, galeries, manifestes et chemins. **Réussi** sur la PR #17 ([audit 44](https://github.com/darknigthmare/launcher-applications/actions/runs/41293517270)).
 - `npm run links:check` : état HTTP des 140 liens, écrit `.reports/live-link-status.json` (rapport non versionné).
 - `.github/workflows/link-health.yml` : diagnostic quotidien ou manuel ; aucune modification automatique des URL.
