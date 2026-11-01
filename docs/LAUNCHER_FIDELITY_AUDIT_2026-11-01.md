@@ -75,8 +75,11 @@ La [matrice exhaustive](MEDIA_FIDELITY_MATRIX_2026-11-01.json) suit 140 fiches, 
 | DEADWALL | 5 | 1.74.0, D-17, mouvement joueur et poste de commandement | [Gameplay DEADWALL](media-proof/deadwall-gameplay-2026-11-01.json) | Cinq anciens PNG et aperçu PNG |
 | Yautja: Apex Hunt | 5 | source 1.13.0, production `5e386e0`, croiseur, contrats, armurerie, paquetage et chasse au Goliath | [Gameplay WebGL Yautja](media-proof/yautja-apex-gameplay-2026-11-01.json) | Cinq anciens PNG et aperçu JPG |
 | MOUSTIQUE | 5 | 4.14.1-R11, moteur WebGL2, vol libre + quatre scènes cadrées via la caméra de QA du jeu | [Moteur WebGL2 MOUSTIQUE](media-proof/moustique-webgl2-2026-11-01.json) | Cinq anciens WebP et aperçu WebP |
+| WORLD HIVE WARS | 5 | 0.45.0, une véritable nouvelle campagne en simulation privée ; carte, Bastion, défense, escouade et Codex, sans capture de CONTACT | [Interfaces de campagne 0.45](media-proof/world-hive-045-campaign-2026-11-01.json) | Cinq anciens WebP et aperçu WebP |
 
-**20 nouvelles captures sur 700**, donc **680 captures non révisées**. Les 4 galeries reçoivent un aperçu actuel distinct, un mode de preuve et des titres de scène ; les anciennes images ne sont pas supprimées. Les illustrations promotionnelles des 4 jeux restent écartées de la galerie publique tant que leur fidélité n'est pas contrôlée. Les fichiers physiques restent publics et le « mode édition » n'est pas une authentification.
+**25 nouvelles captures sur 700**, donc **675 captures non révisées**. Les 5 galeries reçoivent un aperçu actuel distinct, un mode de preuve et des titres de scène ; les anciennes images ne sont pas supprimées. Les illustrations promotionnelles des 4 jeux restent écartées de la galerie publique tant que leur fidélité n'est pas contrôlée. Les fichiers physiques restent publics et le « mode édition » n'est pas une authentification.
+
+Les cinq captures de WORLD HIVE WARS sont des vues de la campagne réelle : l'entrée, l'onboarding et les cinq changements de poste passent par l'interface du jeu, avec une nouvelle sauvegarde privée, **sans fournir de données GPS**. Elles ne constituent pas des captures du combat CONTACT.
 
 Les **quatre cadrages de MOUSTIQUE hors vol libre** proviennent du vrai renderer du jeu mais utilisent la caméra de QA et un temps de simulation arrêté. Ils ne sont pas des captures de progression naturelle. Une capture authentique ne prouve pas une fidélité 1:1 aux œuvres inspiratrices ; les audits de silhouette, style, armes et équipements restent ouverts.
 
