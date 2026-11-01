@@ -163,6 +163,13 @@
       "assets/screenshots/previous/cainos/03.png",
       "assets/screenshots/previous/cainos/04.png",
       "assets/screenshots/previous/cainos/05.png"
+    ],
+    "avp-hunt-hive-tcg": [
+      "assets/screenshots/previous/avp-hunt-hive-tcg/01.png",
+      "assets/screenshots/previous/avp-hunt-hive-tcg/02.png",
+      "assets/screenshots/previous/avp-hunt-hive-tcg/03.png",
+      "assets/screenshots/previous/avp-hunt-hive-tcg/04.png",
+      "assets/screenshots/previous/avp-hunt-hive-tcg/05.png"
     ]
   },
   "previousPreviews": {
@@ -172,6 +179,7 @@
     "moustique-the-video-game": "assets/previews/previous/moustique-the-video-game.webp",
     "world-hive-wars": "assets/previews/previous/world-hive-wars.webp",
     "shadow-codec-ops": "assets/previews/previous/shadow-codec-ops.jpg",
-    "cainos": "assets/previews/previous/cainos.jpg"
+    "cainos": "assets/previews/previous/cainos.jpg",
+    "avp-hunt-hive-tcg": "assets/previews/previous/avp-hunt-hive-tcg.png"
   }
 }

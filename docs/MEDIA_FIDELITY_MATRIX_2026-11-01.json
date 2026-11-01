@@ -8,11 +8,11 @@
     "screenshots": 700,
     "historicalVisuals": 112,
     "p0": 13,
-    "recapturedScreenshotCount": 35,
-    "awaitingRecaptureCount": 665,
-    "archivedScreenshotCount": 35,
-    "archivedPreviewCount": 7,
-    "sourceVerifiedGalleries": 7
+    "recapturedScreenshotCount": 40,
+    "awaitingRecaptureCount": 660,
+    "archivedScreenshotCount": 40,
+    "archivedPreviewCount": 8,
+    "sourceVerifiedGalleries": 8
   },
   "statuses": {
     "artFidelity": [
@@ -929,14 +929,15 @@
       "screenshotCount": 5,
       "historicalIllustrationStored": false,
       "priority": "P0",
-      "sourceVersionVerified": null,
-      "productionVersionVerified": null,
+      "sourceVersionVerified": "GitHub README and runtime 1.0.0, 158 cards, 8 campaign missions",
+      "productionVersionVerified": "Vercel production READY e7a9c8ee6017 and runtime 1.0.0",
       "artFidelity": "not-reviewed",
-      "previewFidelity": "not-reviewed",
-      "screenshotFreshness": "requires-build-comparison",
-      "captureVerifiedAt": null,
+      "previewFidelity": "source-verified",
+      "screenshotFreshness": "up-to-date",
+      "captureVerifiedAt": "2026-11-01T13:43:28.824Z",
       "reviewer": null,
-      "notes": "À contrôler sur les références et le build du jeu avant toute mention de fidélité 1:1."
+      "notes": "Five actual first-use UI states: 3-lane duel, 30-card deck, 158-card collection, opened 9-card booster, 8-mission campaign. Original 5 gallery screenshots and preview archived. Visual canon 1:1 still not reviewed.",
+      "screenshotCaptureProof": "docs/media-proof/avp-tcg-gameplay-2026-11-01.json"
     },
     {
       "id": "echobound",

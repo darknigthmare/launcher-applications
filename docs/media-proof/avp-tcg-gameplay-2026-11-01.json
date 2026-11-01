@@ -1,0 +1,101 @@
+{
+  "captureType": "native-browser-card-gameplay",
+  "notGeneratedArt": true,
+  "source": "https://avp-hunt-hive-tcg.vercel.app/",
+  "version": "1.0.0",
+  "releaseRef": {
+    "deploymentId": "dpl_7DwmFGBSZeYQm1P6npzrnFqMeeS6",
+    "gitCommit": "e7a9c8ee6017"
+  },
+  "capturedAt": "2026-11-01T13:43:28.826Z",
+  "viewport": "1280x720",
+  "firstUse": "Selected XENO deck through modal; four tutorial steps; launched real quick battle",
+  "preview": {
+    "path": "assets/previews/avp-hunt-hive-tcg.png",
+    "bytes": 227091,
+    "sha256": "3ca683231ed8783a194e6042dc52b609daaf63a9c1dbc0c565fbbbf857d0a7ba",
+    "sourceScene": "Three-lane real battle"
+  },
+  "archives": {
+    "previousScreenshots": [
+      "assets/screenshots/previous/avp-hunt-hive-tcg/01.png",
+      "assets/screenshots/previous/avp-hunt-hive-tcg/02.png",
+      "assets/screenshots/previous/avp-hunt-hive-tcg/03.png",
+      "assets/screenshots/previous/avp-hunt-hive-tcg/04.png",
+      "assets/screenshots/previous/avp-hunt-hive-tcg/05.png"
+    ],
+    "previousPreview": "assets/previews/previous/avp-hunt-hive-tcg.png"
+  },
+  "scenes": [
+    {
+      "slot": 1,
+      "label": "Duel tactique — trois voies contre la Ruche adverse",
+      "kind": "real-tcg-battle",
+      "path": "assets/screenshots/avp-hunt-hive-tcg/01.png",
+      "bytes": 227091,
+      "sha256": "3ca683231ed8783a194e6042dc52b609daaf63a9c1dbc0c565fbbbf857d0a7ba",
+      "appState": {
+        "valid": true,
+        "boardLanes": 3,
+        "hand": 5,
+        "lifeBars": 2,
+        "activeScreen": "Duel tactique — Tour 1"
+      }
+    },
+    {
+      "slot": 2,
+      "label": "Constructeur — deck Xénomorphe de 30 cartes",
+      "kind": "native-deck-builder",
+      "path": "assets/screenshots/avp-hunt-hive-tcg/02.png",
+      "bytes": 136431,
+      "sha256": "3113aea710654cee32d06b66877620af7a815fb2ce291505fb3169c501485676",
+      "appState": {
+        "valid": true,
+        "cardRows": 14,
+        "hasDeck": true
+      }
+    },
+    {
+      "slot": 3,
+      "label": "Collection — cartes et illustrations authentiques du TCG",
+      "kind": "native-card-collection",
+      "path": "assets/screenshots/avp-hunt-hive-tcg/03.png",
+      "bytes": 276819,
+      "sha256": "41a943359c2d5c626273d76458e3ba54eaa26bd786244b1ea048205f8300502e",
+      "appState": {
+        "valid": true,
+        "visibleCards": 48
+      }
+    },
+    {
+      "slot": 4,
+      "label": "Ouverture — neuf cartes du booster de la Compagnie",
+      "kind": "native-booster-opening",
+      "path": "assets/screenshots/avp-hunt-hive-tcg/04.png",
+      "bytes": 265548,
+      "sha256": "d17a47dbeb38f0300c9cdb5f42b9d9633002da238ada793a66760070e6240985",
+      "appState": {
+        "valid": true,
+        "revealed": 9
+      }
+    },
+    {
+      "slot": 5,
+      "label": "Campagne — Directive Chimère, huit opérations",
+      "kind": "native-campaign-board",
+      "path": "assets/screenshots/avp-hunt-hive-tcg/05.png",
+      "bytes": 123553,
+      "sha256": "b2d6dfdf290427427057c1d51ed13780cdffbf61ed09e84cbc81684b2e79f5c4",
+      "appState": {
+        "valid": true,
+        "missions": 8,
+        "firstUnlocked": true
+      }
+    }
+  ],
+  "limitations": [
+    "The quick battle was started, not played to victory",
+    "The booster was opened on a disposable fresh Chrome profile",
+    "Fidelity to licensed Alien/Predator art has NOT been certified"
+  ]
+}

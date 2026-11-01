@@ -1313,7 +1313,20 @@
       "assets/screenshots/avp-hunt-hive-tcg/03.png",
       "assets/screenshots/avp-hunt-hive-tcg/04.png",
       "assets/screenshots/avp-hunt-hive-tcg/05.png"
-    ]
+    ],
+    "labels": [
+      "Duel tactique — trois voies contre la Ruche adverse",
+      "Constructeur — deck Xénomorphe de 30 cartes",
+      "Collection — cartes et illustrations authentiques du TCG",
+      "Ouverture — neuf cartes du booster de la Compagnie",
+      "Campagne — Directive Chimère, huit opérations"
+    ],
+    "captureType": "real-gameplay",
+    "captureSource": "https://avp-hunt-hive-tcg.vercel.app/",
+    "captureVersion": "1.0.0",
+    "captureDate": "2026-11-01",
+    "captureProof": "docs/media-proof/avp-tcg-gameplay-2026-11-01.json",
+    "presentationReview": "pending-fidelity"
   },
   "echobound": {
     "images": [
