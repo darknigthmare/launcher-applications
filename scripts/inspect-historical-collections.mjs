@@ -37,6 +37,12 @@ for (const [id,url] of bundles) {
     "})()");
   const report={id,collectedAt:new Date().toISOString(),http:source,dom:evidence,scope:"Read-only identity discovery. No gameplay certification, no fabricated captures."};
   await writeFile(resolve(root,".reports/historical-bundles/"+id+".json"),JSON.stringify(report,null,2)+"\n");
+  if(id==="august-2-restored-collection") {
+    for(const term of ["Maid Café Simulator Deluxe","DON’T LOOK WHEN THEY SAY"]) {
+      const pos=body.indexOf(term);
+      console.log("AUGUST_SOURCE_ID "+JSON.stringify({term,index:pos,context:pos<0?"":body.slice(Math.max(0,pos-350),pos+650)}));
+    }
+  }
   if(["august-4-anthology","august-2-restored-collection"].includes(id)) {
     const targets=id==="august-4-anthology"?["soleil","manga"]:["soleil","maid café"];
     for(const term of targets) {
