@@ -1,11 +1,12 @@
 name: Launcher — capture source-native RIFTCASTERS 3D Convergence
 
 on:
-  pull_request:
-    paths:
-      - "scripts/capture-riftcasters-convergence.mjs"
-      - ".github/workflows/capture-riftcasters-convergence.yml"
   workflow_dispatch:
+    inputs:
+      acknowledge:
+        description: "Confirmer explicitement une recapture source-native RIFTCASTERS"
+        required: true
+        type: boolean
 
 permissions:
   contents: write
@@ -16,13 +17,13 @@ concurrency:
 
 jobs:
   capture:
-    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'codex/launcher-links-media-fidelity-20261101'
+    if: github.ref_name == 'codex/launcher-links-media-fidelity-20261101' && inputs.acknowledge == true
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.ref }}
+          ref: ${{ github.ref_name }}
           fetch-depth: 3
       - uses: actions/setup-node@v4
         with:
@@ -57,6 +58,6 @@ jobs:
             docs/media-proof/riftcasters-convergence-native-2026-11-01.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "media(riftcasters): capture source-native WebGL3D arena, spell, character and HUD"
-          git fetch origin "refs/heads/${{ github.event.pull_request.head.ref }}"
+          git fetch origin "refs/heads/${{ github.ref_name }}"
           git rebase FETCH_HEAD
-          git push origin "HEAD:${{ github.event.pull_request.head.ref }}"
+          git push origin "HEAD:${{ github.ref_name }}"
