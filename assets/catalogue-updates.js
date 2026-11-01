@@ -1,5 +1,16 @@
 window.LAUNCHER_RELEASES = [
   {
+    version: "1.13.0",
+    date: "2026-11-01",
+    title: "Fidélité des dossiers et archives visuelles",
+    highlights: [
+      "Les anciennes illustrations restent conservées dans le dépôt mais disparaissent de la galerie publique : l'accès visuel est réservé au mode édition local, en attendant une vraie authentification.",
+      "Les domaines de Brèche Multiverselle, Vortex Command et PREDATOR: HIVE WARRIORS sont alignés sur leurs alias Vercel déclarés.",
+      "Onze dossiers bénéficient de descriptions et accroches diégétiques révisées depuis leurs références de jeu ; les captures historiques ne sont pas présentées comme des captures de novembre."
+    ],
+    appIds: ["multiverse-breach", "vortex-command", "yautja-hive-warriors", "triarche-ciel-rouge", "world-hive-wars", "deadwall-last-enclosure", "moustique-the-video-game"]
+  },
+  {
     version: "1.12.0",
     date: "2026-08-30",
     title: "Six créations sortent des archives",
