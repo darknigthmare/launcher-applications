@@ -48,7 +48,7 @@ async function take(i,label,panel) {
   await b.waitFor("document.getElementById("+JSON.stringify(panel)+").classList.contains('active')",4000);
   await b.sleep(280);
   const state=await snapshot();
-  if(!state.running||state.paused||state.ended||!(state.simTick>0)||state.units<1||state.districts!==6||!state.emerged||state.visibleTab!==panel) {
+  if(!state.running||state.paused||state.ended||!(state.time>=4.5)||state.units<1||state.districts!==6||!state.emerged||state.visibleTab!==panel) {
     throw Error("Vortex live state not captured "+i+": "+JSON.stringify(state));
   }
   const bytes=await b.capture("png");
