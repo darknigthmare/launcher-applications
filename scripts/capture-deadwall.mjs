@@ -16,6 +16,13 @@ const originals=Array.from({length:5},(_,i)=>pathBase+"/"+String(i+1).padStart(2
 const digest=b=>createHash("sha256").update(b).digest("hex");
 const browser=await openNativeBrowser(source,{width:1280,height:720,timeout:120000});
 const scenes=[];
+async function trustedClick(id) {
+  const coords=await browser.evaluate("(()=>{const node=document.getElementById("+JSON.stringify(id)+");if(!node||node.disabled)throw Error('Contrôle indisponible: "+id+"');const r=node.getBoundingClientRect();if(r.width<4||r.height<4)throw Error('Contrôle masqué: "+id+"');return {x:Math.round(r.left+r.width/2),y:Math.round(r.top+r.height/2)}})()");
+  await browser.call("Page.bringToFront");
+  await browser.call("Input.dispatchMouseEvent",{type:"mouseMoved",x:coords.x,y:coords.y});
+  await browser.call("Input.dispatchMouseEvent",{type:"mousePressed",x:coords.x,y:coords.y,button:"left",clickCount:1});
+  await browser.call("Input.dispatchMouseEvent",{type:"mouseReleased",x:coords.x,y:coords.y,button:"left",clickCount:1});
+}
 async function scene(number,label,kind) {
  const file=originals[number-1];
  const bytes=await browser.capture("png");
@@ -27,16 +34,25 @@ async function scene(number,label,kind) {
 try {
  await browser.waitFor("Boolean(globalThis.DEADWALL?.campaignIntro132 && DEADWALL.frontierUI && DEADWALL.fieldAtlasUI && !document.getElementById('newGameButton').disabled)",120000);
  await browser.evaluate("(async()=>{await DEADWALL.art.ready;return true;})()");
+ await browser.call("Page.bringToFront");
  const version=await browser.evaluate("document.getElementById('mainMenu')?.textContent.match(/VERSION\\s+([0-9.]+)/)?.[1] || ''");
  if(version!=="1.74.0")throw new Error("La production DEADWALL n'est pas la 1.74.0 attendue: "+version);
  await browser.evaluate("(()=>{const seed=document.getElementById('mapSeed');seed.value='17117';seed.dispatchEvent(new Event('input',{bubbles:true}));seed.dispatchEvent(new Event('change',{bubbles:true}));document.getElementById('newGameButton').click();return true;})()");
  await browser.waitFor("DEADWALL.state==='playing' && DEADWALL.campaignIntro132.isOpen()",120000);
  for(let i=0;i<4;i++){
-   const ok=await browser.evaluate("(()=>{let next=document.getElementById('campaignIntro132Next');if(!next)return false;next.click();return true;})()");
-   if(!ok)throw new Error("Bouton de prologue absent "+i);
-   await browser.sleep(160);
+   await trustedClick("campaignIntro132Next");
+   const snapshot=await browser.evaluate("({intro:DEADWALL.campaignIntro132.view(),state:DEADWALL.state,paused:DEADWALL.paused,overlay:DEADWALL.activeOverlay?.id||null,hasFocus:document.hasFocus()})");
+   console.log("DEADWALL prologue "+(i+1)+" "+JSON.stringify(snapshot));
+   await browser.sleep(180);
  }
- await browser.waitFor("DEADWALL.state==='playing' && !DEADWALL.paused && !DEADWALL.activeOverlay && !DEADWALL.campaignIntro132.isOpen()",120000);
+ await browser.waitFor("DEADWALL.state==='playing' && !DEADWALL.campaignIntro132.isOpen()",15000);
+ let state=await browser.evaluate("({paused:DEADWALL.paused,overlay:DEADWALL.activeOverlay?.id||null,focus:document.hasFocus(),pauseVisible:!document.getElementById('pauseMenu').classList.contains('hidden')})");
+ if(state.paused && state.pauseVisible) {
+   console.log("DEADWALL pause après prologue; reprise manuelle du menu "+JSON.stringify(state));
+   await trustedClick("resumeButton");
+   state=await browser.evaluate("({paused:DEADWALL.paused,overlay:DEADWALL.activeOverlay?.id||null,focus:document.hasFocus()})");
+ }
+ if(state.paused||state.overlay)throw new Error("Campagne non active après interaction réelle "+JSON.stringify(state));
  await browser.sleep(450);
  await mkdir(resolve(root,archiveBase),{recursive:true});
  await mkdir(resolve(root,"assets/previews/previous"),{recursive:true});
