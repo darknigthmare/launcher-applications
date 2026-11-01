@@ -90,6 +90,18 @@
       "captureProof": "docs/media-proof/ragtime-complete-tour-native-2026-11-01.json",
       "sourceType": "Actual game menu, Tour, score editor, live boss combat and pause; not generated key art",
       "version": "3.2.0-alpha.3; Vercel READY source SHA 5c8b32609033301e118921656f8588a7274810ad"
+    },
+    {
+      "id": "reclaimed-after-dark",
+      "provider": "RECLAIMED 2.0 actual game/Chromium CDP",
+      "generator": "native-browser-capture",
+      "presentation": "assets/presentations/reclaimed-after-dark.png",
+      "preview": "assets/previews/reclaimed-after-dark.jpg",
+      "sha256": "0d0638efa917174b2adcbf6d4f366fc34c520d14a42695bf248ebac5c8bb50c5",
+      "sourceUrl": "https://reclaimed-after-dark.vercel.app/",
+      "captureProof": "docs/media-proof/reclaimed-blackwater-200-native-2026-11-01.json",
+      "sourceType": "Actual Blackwater game menu, campaign dossiers, workbench, briefing and deployed expedition",
+      "version": "2.0.0 — Vercel production SHA 42db6a4f7372f6af442cf0c351cd7332d0989754"
     }
   ]
 }

@@ -1484,11 +1484,26 @@
     "captureNote": "Fiche publiable avec lien vérifié; aucun visuel du gameplay accepté avant capture sur une vraie version et vérification."
   },
   "reclaimed-after-dark": {
-    "images": [],
-    "captureType": "pending-source-review",
-    "presentationReview": "pending-fidelity",
-    "labels": [],
-    "captureNote": "Fiche publiable avec lien vérifié; aucun visuel du gameplay accepté avant capture sur une vraie version et vérification."
+    "images": [
+      "assets/screenshots/reclaimed-after-dark/01.png",
+      "assets/screenshots/reclaimed-after-dark/02.png",
+      "assets/screenshots/reclaimed-after-dark/03.png",
+      "assets/screenshots/reclaimed-after-dark/04.png",
+      "assets/screenshots/reclaimed-after-dark/05.png"
+    ],
+    "captureType": "real-ui-navigation",
+    "presentationReview": "source-native-title-screen",
+    "labels": [
+      "Blackwater — menu du refuge",
+      "Archives opérationnelles — campagne et secteurs",
+      "Établi du refuge — équipements et améliorations",
+      "Briefing — la première expédition à Blackwater",
+      "Quais du Canal — expédition en cours"
+    ],
+    "captureSource": "https://reclaimed-after-dark.vercel.app/",
+    "captureVersion": "2.0.0",
+    "captureDate": "2026-11-01",
+    "captureProof": "docs/media-proof/reclaimed-blackwater-200-native-2026-11-01.json"
   },
   "deadline-outbreak": {
     "images": [
