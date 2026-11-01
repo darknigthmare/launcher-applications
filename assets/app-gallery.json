@@ -227,7 +227,20 @@
       "assets/screenshots/triarche-ciel-rouge/03.png",
       "assets/screenshots/triarche-ciel-rouge/04.png",
       "assets/screenshots/triarche-ciel-rouge/05.png"
-    ]
+    ],
+    "labels": [
+      "Campagne Alien — arrivée",
+      "Campagne humaine — première ombre",
+      "Opération — conquête urbaine",
+      "Opération — convoi d'évacuation",
+      "Opération — chasse aux colosses"
+    ],
+    "captureType": "real-gameplay",
+    "captureSource": "https://triarche-ciel-rouge.vercel.app/",
+    "captureVersion": "1.0.0",
+    "captureDate": "2026-11-01",
+    "captureProof": "docs/media-proof/triarch-gameplay-2026-11-01.json",
+    "presentationReview": "pending-fidelity"
   },
   "hive-ascension": {
     "images": [
