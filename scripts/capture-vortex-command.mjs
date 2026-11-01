@@ -16,7 +16,9 @@ import { openNativeBrowser } from "./browser-capture-common.mjs";
 
 const root=process.cwd();
 const gameId="vortex-command";
-const sourceUrl="https://vortex-command-darknigthmares-projects.vercel.app/";
+// The team-suffixed alias redirects to Vercel SSO. This previous public
+// domain was verified to serve Vortex Command itself on 2026-11-01.
+const sourceUrl="https://vortex-command.vercel.app/";
 const proofPath="docs/media-proof/vortex-command-rts-2026-11-01.json";
 if (existsSync(resolve(root,proofPath))) {
   console.log("Vortex Command: evidence already committed. No files overwritten.");
