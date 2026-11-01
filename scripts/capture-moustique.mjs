@@ -13,6 +13,27 @@ import {openNativeBrowser} from "./browser-capture-common.mjs";
 
 const root=process.cwd(),id="moustique-the-video-game",source="https://moustique-the-video-game.vercel.app/";
 const proofPath="docs/media-proof/moustique-webgl2-2026-11-01.json";
+if(process.argv.includes("--refresh-preview")) {
+  if(!existsSync(resolve(root,proofPath)))throw Error("Preuve de capture MOUSTIQUE absente");
+  const browser=await openNativeBrowser(source+"#debug",{width:1280,height:720,timeout:120000,webgl:true});
+  try {
+    await browser.waitFor("!!window.MoustiqueDebug?.recovery?.renderer",120000);
+    if(!(await browser.evaluate("document.title.includes('4.14.1-R11') && !MoustiqueDebug.recovery.renderer.qaStub && !!MoustiqueDebug.recovery.renderer.gl")))throw Error("Production WebGL2 MOUSTIQUE non vérifiée");
+    await browser.evaluate("(()=>{const R=MoustiqueDebug.recovery,H=MoustiqueDebug.house;R.startFreeFlight();R.game.state='paused';R.showPanel(null);R.camera.mode=1;H.HOUSE.light='day';R.game.realTime=18;R.rebuildHumanPoses(18);R.camera.pos={x:12.5,y:4.6,z:5.55};R.camera.target={x:24,y:1,z:5.55};for(const id of ['hud','crosshair','houseHud','minimap','statusMessage','tutorialToast','mobileControls','interaction'])document.getElementById(id)?.classList.add('hidden');R.renderFrame(18);return true;})()");
+    await browser.sleep(220);
+    const jpeg=await browser.capture("jpeg");
+    const name=resolve(root,"assets/previews/moustique-the-video-game.jpg");
+    await writeFile(name,jpeg);
+    const json=JSON.parse(await readFile(resolve(root,proofPath),"utf8"));
+    json.preview={path:"assets/previews/moustique-the-video-game.jpg",sha256:createHash("sha256").update(jpeg).digest("hex"),bytes:jpeg.length,
+      sourceScene:"Balcon — extérieur, végétation et horizon",
+      method:"Source-native 4.14.1-R11 renderer, staged QA camera based on tests/capture_scenes.py",
+      camera:[12.5,4.6,5.55],target:[24,1,5.55]};
+    await writeFile(resolve(root,proofPath),JSON.stringify(json,null,2)+"\n");
+    console.log("MOUSTIQUE preview improved from verified real 3D balcony "+JSON.stringify(json.preview));
+  } finally {await browser.close();}
+  process.exit(0);
+}
 if(existsSync(resolve(root,proofPath))){console.log("MOUSTIQUE déjà recapturé : aucune régénération.");process.exit(0);}
 const newShots=Array.from({length:5},(_,i)=>"assets/screenshots/"+id+"/"+String(i+1).padStart(2,"0")+".png");
 const oldShots=Array.from({length:5},(_,i)=>"assets/screenshots/"+id+"/"+String(i+1).padStart(2,"0")+".webp");
