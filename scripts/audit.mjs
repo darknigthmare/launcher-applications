@@ -1012,6 +1012,75 @@ if (await exists(avpTcgProofPath)) {
   }
 }
 
+// A downloadable game may have real source-native screenshots. Verify all
+// original in-game phases and hashes before advertising them as current media.
+const hordeId = "derniere-ligne-zero-repli";
+const hordeProofPath = "docs/media-proof/derniere-ligne-local-0442-2026-11-01.json";
+assert(await exists(hordeProofPath), "preuve native du jeu local Dernière Ligne présente");
+if (await exists(hordeProofPath)) {
+  const proof = JSON.parse(await readFile(path.join(root, hordeProofPath), "utf8"));
+  const app = apps.find((item) => item.id === hordeId);
+  const gallery = galleryMap[hordeId];
+  const tracked = fidelityItems.get(hordeId);
+  const manifest = nativeEntries.find((item) => item.id === hordeId);
+  assert(proof.notGeneratedArt === true && proof.captureType === "native-local-browser-gameplay",
+    "pas d'illustration synthétique de Dernière Ligne");
+  assert(proof.version === "0.44.2" && /^[a-f0-9]{40}$/.test(proof.sourceCommit),
+    "version exacte et SHA source complet du build local");
+  assert(proof.source === "https://github.com/darknigthmare/The-Horde-The-Last-Stand",
+    "lien de provenance source, pas Vercel inventé");
+  assert(proof.overview?.realCombatPhaseConfirmed && proof.overview?.title?.includes("0.44.2"),
+    "première nuit jouable réellement observée");
+  assert(app?.accessPolicy === "local-download" && app?.mediaPendingReview === false,
+    "capture source vérifiée et distribution locale distincte du jeu web");
+  assert(gallery?.captureType === "real-local-gameplay" && gallery.captureProof === hordeProofPath,
+    "galerie identifiée comme capture réelle locale");
+  assert(gallery?.captureVersion === "0.44.2" && gallery?.presentationReview === "source-verified",
+    "écran titre local tiré du moteur et non concept art");
+  assert(Array.isArray(gallery.images) && gallery.images.length === 5 &&
+    Array.isArray(gallery.labels) && gallery.labels.length === 5 &&
+    Array.isArray(proof.scenes) && proof.scenes.length === 5,
+    "cinq images de la campagne et leur titre authentique");
+  assert(tracked?.screenshotCaptureProof === hordeProofPath &&
+    tracked?.screenshotCount === 5 && tracked?.screenshotFreshness === "up-to-date",
+    "cinq captures enregistrées dans la matrice de fidélité");
+  assert(manifest?.sourceCommit === proof.sourceCommit &&
+    manifest?.presentation === proof.presentation?.path &&
+    manifest?.preview === proof.preview?.path,
+    "manifeste de provenance relie le build natif, l'écran titre et le preview");
+  const expectedPhases = ["menu", "camp", "combat", "combat", "combat"];
+  for (let i = 0; i < 5; i++) {
+    const scene = proof.scenes[i], file = gallery.images[i];
+    assert(scene?.phase === expectedPhases[i] && scene?.path === file &&
+      scene?.label === gallery.labels[i],
+      `vraie phase et légende de Dernière Ligne ${i + 1}`);
+    assert(await exists(file), `capture native Dernière Ligne ${i + 1} présente`);
+    if (await exists(file)) {
+      const img = await readFile(path.join(root, file));
+      assert(createHash("sha256").update(img).digest("hex") === scene.sha256,
+        `SHA-256 de la capture Dernière Ligne ${i + 1} vérifié`);
+      assert(img.subarray(0, 8).toString("hex") === "89504e470d0a1a0a" &&
+        img.readUInt32BE(16) === 1280 && img.readUInt32BE(20) === 720,
+        `capture Dernière Ligne ${i + 1} PNG 1280x720`);
+    }
+  }
+  assert(await exists(proof.preview.path), "aperçu de combat local présent");
+  assert(await exists(proof.presentation.path), "titre du jeu local présent");
+  if (await exists(proof.preview.path)) {
+    const preview = await readFile(path.join(root, proof.preview.path));
+    assert(createHash("sha256").update(preview).digest("hex") === proof.preview.sha256 &&
+      preview.subarray(0, 3).toString("hex") === "ffd8ff",
+      "aperçu JPG pris dans le vrai combat de Dernière Ligne");
+  }
+  if (await exists(proof.presentation.path)) {
+    const presentation = await readFile(path.join(root, proof.presentation.path));
+    assert(createHash("sha256").update(presentation).digest("hex") === proof.presentation.sha256,
+      "écran titre réel, empreinte non modifiée");
+  }
+}
+assert(html.includes('"real-local-gameplay"') && html.includes("Fichiers et installation"),
+  "présentation local-source et accès par téléchargement dans l'interface");
+
 let previousPresentationFiles = [];
 const previousPresentationDirectory = "assets/presentations/previous";
 const previousPresentationDirectoryExists = await exists(previousPresentationDirectory);
