@@ -78,7 +78,7 @@ try{
  await writeFile(adminFile,JSON.stringify(admin,null,2)+"\n");
  const galleryFile=resolve(root,"assets/app-gallery.json"),gallery=JSON.parse(await readFile(galleryFile,"utf8"));
  const entry=gallery[id];if(!entry||entry.images.length!==5)throw Error("Current launcher screenshot record missing");
- Object.assign(entry,{images:newShots,labels:states.map(x=>x.label),captureType:"real-gameplay",
+ Object.assign(entry,{images:newShots,labels:states.map(x=>x.label),captureType:"real-engine-qa",
     captureSource:source,captureVersion:"4.14.1-R11",captureDate:new Date().toISOString().slice(0,10),
     captureProof:proofPath,presentationReview:"pending-fidelity"});
  await writeFile(galleryFile,JSON.stringify(gallery,null,2)+"\n");
