@@ -463,6 +463,8 @@ for (const entry of openAiEntries) {
 
 const galleryDocument = JSON.parse(await readFile(path.join(root, "assets", "app-gallery.json"), "utf8"));
 const galleryMap = galleryDocument.galleries || galleryDocument.apps || galleryDocument;
+const archiveDocument = JSON.parse(await readFile(path.join(root, "assets", "app-gallery-admin.json"), "utf8"));
+const archiveMap = archiveDocument.previousPresentations || {};
 const galleryPaths = new Set();
 const previousPresentationPaths = new Set();
 const previousPresentationHashes = new Set();
@@ -499,7 +501,8 @@ const appsWithoutPreviousPresentation = new Set([
 for (const app of apps) {
   const entry = galleryMap[app.id];
   const gallery = Array.isArray(entry) ? entry : entry?.images;
-  const previousPresentation = Array.isArray(entry) ? "" : String(entry?.previousPresentation || "").replaceAll("\\", "/");
+  assert(!entry?.previousPresentation, `le catalogue public ne dévoile pas les archives pour ${app.id}`);
+  const previousPresentation = String(archiveMap[app.id] || "").replaceAll("\\", "/");
   assert(Array.isArray(gallery) && gallery.length >= 5, `galerie complète pour ${app.id}`);
 
   if (appsWithoutPreviousPresentation.has(app.id)) {
@@ -559,6 +562,7 @@ assert(appsWithoutPreviousPresentation.size === 28, "vingt-huit applications san
 for (const id of appsWithoutPreviousPresentation) {
   assert(ids.has(id), `exception historique attribuée à une application connue: ${id}`);
 }
+assert(Object.keys(archiveMap).length === 112, "les archives sont distinctes du manifeste public");
 assert(previousPresentationPaths.size === 112, "exactement 112 illustrations précédentes référencées");
 assert(previousPresentationHashes.size === 112, "exactement 112 contenus historiques distincts");
 assert(
