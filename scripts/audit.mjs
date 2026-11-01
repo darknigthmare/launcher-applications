@@ -465,6 +465,20 @@ const galleryDocument = JSON.parse(await readFile(path.join(root, "assets", "app
 const galleryMap = galleryDocument.galleries || galleryDocument.apps || galleryDocument;
 const archiveDocument = JSON.parse(await readFile(path.join(root, "assets", "app-gallery-admin.json"), "utf8"));
 const archiveMap = archiveDocument.previousPresentations || {};
+const fidelityMatrix = JSON.parse(await readFile(path.join(root, "docs", "MEDIA_FIDELITY_MATRIX_2026-11-01.json"), "utf8"));
+assert(fidelityMatrix.summary?.entries === apps.length, "matrice de fidélité renseignée pour les 140 applications");
+const fidelityItems = new Map((fidelityMatrix.entries || []).map((item) => [item.id, item]));
+assert(fidelityItems.size === apps.length, "une seule fiche de revue média par application");
+for (const app of apps) {
+  const item = fidelityItems.get(app.id);
+  assert(Boolean(item), `fiche média présente pour ${app.id}`);
+  if (!item) continue;
+  assert(item.presentation === app.presentation, `présentation suivie pour ${app.id}`);
+  assert(item.preview === app.image, `aperçu suivi pour ${app.id}`);
+  assert(item.screenshotCount === 5, `cinq captures historiques suivies pour ${app.id}`);
+  assert(item.historicalIllustrationStored === Boolean(archiveMap[app.id]), `archive suivie pour ${app.id}`);
+  assert(item.artFidelity === "not-reviewed", `aucune fidélité 1:1 certifiée sans contrôle visuel pour ${app.id}`);
+}
 const galleryPaths = new Set();
 const previousPresentationPaths = new Set();
 const previousPresentationHashes = new Set();
