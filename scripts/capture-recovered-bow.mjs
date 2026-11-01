@@ -97,8 +97,7 @@ try{
     previewFidelity:"source-verified",screenshotFreshness:"up-to-date",
     captureVerifiedAt:new Date().toISOString(),screenshotCaptureProof:proofPath,
     notes:"Cinq vraies vues de l'interface joueur B.O.W. Protocol (spécimens, modes et archives) ; il ne s'agit pas de captures de combat ni de sprites certifiés 1:1."});
-  matrix.summary.mediaPendingGames=matrix.entries.filter(x=>x.discoveredAt==="2026-11-01"&&x.mediaPendingReview).length
-    + matrix.entries.filter(x=>x.accessPolicy==="local-download"&&x.mediaPendingReview).length;
+  matrix.summary.mediaPendingGames=matrix.entries.filter(x=>(x.discoveredAt==="2026-11-01"||x.accessPolicy==="local-download")&&x.mediaPendingReview).length;
   matrix.summary.missingNewGameScreenshots=matrix.summary.mediaPendingGames*5;
   matrix.summary.recapturedScreenshotCount=matrix.entries.filter(x=>x.screenshotCaptureProof).reduce((n,x)=>n+x.screenshotCount,0);
   matrix.summary.sourceVerifiedGalleries=matrix.entries.filter(x=>x.screenshotCaptureProof).length;
