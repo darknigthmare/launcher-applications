@@ -44,7 +44,7 @@ for (const [id,url] of bundles) {
       if(!selected){console.log("AUGUST_DETAIL_MISSING "+JSON.stringify({id,term}));continue;}
       await browser.sleep(650);
       const detail=await browser.evaluate("(()=>({title:document.querySelector('#title')?.textContent||document.title,description:document.querySelector('.desc')?.innerText||'',links:[...document.querySelectorAll('a[href]')].slice(0,10).map(a=>({text:a.textContent.trim().slice(0,90),href:a.href})),frame:[...document.querySelectorAll('iframe')].slice(0,5).map(x=>({src:x.src,title:x.title})),stage:document.querySelector('.stage')?.innerText?.slice(0,1600)||'',body:document.body.innerText.slice(-1300)}))()");
-      await writeFile(resolve(root,".reports/historical-bundles/"+id+"-"+term.replace(/[^a-z]+/gi,"-")+".json"),JSON.stringify({source:id,selected,...detail},null,2)+"\\n");
+      await writeFile(resolve(root,".reports/historical-bundles/"+id+"-"+term.replace(/[^a-z]+/gi,"-")+".json"),JSON.stringify({source:id,selected,...detail},null,2)+"\n");
       console.log("AUGUST_DETAIL "+JSON.stringify({id,term,selected,detail}));
     }
   }
