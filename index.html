@@ -2123,7 +2123,8 @@
     // Never flash unreviewed promotional artwork before the asynchronous gallery loads.
     const PENDING_VISUAL_REVIEWS = new Set([
       "triarche-ciel-rouge", "deadwall-last-enclosure",
-      "yautja-apex-hunt", "moustique-the-video-game"
+      "yautja-apex-hunt", "moustique-the-video-game",
+      "world-hive-wars"
     ]);
     const appIconIds = new Set(starterApps.map((app) => app.id));
     const stage = document.getElementById("stage");
@@ -2887,10 +2888,12 @@
             </div>
           ` : ""}
         </div>
-        ${["real-gameplay", "real-engine-qa"].includes(app.captureType) && app.captureVersion && app.captureDate
+        ${["real-gameplay", "real-engine-qa", "real-ui-navigation"].includes(app.captureType) && app.captureVersion && app.captureDate
           ? `<p class="capture-proof">${app.captureType === "real-engine-qa"
               ? "Images du moteur 3D · une scène jouable et quatre cadrages de QA"
-              : "Images prises dans le jeu"} · version ${escapeHtml(app.captureVersion)} · ${escapeHtml(app.captureDate)}</p>`
+              : app.captureType === "real-ui-navigation"
+                ? "Interfaces natives du jeu · campagne en simulation privée, sans GPS"
+                : "Images prises dans le jeu"} · version ${escapeHtml(app.captureVersion)} · ${escapeHtml(app.captureDate)}</p>`
           : ""}
         <div class="tag-row">
           <span class="tag">${escapeHtml(app.category)}</span>
@@ -3017,7 +3020,8 @@
           url: sanitizeImageUrl(app.presentation)
         }] : []),
         { label: app.captureType === "real-gameplay" ? "Aperçu du jeu réel" : app.captureType === "real-engine-qa"
-          ? "Rendu natif WebGL2 · cadrage QA" : "Aperçu", url: sanitizeImageUrl(app.image) },
+          ? "Rendu natif WebGL2 · cadrage QA" : app.captureType === "real-ui-navigation"
+            ? "Aperçu de la campagne · interface réelle" : "Aperçu", url: sanitizeImageUrl(app.image) },
         ...(Array.isArray(app.gallery) ? app.gallery.map((url, index) => ({
           label: app.galleryLabels?.[index] || `Capture ${index + 1}`,
           url: sanitizeImageUrl(url)
