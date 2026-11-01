@@ -1,0 +1,61 @@
+name: Launcher — recapture WORLD HIVE WARS 0.45
+
+on:
+  pull_request:
+    paths:
+      - "scripts/capture-world-hive.mjs"
+      - ".github/workflows/capture-world-hive.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: launcher-world-hive-native-capture
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'codex/launcher-links-media-fidelity-20261101'
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - name: Checkout candidate with original gallery
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate native capture source
+        run: |
+          node --check scripts/browser-capture-common.mjs
+          node --check scripts/capture-world-hive.mjs
+      - name: Capture genuine campaign views without real GPS or injected saves
+        run: node scripts/capture-world-hive.mjs
+      - name: Verify entire launcher catalogue and media paths
+        run: npm test
+      - name: Preserve native evidence for visual review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: world-hive-native-${{ github.run_number }}
+          path: |
+            docs/media-proof/world-hive-045-campaign-2026-11-01.json
+            assets/screenshots/world-hive-wars/*.png
+            assets/previews/world-hive-wars.jpg
+          if-no-files-found: warn
+      - name: Commit five screens and archived originals to the same PR
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A assets/screenshots/world-hive-wars assets/screenshots/previous/world-hive-wars \
+            assets/previews/world-hive-wars.webp assets/previews/world-hive-wars.jpg \
+            assets/previews/previous/world-hive-wars.webp \
+            assets/app-gallery.json assets/app-gallery-admin.json assets/recent-games.js \
+            docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json docs/media-proof/world-hive-045-campaign-2026-11-01.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "media(world-hive): replace old Bastion slides with genuine 0.45 campaign UI"
+          git push origin "HEAD:${{ github.event.pull_request.head.ref }}"
