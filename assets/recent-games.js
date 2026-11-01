@@ -2152,8 +2152,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Survie & horreur",
     "baseGame": "",
-    "description": "Party game horrifique local pour un à quatre joueurs, mêlant plateau, huit mini-jeux, Sang-froid, objets, bots et fins alternatives.",
-    "pitch": "Garde ton calme sous les projecteurs d’une émission pour enfants abandonnée qui refuse de s’arrêter.",
+    "description": "Le Studio des Absents continue d'émettre, même lorsque le public a disparu. Réunis de un à quatre joueurs locaux, traverse un plateau de quarante cases, affronte douze mini-jeux et une finale, gère Sang-froid, Jetons de Public et Clés de Loge. Six candidats, des bots et trois niveaux de tournage conduisent à plusieurs dénouements.",
+    "pitch": "L'antenne est ouverte. Entre sur le plateau, garde ton sang-froid et tiens jusqu'au générique.",
     "tags": [
       "Jeu original",
       "Survie & horreur",
@@ -2163,7 +2163,7 @@ window.LAUNCHER_RECENT_GAMES = [
       "PWA"
     ],
     "icon": "MP",
-    "link": "https://malaise-party.vercel.app",
+    "link": "https://malaise-party-darknigthmares-projects.vercel.app",
     "releaseState": "published",
     "addedAt": "2026-08-25",
     "status": "Vercel",
