@@ -1,0 +1,61 @@
+name: Launcher — recapture MOUSTIQUE WebGL2
+
+on:
+  pull_request:
+    paths:
+      - "scripts/capture-moustique.mjs"
+      - ".github/workflows/capture-moustique.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: launcher-moustique-capture
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'codex/launcher-links-media-fidelity-20261101'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Fetch verified candidate
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Validate screenshot harness
+        run: |
+          node --check scripts/browser-capture-common.mjs
+          node --check scripts/capture-moustique.mjs
+      - name: Capture actual game WebGL2 and QA-staged room views
+        run: node scripts/capture-moustique.mjs
+      - name: Verify gallery and archives
+        run: npm test
+      - name: Attach source-native evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: moustique-native-${{ github.run_number }}
+          path: |
+            docs/media-proof/moustique-webgl2-2026-11-01.json
+            assets/screenshots/moustique-the-video-game/*.png
+            assets/previews/moustique-the-video-game.jpg
+          if-no-files-found: warn
+      - name: Commit actual screenshots and save previous versions
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A assets/screenshots/moustique-the-video-game assets/screenshots/previous/moustique-the-video-game \
+            assets/previews/moustique-the-video-game.webp assets/previews/moustique-the-video-game.jpg \
+            assets/previews/previous/moustique-the-video-game.webp \
+            assets/app-gallery.json assets/app-gallery-admin.json assets/recent-games.js \
+            docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json docs/media-proof/moustique-webgl2-2026-11-01.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "media(moustique): update to native 4.14.1 WebGL2 captures and archive historical WebP"
+          git push origin "HEAD:${{ github.event.pull_request.head.ref }}"
