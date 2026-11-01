@@ -6,7 +6,7 @@ window.LAUNCHER_RELEASES = [
     highlights: [
       "Quinze jeux oubliés rejoignent les 140 fiches existantes : dix productions Vercel dont les pages publiques ont été identifiées et cinq titres à installer depuis GitHub.",
       "Chaque nouvelle fiche donne un contexte diégétique et distingue les liens Jouer de ceux vers Fichiers et installation. Les médias non vérifiés ne sont pas présentés comme une fidélité 1:1.",
-      "DEADLINE: Outbreak reçoit son véritable titre 1.1.0 et cinq captures de la première mission. Resident Evil: B.O.W. Protocol reçoit cinq vues de son menu R20, de ses spécimens et de ses dossiers — sans prétendre montrer des combats. Les preuves SHA-256 et les archives restent conservées."
+      "DEADLINE: Outbreak et Resident Evil: B.O.W. Protocol bénéficient de véritables écrans et captures du moteur. Dernière Ligne 0.44.2 rejoint les galeries natives : cinq scènes de sa vraie campagne (deux interfaces et trois vues du combat), avec SHA source, empreintes des images et aperçu — pas de faux déploiement Vercel."
     ],
     appIds: [
       "mass-effect-relay-chronicles", "resident-evil-bow-protocol", "digital-circus-encore",
