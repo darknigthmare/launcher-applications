@@ -6,9 +6,9 @@ window.LAUNCHER_RELEASES = [
     highlights: [
       "Les anciennes illustrations restent conservées dans le dépôt mais disparaissent de la galerie publique : l'accès visuel est réservé au mode édition local, en attendant une vraie authentification.",
       "Brèche Multiverselle, Vortex Command et PREDATOR: HIVE WARRIORS retrouvent leurs adresses publiques vérifiées. Malaise Party affiche honnêtement la connexion Vercel requise.",
-      "Douze dossiers bénéficient de descriptions et accroches diégétiques révisées depuis leurs références de jeu. Quarante-cinq captures réelles sur neuf galeries, avec preuves et anciens visuels archivés : jeu RTS Vortex 1.0, 3 voies de duel AVP TCG, autres campagnes et interfaces natives."
+      "Quinze jeux omis sont réintégrés, dont cinq distributions locales GitHub sans faux lien de navigateur. Cinquante captures documentées sur dix galeries, avec preuves et archivage des anciens visuels ; les images des autres jeux attendent encore une validation 1:1."
     ],
-    appIds: ["multiverse-breach", "vortex-command", "yautja-hive-warriors", "triarche-ciel-rouge", "world-hive-wars", "deadwall-last-enclosure", "moustique-the-video-game", "yautja-apex-hunt", "shadow-codec-ops", "cainos", "avp-hunt-hive-tcg", "malaise-party"]
+    appIds: ["multiverse-breach", "vortex-command", "yautja-hive-warriors", "triarche-ciel-rouge", "world-hive-wars", "deadwall-last-enclosure", "moustique-the-video-game", "yautja-apex-hunt", "shadow-codec-ops", "cainos", "avp-hunt-hive-tcg", "malaise-party", "diva-pulse", "derniere-ligne-zero-repli", "fallout-marseille-mistral", "parallaxe-protocole-9", "massilia-cyberpunk", "deadline-outbreak"]
   },
   {
     version: "1.12.0",
