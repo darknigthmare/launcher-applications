@@ -55,7 +55,7 @@
     {
       "id": "multiverse-breach",
       "name": "Brèche Multiverselle",
-      "productionLink": "https://multiverse-breach-darknigthmares-projects.vercel.app",
+      "productionLink": "https://multiverse-breach.vercel.app",
       "presentation": "assets/presentations/multiverse-breach.png",
       "preview": "assets/previews/multiverse-breach.jpg",
       "screenshotCount": 5,
@@ -68,7 +68,7 @@
       "screenshotFreshness": "requires-build-comparison",
       "captureVerifiedAt": null,
       "reviewer": null,
-      "notes": "À contrôler sur les références et le build du jeu avant toute mention de fidélité 1:1."
+      "notes": "URL publique retenue après vérification HTTP 200 et titre du jeu ; l'alias d'équipe Vercel redirigeait vers une authentification SSO. La version la plus récente du code n'est pas certifiée par le titre HTML."
     },
     {
       "id": "cainos",
@@ -345,7 +345,7 @@
     {
       "id": "vortex-command",
       "name": "Vortex Command",
-      "productionLink": "https://vortex-command-darknigthmares-projects.vercel.app",
+      "productionLink": "https://vortex-command.vercel.app",
       "presentation": "assets/presentations/vortex-command.png",
       "preview": "assets/previews/vortex-command.jpg",
       "screenshotCount": 5,
@@ -358,7 +358,7 @@
       "screenshotFreshness": "up-to-date",
       "captureVerifiedAt": "2026-11-01T14:02:38.514Z",
       "reviewer": null,
-      "notes": "5 vraies vues du RTS 2D en campagne: titan émergé, anatomie, civils, R&D et carte mondiale. Même simulation et mêmes données de jeu. 5 anciennes captures + aperçu archivés; keyart 1:1 non validé.",
+      "notes": "URL publique retenue après vérification HTTP 200 et titre du jeu ; l'alias d'équipe Vercel redirigeait vers une authentification SSO. La version la plus récente du code n'est pas certifiée par le titre HTML. Captures natives RTS 1.0.0 vérifiées indépendamment.",
       "screenshotCaptureProof": "docs/media-proof/vortex-command-rts-2026-11-01.json"
     },
     {
@@ -797,7 +797,7 @@
     {
       "id": "yautja-hive-warriors",
       "name": "PREDATOR: HIVE WARRIORS",
-      "productionLink": "https://yautja-hive-warriors-darknigthmares-projects.vercel.app",
+      "productionLink": "https://yautja-hive-warriors.vercel.app",
       "presentation": "assets/presentations/yautja-hive-warriors.png",
       "preview": "assets/previews/yautja-hive-warriors.jpg",
       "screenshotCount": 5,
@@ -810,7 +810,7 @@
       "screenshotFreshness": "requires-build-comparison",
       "captureVerifiedAt": null,
       "reviewer": null,
-      "notes": "À contrôler sur les références et le build du jeu avant toute mention de fidélité 1:1."
+      "notes": "URL publique retenue après vérification HTTP 200 et titre du jeu ; l'alias d'équipe Vercel redirigeait vers une authentification SSO. La version la plus récente du code n'est pas certifiée par le titre HTML."
     },
     {
       "id": "yautja-apex-hunt",
@@ -2471,7 +2471,8 @@
       "screenshotFreshness": "requires-build-comparison",
       "captureVerifiedAt": null,
       "reviewer": null,
-      "notes": "À contrôler sur les références et le build du jeu avant toute mention de fidélité 1:1."
+      "notes": "URL connue protégée par Vercel SSO. Ancienne URL publique en 404 ; aucune nouvelle URL publique certifiée. Ne pas considérer le HTTP 200 de la page Vercel Login comme une session de jeu.",
+      "accessPolicy": "vercel-sso"
     },
     {
       "id": "neon-clash-arena-protocol",
