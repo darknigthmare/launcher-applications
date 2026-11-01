@@ -59,6 +59,12 @@ try {
   await browser.sleep(1150);
   const combat=await browser.evaluate("(()=>({title:document.title,phase:document.getElementById('shell')?.dataset?.phase,text:document.body.innerText.slice(0,1300),buttons:[...document.querySelectorAll('button')].filter(x=>x.getClientRects().length>0&&!x.closest('[hidden],.hidden')).slice(0,70).map(x=>({id:x.id,text:x.innerText?.trim().slice(0,76),disabled:x.disabled})),screen:[...document.querySelectorAll('.screen-active')].map(x=>({id:x.id,cls:x.className})),gameCanvas:document.getElementById('game')?.getBoundingClientRect().toJSON()}))()");
   console.log("HORDE REAL COMBAT INSPECTION "+JSON.stringify(combat));
+  await clickReal("v18CinemaSkip");
+  await browser.sleep(900);
+  const realCombat=await browser.evaluate("(()=>({title:document.title,phase:document.getElementById('shell')?.dataset?.phase,text:document.body.innerText.slice(0,900),buttons:[...document.querySelectorAll('button')].filter(x=>x.getClientRects().length>0&&!x.closest('[hidden],.hidden')).slice(0,45).map(x=>({id:x.id,text:x.innerText?.trim().slice(0,60),disabled:x.disabled})),screen:[...document.querySelectorAll('.screen-active')].map(x=>({id:x.id,cls:x.className})),canvasVisible:document.getElementById('game')?.getBoundingClientRect().width>0,gameCanvas:{width:document.getElementById('game')?.width,height:document.getElementById('game')?.height}}))()");
+  console.log("HORDE LIVE NIGHT INSPECTION "+JSON.stringify(realCombat));
+  await writeFile(resolve(root,".reports/horde-current/live-night-inspection.json"),JSON.stringify(realCombat,null,2)+"\n");
+  await writeFile(resolve(root,".reports/horde-current/live-night-native.png"),await browser.capture("png"));
   await writeFile(resolve(root,".reports/horde-current/combat-inspection.json"),JSON.stringify(combat,null,2)+"\n");
   await writeFile(resolve(root,".reports/horde-current/combat-native.png"),await browser.capture("png"));
   await writeFile(resolve(root,".reports/horde-current/after-training-inspection.json"),JSON.stringify(active,null,2)+"\n");
