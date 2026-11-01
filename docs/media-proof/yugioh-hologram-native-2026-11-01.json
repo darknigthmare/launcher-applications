@@ -17,7 +17,7 @@
     "path": "assets/previews/yugioh-25d-holograms.jpg",
     "sha256": "2a2919d658230e6cb8d597fee65bc526a5a254b39676ecf58e69d72e3102de7b",
     "bytes": 172521,
-    "kind": "live duel Real View"
+    "kind": "live duel Arena View (the Real View mode was not captured)"
   },
   "scenes": [
     {
@@ -102,8 +102,8 @@
     },
     {
       "slot": 5,
-      "label": "Duel libre — plateau en Vue Réelle 3D",
-      "kind": "live-duel-real-view",
+      "label": "Duel libre — plateau en Vue Arène",
+      "kind": "live-duel-arena-view",
       "path": "assets/screenshots/yugioh-25d-holograms/05.png",
       "sha256": "a4408226b3b9bfd29b514f810f9846b1ee2e528e92e0f754f40d188cb0ece534",
       "bytes": 554811,
@@ -124,6 +124,7 @@
   "limitations": [
     "Five real engine/UI views, no reconstructed copyrighted character illustrations",
     "Version 1.1.0 from source; deployment SHA obtained from Vercel production metadata",
-    "Holographic figures and avatars are stylized game models, not franchise-wide 1:1 certified likeness"
+    "Holographic figures and avatars are stylized game models, not franchise-wide 1:1 certified likeness",
+    "Fifth capture is Arena view, as verified by the in-game view button; Real View 3D remains to be recaptured"
   ]
 }
