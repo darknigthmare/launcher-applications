@@ -1,11 +1,12 @@
 name: Launcher — images natives Ragtime Complete Tour
 
 on:
-  pull_request:
-    paths:
-      - "scripts/capture-ragtime-complete-tour.mjs"
-      - ".github/workflows/capture-ragtime-complete-tour.yml"
   workflow_dispatch:
+    inputs:
+      acknowledge:
+        description: "Autoriser une nouvelle recapture du jeu Ragtime"
+        required: true
+        type: boolean
 
 permissions:
   contents: write
@@ -16,14 +17,14 @@ concurrency:
 
 jobs:
   capture:
-    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'codex/launcher-links-media-fidelity-20261101'
+    if: github.ref_name == 'codex/launcher-links-media-fidelity-20261101' && inputs.acknowledge == true
     runs-on: ubuntu-latest
     timeout-minutes: 14
     steps:
       - name: Read exact PR branch
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.ref }}
+          ref: ${{ github.ref_name }}
           fetch-depth: 2
       - uses: actions/setup-node@v4
         with:
@@ -60,6 +61,6 @@ jobs:
             docs/media-proof/ragtime-complete-tour-native-2026-11-01.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "media(ragtime): source-native Complete Tour and first Maestro combat"
-          git fetch origin "refs/heads/${{ github.event.pull_request.head.ref }}"
+          git fetch origin "refs/heads/${{ github.ref_name }}"
           git rebase FETCH_HEAD
-          git push origin "HEAD:${{ github.event.pull_request.head.ref }}"
+          git push origin "HEAD:${{ github.ref_name }}"
