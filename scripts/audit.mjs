@@ -355,8 +355,12 @@ for (const id of offlineGithubGameIds) {
   assert(Boolean(app), `jeu hors Vercel retrouvé : ${id}`);
   if (!app) continue;
   assert(app.accessPolicy === "local-download", `fichiers à télécharger clairement étiquetés pour ${id}`);
-  assert(app.mediaPendingReview === true && !app.image && !app.presentation,
-    `aucun écran ou illustration fictive pour le jeu local ${id}`);
+  const hasGenuineHordeProof = id === "derniere-ligne-zero-repli" &&
+    app.mediaPendingReview === false && Boolean(app.image && app.presentation) &&
+    app.sourceVersion === "0.44.2" &&
+    await exists("docs/media-proof/derniere-ligne-local-0442-2026-11-01.json");
+  assert((app.mediaPendingReview === true && !app.image && !app.presentation) || hasGenuineHordeProof,
+    `aucun média fictif pour le jeu local ${id} ; les captures doivent avoir leur preuve native`);
   assert(app.link?.startsWith("https://github.com/darknigthmare/") && app.sourceRepository === app.link,
     `le vrai dépôt du jeu est associé à ${id}`);
   assert(app.releaseState === "published" && app.status?.includes("téléchargement local"),
