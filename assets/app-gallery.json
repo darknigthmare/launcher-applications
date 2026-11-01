@@ -420,7 +420,20 @@
       "assets/screenshots/yautja-apex-hunt/03.png",
       "assets/screenshots/yautja-apex-hunt/04.png",
       "assets/screenshots/yautja-apex-hunt/05.png"
-    ]
+    ],
+    "labels": [
+      "Croiseur — exploration du vaisseau-mère",
+      "Console — contrats de chasse",
+      "Armurerie — équipements du chasseur",
+      "Paquetage — préparation du contrat Goliath",
+      "Jungle — chasse au Goliath"
+    ],
+    "captureType": "real-gameplay",
+    "captureSource": "https://yautja-apex-hunt.vercel.app/",
+    "captureVersion": "1.13.0 (source)",
+    "captureDate": "2026-11-01",
+    "captureProof": "docs/media-proof/yautja-apex-gameplay-2026-11-01.json",
+    "presentationReview": "pending-fidelity"
   },
   "valkyrie-sweeper-dark-siege": {
     "images": [
