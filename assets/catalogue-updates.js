@@ -6,9 +6,9 @@ window.LAUNCHER_RELEASES = [
     highlights: [
       "Les anciennes illustrations restent conservées dans le dépôt mais disparaissent de la galerie publique : l'accès visuel est réservé au mode édition local, en attendant une vraie authentification.",
       "Les domaines de Brèche Multiverselle, Vortex Command, PREDATOR: HIVE WARRIORS et Malaise Party sont alignés sur leurs alias Vercel déclarés.",
-      "Douze dossiers bénéficient de descriptions et accroches diégétiques révisées depuis leurs références de jeu. Vingt-cinq captures natives renouvelées (TRIARCHE, DEADWALL, Yautja Apex, MOUSTIQUE, WORLD HIVE WARS) possèdent des preuves, des légendes et leurs originaux archivés. Le dernier jeu est capturé depuis une partie privée réelle, sans GPS."
+      "Douze dossiers bénéficient de descriptions et accroches diégétiques révisées depuis leurs références de jeu. Trente-cinq captures natives renouvelées sur sept jeux, avec preuves, légendes et anciens visuels archivés. Les vues Shadow Side Ops sont un tableau réel de missions, sans faux combat, et CainOS montre le bureau calibré ainsi qu'un duel Encore réellement affiché."
     ],
-    appIds: ["multiverse-breach", "vortex-command", "yautja-hive-warriors", "triarche-ciel-rouge", "world-hive-wars", "deadwall-last-enclosure", "moustique-the-video-game", "yautja-apex-hunt", "malaise-party"]
+    appIds: ["multiverse-breach", "vortex-command", "yautja-hive-warriors", "triarche-ciel-rouge", "world-hive-wars", "deadwall-last-enclosure", "moustique-the-video-game", "yautja-apex-hunt", "shadow-codec-ops", "cainos", "malaise-party"]
   },
   {
     version: "1.12.0",
