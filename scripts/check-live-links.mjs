@@ -6,6 +6,7 @@
  */
 import { readFile, mkdir, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
+import { classifyLinkDestination } from "./link-destination-classifier.mjs";
 
 const root = process.cwd();
 const html = await readFile(resolve(root, "index.html"), "utf8");
@@ -39,11 +40,14 @@ async function check(app) {
       });
       await response.body?.cancel();
       if (method === "HEAD" && [405, 501].includes(response.status)) continue;
-      const state = response.status >= 200 && response.status < 400
-        ? "reachable"
-        : [401, 403, 429, 500, 502, 503, 504].includes(response.status)
-          ? "needs-review" : "broken";
-      return { ...app, state, httpStatus: response.status, effectiveUrl: response.url, checkedAt: new Date().toISOString() };
+      const classification = classifyLinkDestination({
+        requestedUrl: app.link,
+        effectiveUrl: response.url,
+        status: response.status,
+        headers: { "x-vercel-protection": response.headers.get("x-vercel-protection") }
+      });
+      return { ...app, ...classification, httpStatus: response.status, effectiveUrl: response.url,
+        checkedAt: new Date().toISOString() };
     } catch (error) {
       lastError = String(error?.message || error);
     }
@@ -60,12 +64,12 @@ const workers = Array.from({ length: Math.min(6, apps.length) }, async () => {
   }
 });
 await Promise.all(workers);
-const counts = Object.fromEntries(["reachable", "needs-review", "broken", "no-link"].map((state) => [
+const counts = Object.fromEntries(["reachable", "auth-required", "needs-review", "broken", "no-link"].map((state) => [
   state, results.filter((app) => app.state === state).length
 ]));
 const report = {
   generatedAt: new Date().toISOString(),
-  scope: "Contrôle HTTP d'alias publics — ne certifie ni fraîcheur de build ni fidélité 1:1",
+  scope: "Contrôle des liens avec détection de Vercel SSO — un HTTP 200 ne garantit pas l'identité ni la version du jeu",
   total: results.length,
   counts,
   results
@@ -76,4 +80,4 @@ console.log("Launcher URLs:", JSON.stringify(counts));
 for (const app of results.filter((x) => !["reachable"].includes(x.state))) {
   console.log(app.state + " " + app.id + " " + (app.httpStatus ?? "-") + " " + app.link + " " + (app.reason || ""));
 }
-if (process.argv.includes("--strict") && counts.broken) process.exitCode = 1;
+if (process.argv.includes("--strict") && (counts.broken || counts["auth-required"])) process.exitCode = 1;
