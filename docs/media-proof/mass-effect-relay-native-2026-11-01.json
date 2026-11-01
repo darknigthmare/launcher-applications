@@ -1,0 +1,108 @@
+{
+  "captureType": "native-browser-rpg-ui-and-world",
+  "notGeneratedArt": true,
+  "source": "https://masseffectrelaychronicles.vercel.app/",
+  "version": "0.3.0",
+  "capturedAt": "2026-11-01T18:16:10.786Z",
+  "resolution": "1280x720",
+  "browser": "Chromium CDP with software WebGL renderer",
+  "presentation": {
+    "path": "assets/presentations/mass-effect-relay-chronicles.png",
+    "sha256": "0aaf8d8d9a4d1b0da2f276aaa47dcb4b66b77dc6fe42edfe6b59efbd0a984887",
+    "bytes": 1090814,
+    "kind": "real in-game title"
+  },
+  "preview": {
+    "path": "assets/previews/mass-effect-relay-chronicles.jpg",
+    "sha256": "55f5731adc7d1392069faa8dbd3ffc091701c020fc834158afb2f6014140faab",
+    "bytes": 170463,
+    "kind": "real playable Normandy world"
+  },
+  "scenes": [
+    {
+      "slot": 1,
+      "label": "Dossier Alliance — création du commandant Shepard",
+      "kind": "real-creation-ui",
+      "path": "assets/screenshots/mass-effect-relay-chronicles/01.png",
+      "sha256": "3ec34393e62568cca7825ed9d7c3d9614d6d40f052a00e33943211c0190fae77",
+      "bytes": 251133,
+      "observed": {
+        "title": "Mass Effect — Relay Chronicles",
+        "overlayTitle": "Dossier Shepard",
+        "overlayText": "Nouvelle campagneDossier Shepard×\n    \n      \n        L’Alliance vous confie une mission de récupération sur Eden Prime. Votre histoire commence à bor",
+        "worldCanvas": 1280,
+        "hud": "",
+        "transitionActive": false
+      }
+    },
+    {
+      "slot": 2,
+      "label": "Atelier du commandant — apparence, armure et équipement",
+      "kind": "real-customization-ui",
+      "path": "assets/screenshots/mass-effect-relay-chronicles/02.png",
+      "sha256": "07a2c25802e9c4e4870dd8c9a48b1bc9dc1f120cc1b9930cd974dcb1abd72d99",
+      "bytes": 263152,
+      "observed": {
+        "title": "Mass Effect — Relay Chronicles",
+        "overlayTitle": "Personnalisation de Shepard",
+        "overlayText": "Nouveau dossier · personnage & dotationPersonnalisation de Shepard×01Personnage02Armure03ArmesConfiguration actuelle\n    Identité visuelleShepard\n    ",
+        "worldCanvas": 1280,
+        "hud": "",
+        "transitionActive": false
+      }
+    },
+    {
+      "slot": 3,
+      "label": "Transmission — Anderson donne l'ordre de briefing",
+      "kind": "real-story-dialogue",
+      "path": "assets/screenshots/mass-effect-relay-chronicles/03.png",
+      "sha256": "b96c21e07427f5bb0f4ce6da8b347e52de84afba0aa1adafac384b2ca5fe397e",
+      "bytes": 557007,
+      "observed": {
+        "title": "Mass Effect — Relay Chronicles",
+        "overlayTitle": "",
+        "overlayText": "Capitaine AndersonNous approchons d’Eden Prime. Rejoignez le briefing avant la descente. Préparez votre équipe, puis consultez la carte galactique.Je ",
+        "worldCanvas": 1280,
+        "hud": "SSV · ALLIANCE\nNormandy SR-1\nCENTRE D’INFORMATION ET DE COMBAT\nJ Journal\nC Commando\nI Équipement\nM Carte\nⅡ Pause\nOBJECTIF DE MISSI",
+        "transitionActive": false
+      }
+    },
+    {
+      "slot": 4,
+      "label": "SSV Normandy — exploration en sprites 2D et décor 3D",
+      "kind": "real-2d-3d-exploration",
+      "path": "assets/screenshots/mass-effect-relay-chronicles/04.png",
+      "sha256": "6dfd0e3703083a29ecf77f595ec0699cf9c00c1d829116319abcf58c8b949157",
+      "bytes": 516624,
+      "observed": {
+        "title": "Mass Effect — Relay Chronicles",
+        "overlayTitle": "",
+        "overlayText": "",
+        "worldCanvas": 1280,
+        "hud": "SSV · ALLIANCE\nNormandy SR-1\nCENTRE D’INFORMATION ET DE COMBAT\nJ Journal\nC Commando\nI Équipement\nM Carte\nⅡ Pause\nOBJECTIF DE MISSI",
+        "transitionActive": false
+      }
+    },
+    {
+      "slot": 5,
+      "label": "Inventaire — équipement de l'escouade et ressources",
+      "kind": "real-equipment-ui",
+      "path": "assets/screenshots/mass-effect-relay-chronicles/05.png",
+      "sha256": "9f3c4d6c7d169b92470c5d886720f22e72fe776152b14fa6778d02e3e406d183",
+      "bytes": 243612,
+      "observed": {
+        "title": "Mass Effect — Relay Chronicles",
+        "overlayTitle": "Équipement du commando",
+        "overlayText": "250 crédits · 4 médi-gelsÉquipement du commando×ShepardKaidan AlenkoRichard JenkinsDotationInventaireArmurerieCalibrations5/150 objetsCommandementShep",
+        "worldCanvas": 1280,
+        "hud": "SSV · ALLIANCE\nNormandy SR-1\nCENTRE D’INFORMATION ET DE COMBAT\nJ Journal\nC Commando\nI Équipement\nM Carte\nⅡ Pause\nOBJECTIF DE MISSI",
+        "transitionActive": false
+      }
+    }
+  ],
+  "limitations": [
+    "The 2D/3D game is a Mass Effect adaptation, not 1:1 canon recreation",
+    "Only the introductory Normandy route, creation and equipment are evidenced",
+    "No combat ATB shown; gameplay and balance outside these scenes not certified"
+  ]
+}

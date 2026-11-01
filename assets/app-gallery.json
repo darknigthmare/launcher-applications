@@ -1382,11 +1382,26 @@
     ]
   },
   "mass-effect-relay-chronicles": {
-    "images": [],
-    "captureType": "pending-source-review",
-    "presentationReview": "pending-fidelity",
-    "labels": [],
-    "captureNote": "Fiche publiable avec lien vérifié; aucun visuel du gameplay accepté avant capture sur une vraie version et vérification."
+    "images": [
+      "assets/screenshots/mass-effect-relay-chronicles/01.png",
+      "assets/screenshots/mass-effect-relay-chronicles/02.png",
+      "assets/screenshots/mass-effect-relay-chronicles/03.png",
+      "assets/screenshots/mass-effect-relay-chronicles/04.png",
+      "assets/screenshots/mass-effect-relay-chronicles/05.png"
+    ],
+    "captureType": "real-ui-navigation",
+    "presentationReview": "source-native-title-screen",
+    "labels": [
+      "Dossier Alliance — création du commandant Shepard",
+      "Atelier du commandant — apparence, armure et équipement",
+      "Transmission — Anderson donne l'ordre de briefing",
+      "SSV Normandy — exploration en sprites 2D et décor 3D",
+      "Inventaire — équipement de l'escouade et ressources"
+    ],
+    "captureSource": "https://masseffectrelaychronicles.vercel.app/",
+    "captureVersion": "0.3.0",
+    "captureDate": "2026-11-01",
+    "captureProof": "docs/media-proof/mass-effect-relay-native-2026-11-01.json"
   },
   "resident-evil-bow-protocol": {
     "images": [
