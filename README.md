@@ -1,8 +1,8 @@
 # Mon Launcher
 
-Launcher personnel statique qui réunit les applications, jeux et outils publiés sur Vercel.
+Launcher personnel qui réunit les jeux et outils accessibles sur Vercel, ainsi que les jeux indépendants distribués à télécharger depuis GitHub.
 
-Le catalogue public contient **140 applications**, dont **127 jeux**.
+La PR #17 propose **155 fiches, dont 142 jeux** ; la version publique peut encore afficher le catalogue historique tant que cette branche n'est pas fusionnée.
 
 Version publique : [launcher-applications.vercel.app](https://launcher-applications.vercel.app/)
 
@@ -12,11 +12,13 @@ Cette mise à jour conserve les **140 fiches existantes** et leur historique. Tr
 
 Les **112 illustrations précédentes** ne sont plus chargées ni listées par les galeries publiques : `assets/app-gallery.json` ne conserve que les captures et `assets/app-gallery-admin.json` indexe les anciens visuels, consultables depuis le mode édition local. **Attention : le mode édition n'est pas authentifié, et les fichiers ainsi que le dépôt demeurent publics.** Une véritable exclusivité administrateur nécessitera une authentification et un stockage privé des originaux.
 
-Une [matrice de revue des 140 visuels et galeries](docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json) distingue **non revu**, **à refaire** et **accepté** sans certifier le 1:1 sans preuve. **45 captures sur 700** ont été renouvelées sur **neuf galeries** (TRIARCHE, DEADWALL, Yautja: Apex Hunt, MOUSTIQUE, WORLD HIVE WARS, Shadow Codec Ops, CainOS, AVP HUNT // HIVE TCG et Vortex Command). Les **655 autres** attendent encore une revue. Les neuf anciennes séries et leurs neuf aperçus ont été archivés ; aucune image d'archive n'a été effacée. Les sources et preuves sont rassemblées dans [l'audit](docs/LAUNCHER_FIDELITY_AUDIT_2026-11-01.md). Les illustrations promotionnelles non vérifiées ne sont pas déclarées « fidèles 1:1 ».
+Une [matrice de revue des 155 fiches et galeries](docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json) distingue **non revu**, **à refaire** et **accepté** sans certifier le 1:1 sans preuve. **50 captures sur 700** ont été renouvelées sur **dix galeries** (TRIARCHE, DEADWALL, Yautja: Apex Hunt, MOUSTIQUE, WORLD HIVE WARS, Shadow Codec Ops, CainOS, AVP HUNT // HIVE TCG, Vortex Command et DEADLINE — Outbreak). Les **655 autres** attendent encore une revue. Les neuf anciennes séries historiques et leurs neuf aperçus ont été archivés ; aucune image d'archive n'a été effacée. Les sources et preuves sont rassemblées dans [l'audit](docs/LAUNCHER_FIDELITY_AUDIT_2026-11-01.md). Les illustrations promotionnelles non vérifiées ne sont pas déclarées « fidèles 1:1 ».
+
+La [réconciliation exhaustive des 172 dépôts GitHub et 162 projets Vercel](docs/GITHUB_ONLY_GAMES_AUDIT_2026-11-01.md) a réintégré **15 jeux auparavant omis** : dix titres web ou réintégrations déployées, plus **cinq éditions à télécharger sur GitHub** (DIVA PULSE, Dernière Ligne, Fallout Marseille — MISTRAL, PARALLAXE — Protocole 9 et Massilia Cyberpunk). Les fiches locales affichent **Fichiers et installation** au lieu de « Ouvrir », et aucun média n'est inventé. Les projets vides, les DLC privés et les environnements de test restent recensés hors du rayon Jeux.
 
 La [correspondance des 13 productions prioritaires avec leur SHA et leur statut](docs/PRODUCTION_DEPLOYMENTS_2026-11-01.md) distingue les builds réellement publiés des sources plus récentes. Les captures MOUSTIQUE comprennent **une vue de vol libre jouable et quatre cadrages de QA du moteur WebGL2**, explicitement étiquetés. WORLD HIVE WARS présente les cinq écrans de campagne `map / colony / defense / squad / codex` depuis une nouvelle partie en **simulation privée**, sans adresse GPS ni sauvegarde préfabriquée ; ce sont des interfaces réelles, pas des combats CONTACT. Shadow Codec Ops présente un tableau natif de **31 missions Side Ops**, et non une scène de combat artificielle : le rendu Phaser headless n'était pas représentatif. CainOS a été photographié après sa calibration réelle, puis Encore montre ses neuf modes, ses 14 combattants, ses douze arènes et une arène de combat correctement cadrée. Les previews et les illustrations ne remplacent jamais une démonstration de l'interface réelle.
 
-Pour contrôler les **140 URL publiques** sans modifier les alias à l'aveugle :
+Pour contrôler les **155 destinations** (sites publics, dépôts à télécharger et accès SSO) sans modifier les alias à l'aveugle :
 
     npm run links:check
 
