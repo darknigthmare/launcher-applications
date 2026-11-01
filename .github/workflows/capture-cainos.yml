@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - "scripts/capture-cainos.mjs"
+      - "scripts/refresh-cainos-arena.mjs"
       - ".github/workflows/capture-cainos.yml"
   workflow_dispatch:
 
@@ -33,8 +34,11 @@ jobs:
         run: |
           node --check scripts/browser-capture-common.mjs
           node --check scripts/capture-cainos.mjs
+          node --check scripts/refresh-cainos-arena.mjs
       - name: Capture real CainOS desktop and Encore fighter selection/duel
         run: node scripts/capture-cainos.mjs
+      - name: Recadrer la vraie arène Encore, sans changer le gameplay
+        run: node scripts/refresh-cainos-arena.mjs
       - name: Verify catalogue and media
         run: npm test
       - name: Preserve native image evidence
