@@ -6,6 +6,18 @@ La PR #17 propose **155 fiches, dont 142 jeux** ; la version publique peut encor
 
 Version publique : [launcher-applications.vercel.app](https://launcher-applications.vercel.app/)
 
+## Version candidate 1.14 — Jeux oubliés et titres d'origine
+
+La branche candidate ajoute **15 jeux retrouvés** au catalogue sans supprimer les **140 anciennes fiches** : dix pages Vercel vérifiées, cinq jeux exécutés ou distribués localement depuis leurs dépôts GitHub. Le total devient **155 applications dont 142 jeux**. Le bouton et le badge distinguent une page Jouer d'une page de téléchargement.
+
+Les jeux nouvellement retrouvés ne reçoivent aucune illustration ni capture de gameplay imaginaire. Pour **DEADLINE: Outbreak**, un écran titre issu du vrai moteur, un aperçu et cinq captures natives de la mission d'ouverture ont été enregistrés avec leurs SHA-256. Les autres médias sont signalés « à contrôler », pas « fidélité 1:1 acceptée ». Les anciennes illustrations restent archivées.
+
+[Retrouvailles et doublons vérifiés](docs/RECOVERED_GAMES_2026-11-01.md) · [matrice exhaustive des médias](docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json) · [diagnostic des URLs](docs/LINK_IDENTITY_SSO_2026-11-01.md)
+
+**Important :** la version 1.14 est dans la PR en cours de validation. Tant que la PR n'est pas fusionnée, la production peut afficher une version plus ancienne. Le mode édition local ne possède pas de véritable authentification admin, et les fichiers publics ne deviennent pas confidentiels du seul fait de leur masquage dans l'UI.
+
+---
+
 ## Version 1.13 — Actualisation des fiches et séparation des archives (1er novembre 2026)
 
 Cette mise à jour conserve les **140 fiches existantes** et leur historique. Trois adresses publiques ont été **rétablies après vérification du véritable jeu** (Brèche Multiverselle, Vortex Command et PREDATOR: HIVE WARRIORS). L'alias d'équipe de Malaise Party demande une connexion Vercel : ce jeu est désormais indiqué comme protégé, sans prétendre qu'un HTTP 200 signifie qu'il est accessible. Douze descriptions et accroches gagnent en précision diégétique d'après leurs sources GitHub. [Preuves des destinations et de la redirection SSO](docs/LINK_IDENTITY_SSO_2026-11-01.md).
