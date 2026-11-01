@@ -1431,11 +1431,26 @@
     "captureNote": "Fiche publiable avec lien vérifié; aucun visuel du gameplay accepté avant capture sur une vraie version et vérification."
   },
   "deadline-outbreak": {
-    "images": [],
-    "captureType": "pending-source-review",
-    "presentationReview": "pending-fidelity",
-    "labels": [],
-    "captureNote": "Fiche publiable avec lien vérifié; aucun visuel du gameplay accepté avant capture sur une vraie version et vérification."
+    "images": [
+      "assets/screenshots/deadline-outbreak/01.png",
+      "assets/screenshots/deadline-outbreak/02.png",
+      "assets/screenshots/deadline-outbreak/03.png",
+      "assets/screenshots/deadline-outbreak/04.png",
+      "assets/screenshots/deadline-outbreak/05.png"
+    ],
+    "captureType": "real-gameplay",
+    "presentationReview": "source-native-title-screen",
+    "labels": [
+      "Nightline — première ligne de défense",
+      "Escouade — manœuvre vers la voie de droite",
+      "Escouade — recentrage sur la voie centrale",
+      "Escouade — ralliement sous pression",
+      "Opération — interruption tactique et état de l'escouade"
+    ],
+    "captureSource": "https://deadline-outbreak.vercel.app/",
+    "captureVersion": "1.1.0",
+    "captureDate": "2026-11-01",
+    "captureProof": "docs/media-proof/deadline-outbreak-native-2026-11-01.json"
   },
   "ragtime-rumble-complete-tour": {
     "images": [],

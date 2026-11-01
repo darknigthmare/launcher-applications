@@ -5,5 +5,18 @@
     "pending": "Aucune illustration ou capture inventée n'est requise pour les fiches retrouvées tant que l'audit natif est en attente.",
     "verified": "Quand les captures existent, leur SHA-256, le navigateur source, le nom du jeu et les scènes vérifiées sont enregistrés ici, séparément des créations OpenAI."
   },
-  "assets": []
+  "assets": [
+    {
+      "id": "deadline-outbreak",
+      "provider": "Game Runtime / Chromium CDP",
+      "generator": "native-browser-capture",
+      "presentation": "assets/presentations/deadline-outbreak.png",
+      "preview": "assets/previews/deadline-outbreak.jpg",
+      "sha256": "a3e05fb41faab527b21db0500b49df18a29056e946b27620fdd6730aad56f14b",
+      "sourceUrl": "https://deadline-outbreak.vercel.app/",
+      "captureProof": "docs/media-proof/deadline-outbreak-native-2026-11-01.json",
+      "sourceType": "actual title screen, not a constructed illustration",
+      "version": "1.1.0"
+    }
+  ]
 }

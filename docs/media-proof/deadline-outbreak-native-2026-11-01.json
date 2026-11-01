@@ -1,0 +1,93 @@
+{
+  "captureType": "native-game-browser",
+  "source": "https://deadline-outbreak.vercel.app/",
+  "title": "DEADLINE: Outbreak",
+  "version": "1.1.0",
+  "capturedAt": "2026-11-01T15:06:21.256Z",
+  "resolution": "1280x720",
+  "notGeneratedArt": true,
+  "presentation": {
+    "path": "assets/presentations/deadline-outbreak.png",
+    "sha256": "a3e05fb41faab527b21db0500b49df18a29056e946b27620fdd6730aad56f14b",
+    "bytes": 920856,
+    "kind": "source-native-title-screen"
+  },
+  "preview": {
+    "path": "assets/previews/deadline-outbreak.jpg",
+    "sha256": "9c038fcca5b4fb5e2e99e781004e8a12f32ef1b766be1d94814c001d4ba86d53",
+    "bytes": 112297,
+    "kind": "real-opening-combat"
+  },
+  "scenes": [
+    {
+      "slot": 1,
+      "label": "Nightline — première ligne de défense",
+      "kind": "combat",
+      "path": "assets/screenshots/deadline-outbreak/01.png",
+      "sha256": "b1bf0734d94849eaaa27612cf807ac2d0359bc3c606c2c0e4b455470194a0673",
+      "bytes": 851643,
+      "phase": "COMBAT",
+      "wave": "VAGUE 01 / 05",
+      "paused": false,
+      "roster": "19 UNITÉS",
+      "verifiedScreen": "game-screen.active"
+    },
+    {
+      "slot": 2,
+      "label": "Escouade — manœuvre vers la voie de droite",
+      "kind": "combat-movement",
+      "path": "assets/screenshots/deadline-outbreak/02.png",
+      "sha256": "4401254f62f5498d630c91e2a3699f1e7e20ce7322e0f0bc5875576241c0a8f0",
+      "bytes": 849246,
+      "phase": "COMBAT",
+      "wave": "VAGUE 01 / 05",
+      "paused": false,
+      "roster": "19 UNITÉS",
+      "verifiedScreen": "game-screen.active"
+    },
+    {
+      "slot": 3,
+      "label": "Escouade — recentrage sur la voie centrale",
+      "kind": "combat-movement",
+      "path": "assets/screenshots/deadline-outbreak/03.png",
+      "sha256": "4ee2ed85ed5e9a0e33f9cc671577cd94ac31699c91289db11030937155e85aff",
+      "bytes": 852601,
+      "phase": "COMBAT",
+      "wave": "VAGUE 01 / 05",
+      "paused": false,
+      "roster": "19 UNITÉS",
+      "verifiedScreen": "game-screen.active"
+    },
+    {
+      "slot": 4,
+      "label": "Escouade — ralliement sous pression",
+      "kind": "rally",
+      "path": "assets/screenshots/deadline-outbreak/04.png",
+      "sha256": "6b43d124c9d35af83afc12a548db18978dcc8b1ac1c12f437ce280c710146b6e",
+      "bytes": 859920,
+      "phase": "COMBAT",
+      "wave": "VAGUE 01 / 05",
+      "paused": false,
+      "roster": "19 UNITÉS",
+      "verifiedScreen": "game-screen.active"
+    },
+    {
+      "slot": 5,
+      "label": "Opération — interruption tactique et état de l'escouade",
+      "kind": "in-game-pause",
+      "path": "assets/screenshots/deadline-outbreak/05.png",
+      "sha256": "627c0929ca1bad4d544ca048acc85eb8c3b0848adbf07bd51204315469437cbe",
+      "bytes": 501647,
+      "phase": "COMBAT",
+      "wave": "VAGUE 01 / 05",
+      "paused": true,
+      "roster": "19 UNITÉS",
+      "verifiedScreen": "game-screen.active"
+    }
+  ],
+  "limitations": [
+    "No boss or later sector claimed: scenes from opening operation",
+    "Live screenshot and real original title, not hand-drawn concept art",
+    "Public identity is confirmed, but full campaign requires separate QA"
+  ]
+}
