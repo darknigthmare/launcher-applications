@@ -29,6 +29,16 @@ try {
   await mkdir(resolve(root,".reports/horde-current"),{recursive:true});
   await writeFile(resolve(root,".reports/horde-current/inspection.json"),JSON.stringify({source:"darknigthmare/The-Horde-The-Last-Stand",sourceBuild:"0.44.2 according to README",capturedAt:new Date().toISOString(),...report},null,2)+"\n");
   await writeFile(resolve(root,".reports/horde-current/initial-native.png"),bytes);
+  const center=await browser.evaluate("(()=>{const e=document.getElementById('dl403-play');if(!e||e.disabled)throw Error('Campagne indisponible');const r=e.getBoundingClientRect();return {x:Math.round(r.left+r.width/2),y:Math.round(r.top+r.height/2)}})()");
+  await browser.call("Input.dispatchMouseEvent",{type:"mouseMoved",x:center.x,y:center.y});
+  await browser.call("Input.dispatchMouseEvent",{type:"mousePressed",x:center.x,y:center.y,button:"left",clickCount:1});
+  await browser.call("Input.dispatchMouseEvent",{type:"mouseReleased",x:center.x,y:center.y,button:"left",clickCount:1});
+  await browser.sleep(850);
+  const campaign=await browser.evaluate(expression);
+  await writeFile(resolve(root,".reports/horde-current/campaign-inspection.json"),JSON.stringify(campaign,null,2)+"\n");
+  await writeFile(resolve(root,".reports/horde-current/campaign-native.png"),await browser.capture("png"));
+  const activeButtons=campaign.buttons.filter(x=>!x.hidden);
+  console.log("HORDE CAMPAIGN INSPECTION "+JSON.stringify({text:campaign.text.slice(0,1100),buttons:activeButtons,sections:campaign.visibleSections}));
   console.log("HORDE LOCAL INSPECTION "+JSON.stringify({title:report.title,protocol:report.urlProtocol,buttons:report.buttons.slice(0,30),canvases:report.canvases,scripts:report.scripts,sections:report.visibleSections,errorTexts:report.errorTexts}));
   if(!report.title.toLowerCase().includes("dernière")&&!report.text.toLowerCase().includes("dernière ligne"))throw Error("Local HTML not identifiable as Dernière Ligne");
 } finally {await browser.close();}
