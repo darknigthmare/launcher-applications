@@ -4,7 +4,9 @@
 
 Croisement des **172 dépôts GitHub** recherchables sur `darknigthmare`, des **162 projets Vercel** du compte `darknigthmares-projects` et du catalogue de **150 fiches avant cette vague**. Un nom différent ne prouve pas un jeu différent : les alias, branches DLC, laboratoires et copies de déploiement sont examinés séparément. La correspondance de l'identité n'atteste pas le fonctionnement de tous les modes.
 
-Cette vague réintègre **cinq éditions locales documentées dans des dépôts publics**, sans image inventée. Le catalogue candidat contient ainsi **155 fiches dont 142 jeux**. Les 140 dossiers historiques restent inchangés ; les 10 réintégrations Vercel de la vague précédente restent conservées.
+Cette vague GitHub — antérieure aux deux mini-jeux d'anthologie — réintègre **cinq éditions locales documentées dans des dépôts publics**, sans image inventée. Le catalogue candidat contient ainsi **155 fiches dont 142 jeux**. Les 140 dossiers historiques restent inchangés ; les 10 réintégrations Vercel de la vague précédente restent conservées.
+
+**Bilan après les anthologies :** les 140 fiches initiales, 10 jeux Vercel, 5 jeux locaux GitHub et 2 mini-jeux des collections des 2–5 août donnent **157 fiches dont 144 jeux**. Les 155 indiqués ci-dessous désignent l'étape précédente.
 
 ## Cinq jeux ajoutés avec leur véritable distribution
 
