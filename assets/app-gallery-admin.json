@@ -128,10 +128,18 @@
       "assets/screenshots/previous/deadwall-last-enclosure/03.png",
       "assets/screenshots/previous/deadwall-last-enclosure/04.png",
       "assets/screenshots/previous/deadwall-last-enclosure/05.png"
+    ],
+    "yautja-apex-hunt": [
+      "assets/screenshots/previous/yautja-apex-hunt/01.png",
+      "assets/screenshots/previous/yautja-apex-hunt/02.png",
+      "assets/screenshots/previous/yautja-apex-hunt/03.png",
+      "assets/screenshots/previous/yautja-apex-hunt/04.png",
+      "assets/screenshots/previous/yautja-apex-hunt/05.png"
     ]
   },
   "previousPreviews": {
     "triarche-ciel-rouge": "assets/previews/previous/triarche-ciel-rouge.jpg",
-    "deadwall-last-enclosure": "assets/previews/previous/deadwall-last-enclosure.png"
+    "deadwall-last-enclosure": "assets/previews/previous/deadwall-last-enclosure.png",
+    "yautja-apex-hunt": "assets/previews/previous/yautja-apex-hunt.jpg"
   }
 }

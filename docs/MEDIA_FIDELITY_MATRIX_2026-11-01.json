@@ -813,14 +813,15 @@
       "screenshotCount": 5,
       "historicalIllustrationStored": true,
       "priority": "P0",
-      "sourceVersionVerified": null,
-      "productionVersionVerified": null,
+      "sourceVersionVerified": "Package 1.13.0, source master; build Vercel 5e386e0",
+      "productionVersionVerified": "Production GitHub/Vercel master 5e386e0 (2026-10-31)",
       "artFidelity": "not-reviewed",
-      "previewFidelity": "not-reviewed",
-      "screenshotFreshness": "requires-build-comparison",
-      "captureVerifiedAt": null,
+      "previewFidelity": "source-verified",
+      "screenshotFreshness": "up-to-date",
+      "captureVerifiedAt": "2026-11-01T10:44:27.119Z",
       "reviewer": null,
-      "notes": "À contrôler sur les références et le build du jeu avant toute mention de fidélité 1:1."
+      "notes": "5 captures authentiques du renderer 3D : croiseur, console des contrats, armurerie, paquetage, chasse. Aucun déplacement manuel non vérifié revendiqué ; illustration promotionnelle non évaluée 1:1.",
+      "screenshotCaptureProof": "docs/media-proof/yautja-apex-gameplay-2026-11-01.json"
     },
     {
       "id": "valkyrie-sweeper-dark-siege",

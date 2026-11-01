@@ -1,0 +1,106 @@
+{
+  "captureType": "native-browser-gameplay",
+  "notGeneratedArt": true,
+  "source": "https://yautja-apex-hunt.vercel.app/",
+  "releaseRef": {
+    "deploymentId": "dpl_3bVUaoiRC2tSoXUeJ6YGUnySwwPu",
+    "gitCommit": "5e386e0c1efc5c5401fbe66848cbc82130668002",
+    "source": "Vercel production listing"
+  },
+  "capturedAt": "2026-11-01T10:44:27.121Z",
+  "viewport": "1280x720",
+  "renderer": "real Three.js WebGL, Chromium SwiftShader",
+  "hubAccessVerified": true,
+  "preview": {
+    "path": "assets/previews/yautja-apex-hunt.jpg",
+    "sha256": "8c3a05268847ba8005295bf59ea101b0edfe922d6b630d6ebdb1872b0e97632b",
+    "bytes": 226326
+  },
+  "archives": {
+    "previousScreenshots": [
+      "assets/screenshots/previous/yautja-apex-hunt/01.png",
+      "assets/screenshots/previous/yautja-apex-hunt/02.png",
+      "assets/screenshots/previous/yautja-apex-hunt/03.png",
+      "assets/screenshots/previous/yautja-apex-hunt/04.png",
+      "assets/screenshots/previous/yautja-apex-hunt/05.png"
+    ],
+    "previousPreview": "assets/previews/previous/yautja-apex-hunt.jpg"
+  },
+  "scenes": [
+    {
+      "slot": 1,
+      "label": "Croiseur — exploration du vaisseau-mère",
+      "kind": "hub-exploration",
+      "path": "assets/screenshots/yautja-apex-hunt/01.png",
+      "sha256": "1476756572f9379e2a624f19ef6735e2c3658f2352dd34d4a742b8d5d008e14e",
+      "bytes": 885283,
+      "phase": "HUB",
+      "isGameStarted": true,
+      "sceneChildren": 9,
+      "hasRendered": true,
+      "activeBoss": false,
+      "isHubExploring": true
+    },
+    {
+      "slot": 2,
+      "label": "Console — contrats de chasse",
+      "kind": "mission-board",
+      "path": "assets/screenshots/yautja-apex-hunt/02.png",
+      "sha256": "183a414e5e007dd5a15542bc4bf031664747ad716f4e179c50df51c3f840b172",
+      "bytes": 327427,
+      "phase": "HUB",
+      "isGameStarted": true,
+      "sceneChildren": 9,
+      "hasRendered": true,
+      "activeBoss": false,
+      "isHubExploring": false
+    },
+    {
+      "slot": 3,
+      "label": "Armurerie — équipements du chasseur",
+      "kind": "armory",
+      "path": "assets/screenshots/yautja-apex-hunt/03.png",
+      "sha256": "5c2a63e7d8437d10538f6fe4709f8bd0c8b27aa1901156cb79872f18bb89e55b",
+      "bytes": 249243,
+      "phase": "HUB",
+      "isGameStarted": true,
+      "sceneChildren": 9,
+      "hasRendered": true,
+      "activeBoss": false,
+      "isHubExploring": false
+    },
+    {
+      "slot": 4,
+      "label": "Paquetage — préparation du contrat Goliath",
+      "kind": "equipment-ui",
+      "path": "assets/screenshots/yautja-apex-hunt/04.png",
+      "sha256": "4806e48cb823ee0a64eb36565635fd43da4ccb88c15f84a3e686d2bdc26c9f93",
+      "bytes": 153073,
+      "phase": "HUB",
+      "isGameStarted": true,
+      "sceneChildren": 9,
+      "hasRendered": true,
+      "activeBoss": false,
+      "isHubExploring": false
+    },
+    {
+      "slot": 5,
+      "label": "Jungle — chasse au Goliath",
+      "kind": "real-hunt",
+      "path": "assets/screenshots/yautja-apex-hunt/05.png",
+      "sha256": "783e0e77359365f4d68eb80d8cf8bd7373d0243ca2a34d115a054e6309968f8d",
+      "bytes": 1060846,
+      "phase": "HUNT",
+      "isGameStarted": true,
+      "sceneChildren": 22,
+      "hasRendered": true,
+      "activeBoss": true,
+      "isHubExploring": false
+    }
+  ],
+  "limitations": [
+    "Les scènes WebGL sont rendues par SwiftShader, non par GPU physique",
+    "Version référencée au déploiement Vercel READY et au code, distincte d'un marquage runtime natif",
+    "L'illustration conceptuelle 1:1 n'est pas certifiée"
+  ]
+}
