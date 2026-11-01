@@ -2127,7 +2127,7 @@
     const LEGACY_ADDED_AT = "1970-01-01T00:00:00.000Z";
     const MEDIA_HEALTH_WORKER_COUNT = 6;
     const AVAILABILITY_FILTERS = ["Tous", "Disponible", "En préparation", "Nouveauté"];
-    const OFFICIAL_SYNC_FIELDS = ["link", "status", "releaseState", "addedAt", "description", "pitch", "accessPolicy"];
+    const OFFICIAL_SYNC_FIELDS = ["link", "status", "releaseState", "addedAt", "description", "pitch", "accessPolicy", "mediaPendingReview"];
     // Only replace known obsolete official media paths: preserve intentional local customizations.
     const OFFICIAL_PREVIEW_MIGRATIONS = new Map([
       ["world-hive-wars", "assets/previews/world-hive-wars.webp"],
@@ -2263,6 +2263,7 @@
         tags,
         icon: String(source.icon || fallback.icon || initials(name)).trim().slice(0, 5),
         link,
+        mediaPendingReview: source.mediaPendingReview === true || fallback.mediaPendingReview === true,
         presentation: sanitizeImageUrl(source.presentation || fallback.presentation || source.image || fallback.image),
         previousPresentation: sanitizeImageUrl(source.previousPresentation || fallback.previousPresentation),
         previousPreview: sanitizeImageUrl(source.previousPreview || fallback.previousPreview),
@@ -2384,6 +2385,7 @@
     }
 
     function mediaLabel(app, index) {
+      if (app?.mediaPendingReview && mediaTargets(app).length === 0) return "Visuels en vérification · aucun rendu présumé fidèle";
       return mediaTargets(app)[index]?.label || `Vue ${index + 1}`;
     }
 
@@ -2939,6 +2941,7 @@
         <h2>${escapeHtml(app.name)}</h2>
         <p class="pitch">${escapeHtml(app.pitch)}</p>
         <p>${escapeHtml(app.description)}</p>
+        ${app.mediaPendingReview ? '<p class="access-note" role="note">Jeu retrouvé · lien et titre vérifiés. Aucune capture ni illustration certifiée du build n’est encore disponible dans cette fiche ; les visuels seront ajoutés uniquement après validation du vrai jeu.</p>' : ""}
         ${app.accessPolicy === "vercel-sso" ? '<p class="access-note" role="note">Accès restreint : ce domaine demande une connexion Vercel. Il ne s’agit pas d’un jeu ouvert au public sans authentification.</p>' : ""}
         <div class="meta-list">
           ${gameTaxonomyMetaMarkup(app)}
@@ -3051,7 +3054,7 @@
 
     function mediaTargets(app) {
       const targets = [
-        ...(!PENDING_VISUAL_REVIEWS.has(app.id) && app.presentationReview !== "pending-fidelity" ? [{
+        ...(!app.mediaPendingReview && !PENDING_VISUAL_REVIEWS.has(app.id) && app.presentationReview !== "pending-fidelity" ? [{
           label: "Illustration conceptuelle",
           url: sanitizeImageUrl(app.presentation)
         }] : []),
@@ -3121,8 +3124,11 @@
       apps.forEach((app) => {
         const targets = mediaTargets(app);
         const missing = [];
-        if (!sanitizeImageUrl(app.presentation)) missing.push("Illustration absente");
-        if (!sanitizeImageUrl(app.image)) missing.push("Capture absente");
+        if (app.mediaPendingReview) missing.push("Nouveau jeu · aucun visuel approuvé (0/5)");
+        else {
+          if (!sanitizeImageUrl(app.presentation)) missing.push("Illustration absente");
+          if (!sanitizeImageUrl(app.image)) missing.push("Capture absente");
+        }
         mediaHealthById.set(app.id, { missing, checked: false });
         targets.filter((target) => isSameOriginHttp(target.url)).forEach((target) => {
           queue.push({ appId: app.id, ...target });
