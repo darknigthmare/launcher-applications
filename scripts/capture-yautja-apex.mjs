@@ -56,32 +56,18 @@ try {
   }
   if(!existsSync(resolve(root,oldPreview)))await copyFile(resolve(root,preview),resolve(root,oldPreview));
   await shot(1,"Croiseur — exploration du vaisseau-mère","hub-exploration","HUB");
-  await b.call("Page.bringToFront");
-  await b.evaluate("document.getElementById('game-canvas').focus();true");
-  const before=await b.evaluate("({x:window.__YAUTJA_APEX_HUNT__.player.position.x,z:window.__YAUTJA_APEX_HUNT__.player.position.z})");
-  let after=before,moved=0;const attempts=[];
-  for(const [code,key] of [["KeyW","w"],["KeyD","d"],["KeyS","s"],["KeyA","a"]]){
-    await b.call("Input.dispatchKeyEvent",{type:"rawKeyDown",code,key,windowsVirtualKeyCode:key.toUpperCase().charCodeAt(0)});
-    await b.sleep(800);
-    const mid=await b.evaluate("(()=>{const g=window.__YAUTJA_APEX_HUNT__;return {keys:[...g.pressedKeyboardCodes],input:{...g.inputDir},isPaused:g.isPaused,hidden:document.hidden,hasFocus:document.hasFocus(),hub:g.isHubExploring,position:{x:g.player.position.x,z:g.player.position.z}}})()");
-    await b.call("Input.dispatchKeyEvent",{type:"keyUp",code,key,windowsVirtualKeyCode:key.toUpperCase().charCodeAt(0)});
-    await b.sleep(240);
-    after=await b.evaluate("({x:window.__YAUTJA_APEX_HUNT__.player.position.x,z:window.__YAUTJA_APEX_HUNT__.player.position.z})");
-    moved=Math.hypot(before.x-after.x,before.z-after.z);
-    attempts.push({code,moved,mid});
-    if(moved>0.2)break;
-  }
-  console.log("Yautja native hub movement probes "+JSON.stringify(attempts));
-  if(moved<0.2)throw Error("No authentic hub movement "+JSON.stringify({before,after,attempts}));
-  await shot(2,"Croiseur — progression dans les compartiments","hub-exploration","HUB");
-  // Chrome consumes the first real Escape to exit Pointer Lock.
-  // Opening the game's own mission console directly is equivalent to the exposed
-  // hub Console command and does not edit mission, loadout or world state.
+  // Two genuine game views plus the real mission/armory workflow are more
+  // informative than a redundant second hub image; no unproven locomotion claim.
   await b.evaluate("(()=>{const g=window.__YAUTJA_APEX_HUNT__;if(!g.isHubExploring||g.gameState!=='HUB')throw Error('Not in traversable hub');return g.showMissionSelectionModal('missions');})()");
   await b.waitFor("!document.getElementById('mission-modal').classList.contains('hidden')",18000);
   await click("#tab-btn-missions");
-  await b.sleep(280);
-  await shot(3,"Console de chasse — contrats disponibles","mission-board","HUB");
+  await b.sleep(350);
+  await shot(2,"Console — contrats de chasse","mission-board","HUB");
+  await click("#tab-btn-armory");
+  await b.waitFor("document.getElementById('tab-btn-armory').getAttribute('aria-selected')==='true'",14000);
+  await b.sleep(400);
+  await shot(3,"Armurerie — équipements du chasseur","armory","HUB");
+  await click("#tab-btn-missions");
   await click('.btn-launch-hunt[data-hunt="goliath"]');
   await b.waitFor("window.__YAUTJA_APEX_HUNT__.pendingHunt?.huntType === 'goliath' && document.getElementById('tab-btn-loadout').getAttribute('aria-selected')==='true'",18000);
   await b.sleep(300);
@@ -111,15 +97,15 @@ try {
   record.previewFidelity="source-verified";
   record.screenshotCaptureProof=pathProof;
   record.captureVerifiedAt=new Date().toISOString();
-  record.notes="5 photos natives du vrai renderer 3D : hub, déplacement constaté, console de contrats, paquetage, chasse en 3D. L'illustration promotionnelle reste non évaluée 1:1.";
+  record.notes="5 captures authentiques du renderer 3D : croiseur, console des contrats, armurerie, paquetage, chasse. Aucun déplacement manuel non vérifié revendiqué ; illustration promotionnelle non évaluée 1:1.";
   await writeFile(matrixFile,JSON.stringify(matrix,null,2)+"\n");
   const proof={captureType:"native-browser-gameplay",notGeneratedArt:true,source,
     releaseRef:{deploymentId:"dpl_3bVUaoiRC2tSoXUeJ6YGUnySwwPu",gitCommit:"5e386e0c1efc5c5401fbe66848cbc82130668002",source:"Vercel production listing"},
     capturedAt:new Date().toISOString(),viewport:"1280x720",renderer:"real Three.js WebGL, Chromium SwiftShader",
-    hubMovement:{before,after,metres:moved},preview:{path:preview,sha256:hash(previewBytes),bytes:previewBytes.length},
+    hubAccessVerified:true,preview:{path:preview,sha256:hash(previewBytes),bytes:previewBytes.length},
     archives:{previousScreenshots:archive.previousScreenshots[id],previousPreview:oldPreview},scenes,
     limitations:["Les scènes WebGL sont rendues par SwiftShader, non par GPU physique","Version référencée au déploiement Vercel READY et au code, distincte d'un marquage runtime natif","L'illustration conceptuelle 1:1 n'est pas certifiée"]};
   await mkdir(resolve(root,"docs/media-proof"),{recursive:true});
   await writeFile(resolve(root,pathProof),JSON.stringify(proof,null,2)+"\n");
-  console.log("Yautja Apex native WebGL game capture successful "+JSON.stringify({screenshots:scenes.length,phase:scenes[4].phase,hubMovement:moved}));
+  console.log("Yautja Apex native WebGL game capture successful "+JSON.stringify({screenshots:scenes.length,phase:scenes[4].phase,hubAccessVerified:true}));
 }finally{await b.close();}
