@@ -1266,7 +1266,20 @@
       "assets/screenshots/deadwall-last-enclosure/03.png",
       "assets/screenshots/deadwall-last-enclosure/04.png",
       "assets/screenshots/deadwall-last-enclosure/05.png"
-    ]
+    ],
+    "labels": [
+      "D-17 — première garde",
+      "D-17 — exploration à pied",
+      "D-17 — poste de commandement",
+      "D-17 — dossiers du territoire",
+      "D-17 — doctrines et recherche"
+    ],
+    "captureType": "real-gameplay",
+    "captureSource": "https://deadwall-last-enclosure.vercel.app/",
+    "captureVersion": "1.74.0",
+    "captureDate": "2026-11-01",
+    "captureProof": "docs/media-proof/deadwall-gameplay-2026-11-01.json",
+    "presentationReview": "pending-fidelity"
   },
   "aziz-la-lumiere-dort": {
     "images": [
