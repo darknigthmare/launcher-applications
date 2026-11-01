@@ -11,7 +11,7 @@ Un titre de page HTML et un HTTP 200 prouvent l'identité de l'application servi
 | ID | Jeu | Accès | Captures validées dans cette vague |
 | --- | --- | --- | --- |
 | `mass-effect-relay-chronicles` | Mass Effect — Relay Chronicles | https://masseffectrelaychronicles.vercel.app/ | En attente de capture native |
-| `resident-evil-bow-protocol` | Resident Evil — B.O.W. Protocol | https://resident-evil-bow-protocol.vercel.app/ | Capture menu R20 et spécimens en cours ; jamais un combat supposé |
+| `resident-evil-bow-protocol` | Resident Evil — B.O.W. Protocol | https://resident-evil-bow-protocol.vercel.app/ | Écran d’entrée + cinq vues de menu R20 vérifiées ([preuves](media-proof/resident-evil-bow-r20-2026-11-01.json)) ; **pas une capture de combat** |
 | `digital-circus-encore` | Digital Circus — Encore | https://digital-circus-encore.vercel.app/ | En attente de capture native ; distinct de l'interface CainOS |
 | `yugioh-25d-holograms` | Yu-Gi-Oh! 2.5D Hologram Duel | https://yugioh-25d-holograms.vercel.app/ | En attente de capture native |
 | `riftcasters-3d` | Riftcasters 3D — Convergence | https://riftcasters-3d.vercel.app/ | En attente de capture WebGL ; arena-survivor autonome |
