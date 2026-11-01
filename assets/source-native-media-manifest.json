@@ -29,6 +29,19 @@
       "captureProof": "docs/media-proof/resident-evil-bow-r20-2026-11-01.json",
       "sourceType": "Actual game's R20 entry screen and menus; not hand-drawn BOW art",
       "version": "0.7.3 (GitHub source, runtime version not signed)"
+    },
+    {
+      "id": "derniere-ligne-zero-repli",
+      "provider": "Game Runtime / Chromium CDP",
+      "generator": "native-local-file-capture",
+      "presentation": "assets/presentations/derniere-ligne-zero-repli.png",
+      "preview": "assets/previews/derniere-ligne-zero-repli.jpg",
+      "sha256": "e5f02620fbe320921544ffed1989df9520c0b5d794a9092122265c510b386102",
+      "sourceUrl": "https://github.com/darknigthmare/The-Horde-The-Last-Stand",
+      "sourceCommit": "d3d4bb04abeae1cddc8be0102a78165736476042",
+      "captureProof": "docs/media-proof/derniere-ligne-local-0442-2026-11-01.json",
+      "sourceType": "Actual 0.44.2 game title UI and gameplay; not invented keyart",
+      "version": "0.44.2"
     }
   ]
 }

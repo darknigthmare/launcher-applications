@@ -1489,11 +1489,27 @@
     "captureNote": "Jeu distribué via son dépôt GitHub. Aucune capture de gameplay ou illustration 1:1 n'est certifiée ; accès local via les instructions de l'auteur."
   },
   "derniere-ligne-zero-repli": {
-    "images": [],
-    "labels": [],
-    "captureType": "pending-source-review",
-    "presentationReview": "pending-fidelity",
-    "captureNote": "Jeu distribué via son dépôt GitHub. Aucune capture de gameplay ou illustration 1:1 n'est certifiée ; accès local via les instructions de l'auteur."
+    "images": [
+      "assets/screenshots/derniere-ligne-zero-repli/01.png",
+      "assets/screenshots/derniere-ligne-zero-repli/02.png",
+      "assets/screenshots/derniere-ligne-zero-repli/03.png",
+      "assets/screenshots/derniere-ligne-zero-repli/04.png",
+      "assets/screenshots/derniere-ligne-zero-repli/05.png"
+    ],
+    "labels": [
+      "Campagnes — les neuf fronts de la dernière ligne",
+      "Dépôt 07 — préparation des défenses et du convoi",
+      "Nuit 01 — le premier assaut du Dépôt 07",
+      "Dépôt 07 — maintien des deux voies",
+      "Nuit 01 — ligne de défense et HUD tactique"
+    ],
+    "captureType": "real-local-gameplay",
+    "captureSource": "https://github.com/darknigthmare/The-Horde-The-Last-Stand",
+    "captureVersion": "0.44.2",
+    "captureDate": "2026-11-01",
+    "captureProof": "docs/media-proof/derniere-ligne-local-0442-2026-11-01.json",
+    "presentationReview": "source-verified",
+    "captureNote": "Trois captures de vraie phase combat et deux écrans de navigation/briefing du build local 0.44.2."
   },
   "fallout-marseille-mistral": {
     "images": [],
