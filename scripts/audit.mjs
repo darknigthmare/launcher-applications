@@ -329,10 +329,13 @@ if (gameGenreMatch) {
   }
 }
 
-const pendingMediaApps = apps.filter((app) => app.mediaPendingReview === true);
-const establishedApps = apps.filter((app) => app.mediaPendingReview !== true);
-assert(establishedApps.length === 140, "les 140 applications historiques sont préservées");
-assert(pendingMediaApps.length === 10, "les dix jeux retrouvés sont sans visuels 1:1 inventés");
+const recoveredApps = apps.filter((app) => app.recoveredGame === true);
+const establishedApps = apps.filter((app) => app.recoveredGame !== true);
+const pendingMediaApps = recoveredApps.filter((app) => app.mediaPendingReview === true);
+const recoveredWithNativeMedia = recoveredApps.filter((app) => app.mediaPendingReview !== true);
+assert(establishedApps.length === 140, "les 140 applications historiques et leurs assets restent intacts");
+assert(recoveredApps.length === 10 && recoveredApps.length === pendingMediaApps.length + recoveredWithNativeMedia.length,
+  "les dix jeux retrouvés sont suivis, avec ou sans captures validées");
 assert(apps.length === 150, "le nouveau catalogue contient 150 applications");
 assert(apps.filter((app) => app?.category === "Jeux").length === 137, "le catalogue contient 137 jeux");
 assert(gameGenreGroups.length === 8, "la navigation Jeux contient huit genres principaux");
@@ -519,6 +522,26 @@ for (const entry of openAiEntries) {
   assert(ids.has(entry?.id), `provenance OpenAI attribuée à une application connue: ${entry?.id || "inconnue"}`);
 }
 
+const nativeMedia = JSON.parse(await readFile(path.join(root, "assets/source-native-media-manifest.json"), "utf8"));
+const nativeEntries = Array.isArray(nativeMedia?.assets) ? nativeMedia.assets : [];
+assert(nativeEntries.length === recoveredWithNativeMedia.length,
+  "chaque nouveau jeu illustré dispose d'une provenance de capture native distincte de la génération OpenAI");
+for (const app of recoveredWithNativeMedia) {
+  const source = nativeEntries.find((entry) => entry.id === app.id);
+  assert(Boolean(source), `source média du jeu retrouvé ${app.id} vérifiée`);
+  assert(source?.presentation === app.presentation && source?.preview === app.image,
+    `vues natives documentées pour ${app.id}`);
+  assert(source?.captureProof && await exists(source.captureProof),
+    `rapport de capture effective du jeu retrouvé ${app.id}`);
+  if(source?.sha256 && await exists(source.presentation)) {
+    const bytes = await readFile(path.join(root, source.presentation));
+    assert(createHash("sha256").update(bytes).digest("hex") === source.sha256,
+      `empreinte de la présentation native ${app.id}`);
+  }
+}
+for (const item of nativeEntries) assert(recoveredApps.some((x)=>x.id === item.id),
+  `aucune provenance native ne peut être attribuée à un jeu inconnu: ${item.id}`);
+
 const galleryDocument = JSON.parse(await readFile(path.join(root, "assets", "app-gallery.json"), "utf8"));
 const galleryMap = galleryDocument.galleries || galleryDocument.apps || galleryDocument;
 const archiveDocument = JSON.parse(await readFile(path.join(root, "assets", "app-gallery-admin.json"), "utf8"));
@@ -529,14 +552,23 @@ const fidelityItems = new Map((fidelityMatrix.entries || []).map((item) => [item
 assert(fidelityItems.size === apps.length, "une seule fiche de revue média par application");
 assert(fidelityItems.get("malaise-party")?.accessPolicy === "vercel-sso", "Malaise Party est identifié comme protégé par Vercel SSO");
 const verifiedGalleries = [...fidelityItems.values()].filter((item) => item.screenshotCaptureProof);
+const verifiedHistoricGalleries = verifiedGalleries.filter((item) => !recoveredApps.some((app) => app.id === item.id));
 const verifiedScreenshots = verifiedGalleries.reduce((sum, item) => sum + item.screenshotCount, 0);
+const historicVerifiedScreenshots = verifiedHistoricGalleries.reduce((sum, item) => sum + item.screenshotCount, 0);
 const previousScreenshots = Object.values(archiveDocument.previousScreenshots || {}).flat();
 const previousPreviews = Object.values(archiveDocument.previousPreviews || {});
 assert(verifiedGalleries.length >= 5 && verifiedScreenshots === verifiedGalleries.length * 5, "au moins cinq galeries et cinq images par galerie vérifiées par origine");
 assert(fidelityMatrix.summary?.recapturedScreenshotCount === verifiedScreenshots, "résumé des captures mises à jour calculé depuis les preuves");
-assert(fidelityMatrix.summary?.awaitingRecaptureCount === fidelityMatrix.summary.screenshots - verifiedScreenshots, "reste de captures historiques à comparer calculé");
-assert(previousScreenshots.length === verifiedScreenshots && fidelityMatrix.summary?.archivedScreenshotCount === previousScreenshots.length, "tous les originaux de captures conservés");
-assert(previousPreviews.length === verifiedGalleries.length && fidelityMatrix.summary?.archivedPreviewCount === previousPreviews.length, "un ancien aperçu conservé par galerie renouvelée");
+assert(fidelityMatrix.summary?.awaitingRecaptureCount === fidelityMatrix.summary.screenshots - historicVerifiedScreenshots,
+  "le reste des 700 captures historiques reste indépendant des nouveaux jeux");
+assert(previousScreenshots.length === historicVerifiedScreenshots && fidelityMatrix.summary?.archivedScreenshotCount === previousScreenshots.length,
+  "tous les anciens screenshots de fiches existantes sont conservés");
+assert(previousPreviews.length === verifiedHistoricGalleries.length && fidelityMatrix.summary?.archivedPreviewCount === previousPreviews.length,
+  "un ancien aperçu conservé pour chaque galerie historique renouvelée");
+assert(fidelityMatrix.summary?.mediaPendingGames === pendingMediaApps.length,
+  "le suivi distingue les nouveaux jeux sans captures des captures natives acceptées");
+assert(fidelityMatrix.summary?.missingNewGameScreenshots === pendingMediaApps.length * 5,
+  "les slots de capture encore ouverts restent visibles");
 assert(fidelityMatrix.summary?.sourceVerifiedGalleries === verifiedGalleries.length, "niveaux de preuves et galeries cohérents");
 for (const app of apps) {
   const item = fidelityItems.get(app.id);
@@ -558,7 +590,7 @@ const galleryPaths = new Set();
 const previousPresentationPaths = new Set();
 const previousPresentationHashes = new Set();
 const appsWithoutPreviousPresentation = new Set([
-  ...pendingMediaApps.map((app) => app.id),
+  ...recoveredApps.map((app) => app.id),
   "elyra-grand-pas",
   "intravore",
   "nexus-of-torment",
@@ -960,8 +992,8 @@ if (previousPresentationDirectoryExists) {
     .filter((name) => rasterExtensionPattern.test(name))
     .map((name) => `${previousPresentationDirectory}/${name}`);
 }
-assert(appsWithoutPreviousPresentation.size === 28 + pendingMediaApps.length,
-  "les 28 exceptions historiques et les nouveaux jeux sans version précédente sont explicitement autorisés");
+assert(appsWithoutPreviousPresentation.size === 28 + recoveredApps.length,
+  "les 28 exceptions historiques et les dix jeux nouvellement retrouvés n'ont pas d'anciens visuels à inventer");
 for (const id of appsWithoutPreviousPresentation) {
   assert(ids.has(id), `exception historique attribuée à une application connue: ${id}`);
 }
@@ -981,11 +1013,12 @@ for (const id of Object.keys(galleryMap).filter((id) => id !== "notes")) {
   assert(ids.has(id), `galerie attribuée à une application connue: ${id}`);
 }
 
-assert(images.size === establishedApps.length, "un aperçu pour chaque fiche historique sans inventer les nouveaux");
-assert(presentations.size === establishedApps.length, "une présentation pour chaque fiche historique sans visuel fictif");
-assert(images.size === 140, "exactement 140 aperçus référencés");
-assert(presentations.size === 140, "exactement 140 présentations référencées");
-assert(galleryPaths.size === 700, "exactement 700 captures de galerie référencées");
+assert(images.size === establishedApps.length + recoveredWithNativeMedia.length,
+  "aperçus historiques plus vraies captures natives de jeux retrouvés");
+assert(presentations.size === establishedApps.length + recoveredWithNativeMedia.length,
+  "présentations historiques plus titres de jeu source-native");
+assert(galleryPaths.size === 700 + recoveredWithNativeMedia.length * 5,
+  "700 captures historiques plus cinq images vérifiées par nouveau jeu illustré");
 assert(
   Object.keys(galleryMap).filter((id) => id !== "notes").length === apps.length,
   "une galerie exactement par application"
@@ -999,7 +1032,7 @@ assert(html.includes("Ancienne capture"), "les anciennes captures restent dispon
 assert(html.includes("previousScreenshots"), "l'application supporte les captures historiques séparées");
 const iconSprite = await readFile(path.join(root, "assets", "app-icons.svg"), "utf8");
 for (const app of apps) {
-  if (app.mediaPendingReview) continue; // Le monogramme textuel fonctionne tant que l'icône fidèle n'est pas validée.
+  if (app.recoveredGame) continue; // Les jeux retrouvés peuvent utiliser leur monogramme en attendant un pictogramme fidèle.
   assert(iconSprite.includes(`id="icon-${app.id}"`), `icône SVG présente pour ${app.id}`);
 }
 
@@ -1107,7 +1140,8 @@ assert(serviceWorker.includes('response.type === "basic"'), "seules les réponse
 assert(serviceWorker.includes('isCacheableResponse(response, "text/html")'), "le fallback de navigation reste un document HTML");
 assert(serviceWorker.match(/event\.waitUntil\(updatePromise\)/g)?.length === 2, "les écritures différées prolongent les événements fetch");
 const mediaFiles = [...previewFiles, ...presentationFiles, ...previousPresentationPaths, ...galleryPaths];
-assert(mediaFiles.length === 1092, "exactement 1 092 médias référencés");
+assert(mediaFiles.length === 1092 + recoveredWithNativeMedia.length * 7,
+  "les 1 092 médias historiques restent intacts, avec sept vrais médias par jeu retrouvé illustré");
 assert(new Set(mediaFiles).size === mediaFiles.length, "le compte total des médias ne contient aucun doublon");
 assert(
   !mediaFiles.some((asset) => serviceWorker.includes(`"/${asset}"`)),
