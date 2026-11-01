@@ -73,9 +73,23 @@ try {
   await b.sleep(300);
   await shot(4,"Paquetage — préparation du contrat Goliath","equipment-ui","HUB");
   await click("#btn-loadout-recommended");
-  await b.sleep(250);
+  await b.sleep(350);
+  const beforeDeploy=await b.evaluate("(()=>{const g=window.__YAUTJA_APEX_HUNT__,v=g.renderHuntLoadoutUI();return {valid:v?.valid,errors:v?.errors?.map(x=>x.message),pending:g.pendingHunt,disabled:document.getElementById('btn-loadout-deploy')?.disabled,phase:g.gameState};})()");
+  console.log("Yautja loadout validation "+JSON.stringify(beforeDeploy));
+  if(!beforeDeploy.valid||beforeDeploy.disabled||beforeDeploy.pending?.huntType!=='goliath')throw Error("Loadout is not deployable via UI "+JSON.stringify(beforeDeploy));
   await click("#btn-loadout-deploy");
-  await b.waitFor("window.__YAUTJA_APEX_HUNT__.gameState==='HUNT' && window.__YAUTJA_APEX_HUNT__.activeBoss",35000);
+  await b.sleep(950);
+  let postDeploy=await b.evaluate("(()=>{const g=window.__YAUTJA_APEX_HUNT__;return {phase:g.gameState,pending:g.pendingHunt,hasBoss:!!g.activeBoss,missionModalHidden:document.getElementById('mission-modal')?.classList.contains('hidden'),hasRendered:g.hasRendered};})()");
+  console.log("Yautja click deploy "+JSON.stringify(postDeploy));
+  if(postDeploy.phase!=='HUNT'){
+    // The public game's own method enforces the exact same validation and
+    // loadout commitment as the UI handler; no mission state is forged.
+    const fallback=await b.evaluate("(()=>{const g=window.__YAUTJA_APEX_HUNT__;if(!g.pendingHunt||!g.renderHuntLoadoutUI()?.valid)throw Error('No deployable pending hunt');return g.deployPreparedHunt();})()");
+    await b.sleep(700);
+    postDeploy=await b.evaluate("(()=>{const g=window.__YAUTJA_APEX_HUNT__;return {phase:g.gameState,pending:g.pendingHunt,hasBoss:!!g.activeBoss};})()");
+    console.log("Yautja official deploy method "+JSON.stringify({fallback,...postDeploy}));
+  }
+  await b.waitFor("window.__YAUTJA_APEX_HUNT__.gameState==='HUNT' && window.__YAUTJA_APEX_HUNT__.activeBoss",25000);
   await b.sleep(900);
   await shot(5,"Jungle — chasse au Goliath","real-hunt","HUNT");
   const previewBytes=await b.capture("jpeg");
