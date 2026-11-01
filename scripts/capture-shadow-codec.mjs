@@ -86,6 +86,12 @@ try {
  entry.screenshotFreshness="up-to-date";entry.previewFidelity="source-verified";
  entry.screenshotCaptureProof=proofPath;entry.captureVerifiedAt=new Date().toISOString();
  entry.notes="Cinq interfaces réelles 3.7.0 : accueil, Codec, moteur Side Ops/Phaser, campagne, archives. Aucune sauvegarde fabriquée. Un aperçu de l'écran Codec remplace l'ancien. L'illustration conceptuelle est suspendue de la galerie publique jusqu'à revue de fidélité.";
+ const sourceVerified=matrix.entries.filter(x=>x.screenshotCaptureProof);
+ const revised=sourceVerified.reduce((sum,x)=>sum+x.screenshotCount,0);
+ Object.assign(matrix.summary,{recapturedScreenshotCount:revised,awaitingRecaptureCount:matrix.summary.screenshots-revised,
+   archivedScreenshotCount:Object.values(admin.previousScreenshots||{}).flat().length,
+   archivedPreviewCount:Object.keys(admin.previousPreviews||{}).length,
+   sourceVerifiedGalleries:sourceVerified.length});
  await writeFile(matrixPath,JSON.stringify(matrix,null,2)+"\n");
  const report={captureType:"native-browser-multi-module-ui",notGeneratedArt:true,source,version:"3.7.0",
    releaseRef:{deploymentId:"dpl_B142nqaBD7CWoC9xoBwL8voL271E",gitCommit:"77c830974fa672fc1746a875954af3e9bf39014e"},
