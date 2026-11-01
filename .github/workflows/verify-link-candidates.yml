@@ -1,0 +1,23 @@
+name: Launcher — vérification de destinations protégées
+
+on:
+  pull_request:
+    paths:
+      - "scripts/verify-protected-link-candidates.mjs"
+      - ".github/workflows/verify-link-candidates.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Contrôler l'identité réelle des huit anciennes/nouvelles adresses
+        run: node scripts/verify-protected-link-candidates.mjs
