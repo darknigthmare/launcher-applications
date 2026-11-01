@@ -826,6 +826,31 @@ if (await exists(worldHiveProof)) {
   }
 }
 
+// Shadow Codec: the verified source Side Ops board replaces an unreadable
+// headless canvas; do not claim that a combat frame was captured.
+const shadowId = "shadow-codec-ops";
+const shadowProofPath = "docs/media-proof/shadow-codec-3100-modules-2026-11-01.json";
+assert(await exists(shadowProofPath), "preuve source Shadow Codec 3.10 présente");
+if (await exists(shadowProofPath)) {
+  const proof = JSON.parse(await readFile(path.join(root, shadowProofPath), "utf8"));
+  const entry = galleryMap[shadowId];
+  const screen = proof.scenes?.[2];
+  const old = archiveDocument.previousScreenshots?.[shadowId] || [];
+  assert(proof.version === "3.10.0" && proof.noSyntheticCombat === true, "Shadow Codec 3.10 sans faux combat");
+  assert(proof.releaseRef?.gitCommit === "77c830974fa672fc1746a875954af3e9bf39014e", "SHA source du build Shadow déjà vérifié");
+  assert(proof.sideOpsGameplayCaptured === false && proof.sideOpsEngineLoaded === true, "moteur chargé mais pas de simulation visuelle trompeuse");
+  assert(screen?.kind === "native-sideops-operations" && screen?.module === "sideops", "écran Shadow Side Ops identifié comme tableau d'opérations");
+  assert(screen?.appState?.missions >= 4 && screen?.appState?.operationsVisible === true, "vraie liste d'opérations présente et ouverte");
+  assert(screen?.sourceRoute === "https://shadow-codec-ops.vercel.app/?module=sideops", "route source Side Ops reconnue");
+  assert(entry?.images?.[2] === screen?.path && entry?.labels?.[2] === screen?.label, "galerie Shadow alignée sur la preuve de capture");
+  assert(old.length === 5 && await exists(old[2]), "ancienne vue Shadow conservée dans l'archive");
+  if (screen?.path && await exists(screen.path)) {
+    const bytes = await readFile(path.join(root, screen.path));
+    assert(createHash("sha256").update(bytes).digest("hex") === screen.sha256, "nouveau tableau Shadow SHA256 vérifié");
+    assert(bytes.subarray(0, 8).toString("hex") === "89504e470d0a1a0a" && bytes.readUInt32BE(16) === 1280 && bytes.readUInt32BE(20) === 720, "tableau Shadow capture réelle 1280×720");
+  }
+}
+
 let previousPresentationFiles = [];
 const previousPresentationDirectory = "assets/presentations/previous";
 const previousPresentationDirectoryExists = await exists(previousPresentationDirectory);
