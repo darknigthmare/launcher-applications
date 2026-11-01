@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Captures ou présentations natives de jeux retrouvés hors des 140 fiches historiques. Aucune image ne peut être qualifiée 1:1 sans contrôle du build, des scènes et de la source. Les 140 œuvres OpenAI anciennes restent dans leur manifeste d'origine.",
+  "policy": {
+    "pending": "Aucune illustration ou capture inventée n'est requise pour les fiches retrouvées tant que l'audit natif est en attente.",
+    "verified": "Quand les captures existent, leur SHA-256, le navigateur source, le nom du jeu et les scènes vérifiées sont enregistrés ici, séparément des créations OpenAI."
+  },
+  "assets": []
+}
