@@ -1,0 +1,60 @@
+name: Launcher — capture native Shadow Codec Ops 3.7
+
+on:
+  pull_request:
+    paths:
+      - "scripts/capture-shadow-codec.mjs"
+      - ".github/workflows/capture-shadow-codec.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: launcher-shadow-codec-live-capture
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'codex/launcher-links-media-fidelity-20261101'
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - name: Get current PR branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate Chrome native capture
+        run: |
+          node --check scripts/browser-capture-common.mjs
+          node --check scripts/capture-shadow-codec.mjs
+      - name: Capture 3.7 live modules and Phaser scene from production
+        run: node scripts/capture-shadow-codec.mjs
+      - name: Audit updated launcher and archive consistency
+        run: npm test
+      - name: Keep five evidence screenshots as workflow artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: shadow-codec-native-${{ github.run_number }}
+          path: |
+            docs/media-proof/shadow-codec-370-modules-2026-11-01.json
+            assets/screenshots/shadow-codec-ops/*.png
+            assets/previews/shadow-codec-ops.jpg
+          if-no-files-found: warn
+      - name: Commit true screenshots and archived originals
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/screenshots/shadow-codec-ops assets/screenshots/previous/shadow-codec-ops \
+            assets/previews/shadow-codec-ops.jpg assets/previews/previous/shadow-codec-ops.jpg \
+            assets/app-gallery.json assets/app-gallery-admin.json \
+            docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json docs/media-proof/shadow-codec-370-modules-2026-11-01.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "media(shadow-codec): update five 3.7 native module screens and preserve prior captures"
+          git push origin "HEAD:${{ github.event.pull_request.head.ref }}"
