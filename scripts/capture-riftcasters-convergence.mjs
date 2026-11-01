@@ -48,8 +48,10 @@ try {
   await browser.sleep(500);
   const poster=await browser.capture("png");
   await writeFile(resolve(root,presentation),poster);
-  await actionButton("Elias Quill Chronomancie");
-  await browser.waitFor("!![...document.querySelectorAll('button')].find(b=>b.textContent?.includes('Elias Quill')&&b.getAttribute('aria-pressed')==='true')",10000);
+  // The in-game caster has an aria-hidden glyph before the name, so raw
+  // textContent is not the same as its accessible Playwright name.
+  await browser.evaluate("(()=>{const b=[...document.querySelectorAll('.caster-grid button')].find(x=>x.querySelector('strong')?.textContent.trim()==='Elias Quill');if(!b||b.disabled)throw Error('Elias Quill selection unavailable');b.click();return true;})()");
+  await browser.waitFor("!![...document.querySelectorAll('.caster-grid button')].find(b=>b.querySelector('strong')?.textContent.trim()==='Elias Quill'&&b.getAttribute('aria-pressed')==='true')",10000);
   await browser.sleep(260);
   await shot(1,"Arche — préparation de l'arcaniste Elias Quill","character-selection","menu");
   await browser.evaluate("(()=>{const x=document.querySelector('[data-journal-trigger]');if(!x||x.disabled)throw Error('Journal not present');x.click();return true;})()");
