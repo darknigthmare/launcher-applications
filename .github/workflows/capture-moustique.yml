@@ -1,11 +1,12 @@
 name: Launcher — recapture MOUSTIQUE WebGL2
 
 on:
-  pull_request:
-    paths:
-      - "scripts/capture-moustique.mjs"
-      - ".github/workflows/capture-moustique.yml"
   workflow_dispatch:
+    inputs:
+      acknowledge:
+        description: "Autoriser explicitement : Recapture complète MOUSTIQUE"
+        required: true
+        type: boolean
 
 permissions:
   contents: write
@@ -16,14 +17,14 @@ concurrency:
 
 jobs:
   capture:
-    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'codex/launcher-links-media-fidelity-20261101'
+    if: github.ref_name == 'codex/launcher-links-media-fidelity-20261101' && inputs.acknowledge == true
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - name: Fetch verified candidate
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.ref }}
+          ref: ${{ github.ref_name }}
           fetch-depth: 1
       - uses: actions/setup-node@v4
         with:
@@ -58,4 +59,4 @@ jobs:
             docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json docs/media-proof/moustique-webgl2-2026-11-01.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "media(moustique): update to native 4.14.1 WebGL2 captures and archive historical WebP"
-          git push origin "HEAD:${{ github.event.pull_request.head.ref }}"
+          git push origin "HEAD:${{ github.ref_name }}"
