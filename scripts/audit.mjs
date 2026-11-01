@@ -851,6 +851,45 @@ if (await exists(shadowProofPath)) {
   }
 }
 
+// CainOS: prove first-use calibration, real OS, 14-fighter selection and
+// a legible, properly framed native Encore fight instead of a lab-only crop.
+const cainosId = "cainos";
+const cainosProofPath = "docs/media-proof/cainos-encore-070-2026-11-01.json";
+assert(await exists(cainosProofPath), "preuves visuelles réelles CainOS et Encore présentes");
+if (await exists(cainosProofPath)) {
+  const proof = JSON.parse(await readFile(path.join(root, cainosProofPath), "utf8"));
+  const gallery = galleryMap[cainosId];
+  const archived = archiveDocument.previousScreenshots?.[cainosId] || [];
+  const archivedPreview = archiveDocument.previousPreviews?.[cainosId];
+  const tracked = fidelityMatrix.entries?.find((entry) => entry.id === cainosId);
+  assert(proof.notGeneratedArt === true && proof.captureType === "native-browser-multi-module-ui", "CainOS affiché par le vrai navigateur");
+  assert(proof.source === "https://cainos.vercel.app/" && proof.releaseRef?.gitCommit === "146a68cc87ea088a4dbcf76694115118fc9ed775", "production CainOS authentifiée par le SHA du build Vercel");
+  assert(proof.firstUseCalibration?.includes("completed with real OS button"), "entrée CainOS obtenue par calibration naturelle");
+  assert(proof.combatPath === "https://cainos.vercel.app/combat/", "combat Encore relié au terminal officiel");
+  assert(gallery?.captureType === "real-module-ui" && gallery?.presentationReview === "pending-fidelity", "CainOS sans key art non qualifié en vitrine");
+  assert(gallery?.labels?.length === 5 && gallery?.images?.length === 5 && proof.scenes?.length === 5, "cinq scènes CainOS vérifiées");
+  assert(tracked?.screenshotCaptureProof === cainosProofPath && tracked?.screenshotFreshness === "up-to-date", "matrice CainOS mise à jour par le vrai rendu");
+  assert(archived.length === 5 && archivedPreview && await exists(archivedPreview), "anciens visuels du terminal sauvegardés");
+  assert(proof.scenes?.[2]?.appState?.modeCount === 9 && proof.scenes?.[3]?.appState?.fighters === 14 && proof.scenes?.[3]?.appState?.arenas === 12, "effectifs réels des modes, combattants et arènes");
+  const duel = proof.scenes?.[4];
+  const view = duel?.visualEvidence;
+  assert(duel?.kind === "real-2d-fight" && duel?.visualReview === "arena-framed", "vrai duel Encore cadré et non laboratoire d'entraînement");
+  assert(view?.gameScreen === "fight" && view?.phase === "fight" && view?.fighters?.length === 2 && view?.colors >= 10, "combat animé non vide, deux combattants visibles");
+  assert(view?.bounds?.height >= 280 && view?.bounds?.top >= 0 && view?.bounds?.bottom <= 720, "vraie arène cadrée dans la capture");
+  for (let i = 0; i < 5; i++) {
+    const shot = proof.scenes[i], imagePath = gallery.images[i], archivedPath = archived[i];
+    assert(shot.path === imagePath && shot.label === gallery.labels[i], `CainOS capture ${i+1} libellé et source alignés`);
+    assert(await exists(archivedPath), `CainOS image antérieure ${i+1} archivée`);
+    if (await exists(imagePath)) {
+      const bytes = await readFile(path.join(root, imagePath));
+      assert(createHash("sha256").update(bytes).digest("hex") === shot.sha256, `CainOS capture réelle ${i+1} SHA-256 exact`);
+      assert(bytes.subarray(0,8).toString("hex") === "89504e470d0a1a0a" &&
+        bytes.readUInt32BE(16) === 1280 && bytes.readUInt32BE(20) === 720,
+        `CainOS capture ${i+1} PNG 1280×720 valide`);
+    }
+  }
+}
+
 let previousPresentationFiles = [];
 const previousPresentationDirectory = "assets/presentations/previous";
 const previousPresentationDirectoryExists = await exists(previousPresentationDirectory);
