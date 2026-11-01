@@ -563,6 +563,45 @@ for (const app of apps) {
   }
 }
 
+// Evidence-gated live screenshot replacement for TRIARCHE.
+const triarchId = "triarche-ciel-rouge";
+const triarchGallery = galleryMap[triarchId];
+const triarchProofPath = "docs/media-proof/triarch-gameplay-2026-11-01.json";
+assert(await exists(triarchProofPath), "preuve de recapture native TRIARCHE présente");
+if (await exists(triarchProofPath)) {
+  const proof = JSON.parse(await readFile(path.join(root, triarchProofPath), "utf8"));
+  const legacyShots = archiveDocument.previousScreenshots?.[triarchId];
+  const legacyPreview = archiveDocument.previousPreviews?.[triarchId];
+  assert(proof.notGeneratedArt === true && proof.captureType === "native-browser-gameplay", "TRIARCHE capturé en navigateur, pas illustré artificiellement");
+  assert(proof.source === "https://triarche-ciel-rouge.vercel.app/", "captures prises sur la production du jeu");
+  assert(proof.runtimeVersion === "1.0.0", "version de gameplay documentée");
+  assert(Array.isArray(proof.scenes) && proof.scenes.length === 5, "cinq scènes TRIARCHE vérifiées");
+  assert(Array.isArray(legacyShots) && legacyShots.length === 5, "cinq anciens screenshots archivés");
+  assert(typeof legacyPreview === "string" && await exists(legacyPreview), "ancien aperçu TRIARCHE archivé");
+  assert(Array.isArray(triarchGallery?.labels) && triarchGallery.labels.length === 5, "titres de scènes de la galerie");
+  assert(triarchGallery?.captureVersion === proof.runtimeVersion, "version source et galerie raccordées");
+  assert(triarchGallery?.captureType === "real-gameplay", "captures identifiées comme gameplay réel");
+  for (let i = 0; i < 5; i++) {
+    const item = proof.scenes?.[i];
+    const imagePath = triarchGallery.images[i];
+    const archivePath = legacyShots?.[i];
+    assert(item?.verifiedState === "playing", `capture TRIARCHE ${i + 1} faite en jeu`);
+    assert(item?.path === imagePath, `capture TRIARCHE ${i + 1} issue de sa preuve`);
+    assert(item?.label === triarchGallery.labels[i], `description de capture TRIARCHE ${i + 1} cohérente`);
+    assert(await exists(archivePath), `ancien screenshot TRIARCHE ${i + 1} conservé`);
+    if (await exists(imagePath)) {
+      const shot = await readFile(path.join(root, imagePath));
+      assert(createHash("sha256").update(shot).digest("hex") === item?.sha256, `empreinte native TRIARCHE ${i + 1} exacte`);
+      assert(shot.subarray(0, 8).toString("hex") === "89504e470d0a1a0a", `capture TRIARCHE ${i + 1} PNG`);
+      assert(shot.readUInt32BE(16) === 1280 && shot.readUInt32BE(20) === 720, `capture TRIARCHE ${i + 1} de 1280x720`);
+      if (await exists(archivePath)) {
+        const archived = await readFile(path.join(root, archivePath));
+        assert(!shot.equals(archived), `capture TRIARCHE ${i + 1} différente du menu historique`);
+      }
+    }
+  }
+}
+
 let previousPresentationFiles = [];
 const previousPresentationDirectory = "assets/presentations/previous";
 const previousPresentationDirectoryExists = await exists(previousPresentationDirectory);
