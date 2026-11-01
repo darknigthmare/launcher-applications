@@ -469,6 +469,15 @@ const fidelityMatrix = JSON.parse(await readFile(path.join(root, "docs", "MEDIA_
 assert(fidelityMatrix.summary?.entries === apps.length, "matrice de fidélité renseignée pour les 140 applications");
 const fidelityItems = new Map((fidelityMatrix.entries || []).map((item) => [item.id, item]));
 assert(fidelityItems.size === apps.length, "une seule fiche de revue média par application");
+const verifiedScreenshots = [...fidelityItems.values()].filter((item) => item.screenshotCaptureProof)
+  .reduce((sum, item) => sum + item.screenshotCount, 0);
+const previousScreenshots = Object.values(archiveDocument.previousScreenshots || {}).flat();
+const previousPreviews = Object.values(archiveDocument.previousPreviews || {});
+assert(verifiedScreenshots === 25 && fidelityMatrix.summary?.recapturedScreenshotCount === verifiedScreenshots, "25 captures sources renouvelées dans cinq galeries");
+assert(fidelityMatrix.summary?.awaitingRecaptureCount === 700 - verifiedScreenshots, "675 captures historiques à comparer");
+assert(previousScreenshots.length === verifiedScreenshots && fidelityMatrix.summary?.archivedScreenshotCount === previousScreenshots.length, "tous les originaux de captures conservés");
+assert(previousPreviews.length === 5 && fidelityMatrix.summary?.archivedPreviewCount === previousPreviews.length, "cinq anciens aperçus conservés");
+assert(fidelityMatrix.summary?.sourceVerifiedGalleries === 5, "cinq galeries vérifiées au moins par leur origine source");
 for (const app of apps) {
   const item = fidelityItems.get(app.id);
   assert(Boolean(item), `fiche média présente pour ${app.id}`);
