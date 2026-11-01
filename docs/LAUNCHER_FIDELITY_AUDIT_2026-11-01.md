@@ -65,6 +65,8 @@ Les versions ci-dessus sont des **références de code**, pas des preuves exhaus
 
 **Restriction de sécurité fondamentale :** le mode édition est un bouton libre, non une connexion administrateur authentifiée. Les 112 fichiers physiques restent accessibles dans le dépôt GitHub public et sur l'hébergement statique. Pour une exclusivité effective à l'administrateur, il faudra déplacer les originaux vers un stockage privé, les servir via une route autorisée et ajouter une vérification d'identité côté serveur. Cette PR ne prétend pas apporter cette sécurité.
 
+La [matrice exhaustive](MEDIA_FIDELITY_MATRIX_2026-11-01.json) suit 140 fiches, 700 captures et 112 historiques, avec 13 projets en priorité P0. Chaque entrée reste `not-reviewed` tant qu'elle n'a pas été comparée aux sources et à la version jouable.
+
 ## Galerie : critères de recevabilité pour les nouveaux visuels
 
 1. Comparer la nouvelle illustration au concept propre du jeu et aux captures **du build actuel**, pas seulement à la franchise inspiratrice.
