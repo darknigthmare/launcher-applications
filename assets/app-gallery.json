@@ -199,7 +199,20 @@
       "assets/screenshots/vortex-command/03.png",
       "assets/screenshots/vortex-command/04.png",
       "assets/screenshots/vortex-command/05.png"
-    ]
+    ],
+    "labels": [
+      "Leviathan — titan émergé sur le champ de bataille",
+      "Anatomie du titan — cibles et résistances",
+      "Six districts — évacuation et défense civile",
+      "R&D — prototypes et recherche tactique",
+      "Carte mondiale — campagne persistante"
+    ],
+    "captureType": "real-ui-navigation",
+    "captureSource": "https://vortex-command.vercel.app/",
+    "captureVersion": "1.0.0",
+    "captureDate": "2026-11-01",
+    "captureProof": "docs/media-proof/vortex-command-rts-2026-11-01.json",
+    "presentationReview": "pending-fidelity"
   },
   "ragtime-rumble": {
     "images": [

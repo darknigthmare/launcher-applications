@@ -170,6 +170,13 @@
       "assets/screenshots/previous/avp-hunt-hive-tcg/03.png",
       "assets/screenshots/previous/avp-hunt-hive-tcg/04.png",
       "assets/screenshots/previous/avp-hunt-hive-tcg/05.png"
+    ],
+    "vortex-command": [
+      "assets/screenshots/previous/vortex-command/01.png",
+      "assets/screenshots/previous/vortex-command/02.png",
+      "assets/screenshots/previous/vortex-command/03.png",
+      "assets/screenshots/previous/vortex-command/04.png",
+      "assets/screenshots/previous/vortex-command/05.png"
     ]
   },
   "previousPreviews": {
@@ -180,6 +187,7 @@
     "world-hive-wars": "assets/previews/previous/world-hive-wars.webp",
     "shadow-codec-ops": "assets/previews/previous/shadow-codec-ops.jpg",
     "cainos": "assets/previews/previous/cainos.jpg",
-    "avp-hunt-hive-tcg": "assets/previews/previous/avp-hunt-hive-tcg.png"
+    "avp-hunt-hive-tcg": "assets/previews/previous/avp-hunt-hive-tcg.png",
+    "vortex-command": "assets/previews/previous/vortex-command.jpg"
   }
 }
