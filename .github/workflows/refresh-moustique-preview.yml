@@ -1,11 +1,12 @@
 name: Launcher — finaliser aperçu MOUSTIQUE WebGL2
 
 on:
-  pull_request:
-    paths:
-      - "scripts/capture-moustique.mjs"
-      - ".github/workflows/refresh-moustique-preview.yml"
   workflow_dispatch:
+    inputs:
+      acknowledge:
+        description: "Autoriser explicitement : Aperçu du balcon WebGL2"
+        required: true
+        type: boolean
 
 permissions:
   contents: write
@@ -16,13 +17,13 @@ concurrency:
 
 jobs:
   preview:
-    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'codex/launcher-links-media-fidelity-20261101'
+    if: github.ref_name == 'codex/launcher-links-media-fidelity-20261101' && inputs.acknowledge == true
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.ref }}
+          ref: ${{ github.ref_name }}
       - uses: actions/setup-node@v4
         with:
           node-version: "24"
@@ -47,4 +48,4 @@ jobs:
           git add assets/previews/moustique-the-video-game.jpg docs/media-proof/moustique-webgl2-2026-11-01.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "media(moustique): use daylight balcony as verified gameplay preview"
-          git push origin "HEAD:${{ github.event.pull_request.head.ref }}"
+          git push origin "HEAD:${{ github.ref_name }}"
