@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * SHADOW CODEC OPS — live Vite 3.7.0 modules, captured with Chromium.
+ * SHADOW CODEC OPS — live production Vite 3.10.0 modules, captured with Chromium.
  * Native module deep-links are supported by src/app/App.tsx.
  * The Side Ops slot requires a real Phaser canvas; no simulated combat is inserted.
  */
@@ -11,7 +11,7 @@ import {resolve} from "node:path";
 import {openNativeBrowser} from "./browser-capture-common.mjs";
 
 const root=process.cwd(), id="shadow-codec-ops",source="https://shadow-codec-ops.vercel.app/";
-const proofPath="docs/media-proof/shadow-codec-370-modules-2026-11-01.json";
+const proofPath="docs/media-proof/shadow-codec-3100-modules-2026-11-01.json";
 if(existsSync(resolve(root,proofPath))){console.log("SHADOW CODEC OPS déjà capturé depuis la production.");process.exit(0);}
 const currentScreens=Array.from({length:5},(_,i)=>"assets/screenshots/"+id+"/"+String(i+1).padStart(2,"0")+".png");
 const oldDir="assets/screenshots/previous/"+id;
@@ -23,13 +23,13 @@ const modules=[
  {route:"codec",label:"Codec — écran de liaison et fréquences",className:"codec-page"},
  {route:"sideops",label:"Side Ops — véritable mission Phaser latérale",className:"sideops-page"},
  {route:"campaign",label:"Campaign Ops — progression et embranchements",className:"campaign-command-panel"},
- {route:"lore",label:"Archives — dossiers et références de l'univers",className:"lore-entry-row"}
+ {route:"cqc",label:"CQC Versus — jeu autonome de combat dans le terminal",className:"cqc-module"}
 ];
 const browser=await openNativeBrowser(source,{width:1280,height:720,timeout:110000,webgl:true});
 const evidence=[],shots=[];let promoJpeg;
 async function routeState(route) {
- const state=await browser.evaluate("(()=>{const root=document.querySelector('.layout-shell'),main=document.querySelector('#main-content');return {route:root?.dataset.route,version:(root?.querySelector('.system-card')?.textContent||'').match(/BUILD:\\s*(\\d+\\.\\d+\\.\\d+)/)?.[1]||null,heading:main?.querySelector('h1,h2')?.textContent?.trim()||null,htmlLength:main?.innerHTML.length||0,bodyTextLength:main?.innerText.length||0,hasError:!!main?.querySelector('[role=alert],.game-engine-status.error'),title:document.title,canvasVisible:!!main?.querySelector('#sideops-phaser-root canvas'),canvasWidth:main?.querySelector('#sideops-phaser-root canvas')?.width||0,canvasHeight:main?.querySelector('#sideops-phaser-root canvas')?.height||0}})()");
- if(state.route!==route||state.version!=="3.7.0"||state.hasError||state.bodyTextLength<180)throw Error("Live module not fully loaded "+JSON.stringify(state));
+ const state=await browser.evaluate("(()=>{const root=document.querySelector('.layout-shell'),main=document.querySelector('#main-content');return {route:root?.dataset.route,version:(root?.querySelector('.system-card')?.textContent||'').match(/BUILD:\\s*(\\d+\\.\\d+\\.\\d+)/)?.[1]||null,heading:main?.querySelector('h1,h2')?.textContent?.trim()||null,htmlLength:main?.innerHTML.length||0,bodyTextLength:main?.innerText.length||0,hasError:!!main?.querySelector('[role=alert],.game-engine-status.error'),title:document.title,canvasVisible:!!main?.querySelector('#sideops-phaser-root canvas'),canvasWidth:main?.querySelector('#sideops-phaser-root canvas')?.width||0,canvasHeight:main?.querySelector('#sideops-phaser-root canvas')?.height||0,cqcLoaded:main?.querySelector('.cqc-game-frame')?.contentDocument?.querySelector('#shell') instanceof HTMLElement,cqcCanvas:main?.querySelector('.cqc-game-frame')?.contentDocument?.querySelector('canvas') instanceof HTMLCanvasElement,cqcTitle:main?.querySelector('.cqc-game-frame')?.contentDocument?.title||null}})()");
+ if(state.route!==route||state.version!=="3.10.0"||state.hasError||state.bodyTextLength<180)throw Error("Live module not fully loaded "+JSON.stringify(state));
  return state;
 }
 try {
@@ -46,15 +46,19 @@ try {
   if(module.route==="sideops"){
     await browser.waitFor("!!document.querySelector('#sideops-phaser-root canvas') && document.querySelector('#sideops-phaser-root canvas')?.width>400 && !document.querySelector('.game-engine-status.error')",45000);
     await browser.evaluate("(()=>{document.querySelector('#sideops-phaser-root')?.scrollIntoView({block:'center',inline:'nearest',behavior:'instant'});return true;})()");
+  }else if(module.route==="cqc"){
+    await browser.waitFor("!!document.querySelector('#main-content .cqc-game-frame')?.contentDocument?.querySelector('#shell') && !!document.querySelector('#main-content .cqc-game-frame')?.contentDocument?.querySelector('canvas')",55000);
+    await browser.evaluate("(()=>{document.querySelector('#main-content .cqc-game-frame')?.scrollIntoView({block:'center',inline:'nearest',behavior:'instant'});return true;})()");
   }else{
     await browser.evaluate("(()=>{const main=document.querySelector('#main-content');if(main)main.scrollTop=0;return true;})()");
   }
-  await browser.sleep(module.route==="sideops"?900:650);
+  await browser.sleep(module.route==="sideops"||module.route==="cqc"?1050:650);
   const state=await routeState(module.route);
   if(module.route==="sideops" && (!state.canvasVisible||state.canvasWidth<400||state.canvasHeight<200))throw Error("Side Ops cannot be shown without actual Phaser rendering "+JSON.stringify(state));
+  if(module.route==="cqc" && (!state.cqcLoaded||!state.cqcCanvas||state.cqcTitle!=="CQC VERSUS"))throw Error("CQC frame is not actually playable "+JSON.stringify(state));
   const shot=await browser.capture("png");
   shots.push(shot);
-  evidence.push({slot:i+1,module:module.route,label:module.label,kind:module.route==="sideops"?"real-sideops-engine":"native-module-ui",path:currentScreens[i],sha256:hash(shot),bytes:shot.length,appState:state});
+  evidence.push({slot:i+1,module:module.route,label:module.label,kind:module.route==="sideops"?"real-sideops-engine":module.route==="cqc"?"real-cqc-iframe-game":"native-module-ui",path:currentScreens[i],sha256:hash(shot),bytes:shot.length,appState:state});
   if(module.route==="codec")promoJpeg=await browser.capture("jpeg");
   console.log("Shadow Codec Ops native route verified "+JSON.stringify({route:module.route,version:state.version,bytes:shot.length,canvas:state.canvasVisible}));
  }
@@ -76,16 +80,16 @@ try {
  const galleryPath=resolve(root,"assets/app-gallery.json"),gallery=JSON.parse(await readFile(galleryPath,"utf8"));
  if(!gallery[id]||gallery[id].images.length!==5)throw Error("Launcher Shadow Codec source mismatch");
  Object.assign(gallery[id],{labels:modules.map(x=>x.label),captureType:"real-module-ui",captureSource:source,
-    captureVersion:"3.7.0",captureDate:new Date().toISOString().slice(0,10),captureProof:proofPath,
+    captureVersion:"3.10.0",captureDate:new Date().toISOString().slice(0,10),captureProof:proofPath,
     presentationReview:"pending-fidelity"});
  await writeFile(galleryPath,JSON.stringify(gallery,null,2)+"\n");
  const matrixPath=resolve(root,"docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json"),matrix=JSON.parse(await readFile(matrixPath,"utf8"));
  const entry=matrix.entries.find(x=>x.id===id);if(!entry)throw Error("Shadow Codec media entry missing");
- entry.sourceVersionVerified="3.7.0 — source App/version.ts et package.json";
- entry.productionVersionVerified="3.7.0 — BUILD affiché; READY Vercel sha 77c830974fa";
+ entry.sourceVersionVerified="3.10.0 — package.json du SHA publié 77c830974fa";
+ entry.productionVersionVerified="3.10.0 — BUILD affiché; READY Vercel sha 77c830974fa";
  entry.screenshotFreshness="up-to-date";entry.previewFidelity="source-verified";
  entry.screenshotCaptureProof=proofPath;entry.captureVerifiedAt=new Date().toISOString();
- entry.notes="Cinq interfaces réelles 3.7.0 : accueil, Codec, moteur Side Ops/Phaser, campagne, archives. Aucune sauvegarde fabriquée. Un aperçu de l'écran Codec remplace l'ancien. L'illustration conceptuelle est suspendue de la galerie publique jusqu'à revue de fidélité.";
+ entry.notes="Cinq interfaces réelles 3.10.0 : accueil, Codec, moteur Side Ops/Phaser, campagne et CQC Versus embarqué. Aucune sauvegarde fabriquée. Un aperçu du Codec remplace l'ancien. L'illustration conceptuelle reste hors galerie publique dans l'attente d'une revue 1:1.";
  const sourceVerified=matrix.entries.filter(x=>x.screenshotCaptureProof);
  const revised=sourceVerified.reduce((sum,x)=>sum+x.screenshotCount,0);
  Object.assign(matrix.summary,{recapturedScreenshotCount:revised,awaitingRecaptureCount:matrix.summary.screenshots-revised,
@@ -93,14 +97,14 @@ try {
    archivedPreviewCount:Object.keys(admin.previousPreviews||{}).length,
    sourceVerifiedGalleries:sourceVerified.length});
  await writeFile(matrixPath,JSON.stringify(matrix,null,2)+"\n");
- const report={captureType:"native-browser-multi-module-ui",notGeneratedArt:true,source,version:"3.7.0",
+ const report={captureType:"native-browser-multi-module-ui",notGeneratedArt:true,source,version:"3.10.0",
    releaseRef:{deploymentId:"dpl_B142nqaBD7CWoC9xoBwL8voL271E",gitCommit:"77c830974fa672fc1746a875954af3e9bf39014e"},
    capturedAt:new Date().toISOString(),viewport:"1280x720",browser:"headless Chrome with software WebGL for Phaser",
-   noInjectedSave:true,noSyntheticCombat:true,activeSideOpsCanvas:true,
+   noInjectedSave:true,noSyntheticCombat:true,activeSideOpsCanvas:true,activeCqcIframeGame:true,
    preview:{path:currentPreview,sourceModule:"codec",bytes:promoJpeg.length,sha256:hash(promoJpeg)},
    archives:{previousScreenshots:admin.previousScreenshots[id],previousPreview:oldPreview},
-   scenes:evidence,limitations:["Five live module views; not proof of finishing each operation or a fully playable campaign","Software WebGL screenshots do not measure actual GPU performance","Source and deployment versions verified by runtime build label; art fidelity 1:1 needs separate review"]};
+   scenes:evidence,limitations:["Five native views including CQC iframe, not proof of completing each operation or the full CQC campaign","Software WebGL screenshots do not measure actual GPU performance","Source and deployment versions verified by runtime build label; art fidelity 1:1 needs separate review"]};
  await mkdir(resolve(root,"docs/media-proof"),{recursive:true});
  await writeFile(resolve(root,proofPath),JSON.stringify(report,null,2)+"\n");
- console.log("Shadow Codec Ops native modules ready "+JSON.stringify({captures:evidence.length,canvas:evidence[2].appState.canvasWidth,version:report.version}));
+ console.log("Shadow Codec Ops native modules ready "+JSON.stringify({captures:evidence.length,canvas:evidence[2].appState.canvasWidth,cqc:evidence[4].appState.cqcLoaded,version:report.version}));
 }finally{await browser.close();}
