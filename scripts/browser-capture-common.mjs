@@ -6,15 +6,17 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { setTimeout as sleep } from "node:timers/promises";
 
-export async function openNativeBrowser(url, {width=1280,height=720,timeout=120000}={}) {
+export async function openNativeBrowser(url, {width=1280,height=720,timeout=120000,webgl=false}={}) {
   const chromium=["/usr/bin/google-chrome","/usr/bin/google-chrome-stable","/usr/bin/chromium","/usr/bin/chromium-browser"].find(existsSync);
   if(!chromium)throw new Error("Aucun Chrome/Chromium : impossible de générer des captures réelles");
   const profile=await mkdtemp(join(tmpdir(),"launcher-native-capture-"));
   const port=9300+process.pid%700;
-  const child=spawn(chromium,["--headless=new","--no-sandbox","--disable-gpu","--disable-dev-shm-usage",
+  const flags=["--headless=new","--no-sandbox","--disable-dev-shm-usage",
     "--no-first-run","--no-default-browser-check","--hide-scrollbars","--window-size="+width+","+height,
     "--force-device-scale-factor=1","--remote-allow-origins=*","--remote-debugging-port="+port,
-    "--user-data-dir="+profile,"about:blank"],{stdio:["ignore","ignore","pipe"]});
+    ...(webgl?["--enable-unsafe-swiftshader","--use-gl=angle","--use-angle=swiftshader"]:["--disable-gpu"]),
+    "--user-data-dir="+profile,"about:blank"];
+  const child=spawn(chromium,flags,{stdio:["ignore","ignore","pipe"]});
   let stderr="";
   child.stderr.on("data",data=>{stderr+=String(data).slice(0,400);});
   let urlCDP;
