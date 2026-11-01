@@ -113,5 +113,17 @@
     "nocturne-signal": "assets/presentations/previous/nocturne-signal.webp",
     "terra-testudo-les-mondes-dos": "assets/presentations/previous/terra-testudo-les-mondes-dos.webp",
     "strike-command-desert-thunder": "assets/presentations/previous/strike-command-desert-thunder.webp"
+  },
+  "previousScreenshots": {
+    "triarche-ciel-rouge": [
+      "assets/screenshots/previous/triarche-ciel-rouge/01.png",
+      "assets/screenshots/previous/triarche-ciel-rouge/02.png",
+      "assets/screenshots/previous/triarche-ciel-rouge/03.png",
+      "assets/screenshots/previous/triarche-ciel-rouge/04.png",
+      "assets/screenshots/previous/triarche-ciel-rouge/05.png"
+    ]
+  },
+  "previousPreviews": {
+    "triarche-ciel-rouge": "assets/previews/previous/triarche-ciel-rouge.jpg"
   }
 }

@@ -452,14 +452,15 @@
       "screenshotCount": 5,
       "historicalIllustrationStored": true,
       "priority": "P0",
-      "sourceVersionVerified": null,
-      "productionVersionVerified": null,
+      "sourceVersionVerified": "1.0.0 (interface de production, API du jeu)",
+      "productionVersionVerified": "1.0.0, https://triarche-ciel-rouge.vercel.app/",
       "artFidelity": "not-reviewed",
-      "previewFidelity": "not-reviewed",
-      "screenshotFreshness": "requires-build-comparison",
-      "captureVerifiedAt": null,
+      "previewFidelity": "source-verified",
+      "screenshotFreshness": "up-to-date",
+      "captureVerifiedAt": "2026-11-01T10:01:02.319Z",
       "reviewer": null,
-      "notes": "À contrôler sur les références et le build du jeu avant toute mention de fidélité 1:1."
+      "notes": "Cinq véritables scènes de gameplay Canvas 2D recapturées depuis l'alias de production. Révision esthétique humaine 1:1 encore ouverte; anciennes captures sauvegardées en archives.",
+      "screenshotCaptureProof": "docs/media-proof/triarch-gameplay-2026-11-01.json"
     },
     {
       "id": "hive-ascension",
