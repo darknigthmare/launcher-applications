@@ -1455,11 +1455,26 @@
     "captureProof": "docs/media-proof/yugioh-hologram-native-2026-11-01.json"
   },
   "riftcasters-3d": {
-    "images": [],
-    "captureType": "pending-source-review",
-    "presentationReview": "pending-fidelity",
-    "labels": [],
-    "captureNote": "Fiche publiable avec lien vérifié; aucun visuel du gameplay accepté avant capture sur une vraie version et vérification."
+    "images": [
+      "assets/screenshots/riftcasters-3d/01.png",
+      "assets/screenshots/riftcasters-3d/02.png",
+      "assets/screenshots/riftcasters-3d/03.png",
+      "assets/screenshots/riftcasters-3d/04.png",
+      "assets/screenshots/riftcasters-3d/05.png"
+    ],
+    "captureType": "real-gameplay",
+    "presentationReview": "source-native-title-screen",
+    "labels": [
+      "Arche — préparation de l'arcaniste Elias Quill",
+      "Journal — paramètres et aide à la survie",
+      "Convergence — première vague et cockpit de sorts",
+      "Convergence — égide arcanique et dépense de mana",
+      "Convergence — transmission suspendue"
+    ],
+    "captureSource": "https://riftcasters-3d.vercel.app/",
+    "captureVersion": "1.0.0-rc.1 (source)",
+    "captureDate": "2026-11-01",
+    "captureProof": "docs/media-proof/riftcasters-convergence-native-2026-11-01.json"
   },
   "riftcasters-chaos-anglers": {
     "images": [],

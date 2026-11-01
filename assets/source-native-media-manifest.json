@@ -66,6 +66,18 @@
       "captureProof": "docs/media-proof/yugioh-hologram-native-2026-11-01.json",
       "sourceType": "Actual game configuration, field atlas and duel views, not drawn fan-art",
       "version": "GitHub source 1.1.0; deployed identity observed"
+    },
+    {
+      "id": "riftcasters-3d",
+      "provider": "RIFTCASTERS 3D game runtime / Chromium CDP",
+      "generator": "native-browser-capture",
+      "presentation": "assets/presentations/riftcasters-3d.png",
+      "preview": "assets/previews/riftcasters-3d.jpg",
+      "sha256": "020495fb3b64ff15973e150e1200b226ba2567b7eae134b098c4985e2f52b8ea",
+      "sourceUrl": "https://riftcasters-3d.vercel.app/",
+      "captureProof": "docs/media-proof/riftcasters-convergence-native-2026-11-01.json",
+      "sourceType": "Real game selection and active arena; no generated promotional concept",
+      "version": "GitHub source 1.0.0-rc.1; Vercel production READY SHA 21ef0c45"
     }
   ]
 }
