@@ -31,7 +31,7 @@ async function actionButton(name) {
   return browser.evaluate(js);
 }
 async function state() {
-  return browser.evaluate("(()=>{const p=document.querySelector('[data-testid=\"riftcasters-game\"]');return{phase:p?.dataset.gameState,ready:p?.dataset.gameReady,webglError:p?.dataset.webglError,canvas:document.querySelector('[data-testid=\"game-canvas\"]')?.width,menu:!!document.querySelector('[data-testid=\"start-game\"]'),mana:Number(document.querySelector('progress[aria-label=\"Mana\"]')?.value||0),hudWave:document.querySelector('[data-testid=\"hud-wave\"]')?.textContent.trim().slice(0,30)||'',journal:!![...document.querySelectorAll('button')].find(x=>x.textContent?.trim()==='Fermer le journal'),paused:!!document.body.textContent?.includes('TRANSMISSION SUSPENDUE')};})()");
+  return browser.evaluate("(()=>{const p=document.querySelector('[data-testid=\"riftcasters-game\"]');return{phase:p?.dataset.gameState,ready:p?.dataset.gameReady,webglError:p?.dataset.webglError,canvas:document.querySelector('[data-testid=\"game-canvas\"]')?.width,menu:!!document.querySelector('[data-testid=\"start-game\"]'),mana:Number(document.querySelector('progress[aria-label=\"Mana\"]')?.value||0),hudWave:document.querySelector('[data-testid=\"hud-wave\"]')?.textContent.trim().slice(0,30)||'',journal:!!document.querySelector('button[aria-label="Fermer le journal"]'),paused:!!document.body.textContent?.includes('TRANSMISSION SUSPENDUE')};})()");
 }
 async function shot(slot,label,kind,requiredPhase) {
   const result=await state();
@@ -56,11 +56,11 @@ try {
   await shot(1,"Arche — préparation de l'arcaniste Elias Quill","character-selection","menu");
   await browser.evaluate("(()=>{const x=document.querySelector('[data-journal-trigger]');if(!x||x.disabled)throw Error('Journal not present');x.click();return true;})()");
   await actionButton("Paramètres");
-  await browser.waitFor("!![...document.querySelectorAll('button')].find(x=>x.textContent?.trim()==='Fermer le journal')",16000);
+  await browser.waitFor("!!document.querySelector('button[aria-label=\"Fermer le journal\"]')",16000);
   await browser.sleep(270);
   await shot(2,"Journal — paramètres et aide à la survie","actual-configuration-journal","menu");
-  await actionButton("Fermer le journal");
-  await browser.waitFor("document.querySelector('[data-testid=\"start-game\"]') && ![...document.querySelectorAll('button')].find(x=>x.textContent?.trim()==='Fermer le journal')",10000);
+  await browser.evaluate("(()=>{const b=document.querySelector('button[aria-label=\"Fermer le journal\"]');if(!b)throw Error('Journal close button absent');b.click();return true;})()");
+  await browser.waitFor("document.querySelector('[data-testid=\"start-game\"]') && !document.querySelector('button[aria-label=\"Fermer le journal\"]')",10000);
   await click('[data-testid="start-game"]');
   await browser.waitFor("document.querySelector('[data-testid=\"riftcasters-game\"]')?.dataset.gameState==='playing'",16000);
   await browser.sleep(480);
