@@ -12,7 +12,7 @@ Cette mise à jour conserve les **140 fiches existantes** et leur historique. Qu
 
 Les **112 illustrations précédentes** ne sont plus chargées ni listées par les galeries publiques : `assets/app-gallery.json` ne conserve que les captures et `assets/app-gallery-admin.json` indexe les anciens visuels, consultables depuis le mode édition local. **Attention : le mode édition n'est pas authentifié, et les fichiers ainsi que le dépôt demeurent publics.** Une véritable exclusivité administrateur nécessitera une authentification et un stockage privé des originaux.
 
-Les 700 captures déjà répertoriées ne sont pas déclarées nouvelles : leur actualisation nécessite une capture réelle des builds et une revue visuelle, documentées dans [l'audit du 1er novembre](docs/LAUNCHER_FIDELITY_AUDIT_2026-11-01.md). Les illustrations de remplacement ne doivent pas être marquées « fidèles 1:1 » sans comparaison vérifiable.
+Une [matrice de revue des 140 visuels et galeries](docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json) distingue systématiquement **non revu**, **à refaire** et **accepté** sans jamais certifier le 1:1 par défaut. Les 700 captures déjà répertoriées ne sont pas déclarées nouvelles : leur actualisation nécessite une capture réelle des builds et une revue visuelle, documentées dans [l'audit du 1er novembre](docs/LAUNCHER_FIDELITY_AUDIT_2026-11-01.md). Les illustrations de remplacement ne doivent pas être marquées « fidèles 1:1 » sans comparaison vérifiable.
 
 Pour contrôler les **140 URL publiques** sans modifier les alias à l'aveugle :
 
