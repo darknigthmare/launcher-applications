@@ -1,11 +1,12 @@
 name: Launcher — capture native Shadow Codec Ops 3.10
 
 on:
-  pull_request:
-    paths:
-      - "scripts/capture-shadow-codec.mjs"
-      - ".github/workflows/capture-shadow-codec.yml"
   workflow_dispatch:
+    inputs:
+      acknowledge:
+        description: "Recapturer Shadow Codec uniquement sur autorisation"
+        required: true
+        type: boolean
 
 permissions:
   contents: write
@@ -16,14 +17,14 @@ concurrency:
 
 jobs:
   capture:
-    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'codex/launcher-links-media-fidelity-20261101'
+    if: github.ref_name == 'codex/launcher-links-media-fidelity-20261101' && inputs.acknowledge == true
     runs-on: ubuntu-latest
     timeout-minutes: 14
     steps:
       - name: Get current PR branch
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.ref }}
+          ref: ${{ github.ref_name }}
           fetch-depth: 1
       - uses: actions/setup-node@v4
         with:
@@ -57,4 +58,4 @@ jobs:
             docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json docs/media-proof/shadow-codec-3100-modules-2026-11-01.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "media(shadow-codec): update five 3.10 native module screens and preserve prior captures"
-          git push origin "HEAD:${{ github.event.pull_request.head.ref }}"
+          git push origin "HEAD:${{ github.ref_name }}"
