@@ -890,6 +890,48 @@ if (await exists(cainosProofPath)) {
   }
 }
 
+// AVP HUNT/HIVE: full 1.0.0 real-app chain from a new XENO deck to
+// a 3-lane duel, deck building, collection, a revealed booster and campaign.
+const avpTcgId = "avp-hunt-hive-tcg";
+const avpTcgProofPath = "docs/media-proof/avp-tcg-gameplay-2026-11-01.json";
+assert(await exists(avpTcgProofPath), "preuve de cinq captures réelles du TCG disponible");
+if (await exists(avpTcgProofPath)) {
+  const evidence = JSON.parse(await readFile(path.join(root, avpTcgProofPath), "utf8"));
+  const gallery = galleryMap[avpTcgId];
+  const archive = archiveDocument.previousScreenshots?.[avpTcgId] || [];
+  const archivePreview = archiveDocument.previousPreviews?.[avpTcgId];
+  const row = fidelityMatrix.entries?.find((entry) => entry.id === avpTcgId);
+  assert(evidence.captureType === "native-browser-card-gameplay" && evidence.notGeneratedArt === true, "AVP TCG a des captures du vrai jeu, non des concepts synthétiques");
+  assert(evidence.source === "https://avp-hunt-hive-tcg.vercel.app/" && evidence.version === "1.0.0", "version et production TCG déterminées");
+  assert(evidence.releaseRef?.deploymentId === "dpl_7DwmFGBSZeYQm1P6npzrnFqMeeS6", "source Vercel stable du TCG");
+  assert(evidence.firstUse?.includes("Selected XENO deck"), "deck d'ouverture choisi dans le jeu réel");
+  assert(gallery?.captureType === "real-gameplay" && gallery.presentationReview === "pending-fidelity", "illustration AVP non certifiée masquée côté public");
+  assert(gallery?.images?.length === 5 && gallery.labels?.length === 5 && evidence.scenes?.length === 5, "cinq écrans source AVP TCG avec légendes");
+  assert(row?.screenshotCaptureProof === avpTcgProofPath && row?.screenshotFreshness === "up-to-date", "matrice AVP mise à jour par les preuves");
+  assert(archive.length === 5 && archivePreview && await exists(archivePreview), "cinq anciens screenshots et aperçu AVP conservés");
+  assert(evidence.scenes[0]?.appState?.boardLanes === 3 &&
+    evidence.scenes[0]?.appState?.hand >= 5 &&
+    evidence.scenes[0]?.appState?.lifeBars === 2, "vrai duel TCG à trois voies et deux commandants");
+  assert(evidence.scenes[1]?.appState?.cardRows >= 8 && evidence.scenes[2]?.appState?.visibleCards >= 20, "constructeur et collection réels");
+  assert(evidence.scenes[3]?.appState?.revealed === 9 && evidence.scenes[4]?.appState?.missions === 8, "neuf cartes booster révélées et huit missions visibles");
+  for (let i = 0; i < 5; i++) {
+    const shot = evidence.scenes[i],pathImage = gallery.images[i],old = archive[i];
+    assert(shot.appState?.valid && shot.path === pathImage && shot.label === gallery.labels[i], `capture TCG ${i + 1} réellement vérifiée`);
+    assert(await exists(old), `AVP ancien screenshot ${i + 1} préservé`);
+    if (await exists(pathImage)) {
+      const bytes = await readFile(path.join(root, pathImage));
+      assert(createHash("sha256").update(bytes).digest("hex") === shot.sha256, `capture TCG ${i + 1} SHA256 correct`);
+      assert(bytes.subarray(0, 8).toString("hex") === "89504e470d0a1a0a" &&
+        bytes.readUInt32BE(16) === 1280 && bytes.readUInt32BE(20) === 720,
+        `AVP capture ${i + 1} résolution PNG 1280×720`);
+      if(await exists(old)) {
+        const previous = await readFile(path.join(root, old));
+        assert(!previous.equals(bytes), `capture TCG ${i + 1} différente de la version archivée`);
+      }
+    }
+  }
+}
+
 let previousPresentationFiles = [];
 const previousPresentationDirectory = "assets/presentations/previous";
 const previousPresentationDirectoryExists = await exists(previousPresentationDirectory);
