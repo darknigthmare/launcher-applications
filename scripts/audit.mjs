@@ -725,6 +725,49 @@ if (await exists(moustiqueProofPath)) {
   }
 }
 
+// WORLD HIVE WARS: authentic first-run campaign UI, without GPS or fabricated saves.
+const worldHiveId = "world-hive-wars";
+const worldHiveProof = "docs/media-proof/world-hive-045-campaign-2026-11-01.json";
+assert(await exists(worldHiveProof), "WORLD HIVE WARS : cinq captures de campagne produites par la version 0.45");
+if (await exists(worldHiveProof)) {
+  const evidence = JSON.parse(await readFile(path.join(root, worldHiveProof), "utf8"));
+  const item = galleryMap[worldHiveId];
+  const originals = archiveDocument.previousScreenshots?.[worldHiveId] || [];
+  const originalPreview = archiveDocument.previousPreviews?.[worldHiveId];
+  const tracked = fidelityMatrix.entries?.find((entry) => entry.id === worldHiveId);
+  const app = apps.find((entry) => entry.id === worldHiveId);
+  assert(evidence.notGeneratedArt === true && evidence.captureType === "native-browser-campaign-ui", "WORLD HIVE WARS : capture originale, pas montage promotionnel");
+  assert(evidence.source === "https://world-hive-wars.vercel.app/" && evidence.sourceRuntimeVersion === "0.45.0", "WORLD HIVE WARS : source et version du rendu");
+  assert(evidence.privateSimulation === true && evidence.realOnboarding === true && evidence.saveInjected === false, "WORLD HIVE WARS : onboarding réel, sans sauvegarde ni GPS injectés");
+  assert(evidence.initialState?.locationMode === "private" && evidence.initialState?.playerOnboarded && !evidence.initialState?.modalOpen, "WORLD HIVE WARS : campagne privée réellement prête");
+  assert(evidence.sourceDeployment?.status === "READY" && evidence.sourceDeployment.gitSha === "80ce99282b12", "WORLD HIVE WARS : révision de production suivie");
+  assert(item?.captureType === "real-ui-navigation" && item.captureVersion === "0.45.0", "WORLD HIVE WARS : originage UI distinct des combats CONTACT");
+  assert(item?.presentationReview === "pending-fidelity", "WORLD HIVE WARS : art promotionnel non validé réservé au mode édition");
+  assert(Array.isArray(item?.images) && item.images.length === 5 && item.labels?.length === 5, "WORLD HIVE WARS : cinq écrans natifs légendés");
+  assert(Array.isArray(evidence.scenes) && evidence.scenes.length === 5, "WORLD HIVE WARS : cinq scènes réellement visitées");
+  assert(originals.length === 5 && originalPreview && await exists(originalPreview), "WORLD HIVE WARS : les six anciens médias sont archivés");
+  assert(tracked?.screenshotCaptureProof === worldHiveProof && tracked?.screenshotFreshness === "up-to-date", "WORLD HIVE WARS : matrice de QA mise à jour");
+  assert(app?.image === evidence.preview?.path && tracked?.preview === evidence.preview?.path, "WORLD HIVE WARS : aperçu raccordé au catalogue");
+  const screens = ["map", "colony", "defense", "squad", "codex"];
+  if (await exists(app?.image || "")) {
+    const bytes = await readFile(path.join(root, app.image));
+    assert(createHash("sha256").update(bytes).digest("hex") === evidence.preview.sha256, "WORLD HIVE WARS : empreinte de l'aperçu natif");
+    assert(bytes.subarray(0, 3).toString("hex") === "ffd8ff", "WORLD HIVE WARS : aperçu JPEG valide");
+  }
+  for (let i = 0; i < 5; i++) {
+    const shot = evidence.scenes[i], url = item.images[i];
+    assert(shot.path === url && shot.label === item.labels[i] && shot.kind === "real-campaign-interface", `WORLD HIVE WARS : scène ${i + 1} et sa légende`);
+    assert(shot.screen === screens[i] && shot.uiState?.activeScreen === screens[i], `WORLD HIVE WARS : navigation native ${screens[i]}`);
+    assert(shot.uiState?.appReady && shot.uiState?.playerOnboarded && shot.uiState.locationMode === "private" && !shot.uiState.modalOpen, `WORLD HIVE WARS : campagne vivante privée ${screens[i]}`);
+    assert(await exists(originals[i]), `WORLD HIVE WARS : ancienne capture ${i + 1} sauvegardée`);
+    if (await exists(url)) {
+      const image = await readFile(path.join(root, url));
+      assert(createHash("sha256").update(image).digest("hex") === shot.sha256, `WORLD HIVE WARS : SHA-256 image ${i + 1}`);
+      assert(image.subarray(0, 8).toString("hex") === "89504e470d0a1a0a" && image.readUInt32BE(16) === 1280 && image.readUInt32BE(20) === 720, `WORLD HIVE WARS : résolution native ${i + 1}`);
+    }
+  }
+}
+
 let previousPresentationFiles = [];
 const previousPresentationDirectory = "assets/presentations/previous";
 const previousPresentationDirectoryExists = await exists(previousPresentationDirectory);
