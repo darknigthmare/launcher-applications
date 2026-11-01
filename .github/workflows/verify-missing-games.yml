@@ -1,0 +1,30 @@
+name: Launcher — recenser les jeux Vercel oubliés
+
+on:
+  pull_request:
+    paths:
+      - "scripts/verify-missing-game-candidates.mjs"
+      - ".github/workflows/verify-missing-games.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  discovery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Vérifier les pages d'accueil des 11 projets candidats
+        run: node scripts/verify-missing-game-candidates.mjs
+      - name: Conserver les résultats horodatés
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: launcher-forgotten-games-${{ github.run_number }}
+          path: .reports/missing-game-candidates.json
+          if-no-files-found: warn
