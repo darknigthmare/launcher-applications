@@ -7,7 +7,12 @@
     "entries": 140,
     "screenshots": 700,
     "historicalVisuals": 112,
-    "p0": 13
+    "p0": 13,
+    "recapturedScreenshotCount": 25,
+    "awaitingRecaptureCount": 675,
+    "archivedScreenshotCount": 25,
+    "archivedPreviewCount": 5,
+    "sourceVerifiedGalleries": 5
   },
   "statuses": {
     "artFidelity": [
