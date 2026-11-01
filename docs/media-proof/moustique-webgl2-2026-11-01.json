@@ -10,8 +10,20 @@
   "stagingDisclosure": "Slot 1 is actual free-flight gameplay. Slots 2-5 are real engine renders with QA camera placement, not screenshots of natural player progression.",
   "preview": {
     "path": "assets/previews/moustique-the-video-game.jpg",
-    "bytes": 40362,
-    "sha256": "4fce871af58d4d1254b1c2c520d6024f63a295141282faf97ae6ed6bf046b3c2"
+    "sha256": "1d66fd09bc2f136d01f52f0d447f3cd0c2a5d0ec97cfe5c390dd2c5d2901555c",
+    "bytes": 68858,
+    "sourceScene": "Balcon — extérieur, végétation et horizon",
+    "method": "Source-native 4.14.1-R11 renderer, staged QA camera based on tests/capture_scenes.py",
+    "camera": [
+      12.5,
+      4.6,
+      5.55
+    ],
+    "target": [
+      24,
+      1,
+      5.55
+    ]
   },
   "archives": {
     "previousScreenshots": [
