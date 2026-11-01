@@ -130,6 +130,13 @@ try{
   tracked.screenshotCaptureProof=evidencePath;
   tracked.captureVerifiedAt=new Date().toISOString();
   tracked.notes="CainOS 0.98 : bureau et archives après calibration effectuée via UI. Encore 0.7 source : 9 modes, 14 combattants, 12 arènes, vrai duel en entraînement. Les anciens cinq menus sont conservés. Aucune prétention de fidélité canon 1:1.";
+  const verified=matrix.entries.filter(x=>x.screenshotCaptureProof);
+  const total=verified.reduce((sum,x)=>sum+x.screenshotCount,0);
+  matrix.summary.recapturedScreenshotCount=total;
+  matrix.summary.awaitingRecaptureCount=matrix.summary.screenshots-total;
+  matrix.summary.archivedScreenshotCount=Object.values(admin.previousScreenshots).flat().length;
+  matrix.summary.archivedPreviewCount=Object.keys(admin.previousPreviews).length;
+  matrix.summary.sourceVerifiedGalleries=verified.length;
   await writeFile(matrixPath,JSON.stringify(matrix,null,2)+"\n");
   const proof={captureType:"native-browser-multi-module-ui",notGeneratedArt:true,source,
     releaseRef:{deploymentId:"dpl_EFQiRKV6Vsdo7yrxqA4182NHuFDz",gitCommit:"146a68cc87ea088a4dbcf76694115118fc9ed775"},
