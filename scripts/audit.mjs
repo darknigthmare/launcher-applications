@@ -193,7 +193,7 @@ assert(inlineScriptBody.includes('id="refreshHealthButton"'), "le tableau de san
 assert(inlineScriptBody.includes("const NEW_APP_WINDOW_DAYS = 45;"), "la fenêtre Nouveauté est bornée à 45 jours");
 assert(inlineScriptBody.includes('const LEGACY_ADDED_AT = "1970-01-01T00:00:00.000Z";'), "les anciennes entrées ne deviennent pas artificiellement nouvelles");
 assert(
-  inlineScriptBody.includes('const OFFICIAL_SYNC_FIELDS = ["link", "status", "releaseState", "addedAt"];'),
+  inlineScriptBody.includes('const OFFICIAL_SYNC_FIELDS = ["link", "status", "releaseState", "addedAt", "description", "pitch"];'),
   "la migration locale synchronise les champs de publication officiels"
 );
 for (const script of externalScripts) {
@@ -587,9 +587,11 @@ assert(
   Object.keys(galleryMap).filter((id) => id !== "notes").length === apps.length,
   "une galerie exactement par application"
 );
-assert(html.includes("previousPresentation"), "l'interface charge previousPresentation depuis les galeries");
-assert(html.includes("sanitizeImageUrl(app.previousPresentation)"), "l'illustration précédente participe au carrousel et au contrôle média");
-assert(html.includes("Illustration précédente"), "le libellé Illustration précédente est visible dans l'interface");
+assert(html.includes('fetch("assets/app-gallery-admin.json"'), "le manifeste historique est demandé séparément");
+assert(html.includes("if (!adminMode) return;"), "les archives ne sont chargées qu'en mode édition");
+assert(html.includes("adminMode && app.previousPresentation"), "la galerie publique masque les anciennes illustrations");
+assert(html.includes("sanitizeImageUrl(app.previousPresentation)"), "le visuel historique reste consultable en mode édition");
+assert(html.includes("Archive visuelle · mode édition"), "le visuel historique est identifié comme archive");
 const iconSprite = await readFile(path.join(root, "assets", "app-icons.svg"), "utf8");
 for (const app of apps) {
   assert(iconSprite.includes(`id="icon-${app.id}"`), `icône SVG présente pour ${app.id}`);
@@ -686,7 +688,7 @@ for (const asset of appShell) {
 }
 assert(appShell.includes("/assets/openai-art-manifest.json"), "le manifeste OpenAI fait partie du shell hors ligne");
 assert(appShellBytes <= 5 * 1024 * 1024, "le préchargement APP_SHELL reste inférieur à 5 Mo");
-assert(serviceWorker.includes('const CACHE_NAME = "launcher-shell-v28"'), "le cache applicatif v1.12 utilise launcher-shell-v28");
+assert(serviceWorker.includes('const CACHE_NAME = "launcher-shell-v29"'), "le cache applicatif v1.13 utilise launcher-shell-v29");
 assert(serviceWorker.includes('const RUNTIME_CACHE = "launcher-media-runtime-v1"'), "le cache média différé est versionné");
 assert(serviceWorker.includes("const MAX_RUNTIME_ENTRIES = 120"), "le cache média différé est borné");
 assert(
