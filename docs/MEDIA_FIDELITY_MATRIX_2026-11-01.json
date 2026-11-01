@@ -2801,7 +2801,8 @@
       "captureVerifiedAt": null,
       "reviewer": null,
       "accessPolicy": "local-download",
-      "notes": "Jeu local documenté et exécutable à partir du dépôt. Ce lien mène aux fichiers/instructions, pas à un lancement immédiat en navigateur. Aucun média non vérifié n'est associé."
+      "notes": "Jeu local documenté et exécutable à partir du dépôt. Ce lien mène aux fichiers/instructions, pas à un lancement immédiat en navigateur. Aucun média non vérifié n'est associé. Captures réelles et illustration source-native toujours attendues ; aucune conformité 1:1 certifiée.",
+      "mediaPendingReview": true
     },
     {
       "id": "derniere-ligne-zero-repli",
@@ -2840,7 +2841,8 @@
       "captureVerifiedAt": null,
       "reviewer": null,
       "accessPolicy": "local-download",
-      "notes": "Jeu local documenté et exécutable à partir du dépôt. Ce lien mène aux fichiers/instructions, pas à un lancement immédiat en navigateur. Aucun média non vérifié n'est associé."
+      "notes": "Jeu local documenté et exécutable à partir du dépôt. Ce lien mène aux fichiers/instructions, pas à un lancement immédiat en navigateur. Aucun média non vérifié n'est associé. Captures réelles et illustration source-native toujours attendues ; aucune conformité 1:1 certifiée.",
+      "mediaPendingReview": true
     },
     {
       "id": "parallaxe-protocole-9",
@@ -2859,7 +2861,8 @@
       "captureVerifiedAt": null,
       "reviewer": null,
       "accessPolicy": "local-download",
-      "notes": "Jeu local documenté et exécutable à partir du dépôt. Ce lien mène aux fichiers/instructions, pas à un lancement immédiat en navigateur. Aucun média non vérifié n'est associé."
+      "notes": "Jeu local documenté et exécutable à partir du dépôt. Ce lien mène aux fichiers/instructions, pas à un lancement immédiat en navigateur. Aucun média non vérifié n'est associé. Captures réelles et illustration source-native toujours attendues ; aucune conformité 1:1 certifiée.",
+      "mediaPendingReview": true
     },
     {
       "id": "massilia-cyberpunk",
@@ -2901,7 +2904,8 @@
       "accessPolicy": "collection-portal",
       "sourceCollectionUrl": "https://jeux-restaures-aout-2026.vercel.app/",
       "sourceAnchor": "soleil",
-      "notes": "Jeu séparé du titre voisin du catalogue, joué dans l'anthologie. Bouton vers la collection ; média en attente d'une capture du vrai mini-jeu. Aucun déploiement autonome inventé."
+      "notes": "Jeu séparé du titre voisin du catalogue, joué dans l'anthologie. Bouton vers la collection ; média en attente d'une capture du vrai mini-jeu. Aucun déploiement autonome inventé. Captures réelles et illustration source-native toujours attendues ; aucune conformité 1:1 certifiée.",
+      "mediaPendingReview": true
     },
     {
       "id": "maid-cafe-simulator-deluxe",
@@ -2922,7 +2926,8 @@
       "accessPolicy": "collection-portal",
       "sourceCollectionUrl": "https://jeux-restaures-aout-2026.vercel.app/",
       "sourceAnchor": "maid-cafe",
-      "notes": "Jeu séparé du titre voisin du catalogue, joué dans l'anthologie. Bouton vers la collection ; média en attente d'une capture du vrai mini-jeu. Aucun déploiement autonome inventé."
+      "notes": "Jeu séparé du titre voisin du catalogue, joué dans l'anthologie. Bouton vers la collection ; média en attente d'une capture du vrai mini-jeu. Aucun déploiement autonome inventé. Captures réelles et illustration source-native toujours attendues ; aucune conformité 1:1 certifiée.",
+      "mediaPendingReview": true
     }
   ]
 }
