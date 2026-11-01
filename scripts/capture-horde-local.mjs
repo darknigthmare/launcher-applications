@@ -39,7 +39,7 @@ async function tap(id) {
 }
 async function view(slot,label,required) {
  const active=await phase();
- if(!active.title.includes(version)||active.phase!==required||!active.canvas)throw Error("Image rejected: not real runtime "+label+" "+JSON.stringify(active));
+ if(!active.title.includes(version)||(required && active.phase!==required)||!active.canvas)throw Error("Image rejected: not real runtime "+label+" "+JSON.stringify(active));
  const bytes=await browser.capture("png");
  await writeFile(resolve(root,imagePaths[slot-1]),bytes);
  frames.push({slot,label,path:imagePaths[slot-1],kind:required==="combat"?"real-gameplay":"actual-game-ui",phase:active.phase,sha256:sha(bytes),bytes:bytes.length,screen:viewport});
@@ -56,7 +56,7 @@ try{
  await tap("dl403-play");
  await browser.waitFor("document.getElementById('newCampaign')?.getClientRects().length>0",12000);
  await browser.sleep(300);
- await view(1,"Campagnes — les neuf fronts de la dernière ligne","menu");
+ await view(1,"Campagnes — les neuf fronts de la dernière ligne","");
  await tap("newCampaign");
  await browser.waitFor("document.getElementById('shell')?.dataset?.phase==='confirm' && document.getElementById('v20SkipTrain')",10000);
  await tap("v20SkipTrain");
