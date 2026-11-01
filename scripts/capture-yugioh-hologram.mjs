@@ -97,7 +97,7 @@ try {
   await click("#btn-toggle-view");
   await b.waitFor("document.getElementById('btn-toggle-view')?.textContent.trim()!=="+JSON.stringify(prior),30000);
   await b.sleep(1300);
-  await snap(5,"Duel libre — plateau en Vue Réelle 3D","live-duel-real-view","duel");
+  await snap(5,"Duel libre — plateau en Vue Arène","live-duel-arena-view","duel");
   const teaser=await b.capture("jpeg");
   await writeFile(resolve(root,preview),teaser);
 
@@ -151,7 +151,7 @@ try {
     sourceVersion:"1.1.0",deployedCommit:"aec7dd5939773d68c9e66b786d4821cb1301dec3",
     capturedAt:new Date().toISOString(),viewport:"1280x720",
     presentation:{path:presentation,sha256:sha(poster),bytes:poster.length,kind:"source title / startup modal"},
-    preview:{path:preview,sha256:sha(teaser),bytes:teaser.length,kind:"live duel Real View"},
+    preview:{path:preview,sha256:sha(teaser),bytes:teaser.length,kind:"live duel Arena View"},
     scenes:captures,atlasCertified:atlasCaptured,atlasCaptureWarning:atlasFailure,limitations:["Five real engine/UI views, no reconstructed copyrighted character illustrations",
       "Version 1.1.0 from source; deployment SHA obtained from Vercel production metadata",
       ...(atlasCaptured?[]:["Field Atlas did not render a verifiable list in the capture environment; a real alternate deck was shown instead"]),
