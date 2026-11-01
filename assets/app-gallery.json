@@ -1433,11 +1433,26 @@
     "captureNote": "Fiche publiable avec lien vérifié; aucun visuel du gameplay accepté avant capture sur une vraie version et vérification."
   },
   "yugioh-25d-holograms": {
-    "images": [],
-    "captureType": "pending-source-review",
-    "presentationReview": "pending-fidelity",
-    "labels": [],
-    "captureNote": "Fiche publiable avec lien vérifié; aucun visuel du gameplay accepté avant capture sur une vraie version et vérification."
+    "images": [
+      "assets/screenshots/yugioh-25d-holograms/01.png",
+      "assets/screenshots/yugioh-25d-holograms/02.png",
+      "assets/screenshots/yugioh-25d-holograms/03.png",
+      "assets/screenshots/yugioh-25d-holograms/04.png",
+      "assets/screenshots/yugioh-25d-holograms/05.png"
+    ],
+    "captureType": "real-ui-navigation",
+    "presentationReview": "source-native-title-screen",
+    "labels": [
+      "KaibaCorp — choisir son deck de départ",
+      "Parcours solo — défis, médailles et progression",
+      "Atlas des Terrains — illustrations, règles et décors 3D",
+      "Duel libre — plateau holographique en vue compacte",
+      "Duel libre — plateau en Vue Réelle 3D"
+    ],
+    "captureSource": "https://yugioh-25d-holograms.vercel.app/",
+    "captureVersion": "1.1.0 (source; public build observed)",
+    "captureDate": "2026-11-01",
+    "captureProof": "docs/media-proof/yugioh-hologram-native-2026-11-01.json"
   },
   "riftcasters-3d": {
     "images": [],

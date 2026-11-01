@@ -54,6 +54,18 @@
       "captureProof": "docs/media-proof/mass-effect-relay-native-2026-11-01.json",
       "sourceType": "Actual title screen + 5 player UI/Normandy views, not fabricated canon keyart",
       "version": "0.3.0"
+    },
+    {
+      "id": "yugioh-25d-holograms",
+      "provider": "Yu-Gi-Oh game runtime / Chromium CDP",
+      "generator": "native-browser-capture",
+      "presentation": "assets/presentations/yugioh-25d-holograms.png",
+      "preview": "assets/previews/yugioh-25d-holograms.jpg",
+      "sha256": "3a03084035f1bd0a305b4c4935beb42d44bab6784d3801685789db143de71ef3",
+      "sourceUrl": "https://yugioh-25d-holograms.vercel.app/",
+      "captureProof": "docs/media-proof/yugioh-hologram-native-2026-11-01.json",
+      "sourceType": "Actual game configuration, field atlas and duel views, not drawn fan-art",
+      "version": "GitHub source 1.1.0; deployed identity observed"
     }
   ]
 }
