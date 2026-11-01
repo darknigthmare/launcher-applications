@@ -39,6 +39,18 @@ try {
   await writeFile(resolve(root,".reports/horde-current/campaign-native.png"),await browser.capture("png"));
   const activeButtons=campaign.buttons.filter(x=>!x.hidden);
   console.log("HORDE CAMPAIGN INSPECTION "+JSON.stringify({text:campaign.text.slice(0,1100),buttons:activeButtons,sections:campaign.visibleSections}));
+  const clickReal=async(id)=>{
+    const pt=await browser.evaluate("(()=>{const el=document.getElementById("+JSON.stringify(id)+");if(!el||el.disabled)throw Error('Action inaccessible '+"id");const rect=el.getBoundingClientRect();return {x:Math.round(rect.x+rect.width/2),y:Math.round(rect.y+rect.height/2)}})()");
+    await browser.call("Input.dispatchMouseEvent",{type:"mouseMoved",x:pt.x,y:pt.y});
+    await browser.call("Input.dispatchMouseEvent",{type:"mousePressed",x:pt.x,y:pt.y,button:"left",clickCount:1});
+    await browser.call("Input.dispatchMouseEvent",{type:"mouseReleased",x:pt.x,y:pt.y,button:"left",clickCount:1});
+  };
+  await clickReal("newCampaign");
+  await browser.sleep(950);
+  const preparation=await browser.evaluate("(()=>({title:document.title,phase:document.getElementById('shell')?.dataset?.phase,text:document.body.innerText.slice(0,1900),buttons:[...document.querySelectorAll('button')].filter(e=>e.getClientRects().length>0 && !e.closest('[hidden],.hidden')).map(e=>({id:e.id,text:e.innerText?.trim().slice(0,90),disabled:e.disabled})).slice(0,95),sections:[...document.querySelectorAll('main,section,[role=dialog]')].filter(e=>e.getBoundingClientRect().width>100&&e.getBoundingClientRect().height>100).map(e=>({id:e.id,cl:e.className})).slice(0,15)}))()");
+  await writeFile(resolve(root,".reports/horde-current/preparation-inspection.json"),JSON.stringify(preparation,null,2)+"\n");
+  await writeFile(resolve(root,".reports/horde-current/preparation-native.png"),await browser.capture("png"));
+  console.log("HORDE PREPARATION INSPECTION "+JSON.stringify(preparation));
   console.log("HORDE LOCAL INSPECTION "+JSON.stringify({title:report.title,protocol:report.urlProtocol,buttons:report.buttons.slice(0,30),canvases:report.canvases,scripts:report.scripts,sections:report.visibleSections,errorTexts:report.errorTexts}));
   if(!report.title.toLowerCase().includes("dernière")&&!report.text.toLowerCase().includes("dernière ligne"))throw Error("Local HTML not identifiable as Dernière Ligne");
 } finally {await browser.close();}
