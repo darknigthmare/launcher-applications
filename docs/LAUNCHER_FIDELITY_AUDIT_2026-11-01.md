@@ -9,15 +9,16 @@
 - 19 URL utilisaient déjà une adresse différente du nom exact du projet : la plupart sont des alias légitimes, notamment les domaines historiquement suffixés, raccourcis et `eager-curie.vercel.app`. Ils ne doivent pas être réécrits sans preuve.
 - Une URL qui retourne 200 n'établit ni la fraîcheur d'un jeu ni la fidélité de son illustration. Les informations de source et de production sont suivies séparément.
 
-## Trois liens corrigés après vérification des domaines Vercel
+## Quatre liens corrigés après vérification des domaines Vercel
 
 | Jeu | Ancien lien | Alias stable présent sur le projet |
 | --- | --- | --- |
 | Brèche Multiverselle | `https://multiverse-breach.vercel.app` | `https://multiverse-breach-darknigthmares-projects.vercel.app` |
 | Vortex Command | `https://vortex-command.vercel.app` | `https://vortex-command-darknigthmares-projects.vercel.app` |
 | PREDATOR: HIVE WARRIORS | `https://yautja-hive-warriors.vercel.app` | `https://yautja-hive-warriors-darknigthmares-projects.vercel.app` |
+| Malaise Party | `https://malaise-party.vercel.app` (404 en audit GitHub Actions) | `https://malaise-party-darknigthmares-projects.vercel.app` (à tester en HTTP) |
 
-Ces trois projets ont un déploiement Vercel récent marqué `READY` et leurs adresses sélectionnées figurent dans les domaines déclarés. La vérification d'un parcours réel par navigateur reste distincte.
+Les trois premiers projets ont un déploiement Vercel récent marqué `READY`. Pour Malaise Party, le dernier déploiement est en `ERROR` mais une publication précédente du même commit est en `READY`; la nouvelle URL pointe vers le domaine déclaré du projet, sans certifier une nouvelle livraison. La vérification HTTP et un parcours réel restent des contrôles distincts.
 
 ## Aliases particuliers conservés volontairement
 
@@ -30,6 +31,7 @@ Ces trois projets ont un déploiement Vercel récent marqué `READY` et leurs ad
 
 ## Anomalies et restrictions observées
 
+- Le premier scan HTTP des 140 liens a retourné **139 URL joignables et une 404** pour `malaise-party.vercel.app`. Une seconde passe est requise après son remplacement par le domaine Vercel rattaché au projet.
 - Le dernier déploiement Vercel signalé pour **Can I Eat It** était en `ERROR`. L'alias historique est néanmoins toujours déclaré sur le projet. Ne pas remplacer une adresse connue par l'URL du déploiement échoué.
 - Le dernier déploiement du projet **Silent Hill: Halo of Flesh** était également en `ERROR`. Ce projet ne figure pas encore au catalogue ; une création de fiche serait prématurée sans production confirmée, illustrations et captures.
 - Projets publiés sur Vercel mais pas intégrés comme nouvelles fiches dans ce lot : Mass Effect Relay Chronicles, Digital Circus Encore, Resident Evil B.O.W. Protocol, Riftcasters 3D, ainsi que plusieurs projets de développement, schéma et test. Leur publication ne suffit pas à inventer les visuels ou à prétendre que leurs mécaniques sont finies.
@@ -39,6 +41,7 @@ Ces trois projets ont un déploiement Vercel récent marqué `READY` et leurs ad
 
 | Entrée | Source consultée | Détails repris sans prétention de certification 1:1 |
 | --- | --- | --- |
+| Malaise Party | README du dépôt privé `malaise-party`, candidat 2.0.0 | Plateau de 40 cases, douze mini-jeux, quatre joueurs locaux et Sang-froid ; version source candidate, déploiement final à qualifier |
 | TRIARCHE : Ciel Rouge | README du dépôt `triarche-ciel-rouge`, prototype 1.0.0 | Deux campagnes de sept missions, quatre châssis aliens, cinq spécialisations humaines, treize opérations libres, ville destructible |
 | WORLD HIVE WARS | README du dépôt `world-hive-wars`, état source 0.45.0 | Campagne de terrain, opérations CONTACT et différence entre armes jouables et études d'archive |
 | DEADWALL | README du dépôt `deadwall-last-enclosure`, état source 1.74.0 | D-17, haltes, équipements réellement utilisables, récupérateurs d'eau de pluie et économie matérielle |
