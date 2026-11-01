@@ -11,12 +11,12 @@ Cette vague réintègre **cinq éditions locales documentées dans des dépôts 
 | Fiche | Référence primaire | Version documentée | Accès affiché dans le launcher | Limites |
 | --- | --- | --- | --- | --- |
 | DIVA PULSE — Studio de rythme | [Diva-Pulse](https://github.com/darknigthmare/Diva-Pulse) | Main V34 ; V37 en PR, **non fusionnée** | GitHub / jeu local | Aucun catalogue musical officiel, images du lecteur et scène encore à recapturer |
-| DERNIÈRE LIGNE — ZÉRO REPLI | [The-Horde-The-Last-Stand](https://github.com/darknigthmare/The-Horde-The-Last-Stand) | 0.44.2 | GitHub / HTML jouable après extraction | Versions des routes, personnages, missions et HUD à vérifier sur le moteur réel |
+| DERNIÈRE LIGNE — ZÉRO REPLI | [The-Horde-The-Last-Stand](https://github.com/darknigthmare/The-Horde-The-Last-Stand) | 0.44.2 | GitHub / HTML jouable après extraction | **Cinq captures natives validées** depuis la phase combat et la préparation ; autres routes et animations toujours à comparer |
 | FALLOUT MARSEILLE — MISTRAL | [fallout-Marseille](https://github.com/darknigthmare/fallout-Marseille) | 0.50 | GitHub / installation locale documentée | Référentiels IGN et OSM réels mais **architecture visuelle 1:1 non atteinte** ; données de ville lourdes et couverture variable |
 | PARALLAXE — PROTOCOLE 9 | [Parallaxe_Protocole9](https://github.com/darknigthmare/Parallaxe_Protocole9) | 0.4.1 | GitHub / téléchargement PC-LAN | Site `parallaxe-protocole-neuf.darknigthmare.chatgpt.site` à accès privé, ne pas le présenter comme public ; captures coop 3D non validées |
 | MASSILIA CYBERPUNK — MARSEILLE AUGMENTÉE | [massilia-cyberpunk](https://github.com/darknigthmare/massilia-cyberpunk) | 0.72 | GitHub / jeu local Python et WebGL2 | Jeu portant le même sous-titre SOMA//MASSILIA ; édition locale plus étendue à distinguer de la fiche Vercel déjà existante, identité exacte du moteur encore à auditer |
 
-Ces cinq fiches utilisent `accessPolicy:"local-download"` : le bouton **Fichiers et installation** ouvre le dépôt, non un jeu déjà en cours d'exécution. Les fiches ont `mediaPendingReview:true`, un manifeste de galerie vide et **0 capture prétendument fidèle**. Une promotion visuelle requiert une capture réelle du jeu, son SHA source ou sa version runtime et une vérification du rendu. Les anciennes illustrations d'autres jeux ne sont pas réaffectées à ces quatre dossiers.
+Ces cinq fiches utilisent `accessPolicy:"local-download"` : le bouton **Fichiers et installation** ouvre le dépôt, non un jeu déjà en cours d'exécution. **Quatre fiches conservent `mediaPendingReview:true` avec galerie vide.** Dernière Ligne possède maintenant son écran titre réel, un aperçu de combat et cinq captures du build HTML 0.44.2, avec [rapport natif et SHA](media-proof/derniere-ligne-local-0442-2026-11-01.json). Aucune illustration d'un autre jeu n'a été réaffectée aux nouveaux dossiers.
 
 ## Autres dépôts GitHub absents : décisions explicites
 
@@ -51,7 +51,7 @@ Ces cinq fiches utilisent `accessPolicy:"local-download"` : le bouton **Fichiers
 
 ### Prochaines validations ciblées
 
-1. Captures natives de DIVA PULSE, Dernière Ligne, Fallout Mistral, PARALLAXE et Massilia Cyberpunk à partir de leur code, avec scénarios jouables et informations de version.
+1. Étendre la revue native de Dernière Ligne aux huit autres fronts ; recapturer DIVA PULSE, Fallout Mistral, PARALLAXE et Massilia Cyberpunk à partir de leur vrai code et gameplay.
 2. Audit des cinq bundles d'août, afin de retrouver d'éventuels jeux réellement distincts encore omis.
 3. Correspondance exacte entre SOMA//MASSILIA hébergé et l'édition locale `massilia-cyberpunk` : les deux fiches peuvent coexister comme éditions distinctes, mais ne doivent pas être présentées comme deux jeux différents sans preuve.
 4. Revue manuelle de la fidélité des présentations restantes et protection serveur des archives.
