@@ -38,7 +38,7 @@ async function observed(){
 }
 async function capture(slot,label,kind,predicate){
   const state=await observed();
-  if(!state.title.includes("RECLAIMED: AFTER DARK")||state.gameTitle!=="RECLAIMED AFTER DARK"||!predicate(state))throw Error("Source scene not verified "+slot+" "+JSON.stringify(state));
+  if(!state.title.includes("RECLAIMED: AFTER DARK")||String(state.gameTitle||"").replace(/\s+/g,"")!=="RECLAIMEDAFTERDARK"||!predicate(state))throw Error("Source scene not verified "+slot+" "+JSON.stringify(state));
   await b.sleep(260);
   const bytes=await b.capture("png");
   if(scenes.some(x=>x.sha256===hash(bytes)))throw Error("Duplicate media frame "+slot);
