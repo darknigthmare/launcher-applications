@@ -605,7 +605,9 @@ assert(html.includes('fetch("assets/app-gallery-admin.json"'), "le manifeste his
 assert(html.includes("if (!adminMode) return;"), "les archives ne sont chargées qu'en mode édition");
 assert(html.includes("adminMode && app.previousPresentation"), "la galerie publique masque les anciennes illustrations");
 assert(html.includes("sanitizeImageUrl(app.previousPresentation)"), "le visuel historique reste consultable en mode édition");
-assert(html.includes("Archive visuelle · mode édition"), "le visuel historique est identifié comme archive");
+assert(html.includes("Ancienne illustration · archive"), "le visuel historique est identifié comme archive");
+assert(html.includes("Ancienne capture"), "les anciennes captures restent disponibles seulement en mode édition");
+assert(html.includes("previousScreenshots"), "l'application supporte les captures historiques séparées");
 const iconSprite = await readFile(path.join(root, "assets", "app-icons.svg"), "utf8");
 for (const app of apps) {
   assert(iconSprite.includes(`id="icon-${app.id}"`), `icône SVG présente pour ${app.id}`);
