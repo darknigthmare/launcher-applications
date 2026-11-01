@@ -8,7 +8,7 @@ Version publique : [launcher-applications.vercel.app](https://launcher-applicati
 
 ## Version 1.13 — Actualisation des fiches et séparation des archives (1er novembre 2026)
 
-Cette mise à jour conserve les **140 fiches existantes** et leur historique. Trois URL qui n'apparaissent pas dans la liste des domaines de leur projet Vercel sont remplacées par des alias stables officiellement attachés aux projets. Onze descriptions et accroches gagnent en précision diégétique d'après leurs sources GitHub.
+Cette mise à jour conserve les **140 fiches existantes** et leur historique. Quatre URL qui n'apparaissent pas dans la liste des domaines de leur projet Vercel sont remplacées par des alias stables officiellement attachés aux projets. Douze descriptions et accroches gagnent en précision diégétique d'après leurs sources GitHub.
 
 Les **112 illustrations précédentes** ne sont plus chargées ni listées par les galeries publiques : `assets/app-gallery.json` ne conserve que les captures et `assets/app-gallery-admin.json` indexe les anciens visuels, consultables depuis le mode édition local. **Attention : le mode édition n'est pas authentifié, et les fichiers ainsi que le dépôt demeurent publics.** Une véritable exclusivité administrateur nécessitera une authentification et un stockage privé des originaux.
 
