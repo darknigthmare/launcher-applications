@@ -31,7 +31,7 @@ async function actionButton(name) {
   return browser.evaluate(js);
 }
 async function state() {
-  return browser.evaluate("(()=>{const p=document.querySelector('[data-testid=\"riftcasters-game\"]');return{phase:p?.dataset.gameState,ready:p?.dataset.gameReady,webglError:p?.dataset.webglError,canvas:document.querySelector('[data-testid=\"game-canvas\"]')?.width,menu:!!document.querySelector('[data-testid=\"start-game\"]'),mana:Number(document.querySelector('progress[aria-label=\"Mana\"]')?.value||0),hudWave:document.querySelector('[data-testid=\"hud-wave\"]')?.textContent.trim().slice(0,30)||'',journal:!!document.querySelector('button[aria-label="Fermer le journal"]'),paused:!!document.body.textContent?.includes('TRANSMISSION SUSPENDUE')};})()");
+  return browser.evaluate("(()=>{const p=document.querySelector('[data-testid=\"riftcasters-game\"]');return{phase:p?.dataset.gameState,ready:p?.dataset.gameReady,webglError:p?.dataset.webglError,canvas:document.querySelector('[data-testid=\"game-canvas\"]')?.width,menu:!!document.querySelector('[data-testid=\"start-game\"]'),mana:Number(document.querySelector('progress[aria-label=\"Mana\"]')?.value||0),hudWave:document.querySelector('[data-testid=\"hud-wave\"]')?.textContent.trim().slice(0,30)||'',journal:!!document.querySelector('button[aria-label=\"Fermer le journal\"]'),paused:!!document.body.textContent?.includes('TRANSMISSION SUSPENDUE')};})()");
 }
 async function shot(slot,label,kind,requiredPhase) {
   const result=await state();
