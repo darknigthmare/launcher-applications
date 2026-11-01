@@ -196,6 +196,54 @@ assert(
   inlineScriptBody.includes('const OFFICIAL_SYNC_FIELDS = ["link", "status", "releaseState", "addedAt", "description", "pitch"];'),
   "la migration locale synchronise les champs de publication officiels"
 );
+// Execute the real launcher hydration function in isolation with representative
+// browser state: old official preview paths must migrate, user overrides must survive.
+const migrationMatch = inlineScriptBody.match(/const OFFICIAL_PREVIEW_MIGRATIONS = new Map\((\[[\s\S]*?\])\);/);
+const appLoaderStart = inlineScriptBody.indexOf("    function loadApps() {");
+const appLoaderEnd = inlineScriptBody.indexOf("    function loadFavorites()", appLoaderStart);
+assert(Boolean(migrationMatch && appLoaderStart > 0 && appLoaderEnd > appLoaderStart),
+  "migration de preview extraite du véritable module du launcher");
+if (migrationMatch && appLoaderStart > 0 && appLoaderEnd > appLoaderStart) {
+  try {
+    const starterApps = [
+      { id: "world-hive-wars", image: "assets/previews/world-hive-wars.jpg" },
+      { id: "moustique-the-video-game", image: "assets/previews/moustique-the-video-game.jpg" },
+      { id: "custom-game", image: "assets/previews/custom-game.jpg" }
+    ];
+    const saved = [
+      { id: "world-hive-wars", image: "https://launcher-applications.vercel.app/assets/previews/world-hive-wars.webp" },
+      { id: "moustique-the-video-game", image: "assets/previews/moustique-the-video-game.webp" },
+      { id: "custom-game", image: "https://example.com/custom-illustration.png" }
+    ];
+    const environment = {
+      URL,
+      starterApps,
+      saved,
+      document: { baseURI: "https://launcher-applications.vercel.app/" },
+      storeKey: "test-fixture",
+      removedStarterIds: new Set(),
+      OFFICIAL_SYNC_FIELDS: ["link", "status", "releaseState", "addedAt", "description", "pitch"],
+      safeReadArray: () => saved,
+      sanitizeImageUrl: (value) => value ? new URL(value, "https://launcher-applications.vercel.app/").href : "",
+      normalizeApp: (app) => app
+    };
+    const expression = `(() => {
+      const OFFICIAL_PREVIEW_MIGRATIONS = new Map(${migrationMatch[1]});
+      ${inlineScriptBody.slice(appLoaderStart, appLoaderEnd)}
+      return loadApps();
+    })()`;
+    const hydrated = vm.runInNewContext(expression, environment, { timeout: 1200 });
+    assert(hydrated.find((app) => app.id === "world-hive-wars")?.image === starterApps[0].image,
+      "preview officiel ancien WORLD HIVE WARS corrigé même dans un vieux catalogue local");
+    assert(hydrated.find((app) => app.id === "moustique-the-video-game")?.image === starterApps[1].image,
+      "preview relatif WebP MOUSTIQUE migré vers JPEG");
+    assert(hydrated.find((app) => app.id === "custom-game")?.image === saved[2].image,
+      "une illustration volontairement personnalisée n'est pas écrasée par la migration");
+  } catch (error) {
+    failures.push("Test fonctionnel de migration des aperçus: " + error.message);
+  }
+}
+
 for (const script of externalScripts) {
   assert(await exists(script.src), `script externe présent: ${script.src}`);
   if (!(await exists(script.src))) continue;
