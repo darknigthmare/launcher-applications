@@ -34,7 +34,7 @@ async function escapeMenu(){
   await b.waitFor("document.querySelector('.game-shell')?.dataset.screen==='menu' && !document.getElementById('menu-screen').hidden",12000);
 }
 async function observed(){
-  return b.evaluate("(()=>{const s=document.querySelector('.game-shell');const id=s?.dataset.screen;return {title:document.title,screen:id,menu:!document.getElementById('menu-screen').hidden,briefing:!document.getElementById('briefing-screen').hidden,playing:id==='playing',dossiers:!document.getElementById('dossiers-screen').hidden,workshop:!document.getElementById('workshop-screen').hidden,canvasWidth:document.getElementById('game-canvas')?.width,objective:document.getElementById('hud-objective')?.textContent.trim().slice(0,90),night:document.getElementById('hud-night')?.textContent.trim(),gameTitle:document.getElementById('game-title')?.textContent.replace(/\\s+/g,' ').trim()}})()");
+  return b.evaluate("(()=>{const s=document.querySelector('.game-shell');const id=s?.dataset.screen;return {title:document.title,screen:id,menu:!document.getElementById('menu-screen').hidden,briefing:!document.getElementById('briefing-screen').hidden,playing:id==='playing',dossiers:!document.getElementById('dossiers-screen').hidden,workshop:!document.getElementById('workshop-screen').hidden,canvasWidth:document.getElementById('game-canvas')?.width,objective:document.getElementById('hud-objective')?.textContent.trim().slice(0,90),night:document.getElementById('hud-night')?.textContent.trim(),gameTitle:document.getElementById('game-title')?.innerText.replace(/\\s+/g,' ').trim()}})()");
 }
 async function capture(slot,label,kind,predicate){
   const state=await observed();
@@ -48,7 +48,7 @@ async function capture(slot,label,kind,predicate){
   return bytes;
 }
 try {
-  await b.waitFor("document.querySelector('.game-shell')?.dataset.screen==='menu' && document.getElementById('game-title')?.textContent.replace(/\\s+/g,' ').trim()==='RECLAIMED AFTER DARK'",90000);
+  await b.waitFor("document.querySelector('.game-shell')?.dataset.screen==='menu' && document.getElementById('game-title')?.innerText.replace(/\\s+/g,' ').trim()==='RECLAIMED AFTER DARK'",90000);
   const opening=await capture(1,"Blackwater — menu du refuge","real-main-menu",s=>s.menu&&s.screen==="menu");
   await writeFile(resolve(root,poster),opening);
   await click("dossiers-button");
