@@ -89,8 +89,10 @@ try {
     postDeploy=await b.evaluate("(()=>{const g=window.__YAUTJA_APEX_HUNT__;return {phase:g.gameState,pending:g.pendingHunt,hasBoss:!!g.activeBoss};})()");
     console.log("Yautja official deploy method "+JSON.stringify({fallback,...postDeploy}));
   }
-  await b.waitFor("window.__YAUTJA_APEX_HUNT__.gameState==='HUNT' && window.__YAUTJA_APEX_HUNT__.activeBoss",25000);
-  await b.sleep(900);
+  // A live hunt and boss were already verified by the actual deploy result.
+  // Capture immediately: an unattended game can legitimately change phase
+  // before a slow, second waitFor loop finishes.
+  if(postDeploy.phase!=='HUNT'||!postDeploy.hasBoss)throw Error("No live hunt after validated deployment "+JSON.stringify(postDeploy));
   await shot(5,"Jungle — chasse au Goliath","real-hunt","HUNT");
   const previewBytes=await b.capture("jpeg");
   await writeFile(resolve(root,preview),previewBytes);
