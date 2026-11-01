@@ -101,7 +101,20 @@
       "assets/screenshots/shadow-codec-ops/03.png",
       "assets/screenshots/shadow-codec-ops/04.png",
       "assets/screenshots/shadow-codec-ops/05.png"
-    ]
+    ],
+    "labels": [
+      "Centre de commandement — accès aux modules",
+      "Codec — écran de liaison et fréquences",
+      "Side Ops — véritable mission Phaser latérale",
+      "Campaign Ops — progression et embranchements",
+      "CQC Versus — jeu autonome de combat dans le terminal"
+    ],
+    "captureType": "real-module-ui",
+    "captureSource": "https://shadow-codec-ops.vercel.app/",
+    "captureVersion": "3.10.0",
+    "captureDate": "2026-11-01",
+    "captureProof": "docs/media-proof/shadow-codec-3100-modules-2026-11-01.json",
+    "presentationReview": "pending-fidelity"
   },
   "jigsaw-mastermind": {
     "images": [

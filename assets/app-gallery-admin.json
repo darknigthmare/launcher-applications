@@ -149,6 +149,13 @@
       "assets/screenshots/previous/world-hive-wars/03.webp",
       "assets/screenshots/previous/world-hive-wars/04.webp",
       "assets/screenshots/previous/world-hive-wars/05.webp"
+    ],
+    "shadow-codec-ops": [
+      "assets/screenshots/previous/shadow-codec-ops/01.png",
+      "assets/screenshots/previous/shadow-codec-ops/02.png",
+      "assets/screenshots/previous/shadow-codec-ops/03.png",
+      "assets/screenshots/previous/shadow-codec-ops/04.png",
+      "assets/screenshots/previous/shadow-codec-ops/05.png"
     ]
   },
   "previousPreviews": {
@@ -156,6 +163,7 @@
     "deadwall-last-enclosure": "assets/previews/previous/deadwall-last-enclosure.png",
     "yautja-apex-hunt": "assets/previews/previous/yautja-apex-hunt.jpg",
     "moustique-the-video-game": "assets/previews/previous/moustique-the-video-game.webp",
-    "world-hive-wars": "assets/previews/previous/world-hive-wars.webp"
+    "world-hive-wars": "assets/previews/previous/world-hive-wars.webp",
+    "shadow-codec-ops": "assets/previews/previous/shadow-codec-ops.jpg"
   }
 }

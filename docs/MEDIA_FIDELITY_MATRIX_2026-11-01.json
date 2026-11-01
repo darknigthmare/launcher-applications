@@ -8,11 +8,11 @@
     "screenshots": 700,
     "historicalVisuals": 112,
     "p0": 13,
-    "recapturedScreenshotCount": 25,
-    "awaitingRecaptureCount": 675,
-    "archivedScreenshotCount": 25,
-    "archivedPreviewCount": 5,
-    "sourceVerifiedGalleries": 5
+    "recapturedScreenshotCount": 30,
+    "awaitingRecaptureCount": 670,
+    "archivedScreenshotCount": 30,
+    "archivedPreviewCount": 6,
+    "sourceVerifiedGalleries": 6
   },
   "statuses": {
     "artFidelity": [
@@ -205,14 +205,15 @@
       "screenshotCount": 5,
       "historicalIllustrationStored": true,
       "priority": "P0",
-      "sourceVersionVerified": null,
-      "productionVersionVerified": null,
+      "sourceVersionVerified": "3.10.0 — package.json du SHA publié 77c830974fa",
+      "productionVersionVerified": "3.10.0 — BUILD affiché; READY Vercel sha 77c830974fa",
       "artFidelity": "not-reviewed",
-      "previewFidelity": "not-reviewed",
-      "screenshotFreshness": "requires-build-comparison",
-      "captureVerifiedAt": null,
+      "previewFidelity": "source-verified",
+      "screenshotFreshness": "up-to-date",
+      "captureVerifiedAt": "2026-11-01T11:38:51.485Z",
       "reviewer": null,
-      "notes": "À contrôler sur les références et le build du jeu avant toute mention de fidélité 1:1."
+      "notes": "Cinq interfaces réelles 3.10.0 : accueil, Codec, moteur Side Ops/Phaser, campagne et CQC Versus embarqué. Aucune sauvegarde fabriquée. Un aperçu du Codec remplace l'ancien. L'illustration conceptuelle reste hors galerie publique dans l'attente d'une revue 1:1.",
+      "screenshotCaptureProof": "docs/media-proof/shadow-codec-3100-modules-2026-11-01.json"
     },
     {
       "id": "jigsaw-mastermind",
