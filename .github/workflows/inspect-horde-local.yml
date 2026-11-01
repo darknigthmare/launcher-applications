@@ -1,17 +1,19 @@
 name: Launcher — inspecter le vrai jeu local Dernière Ligne
 
 on:
-  pull_request:
-    paths:
-      - "scripts/inspect-horde-local.mjs"
-      - ".github/workflows/inspect-horde-local.yml"
   workflow_dispatch:
+    inputs:
+      acknowledge:
+        description: "Autoriser explicitement une nouvelle inspection ou recapture du jeu local"
+        required: true
+        type: boolean
 
 permissions:
   contents: read
 
 jobs:
   inspect:
+    if: github.ref_name == 'codex/launcher-links-media-fidelity-20261101' && inputs.acknowledge == true
     runs-on: ubuntu-latest
     timeout-minutes: 13
     steps:
