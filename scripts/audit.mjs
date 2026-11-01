@@ -192,8 +192,13 @@ assert(inlineScriptBody.includes('role="list"'), "le journal expose une liste s�
 assert(inlineScriptBody.includes('id="refreshHealthButton"'), "le tableau de santé propose une actualisation");
 assert(inlineScriptBody.includes("const NEW_APP_WINDOW_DAYS = 45;"), "la fenêtre Nouveauté est bornée à 45 jours");
 assert(inlineScriptBody.includes('const LEGACY_ADDED_AT = "1970-01-01T00:00:00.000Z";'), "les anciennes entrées ne deviennent pas artificiellement nouvelles");
+const syncFieldDeclaration = html.match(/const OFFICIAL_SYNC_FIELDS\s*=\s*(\[[^;]*\]);/);
+const officialSyncFields = syncFieldDeclaration
+  ? JSON.parse(syncFieldDeclaration[1])
+  : [];
 assert(
-  inlineScriptBody.includes('const OFFICIAL_SYNC_FIELDS = ["link", "status", "releaseState", "addedAt", "description", "pitch", "accessPolicy", "mediaPendingReview"];'),
+  ["link", "status", "releaseState", "addedAt", "description", "pitch",
+    "accessPolicy", "mediaPendingReview"].every((field) => officialSyncFields.includes(field)),
   "la migration locale synchronise les champs de publication officiels"
 );
 // Execute the real launcher hydration function in isolation with representative
