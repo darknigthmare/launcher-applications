@@ -2129,7 +2129,7 @@
     const PENDING_VISUAL_REVIEWS = new Set([
       "triarche-ciel-rouge", "deadwall-last-enclosure",
       "yautja-apex-hunt", "moustique-the-video-game",
-      "world-hive-wars", "shadow-codec-ops"
+      "world-hive-wars", "shadow-codec-ops", "cainos"
     ]);
     const appIconIds = new Set(starterApps.map((app) => app.id));
     const stage = document.getElementById("stage");
@@ -2312,6 +2312,11 @@
           delete clean.previousPresentation;
           delete clean.previousPreview;
           delete clean.previousScreenshots;
+          // Only the audited gallery manifest can attest real captures.
+          for (const key of ["captureType", "captureVersion", "captureDate",
+            "captureSource", "captureProof", "presentationReview", "galleryLabels"]) {
+            delete clean[key];
+          }
           const starter = starterById.get(String(clean.id));
           if (!starter) return normalizeApp(clean);
           const synchronized = { ...clean };
@@ -2344,7 +2349,9 @@
 
     function saveApps() {
       // Editor-only archive paths must not be cached in the public catalogue state.
-      safeWrite(storeKey, apps.map(({ previousPresentation, previousPreview, previousScreenshots, ...app }) => app));
+      safeWrite(storeKey, apps.map(({ previousPresentation, previousPreview, previousScreenshots,
+        captureType, captureVersion, captureDate, captureSource, captureProof,
+        presentationReview, galleryLabels, ...app }) => app));
     }
 
     function saveFavorites() {
@@ -2907,7 +2914,9 @@
               : app.captureType === "real-ui-navigation"
                 ? "Interfaces natives du jeu · campagne en simulation privée, sans GPS"
                 : app.captureType === "real-module-ui"
-                  ? "Interfaces natives du terminal · Codec, Side Ops, campagne et CQC"
+                  ? app.id === "cainos"
+                    ? "CainOS réel · bureau, archives, sélection et duel Encore"
+                    : "Interfaces natives du terminal · Codec, Side Ops, campagne et CQC"
                   : "Images prises dans le jeu"} · version ${escapeHtml(app.captureVersion)} · ${escapeHtml(app.captureDate)}</p>`
           : ""}
         <div class="tag-row">
@@ -3038,7 +3047,7 @@
           ? "Rendu natif WebGL2 · cadrage QA" : app.captureType === "real-ui-navigation"
             ? "Aperçu de la campagne · interface réelle"
             : app.captureType === "real-module-ui"
-              ? "Aperçu du terminal Codec" : "Aperçu", url: sanitizeImageUrl(app.image) },
+              ? app.id === "cainos" ? "Aperçu du bureau CainOS" : "Aperçu du terminal Codec" : "Aperçu", url: sanitizeImageUrl(app.image) },
         ...(Array.isArray(app.gallery) ? app.gallery.map((url, index) => ({
           label: app.galleryLabels?.[index] || `Capture ${index + 1}`,
           url: sanitizeImageUrl(url)
