@@ -1,11 +1,12 @@
 name: Launcher — recapture WORLD HIVE WARS 0.45
 
 on:
-  pull_request:
-    paths:
-      - "scripts/capture-world-hive.mjs"
-      - ".github/workflows/capture-world-hive.yml"
   workflow_dispatch:
+    inputs:
+      acknowledge:
+        description: "Autoriser une recapture contrôlée de WORLD HIVE WARS"
+        type: boolean
+        required: true
 
 permissions:
   contents: write
@@ -16,14 +17,14 @@ concurrency:
 
 jobs:
   capture:
-    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'codex/launcher-links-media-fidelity-20261101'
+    if: github.ref_name == 'codex/launcher-links-media-fidelity-20261101' && inputs.acknowledge == true
     runs-on: ubuntu-latest
     timeout-minutes: 14
     steps:
       - name: Checkout candidate with original gallery
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.ref }}
+          ref: ${{ github.ref_name }}
           fetch-depth: 1
       - uses: actions/setup-node@v4
         with:
@@ -58,4 +59,4 @@ jobs:
             docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json docs/media-proof/world-hive-045-campaign-2026-11-01.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "media(world-hive): replace old Bastion slides with genuine 0.45 campaign UI"
-          git push origin "HEAD:${{ github.event.pull_request.head.ref }}"
+          git push origin "HEAD:${{ github.ref_name }}"
