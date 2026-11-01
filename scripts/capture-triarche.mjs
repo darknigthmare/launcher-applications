@@ -20,6 +20,10 @@ const archiveDir = "assets/screenshots/previous/" + id;
 const preview = "assets/previews/" + id + ".jpg";
 const archivePreview = "assets/previews/previous/" + id + ".jpg";
 const proofPath = "docs/media-proof/triarch-gameplay-2026-11-01.json";
+if (existsSync(resolve(root,proofPath))) {
+  console.log("Captures de TRIARCHE déjà enregistrées : pas de régénération automatique.");
+  process.exit(0);
+}
 const browser = ["/usr/bin/google-chrome", "/usr/bin/google-chrome-stable", "/usr/bin/chromium", "/usr/bin/chromium-browser"].find(existsSync);
 if (!browser) throw new Error("Chrome/Chromium absent : aucune capture factice autorisée");
 const profile = await mkdtemp(join(tmpdir(), "launcher-triarche-"));
@@ -105,8 +109,11 @@ try {
   // Do not delete any old screenshot. Preserve originals BEFORE writing.
   await mkdir(resolve(root,archiveDir),{recursive:true});
   await mkdir(resolve(root,"assets/previews/previous"),{recursive:true});
-  for(const p of screenPaths)await copyFile(resolve(root,p),resolve(root,archiveDir,p.split("/").at(-1)));
-  await copyFile(resolve(root,preview),resolve(root,archivePreview));
+  for(const p of screenPaths){
+    const archived=resolve(root,archiveDir,p.split("/").at(-1));
+    if(!existsSync(archived))await copyFile(resolve(root,p),archived);
+  }
+  if(!existsSync(resolve(root,archivePreview)))await copyFile(resolve(root,preview),resolve(root,archivePreview));
   for(const scene of scenes){
     const result=await evaluate(cdp,"(() => {"+
       "const T=window.TRIARCHE;"+
