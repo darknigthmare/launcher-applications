@@ -56,14 +56,23 @@ try {
   }
   if(!existsSync(resolve(root,oldPreview)))await copyFile(resolve(root,preview),resolve(root,oldPreview));
   await shot(1,"Croiseur — exploration du vaisseau-mère","hub-exploration","HUB");
+  await b.call("Page.bringToFront");
+  await b.evaluate("document.getElementById('game-canvas').focus();true");
   const before=await b.evaluate("({x:window.__YAUTJA_APEX_HUNT__.player.position.x,z:window.__YAUTJA_APEX_HUNT__.player.position.z})");
-  await b.key("KeyW","w","keyDown");
-  await b.sleep(950);
-  await b.key("KeyW","w","keyUp");
-  await b.sleep(350);
-  const after=await b.evaluate("({x:window.__YAUTJA_APEX_HUNT__.player.position.x,z:window.__YAUTJA_APEX_HUNT__.player.position.z})");
-  const moved=Math.hypot(before.x-after.x,before.z-after.z);
-  if(moved<0.2)throw Error("No authentic hub movement ("+JSON.stringify({before,after})+")");
+  let after=before,moved=0;const attempts=[];
+  for(const [code,key] of [["KeyW","w"],["KeyD","d"],["KeyS","s"],["KeyA","a"]]){
+    await b.call("Input.dispatchKeyEvent",{type:"rawKeyDown",code,key,windowsVirtualKeyCode:key.toUpperCase().charCodeAt(0)});
+    await b.sleep(800);
+    const mid=await b.evaluate("(()=>{const g=window.__YAUTJA_APEX_HUNT__;return {keys:[...g.pressedKeyboardCodes],input:{...g.inputDir},isPaused:g.isPaused,hidden:document.hidden,hasFocus:document.hasFocus(),hub:g.isHubExploring,position:{x:g.player.position.x,z:g.player.position.z}}})()");
+    await b.call("Input.dispatchKeyEvent",{type:"keyUp",code,key,windowsVirtualKeyCode:key.toUpperCase().charCodeAt(0)});
+    await b.sleep(240);
+    after=await b.evaluate("({x:window.__YAUTJA_APEX_HUNT__.player.position.x,z:window.__YAUTJA_APEX_HUNT__.player.position.z})");
+    moved=Math.hypot(before.x-after.x,before.z-after.z);
+    attempts.push({code,moved,mid});
+    if(moved>0.2)break;
+  }
+  console.log("Yautja native hub movement probes "+JSON.stringify(attempts));
+  if(moved<0.2)throw Error("No authentic hub movement "+JSON.stringify({before,after,attempts}));
   await shot(2,"Croiseur — progression dans les compartiments","hub-exploration","HUB");
   await b.call("Input.dispatchKeyEvent",{type:"rawKeyDown",code:"Escape",key:"Escape",windowsVirtualKeyCode:27,nativeVirtualKeyCode:27});
   await b.call("Input.dispatchKeyEvent",{type:"keyUp",code:"Escape",key:"Escape",windowsVirtualKeyCode:27,nativeVirtualKeyCode:27});
