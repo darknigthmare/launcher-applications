@@ -2169,7 +2169,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "status": "Vercel",
     "accent": "#db496f",
     "presentation": "assets/presentations/malaise-party.webp",
-    "image": "assets/previews/malaise-party.webp"
+    "image": "assets/previews/malaise-party.webp",
+    "accessPolicy": "vercel-sso"
   },
   {
     "id": "neon-clash-arena-protocol",
