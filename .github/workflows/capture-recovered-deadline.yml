@@ -1,11 +1,12 @@
 name: Launcher — restaurer les captures du jeu DEADLINE
 
 on:
-  pull_request:
-    paths:
-      - "scripts/capture-recovered-deadline.mjs"
-      - ".github/workflows/capture-recovered-deadline.yml"
   workflow_dispatch:
+    inputs:
+      acknowledge:
+        description: "Autoriser explicitement la recapture de DEADLINE"
+        required: true
+        type: boolean
 
 permissions:
   contents: write
@@ -16,13 +17,13 @@ concurrency:
 
 jobs:
   capture:
-    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'codex/launcher-links-media-fidelity-20261101'
+    if: github.ref_name == 'codex/launcher-links-media-fidelity-20261101' && inputs.acknowledge == true
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.ref }}
+          ref: ${{ github.ref_name }}
           fetch-depth: 1
       - uses: actions/setup-node@v4
         with:
@@ -33,7 +34,7 @@ jobs:
           node --check scripts/browser-capture-common.mjs
       - name: Capturer le jeu réel et son écran titre
         run: node scripts/capture-recovered-deadline.mjs
-      - name: Valider les 150 fiches et l'intégrité historique
+      - name: Valider le catalogue et l'intégrité historique
         run: npm test
       - name: Conserver les cinq preuves brutes
         if: always()
@@ -59,4 +60,4 @@ jobs:
           git commit -m "media(deadline): native title and five actual gameplay screenshots, no invented artwork"
           git fetch origin "refs/heads/${{ github.event.pull_request.head.ref }}"
           git rebase "origin/${{ github.event.pull_request.head.ref }}"
-          git push origin "HEAD:${{ github.event.pull_request.head.ref }}"
+          git push origin "HEAD:${{ github.ref_name }}"
