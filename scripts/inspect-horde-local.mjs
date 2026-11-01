@@ -40,7 +40,7 @@ try {
   const activeButtons=campaign.buttons.filter(x=>!x.hidden);
   console.log("HORDE CAMPAIGN INSPECTION "+JSON.stringify({text:campaign.text.slice(0,1100),buttons:activeButtons,sections:campaign.visibleSections}));
   const clickReal=async(id)=>{
-    const pt=await browser.evaluate("(()=>{const el=document.getElementById("+JSON.stringify(id)+");if(!el||el.disabled)throw Error('Action inaccessible '+"id");const rect=el.getBoundingClientRect();return {x:Math.round(rect.x+rect.width/2),y:Math.round(rect.y+rect.height/2)}})()");
+    const pt=await browser.evaluate("(()=>{const el=document.getElementById("+JSON.stringify(id)+");if(!el||el.disabled)throw Error('Action inaccessible');const rect=el.getBoundingClientRect();return {x:Math.round(rect.x+rect.width/2),y:Math.round(rect.y+rect.height/2)}})()");
     await browser.call("Input.dispatchMouseEvent",{type:"mouseMoved",x:pt.x,y:pt.y});
     await browser.call("Input.dispatchMouseEvent",{type:"mousePressed",x:pt.x,y:pt.y,button:"left",clickCount:1});
     await browser.call("Input.dispatchMouseEvent",{type:"mouseReleased",x:pt.x,y:pt.y,button:"left",clickCount:1});
