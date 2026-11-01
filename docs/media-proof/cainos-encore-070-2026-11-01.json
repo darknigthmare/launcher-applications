@@ -1,0 +1,108 @@
+{
+  "captureType": "native-browser-multi-module-ui",
+  "notGeneratedArt": true,
+  "source": "https://cainos.vercel.app/",
+  "releaseRef": {
+    "deploymentId": "dpl_EFQiRKV6Vsdo7yrxqA4182NHuFDz",
+    "gitCommit": "146a68cc87ea088a4dbcf76694115118fc9ed775"
+  },
+  "capturedAt": "2026-11-01T13:23:23.003Z",
+  "viewport": "1280x720",
+  "firstUseCalibration": "completed with real OS button and Enter key events",
+  "combatPath": "https://cainos.vercel.app/combat/",
+  "combatVersionEvidence": "CainOS README Digital Circus Encore 0.7.0 plus latest READY Vercel commit",
+  "preview": {
+    "path": "assets/previews/cainos.jpg",
+    "bytes": 88901,
+    "sha256": "b8fb76b24ebff053a1423660075e9064e0352a856d4988b693b5ac9f3d09d865",
+    "sourceScene": "CainOS desktop"
+  },
+  "archives": {
+    "previousScreenshots": [
+      "assets/screenshots/previous/cainos/01.png",
+      "assets/screenshots/previous/cainos/02.png",
+      "assets/screenshots/previous/cainos/03.png",
+      "assets/screenshots/previous/cainos/04.png",
+      "assets/screenshots/previous/cainos/05.png"
+    ],
+    "previousPreview": "assets/previews/previous/cainos.jpg"
+  },
+  "scenes": [
+    {
+      "slot": 1,
+      "label": "CainOS — bureau C&A après calibration",
+      "kind": "real-os-desktop",
+      "path": "assets/screenshots/cainos/01.png",
+      "sha256": "f176323cca5e79f64e14841e1a3d65d7504cd0988d0ea9cf441ef00f749efe5e",
+      "bytes": 316739,
+      "appState": {
+        "valid": true,
+        "osTitle": "C&A Mainframe Console - OS v0.98",
+        "hasArchives": true,
+        "hasCombat": true
+      }
+    },
+    {
+      "slot": 2,
+      "label": "CainOS — explorateur et archives C&A",
+      "kind": "real-os-files",
+      "path": "assets/screenshots/cainos/02.png",
+      "sha256": "f9254ae4d8ebc30af41789eec60613d8158bccae0cecb52cd9904cdaf3561543",
+      "bytes": 339688,
+      "appState": {
+        "valid": true,
+        "openedWindow": "win-files",
+        "filesListed": 2
+      }
+    },
+    {
+      "slot": 3,
+      "label": "Encore — neuf modes de jeu",
+      "kind": "standalone-real-combat-home",
+      "path": "assets/screenshots/cainos/03.png",
+      "sha256": "021cb81246797304d7d6407c6170906f44a8579a64791235cfa02e004af4f268",
+      "bytes": 438495,
+      "appState": {
+        "valid": true,
+        "gameTitle": "Digital Circus — Encore · Le Grand Duel",
+        "modeCount": 9
+      }
+    },
+    {
+      "slot": 4,
+      "label": "Encore — quatorze combattants et douze arènes",
+      "kind": "real-combat-selection",
+      "path": "assets/screenshots/cainos/04.png",
+      "sha256": "d1d55ef00fb865c8d9d3a77a0b58af7f2812a2e33f5517183485f37f03cb4bd4",
+      "bytes": 508175,
+      "appState": {
+        "valid": true,
+        "fighters": 14,
+        "arenas": 12
+      }
+    },
+    {
+      "slot": 5,
+      "label": "Encore — affrontement réel en entraînement",
+      "kind": "real-2d-fight",
+      "path": "assets/screenshots/cainos/05.png",
+      "sha256": "2e1e23bfcf85e9cfefee8244c22822dfe711361ac9738ca3004b1cc9a6751a44",
+      "bytes": 84931,
+      "appState": {
+        "valid": true,
+        "mode": "fight",
+        "phase": "fight",
+        "frame": 60,
+        "fighters": [
+          "pomni",
+          "jax"
+        ]
+      }
+    }
+  ],
+  "limitations": [
+    "Only one training fight started and rendered, not certification of all nine modes",
+    "Game art is source-native but not 1:1 canonical proof",
+    "CainOS first-use calibration uses a fresh temporary browser profile"
+  ]
+}

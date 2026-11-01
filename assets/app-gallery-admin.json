@@ -156,6 +156,13 @@
       "assets/screenshots/previous/shadow-codec-ops/03.png",
       "assets/screenshots/previous/shadow-codec-ops/04.png",
       "assets/screenshots/previous/shadow-codec-ops/05.png"
+    ],
+    "cainos": [
+      "assets/screenshots/previous/cainos/01.png",
+      "assets/screenshots/previous/cainos/02.png",
+      "assets/screenshots/previous/cainos/03.png",
+      "assets/screenshots/previous/cainos/04.png",
+      "assets/screenshots/previous/cainos/05.png"
     ]
   },
   "previousPreviews": {
@@ -164,6 +171,7 @@
     "yautja-apex-hunt": "assets/previews/previous/yautja-apex-hunt.jpg",
     "moustique-the-video-game": "assets/previews/previous/moustique-the-video-game.webp",
     "world-hive-wars": "assets/previews/previous/world-hive-wars.webp",
-    "shadow-codec-ops": "assets/previews/previous/shadow-codec-ops.jpg"
+    "shadow-codec-ops": "assets/previews/previous/shadow-codec-ops.jpg",
+    "cainos": "assets/previews/previous/cainos.jpg"
   }
 }

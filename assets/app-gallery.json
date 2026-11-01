@@ -38,7 +38,20 @@
       "assets/screenshots/cainos/03.png",
       "assets/screenshots/cainos/04.png",
       "assets/screenshots/cainos/05.png"
-    ]
+    ],
+    "labels": [
+      "CainOS — bureau C&A après calibration",
+      "CainOS — explorateur et archives C&A",
+      "Encore — neuf modes de jeu",
+      "Encore — quatorze combattants et douze arènes",
+      "Encore — affrontement réel en entraînement"
+    ],
+    "captureType": "real-module-ui",
+    "captureSource": "https://cainos.vercel.app/",
+    "captureVersion": "CainOS v0.98 · Encore 0.7 (source)",
+    "captureDate": "2026-11-01",
+    "captureProof": "docs/media-proof/cainos-encore-070-2026-11-01.json",
+    "presentationReview": "pending-fidelity"
   },
   "la-petite-fiole": {
     "images": [

@@ -8,11 +8,11 @@
     "screenshots": 700,
     "historicalVisuals": 112,
     "p0": 13,
-    "recapturedScreenshotCount": 30,
-    "awaitingRecaptureCount": 670,
-    "archivedScreenshotCount": 30,
-    "archivedPreviewCount": 6,
-    "sourceVerifiedGalleries": 6
+    "recapturedScreenshotCount": 35,
+    "awaitingRecaptureCount": 665,
+    "archivedScreenshotCount": 35,
+    "archivedPreviewCount": 7,
+    "sourceVerifiedGalleries": 7
   },
   "statuses": {
     "artFidelity": [
@@ -79,14 +79,15 @@
       "screenshotCount": 5,
       "historicalIllustrationStored": true,
       "priority": "P0",
-      "sourceVersionVerified": null,
-      "productionVersionVerified": null,
+      "sourceVersionVerified": "CainOS v0.98 / Digital Circus Encore 0.7.0 — source README and official UI",
+      "productionVersionVerified": "Vercel READY commit 146a68cc87ea / runtime CainOS terminal and Encore screens observed",
       "artFidelity": "not-reviewed",
-      "previewFidelity": "not-reviewed",
-      "screenshotFreshness": "requires-build-comparison",
-      "captureVerifiedAt": null,
+      "previewFidelity": "source-verified",
+      "screenshotFreshness": "up-to-date",
+      "captureVerifiedAt": "2026-11-01T13:23:23.001Z",
       "reviewer": null,
-      "notes": "À contrôler sur les références et le build du jeu avant toute mention de fidélité 1:1."
+      "notes": "CainOS 0.98 : bureau et archives après calibration effectuée via UI. Encore 0.7 source : 9 modes, 14 combattants, 12 arènes, vrai duel en entraînement. Les anciens cinq menus sont conservés. Aucune prétention de fidélité canon 1:1.",
+      "screenshotCaptureProof": "docs/media-proof/cainos-encore-070-2026-11-01.json"
     },
     {
       "id": "la-petite-fiole",
