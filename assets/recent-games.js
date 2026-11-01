@@ -2328,7 +2328,8 @@ window.LAUNCHER_RECENT_GAMES = [
       "Exploration",
       "Fan game"
     ],
-    "accent": "#4276c4"
+    "accent": "#4276c4",
+    "recoveredGame": true
   },
   {
     "category": "Jeux",
@@ -2355,7 +2356,8 @@ window.LAUNCHER_RECENT_GAMES = [
       "Archives",
       "Fan game"
     ],
-    "accent": "#b64a48"
+    "accent": "#b64a48",
+    "recoveredGame": true
   },
   {
     "category": "Jeux",
@@ -2381,7 +2383,8 @@ window.LAUNCHER_RECENT_GAMES = [
       "CainOS",
       "Fan game"
     ],
-    "accent": "#c95bc5"
+    "accent": "#c95bc5",
+    "recoveredGame": true
   },
   {
     "category": "Jeux",
@@ -2408,7 +2411,8 @@ window.LAUNCHER_RECENT_GAMES = [
       "WebAssembly",
       "Fan game"
     ],
-    "accent": "#986cd9"
+    "accent": "#986cd9",
+    "recoveredGame": true
   },
   {
     "category": "Jeux",
@@ -2436,7 +2440,8 @@ window.LAUNCHER_RECENT_GAMES = [
       "Solo",
       "Roguelite"
     ],
-    "accent": "#835ef0"
+    "accent": "#835ef0",
+    "recoveredGame": true
   },
   {
     "category": "Jeux",
@@ -2464,7 +2469,8 @@ window.LAUNCHER_RECENT_GAMES = [
       "3D",
       "Modern Skies"
     ],
-    "accent": "#418eaa"
+    "accent": "#418eaa",
+    "recoveredGame": true
   },
   {
     "category": "Jeux",
@@ -2491,7 +2497,8 @@ window.LAUNCHER_RECENT_GAMES = [
       "Lampe",
       "Campagne"
     ],
-    "accent": "#4db49d"
+    "accent": "#4db49d",
+    "recoveredGame": true
   },
   {
     "category": "Jeux",
@@ -2518,7 +2525,8 @@ window.LAUNCHER_RECENT_GAMES = [
       "Math gates",
       "Hordes"
     ],
-    "accent": "#c76a3e"
+    "accent": "#c76a3e",
+    "recoveredGame": true
   },
   {
     "category": "Jeux",
@@ -2545,7 +2553,8 @@ window.LAUNCHER_RECENT_GAMES = [
       "Duo local",
       "Complete Tour"
     ],
-    "accent": "#d79c4d"
+    "accent": "#d79c4d",
+    "recoveredGame": true
   },
   {
     "category": "Jeux",
@@ -2572,6 +2581,7 @@ window.LAUNCHER_RECENT_GAMES = [
       "Fan game",
       "Version antérieure"
     ],
-    "accent": "#768f87"
+    "accent": "#768f87",
+    "recoveredGame": true
   }
 ];
