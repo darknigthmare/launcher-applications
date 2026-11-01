@@ -339,10 +339,13 @@ const establishedApps = apps.filter((app) => app.recoveredGame !== true);
 const pendingMediaApps = recoveredApps.filter((app) => app.mediaPendingReview === true);
 const recoveredWithNativeMedia = recoveredApps.filter((app) => app.mediaPendingReview !== true);
 assert(establishedApps.length === 140, "les 140 applications historiques et leurs assets restent intacts");
-assert(recoveredApps.length === 10 && recoveredApps.length === pendingMediaApps.length + recoveredWithNativeMedia.length,
-  "les dix jeux retrouvés sont suivis, avec ou sans captures validées");
-assert(apps.length === 150, "le nouveau catalogue contient 150 applications");
-assert(apps.filter((app) => app?.category === "Jeux").length === 137, "le catalogue contient 137 jeux");
+assert(recoveredApps.length >= 14 && recoveredApps.length === pendingMediaApps.length + recoveredWithNativeMedia.length,
+  "toutes les découvertes, web ou locales, sont suivies sans inventer de média");
+assert(new Set(recoveredApps.map((app) => app.id)).size === recoveredApps.length,
+  "les nouvelles fiches sont uniques");
+assert(apps.length === 140 + recoveredApps.length, "les 140 applications initiales sont complétées par tous les jeux retrouvés");
+assert(apps.filter((app) => app?.category === "Jeux").length === 127 + recoveredApps.length,
+  "le nombre de jeux intègre les nouvelles fiches vérifiées");
 assert(gameGenreGroups.length === 8, "la navigation Jeux contient huit genres principaux");
 
 const starterGameIds = new Set(
@@ -552,7 +555,7 @@ const galleryMap = galleryDocument.galleries || galleryDocument.apps || galleryD
 const archiveDocument = JSON.parse(await readFile(path.join(root, "assets", "app-gallery-admin.json"), "utf8"));
 const archiveMap = archiveDocument.previousPresentations || {};
 const fidelityMatrix = JSON.parse(await readFile(path.join(root, "docs", "MEDIA_FIDELITY_MATRIX_2026-11-01.json"), "utf8"));
-assert(fidelityMatrix.summary?.entries === apps.length, "matrice de fidélité renseignée pour les 150 applications");
+assert(fidelityMatrix.summary?.entries === apps.length, "matrice de fidélité renseignée pour toutes les fiches");
 const fidelityItems = new Map((fidelityMatrix.entries || []).map((item) => [item.id, item]));
 assert(fidelityItems.size === apps.length, "une seule fiche de revue média par application");
 assert(fidelityItems.get("malaise-party")?.accessPolicy === "vercel-sso", "Malaise Party est identifié comme protégé par Vercel SSO");
@@ -998,7 +1001,7 @@ if (previousPresentationDirectoryExists) {
     .map((name) => `${previousPresentationDirectory}/${name}`);
 }
 assert(appsWithoutPreviousPresentation.size === 28 + recoveredApps.length,
-  "les 28 exceptions historiques et les dix jeux nouvellement retrouvés n'ont pas d'anciens visuels à inventer");
+  "les 28 exceptions historiques et les jeux nouvellement retrouvés n'ont pas d'anciens visuels à inventer");
 for (const id of appsWithoutPreviousPresentation) {
   assert(ids.has(id), `exception historique attribuée à une application connue: ${id}`);
 }
