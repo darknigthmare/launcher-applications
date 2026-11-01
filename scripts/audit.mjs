@@ -517,6 +517,7 @@ const fidelityMatrix = JSON.parse(await readFile(path.join(root, "docs", "MEDIA_
 assert(fidelityMatrix.summary?.entries === apps.length, "matrice de fidélité renseignée pour les 140 applications");
 const fidelityItems = new Map((fidelityMatrix.entries || []).map((item) => [item.id, item]));
 assert(fidelityItems.size === apps.length, "une seule fiche de revue média par application");
+assert(fidelityItems.get("malaise-party")?.accessPolicy === "vercel-sso", "Malaise Party est identifié comme protégé par Vercel SSO");
 const verifiedGalleries = [...fidelityItems.values()].filter((item) => item.screenshotCaptureProof);
 const verifiedScreenshots = verifiedGalleries.reduce((sum, item) => sum + item.screenshotCount, 0);
 const previousScreenshots = Object.values(archiveDocument.previousScreenshots || {}).flat();
@@ -531,6 +532,7 @@ for (const app of apps) {
   const item = fidelityItems.get(app.id);
   assert(Boolean(item), `fiche média présente pour ${app.id}`);
   if (!item) continue;
+  assert(item.productionLink === (app.link || null), `lien officiel suivi pour ${app.id}`);
   assert(item.presentation === app.presentation, `présentation suivie pour ${app.id}`);
   assert(item.preview === app.image, `aperçu suivi pour ${app.id}`);
   assert(item.screenshotCount === 5, `cinq captures historiques suivies pour ${app.id}`);
