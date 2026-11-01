@@ -1493,5 +1493,12 @@
     "captureType": "pending-source-review",
     "presentationReview": "pending-fidelity",
     "captureNote": "Jeu distribué via son dépôt GitHub. Aucune capture de gameplay ou illustration 1:1 n'est certifiée ; accès local via les instructions de l'auteur."
+  },
+  "massilia-cyberpunk": {
+    "images": [],
+    "captureType": "pending-source-review",
+    "presentationReview": "pending-fidelity",
+    "labels": [],
+    "captureNote": "Jeu local dont les fichiers et les instructions sont vérifiés. Pas de screenshot du build produit."
   }
 }
