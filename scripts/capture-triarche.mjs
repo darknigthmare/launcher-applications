@@ -128,7 +128,7 @@ try {
     captureLog.push({slot:scene.n,label:scene.label,mission:result.gameMission,faction:result.faction,mode:scene.kind,path,sha256:createHash("sha256").update(shot).digest("hex"),bytes:shot.length,verifiedState:"playing",boss:result.boss,convoy:result.convoy,sectors:result.sectors});
   }
   // Capture a true gameplay overview, not the previous menu image.
-  await evaluate(cdp,"window.TRIARCHE.beginMission({kind:'alienCampaign',mission:window.TRIARCHE.content.campaigns.alien[1],faction:'alien',difficultyId:'normal',weatherId:'clear',alienClassId:'harvester',humanSpecId:'scout',skin:'bone',glow:'cyan'});for(let i=0;i<24;i++)window.TRIARCHE.update(0.016);window.TRIARCHE.render();true");
+  await evaluate(cdp,"window.TRIARCHE.beginMission({kind:'alienCampaign',mission:window.TRIARCHE.content.campaigns.alien[1],faction:'alien',difficultyId:'normal',weatherId:'clear',alienClassId:'triarch',humanSpecId:'scout',skin:'bone',glow:'cyan'});for(let i=0;i<24;i++)window.TRIARCHE.update(0.016);window.TRIARCHE.render();true");
   await waitFor(cdp,"window.TRIARCHE.game.state==='playing'");
   const previewBytes=await screenshot(cdp,"jpeg");
   await writeFile(resolve(root,preview),previewBytes);
