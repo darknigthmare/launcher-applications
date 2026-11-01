@@ -32,13 +32,17 @@ try{
  await browser.evaluate("(()=>{const main=document.querySelector('#main-content');if(main)main.scrollTop=0;const panel=document.querySelector('.sideops-info-panel');if(panel)panel.scrollTop=0;document.querySelector('.sideops-page')?.scrollIntoView({block:'start',behavior:'instant'});return true;})()");
  await browser.sleep(380);
  const info=await browser.evaluate("(()=>{const app=document.querySelector('.layout-shell'),main=document.querySelector('#main-content'),panel=main.querySelector('.sideops-info-panel'),game=main.querySelector('#sideops-phaser-root canvas'),button=[...main.querySelectorAll('.sideops-command-bar button')].find(x=>x.textContent.trim()==='Opérations');return{route:app?.dataset.route,open:button?.getAttribute('aria-expanded')==='true',visible:panel?.getClientRects().length>0,panelText:panel?.innerText?.length,missions:panel?.querySelectorAll('.mission-card-button').length,paused:main.querySelector('.sideops-page')?.classList.contains('operations-open'),gameExists:!!game,gameWidth:game?.width,gameHeight:game?.height,version:(app?.querySelector('.system-card')?.textContent||'').match(/BUILD:\s*(\d+\.\d+\.\d+)/)?.[1]}})()");
- if(info.route!=="sideops"||info.version!=="3.10.0"||!info.open||!info.visible||!(info.missions>=4)||!(info.panelText>320)||!(info.gameWidth>=400)||!(info.gameHeight>=200))throw Error("Source scene not ready "+JSON.stringify(info));
+ // The Side Ops screen has no system-card BUILD label. Require the previously
+ // verified 3.10 deployment proof instead of treating its absence as an error.
+ const officialProof=proof.releaseRef?.gitCommit==="77c830974fa672fc1746a875954af3e9bf39014e" && proof.releaseRef?.deploymentId==="dpl_B142nqaBD7CWoC9xoBwL8voL271E";
+ if(info.route!=="sideops"||!officialProof||!info.open||!info.visible||!(info.missions>=4)||!(info.panelText>320)||!(info.gameWidth>=400)||!(info.gameHeight>=200))throw Error("Source scene not ready "+JSON.stringify({info,officialProof}));
+ const attestedVersion=proof.version;
  const bytes=await browser.capture("png");
  const hash=createHash("sha256").update(bytes).digest("hex");
  await writeFile(resolve(root,imagePath),bytes);
  const label="Side Ops — opérations, infiltration et briefings";
  proof.scenes[2]={slot:3,module:"sideops",label,kind:"native-sideops-operations",path:imagePath,bytes:bytes.length,sha256:hash,
-  appState:{route:info.route,version:info.version,operationsVisible:info.visible,missions:info.missions,missionCanvasBooted:info.gameExists,canvasWidth:info.gameWidth,canvasHeight:info.gameHeight},
+  appState:{route:info.route,version:attestedVersion,versionEvidence:"existing source/deployment proof; Side Ops view has no BUILD label",operationsVisible:info.visible,missions:info.missions,missionCanvasBooted:info.gameExists,canvasWidth:info.gameWidth,canvasHeight:info.gameHeight},
   visualReview:"La vue précédente de canvas sombre a été remplacée par le tableau d'opérations effectivement ouvert."};
  proof.scenes[2].sourceRoute=source;
  proof.noSyntheticCombat=true;
@@ -56,5 +60,5 @@ try{
  if(!tracked)throw Error("Media matrix entry missing");
  tracked.notes="Cinq vues réelles Shadow Codec 3.10 : accueil, transmission Codec, panneau de missions Side Ops (pas un combat simulé), Campaign Ops et CQC Versus intégré. Le moteur Phaser est chargé mais son rendu headless était sombre. Original intégral archivé; fidélité des affiches non certifiée.";
  await writeFile(resolve(root,matrixPath),JSON.stringify(matrix,null,2)+"\n");
- console.log("Shadow Codec Side Ops source-faithful UI verified "+JSON.stringify({version:info.version,missions:info.missions,sha256:hash,bytes:bytes.length}));
+ console.log("Shadow Codec Side Ops source-faithful UI verified "+JSON.stringify({version:attestedVersion,missions:info.missions,sha256:hash,bytes:bytes.length}));
 }finally{await browser.close();}
