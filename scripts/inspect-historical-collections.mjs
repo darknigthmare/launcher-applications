@@ -37,6 +37,17 @@ for (const [id,url] of bundles) {
     "})()");
   const report={id,collectedAt:new Date().toISOString(),http:source,dom:evidence,scope:"Read-only identity discovery. No gameplay certification, no fabricated captures."};
   await writeFile(resolve(root,".reports/historical-bundles/"+id+".json"),JSON.stringify(report,null,2)+"\n");
+  if(["august-4-anthology","august-2-restored-collection"].includes(id)) {
+    const targets=id==="august-4-anthology"?["soleil","manga"]:["soleil","maid café"];
+    for(const term of targets) {
+      const selected=await browser.evaluate("(()=>{const wanted="+JSON.stringify(term)+";const normalize=x=>x.normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').toLowerCase();const el=[...document.querySelectorAll('.list button,.card')].find(b=>normalize(b.innerText).includes(normalize(wanted)));if(!el)return null;el.click();return el.innerText.trim()})()");
+      if(!selected){console.log("AUGUST_DETAIL_MISSING "+JSON.stringify({id,term}));continue;}
+      await browser.sleep(650);
+      const detail=await browser.evaluate("(()=>({title:document.querySelector('#title')?.textContent||document.title,description:document.querySelector('.desc')?.innerText||'',links:[...document.querySelectorAll('a[href]')].slice(0,10).map(a=>({text:a.textContent.trim().slice(0,90),href:a.href})),frame:[...document.querySelectorAll('iframe')].slice(0,5).map(x=>({src:x.src,title:x.title})),stage:document.querySelector('.stage')?.innerText?.slice(0,1600)||'',body:document.body.innerText.slice(-1300)}))()");
+      await writeFile(resolve(root,".reports/historical-bundles/"+id+"-"+term.replace(/[^a-z]+/gi,"-")+".json"),JSON.stringify({source:id,selected,...detail},null,2)+"\\n");
+      console.log("AUGUST_DETAIL "+JSON.stringify({id,term,selected,detail}));
+    }
+  }
   console.log("AUGUST_BUNDLE "+JSON.stringify({id,url,sourceTitle,htmlLength:body.length,pageTitle:evidence.title,headingCount:evidence.headings.length,cardCount:evidence.candidateCards.length,firstCards:evidence.candidateCards.slice(0,35),headings:evidence.headings.slice(0,15),links:evidence.links.slice(0,15),bodyStart:evidence.bodyText.slice(0,700)}));
  }catch(error){console.log("AUGUST_BUNDLE_ERROR "+JSON.stringify({id,url,error:String(error?.message||error)}));}
  finally{if(browser)await browser.close().catch(()=>{});}
