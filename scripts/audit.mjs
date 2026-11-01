@@ -602,6 +602,46 @@ if (await exists(triarchProofPath)) {
   }
 }
 
+// Validate DEADWALL 1.74 as a separate real-browser proof, not inherited menu captures.
+const deadwallId = "deadwall-last-enclosure";
+const deadwallProofPath = "docs/media-proof/deadwall-gameplay-2026-11-01.json";
+assert(await exists(deadwallProofPath), "preuve de gameplay DEADWALL 1.74");
+if (await exists(deadwallProofPath)) {
+  const evidence = JSON.parse(await readFile(path.join(root, deadwallProofPath), "utf8"));
+  const record = galleryMap[deadwallId];
+  const oldShots = archiveDocument.previousScreenshots?.[deadwallId] || [];
+  const oldPreview = archiveDocument.previousPreviews?.[deadwallId];
+  const listed = fidelityMatrix.entries?.find((entry) => entry.id === deadwallId);
+  assert(evidence.notGeneratedArt && evidence.captureType === "native-browser-gameplay", "DEADWALL images natives, non synthétiques");
+  assert(evidence.source === "https://deadwall-last-enclosure.vercel.app/", "DEADWALL capturé à la source publique officielle");
+  assert(evidence.version === "1.74.0" && record.captureVersion === evidence.version, "DEADWALL version source et galerie 1.74");
+  assert(evidence.scenario?.actorMotionConfirmed && evidence.scenario?.seed === 17117, "déplacement de l'acteur vérifié en vrai gameplay");
+  assert(record.captureType === "real-gameplay", "vues DEADWALL identifiées");
+  assert(record.presentationReview === "pending-fidelity", "une présentation artistique non validée n'est pas prise pour le gameplay");
+  assert(Array.isArray(evidence.scenes) && evidence.scenes.length === 5, "cinq scènes natives DEADWALL");
+  assert(Array.isArray(record.labels) && record.labels.length === 5, "cinq intitulés détaillés DEADWALL");
+  assert(oldShots.length === 5, "cinq anciennes vues DEADWALL sauvegardées");
+  assert(Boolean(oldPreview) && await exists(oldPreview), "ancien aperçu DEADWALL sauvegardé");
+  assert(listed?.screenshotFreshness === "up-to-date" && listed.screenshotCaptureProof === deadwallProofPath, "dossier media DEADWALL mis à jour depuis les preuves");
+  for (let index = 0; index < 5; index++) {
+    const shot = evidence.scenes[index];
+    const pathImage = record.images[index];
+    const pathOld = oldShots[index];
+    assert(shot.path === pathImage && shot.label === record.labels[index], `label et source DEADWALL ${index+1}`);
+    assert(shot.state === "playing" && shot.campaignSeed === 17117, `vraie campagne DEADWALL ${index+1}`);
+    assert(await exists(pathOld), `ancienne capture DEADWALL ${index+1} conservée`);
+    if (await exists(pathImage)) {
+      const bytes = await readFile(path.join(root, pathImage));
+      assert(createHash("sha256").update(bytes).digest("hex") === shot.sha256, `empreinte de capture DEADWALL ${index+1} certifiée`);
+      assert(bytes.subarray(0, 8).toString("hex") === "89504e470d0a1a0a" && bytes.readUInt32BE(16) === 1280 && bytes.readUInt32BE(20) === 720, `dimensions 1280×720 de DEADWALL ${index+1}`);
+      if (await exists(pathOld)) {
+        const older = await readFile(path.join(root, pathOld));
+        assert(!older.equals(bytes), `ancienne et nouvelle capture DEADWALL ${index+1} distinctes`);
+      }
+    }
+  }
+}
+
 let previousPresentationFiles = [];
 const previousPresentationDirectory = "assets/presentations/previous";
 const previousPresentationDirectoryExists = await exists(previousPresentationDirectory);
