@@ -16,12 +16,13 @@ if (!beforeRecent.startsWith("const starterApps = [")) throw new Error("Catalogu
 const primary = [...beforeRecent.matchAll(/\{\s*id:\s*"([^"]+)"([\s\S]*?)(?=\n\s*\},|\n\s*\];)/g)].map((match) => ({
   id: match[1],
   name: match[2].match(/\bname:\s*"([^"]+)"/)?.[1] || match[1],
-  link: match[2].match(/\blink:\s*"([^"]*)"/)?.[1] || ""
+  link: match[2].match(/\blink:\s*"([^"]*)"/)?.[1] || "",
+  accessPolicy: match[2].match(/\baccessPolicy:\s*"([^"]*)"/)?.[1] || ""
 }));
 const prefix = "window.LAUNCHER_RECENT_GAMES = ";
 if (!recentSource.startsWith(prefix)) throw new Error("Catalogue récent introuvable");
 const recent = JSON.parse(recentSource.slice(prefix.length).replace(/;\s*$/, "").trim());
-const apps = [...primary, ...recent].map(({ id, name, link }) => ({ id, name, link: link || "" }));
+const apps = [...primary, ...recent].map(({ id, name, link, accessPolicy }) => ({ id, name, link: link || "", accessPolicy: accessPolicy || "" }));
 if (new Set(apps.map((app) => app.id)).size !== apps.length) throw new Error("IDs dupliqués");
 if (!apps.length) throw new Error("Catalogue vide");
 
@@ -46,7 +47,10 @@ async function check(app) {
         status: response.status,
         headers: { "x-vercel-protection": response.headers.get("x-vercel-protection") }
       });
-      return { ...app, ...classification, httpStatus: response.status, effectiveUrl: response.url,
+      const result = app.accessPolicy === "local-download" && classification.state === "reachable"
+        ? { state:"download-available", reason:"Dépôt GitHub accessible : téléchargement/installation locale, pas un jeu hébergé" }
+        : classification;
+      return { ...app, ...result, httpStatus: response.status, effectiveUrl: response.url,
         checkedAt: new Date().toISOString() };
     } catch (error) {
       lastError = String(error?.message || error);
@@ -64,12 +68,12 @@ const workers = Array.from({ length: Math.min(6, apps.length) }, async () => {
   }
 });
 await Promise.all(workers);
-const counts = Object.fromEntries(["reachable", "auth-required", "needs-review", "broken", "no-link"].map((state) => [
+const counts = Object.fromEntries(["reachable", "download-available", "auth-required", "needs-review", "broken", "no-link"].map((state) => [
   state, results.filter((app) => app.state === state).length
 ]));
 const report = {
   generatedAt: new Date().toISOString(),
-  scope: "Contrôle des liens avec détection de Vercel SSO — un HTTP 200 ne garantit pas l'identité ni la version du jeu",
+  scope: "Contrôle des URLs publiques, dépôts à télécharger et redirections Vercel SSO — réponse HTTP non suffisante pour certifier le gameplay",
   total: results.length,
   counts,
   results
@@ -77,7 +81,7 @@ const report = {
 await mkdir(resolve(root, ".reports"), { recursive: true });
 await writeFile(resolve(root, ".reports/live-link-status.json"), JSON.stringify(report, null, 2) + "\n", "utf8");
 console.log("Launcher URLs:", JSON.stringify(counts));
-for (const app of results.filter((x) => !["reachable"].includes(x.state))) {
+for (const app of results.filter((x) => !["reachable", "download-available"].includes(x.state))) {
   console.log(app.state + " " + app.id + " " + (app.httpStatus ?? "-") + " " + app.link + " " + (app.reason || ""));
 }
 if (process.argv.includes("--strict") && (counts.broken || counts["auth-required"])) process.exitCode = 1;
