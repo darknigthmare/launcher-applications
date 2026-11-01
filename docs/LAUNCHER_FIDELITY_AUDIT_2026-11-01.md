@@ -67,6 +67,21 @@ Les versions ci-dessus sont des **références de code**, pas des preuves exhaus
 
 La [matrice exhaustive](MEDIA_FIDELITY_MATRIX_2026-11-01.json) suit 140 fiches, 700 captures et 112 historiques, avec 13 projets en priorité P0. Chaque entrée reste `not-reviewed` tant qu'elle n'a pas été comparée aux sources et à la version jouable.
 
+## Recaptures natives effectivement intégrées le 1er novembre 2026
+
+| Jeu | Captures recapturées | Version du site / source recoupée | Preuves | Original conservé |
+| --- | ---: | --- | --- | --- |
+| TRIARCHE : Ciel Rouge | 5 | 1.0.0, deux campagnes, opérations de convoi et boss | [Gameplay TRIARCHE](media-proof/triarch-gameplay-2026-11-01.json) | Cinq anciens PNG et aperçu JPG |
+| DEADWALL | 5 | 1.74.0, D-17, mouvement joueur et poste de commandement | [Gameplay DEADWALL](media-proof/deadwall-gameplay-2026-11-01.json) | Cinq anciens PNG et aperçu PNG |
+| Yautja: Apex Hunt | 5 | source 1.13.0, production `5e386e0`, croiseur, contrats, armurerie, paquetage et chasse au Goliath | [Gameplay WebGL Yautja](media-proof/yautja-apex-gameplay-2026-11-01.json) | Cinq anciens PNG et aperçu JPG |
+| MOUSTIQUE | 5 | 4.14.1-R11, moteur WebGL2, vol libre + quatre scènes cadrées via la caméra de QA du jeu | [Moteur WebGL2 MOUSTIQUE](media-proof/moustique-webgl2-2026-11-01.json) | Cinq anciens WebP et aperçu WebP |
+
+**20 nouvelles captures sur 700**, donc **680 captures non révisées**. Les 4 galeries reçoivent un aperçu actuel distinct, un mode de preuve et des titres de scène ; les anciennes images ne sont pas supprimées. Les illustrations promotionnelles des 4 jeux restent écartées de la galerie publique tant que leur fidélité n'est pas contrôlée. Les fichiers physiques restent publics et le « mode édition » n'est pas une authentification.
+
+Les **quatre cadrages de MOUSTIQUE hors vol libre** proviennent du vrai renderer du jeu mais utilisent la caméra de QA et un temps de simulation arrêté. Ils ne sont pas des captures de progression naturelle. Une capture authentique ne prouve pas une fidélité 1:1 aux œuvres inspiratrices ; les audits de silhouette, style, armes et équipements restent ouverts.
+
+La [matrice exhaustive des 140 jeux](MEDIA_FIDELITY_MATRIX_2026-11-01.json) et le [suivi vérifié des 13 dernières productions prioritaires](PRODUCTION_DEPLOYMENTS_2026-11-01.md) permettent de distinguer visuels acceptés, visuels non relus, origine des screenshots, date du dernier déploiement et version du code.
+
 ## Galerie : critères de recevabilité pour les nouveaux visuels
 
 1. Comparer la nouvelle illustration au concept propre du jeu et aux captures **du build actuel**, pas seulement à la franchise inspiratrice.
