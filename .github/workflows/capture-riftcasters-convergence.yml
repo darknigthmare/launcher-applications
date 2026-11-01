@@ -1,0 +1,62 @@
+name: Launcher — capture source-native RIFTCASTERS 3D Convergence
+
+on:
+  pull_request:
+    paths:
+      - "scripts/capture-riftcasters-convergence.mjs"
+      - ".github/workflows/capture-riftcasters-convergence.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: launcher-riftcasters-convergence-native
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'codex/launcher-links-media-fidelity-20261101'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 3
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Validate screenshot capture module
+        run: |
+          node --check scripts/browser-capture-common.mjs
+          node --check scripts/capture-riftcasters-convergence.mjs
+      - name: Real production WebGL arena and menu capture
+        run: node scripts/capture-riftcasters-convergence.mjs
+      - name: Launcher audit with new source media
+        run: npm test
+      - name: Preserve native screenshots and proof
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: riftcasters-convergence-native-${{ github.run_number }}
+          path: |
+            docs/media-proof/riftcasters-convergence-native-2026-11-01.json
+            assets/screenshots/riftcasters-3d/*.png
+            assets/presentations/riftcasters-3d.png
+            assets/previews/riftcasters-3d.jpg
+          if-no-files-found: warn
+      - name: Push verified media and source notes
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/screenshots/riftcasters-3d assets/presentations/riftcasters-3d.png \
+            assets/previews/riftcasters-3d.jpg assets/recent-games.js assets/app-gallery.json \
+            assets/source-native-media-manifest.json docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json \
+            docs/media-proof/riftcasters-convergence-native-2026-11-01.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "media(riftcasters): capture source-native WebGL3D arena, spell, character and HUD"
+          git fetch origin "refs/heads/${{ github.event.pull_request.head.ref }}"
+          git rebase FETCH_HEAD
+          git push origin "HEAD:${{ github.event.pull_request.head.ref }}"
