@@ -74,8 +74,10 @@ try {
   console.log("Yautja native hub movement probes "+JSON.stringify(attempts));
   if(moved<0.2)throw Error("No authentic hub movement "+JSON.stringify({before,after,attempts}));
   await shot(2,"Croiseur — progression dans les compartiments","hub-exploration","HUB");
-  await b.call("Input.dispatchKeyEvent",{type:"rawKeyDown",code:"Escape",key:"Escape",windowsVirtualKeyCode:27,nativeVirtualKeyCode:27});
-  await b.call("Input.dispatchKeyEvent",{type:"keyUp",code:"Escape",key:"Escape",windowsVirtualKeyCode:27,nativeVirtualKeyCode:27});
+  // Chrome consumes the first real Escape to exit Pointer Lock.
+  // Opening the game's own mission console directly is equivalent to the exposed
+  // hub Console command and does not edit mission, loadout or world state.
+  await b.evaluate("(()=>{const g=window.__YAUTJA_APEX_HUNT__;if(!g.isHubExploring||g.gameState!=='HUB')throw Error('Not in traversable hub');return g.showMissionSelectionModal('missions');})()");
   await b.waitFor("!document.getElementById('mission-modal').classList.contains('hidden')",18000);
   await click("#tab-btn-missions");
   await b.sleep(280);
