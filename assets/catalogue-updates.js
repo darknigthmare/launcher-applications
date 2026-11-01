@@ -5,10 +5,10 @@ window.LAUNCHER_RELEASES = [
     title: "Fidélité des dossiers et archives visuelles",
     highlights: [
       "Les anciennes illustrations restent conservées dans le dépôt mais disparaissent de la galerie publique : l'accès visuel est réservé au mode édition local, en attendant une vraie authentification.",
-      "Les domaines de Brèche Multiverselle, Vortex Command et PREDATOR: HIVE WARRIORS sont alignés sur leurs alias Vercel déclarés.",
-      "Onze dossiers bénéficient de descriptions et accroches diégétiques révisées depuis leurs références de jeu ; les captures historiques ne sont pas présentées comme des captures de novembre."
+      "Les domaines de Brèche Multiverselle, Vortex Command, PREDATOR: HIVE WARRIORS et Malaise Party sont alignés sur leurs alias Vercel déclarés.",
+      "Douze dossiers bénéficient de descriptions et accroches diégétiques révisées depuis leurs références de jeu ; les captures historiques ne sont pas présentées comme des captures de novembre."
     ],
-    appIds: ["multiverse-breach", "vortex-command", "yautja-hive-warriors", "triarche-ciel-rouge", "world-hive-wars", "deadwall-last-enclosure", "moustique-the-video-game"]
+    appIds: ["multiverse-breach", "vortex-command", "yautja-hive-warriors", "triarche-ciel-rouge", "world-hive-wars", "deadwall-last-enclosure", "moustique-the-video-game", "malaise-party"]
   },
   {
     version: "1.12.0",
