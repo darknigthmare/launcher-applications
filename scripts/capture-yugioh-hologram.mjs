@@ -60,8 +60,12 @@ try {
   await click("#btn-campaign-back");
   await b.waitFor("!document.getElementById('start-modal')?.classList.contains('hidden')",15000);
   await click("#btn-open-field-atlas");
-  await b.waitFor("!document.getElementById('field-atlas-modal')?.classList.contains('hidden') && !!document.getElementById('field-atlas-summary')?.textContent.trim()",38000);
-  await b.sleep(600);
+  await b.sleep(700);
+  const atlasProbe=await b.evaluate("(()=>({open:!document.getElementById('field-atlas-modal')?.classList.contains('hidden'),start:!document.getElementById('start-modal')?.classList.contains('hidden'),summary:document.getElementById('field-atlas-summary')?.textContent.trim(),itemCount:document.getElementById('field-atlas-list')?.children.length,active:document.activeElement?.id,dialog:[...document.querySelectorAll('.modal-overlay')].filter(x=>!x.classList.contains('hidden')).map(x=>x.id)}))()");
+  console.log("YU-GI-OH FIELD ATLAS "+JSON.stringify(atlasProbe));
+  await b.waitFor("!document.getElementById('field-atlas-modal')?.classList.contains('hidden')",14000);
+  await b.waitFor("document.getElementById('field-atlas-list')?.children.length>0 || document.getElementById('field-atlas-summary')?.textContent?.includes('catalogue n')",27000);
+  await b.sleep(350);
   await snap(3,"Atlas des Terrains — illustrations, règles et décors 3D","real-field-atlas","atlas");
 
   await click("#btn-close-field-atlas");
