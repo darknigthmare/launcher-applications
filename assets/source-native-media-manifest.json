@@ -17,6 +17,18 @@
       "captureProof": "docs/media-proof/deadline-outbreak-native-2026-11-01.json",
       "sourceType": "actual title screen, not a constructed illustration",
       "version": "1.1.0"
+    },
+    {
+      "id": "resident-evil-bow-protocol",
+      "provider": "Game Runtime / Chromium CDP",
+      "generator": "native-browser-capture",
+      "presentation": "assets/presentations/resident-evil-bow-protocol.png",
+      "preview": "assets/previews/resident-evil-bow-protocol.jpg",
+      "sha256": "b6128d8f0491a5804d693c65a6926168db4fcaadb060e8fd84dcdf15ffefcbbd",
+      "sourceUrl": "https://resident-evil-bow-protocol.vercel.app/",
+      "captureProof": "docs/media-proof/resident-evil-bow-r20-2026-11-01.json",
+      "sourceType": "Actual game's R20 entry screen and menus; not hand-drawn BOW art",
+      "version": "0.7.3 (GitHub source, runtime version not signed)"
     }
   ]
 }

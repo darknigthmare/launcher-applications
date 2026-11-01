@@ -1389,11 +1389,26 @@
     "captureNote": "Fiche publiable avec lien vérifié; aucun visuel du gameplay accepté avant capture sur une vraie version et vérification."
   },
   "resident-evil-bow-protocol": {
-    "images": [],
-    "captureType": "pending-source-review",
-    "presentationReview": "pending-fidelity",
-    "labels": [],
-    "captureNote": "Fiche publiable avec lien vérifié; aucun visuel du gameplay accepté avant capture sur une vraie version et vérification."
+    "images": [
+      "assets/screenshots/resident-evil-bow-protocol/01.png",
+      "assets/screenshots/resident-evil-bow-protocol/02.png",
+      "assets/screenshots/resident-evil-bow-protocol/03.png",
+      "assets/screenshots/resident-evil-bow-protocol/04.png",
+      "assets/screenshots/resident-evil-bow-protocol/05.png"
+    ],
+    "captureType": "real-module-ui",
+    "presentationReview": "source-native-title-screen",
+    "labels": [
+      "Confinement — Tyrant et terminal principal",
+      "Confinement — Licker, dossier RE2",
+      "Confinement — Nemesis, dossier RE3",
+      "Engagement — sept protocoles d'affrontement",
+      "Archives biologiques — bestiaire et techniques"
+    ],
+    "captureSource": "https://resident-evil-bow-protocol.vercel.app/",
+    "captureVersion": "v0.7.3 · R20 (source)",
+    "captureDate": "2026-11-01",
+    "captureProof": "docs/media-proof/resident-evil-bow-r20-2026-11-01.json"
   },
   "digital-circus-encore": {
     "images": [],
