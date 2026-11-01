@@ -1,0 +1,78 @@
+name: Launcher — captures authentiques Dernière Ligne 0.44.2
+
+on:
+  pull_request:
+    paths:
+      - "scripts/capture-horde-local.mjs"
+      - ".github/workflows/capture-horde-local.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: launcher-horde-native-capture
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'codex/launcher-links-media-fidelity-20261101'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Récupérer la branche de la PR
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 1
+      - name: Récupérer le vrai jeu HTML 0.44.2
+        uses: actions/checkout@v4
+        with:
+          repository: darknigthmare/The-Horde-The-Last-Stand
+          ref: main
+          path: reference-the-horde
+          fetch-depth: 1
+      - name: Node 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Enregistrer l'empreinte de la source exacte
+        run: echo "HORDE_SOURCE_SHA=$(git -C reference-the-horde rev-parse HEAD)" >> "$GITHUB_ENV"
+      - name: Vérifier la syntaxe de la capture
+        run: |
+          node --check scripts/browser-capture-common.mjs
+          node --check scripts/capture-horde-local.mjs
+      - name: Capturer cinq écrans depuis le véritable jeu local
+        run: node scripts/capture-horde-local.mjs
+      - name: Vérifier tous les médias et le catalogue
+        run: npm test
+      - name: Conserver les captures natives et leur preuve
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: derniere-ligne-0442-native-${{ github.run_number }}
+          path: |
+            docs/media-proof/derniere-ligne-local-0442-2026-11-01.json
+            assets/presentations/derniere-ligne-zero-repli.png
+            assets/previews/derniere-ligne-zero-repli.jpg
+            assets/screenshots/derniere-ligne-zero-repli/*.png
+          if-no-files-found: warn
+      - name: Ajouter les seuls fichiers vérifiés à la PR
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/screenshots/derniere-ligne-zero-repli \
+            assets/presentations/derniere-ligne-zero-repli.png \
+            assets/previews/derniere-ligne-zero-repli.jpg \
+            assets/recent-games.js assets/app-gallery.json \
+            assets/source-native-media-manifest.json docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json \
+            docs/media-proof/derniere-ligne-local-0442-2026-11-01.json
+          if git diff --cached --quiet; then
+            echo "Captures déjà intégrées"
+            exit 0
+          fi
+          git commit -m "media(horde): verified 0.44.2 menu, camp and playable night gameplay"
+          git fetch origin "refs/heads/${{ github.event.pull_request.head.ref }}"
+          git rebase "origin/${{ github.event.pull_request.head.ref }}"
+          git push origin "HEAD:${{ github.event.pull_request.head.ref }}"
