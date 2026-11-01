@@ -1,11 +1,12 @@
 name: Launcher — cinq captures natives Vortex Command
 
 on:
-  pull_request:
-    paths:
-      - "scripts/capture-vortex-command.mjs"
-      - ".github/workflows/capture-vortex-command.yml"
   workflow_dispatch:
+    inputs:
+      acknowledge:
+        description: "Autoriser explicitement une nouvelle recapture Vortex"
+        required: true
+        type: boolean
 
 permissions:
   contents: write
@@ -16,14 +17,14 @@ concurrency:
 
 jobs:
   capture:
-    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'codex/launcher-links-media-fidelity-20261101'
+    if: github.ref_name == 'codex/launcher-links-media-fidelity-20261101' && inputs.acknowledge == true
     runs-on: ubuntu-latest
     timeout-minutes: 13
     steps:
       - name: Check out launcher pull request branch
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.ref }}
+          ref: ${{ github.ref_name }}
           fetch-depth: 1
       - name: Use Node 24
         uses: actions/setup-node@v4
@@ -61,6 +62,6 @@ jobs:
             exit 0
           fi
           git commit -m "media(vortex): native RTS 1.0 gallery and protected historical screenshots"
-          git fetch origin "refs/heads/${{ github.event.pull_request.head.ref }}"
-          git rebase "origin/${{ github.event.pull_request.head.ref }}"
-          git push origin "HEAD:${{ github.event.pull_request.head.ref }}"
+          git fetch origin "refs/heads/${{ github.ref_name }}"
+          git rebase "origin/${{ github.ref_name }}"
+          git push origin "HEAD:${{ github.ref_name }}"
