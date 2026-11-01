@@ -1513,11 +1513,26 @@
     "captureProof": "docs/media-proof/deadline-outbreak-native-2026-11-01.json"
   },
   "ragtime-rumble-complete-tour": {
-    "images": [],
-    "captureType": "pending-source-review",
-    "presentationReview": "pending-fidelity",
-    "labels": [],
-    "captureNote": "Fiche publiable avec lien vérifié; aucun visuel du gameplay accepté avant capture sur une vraie version et vérification."
+    "images": [
+      "assets/screenshots/ragtime-rumble-complete-tour/01.png",
+      "assets/screenshots/ragtime-rumble-complete-tour/02.png",
+      "assets/screenshots/ragtime-rumble-complete-tour/03.png",
+      "assets/screenshots/ragtime-rumble-complete-tour/04.png",
+      "assets/screenshots/ragtime-rumble-complete-tour/05.png"
+    ],
+    "captureType": "real-ui-navigation",
+    "presentationReview": "source-native-title-screen",
+    "labels": [
+      "Rideau fermé — choix de la tournée",
+      "Tournée — trois scènes et sélection du morceau",
+      "Studio — éditeur de partitions et pistes rythmiques",
+      "Maestro Bellows — affrontement rythmique en direct",
+      "Entracte — vraie pause en combat"
+    ],
+    "captureSource": "https://ragtime-rumble-complete-tour.vercel.app/",
+    "captureVersion": "3.2.0-alpha.3",
+    "captureDate": "2026-11-01",
+    "captureProof": "docs/media-proof/ragtime-complete-tour-native-2026-11-01.json"
   },
   "silent-hill-halo-of-flesh": {
     "images": [],

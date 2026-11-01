@@ -78,6 +78,18 @@
       "captureProof": "docs/media-proof/riftcasters-convergence-native-2026-11-01.json",
       "sourceType": "Real game selection and active arena; no generated promotional concept",
       "version": "GitHub source 1.0.0-rc.1; Vercel production READY SHA 21ef0c45"
+    },
+    {
+      "id": "ragtime-rumble-complete-tour",
+      "provider": "Ragtime Rumble Complete Tour game runtime / Chromium",
+      "generator": "native-browser-capture",
+      "presentation": "assets/presentations/ragtime-rumble-complete-tour.png",
+      "preview": "assets/previews/ragtime-rumble-complete-tour.jpg",
+      "sha256": "10d9f8e09af12cbbb838b9f10bde391ec3d3e3bd97b56c5442ec1e0b9a25158d",
+      "sourceUrl": "https://ragtime-rumble-complete-tour.vercel.app/",
+      "captureProof": "docs/media-proof/ragtime-complete-tour-native-2026-11-01.json",
+      "sourceType": "Actual game menu, Tour, score editor, live boss combat and pause; not generated key art",
+      "version": "3.2.0-alpha.3; Vercel READY source SHA 5c8b32609033301e118921656f8588a7274810ad"
     }
   ]
 }
