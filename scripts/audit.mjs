@@ -642,6 +642,46 @@ if (await exists(deadwallProofPath)) {
   }
 }
 
+// Verify five native WebGL images and their original backups for Yautja Apex.
+const yautjaApexId = "yautja-apex-hunt";
+const yautjaApexProofPath = "docs/media-proof/yautja-apex-gameplay-2026-11-01.json";
+assert(await exists(yautjaApexProofPath), "preuve WebGL Yautja Apex présente");
+if (await exists(yautjaApexProofPath)) {
+  const record = galleryMap[yautjaApexId];
+  const evidence = JSON.parse(await readFile(path.join(root, yautjaApexProofPath), "utf8"));
+  const archiveShots = archiveDocument.previousScreenshots?.[yautjaApexId] || [];
+  const archivePreview = archiveDocument.previousPreviews?.[yautjaApexId];
+  const tracked = fidelityMatrix.entries?.find((entry) => entry.id === yautjaApexId);
+  assert(evidence.notGeneratedArt === true && evidence.captureType === "native-browser-gameplay", "cinq captures Yautja issues du navigateur, non générées");
+  assert(evidence.source === "https://yautja-apex-hunt.vercel.app/", "source officielle de la chasse Yautja");
+  assert(evidence.releaseRef?.deploymentId === "dpl_3bVUaoiRC2tSoXUeJ6YGUnySwwPu", "source publiée confirmée pour Yautja");
+  assert(evidence.releaseRef?.gitCommit === "5e386e0c1efc5c5401fbe66848cbc82130668002", "SHA source identique à Vercel");
+  assert(evidence.hubAccessVerified, "croiseur Yautja ouvert dans le vrai jeu");
+  assert(record.captureType === "real-gameplay" && record.presentationReview === "pending-fidelity", "captures réelles présentées avant l'illustration non qualifiée");
+  assert(record.captureVersion === "1.13.0 (source)", "version de source distinguée de la version runtime");
+  assert(tracked?.screenshotCaptureProof === yautjaApexProofPath && tracked?.screenshotFreshness === "up-to-date", "suivi des captures Yautja mis à jour");
+  assert(Array.isArray(evidence.scenes) && evidence.scenes.length === 5 && record.labels?.length === 5 && record.images?.length === 5, "cinq scènes Yautja identifiées");
+  assert(archiveShots.length === 5 && archivePreview && await exists(archivePreview), "ancien aperçu et captures Yautja archivés");
+  assert(evidence.scenes?.[4]?.phase === "HUNT" && evidence.scenes?.[4]?.activeBoss, "dernier screenshot de vraie chasse et boss présent");
+  for (let index = 0; index < 5; index++) {
+    const shot = evidence.scenes[index];
+    const pathImage = record.images[index];
+    const pathOld = archiveShots[index];
+    assert(shot.path === pathImage && record.labels[index] === shot.label && shot.hasRendered, `screenshot Yautja ${index + 1} rendu et renseigné`);
+    assert(index === 4 ? shot.phase === "HUNT" : shot.phase === "HUB", `phase du jeu Yautja ${index + 1} correcte`);
+    assert(await exists(pathOld), `ancienne vue Yautja ${index + 1} conservée`);
+    if (await exists(pathImage)) {
+      const bytes = await readFile(path.join(root, pathImage));
+      assert(createHash("sha256").update(bytes).digest("hex") === shot.sha256, `capture Yautja ${index + 1} empreinte exacte`);
+      assert(bytes.subarray(0, 8).toString("hex") === "89504e470d0a1a0a" && bytes.readUInt32BE(16) === 1280 && bytes.readUInt32BE(20) === 720, `capture Yautja ${index + 1} résolution 1280×720`);
+      if (await exists(pathOld)) {
+        const old = await readFile(path.join(root, pathOld));
+        assert(!old.equals(bytes), `capture Yautja ${index + 1} réellement remplacée`);
+      }
+    }
+  }
+}
+
 let previousPresentationFiles = [];
 const previousPresentationDirectory = "assets/presentations/previous";
 const previousPresentationDirectoryExists = await exists(previousPresentationDirectory);
