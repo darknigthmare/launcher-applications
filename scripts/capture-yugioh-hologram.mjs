@@ -48,7 +48,7 @@ try {
   const poster=await b.capture("png");
   await writeFile(resolve(root,presentation),poster);
 
-  await click("#yugi");
+  await click('[data-deck-id="yugi"]');
   await b.sleep(300);
   await snap(1,"KaibaCorp — choisir son deck de départ","player-deck-selection","start");
 
