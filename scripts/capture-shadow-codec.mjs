@@ -8,6 +8,7 @@ import {createHash} from "node:crypto";
 import {existsSync} from "node:fs";
 import {copyFile,mkdir,readFile,writeFile} from "node:fs/promises";
 import {resolve} from "node:path";
+import {setTimeout as sleep} from "node:timers/promises";
 import {openNativeBrowser} from "./browser-capture-common.mjs";
 
 const root=process.cwd(), id="shadow-codec-ops",source="https://shadow-codec-ops.vercel.app/";
@@ -25,7 +26,18 @@ const modules=[
  {route:"campaign",label:"Campaign Ops — progression et embranchements",className:"campaign-command-panel"},
  {route:"cqc",label:"CQC Versus — jeu autonome de combat dans le terminal",className:"cqc-module"}
 ];
-const browser=await openNativeBrowser(source,{width:1280,height:720,timeout:110000,webgl:true});
+// Some GitHub runners briefly fail to expose the Chrome debugging port.
+let browser;
+for(let attempt=1;attempt<=3;attempt++){
+  try{
+    browser=await openNativeBrowser(source,{width:1280,height:720,timeout:110000,webgl:true});
+    break;
+  }catch(error){
+    if(attempt===3)throw error;
+    console.warn("Chrome/CDP initialization retry "+attempt+": "+String(error.message||error).slice(0,140));
+    await sleep(attempt*850);
+  }
+}
 const evidence=[],shots=[];let promoJpeg;
 async function routeState(route) {
  const state=await browser.evaluate("(()=>{const root=document.querySelector('.layout-shell'),main=document.querySelector('#main-content');return {route:root?.dataset.route,version:(root?.querySelector('.system-card')?.textContent||'').match(/BUILD:\\s*(\\d+\\.\\d+\\.\\d+)/)?.[1]||null,heading:main?.querySelector('h1,h2')?.textContent?.trim()||null,htmlLength:main?.innerHTML.length||0,bodyTextLength:main?.innerText.length||0,hasError:!!main?.querySelector('[role=alert],.game-engine-status.error'),title:document.title,canvasVisible:!!main?.querySelector('#sideops-phaser-root canvas'),canvasWidth:main?.querySelector('#sideops-phaser-root canvas')?.width||0,canvasHeight:main?.querySelector('#sideops-phaser-root canvas')?.height||0,cqcLoaded:!!main?.querySelector('.cqc-game-frame')?.contentDocument?.querySelector('#shell'),cqcCanvas:!!main?.querySelector('.cqc-game-frame')?.contentDocument?.querySelector('canvas'),cqcTitle:main?.querySelector('.cqc-game-frame')?.contentDocument?.title||null}})()");
