@@ -142,12 +142,20 @@
       "assets/screenshots/previous/moustique-the-video-game/03.webp",
       "assets/screenshots/previous/moustique-the-video-game/04.webp",
       "assets/screenshots/previous/moustique-the-video-game/05.webp"
+    ],
+    "world-hive-wars": [
+      "assets/screenshots/previous/world-hive-wars/01.webp",
+      "assets/screenshots/previous/world-hive-wars/02.webp",
+      "assets/screenshots/previous/world-hive-wars/03.webp",
+      "assets/screenshots/previous/world-hive-wars/04.webp",
+      "assets/screenshots/previous/world-hive-wars/05.webp"
     ]
   },
   "previousPreviews": {
     "triarche-ciel-rouge": "assets/previews/previous/triarche-ciel-rouge.jpg",
     "deadwall-last-enclosure": "assets/previews/previous/deadwall-last-enclosure.png",
     "yautja-apex-hunt": "assets/previews/previous/yautja-apex-hunt.jpg",
-    "moustique-the-video-game": "assets/previews/previous/moustique-the-video-game.webp"
+    "moustique-the-video-game": "assets/previews/previous/moustique-the-video-game.webp",
+    "world-hive-wars": "assets/previews/previous/world-hive-wars.webp"
   }
 }

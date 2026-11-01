@@ -1001,7 +1001,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "status": "Vercel",
     "accent": "#e94991",
     "presentation": "assets/presentations/world-hive-wars.webp",
-    "image": "assets/previews/world-hive-wars.webp"
+    "image": "assets/previews/world-hive-wars.jpg"
   },
   {
     "id": "tiffany-pixelverse-omniverse",

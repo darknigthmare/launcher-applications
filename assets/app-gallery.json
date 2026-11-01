@@ -671,12 +671,25 @@
   },
   "world-hive-wars": {
     "images": [
-      "assets/screenshots/world-hive-wars/01.webp",
-      "assets/screenshots/world-hive-wars/02.webp",
-      "assets/screenshots/world-hive-wars/03.webp",
-      "assets/screenshots/world-hive-wars/04.webp",
-      "assets/screenshots/world-hive-wars/05.webp"
-    ]
+      "assets/screenshots/world-hive-wars/01.png",
+      "assets/screenshots/world-hive-wars/02.png",
+      "assets/screenshots/world-hive-wars/03.png",
+      "assets/screenshots/world-hive-wars/04.png",
+      "assets/screenshots/world-hive-wars/05.png"
+    ],
+    "labels": [
+      "Carte tactique — secteur en simulation privée",
+      "Bastion Kestrel — modules et réserves",
+      "Périmètre colonial — préparation des défenses",
+      "Colonial Marines — équipe et équipements",
+      "Archives MU/TH/UR — recherches et dossiers"
+    ],
+    "captureType": "real-ui-navigation",
+    "captureSource": "https://world-hive-wars.vercel.app/",
+    "captureVersion": "0.45.0",
+    "captureDate": "2026-11-01",
+    "captureProof": "docs/media-proof/world-hive-045-campaign-2026-11-01.json",
+    "presentationReview": "pending-fidelity"
   },
   "tiffany-pixelverse-omniverse": {
     "images": [
