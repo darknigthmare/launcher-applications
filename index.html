@@ -2333,6 +2333,13 @@
           OFFICIAL_SYNC_FIELDS.forEach((field) => {
             synchronized[field] = starter[field] ?? "";
           });
+          // Official source-native captures may arrive after a user stored an
+          // earlier text-only recovered game. Fill missing media without
+          // overwriting any genuine personalized cover or preview.
+          if (starter.recoveredGame && starter.mediaPendingReview === false) {
+            if (!sanitizeImageUrl(clean.image) && starter.image) synchronized.image = starter.image;
+            if (!sanitizeImageUrl(clean.presentation) && starter.presentation) synchronized.presentation = starter.presentation;
+          }
           const oldPreview = OFFICIAL_PREVIEW_MIGRATIONS.get(String(clean.id));
           if (oldPreview) {
             const formerUrl = new URL(oldPreview, document.baseURI).href;
@@ -2923,11 +2930,13 @@
             </div>
           ` : ""}
         </div>
-        ${["real-gameplay", "real-engine-qa", "real-ui-navigation", "real-module-ui"].includes(app.captureType) && app.captureVersion && app.captureDate
+        ${["real-gameplay", "real-engine-qa", "real-ui-navigation", "real-module-ui", "real-local-gameplay"].includes(app.captureType) && app.captureVersion && app.captureDate
           ? `<p class="capture-proof">${app.captureType === "real-engine-qa"
               ? "Images du moteur 3D · une scène jouable et quatre cadrages de QA"
-              : app.captureType === "real-ui-navigation"
-                ? "Interfaces natives du jeu · campagne en simulation privée, sans GPS"
+              : app.captureType === "real-local-gameplay"
+                ? "Captures natives du jeu local · campagne, préparation et combat vérifiés"
+                : app.captureType === "real-ui-navigation"
+                  ? "Interfaces natives du jeu · campagne en simulation privée, sans GPS"
                 : app.captureType === "real-module-ui"
                   ? app.id === "cainos"
                     ? "CainOS réel · bureau, archives, sélection et duel Encore"
@@ -3058,10 +3067,10 @@
     function mediaTargets(app) {
       const targets = [
         ...(!app.mediaPendingReview && !PENDING_VISUAL_REVIEWS.has(app.id) && app.presentationReview !== "pending-fidelity" ? [{
-          label: "Illustration conceptuelle",
+          label: app.captureType === "real-local-gameplay" ? "Écran titre réel du jeu local" : "Illustration conceptuelle",
           url: sanitizeImageUrl(app.presentation)
         }] : []),
-        { label: app.captureType === "real-gameplay" ? "Aperçu du jeu réel" : app.captureType === "real-engine-qa"
+        { label: ["real-gameplay", "real-local-gameplay"].includes(app.captureType) ? "Aperçu du jeu réel" : app.captureType === "real-engine-qa"
           ? "Rendu natif WebGL2 · cadrage QA" : app.captureType === "real-ui-navigation"
             ? "Aperçu de la campagne · interface réelle"
             : app.captureType === "real-module-ui"
@@ -3340,7 +3349,7 @@
 
     async function checkOnlineStatus() {
       const webApps = apps.filter((app) => (
-        availabilityFor(app) === "Disponible" && /^https?:/i.test(app.link)
+        availabilityFor(app) === "Disponible" && app.accessPolicy !== "local-download" && /^https?:/i.test(app.link)
       ));
       apps.forEach((app) => {
         onlineStatus[app.id] = availabilityFor(app) === "En préparation"
