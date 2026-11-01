@@ -957,14 +957,15 @@
       "screenshotCount": 5,
       "historicalIllustrationStored": false,
       "priority": "P0",
-      "sourceVersionVerified": null,
-      "productionVersionVerified": null,
+      "sourceVersionVerified": "README source 1.74.0 (GitHub)",
+      "productionVersionVerified": "1.74.0 (interface du site de production)",
       "artFidelity": "not-reviewed",
-      "previewFidelity": "not-reviewed",
-      "screenshotFreshness": "requires-build-comparison",
-      "captureVerifiedAt": null,
+      "previewFidelity": "source-verified",
+      "screenshotFreshness": "up-to-date",
+      "captureVerifiedAt": "2026-11-01T10:17:52.432Z",
       "reviewer": null,
-      "notes": "À contrôler sur les références et le build du jeu avant toute mention de fidélité 1:1."
+      "notes": "Deux scènes de terrain, trois écrans authentiques du poste de commandement 1.74.0. Mise en situation native sans téléporter le joueur; archives conservées. Contrôle graphique 1:1 de l'illustration encore ouvert.",
+      "screenshotCaptureProof": "docs/media-proof/deadwall-gameplay-2026-11-01.json"
     },
     {
       "id": "echo-rift",

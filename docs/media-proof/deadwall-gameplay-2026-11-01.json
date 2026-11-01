@@ -1,0 +1,99 @@
+{
+  "captureType": "native-browser-gameplay",
+  "notGeneratedArt": true,
+  "source": "https://deadwall-last-enclosure.vercel.app/",
+  "version": "1.74.0",
+  "capturedAt": "2026-11-01T10:17:52.434Z",
+  "viewport": "1280x720",
+  "scenario": {
+    "seed": 17117,
+    "playerStart": {
+      "seed": 17117,
+      "playerX": 2068,
+      "playerY": 2278,
+      "buildings": 1
+    },
+    "playerAfterMove": {
+      "playerX": 2189.379999999994,
+      "playerY": 2278
+    },
+    "actorMotionConfirmed": true
+  },
+  "preview": {
+    "path": "assets/previews/deadwall-last-enclosure.png",
+    "bytes": 571022,
+    "sha256": "86e4c6ed66eca8f5f6ece6be395ed245afa767efaec0b728c310d76d97cf67e9"
+  },
+  "archives": {
+    "preview": "assets/previews/previous/deadwall-last-enclosure.png",
+    "screenshots": [
+      "assets/screenshots/previous/deadwall-last-enclosure/01.png",
+      "assets/screenshots/previous/deadwall-last-enclosure/02.png",
+      "assets/screenshots/previous/deadwall-last-enclosure/03.png",
+      "assets/screenshots/previous/deadwall-last-enclosure/04.png",
+      "assets/screenshots/previous/deadwall-last-enclosure/05.png"
+    ]
+  },
+  "scenes": [
+    {
+      "slot": 1,
+      "label": "D-17 — première garde",
+      "kind": "gameplay",
+      "path": "assets/screenshots/deadwall-last-enclosure/01.png",
+      "bytes": 568155,
+      "sha256": "51bda0dd3a04ce2a0401120afd66e5d7687887aa325af74fca24bce901c10b52",
+      "state": "playing",
+      "campaignSeed": 17117,
+      "gamePaused": false
+    },
+    {
+      "slot": 2,
+      "label": "D-17 — exploration à pied",
+      "kind": "gameplay",
+      "path": "assets/screenshots/deadwall-last-enclosure/02.png",
+      "bytes": 571750,
+      "sha256": "0a17508ca9e3545638dc8bedc8a33eecdc2357a15ffc57c983fdb57e961a7fb3",
+      "state": "playing",
+      "campaignSeed": 17117,
+      "gamePaused": false
+    },
+    {
+      "slot": 3,
+      "label": "D-17 — poste de commandement",
+      "kind": "in-game-panel",
+      "path": "assets/screenshots/deadwall-last-enclosure/03.png",
+      "bytes": 275369,
+      "sha256": "e457faaaee139acd1addeabdf1a6b427fabffc98702d797751950ab9c3569619",
+      "state": "playing",
+      "campaignSeed": 17117,
+      "gamePaused": true
+    },
+    {
+      "slot": 4,
+      "label": "D-17 — dossiers du territoire",
+      "kind": "in-game-panel",
+      "path": "assets/screenshots/deadwall-last-enclosure/04.png",
+      "bytes": 268237,
+      "sha256": "5c1dd08e1799c2346f548dded2ff5fd5e744983168009f5520a50d534af136f7",
+      "state": "playing",
+      "campaignSeed": 17117,
+      "gamePaused": true
+    },
+    {
+      "slot": 5,
+      "label": "D-17 — doctrines et recherche",
+      "kind": "in-game-panel",
+      "path": "assets/screenshots/deadwall-last-enclosure/05.png",
+      "bytes": 300799,
+      "sha256": "8c95dd8eb07478eaacb2cba5983a46dcdad3d433497c0d142eb2b4687269580a",
+      "state": "playing",
+      "campaignSeed": 17117,
+      "gamePaused": true
+    }
+  ],
+  "limitations": [
+    "Deux vues de gameplay et trois panneaux de jeu",
+    "Capture du build effectivement publié, pas des branches plus récentes non déployées",
+    "Ne prouve pas la fidélité 1:1 de l'illustration promotionnelle"
+  ]
+}

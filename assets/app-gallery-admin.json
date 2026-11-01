@@ -121,9 +121,17 @@
       "assets/screenshots/previous/triarche-ciel-rouge/03.png",
       "assets/screenshots/previous/triarche-ciel-rouge/04.png",
       "assets/screenshots/previous/triarche-ciel-rouge/05.png"
+    ],
+    "deadwall-last-enclosure": [
+      "assets/screenshots/previous/deadwall-last-enclosure/01.png",
+      "assets/screenshots/previous/deadwall-last-enclosure/02.png",
+      "assets/screenshots/previous/deadwall-last-enclosure/03.png",
+      "assets/screenshots/previous/deadwall-last-enclosure/04.png",
+      "assets/screenshots/previous/deadwall-last-enclosure/05.png"
     ]
   },
   "previousPreviews": {
-    "triarche-ciel-rouge": "assets/previews/previous/triarche-ciel-rouge.jpg"
+    "triarche-ciel-rouge": "assets/previews/previous/triarche-ciel-rouge.jpg",
+    "deadwall-last-enclosure": "assets/previews/previous/deadwall-last-enclosure.png"
   }
 }
