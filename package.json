@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "audit": "node scripts/audit.mjs",
-    "test": "npm run audit",
+    "test": "npm run audit && node --test scripts/link-destination-classifier.test.mjs",
     "sync:upcoming": "node scripts/sync-upcoming-games.mjs --write",
     "sync:check": "node scripts/sync-upcoming-games.mjs",
     "links:check": "node scripts/check-live-links.mjs"
