@@ -1,0 +1,34 @@
+name: Launcher — auditer les anthologies des 2 et 4 août
+
+on:
+  pull_request:
+    paths:
+      - "scripts/inspect-historical-collections.mjs"
+      - ".github/workflows/inspect-historical-collections.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 13
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Vérifier le navigateur d'identification
+        run: |
+          node --check scripts/browser-capture-common.mjs
+          node --check scripts/inspect-historical-collections.mjs
+      - name: Lire les vrais titres des collections publiques sans rien modifier
+        run: node scripts/inspect-historical-collections.mjs
+      - name: Conserver l'identité des jeux et les accès constatés
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: historical-august-bundles-${{ github.run_number }}
+          path: .reports/historical-bundles/
+          if-no-files-found: warn

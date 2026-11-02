@@ -1,0 +1,36 @@
+{
+  "generatedAt": "2026-11-02T04:54:12.126Z",
+  "scope": "Contrôle des URLs publiques, dépôts à télécharger et redirections Vercel SSO — réponse HTTP non suffisante pour certifier le gameplay",
+  "method": "GET, redirects followed, first 64 KiB of HTML document head inspected for Vercel Authentication; at most 6 concurrent requests; no HTTP body stored",
+  "total": 158,
+  "counts": {
+    "reachable": 151,
+    "download-available": 6,
+    "auth-required": 1,
+    "needs-review": 0,
+    "broken": 0,
+    "no-link": 0
+  },
+  "inputSha256": {
+    "index.html": "f554faefd92a55290b00775208b458d5b0cf7d9881c5bb385cdfc97c5c36cb8e",
+    "assets/recent-games.js": "bd8b74e459ebb0499d01f6b0042910c035abe3d106583a982655994f2591d463",
+    "scripts/check-live-links.mjs": "784fcb29fb2dd1b13d7b543b96b3a6e88f24494c62826a336a4a7536a3809216",
+    "scripts/link-destination-classifier.mjs": "2f0698ea621d89da8947ccdfb773931d7f576fe58843b9bdd895717e3a71733b"
+  },
+  "endpointsRequiringAttention": [
+    {
+      "id": "malaise-party",
+      "name": "MALAISE PARTY — Le Studio des Absents",
+      "state": "auth-required",
+      "httpStatus": 200,
+      "reason": "Redirection vers l'authentification Vercel — le jeu n'est pas accessible sans session",
+      "checkedAt": "2026-11-02T04:54:11.046Z",
+      "requestedUrl": "https://malaise-party-darknigthmares-projects.vercel.app",
+      "effectiveUrl": "https://vercel.com/login"
+    }
+  ],
+  "limitations": [
+    "HTTP reachability does not certify current build identity, gameplay or visual fidelity.",
+    "Download availability means the source/distribution repository is reachable; installation has a separate native-source audit."
+  ]
+}

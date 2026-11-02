@@ -1,0 +1,63 @@
+name: Launcher — restaurer les captures du jeu DEADLINE
+
+on:
+  workflow_dispatch:
+    inputs:
+      acknowledge:
+        description: "Autoriser explicitement la recapture de DEADLINE"
+        required: true
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: launcher-deadline-recovery
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    if: github.ref_name == 'codex/launcher-links-media-fidelity-20261101' && inputs.acknowledge == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Valider le moteur de capture
+        run: |
+          node --check scripts/capture-recovered-deadline.mjs
+          node --check scripts/browser-capture-common.mjs
+      - name: Capturer le jeu réel et son écran titre
+        run: node scripts/capture-recovered-deadline.mjs
+      - name: Valider le catalogue et l'intégrité historique
+        run: npm test
+      - name: Conserver les cinq preuves brutes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: deadline-outbreak-native-${{ github.run_number }}
+          path: |
+            assets/presentations/deadline-outbreak.png
+            assets/previews/deadline-outbreak.jpg
+            assets/screenshots/deadline-outbreak/*.png
+            docs/media-proof/deadline-outbreak-native-2026-11-01.json
+          if-no-files-found: warn
+      - name: Insérer les captures vérifiées dans la PR
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/presentations/deadline-outbreak.png assets/previews/deadline-outbreak.jpg \
+            assets/screenshots/deadline-outbreak assets/recent-games.js assets/app-gallery.json \
+            assets/source-native-media-manifest.json docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json \
+            docs/media-proof/deadline-outbreak-native-2026-11-01.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "media(deadline): native title and five actual gameplay screenshots, no invented artwork"
+          git fetch origin "refs/heads/${{ github.event.pull_request.head.ref }}"
+          git rebase "origin/${{ github.event.pull_request.head.ref }}"
+          git push origin "HEAD:${{ github.ref_name }}"

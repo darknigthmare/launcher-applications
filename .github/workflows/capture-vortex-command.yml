@@ -1,0 +1,67 @@
+name: Launcher — cinq captures natives Vortex Command
+
+on:
+  workflow_dispatch:
+    inputs:
+      acknowledge:
+        description: "Autoriser explicitement une nouvelle recapture Vortex"
+        required: true
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: launcher-vortex-gameplay-screenshots
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    if: github.ref_name == 'codex/launcher-links-media-fidelity-20261101' && inputs.acknowledge == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 13
+    steps:
+      - name: Check out launcher pull request branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 1
+      - name: Use Node 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Check native CDP scripts
+        run: |
+          node --check scripts/browser-capture-common.mjs
+          node --check scripts/capture-vortex-command.mjs
+      - name: Launch published RTS and capture its live mission
+        run: node scripts/capture-vortex-command.mjs
+      - name: Audit updated gallery and archive integrity
+        run: npm test
+      - name: Save screenshots and provenance report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: vortex-command-live-rts-${{ github.run_number }}
+          path: |
+            docs/media-proof/vortex-command-rts-2026-11-01.json
+            assets/screenshots/vortex-command/*.png
+            assets/previews/vortex-command.jpg
+          if-no-files-found: warn
+      - name: Add verified screenshots and historic originals to the PR
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/screenshots/vortex-command assets/screenshots/previous/vortex-command \
+            assets/previews/vortex-command.jpg assets/previews/previous/vortex-command.jpg \
+            assets/app-gallery.json assets/app-gallery-admin.json \
+            docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json docs/media-proof/vortex-command-rts-2026-11-01.json
+          if git diff --cached --quiet; then
+            echo "Gallery already captured and committed"
+            exit 0
+          fi
+          git commit -m "media(vortex): native RTS 1.0 gallery and protected historical screenshots"
+          git fetch origin "refs/heads/${{ github.ref_name }}"
+          git rebase "origin/${{ github.ref_name }}"
+          git push origin "HEAD:${{ github.ref_name }}"

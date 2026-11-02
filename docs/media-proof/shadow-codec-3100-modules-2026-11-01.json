@@ -1,0 +1,160 @@
+{
+  "captureType": "native-browser-multi-module-ui",
+  "notGeneratedArt": true,
+  "source": "https://shadow-codec-ops.vercel.app/",
+  "version": "3.10.0",
+  "releaseRef": {
+    "deploymentId": "dpl_B142nqaBD7CWoC9xoBwL8voL271E",
+    "gitCommit": "77c830974fa672fc1746a875954af3e9bf39014e"
+  },
+  "capturedAt": "2026-11-01T11:38:51.486Z",
+  "viewport": "1280x720",
+  "browser": "headless Chrome with software WebGL for Phaser",
+  "noInjectedSave": true,
+  "noSyntheticCombat": true,
+  "activeSideOpsCanvas": true,
+  "activeCqcIframeGame": true,
+  "preview": {
+    "path": "assets/previews/shadow-codec-ops.jpg",
+    "sourceModule": "codec",
+    "bytes": 54090,
+    "sha256": "fe15d4b25facae2b2b5a5f15f44afc399e38fca139819ae8d100ed6305b2060d"
+  },
+  "archives": {
+    "previousScreenshots": [
+      "assets/screenshots/previous/shadow-codec-ops/01.png",
+      "assets/screenshots/previous/shadow-codec-ops/02.png",
+      "assets/screenshots/previous/shadow-codec-ops/03.png",
+      "assets/screenshots/previous/shadow-codec-ops/04.png",
+      "assets/screenshots/previous/shadow-codec-ops/05.png"
+    ],
+    "previousPreview": "assets/previews/previous/shadow-codec-ops.jpg"
+  },
+  "scenes": [
+    {
+      "slot": 1,
+      "module": "home",
+      "label": "Centre de commandement — accès aux modules",
+      "kind": "native-module-ui",
+      "path": "assets/screenshots/shadow-codec-ops/01.png",
+      "sha256": "57bf65ff8a4417cbfdb002334f2a22cca749434986a014c593c7a58339ef0e52",
+      "bytes": 228980,
+      "appState": {
+        "route": "home",
+        "version": "3.10.0",
+        "heading": "Shadow Codec Ops",
+        "htmlLength": 2654,
+        "bodyTextLength": 1185,
+        "hasError": false,
+        "title": "Shadow Codec Ops",
+        "canvasVisible": false,
+        "canvasWidth": 0,
+        "canvasHeight": 0,
+        "cqcLoaded": false,
+        "cqcCanvas": false,
+        "cqcTitle": null
+      }
+    },
+    {
+      "slot": 2,
+      "module": "codec",
+      "label": "Codec — écran de liaison et fréquences",
+      "kind": "native-module-ui",
+      "path": "assets/screenshots/shadow-codec-ops/02.png",
+      "sha256": "f4c7bcc5a2185975a299ef62a6416de65a27f969bd67971db6c05c61b2301f20",
+      "bytes": 105657,
+      "appState": {
+        "route": "codec",
+        "version": "3.10.0",
+        "heading": "Colonel Campbell",
+        "htmlLength": 8424,
+        "bodyTextLength": 206,
+        "hasError": false,
+        "title": "Shadow Codec Ops",
+        "canvasVisible": false,
+        "canvasWidth": 0,
+        "canvasHeight": 0,
+        "cqcLoaded": false,
+        "cqcCanvas": false,
+        "cqcTitle": null
+      }
+    },
+    {
+      "slot": 3,
+      "module": "sideops",
+      "label": "Side Ops — opérations, infiltration et briefings",
+      "kind": "native-sideops-operations",
+      "path": "assets/screenshots/shadow-codec-ops/03.png",
+      "bytes": 196106,
+      "sha256": "c9b42493021b2dac4a80768fa97dae5d197ea825c47496d906d0ca3b7d220c72",
+      "appState": {
+        "route": "sideops",
+        "version": "3.10.0",
+        "versionEvidence": "existing source/deployment proof; Side Ops view has no BUILD label",
+        "operationsVisible": true,
+        "missions": 31,
+        "missionCanvasBooted": true,
+        "canvasWidth": 960,
+        "canvasHeight": 540
+      },
+      "visualReview": "La vue précédente de canvas sombre a été remplacée par le tableau d'opérations effectivement ouvert.",
+      "sourceRoute": "https://shadow-codec-ops.vercel.app/?module=sideops"
+    },
+    {
+      "slot": 4,
+      "module": "campaign",
+      "label": "Campaign Ops — progression et embranchements",
+      "kind": "native-module-ui",
+      "path": "assets/screenshots/shadow-codec-ops/04.png",
+      "sha256": "77e3ca5431e45923214e31a28fdde53650521b1d655766abd77d51376b0198ad",
+      "bytes": 69775,
+      "appState": {
+        "route": "campaign",
+        "version": "3.10.0",
+        "heading": "Legacy Signal",
+        "htmlLength": 19301,
+        "bodyTextLength": 6525,
+        "hasError": false,
+        "title": "Shadow Codec Ops",
+        "canvasVisible": false,
+        "canvasWidth": 0,
+        "canvasHeight": 0,
+        "cqcLoaded": false,
+        "cqcCanvas": false,
+        "cqcTitle": null
+      }
+    },
+    {
+      "slot": 5,
+      "module": "cqc",
+      "label": "CQC Versus — jeu autonome de combat dans le terminal",
+      "kind": "real-cqc-iframe-game",
+      "path": "assets/screenshots/shadow-codec-ops/05.png",
+      "sha256": "3437bf610b1ccb7fd500b539d2d74841dd01d90ec0a6824fe74b1e6da64f9ab5",
+      "bytes": 671210,
+      "appState": {
+        "route": "cqc",
+        "version": "3.10.0",
+        "heading": "CQC Versus",
+        "htmlLength": 721,
+        "bodyTextLength": 145,
+        "hasError": false,
+        "title": "Shadow Codec Ops",
+        "canvasVisible": false,
+        "canvasWidth": 0,
+        "canvasHeight": 0,
+        "cqcLoaded": true,
+        "cqcCanvas": true,
+        "cqcTitle": "CQC VERSUS"
+      }
+    }
+  ],
+  "limitations": [
+    "Five native views including CQC iframe, not proof of completing each operation or the full CQC campaign",
+    "Software WebGL screenshots do not measure actual GPU performance",
+    "Source and deployment versions verified by runtime build label; art fidelity 1:1 needs separate review",
+    "La troisième vue est le tableau natif des opérations. Le rendu du niveau Side Ops en mode headless apparaissait presque vide : aucun faux combat n'a été publié."
+  ],
+  "sideOpsGameplayCaptured": false,
+  "sideOpsEngineLoaded": true
+}

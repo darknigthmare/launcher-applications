@@ -1,0 +1,63 @@
+name: Launcher — captures natives Yu-Gi-Oh! Hologram Duel
+
+on:
+  workflow_dispatch:
+    inputs:
+      acknowledge:
+        description: "Relancer volontairement la recapture Yu-Gi-Oh vérifiée"
+        required: true
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: launcher-yugioh-hologram-native-media
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    if: github.ref_name == 'codex/launcher-links-media-fidelity-20261101' && inputs.acknowledge == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 17
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 3
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Validate native capture scripts
+        run: |
+          node --check scripts/browser-capture-common.mjs
+          node --check scripts/capture-yugioh-hologram.mjs
+      - name: Capture authentic duel views and menus
+        run: node scripts/capture-yugioh-hologram.mjs
+      - name: Audit the updated launcher
+        run: npm test
+      - name: Upload native screenshot evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yugioh-hologram-native-${{ github.run_number }}
+          path: |
+            docs/media-proof/yugioh-hologram-native-2026-11-01.json
+            assets/screenshots/yugioh-25d-holograms/*.png
+            assets/presentations/yugioh-25d-holograms.png
+            assets/previews/yugioh-25d-holograms.jpg
+          if-no-files-found: warn
+      - name: Add verified screenshots and proofs to candidate PR
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/screenshots/yugioh-25d-holograms \
+            assets/presentations/yugioh-25d-holograms.png assets/previews/yugioh-25d-holograms.jpg \
+            assets/recent-games.js assets/app-gallery.json assets/source-native-media-manifest.json \
+            docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json docs/media-proof/yugioh-hologram-native-2026-11-01.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "media(yugioh): real 2.5D duel, avatar, solo and terrain gallery"
+          git fetch origin "refs/heads/${{ github.ref_name }}"
+          git rebase FETCH_HEAD
+          git push origin "HEAD:${{ github.ref_name }}"

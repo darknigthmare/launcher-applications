@@ -1,0 +1,61 @@
+name: Launcher — captures natives Yautja Apex WebGL
+
+on:
+  workflow_dispatch:
+    inputs:
+      acknowledge:
+        description: "Autoriser explicitement une nouvelle recapture Yautja"
+        required: true
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: launcher-yautja-apex-artifacts
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    if: github.ref_name == 'codex/launcher-links-media-fidelity-20261101' && inputs.acknowledge == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out target branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Verify screenshot harness
+        run: |
+          node --check scripts/browser-capture-common.mjs
+          node --check scripts/capture-yautja-apex.mjs
+      - name: Capture current real Yautja 3D production
+        run: node scripts/capture-yautja-apex.mjs
+      - name: Verify launcher catalogue
+        run: npm test
+      - name: Preserve native visual proof
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yautja-apex-native-${{ github.run_number }}
+          path: |
+            docs/media-proof/yautja-apex-gameplay-2026-11-01.json
+            assets/screenshots/yautja-apex-hunt/*.png
+            assets/previews/yautja-apex-hunt.jpg
+          if-no-files-found: warn
+      - name: Push approved screenshots with archived originals to PR
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/screenshots/yautja-apex-hunt assets/screenshots/previous/yautja-apex-hunt \
+            assets/previews/yautja-apex-hunt.jpg assets/previews/previous/yautja-apex-hunt.jpg \
+            assets/app-gallery-admin.json docs/media-proof/yautja-apex-gameplay-2026-11-01.json \
+            docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "media(yautja): publish verified mothership and hunt screenshots"
+          git push origin "HEAD:${{ github.ref_name }}"

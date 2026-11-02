@@ -1,0 +1,44 @@
+name: Launcher — inspecter le vrai jeu local Dernière Ligne
+
+on:
+  workflow_dispatch:
+    inputs:
+      acknowledge:
+        description: "Autoriser explicitement une nouvelle inspection ou recapture du jeu local"
+        required: true
+        type: boolean
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    if: github.ref_name == 'codex/launcher-links-media-fidelity-20261101' && inputs.acknowledge == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 13
+    steps:
+      - name: Check out the launcher candidate
+        uses: actions/checkout@v4
+      - name: Check out original Dernière Ligne release
+        uses: actions/checkout@v4
+        with:
+          repository: darknigthmare/The-Horde-The-Last-Stand
+          ref: main
+          path: reference-the-horde
+      - name: Node 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Check original repository commit
+        run: git -C reference-the-horde rev-parse HEAD
+      - name: Inspect actual local HTML runtime without modifying screenshots
+        run: |
+          node --check scripts/inspect-horde-local.mjs
+          node scripts/inspect-horde-local.mjs
+      - name: Save the raw visual inspection artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: derniere-ligne-real-ui-inspection-${{ github.run_number }}
+          path: .reports/horde-current/
+          if-no-files-found: warn

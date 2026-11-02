@@ -1,0 +1,130 @@
+{
+  "captureType": "native-browser-duel-2d-3d",
+  "notGeneratedArt": true,
+  "source": "https://yugioh-25d-holograms.vercel.app/",
+  "sourceRepository": "darknigthmare/yugioh-25d-holograms",
+  "sourceVersion": "1.1.0",
+  "deployedCommit": "aec7dd5939773d68c9e66b786d4821cb1301dec3",
+  "capturedAt": "2026-11-01T18:27:55.244Z",
+  "viewport": "1280x720",
+  "presentation": {
+    "path": "assets/presentations/yugioh-25d-holograms.png",
+    "sha256": "3a03084035f1bd0a305b4c4935beb42d44bab6784d3801685789db143de71ef3",
+    "bytes": 133415,
+    "kind": "source title / startup modal"
+  },
+  "preview": {
+    "path": "assets/previews/yugioh-25d-holograms.jpg",
+    "sha256": "2a2919d658230e6cb8d597fee65bc526a5a254b39676ecf58e69d72e3102de7b",
+    "bytes": 172521,
+    "kind": "live duel Arena View (the Real View mode was not captured)"
+  },
+  "scenes": [
+    {
+      "slot": 1,
+      "label": "KaibaCorp — choisir son deck de départ",
+      "kind": "player-deck-selection",
+      "path": "assets/screenshots/yugioh-25d-holograms/01.png",
+      "sha256": "68197fd9ca8469436f416cc6b6a3cec61dde15131d8b227e7417733a97f05440",
+      "bytes": 110079,
+      "observed": {
+        "title": "Yu-Gi-Oh! 2.5D Hologram Duel Simulator",
+        "startVisible": true,
+        "campaignVisible": false,
+        "fieldAtlasVisible": false,
+        "board": true,
+        "handCount": 0,
+        "playerLp": "8000",
+        "opponentLp": "8000",
+        "phaseText": "Choisissez un deck pour commencer.",
+        "viewButton": "VUE : COMPACTE"
+      }
+    },
+    {
+      "slot": 2,
+      "label": "Parcours solo — défis, médailles et progression",
+      "kind": "real-campaign-menu",
+      "path": "assets/screenshots/yugioh-25d-holograms/02.png",
+      "sha256": "1caa744e7243877df8e8078d08ea709b83d052f2dc5eddaacf3a673a744af41f",
+      "bytes": 107191,
+      "observed": {
+        "title": "Yu-Gi-Oh! 2.5D Hologram Duel Simulator",
+        "startVisible": false,
+        "campaignVisible": true,
+        "fieldAtlasVisible": false,
+        "board": true,
+        "handCount": 0,
+        "playerLp": "8000",
+        "opponentLp": "8000",
+        "phaseText": "Choisissez un deck pour commencer.",
+        "viewButton": "VUE : COMPACTE"
+      }
+    },
+    {
+      "slot": 3,
+      "label": "Atlas des Terrains — illustrations, règles et décors 3D",
+      "kind": "real-field-atlas",
+      "path": "assets/screenshots/yugioh-25d-holograms/03.png",
+      "sha256": "d6005af9bb098dc98f76a8898201390891154f4811167dcc281e9fd689f2752f",
+      "bytes": 610990,
+      "observed": {
+        "title": "Yu-Gi-Oh! 2.5D Hologram Duel Simulator",
+        "startVisible": false,
+        "campaignVisible": false,
+        "fieldAtlasVisible": true,
+        "board": true,
+        "handCount": 0,
+        "playerLp": "8000",
+        "opponentLp": "8000",
+        "phaseText": "Choisissez un deck pour commencer.",
+        "viewButton": "VUE : COMPACTE"
+      }
+    },
+    {
+      "slot": 4,
+      "label": "Duel libre — plateau holographique en vue compacte",
+      "kind": "live-duel-compact",
+      "path": "assets/screenshots/yugioh-25d-holograms/04.png",
+      "sha256": "58e63fa0f0d8fc073849898ada25d3a022f4dcd24a54129c622460f21905cb43",
+      "bytes": 539753,
+      "observed": {
+        "title": "Yu-Gi-Oh! 2.5D Hologram Duel Simulator",
+        "startVisible": false,
+        "campaignVisible": false,
+        "fieldAtlasVisible": false,
+        "board": true,
+        "handCount": 6,
+        "playerLp": "8000",
+        "opponentLp": "8000",
+        "phaseText": "Votre tour — Main Phase 1",
+        "viewButton": "VUE : COMPACTE"
+      }
+    },
+    {
+      "slot": 5,
+      "label": "Duel libre — plateau en Vue Arène",
+      "kind": "live-duel-arena-view",
+      "path": "assets/screenshots/yugioh-25d-holograms/05.png",
+      "sha256": "a4408226b3b9bfd29b514f810f9846b1ee2e528e92e0f754f40d188cb0ece534",
+      "bytes": 554811,
+      "observed": {
+        "title": "Yu-Gi-Oh! 2.5D Hologram Duel Simulator",
+        "startVisible": false,
+        "campaignVisible": false,
+        "fieldAtlasVisible": false,
+        "board": true,
+        "handCount": 6,
+        "playerLp": "8000",
+        "opponentLp": "8000",
+        "phaseText": "Votre tour — Main Phase 1",
+        "viewButton": "VUE : ARÈNE"
+      }
+    }
+  ],
+  "limitations": [
+    "Five real engine/UI views, no reconstructed copyrighted character illustrations",
+    "Version 1.1.0 from source; deployment SHA obtained from Vercel production metadata",
+    "Holographic figures and avatars are stylized game models, not franchise-wide 1:1 certified likeness",
+    "Fifth capture is Arena view, as verified by the in-game view button; Real View 3D remains to be recaptured"
+  ]
+}

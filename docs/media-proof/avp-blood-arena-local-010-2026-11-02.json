@@ -1,0 +1,153 @@
+{
+  "captureType": "native-local-browser-gameplay",
+  "notGeneratedArt": true,
+  "gameId": "avp-blood-arena",
+  "source": "https://github.com/darknigthmare/avp-blood-arena",
+  "sourceCommit": "c2e2d71f7d87bac2f9065061e99a7a5129d091c6",
+  "version": "0.1.0",
+  "capturedAt": "2026-11-02T04:46:34.067Z",
+  "htmlPath": "index.html",
+  "browser": "Headless Chromium CDP; unmodified GitHub source served on loopback HTTP",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "overview": {
+    "title": "AVP Blood Arena — Relance technique",
+    "viewport": "1440x1000",
+    "realMovementConfirmed": true,
+    "actionPointsBefore": "Éclaireur d’exfiltrationPROFIL RELU DANS LES EXTRAITS V0.30PV 8/8 · PA 2 · FOR 2 · ARM 0 · MOB 7",
+    "actionPointsAfter": "Éclaireur d’exfiltrationPROFIL RELU DANS LES EXTRAITS V0.30PV 8/8 · PA 1 · FOR 2 · ARM 0 · MOB 7",
+    "defensiveAbilityConfirmed": true,
+    "aiRoundAdvanced": "MANCHE 2 / 16",
+    "soloAndLocalModesObserved": true
+  },
+  "presentation": {
+    "path": "assets/presentations/avp-blood-arena.png",
+    "sha256": "c9b992516c6e3136359db5e1f9b568642b41bd75bd7d1641beb447ba0532ddd0",
+    "bytes": 201799,
+    "kind": "Actual prototype title/setup UI; not generated promotional art"
+  },
+  "preview": {
+    "path": "assets/previews/avp-blood-arena.jpg",
+    "sha256": "152a86782b76d384d6aaf91f382fe78a4f695b168a97d99a777602b2a546fe66",
+    "bytes": 132845,
+    "kind": "Actual tactical prototype after the AI turn"
+  },
+  "scenes": [
+    {
+      "slot": 1,
+      "label": "Règles du Circuit — Nexus, déplacements et conditions de victoire",
+      "path": "assets/screenshots/avp-blood-arena/01.png",
+      "kind": "actual-game-ui",
+      "sha256": "955f6b62b81356aed641d65ccb2eacd32c3130e99c95f9fbd61e9bf07a058973",
+      "bytes": 149648,
+      "screen": "1440x1000",
+      "observed": {
+        "title": "AVP Blood Arena — Relance technique",
+        "menu": true,
+        "match": false,
+        "data": "68 références, 18 profils (4 confirmés, 14 provisoires), 158 cartes TCG et 129 armes à vérifier",
+        "round": "MANCHE 1 / 16",
+        "mode": "MODE SOLO",
+        "turn": "ÉQUIPE ACTIVE",
+        "unit": "Aucune unité sélectionnée.",
+        "log": "Système prêt.",
+        "help": true
+      }
+    },
+    {
+      "slot": 2,
+      "label": "Dock 17 — sélection d’un Colonial Marine face à la Ruche",
+      "path": "assets/screenshots/avp-blood-arena/02.png",
+      "kind": "real-gameplay",
+      "sha256": "9c305f0c062e905c937c9d0c2aab07206332a3f7a1aefea76f7f96c6088337b4",
+      "bytes": 202023,
+      "screen": "1440x1000",
+      "observed": {
+        "title": "AVP Blood Arena — Relance technique",
+        "menu": false,
+        "match": true,
+        "data": "68 références, 18 profils (4 confirmés, 14 provisoires), 158 cartes TCG et 129 armes à vérifier",
+        "round": "MANCHE 1 / 16",
+        "mode": "CONTRE IA",
+        "turn": "TOUR : COLONIAL MARINES",
+        "unit": "Éclaireur d’exfiltrationPROFIL RELU DANS LES EXTRAITS V0.30PV 8/8 · PA 2 · FOR 2 · ARM 0 · MOB 7",
+        "log": "AVERTISSEMENT : profils provisoires non certifiés par le fichier v0.30 ; la relance n est pas la version historique.\n\nRécupérez le Nexus au centre. 3 buts pour gagner.\n\nDéploiement sur DOCK 17 · TRANSFERT.",
+        "help": false
+      }
+    },
+    {
+      "slot": 3,
+      "label": "Dock 17 — déplacement réel et dépense d’un point d’action",
+      "path": "assets/screenshots/avp-blood-arena/03.png",
+      "kind": "real-gameplay",
+      "sha256": "bf0acafe607f548882b58517ed4a5f5c5e80d009aa960445424252e3c125cd62",
+      "bytes": 202232,
+      "screen": "1440x1000",
+      "observed": {
+        "title": "AVP Blood Arena — Relance technique",
+        "menu": false,
+        "match": true,
+        "data": "68 références, 18 profils (4 confirmés, 14 provisoires), 158 cartes TCG et 129 armes à vérifier",
+        "round": "MANCHE 1 / 16",
+        "mode": "CONTRE IA",
+        "turn": "TOUR : COLONIAL MARINES",
+        "unit": "Éclaireur d’exfiltrationPROFIL RELU DANS LES EXTRAITS V0.30PV 8/8 · PA 1 · FOR 2 · ARM 0 · MOB 7",
+        "log": "AVERTISSEMENT : profils provisoires non certifiés par le fichier v0.30 ; la relance n est pas la version historique.\n\nRécupérez le Nexus au centre. 3 buts pour gagner.\n\nDéploiement sur DOCK 17 · TRANSFERT.",
+        "help": false
+      }
+    },
+    {
+      "slot": 4,
+      "label": "Deuxième manche — capacité défensive et réponse de l’IA",
+      "path": "assets/screenshots/avp-blood-arena/04.png",
+      "kind": "real-gameplay",
+      "sha256": "2bbf07f41680a4b0d8ad897bdcc1b21ba94af7e0e10c55942a664119dc0b5603",
+      "bytes": 196747,
+      "screen": "1440x1000",
+      "observed": {
+        "title": "AVP Blood Arena — Relance technique",
+        "menu": false,
+        "match": true,
+        "data": "68 références, 18 profils (4 confirmés, 14 provisoires), 158 cartes TCG et 129 armes à vérifier",
+        "round": "MANCHE 2 / 16",
+        "mode": "CONTRE IA",
+        "turn": "TOUR : COLONIAL MARINES",
+        "unit": "Aucune unité sélectionnée.",
+        "log": "Éclaireur d’exfiltration se met en position défensive (+2 endurance).\n\nAVERTISSEMENT : profils provisoires non certifiés par le fichier v0.30 ; la relance n est pas la version historique.\n\nRécupérez le Nexus au centre. 3 buts pour gagner.\n\nDéploiement sur DOCK 17 · TRANSFERT.",
+        "help": false
+      }
+    },
+    {
+      "slot": 5,
+      "label": "Ruines — Clan Yautja et Marines en mode deux joueurs locaux",
+      "path": "assets/screenshots/avp-blood-arena/05.png",
+      "kind": "real-gameplay",
+      "sha256": "a339d4deba71a45a2bf3edb7a1f95af4549f93927f22ed7f988daf7ed1279855",
+      "bytes": 200670,
+      "screen": "1440x1000",
+      "observed": {
+        "title": "AVP Blood Arena — Relance technique",
+        "menu": false,
+        "match": true,
+        "data": "68 références, 18 profils (4 confirmés, 14 provisoires), 158 cartes TCG et 129 armes à vérifier",
+        "round": "MANCHE 1 / 16",
+        "mode": "2 JOUEURS LOCAUX",
+        "turn": "TOUR : CLAN YAUTJA",
+        "unit": "Gardien du passagePROFIL PROVISOIRE — DONNÉES V0.30 NON CERTIFIÉESPV 11/11 · PA 2 · FOR 4 · ARM 1 · MOB 5",
+        "log": "AVERTISSEMENT : profils provisoires non certifiés par le fichier v0.30 ; la relance n est pas la version historique.\n\nRécupérez le Nexus au centre. 3 buts pour gagner.\n\nDéploiement sur RUINES · TRIBUNES.",
+        "help": false
+      }
+    }
+  ],
+  "noHistoricalMedia": true,
+  "limitations": [
+    "Only prototype 0.1.0 is captured: original historical v0.30/v0.36 is not restored",
+    "Schematics and provisional sport profiles are not certified 1:1 franchise art",
+    "One native rules screen and four live tactical states; no completed match or campaign is claimed",
+    "Local two-player mode was opened in one browser, not playtested by two human players",
+    "No public Vercel deployment and no pause feature are implied"
+  ],
+  "resolution": "1440x1000"
+}

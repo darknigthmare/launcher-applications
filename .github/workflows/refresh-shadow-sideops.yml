@@ -1,0 +1,55 @@
+name: Launcher — revue visuelle Side Ops Shadow 3.10
+
+on:
+  workflow_dispatch:
+    inputs:
+      acknowledge:
+        description: "Autoriser explicitement une nouvelle revue Shadow Side Ops"
+        required: true
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: launcher-shadow-sideops-review
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    if: github.ref_name == 'codex/launcher-links-media-fidelity-20261101' && inputs.acknowledge == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate screenshot review script
+        run: node --check scripts/refresh-shadow-sideops.mjs
+      - name: Capture real operations board instead of unreadable canvas
+        run: node scripts/refresh-shadow-sideops.mjs
+      - name: Verify launcher media and archives
+        run: npm test
+      - name: Save visual proof
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: shadow-sideops-operations-${{ github.run_number }}
+          path: |
+            assets/screenshots/shadow-codec-ops/03.png
+            docs/media-proof/shadow-codec-3100-modules-2026-11-01.json
+          if-no-files-found: warn
+      - name: Commit checked replacement screenshot
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/screenshots/shadow-codec-ops/03.png assets/app-gallery.json \
+            docs/media-proof/shadow-codec-3100-modules-2026-11-01.json \
+            docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "media(shadow-codec): show actual operations UI, not blank Side Ops headless canvas"
+          git push origin "HEAD:${{ github.ref_name }}"

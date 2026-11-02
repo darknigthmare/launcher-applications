@@ -1,0 +1,134 @@
+{
+  "captureType": "source-native-real-extraction-campaign",
+  "notGeneratedArt": true,
+  "source": "https://reclaimed-after-dark.vercel.app/",
+  "sourceRepository": "darknigthmare/reclaimed-after-dark",
+  "sourceVersion": "2.0.0",
+  "sourceCommit": "42db6a4f7372f6af442cf0c351cd7332d0989754",
+  "deploymentId": "dpl_HueHPr2mX91ZyGuNd4bDFFmTkwkz",
+  "capturedAt": "2026-11-01T18:54:50.709Z",
+  "viewport": "1280x720",
+  "referenceCaptureWorkflow": "darknigthmare/reclaimed-after-dark/scripts/capture-qa.mjs",
+  "presentation": {
+    "path": "assets/presentations/reclaimed-after-dark.png",
+    "sha256": "0d0638efa917174b2adcbf6d4f366fc34c520d14a42695bf248ebac5c8bb50c5",
+    "bytes": 669145
+  },
+  "preview": {
+    "path": "assets/previews/reclaimed-after-dark.jpg",
+    "sha256": "3d541482495925f1e77ef91873bf57b6a008ab207261f1e576ee6be6d5cceef7",
+    "bytes": 119874
+  },
+  "scenes": [
+    {
+      "slot": 1,
+      "label": "Blackwater — menu du refuge",
+      "kind": "real-main-menu",
+      "path": "assets/screenshots/reclaimed-after-dark/01.png",
+      "sha256": "0d0638efa917174b2adcbf6d4f366fc34c520d14a42695bf248ebac5c8bb50c5",
+      "bytes": 669145,
+      "observed": {
+        "title": "RECLAIMED: AFTER DARK",
+        "screen": "menu",
+        "menu": true,
+        "briefing": false,
+        "playing": false,
+        "dossiers": false,
+        "workshop": false,
+        "canvasWidth": 1280,
+        "objective": "Réamorcer les relais · 0/3",
+        "night": "NUIT 01",
+        "gameTitle": "RECLAIMED AFTER DARK"
+      }
+    },
+    {
+      "slot": 2,
+      "label": "Archives opérationnelles — campagne et secteurs",
+      "kind": "real-campaign-records",
+      "path": "assets/screenshots/reclaimed-after-dark/02.png",
+      "sha256": "d3de22804ca47f94cf7b956b02ce2e41f8619ff72ae2798a3255ebe3de240d32",
+      "bytes": 265371,
+      "observed": {
+        "title": "RECLAIMED: AFTER DARK",
+        "screen": "dossiers",
+        "menu": false,
+        "briefing": false,
+        "playing": false,
+        "dossiers": true,
+        "workshop": false,
+        "canvasWidth": 1280,
+        "objective": "Réamorcer les relais · 0/3",
+        "night": "NUIT 01",
+        "gameTitle": "RECLAIMEDAFTER DARK"
+      }
+    },
+    {
+      "slot": 3,
+      "label": "Établi du refuge — équipements et améliorations",
+      "kind": "real-workshop-screen",
+      "path": "assets/screenshots/reclaimed-after-dark/03.png",
+      "sha256": "f2b9603c4dedf0bf8c8d3cadfcf7d540557ca0de148cdad03faf5954a6ecdc02",
+      "bytes": 184230,
+      "observed": {
+        "title": "RECLAIMED: AFTER DARK",
+        "screen": "workshop",
+        "menu": false,
+        "briefing": false,
+        "playing": false,
+        "dossiers": false,
+        "workshop": true,
+        "canvasWidth": 1280,
+        "objective": "Réamorcer les relais · 0/3",
+        "night": "NUIT 01",
+        "gameTitle": "RECLAIMEDAFTER DARK"
+      }
+    },
+    {
+      "slot": 4,
+      "label": "Briefing — la première expédition à Blackwater",
+      "kind": "real-expedition-briefing",
+      "path": "assets/screenshots/reclaimed-after-dark/04.png",
+      "sha256": "089f4b8bd0fbfa118a7e27c8f9b6e47be2c81a7db069f3991f2159232efc4bc6",
+      "bytes": 529378,
+      "observed": {
+        "title": "RECLAIMED: AFTER DARK",
+        "screen": "briefing",
+        "menu": false,
+        "briefing": true,
+        "playing": false,
+        "dossiers": false,
+        "workshop": false,
+        "canvasWidth": 1280,
+        "objective": "Réamorcer les relais · 0/3",
+        "night": "NUIT 01",
+        "gameTitle": "RECLAIMEDAFTER DARK"
+      }
+    },
+    {
+      "slot": 5,
+      "label": "Quais du Canal — expédition en cours",
+      "kind": "real-extraction-gameplay",
+      "path": "assets/screenshots/reclaimed-after-dark/05.png",
+      "sha256": "6cb1628f9f38528f719efb1bf47cc05614af3a925070101ba1d77abcf3c0d987",
+      "bytes": 832749,
+      "observed": {
+        "title": "RECLAIMED: AFTER DARK",
+        "screen": "playing",
+        "menu": false,
+        "briefing": false,
+        "playing": true,
+        "dossiers": false,
+        "workshop": false,
+        "canvasWidth": 1280,
+        "objective": "RALLUMER LA RIVE · 0/3",
+        "night": "NUIT 01",
+        "gameTitle": "RECLAIMEDAFTER DARK"
+      }
+    }
+  ],
+  "limitations": [
+    "Menu/archives/atelier/briefing plus une scène de terrain confirmée, pas toutes les neuf cartes",
+    "No synthetic encounters, no fabricated licensed art, no 1:1 character-fidelity claim",
+    "Native browser frames from the published production, not a physical device benchmark"
+  ]
+}

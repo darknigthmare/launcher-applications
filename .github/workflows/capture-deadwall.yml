@@ -1,0 +1,60 @@
+name: Launcher — recapture native DEADWALL
+
+on:
+  workflow_dispatch:
+    inputs:
+      acknowledge:
+        description: "Autoriser explicitement une nouvelle campagne de recapture DEADWALL"
+        required: true
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: launcher-deadwall-native
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    if: github.ref_name == 'codex/launcher-links-media-fidelity-20261101' && inputs.acknowledge == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Vérifier les scripts natifs
+        run: |
+          node --check scripts/browser-capture-common.mjs
+          node --check scripts/capture-deadwall.mjs
+      - name: Capturer le vrai gameplay et le poste D-17
+        run: node scripts/capture-deadwall.mjs
+      - name: Vérifier le catalogue
+        run: npm test
+      - name: Archiver les cinq images et leurs preuves
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: deadwall-native-${{ github.run_number }}
+          path: |
+            docs/media-proof/deadwall-gameplay-2026-11-01.json
+            assets/screenshots/deadwall-last-enclosure/*.png
+            assets/previews/deadwall-last-enclosure.png
+          if-no-files-found: warn
+      - name: Verser les nouvelles vues dans la PR
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/screenshots/deadwall-last-enclosure assets/screenshots/previous/deadwall-last-enclosure \
+            assets/previews/deadwall-last-enclosure.png assets/previews/previous/deadwall-last-enclosure.png \
+            assets/app-gallery-admin.json docs/media-proof/deadwall-gameplay-2026-11-01.json \
+            docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "media(deadwall): replace 1.0 menu captures with native D-17 gameplay"
+          git push origin "HEAD:${{ github.ref_name }}"

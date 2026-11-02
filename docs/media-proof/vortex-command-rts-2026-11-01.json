@@ -1,0 +1,217 @@
+{
+  "captureType": "native-browser-rts",
+  "notGeneratedArt": true,
+  "source": "https://vortex-command.vercel.app/",
+  "sourceRepository": "darknigthmare/vortex-command",
+  "runtimeVersion": "1.0.0",
+  "sourcePackageVersion": "1.0.0",
+  "capturedAt": "2026-11-01T14:02:38.515Z",
+  "viewport": "1280x720",
+  "browser": "Chromium headless via native CDP",
+  "render": "real Canvas2D and actual Vortex Command UI; no synthetic terrain or kaiju positions",
+  "conditions": {
+    "mode": "campaign",
+    "kaijuEmerged": true,
+    "districtCount": 6,
+    "systemCount": 10,
+    "gameActive": true
+  },
+  "preview": {
+    "path": "assets/previews/vortex-command.jpg",
+    "bytes": 112563,
+    "sha256": "310568206b1a8f000ef96b54352a915135da568e4c536c826b6accbf0591ba21"
+  },
+  "archives": {
+    "previousScreenshots": [
+      "assets/screenshots/previous/vortex-command/01.png",
+      "assets/screenshots/previous/vortex-command/02.png",
+      "assets/screenshots/previous/vortex-command/03.png",
+      "assets/screenshots/previous/vortex-command/04.png",
+      "assets/screenshots/previous/vortex-command/05.png"
+    ],
+    "previousPreview": "assets/previews/previous/vortex-command.jpg"
+  },
+  "scenes": [
+    {
+      "slot": 1,
+      "label": "Leviathan — titan émergé sur le champ de bataille",
+      "path": "assets/screenshots/vortex-command/01.png",
+      "panel": "intel-panel",
+      "kind": "real-rts-gameplay",
+      "state": {
+        "running": true,
+        "paused": false,
+        "ended": false,
+        "time": 5.949999999999984,
+        "mode": "campaign",
+        "region": "europe",
+        "doctrine": "monarch",
+        "titan": "COLOSSUS-BR01",
+        "emerged": true,
+        "titanAlive": true,
+        "units": 8,
+        "districts": 6,
+        "camera": {
+          "x": 242.35673546549077,
+          "y": 1500,
+          "zoom": 0.52
+        },
+        "startScreen": false,
+        "visibleTab": "intel-panel"
+      },
+      "bytes": 435736,
+      "sha256": "59f386e26ea23151aa8c7635504e33b3fd853e1a678d1c3fc1b25b48b8f34191",
+      "resolution": "1280x720"
+    },
+    {
+      "slot": 2,
+      "label": "Anatomie du titan — cibles et résistances",
+      "path": "assets/screenshots/vortex-command/02.png",
+      "panel": "anatomy-panel",
+      "kind": "live-operations-tab",
+      "state": {
+        "running": true,
+        "paused": false,
+        "ended": false,
+        "time": 6.599999999999982,
+        "mode": "campaign",
+        "region": "europe",
+        "doctrine": "monarch",
+        "titan": "COLOSSUS-BR01",
+        "emerged": true,
+        "titanAlive": true,
+        "units": 8,
+        "districts": 6,
+        "camera": {
+          "x": 242.3334007291141,
+          "y": 1500,
+          "zoom": 0.52
+        },
+        "startScreen": false,
+        "visibleTab": "anatomy-panel"
+      },
+      "bytes": 431049,
+      "sha256": "afa658cd61cc5e4294ff9b561920932cb04024883181ce6375d2dec4383be82b",
+      "resolution": "1280x720"
+    },
+    {
+      "slot": 3,
+      "label": "Six districts — évacuation et défense civile",
+      "path": "assets/screenshots/vortex-command/03.png",
+      "panel": "civilian-panel",
+      "kind": "live-operations-tab",
+      "state": {
+        "running": true,
+        "paused": false,
+        "ended": false,
+        "time": 7.1666666666666465,
+        "mode": "campaign",
+        "region": "europe",
+        "doctrine": "monarch",
+        "titan": "COLOSSUS-BR01",
+        "emerged": true,
+        "titanAlive": true,
+        "units": 8,
+        "districts": 6,
+        "camera": {
+          "x": 242.33333374447503,
+          "y": 1500,
+          "zoom": 0.52
+        },
+        "startScreen": false,
+        "visibleTab": "civilian-panel"
+      },
+      "bytes": 430246,
+      "sha256": "d8c15390ee5bce6e50a40a2416e7b1c0b1f3c4387ea168b82fa7e7a718317d83",
+      "resolution": "1280x720"
+    },
+    {
+      "slot": 4,
+      "label": "R&D — prototypes et recherche tactique",
+      "path": "assets/screenshots/vortex-command/04.png",
+      "panel": "research-panel",
+      "kind": "live-operations-tab",
+      "state": {
+        "running": true,
+        "paused": false,
+        "ended": false,
+        "time": 7.733333333333311,
+        "mode": "campaign",
+        "region": "europe",
+        "doctrine": "monarch",
+        "titan": "COLOSSUS-BR01",
+        "emerged": true,
+        "titanAlive": true,
+        "units": 8,
+        "districts": 6,
+        "camera": {
+          "x": 242.33333333583928,
+          "y": 1500,
+          "zoom": 0.52
+        },
+        "startScreen": false,
+        "visibleTab": "research-panel"
+      },
+      "bytes": 431117,
+      "sha256": "d56298ebc2da1a904e2468f94967fca0ddd9117af196c6a4070d11c1c39edfb9",
+      "resolution": "1280x720"
+    },
+    {
+      "slot": 5,
+      "label": "Carte mondiale — campagne persistante",
+      "path": "assets/screenshots/vortex-command/05.png",
+      "panel": "campaign-panel",
+      "kind": "live-operations-tab",
+      "state": {
+        "running": true,
+        "paused": false,
+        "ended": false,
+        "time": 8.349999999999994,
+        "mode": "campaign",
+        "region": "europe",
+        "doctrine": "monarch",
+        "titan": "COLOSSUS-BR01",
+        "emerged": true,
+        "titanAlive": true,
+        "units": 8,
+        "districts": 6,
+        "camera": {
+          "x": 242.33333333334312,
+          "y": 1500,
+          "zoom": 0.52
+        },
+        "startScreen": false,
+        "visibleTab": "campaign-panel"
+      },
+      "bytes": 436616,
+      "sha256": "5dbff3d76ed1da261bd416e4b2558aba23ccef2820f51ba7e926e6ce67e28a4c",
+      "resolution": "1280x720"
+    }
+  ],
+  "finalState": {
+    "running": true,
+    "paused": false,
+    "ended": false,
+    "time": 8.616666666666674,
+    "mode": "campaign",
+    "region": "europe",
+    "doctrine": "monarch",
+    "titan": "COLOSSUS-BR01",
+    "emerged": true,
+    "titanAlive": true,
+    "units": 8,
+    "districts": 6,
+    "camera": {
+      "x": 242.33333333333428,
+      "y": 1500,
+      "zoom": 0.52
+    },
+    "startScreen": false,
+    "visibleTab": "campaign-panel"
+  },
+  "limitations": [
+    "Capture d'un build publiquement accessible, pas du dernier déploiement BLOCKED",
+    "Les quatre onglets opérations montrent la simulation active en arrière-plan",
+    "Les cinq images ne certifient pas la fidélité de l'illustration conceptuelle 1:1"
+  ]
+}

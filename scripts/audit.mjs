@@ -192,10 +192,63 @@ assert(inlineScriptBody.includes('role="list"'), "le journal expose une liste s�
 assert(inlineScriptBody.includes('id="refreshHealthButton"'), "le tableau de santé propose une actualisation");
 assert(inlineScriptBody.includes("const NEW_APP_WINDOW_DAYS = 45;"), "la fenêtre Nouveauté est bornée à 45 jours");
 assert(inlineScriptBody.includes('const LEGACY_ADDED_AT = "1970-01-01T00:00:00.000Z";'), "les anciennes entrées ne deviennent pas artificiellement nouvelles");
+const syncFieldDeclaration = html.match(/const OFFICIAL_SYNC_FIELDS\s*=\s*(\[[^;]*\]);/);
+const officialSyncFields = syncFieldDeclaration
+  ? JSON.parse(syncFieldDeclaration[1])
+  : [];
 assert(
-  inlineScriptBody.includes('const OFFICIAL_SYNC_FIELDS = ["link", "status", "releaseState", "addedAt"];'),
+  ["link", "status", "releaseState", "addedAt", "description", "pitch",
+    "accessPolicy", "mediaPendingReview"].every((field) => officialSyncFields.includes(field)),
   "la migration locale synchronise les champs de publication officiels"
 );
+// Execute the real launcher hydration function in isolation with representative
+// browser state: old official preview paths must migrate, user overrides must survive.
+const migrationMatch = inlineScriptBody.match(/const OFFICIAL_PREVIEW_MIGRATIONS = new Map\((\[[\s\S]*?\])\);/);
+const appLoaderStart = inlineScriptBody.indexOf("    function loadApps() {");
+const appLoaderEnd = inlineScriptBody.indexOf("    function loadFavorites()", appLoaderStart);
+assert(Boolean(migrationMatch && appLoaderStart > 0 && appLoaderEnd > appLoaderStart),
+  "migration de preview extraite du véritable module du launcher");
+if (migrationMatch && appLoaderStart > 0 && appLoaderEnd > appLoaderStart) {
+  try {
+    const starterApps = [
+      { id: "world-hive-wars", image: "assets/previews/world-hive-wars.jpg" },
+      { id: "moustique-the-video-game", image: "assets/previews/moustique-the-video-game.jpg" },
+      { id: "custom-game", image: "assets/previews/custom-game.jpg" }
+    ];
+    const saved = [
+      { id: "world-hive-wars", image: "https://launcher-applications.vercel.app/assets/previews/world-hive-wars.webp" },
+      { id: "moustique-the-video-game", image: "assets/previews/moustique-the-video-game.webp" },
+      { id: "custom-game", image: "https://example.com/custom-illustration.png" }
+    ];
+    const environment = {
+      URL,
+      starterApps,
+      saved,
+      document: { baseURI: "https://launcher-applications.vercel.app/" },
+      storeKey: "test-fixture",
+      removedStarterIds: new Set(),
+      OFFICIAL_SYNC_FIELDS: ["link", "status", "releaseState", "addedAt", "description", "pitch"],
+      safeReadArray: () => saved,
+      sanitizeImageUrl: (value) => value ? new URL(value, "https://launcher-applications.vercel.app/").href : "",
+      normalizeApp: (app) => app
+    };
+    const expression = `(() => {
+      const OFFICIAL_PREVIEW_MIGRATIONS = new Map(${migrationMatch[1]});
+      ${inlineScriptBody.slice(appLoaderStart, appLoaderEnd)}
+      return loadApps();
+    })()`;
+    const hydrated = vm.runInNewContext(expression, environment, { timeout: 1200 });
+    assert(hydrated.find((app) => app.id === "world-hive-wars")?.image === starterApps[0].image,
+      "preview officiel ancien WORLD HIVE WARS corrigé même dans un vieux catalogue local");
+    assert(hydrated.find((app) => app.id === "moustique-the-video-game")?.image === starterApps[1].image,
+      "preview relatif WebP MOUSTIQUE migré vers JPEG");
+    assert(hydrated.find((app) => app.id === "custom-game")?.image === saved[2].image,
+      "une illustration volontairement personnalisée n'est pas écrasée par la migration");
+  } catch (error) {
+    failures.push("Test fonctionnel de migration des aperçus: " + error.message);
+  }
+}
+
 for (const script of externalScripts) {
   assert(await exists(script.src), `script externe présent: ${script.src}`);
   if (!(await exists(script.src))) continue;
@@ -281,8 +334,38 @@ if (gameGenreMatch) {
   }
 }
 
-assert(apps.length === 140, "le catalogue contient exactement 140 applications");
-assert(apps.filter((app) => app?.category === "Jeux").length === 127, "le catalogue contient exactement 127 jeux");
+const recoveredApps = apps.filter((app) => app.recoveredGame === true);
+const establishedApps = apps.filter((app) => app.recoveredGame !== true);
+const pendingMediaApps = recoveredApps.filter((app) => app.mediaPendingReview === true);
+const recoveredWithNativeMedia = recoveredApps.filter((app) => app.mediaPendingReview !== true);
+assert(establishedApps.length === 140, "les 140 applications historiques et leurs assets restent intacts");
+assert(recoveredApps.length >= 14 && recoveredApps.length === pendingMediaApps.length + recoveredWithNativeMedia.length,
+  "toutes les découvertes, web ou locales, sont suivies sans inventer de média");
+assert(new Set(recoveredApps.map((app) => app.id)).size === recoveredApps.length,
+  "les nouvelles fiches sont uniques");
+assert(apps.length === 140 + recoveredApps.length, "les 140 applications initiales sont complétées par tous les jeux retrouvés");
+assert(apps.filter((app) => app?.category === "Jeux").length === 127 + recoveredApps.length,
+  "le nombre de jeux intègre les nouvelles fiches vérifiées");
+const offlineGithubGameIds = [
+  "diva-pulse", "derniere-ligne-zero-repli",
+  "fallout-marseille-mistral", "parallaxe-protocole-9"
+];
+for (const id of offlineGithubGameIds) {
+  const app = recoveredApps.find((entry) => entry.id === id);
+  assert(Boolean(app), `jeu hors Vercel retrouvé : ${id}`);
+  if (!app) continue;
+  assert(app.accessPolicy === "local-download", `fichiers à télécharger clairement étiquetés pour ${id}`);
+  // Native proof is checked below against the manifest, actual files and source
+  // revision for every illustrated recovered game, including downloadable games.
+  const hasNativeMedia = app.mediaPendingReview === false && Boolean(app.image && app.presentation);
+  assert((app.mediaPendingReview === true && !app.image && !app.presentation) || hasNativeMedia,
+    `aucun média fictif pour le jeu local ${id} ; les captures doivent avoir leur preuve native`);
+  assert(app.link?.startsWith("https://github.com/darknigthmare/") && app.sourceRepository === app.link,
+    `le vrai dépôt du jeu est associé à ${id}`);
+  assert(app.releaseState === "published" && app.status?.includes("téléchargement local"),
+    `distribution locale cohérente avec le statut de ${id}`);
+}
+
 assert(gameGenreGroups.length === 8, "la navigation Jeux contient huit genres principaux");
 
 const starterGameIds = new Set(
@@ -398,6 +481,12 @@ for (const app of apps) {
       failures.push(`lien invalide pour ${app.id}: ${app.link}`);
     }
   }
+  if (app.mediaPendingReview) {
+    assert(!app.image && !app.presentation, `aucun visuel synthétique ou non vérifié n'est attribué à ${app.id}`);
+    assert(app.category === "Jeux" && releaseState === "published" && Boolean(app.link),
+      `jeu sans visuel authentifié avec lien publié et catégorie Jeux: ${app.id}`);
+    continue;
+  }
   assert(Boolean(app.image), `aperçu renseigné pour ${app.id}`);
   if (app.image) {
     images.add(app.image.replaceAll("\\", "/"));
@@ -442,9 +531,9 @@ assert(openAiArt?.provider === "OpenAI", "le manifeste déclare OpenAI comme fou
 assert(openAiArt?.generator === "image_gen", "le manifeste déclare image_gen comme générateur");
 assert(Array.isArray(openAiArt?.apps), "le manifeste OpenAI expose une liste d'applications");
 const openAiEntries = Array.isArray(openAiArt?.apps) ? openAiArt.apps : [];
-assert(openAiEntries.length === apps.length, "une provenance OpenAI exactement par application");
-assert(new Set(openAiEntries.map((entry) => entry?.id)).size === apps.length, "les provenances OpenAI ont des IDs uniques");
-for (const app of apps) {
+assert(openAiEntries.length === establishedApps.length, "les 140 provenances d'art historique OpenAI sont conservées");
+assert(new Set(openAiEntries.map((entry) => entry?.id)).size === establishedApps.length, "les provenances OpenAI historiques ont des IDs uniques");
+for (const app of establishedApps) {
   const entry = openAiEntries.find((candidate) => candidate?.id === app.id);
   assert(Boolean(entry), `provenance OpenAI présente pour ${app.id}`);
   if (!entry) continue;
@@ -461,12 +550,169 @@ for (const entry of openAiEntries) {
   assert(ids.has(entry?.id), `provenance OpenAI attribuée à une application connue: ${entry?.id || "inconnue"}`);
 }
 
+const nativeMedia = JSON.parse(await readFile(path.join(root, "assets/source-native-media-manifest.json"), "utf8"));
+const nativeEntries = Array.isArray(nativeMedia?.assets) ? nativeMedia.assets : [];
+assert(nativeEntries.length === recoveredWithNativeMedia.length,
+  "chaque nouveau jeu illustré dispose d'une provenance de capture native distincte de la génération OpenAI");
+for (const app of recoveredWithNativeMedia) {
+  const source = nativeEntries.find((entry) => entry.id === app.id);
+  assert(Boolean(source), `source média du jeu retrouvé ${app.id} vérifiée`);
+  assert(source?.presentation === app.presentation && source?.preview === app.image,
+    `vues natives documentées pour ${app.id}`);
+  assert(source?.captureProof && await exists(source.captureProof),
+    `rapport de capture effective du jeu retrouvé ${app.id}`);
+  assert(/^[a-f0-9]{64}$/.test(String(source?.sha256 || "")),
+    `empreinte de présentation native obligatoire pour ${app.id}`);
+  if(source?.sha256 && await exists(source.presentation)) {
+    const bytes = await readFile(path.join(root, source.presentation));
+    assert(createHash("sha256").update(bytes).digest("hex") === source.sha256,
+      `empreinte de la présentation native ${app.id}`);
+  }
+}
+for (const item of nativeEntries) assert(recoveredApps.some((x)=>x.id === item.id),
+  `aucune provenance native ne peut être attribuée à un jeu inconnu: ${item.id}`);
+
 const galleryDocument = JSON.parse(await readFile(path.join(root, "assets", "app-gallery.json"), "utf8"));
 const galleryMap = galleryDocument.galleries || galleryDocument.apps || galleryDocument;
+const archiveDocument = JSON.parse(await readFile(path.join(root, "assets", "app-gallery-admin.json"), "utf8"));
+const archiveMap = archiveDocument.previousPresentations || {};
+const fidelityMatrix = JSON.parse(await readFile(path.join(root, "docs", "MEDIA_FIDELITY_MATRIX_2026-11-01.json"), "utf8"));
+assert(fidelityMatrix.summary?.entries === apps.length, "matrice de fidélité renseignée pour toutes les fiches");
+const fidelityItems = new Map((fidelityMatrix.entries || []).map((item) => [item.id, item]));
+assert(fidelityItems.size === apps.length, "une seule fiche de revue média par application");
+assert(fidelityItems.get("malaise-party")?.accessPolicy === "vercel-sso", "Malaise Party est identifié comme protégé par Vercel SSO");
+const verifiedGalleries = [...fidelityItems.values()].filter((item) => item.screenshotCaptureProof);
+const verifiedHistoricGalleries = verifiedGalleries.filter((item) => !recoveredApps.some((app) => app.id === item.id));
+const verifiedScreenshots = verifiedGalleries.reduce((sum, item) => sum + item.screenshotCount, 0);
+const historicVerifiedScreenshots = verifiedHistoricGalleries.reduce((sum, item) => sum + item.screenshotCount, 0);
+const previousScreenshots = Object.values(archiveDocument.previousScreenshots || {}).flat();
+const previousPreviews = Object.values(archiveDocument.previousPreviews || {});
+assert(verifiedGalleries.length >= 5 && verifiedScreenshots === verifiedGalleries.length * 5, "au moins cinq galeries et cinq images par galerie vérifiées par origine");
+assert(fidelityMatrix.summary?.recapturedScreenshotCount === verifiedScreenshots, "résumé des captures mises à jour calculé depuis les preuves");
+assert(fidelityMatrix.summary?.awaitingRecaptureCount === fidelityMatrix.summary.screenshots - historicVerifiedScreenshots,
+  "le reste des 700 captures historiques reste indépendant des nouveaux jeux");
+assert(previousScreenshots.length === historicVerifiedScreenshots && fidelityMatrix.summary?.archivedScreenshotCount === previousScreenshots.length,
+  "tous les anciens screenshots de fiches existantes sont conservés");
+assert(previousPreviews.length === verifiedHistoricGalleries.length && fidelityMatrix.summary?.archivedPreviewCount === previousPreviews.length,
+  "un ancien aperçu conservé pour chaque galerie historique renouvelée");
+assert(fidelityMatrix.summary?.mediaPendingGames === pendingMediaApps.length,
+  "le suivi distingue les nouveaux jeux sans captures des captures natives acceptées");
+assert(fidelityMatrix.summary?.missingNewGameScreenshots === pendingMediaApps.length * 5,
+  "les slots de capture encore ouverts restent visibles");
+assert(fidelityMatrix.summary?.sourceVerifiedGalleries === verifiedGalleries.length, "niveaux de preuves et galeries cohérents");
+for (const app of apps) {
+  const item = fidelityItems.get(app.id);
+  assert(Boolean(item), `fiche média présente pour ${app.id}`);
+  if (!item) continue;
+  if (app.recoveredGame) {
+    assert(item.mediaPendingReview === Boolean(app.mediaPendingReview),
+      `fiche média retrouvée correctement marquée à vérifier pour ${app.id}`);
+  }
+  assert(item.productionLink === (app.link || null), `lien officiel suivi pour ${app.id}`);
+  assert(item.presentation === app.presentation, `présentation suivie pour ${app.id}`);
+  assert(item.preview === app.image, `aperçu suivi pour ${app.id}`);
+  assert(item.screenshotCount === (app.mediaPendingReview ? 0 : 5), `nombre de captures cohérent avec la validation média de ${app.id}`);
+  if (app.mediaPendingReview) {
+    assert(item.screenshotFreshness === "awaiting-first-capture", `jeu retrouvé sans capture artificielle: ${app.id}`);
+    assert(!item.screenshotCaptureProof && !item.presentation && !item.preview,
+      `aucune référence média fictive n'est ajoutée à ${app.id}`);
+  }
+  assert(item.historicalIllustrationStored === Boolean(archiveMap[app.id]), `archive suivie pour ${app.id}`);
+  assert(item.artFidelity === "not-reviewed", `aucune fidélité 1:1 certifiée sans contrôle visuel pour ${app.id}`);
+}
+// Every newly recovered game promoted to an illustrated card must have
+// source-native frames matching its gallery, in-game labels and SHA-256.
+// A mere screenshot filename or HTTP 200 never certifies playable content.
+for (const app of recoveredWithNativeMedia) {
+  const record = fidelityItems.get(app.id);
+  const gallery = galleryMap[app.id];
+  const evidencePath = record?.screenshotCaptureProof;
+  assert(Boolean(evidencePath) && await exists(evidencePath),
+    `preuve des scènes natives conservée pour ${app.id}`);
+  if (!evidencePath || !(await exists(evidencePath))) continue;
+  const evidence = JSON.parse(await readFile(path.join(root, evidencePath), "utf8"));
+  const manifest = nativeEntries.find((entry) => entry.id === app.id);
+  assert(evidence.notGeneratedArt === true,
+    `captures réellement produites par un moteur pour ${app.id}`);
+  assert(gallery?.captureProof === evidencePath && manifest?.captureProof === evidencePath,
+    `galerie, matrice et manifeste relient la même preuve de ${app.id}`);
+  assert(evidence.source === manifest?.sourceUrl,
+    `source du manifeste identique à la preuve de ${app.id}`);
+  assert(Number.isFinite(Date.parse(evidence.capturedAt || "")),
+    `date de capture enregistrée pour ${app.id}`);
+  if (evidence.captureType === "native-local-browser-gameplay") {
+    assert(gallery?.captureType === "real-local-gameplay" &&
+      /^[a-f0-9]{40}$/.test(String(evidence.sourceCommit || "")) &&
+      manifest?.sourceCommit === evidence.sourceCommit,
+      `capture locale et révision exacte publiquement identifiées pour ${app.id}`);
+    if (app.accessPolicy !== "local-download") {
+      assert(evidence.sourceRepository === app.sourceRepository && evidence.source === app.link,
+        `source locale du jeu web ${app.id} rattachée à sa production officielle`);
+      assert(/^http:\/\/(?:127\.0\.0\.1|localhost)(?::\d+)?\//.test(String(evidence.browserSource || "")),
+        `adresse du navigateur local consignée pour ${app.id}`);
+      const match = evidence.productionByteMatch;
+      assert(match?.matches === true && match?.productionUrl === app.link &&
+        Boolean(match?.sourcePath) && /^[a-f0-9]{64}$/.test(String(match?.sha256 || "")),
+        `comparaison binaire locale/production consignée pour ${app.id}`);
+    }
+  }
+  if (app.accessPolicy === "local-download") {
+    assert(evidence.captureType === "native-local-browser-gameplay" && gallery?.captureType === "real-local-gameplay",
+      `la capture du jeu à télécharger ${app.id} est identifiée comme locale`);
+    assert(evidence.gameId === app.id && evidence.source === app.sourceRepository && evidence.source === app.link,
+      `identité du jeu local ${app.id} reliée à son véritable dépôt`);
+    assert(/^[a-f0-9]{40}$/.test(String(evidence.sourceCommit || "")) && manifest?.sourceCommit === evidence.sourceCommit,
+      `révision complète de la source locale ${app.id} conservée`);
+    assert(Boolean(evidence.version) && app.sourceVersion === evidence.version && gallery?.captureVersion === evidence.version,
+      `version locale ${app.id} cohérente entre source et galerie`);
+  }
+  assert(Array.isArray(evidence.scenes) && evidence.scenes.length === 5,
+    `cinq scènes de provenance native pour ${app.id}`);
+  assert(Array.isArray(gallery?.images) && gallery.images.length === 5 &&
+    Array.isArray(gallery?.labels) && gallery.labels.length === 5,
+    `galerie native structurée pour ${app.id}`);
+  // Earlier proofs used a fixed 1280×720 capture. New captures may declare a
+  // larger real viewport when the original interface needs the extra room.
+  const viewport = evidence.viewport && typeof evidence.viewport === "object"
+    ? evidence.viewport : { width: 1280, height: 720 };
+  const validViewport = Number.isInteger(viewport.width) && Number.isInteger(viewport.height) &&
+    viewport.width >= 320 && viewport.width <= 8192 &&
+    viewport.height >= 240 && viewport.height <= 8192;
+  assert(validViewport, `dimensions de capture déclarées valides pour ${app.id}`);
+  for (let index = 0; index < 5; index++) {
+    const scene = evidence.scenes?.[index];
+    const relativePath = gallery?.images?.[index];
+    assert(scene?.path === relativePath && scene?.label === gallery?.labels?.[index],
+      `source et légende de la vraie capture ${index + 1} de ${app.id}`);
+    assert(Boolean(relativePath) && await exists(relativePath),
+      `fichier de la capture réelle ${index + 1} de ${app.id}`);
+    if (!relativePath || !(await exists(relativePath))) continue;
+    const pixels = await readFile(path.join(root, relativePath));
+    assert(scene?.sha256 === createHash("sha256").update(pixels).digest("hex"),
+      `empreinte SHA-256 de la capture réelle ${index + 1} de ${app.id}`);
+    assert(validViewport && pixels.length >= 24 && pixels.subarray(0, 8).toString("hex") === "89504e470d0a1a0a" &&
+      pixels.readUInt32BE(16) === viewport.width && pixels.readUInt32BE(20) === viewport.height,
+      `capture réelle ${index + 1} de ${app.id} est un PNG aux dimensions déclarées ${viewport.width}×${viewport.height}`);
+  }
+  for (const [label,media] of [["présentation",evidence.presentation],["aperçu",evidence.preview]]) {
+    const expectedPath = label === "présentation" ? app.presentation : app.image;
+    assert(media?.path === expectedPath && /^[a-f0-9]{64}$/.test(String(media?.sha256 || "")),
+      `${label} natif de ${app.id} relié à sa fiche et à son empreinte obligatoire`);
+    if (!media?.sha256 || !media?.path) continue;
+    assert(await exists(media.path), `${label} source-native de ${app.id} conservé`);
+    if (await exists(media.path)) {
+      const bytes = await readFile(path.join(root, media.path));
+      assert(createHash("sha256").update(bytes).digest("hex") === media.sha256,
+        `empreinte de ${label} de ${app.id} conforme à la preuve`);
+    }
+  }
+}
+
 const galleryPaths = new Set();
 const previousPresentationPaths = new Set();
 const previousPresentationHashes = new Set();
 const appsWithoutPreviousPresentation = new Set([
+  ...recoveredApps.map((app) => app.id),
   "elyra-grand-pas",
   "intravore",
   "nexus-of-torment",
@@ -499,8 +745,10 @@ const appsWithoutPreviousPresentation = new Set([
 for (const app of apps) {
   const entry = galleryMap[app.id];
   const gallery = Array.isArray(entry) ? entry : entry?.images;
-  const previousPresentation = Array.isArray(entry) ? "" : String(entry?.previousPresentation || "").replaceAll("\\", "/");
-  assert(Array.isArray(gallery) && gallery.length >= 5, `galerie complète pour ${app.id}`);
+  assert(!entry?.previousPresentation, `le catalogue public ne dévoile pas les archives pour ${app.id}`);
+  const previousPresentation = String(archiveMap[app.id] || "").replaceAll("\\", "/");
+  assert(Array.isArray(gallery) && (app.mediaPendingReview ? gallery.length === 0 : gallery.length >= 5),
+    `galerie conforme au statut de preuve pour ${app.id}`);
 
   if (appsWithoutPreviousPresentation.has(app.id)) {
     assert(!previousPresentation, `absence historique explicitement autorisée pour ${app.id}`);
@@ -546,6 +794,386 @@ for (const app of apps) {
   }
 }
 
+// Evidence-gated live screenshot replacement for TRIARCHE.
+const triarchId = "triarche-ciel-rouge";
+const triarchGallery = galleryMap[triarchId];
+const triarchProofPath = "docs/media-proof/triarch-gameplay-2026-11-01.json";
+assert(await exists(triarchProofPath), "preuve de recapture native TRIARCHE présente");
+if (await exists(triarchProofPath)) {
+  const proof = JSON.parse(await readFile(path.join(root, triarchProofPath), "utf8"));
+  const legacyShots = archiveDocument.previousScreenshots?.[triarchId];
+  const legacyPreview = archiveDocument.previousPreviews?.[triarchId];
+  assert(proof.notGeneratedArt === true && proof.captureType === "native-browser-gameplay", "TRIARCHE capturé en navigateur, pas illustré artificiellement");
+  assert(proof.source === "https://triarche-ciel-rouge.vercel.app/", "captures prises sur la production du jeu");
+  assert(proof.runtimeVersion === "1.0.0", "version de gameplay documentée");
+  assert(Array.isArray(proof.scenes) && proof.scenes.length === 5, "cinq scènes TRIARCHE vérifiées");
+  assert(Array.isArray(legacyShots) && legacyShots.length === 5, "cinq anciens screenshots archivés");
+  assert(typeof legacyPreview === "string" && await exists(legacyPreview), "ancien aperçu TRIARCHE archivé");
+  assert(Array.isArray(triarchGallery?.labels) && triarchGallery.labels.length === 5, "titres de scènes de la galerie");
+  assert(triarchGallery?.captureVersion === proof.runtimeVersion, "version source et galerie raccordées");
+  assert(triarchGallery?.captureType === "real-gameplay", "captures identifiées comme gameplay réel");
+  for (let i = 0; i < 5; i++) {
+    const item = proof.scenes?.[i];
+    const imagePath = triarchGallery.images[i];
+    const archivePath = legacyShots?.[i];
+    assert(item?.verifiedState === "playing", `capture TRIARCHE ${i + 1} faite en jeu`);
+    assert(item?.path === imagePath, `capture TRIARCHE ${i + 1} issue de sa preuve`);
+    assert(item?.label === triarchGallery.labels[i], `description de capture TRIARCHE ${i + 1} cohérente`);
+    assert(await exists(archivePath), `ancien screenshot TRIARCHE ${i + 1} conservé`);
+    if (await exists(imagePath)) {
+      const shot = await readFile(path.join(root, imagePath));
+      assert(createHash("sha256").update(shot).digest("hex") === item?.sha256, `empreinte native TRIARCHE ${i + 1} exacte`);
+      assert(shot.subarray(0, 8).toString("hex") === "89504e470d0a1a0a", `capture TRIARCHE ${i + 1} PNG`);
+      assert(shot.readUInt32BE(16) === 1280 && shot.readUInt32BE(20) === 720, `capture TRIARCHE ${i + 1} de 1280x720`);
+      if (await exists(archivePath)) {
+        const archived = await readFile(path.join(root, archivePath));
+        assert(!shot.equals(archived), `capture TRIARCHE ${i + 1} différente du menu historique`);
+      }
+    }
+  }
+}
+
+// Validate DEADWALL 1.74 as a separate real-browser proof, not inherited menu captures.
+const deadwallId = "deadwall-last-enclosure";
+const deadwallProofPath = "docs/media-proof/deadwall-gameplay-2026-11-01.json";
+assert(await exists(deadwallProofPath), "preuve de gameplay DEADWALL 1.74");
+if (await exists(deadwallProofPath)) {
+  const evidence = JSON.parse(await readFile(path.join(root, deadwallProofPath), "utf8"));
+  const record = galleryMap[deadwallId];
+  const oldShots = archiveDocument.previousScreenshots?.[deadwallId] || [];
+  const oldPreview = archiveDocument.previousPreviews?.[deadwallId];
+  const listed = fidelityMatrix.entries?.find((entry) => entry.id === deadwallId);
+  assert(evidence.notGeneratedArt && evidence.captureType === "native-browser-gameplay", "DEADWALL images natives, non synthétiques");
+  assert(evidence.source === "https://deadwall-last-enclosure.vercel.app/", "DEADWALL capturé à la source publique officielle");
+  assert(evidence.version === "1.74.0" && record.captureVersion === evidence.version, "DEADWALL version source et galerie 1.74");
+  assert(evidence.scenario?.actorMotionConfirmed && evidence.scenario?.seed === 17117, "déplacement de l'acteur vérifié en vrai gameplay");
+  assert(record.captureType === "real-gameplay", "vues DEADWALL identifiées");
+  assert(record.presentationReview === "pending-fidelity", "une présentation artistique non validée n'est pas prise pour le gameplay");
+  assert(Array.isArray(evidence.scenes) && evidence.scenes.length === 5, "cinq scènes natives DEADWALL");
+  assert(Array.isArray(record.labels) && record.labels.length === 5, "cinq intitulés détaillés DEADWALL");
+  assert(oldShots.length === 5, "cinq anciennes vues DEADWALL sauvegardées");
+  assert(Boolean(oldPreview) && await exists(oldPreview), "ancien aperçu DEADWALL sauvegardé");
+  assert(listed?.screenshotFreshness === "up-to-date" && listed.screenshotCaptureProof === deadwallProofPath, "dossier media DEADWALL mis à jour depuis les preuves");
+  for (let index = 0; index < 5; index++) {
+    const shot = evidence.scenes[index];
+    const pathImage = record.images[index];
+    const pathOld = oldShots[index];
+    assert(shot.path === pathImage && shot.label === record.labels[index], `label et source DEADWALL ${index+1}`);
+    assert(shot.state === "playing" && shot.campaignSeed === 17117, `vraie campagne DEADWALL ${index+1}`);
+    assert(await exists(pathOld), `ancienne capture DEADWALL ${index+1} conservée`);
+    if (await exists(pathImage)) {
+      const bytes = await readFile(path.join(root, pathImage));
+      assert(createHash("sha256").update(bytes).digest("hex") === shot.sha256, `empreinte de capture DEADWALL ${index+1} certifiée`);
+      assert(bytes.subarray(0, 8).toString("hex") === "89504e470d0a1a0a" && bytes.readUInt32BE(16) === 1280 && bytes.readUInt32BE(20) === 720, `dimensions 1280×720 de DEADWALL ${index+1}`);
+      if (await exists(pathOld)) {
+        const older = await readFile(path.join(root, pathOld));
+        assert(!older.equals(bytes), `ancienne et nouvelle capture DEADWALL ${index+1} distinctes`);
+      }
+    }
+  }
+}
+
+// Verify five native WebGL images and their original backups for Yautja Apex.
+const yautjaApexId = "yautja-apex-hunt";
+const yautjaApexProofPath = "docs/media-proof/yautja-apex-gameplay-2026-11-01.json";
+assert(await exists(yautjaApexProofPath), "preuve WebGL Yautja Apex présente");
+if (await exists(yautjaApexProofPath)) {
+  const record = galleryMap[yautjaApexId];
+  const evidence = JSON.parse(await readFile(path.join(root, yautjaApexProofPath), "utf8"));
+  const archiveShots = archiveDocument.previousScreenshots?.[yautjaApexId] || [];
+  const archivePreview = archiveDocument.previousPreviews?.[yautjaApexId];
+  const tracked = fidelityMatrix.entries?.find((entry) => entry.id === yautjaApexId);
+  assert(evidence.notGeneratedArt === true && evidence.captureType === "native-browser-gameplay", "cinq captures Yautja issues du navigateur, non générées");
+  assert(evidence.source === "https://yautja-apex-hunt.vercel.app/", "source officielle de la chasse Yautja");
+  assert(evidence.releaseRef?.deploymentId === "dpl_3bVUaoiRC2tSoXUeJ6YGUnySwwPu", "source publiée confirmée pour Yautja");
+  assert(evidence.releaseRef?.gitCommit === "5e386e0c1efc5c5401fbe66848cbc82130668002", "SHA source identique à Vercel");
+  assert(evidence.hubAccessVerified, "croiseur Yautja ouvert dans le vrai jeu");
+  assert(record.captureType === "real-gameplay" && record.presentationReview === "pending-fidelity", "captures réelles présentées avant l'illustration non qualifiée");
+  assert(record.captureVersion === "1.13.0 (source)", "version de source distinguée de la version runtime");
+  assert(tracked?.screenshotCaptureProof === yautjaApexProofPath && tracked?.screenshotFreshness === "up-to-date", "suivi des captures Yautja mis à jour");
+  assert(Array.isArray(evidence.scenes) && evidence.scenes.length === 5 && record.labels?.length === 5 && record.images?.length === 5, "cinq scènes Yautja identifiées");
+  assert(archiveShots.length === 5 && archivePreview && await exists(archivePreview), "ancien aperçu et captures Yautja archivés");
+  assert(evidence.scenes?.[4]?.phase === "HUNT" && evidence.scenes?.[4]?.activeBoss, "dernier screenshot de vraie chasse et boss présent");
+  for (let index = 0; index < 5; index++) {
+    const shot = evidence.scenes[index];
+    const pathImage = record.images[index];
+    const pathOld = archiveShots[index];
+    assert(shot.path === pathImage && record.labels[index] === shot.label && shot.hasRendered, `screenshot Yautja ${index + 1} rendu et renseigné`);
+    assert(index === 4 ? shot.phase === "HUNT" : shot.phase === "HUB", `phase du jeu Yautja ${index + 1} correcte`);
+    assert(await exists(pathOld), `ancienne vue Yautja ${index + 1} conservée`);
+    if (await exists(pathImage)) {
+      const bytes = await readFile(path.join(root, pathImage));
+      assert(createHash("sha256").update(bytes).digest("hex") === shot.sha256, `capture Yautja ${index + 1} empreinte exacte`);
+      assert(bytes.subarray(0, 8).toString("hex") === "89504e470d0a1a0a" && bytes.readUInt32BE(16) === 1280 && bytes.readUInt32BE(20) === 720, `capture Yautja ${index + 1} résolution 1280×720`);
+      if (await exists(pathOld)) {
+        const old = await readFile(path.join(root, pathOld));
+        assert(!old.equals(bytes), `capture Yautja ${index + 1} réellement remplacée`);
+      }
+    }
+  }
+}
+
+// Validate actual MOUSTIQUE WebGL2 screenshots and explicitly staged QA camera views.
+const moustiqueId = "moustique-the-video-game";
+const moustiqueProofPath = "docs/media-proof/moustique-webgl2-2026-11-01.json";
+assert(await exists(moustiqueProofPath), "preuve des nouvelles captures WebGL2 MOUSTIQUE");
+if (await exists(moustiqueProofPath)) {
+  const evidence = JSON.parse(await readFile(path.join(root, moustiqueProofPath), "utf8"));
+  const record = galleryMap[moustiqueId];
+  const archivedShots = archiveDocument.previousScreenshots?.[moustiqueId] || [];
+  const archivedPreview = archiveDocument.previousPreviews?.[moustiqueId];
+  const row = fidelityMatrix.entries?.find((item) => item.id === moustiqueId);
+  const active = apps.find((item) => item.id === moustiqueId);
+  assert(evidence.notGeneratedArt === true && evidence.captureType === "real-webgl2-engine", "images MOUSTIQUE générées par le moteur WebGL2, non synthétisées");
+  assert(evidence.version === "4.14.1-R11" && evidence.source === "https://moustique-the-video-game.vercel.app/", "version et URL de production MOUSTIQUE");
+  assert(String(evidence.rendererMode || "").startsWith("WebGL 2"), "vrai renderer GPU logiciel WebGL2, non logique de repli");
+  assert(evidence.stagingDisclosure?.includes("Slots 2-5"), "cadrages de QA annoncés séparément du gameplay");
+  assert(record?.captureType === "real-engine-qa" && record.captureVersion === evidence.version, "origine et version du rendu clairement désignées");
+  assert(record?.presentationReview === "pending-fidelity", "illustration MOUSTIQUE en attente de fidélité");
+  assert(Array.isArray(record?.images) && record.images.length === 5 && record.labels?.length === 5, "cinq images MOUSTIQUE et légendes");
+  assert(Array.isArray(evidence.scenes) && evidence.scenes.length === 5, "cinq preuves MOUSTIQUE");
+  assert(archivedShots.length === 5 && archivedPreview && await exists(archivedPreview), "les six visuels WebP MOUSTIQUE archivés");
+  assert(row?.screenshotCaptureProof === moustiqueProofPath && row?.screenshotFreshness === "up-to-date", "suivi MOUSTIQUE à jour");
+  assert(active?.image === evidence.preview?.path && row?.preview === evidence.preview?.path, "aperçu de production et matrice raccordés");
+  if (active?.image && await exists(active.image)) {
+    const previewBytes = await readFile(path.join(root, active.image));
+    assert(createHash("sha256").update(previewBytes).digest("hex") === evidence.preview.sha256, "empreinte de l'aperçu corrigé MOUSTIQUE");
+    assert(previewBytes.subarray(0, 3).toString("hex") === "ffd8ff", "aperçu MOUSTIQUE JPEG lisible");
+  }
+  for (let i = 0; i < 5; i++) {
+    const shot = evidence.scenes[i];
+    const pathImage = record.images[i];
+    const original = archivedShots[i];
+    assert(shot.path === pathImage && shot.label === record.labels[i], `MOUSTIQUE capture ${i + 1} bien identifiée`);
+    assert(shot.rendererMode === "webgl2" && shot.webgl2, `MOUSTIQUE capture ${i + 1} sur le moteur WebGL2`);
+    assert(i === 0 ? shot.kind === "real-gameplay" && shot.state === "playing" : shot.kind === "qa-camera-real-render" && shot.state === "paused", `MOUSTIQUE capture ${i + 1} classifiée honnêtement`);
+    assert(await exists(original), `ancienne image WebP MOUSTIQUE ${i + 1} conservée`);
+    if (await exists(pathImage)) {
+      const bytes = await readFile(path.join(root, pathImage));
+      assert(createHash("sha256").update(bytes).digest("hex") === shot.sha256, `MOUSTIQUE screenshot ${i + 1} empreinte fidèle`);
+      assert(bytes.subarray(0, 8).toString("hex") === "89504e470d0a1a0a" && bytes.readUInt32BE(16) === 1280 && bytes.readUInt32BE(20) === 720, `MOUSTIQUE screenshot ${i + 1} dimensions natives correctes`);
+    }
+  }
+}
+
+// WORLD HIVE WARS: authentic first-run campaign UI, without GPS or fabricated saves.
+const worldHiveId = "world-hive-wars";
+const worldHiveProof = "docs/media-proof/world-hive-045-campaign-2026-11-01.json";
+assert(await exists(worldHiveProof), "WORLD HIVE WARS : cinq captures de campagne produites par la version 0.45");
+if (await exists(worldHiveProof)) {
+  const evidence = JSON.parse(await readFile(path.join(root, worldHiveProof), "utf8"));
+  const item = galleryMap[worldHiveId];
+  const originals = archiveDocument.previousScreenshots?.[worldHiveId] || [];
+  const originalPreview = archiveDocument.previousPreviews?.[worldHiveId];
+  const tracked = fidelityMatrix.entries?.find((entry) => entry.id === worldHiveId);
+  const app = apps.find((entry) => entry.id === worldHiveId);
+  assert(evidence.notGeneratedArt === true && evidence.captureType === "native-browser-campaign-ui", "WORLD HIVE WARS : capture originale, pas montage promotionnel");
+  assert(evidence.source === "https://world-hive-wars.vercel.app/" && evidence.sourceRuntimeVersion === "0.45.0", "WORLD HIVE WARS : source et version du rendu");
+  assert(evidence.privateSimulation === true && evidence.realOnboarding === true && evidence.saveInjected === false, "WORLD HIVE WARS : onboarding réel, sans sauvegarde ni GPS injectés");
+  assert(evidence.initialState?.locationMode === "private" && evidence.initialState?.playerOnboarded && !evidence.initialState?.modalOpen, "WORLD HIVE WARS : campagne privée réellement prête");
+  assert(evidence.sourceDeployment?.status === "READY" && evidence.sourceDeployment.gitSha === "80ce99282b12", "WORLD HIVE WARS : révision de production suivie");
+  assert(item?.captureType === "real-ui-navigation" && item.captureVersion === "0.45.0", "WORLD HIVE WARS : originage UI distinct des combats CONTACT");
+  assert(item?.presentationReview === "pending-fidelity", "WORLD HIVE WARS : art promotionnel non validé réservé au mode édition");
+  assert(Array.isArray(item?.images) && item.images.length === 5 && item.labels?.length === 5, "WORLD HIVE WARS : cinq écrans natifs légendés");
+  assert(Array.isArray(evidence.scenes) && evidence.scenes.length === 5, "WORLD HIVE WARS : cinq scènes réellement visitées");
+  assert(originals.length === 5 && originalPreview && await exists(originalPreview), "WORLD HIVE WARS : les six anciens médias sont archivés");
+  assert(tracked?.screenshotCaptureProof === worldHiveProof && tracked?.screenshotFreshness === "up-to-date", "WORLD HIVE WARS : matrice de QA mise à jour");
+  assert(app?.image === evidence.preview?.path && tracked?.preview === evidence.preview?.path, "WORLD HIVE WARS : aperçu raccordé au catalogue");
+  const screens = ["map", "colony", "defense", "squad", "codex"];
+  if (await exists(app?.image || "")) {
+    const bytes = await readFile(path.join(root, app.image));
+    assert(createHash("sha256").update(bytes).digest("hex") === evidence.preview.sha256, "WORLD HIVE WARS : empreinte de l'aperçu natif");
+    assert(bytes.subarray(0, 3).toString("hex") === "ffd8ff", "WORLD HIVE WARS : aperçu JPEG valide");
+  }
+  for (let i = 0; i < 5; i++) {
+    const shot = evidence.scenes[i], url = item.images[i];
+    assert(shot.path === url && shot.label === item.labels[i] && shot.kind === "real-campaign-interface", `WORLD HIVE WARS : scène ${i + 1} et sa légende`);
+    assert(shot.screen === screens[i] && shot.uiState?.activeScreen === screens[i], `WORLD HIVE WARS : navigation native ${screens[i]}`);
+    assert(shot.uiState?.appReady && shot.uiState?.playerOnboarded && shot.uiState.locationMode === "private" && !shot.uiState.modalOpen, `WORLD HIVE WARS : campagne vivante privée ${screens[i]}`);
+    assert(await exists(originals[i]), `WORLD HIVE WARS : ancienne capture ${i + 1} sauvegardée`);
+    if (await exists(url)) {
+      const image = await readFile(path.join(root, url));
+      assert(createHash("sha256").update(image).digest("hex") === shot.sha256, `WORLD HIVE WARS : SHA-256 image ${i + 1}`);
+      assert(image.subarray(0, 8).toString("hex") === "89504e470d0a1a0a" && image.readUInt32BE(16) === 1280 && image.readUInt32BE(20) === 720, `WORLD HIVE WARS : résolution native ${i + 1}`);
+    }
+  }
+}
+
+// Shadow Codec: the verified source Side Ops board replaces an unreadable
+// headless canvas; do not claim that a combat frame was captured.
+const shadowId = "shadow-codec-ops";
+const shadowProofPath = "docs/media-proof/shadow-codec-3100-modules-2026-11-01.json";
+assert(await exists(shadowProofPath), "preuve source Shadow Codec 3.10 présente");
+if (await exists(shadowProofPath)) {
+  const proof = JSON.parse(await readFile(path.join(root, shadowProofPath), "utf8"));
+  const entry = galleryMap[shadowId];
+  const screen = proof.scenes?.[2];
+  const old = archiveDocument.previousScreenshots?.[shadowId] || [];
+  assert(proof.version === "3.10.0" && proof.noSyntheticCombat === true, "Shadow Codec 3.10 sans faux combat");
+  assert(proof.releaseRef?.gitCommit === "77c830974fa672fc1746a875954af3e9bf39014e", "SHA source du build Shadow déjà vérifié");
+  assert(proof.sideOpsGameplayCaptured === false && proof.sideOpsEngineLoaded === true, "moteur chargé mais pas de simulation visuelle trompeuse");
+  assert(screen?.kind === "native-sideops-operations" && screen?.module === "sideops", "écran Shadow Side Ops identifié comme tableau d'opérations");
+  assert(screen?.appState?.missions >= 4 && screen?.appState?.operationsVisible === true, "vraie liste d'opérations présente et ouverte");
+  assert(screen?.sourceRoute === "https://shadow-codec-ops.vercel.app/?module=sideops", "route source Side Ops reconnue");
+  assert(entry?.images?.[2] === screen?.path && entry?.labels?.[2] === screen?.label, "galerie Shadow alignée sur la preuve de capture");
+  assert(old.length === 5 && await exists(old[2]), "ancienne vue Shadow conservée dans l'archive");
+  if (screen?.path && await exists(screen.path)) {
+    const bytes = await readFile(path.join(root, screen.path));
+    assert(createHash("sha256").update(bytes).digest("hex") === screen.sha256, "nouveau tableau Shadow SHA256 vérifié");
+    assert(bytes.subarray(0, 8).toString("hex") === "89504e470d0a1a0a" && bytes.readUInt32BE(16) === 1280 && bytes.readUInt32BE(20) === 720, "tableau Shadow capture réelle 1280×720");
+  }
+}
+
+// CainOS: prove first-use calibration, real OS, 14-fighter selection and
+// a legible, properly framed native Encore fight instead of a lab-only crop.
+const cainosId = "cainos";
+const cainosProofPath = "docs/media-proof/cainos-encore-070-2026-11-01.json";
+assert(await exists(cainosProofPath), "preuves visuelles réelles CainOS et Encore présentes");
+if (await exists(cainosProofPath)) {
+  const proof = JSON.parse(await readFile(path.join(root, cainosProofPath), "utf8"));
+  const gallery = galleryMap[cainosId];
+  const archived = archiveDocument.previousScreenshots?.[cainosId] || [];
+  const archivedPreview = archiveDocument.previousPreviews?.[cainosId];
+  const tracked = fidelityMatrix.entries?.find((entry) => entry.id === cainosId);
+  assert(proof.notGeneratedArt === true && proof.captureType === "native-browser-multi-module-ui", "CainOS affiché par le vrai navigateur");
+  assert(proof.source === "https://cainos.vercel.app/" && proof.releaseRef?.gitCommit === "146a68cc87ea088a4dbcf76694115118fc9ed775", "production CainOS authentifiée par le SHA du build Vercel");
+  assert(proof.firstUseCalibration?.includes("completed with real OS button"), "entrée CainOS obtenue par calibration naturelle");
+  assert(proof.combatPath === "https://cainos.vercel.app/combat/", "combat Encore relié au terminal officiel");
+  assert(gallery?.captureType === "real-module-ui" && gallery?.presentationReview === "pending-fidelity", "CainOS sans key art non qualifié en vitrine");
+  assert(gallery?.labels?.length === 5 && gallery?.images?.length === 5 && proof.scenes?.length === 5, "cinq scènes CainOS vérifiées");
+  assert(tracked?.screenshotCaptureProof === cainosProofPath && tracked?.screenshotFreshness === "up-to-date", "matrice CainOS mise à jour par le vrai rendu");
+  assert(archived.length === 5 && archivedPreview && await exists(archivedPreview), "anciens visuels du terminal sauvegardés");
+  assert(proof.scenes?.[2]?.appState?.modeCount === 9 && proof.scenes?.[3]?.appState?.fighters === 14 && proof.scenes?.[3]?.appState?.arenas === 12, "effectifs réels des modes, combattants et arènes");
+  const duel = proof.scenes?.[4];
+  const view = duel?.visualEvidence;
+  assert(duel?.kind === "real-2d-fight" && duel?.visualReview === "arena-framed", "vrai duel Encore cadré et non laboratoire d'entraînement");
+  assert(view?.gameScreen === "fight" && view?.phase === "fight" && view?.fighters?.length === 2 && view?.colors >= 10, "combat animé non vide, deux combattants visibles");
+  assert(view?.bounds?.height >= 280 && view?.bounds?.top >= 0 && view?.bounds?.bottom <= 720, "vraie arène cadrée dans la capture");
+  for (let i = 0; i < 5; i++) {
+    const shot = proof.scenes[i], imagePath = gallery.images[i], archivedPath = archived[i];
+    assert(shot.path === imagePath && shot.label === gallery.labels[i], `CainOS capture ${i+1} libellé et source alignés`);
+    assert(await exists(archivedPath), `CainOS image antérieure ${i+1} archivée`);
+    if (await exists(imagePath)) {
+      const bytes = await readFile(path.join(root, imagePath));
+      assert(createHash("sha256").update(bytes).digest("hex") === shot.sha256, `CainOS capture réelle ${i+1} SHA-256 exact`);
+      assert(bytes.subarray(0,8).toString("hex") === "89504e470d0a1a0a" &&
+        bytes.readUInt32BE(16) === 1280 && bytes.readUInt32BE(20) === 720,
+        `CainOS capture ${i+1} PNG 1280×720 valide`);
+    }
+  }
+}
+
+// AVP HUNT/HIVE: full 1.0.0 real-app chain from a new XENO deck to
+// a 3-lane duel, deck building, collection, a revealed booster and campaign.
+const avpTcgId = "avp-hunt-hive-tcg";
+const avpTcgProofPath = "docs/media-proof/avp-tcg-gameplay-2026-11-01.json";
+assert(await exists(avpTcgProofPath), "preuve de cinq captures réelles du TCG disponible");
+if (await exists(avpTcgProofPath)) {
+  const evidence = JSON.parse(await readFile(path.join(root, avpTcgProofPath), "utf8"));
+  const gallery = galleryMap[avpTcgId];
+  const archive = archiveDocument.previousScreenshots?.[avpTcgId] || [];
+  const archivePreview = archiveDocument.previousPreviews?.[avpTcgId];
+  const row = fidelityMatrix.entries?.find((entry) => entry.id === avpTcgId);
+  assert(evidence.captureType === "native-browser-card-gameplay" && evidence.notGeneratedArt === true, "AVP TCG a des captures du vrai jeu, non des concepts synthétiques");
+  assert(evidence.source === "https://avp-hunt-hive-tcg.vercel.app/" && evidence.version === "1.0.0", "version et production TCG déterminées");
+  assert(evidence.releaseRef?.deploymentId === "dpl_7DwmFGBSZeYQm1P6npzrnFqMeeS6", "source Vercel stable du TCG");
+  assert(evidence.firstUse?.includes("Selected XENO deck"), "deck d'ouverture choisi dans le jeu réel");
+  assert(gallery?.captureType === "real-gameplay" && gallery.presentationReview === "pending-fidelity", "illustration AVP non certifiée masquée côté public");
+  assert(gallery?.images?.length === 5 && gallery.labels?.length === 5 && evidence.scenes?.length === 5, "cinq écrans source AVP TCG avec légendes");
+  assert(row?.screenshotCaptureProof === avpTcgProofPath && row?.screenshotFreshness === "up-to-date", "matrice AVP mise à jour par les preuves");
+  assert(archive.length === 5 && archivePreview && await exists(archivePreview), "cinq anciens screenshots et aperçu AVP conservés");
+  assert(evidence.scenes[0]?.appState?.boardLanes === 3 &&
+    evidence.scenes[0]?.appState?.hand >= 5 &&
+    evidence.scenes[0]?.appState?.lifeBars === 2, "vrai duel TCG à trois voies et deux commandants");
+  assert(evidence.scenes[1]?.appState?.cardRows >= 8 && evidence.scenes[2]?.appState?.visibleCards >= 20, "constructeur et collection réels");
+  assert(evidence.scenes[3]?.appState?.revealed === 9 && evidence.scenes[4]?.appState?.missions === 8, "neuf cartes booster révélées et huit missions visibles");
+  for (let i = 0; i < 5; i++) {
+    const shot = evidence.scenes[i],pathImage = gallery.images[i],old = archive[i];
+    assert(shot.appState?.valid && shot.path === pathImage && shot.label === gallery.labels[i], `capture TCG ${i + 1} réellement vérifiée`);
+    assert(await exists(old), `AVP ancien screenshot ${i + 1} préservé`);
+    if (await exists(pathImage)) {
+      const bytes = await readFile(path.join(root, pathImage));
+      assert(createHash("sha256").update(bytes).digest("hex") === shot.sha256, `capture TCG ${i + 1} SHA256 correct`);
+      assert(bytes.subarray(0, 8).toString("hex") === "89504e470d0a1a0a" &&
+        bytes.readUInt32BE(16) === 1280 && bytes.readUInt32BE(20) === 720,
+        `AVP capture ${i + 1} résolution PNG 1280×720`);
+      if(await exists(old)) {
+        const previous = await readFile(path.join(root, old));
+        assert(!previous.equals(bytes), `capture TCG ${i + 1} différente de la version archivée`);
+      }
+    }
+  }
+}
+
+// A downloadable game may have real source-native screenshots. Verify all
+// original in-game phases and hashes before advertising them as current media.
+const hordeId = "derniere-ligne-zero-repli";
+const hordeProofPath = "docs/media-proof/derniere-ligne-local-0442-2026-11-01.json";
+assert(await exists(hordeProofPath), "preuve native du jeu local Dernière Ligne présente");
+if (await exists(hordeProofPath)) {
+  const proof = JSON.parse(await readFile(path.join(root, hordeProofPath), "utf8"));
+  const app = apps.find((item) => item.id === hordeId);
+  const gallery = galleryMap[hordeId];
+  const tracked = fidelityItems.get(hordeId);
+  const manifest = nativeEntries.find((item) => item.id === hordeId);
+  assert(proof.notGeneratedArt === true && proof.captureType === "native-local-browser-gameplay",
+    "pas d'illustration synthétique de Dernière Ligne");
+  assert(proof.version === "0.44.2" && /^[a-f0-9]{40}$/.test(proof.sourceCommit),
+    "version exacte et SHA source complet du build local");
+  assert(proof.source === "https://github.com/darknigthmare/The-Horde-The-Last-Stand",
+    "lien de provenance source, pas Vercel inventé");
+  assert(proof.overview?.realCombatPhaseConfirmed && proof.overview?.title?.includes("0.44.2"),
+    "première nuit jouable réellement observée");
+  assert(app?.accessPolicy === "local-download" && app?.mediaPendingReview === false,
+    "capture source vérifiée et distribution locale distincte du jeu web");
+  assert(gallery?.captureType === "real-local-gameplay" && gallery.captureProof === hordeProofPath,
+    "galerie identifiée comme capture réelle locale");
+  assert(gallery?.captureVersion === "0.44.2" && gallery?.presentationReview === "source-verified",
+    "écran titre local tiré du moteur et non concept art");
+  assert(Array.isArray(gallery.images) && gallery.images.length === 5 &&
+    Array.isArray(gallery.labels) && gallery.labels.length === 5 &&
+    Array.isArray(proof.scenes) && proof.scenes.length === 5,
+    "cinq images de la campagne et leur titre authentique");
+  assert(tracked?.screenshotCaptureProof === hordeProofPath &&
+    tracked?.screenshotCount === 5 && tracked?.screenshotFreshness === "up-to-date",
+    "cinq captures enregistrées dans la matrice de fidélité");
+  assert(manifest?.sourceCommit === proof.sourceCommit &&
+    manifest?.presentation === proof.presentation?.path &&
+    manifest?.preview === proof.preview?.path,
+    "manifeste de provenance relie le build natif, l'écran titre et le preview");
+  const expectedPhases = ["menu", "camp", "combat", "combat", "combat"];
+  for (let i = 0; i < 5; i++) {
+    const scene = proof.scenes[i], file = gallery.images[i];
+    assert(scene?.phase === expectedPhases[i] && scene?.path === file &&
+      scene?.label === gallery.labels[i],
+      `vraie phase et légende de Dernière Ligne ${i + 1}`);
+    assert(await exists(file), `capture native Dernière Ligne ${i + 1} présente`);
+    if (await exists(file)) {
+      const img = await readFile(path.join(root, file));
+      assert(createHash("sha256").update(img).digest("hex") === scene.sha256,
+        `SHA-256 de la capture Dernière Ligne ${i + 1} vérifié`);
+      assert(img.subarray(0, 8).toString("hex") === "89504e470d0a1a0a" &&
+        img.readUInt32BE(16) === 1280 && img.readUInt32BE(20) === 720,
+        `capture Dernière Ligne ${i + 1} PNG 1280x720`);
+    }
+  }
+  assert(await exists(proof.preview.path), "aperçu de combat local présent");
+  assert(await exists(proof.presentation.path), "titre du jeu local présent");
+  if (await exists(proof.preview.path)) {
+    const preview = await readFile(path.join(root, proof.preview.path));
+    assert(createHash("sha256").update(preview).digest("hex") === proof.preview.sha256 &&
+      preview.subarray(0, 3).toString("hex") === "ffd8ff",
+      "aperçu JPG pris dans le vrai combat de Dernière Ligne");
+  }
+  if (await exists(proof.presentation.path)) {
+    const presentation = await readFile(path.join(root, proof.presentation.path));
+    assert(createHash("sha256").update(presentation).digest("hex") === proof.presentation.sha256,
+      "écran titre réel, empreinte non modifiée");
+  }
+}
+assert(html.includes('"real-local-gameplay"') && html.includes("Fichiers et installation"),
+  "présentation local-source et accès par téléchargement dans l'interface");
+
 let previousPresentationFiles = [];
 const previousPresentationDirectory = "assets/presentations/previous";
 const previousPresentationDirectoryExists = await exists(previousPresentationDirectory);
@@ -555,10 +1183,12 @@ if (previousPresentationDirectoryExists) {
     .filter((name) => rasterExtensionPattern.test(name))
     .map((name) => `${previousPresentationDirectory}/${name}`);
 }
-assert(appsWithoutPreviousPresentation.size === 28, "vingt-huit applications sans historique explicitement autorisées");
+assert(appsWithoutPreviousPresentation.size === 28 + recoveredApps.length,
+  "les 28 exceptions historiques et les jeux nouvellement retrouvés n'ont pas d'anciens visuels à inventer");
 for (const id of appsWithoutPreviousPresentation) {
   assert(ids.has(id), `exception historique attribuée à une application connue: ${id}`);
 }
+assert(Object.keys(archiveMap).length === 112, "les archives sont distinctes du manifeste public");
 assert(previousPresentationPaths.size === 112, "exactement 112 illustrations précédentes référencées");
 assert(previousPresentationHashes.size === 112, "exactement 112 contenus historiques distincts");
 assert(
@@ -574,20 +1204,26 @@ for (const id of Object.keys(galleryMap).filter((id) => id !== "notes")) {
   assert(ids.has(id), `galerie attribuée à une application connue: ${id}`);
 }
 
-assert(images.size === apps.length, "un aperçu exactement par application");
-assert(presentations.size === apps.length, "une présentation exactement par application");
-assert(images.size === 140, "exactement 140 aperçus référencés");
-assert(presentations.size === 140, "exactement 140 présentations référencées");
-assert(galleryPaths.size === 700, "exactement 700 captures de galerie référencées");
+assert(images.size === establishedApps.length + recoveredWithNativeMedia.length,
+  "aperçus historiques plus vraies captures natives de jeux retrouvés");
+assert(presentations.size === establishedApps.length + recoveredWithNativeMedia.length,
+  "présentations historiques plus titres de jeu source-native");
+assert(galleryPaths.size === 700 + recoveredWithNativeMedia.length * 5,
+  "700 captures historiques plus cinq images vérifiées par nouveau jeu illustré");
 assert(
   Object.keys(galleryMap).filter((id) => id !== "notes").length === apps.length,
   "une galerie exactement par application"
 );
-assert(html.includes("previousPresentation"), "l'interface charge previousPresentation depuis les galeries");
-assert(html.includes("sanitizeImageUrl(app.previousPresentation)"), "l'illustration précédente participe au carrousel et au contrôle média");
-assert(html.includes("Illustration précédente"), "le libellé Illustration précédente est visible dans l'interface");
+assert(html.includes('fetch("assets/app-gallery-admin.json"'), "le manifeste historique est demandé séparément");
+assert(html.includes("if (!adminMode) return;"), "les archives ne sont chargées qu'en mode édition");
+assert(html.includes("adminMode && app.previousPresentation"), "la galerie publique masque les anciennes illustrations");
+assert(html.includes("sanitizeImageUrl(app.previousPresentation)"), "le visuel historique reste consultable en mode édition");
+assert(html.includes("Ancienne illustration · archive"), "le visuel historique est identifié comme archive");
+assert(html.includes("Ancienne capture"), "les anciennes captures restent disponibles seulement en mode édition");
+assert(html.includes("previousScreenshots"), "l'application supporte les captures historiques séparées");
 const iconSprite = await readFile(path.join(root, "assets", "app-icons.svg"), "utf8");
 for (const app of apps) {
+  if (app.recoveredGame) continue; // Les jeux retrouvés peuvent utiliser leur monogramme en attendant un pictogramme fidèle.
   assert(iconSprite.includes(`id="icon-${app.id}"`), `icône SVG présente pour ${app.id}`);
 }
 
@@ -682,8 +1318,8 @@ for (const asset of appShell) {
 }
 assert(appShell.includes("/assets/openai-art-manifest.json"), "le manifeste OpenAI fait partie du shell hors ligne");
 assert(appShellBytes <= 5 * 1024 * 1024, "le préchargement APP_SHELL reste inférieur à 5 Mo");
-assert(serviceWorker.includes('const CACHE_NAME = "launcher-shell-v28"'), "le cache applicatif v1.12 utilise launcher-shell-v28");
-assert(serviceWorker.includes('const RUNTIME_CACHE = "launcher-media-runtime-v1"'), "le cache média différé est versionné");
+assert(serviceWorker.includes('const CACHE_NAME = "launcher-shell-v31"'), "le cache applicatif v1.15 utilise launcher-shell-v31");
+assert(serviceWorker.includes('const RUNTIME_CACHE = "launcher-media-runtime-v2"'), "le cache média renouvelé utilise launcher-media-runtime-v2");
 assert(serviceWorker.includes("const MAX_RUNTIME_ENTRIES = 120"), "le cache média différé est borné");
 assert(
   serviceWorker.includes("/^\\/assets\\/(?:previews|presentations|screenshots)\\//"),
@@ -695,7 +1331,8 @@ assert(serviceWorker.includes('response.type === "basic"'), "seules les réponse
 assert(serviceWorker.includes('isCacheableResponse(response, "text/html")'), "le fallback de navigation reste un document HTML");
 assert(serviceWorker.match(/event\.waitUntil\(updatePromise\)/g)?.length === 2, "les écritures différées prolongent les événements fetch");
 const mediaFiles = [...previewFiles, ...presentationFiles, ...previousPresentationPaths, ...galleryPaths];
-assert(mediaFiles.length === 1092, "exactement 1 092 médias référencés");
+assert(mediaFiles.length === 1092 + recoveredWithNativeMedia.length * 7,
+  "les 1 092 médias historiques restent intacts, avec sept vrais médias par jeu retrouvé illustré");
 assert(new Set(mediaFiles).size === mediaFiles.length, "le compte total des médias ne contient aucun doublon");
 assert(
   !mediaFiles.some((asset) => serviceWorker.includes(`"/${asset}"`)),

@@ -1,0 +1,86 @@
+{
+  "captureType": "native-local-browser-gameplay",
+  "notGeneratedArt": true,
+  "gameId": "derniere-ligne-zero-repli",
+  "source": "https://github.com/darknigthmare/The-Horde-The-Last-Stand",
+  "sourceCommit": "d3d4bb04abeae1cddc8be0102a78165736476042",
+  "version": "0.44.2",
+  "capturedAt": "2026-11-01T15:39:11.918Z",
+  "htmlPath": "game/JOUER_DERNIERE_LIGNE.html",
+  "browser": "Headless Chromium CDP with file:// origin",
+  "overview": {
+    "title": "Dernière Ligne — Poste stabilisé 0.44.2",
+    "viewport": "1280x720",
+    "realCombatPhaseConfirmed": true
+  },
+  "presentation": {
+    "path": "assets/presentations/derniere-ligne-zero-repli.png",
+    "sha256": "e5f02620fbe320921544ffed1989df9520c0b5d794a9092122265c510b386102",
+    "bytes": 393031,
+    "kind": "Actual in-game title/menu artwork, not an image model generation"
+  },
+  "preview": {
+    "path": "assets/previews/derniere-ligne-zero-repli.jpg",
+    "sha256": "0c75e701f1b88a878c5331f27aedf526755d223b416989837bc7f5cfb19fd8b0",
+    "bytes": 150611,
+    "kind": "Actual night combat screenshot"
+  },
+  "scenes": [
+    {
+      "slot": 1,
+      "label": "Campagnes — les neuf fronts de la dernière ligne",
+      "path": "assets/screenshots/derniere-ligne-zero-repli/01.png",
+      "kind": "actual-game-ui",
+      "phase": "menu",
+      "sha256": "eda7760193cf31b358abbc0fb66475410b66527cea92ffea58464436172a51e8",
+      "bytes": 464337,
+      "screen": "1280x720"
+    },
+    {
+      "slot": 2,
+      "label": "Dépôt 07 — préparation des défenses et du convoi",
+      "path": "assets/screenshots/derniere-ligne-zero-repli/02.png",
+      "kind": "actual-game-ui",
+      "phase": "camp",
+      "sha256": "495147cc750010a2db0d8e4d48500f7526720b57f7dfbfaeb8f12a6f32ac2cfb",
+      "bytes": 497294,
+      "screen": "1280x720"
+    },
+    {
+      "slot": 3,
+      "label": "Nuit 01 — le premier assaut du Dépôt 07",
+      "path": "assets/screenshots/derniere-ligne-zero-repli/03.png",
+      "kind": "real-gameplay",
+      "phase": "combat",
+      "sha256": "aa9dab6cc689a8979232d93180b966143fd4c923efb4418fba7030c3525ccdfd",
+      "bytes": 742016,
+      "screen": "1280x720"
+    },
+    {
+      "slot": 4,
+      "label": "Dépôt 07 — maintien des deux voies",
+      "path": "assets/screenshots/derniere-ligne-zero-repli/04.png",
+      "kind": "real-gameplay",
+      "phase": "combat",
+      "sha256": "8e65788bcbcdd0b21533aca2d88e9630994417b8bd94979a477cb2f6ce3e6026",
+      "bytes": 749798,
+      "screen": "1280x720"
+    },
+    {
+      "slot": 5,
+      "label": "Nuit 01 — ligne de défense et HUD tactique",
+      "path": "assets/screenshots/derniere-ligne-zero-repli/05.png",
+      "kind": "real-gameplay",
+      "phase": "combat",
+      "sha256": "6da184c4fc8bf15ad83ef81eb7b898e413c3794f9126b70b329c6feaf59347be",
+      "bytes": 748227,
+      "screen": "1280x720"
+    }
+  ],
+  "noHistoricalMedia": true,
+  "limitations": [
+    "Five frames from one real 0.44.2 campaign, not all nine campaigns",
+    "No assumption of Vercel hosting",
+    "Authentic runtime views do not establish absolute visual fidelity to external works"
+  ]
+}

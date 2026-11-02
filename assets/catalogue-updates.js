@@ -1,5 +1,53 @@
 window.LAUNCHER_RELEASES = [
   {
+    "version": "1.15.0",
+    "date": "2026-11-02",
+    "title": "Catalogue à jour et nouvelles galeries natives",
+    "highlights": [
+      "158 fiches dont 145 jeux : AVP Blood Arena rejoint les téléchargements locaux comme prototype 0.1.0, distinct des versions historiques non restaurées. SOMA//MASSILIA passe de 0.1.0 à 0.6.0, version confirmée par son manifeste public.",
+      "20 nouvelles captures réelles dans 4 galeries, avec écrans natifs, aperçus, SHA sources et empreintes des images. Le suivi compte 105 captures documentées ; 6 jeux retrouvés attendent encore leurs médias. Aucune fidélité canonique 1:1 n’est présumée.",
+      "Les légendes correspondent aux jeux photographiés. Le cache PWA est renouvelé pour récupérer les fiches et images actualisées, tout en conservant les favoris et les noms personnalisés.",
+      "158 liens contrôlés : 151 sites accessibles, six dépôts de téléchargement et Malaise Party avec connexion Vercel requise. Tests de destinations et parcours Chromium exécutés dans la CI."
+    ],
+    "appIds": [
+      "avp-blood-arena",
+      "soma-massilia",
+      "riftcasters-chaos-anglers",
+      "diva-pulse",
+      "parallaxe-protocole-9"
+    ]
+  },
+  {
+    version: "1.14.0",
+    date: "2026-11-01",
+    title: "Jeux retrouvés — portes et archives",
+    highlights: [
+      "Dix-sept jeux oubliés rejoignent les 140 fiches existantes : dix productions Vercel identifiées, cinq éditions GitHub locales et deux mini-jeux d’anthologies d’août. Le catalogue candidat compte 157 fiches dont 144 jeux.",
+      "Chaque nouvelle fiche donne un contexte diégétique et distingue les liens Jouer de ceux vers Fichiers et installation. Les médias non vérifiés ne sont pas présentés comme une fidélité 1:1.",
+      "DEADLINE: Outbreak et Resident Evil: B.O.W. Protocol bénéficient de véritables écrans et captures du moteur. Dernière Ligne 0.44.2 rejoint les galeries natives : cinq scènes de sa vraie campagne (deux interfaces et trois vues du combat), avec SHA source, empreintes des images et aperçu — pas de faux déploiement Vercel.",
+      "Ragtime Rumble Complete Tour 3.2.0-alpha.3 fournit cinq captures source-native du vrai menu, de la Tournée, de l'éditeur, du combat Maestro Bellows et de la pause. Le catalogue compte 80 captures certifiées comme issues des moteurs de jeux, sans prétendre que les modèles sont fidèles 1:1."
+    ],
+    appIds: [
+      "mass-effect-relay-chronicles", "resident-evil-bow-protocol", "digital-circus-encore",
+      "yugioh-25d-holograms", "riftcasters-3d", "riftcasters-chaos-anglers",
+      "reclaimed-after-dark", "deadline-outbreak", "ragtime-rumble-complete-tour",
+      "silent-hill-halo-of-flesh", "diva-pulse", "derniere-ligne-zero-repli",
+      "fallout-marseille-mistral", "parallaxe-protocole-9", "massilia-cyberpunk",
+      "dont-look-when-they-say-soleil", "maid-cafe-simulator-deluxe"
+    ]
+  },
+  {
+    version: "1.13.0",
+    date: "2026-11-01",
+    title: "Fidélité des dossiers et archives visuelles",
+    highlights: [
+      "Les anciennes illustrations restent conservées dans le dépôt mais disparaissent de la galerie publique : l'accès visuel est réservé au mode édition local, en attendant une vraie authentification.",
+      "Brèche Multiverselle, Vortex Command et PREDATOR: HIVE WARRIORS retrouvent leurs adresses publiques vérifiées. Malaise Party affiche honnêtement la connexion Vercel requise.",
+      "Quinze jeux omis sont réintégrés, dont cinq distributions locales GitHub sans faux lien de navigateur. Cinquante captures documentées sur dix galeries, avec preuves et archivage des anciens visuels ; les images des autres jeux attendent encore une validation 1:1."
+    ],
+    appIds: ["multiverse-breach", "vortex-command", "yautja-hive-warriors", "triarche-ciel-rouge", "world-hive-wars", "deadwall-last-enclosure", "moustique-the-video-game", "yautja-apex-hunt", "shadow-codec-ops", "cainos", "avp-hunt-hive-tcg", "malaise-party", "diva-pulse", "derniere-ligne-zero-repli", "fallout-marseille-mistral", "parallaxe-protocole-9", "massilia-cyberpunk", "deadline-outbreak"]
+  },
+  {
     version: "1.12.0",
     date: "2026-08-30",
     title: "Six créations sortent des archives",

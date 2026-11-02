@@ -1,0 +1,74 @@
+#!/usr/bin/env node
+/**
+ * Inspect the CURRENT self-contained Dernière Ligne game without inventing
+ * or publishing screenshots before the actual browser test.
+ */
+import { existsSync } from "node:fs";
+import { mkdir,writeFile } from "node:fs/promises";
+import { resolve } from "node:path";
+import { pathToFileURL } from "node:url";
+import { openNativeBrowser } from "./browser-capture-common.mjs";
+
+const root=process.cwd();
+const game=resolve(root,"reference-the-horde/game/JOUER_DERNIERE_LIGNE.html");
+if(!existsSync(game))throw Error("Le jeu source 0.44.2 n'a pas été téléchargé");
+const url=pathToFileURL(game).href;
+const browser=await openNativeBrowser(url,{width:1280,height:720,timeout:160000});
+try {
+  await browser.waitFor("document.readyState==='complete' && document.querySelectorAll('button').length>3",160000);
+  await browser.sleep(1100);
+  const expression="(()=>({title:document.title,urlProtocol:location.protocol,readyState:document.readyState,"+
+    "text:document.body.innerText.slice(0,1800),"+
+    "buttons:[...document.querySelectorAll('button')].slice(0,80).map(x=>({id:x.id,text:x.innerText?.trim().slice(0,100),class:x.className,disabled:x.disabled,hidden:!!x.closest('[hidden],.hidden')})),"+
+    "canvases:[...document.querySelectorAll('canvas')].map(x=>({id:x.id,width:x.width,height:x.height})),"+
+    "scripts:document.scripts.length,bodyClass:document.body.className,"+
+    "visibleSections:[...document.querySelectorAll('main,section,[role=dialog]')].filter(x=>x.getBoundingClientRect().width>100&&x.getBoundingClientRect().height>100).slice(0,20).map(x=>({id:x.id,cls:x.className,tag:x.tagName})),"+
+    "errorTexts:[...document.querySelectorAll('[role=alert],.fatal-error')].filter(x=>x.offsetHeight>0).map(x=>x.textContent.trim().slice(0,200))}))()";
+  const report=await browser.evaluate(expression);
+  const bytes=await browser.capture("png");
+  await mkdir(resolve(root,".reports/horde-current"),{recursive:true});
+  await writeFile(resolve(root,".reports/horde-current/inspection.json"),JSON.stringify({source:"darknigthmare/The-Horde-The-Last-Stand",sourceBuild:"0.44.2 according to README",capturedAt:new Date().toISOString(),...report},null,2)+"\n");
+  await writeFile(resolve(root,".reports/horde-current/initial-native.png"),bytes);
+  const center=await browser.evaluate("(()=>{const e=document.getElementById('dl403-play');if(!e||e.disabled)throw Error('Campagne indisponible');const r=e.getBoundingClientRect();return {x:Math.round(r.left+r.width/2),y:Math.round(r.top+r.height/2)}})()");
+  await browser.call("Input.dispatchMouseEvent",{type:"mouseMoved",x:center.x,y:center.y});
+  await browser.call("Input.dispatchMouseEvent",{type:"mousePressed",x:center.x,y:center.y,button:"left",clickCount:1});
+  await browser.call("Input.dispatchMouseEvent",{type:"mouseReleased",x:center.x,y:center.y,button:"left",clickCount:1});
+  await browser.sleep(850);
+  const campaign=await browser.evaluate(expression);
+  await writeFile(resolve(root,".reports/horde-current/campaign-inspection.json"),JSON.stringify(campaign,null,2)+"\n");
+  await writeFile(resolve(root,".reports/horde-current/campaign-native.png"),await browser.capture("png"));
+  const activeButtons=campaign.buttons.filter(x=>!x.hidden);
+  console.log("HORDE CAMPAIGN INSPECTION "+JSON.stringify({text:campaign.text.slice(0,1100),buttons:activeButtons,sections:campaign.visibleSections}));
+  const clickReal=async(id)=>{
+    const pt=await browser.evaluate("(()=>{const el=document.getElementById("+JSON.stringify(id)+");if(!el||el.disabled)throw Error('Action inaccessible');const rect=el.getBoundingClientRect();return {x:Math.round(rect.x+rect.width/2),y:Math.round(rect.y+rect.height/2)}})()");
+    await browser.call("Input.dispatchMouseEvent",{type:"mouseMoved",x:pt.x,y:pt.y});
+    await browser.call("Input.dispatchMouseEvent",{type:"mousePressed",x:pt.x,y:pt.y,button:"left",clickCount:1});
+    await browser.call("Input.dispatchMouseEvent",{type:"mouseReleased",x:pt.x,y:pt.y,button:"left",clickCount:1});
+  };
+  await clickReal("newCampaign");
+  await browser.sleep(950);
+  const preparation=await browser.evaluate("(()=>({title:document.title,phase:document.getElementById('shell')?.dataset?.phase,text:document.body.innerText.slice(0,1900),buttons:[...document.querySelectorAll('button')].filter(e=>e.getClientRects().length>0 && !e.closest('[hidden],.hidden')).map(e=>({id:e.id,text:e.innerText?.trim().slice(0,90),disabled:e.disabled})).slice(0,95),sections:[...document.querySelectorAll('main,section,[role=dialog]')].filter(e=>e.getBoundingClientRect().width>100&&e.getBoundingClientRect().height>100).map(e=>({id:e.id,cl:e.className})).slice(0,15)}))()");
+  await writeFile(resolve(root,".reports/horde-current/preparation-inspection.json"),JSON.stringify(preparation,null,2)+"\n");
+  await writeFile(resolve(root,".reports/horde-current/preparation-native.png"),await browser.capture("png"));
+  console.log("HORDE PREPARATION INSPECTION "+JSON.stringify(preparation));
+  await clickReal("v20SkipTrain");
+  await browser.sleep(980);
+  const active=await browser.evaluate("(()=>({title:document.title,phase:document.getElementById('shell')?.dataset?.phase,text:document.body.innerText.slice(0,1800),buttons:[...document.querySelectorAll('button')].filter(x=>x.getClientRects().length>0&&!x.closest('[hidden],.hidden')).slice(0,100).map(x=>({id:x.id,text:x.innerText?.trim().slice(0,88),disabled:x.disabled})),screen:[...document.querySelectorAll('.screen-active')].map(x=>({id:x.id,cls:x.className}))}))()");
+  console.log("HORDE AFTER TRAINING INSPECTION "+JSON.stringify(active));
+  await clickReal("startWaveBtn");
+  await browser.sleep(1150);
+  const combat=await browser.evaluate("(()=>({title:document.title,phase:document.getElementById('shell')?.dataset?.phase,text:document.body.innerText.slice(0,1300),buttons:[...document.querySelectorAll('button')].filter(x=>x.getClientRects().length>0&&!x.closest('[hidden],.hidden')).slice(0,70).map(x=>({id:x.id,text:x.innerText?.trim().slice(0,76),disabled:x.disabled})),screen:[...document.querySelectorAll('.screen-active')].map(x=>({id:x.id,cls:x.className})),gameCanvas:document.getElementById('game')?.getBoundingClientRect().toJSON()}))()");
+  console.log("HORDE REAL COMBAT INSPECTION "+JSON.stringify(combat));
+  await clickReal("v18CinemaSkip");
+  await browser.sleep(900);
+  const realCombat=await browser.evaluate("(()=>({title:document.title,phase:document.getElementById('shell')?.dataset?.phase,text:document.body.innerText.slice(0,900),buttons:[...document.querySelectorAll('button')].filter(x=>x.getClientRects().length>0&&!x.closest('[hidden],.hidden')).slice(0,45).map(x=>({id:x.id,text:x.innerText?.trim().slice(0,60),disabled:x.disabled})),screen:[...document.querySelectorAll('.screen-active')].map(x=>({id:x.id,cls:x.className})),canvasVisible:document.getElementById('game')?.getBoundingClientRect().width>0,gameCanvas:{width:document.getElementById('game')?.width,height:document.getElementById('game')?.height}}))()");
+  console.log("HORDE LIVE NIGHT INSPECTION "+JSON.stringify(realCombat));
+  await writeFile(resolve(root,".reports/horde-current/live-night-inspection.json"),JSON.stringify(realCombat,null,2)+"\n");
+  await writeFile(resolve(root,".reports/horde-current/live-night-native.png"),await browser.capture("png"));
+  await writeFile(resolve(root,".reports/horde-current/combat-inspection.json"),JSON.stringify(combat,null,2)+"\n");
+  await writeFile(resolve(root,".reports/horde-current/combat-native.png"),await browser.capture("png"));
+  await writeFile(resolve(root,".reports/horde-current/after-training-inspection.json"),JSON.stringify(active,null,2)+"\n");
+  await writeFile(resolve(root,".reports/horde-current/after-training-native.png"),await browser.capture("png"));
+  console.log("HORDE LOCAL INSPECTION "+JSON.stringify({title:report.title,protocol:report.urlProtocol,buttons:report.buttons.slice(0,30),canvases:report.canvases,scripts:report.scripts,sections:report.visibleSections,errorTexts:report.errorTexts}));
+  if(!report.title.toLowerCase().includes("dernière")&&!report.text.toLowerCase().includes("dernière ligne"))throw Error("Local HTML not identifiable as Dernière Ligne");
+} finally {await browser.close();}

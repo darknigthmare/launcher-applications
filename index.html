@@ -848,6 +848,23 @@
       gap: 14px;
     }
 
+    .capture-proof {
+      color: var(--muted);
+      font-size: 0.77rem;
+      line-height: 1.4;
+      padding: 9px 12px;
+      border: 1px solid var(--line);
+      border-top: 0;
+    }
+
+    .access-note {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px 12px;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
     .admin-only {
       display: none;
     }
@@ -1379,8 +1396,8 @@
         id: "cainos",
         name: "C&A Mainframe Terminal",
         category: "Simulation",
-        description: "Un terminal narratif sombre, pense comme une console d'acces a un systeme qui sait trop de choses.",
-        pitch: "Un mainframe de lore a explorer comme une piece fermee dont chaque commande ouvre une porte.",
+        description: "Le terminal C&A cache une salle de contrôle, ses archives et Circus Combat — Encore. Après calibration, ouvre une arène où quatorze combattants, douze décors, neuf modes et des costumes sélectionnables composent des duels à part entière, sans confondre les fiches d'archive avec des combattants jouables.",
+        pitch: "Calibre le terminal, franchis la console et découvre ce que le Cirque a programmé.",
         tags: ["Terminal", "Lore", "Simulation", "Horreur"],
         icon: "CA",
         link: "https://cainos.vercel.app",
@@ -1477,8 +1494,8 @@
         id: "shadow-codec-ops",
         name: "Shadow Codec Ops",
         category: "Jeux",
-        description: "Un simulateur Codec tactique avec appels radio, missions 2D, archives, VR missions et base de lore.",
-        pitch: "Une interface d'operation clandestine entre terminal militaire, frequences codec et side ops jouables.",
+        description: "Les fréquences Codec relient des opérations furtives en 2D, des archives tactiques et vingt-quatre Side Ops réparties entre douze époques. Observe les patrouilles, exploite leurs angles morts et rejoins les scènes dédiées MG1, MGS1 ou Ground Zeroes : chaque contact radio possède son contexte.",
+        pitch: "La fréquence est ouverte. Infiltre le secteur, récupère le renseignement et évacue.",
         tags: ["Tactique", "Codec", "Infiltration", "Retro"],
         icon: "SC",
         link: "https://shadow-codec-ops.vercel.app",
@@ -1589,8 +1606,8 @@
         id: "vortex-command",
         name: "Vortex Command",
         category: "Jeux",
-        description: "Un RTS de defense mondiale ou forces, logistique et recherche affrontent un kaiju qui s'adapte.",
-        pitch: "Choisis une doctrine, mobilise les villes et lance le Protocole Leviathan avant la rupture.",
+        description: "Protocole Léviathan : six districts doivent évacuer pendant qu'une créature géante apprend de tes ripostes. Dirige les unités, protège les convois, sécurise les dépôts, choisis une doctrine et finance la recherche. Huit familles de kaijus et un théâtre destructible transforment chaque ordre en conséquence.",
+        pitch: "La ville s'effondre. Choisis ta doctrine et garde une route d'évacuation ouverte.",
         tags: ["RTS", "Kaiju", "Stratégie", "Défense"],
         icon: "VC",
         link: "https://vortex-command.vercel.app",
@@ -1673,8 +1690,8 @@
         id: "triarche-ciel-rouge",
         name: "TRIARCHE : Ciel Rouge",
         category: "Jeux",
-        description: "Un jeu d'action et de survie asymetrique qui raconte une invasion depuis les camps alien et humain.",
-        pitch: "Pilote les machines d'invasion ou guide la resistance jusqu'au dernier signal.",
+        description: "Sous un ciel rouge, l'invasion divise la ville. Choisis la campagne Ascension et commande l'un des quatre châssis extraterrestres, ou rejoins Dernière fréquence : sept missions pour secourir, fortifier et saboter avec cinq spécialisations humaines. Treize opérations libres prolongent la guerre au milieu des quartiers destructibles.",
+        pitch: "Deux fréquences, une ville en feu : mène la Moisson ou sauve le dernier refuge.",
         tags: ["Action", "Survie", "Campagne", "Asymétrique"],
         icon: "TC",
         link: "https://triarche-ciel-rouge.vercel.app",
@@ -1729,8 +1746,8 @@
         id: "yautja-la-longue-chasse",
         name: "Yautja : La Longue Chasse",
         category: "Jeux",
-        description: "Un jeu d'action 2D de chasse interstellaire, d'honneur, d'arsenal et de trophees.",
-        pitch: "Etudie une proie digne, choisis l'arme juste et reviens avec un trophee.",
+        description: "La chasse commence dans le vaisseau, pas dans l'arène. Équipe ton Yautja et poursuis des contrats en 2D latérale ; les fronts de clans, Preserve Hunt et Homeworld ouvrent des parcours distincts de commandement, de sabotage et d'exploration, dont la complétude varie selon les secteurs.",
+        pitch: "Prépare la chasse, traverse le territoire et rapporte un trophée digne de ton clan.",
         tags: ["Action 2D", "Chasse", "Sci-fi", "Trophées"],
         icon: "YC",
         link: "https://yautja-la-longue-chasse.vercel.app",
@@ -1953,8 +1970,8 @@
         id: "yautja-apex-hunt",
         name: "Yautja: Apex Hunt",
         category: "Jeux",
-        description: "Une chasse aux monstres en 3D depuis un vaisseau-mère Yautja, avec visions tactiques, huit armes, contrats planétaires, boss, forge d'honneur et plus de vingt armures inspirées du lore.",
-        pitch: "Scanne la planète, sélectionne ton contrat et prouve ton honneur face aux proies suprêmes.",
+        description: "Dans le croiseur, prépare ton chasseur Yautja : forge, trophées et paquetages limités imposent de choisir les bons outils avant la descente. Quinze contrats et neuf biomes opposent proies, rivaux et prédateurs majeurs ; la traque mêle visions, camouflage, armement et retour au vaisseau.",
+        pitch: "Au croiseur, arme le chasseur. Sur la planète, mérite le trophée.",
         tags: ["Chasse 3D", "Yautja", "Boss", "Lore"],
         icon: "AH",
         link: "https://yautja-apex-hunt.vercel.app",
@@ -2110,7 +2127,19 @@
     const LEGACY_ADDED_AT = "1970-01-01T00:00:00.000Z";
     const MEDIA_HEALTH_WORKER_COUNT = 6;
     const AVAILABILITY_FILTERS = ["Tous", "Disponible", "En préparation", "Nouveauté"];
-    const OFFICIAL_SYNC_FIELDS = ["link", "status", "releaseState", "addedAt"];
+    const OFFICIAL_SYNC_FIELDS = ["link", "status", "releaseState", "addedAt", "description", "pitch", "accessPolicy", "mediaPendingReview"];
+    // Only replace known obsolete official media paths: preserve intentional local customizations.
+    const OFFICIAL_PREVIEW_MIGRATIONS = new Map([
+      ["world-hive-wars", "assets/previews/world-hive-wars.webp"],
+      ["moustique-the-video-game", "assets/previews/moustique-the-video-game.webp"]
+    ]);
+    // Never flash unreviewed promotional artwork before the asynchronous gallery loads.
+    const PENDING_VISUAL_REVIEWS = new Set([
+      "triarche-ciel-rouge", "deadwall-last-enclosure",
+      "yautja-apex-hunt", "moustique-the-video-game",
+      "world-hive-wars", "shadow-codec-ops", "cainos", "avp-hunt-hive-tcg",
+      "vortex-command"
+    ]);
     const appIconIds = new Set(starterApps.map((app) => app.id));
     const stage = document.getElementById("stage");
     const grid = document.getElementById("appGrid");
@@ -2203,6 +2232,10 @@
       const tags = [...new Set(rawTags.map((tag) => String(tag).trim()).filter(Boolean))].slice(0, 10);
       const rawGallery = Array.isArray(source.gallery) ? source.gallery : (Array.isArray(fallback.gallery) ? fallback.gallery : []);
       const gallery = [...new Set(rawGallery.map(sanitizeImageUrl).filter(Boolean))].slice(0, 10);
+      const galleryLabels = (Array.isArray(source.galleryLabels) ? source.galleryLabels : [])
+        .map((label) => String(label || "").trim().slice(0, 90)).slice(0, 10);
+      const previousScreenshots = (Array.isArray(source.previousScreenshots) ? source.previousScreenshots : [])
+        .map(sanitizeImageUrl).filter(Boolean).slice(0, 10);
       const name = String(source.name || fallback.name || "Application").trim().slice(0, 80);
       const link = sanitizeLaunchUrl(source.link || fallback.link);
       const status = String(source.status || fallback.status || "").trim().slice(0, 40);
@@ -2231,12 +2264,21 @@
         tags,
         icon: String(source.icon || fallback.icon || initials(name)).trim().slice(0, 5),
         link,
+        mediaPendingReview: source.mediaPendingReview === true || fallback.mediaPendingReview === true,
         presentation: sanitizeImageUrl(source.presentation || fallback.presentation || source.image || fallback.image),
         previousPresentation: sanitizeImageUrl(source.previousPresentation || fallback.previousPresentation),
+        previousPreview: sanitizeImageUrl(source.previousPreview || fallback.previousPreview),
+        previousScreenshots,
         image: sanitizeImageUrl(source.image || fallback.image),
         gallery,
+        galleryLabels,
+        captureType: String(source.captureType || "").trim().slice(0, 40),
+        captureVersion: String(source.captureVersion || "").trim().slice(0, 40),
+        captureDate: String(source.captureDate || "").trim().slice(0, 20),
+        presentationReview: String(source.presentationReview || "").trim().slice(0, 40),
         accent: sanitizeAccent(source.accent || fallback.accent),
         status,
+        accessPolicy: ["vercel-sso", "local-download"].includes(source.accessPolicy) ? source.accessPolicy : ["vercel-sso", "local-download"].includes(fallback.accessPolicy) ? fallback.accessPolicy : "",
         releaseState,
         addedAt
       };
@@ -2276,12 +2318,37 @@
       const loaded = saved
         .filter((app) => app && typeof app === "object")
         .map((savedApp) => {
-          const starter = starterById.get(String(savedApp.id));
-          if (!starter) return normalizeApp(savedApp);
-          const synchronized = { ...savedApp };
+          // Never trust archived URLs from an older localStorage catalogue.
+          const clean = { ...savedApp };
+          delete clean.previousPresentation;
+          delete clean.previousPreview;
+          delete clean.previousScreenshots;
+          // Only the audited gallery manifest can attest real captures.
+          for (const key of ["captureType", "captureVersion", "captureDate",
+            "captureSource", "captureProof", "presentationReview", "galleryLabels"]) {
+            delete clean[key];
+          }
+          const starter = starterById.get(String(clean.id));
+          if (!starter) return normalizeApp(clean);
+          const synchronized = { ...clean };
           OFFICIAL_SYNC_FIELDS.forEach((field) => {
             synchronized[field] = starter[field] ?? "";
           });
+          // Official source-native captures may arrive after a user stored an
+          // earlier text-only recovered game. Fill missing media without
+          // overwriting any genuine personalized cover or preview.
+          if (starter.recoveredGame && starter.mediaPendingReview === false) {
+            if (!sanitizeImageUrl(clean.image) && starter.image) synchronized.image = starter.image;
+            if (!sanitizeImageUrl(clean.presentation) && starter.presentation) synchronized.presentation = starter.presentation;
+          }
+          const oldPreview = OFFICIAL_PREVIEW_MIGRATIONS.get(String(clean.id));
+          if (oldPreview) {
+            const formerUrl = new URL(oldPreview, document.baseURI).href;
+            const savedPreview = sanitizeImageUrl(clean.image);
+            if (!savedPreview || savedPreview === formerUrl || String(clean.image).trim() === oldPreview) {
+              synchronized.image = starter.image;
+            }
+          }
           return normalizeApp(synchronized);
         });
       const knownIds = new Set(loaded.map((app) => app.id));
@@ -2299,7 +2366,10 @@
     }
 
     function saveApps() {
-      safeWrite(storeKey, apps);
+      // Editor-only archive paths must not be cached in the public catalogue state.
+      safeWrite(storeKey, apps.map(({ previousPresentation, previousPreview, previousScreenshots,
+        captureType, captureVersion, captureDate, captureSource, captureProof,
+        presentationReview, galleryLabels, ...app }) => app));
     }
 
     function saveFavorites() {
@@ -2323,6 +2393,7 @@
     }
 
     function mediaLabel(app, index) {
+      if (app?.mediaPendingReview && mediaTargets(app).length === 0) return "Visuels en vérification · aucun rendu présumé fidèle";
       return mediaTargets(app)[index]?.label || `Vue ${index + 1}`;
     }
 
@@ -2368,6 +2439,8 @@
 
     function statusLabel(app) {
       if (availabilityFor(app) === "En préparation") return "En préparation";
+      if (app.accessPolicy === "vercel-sso") return "Connexion Vercel requise";
+      if (app.accessPolicy === "local-download") return "Jeu à télécharger";
       const state = onlineStatus[app.id];
       if (state === "online") return "Joignable";
       if (state === "offline") return "Injoignable";
@@ -2378,6 +2451,8 @@
 
     function statusClass(app) {
       if (availabilityFor(app) === "En préparation") return "preparing";
+      if (app.accessPolicy === "vercel-sso") return "checking";
+      if (app.accessPolicy === "local-download") return "local";
       if (onlineStatus[app.id]) return onlineStatus[app.id];
       return /^https?:/i.test(app.link) ? "checking" : "local";
     }
@@ -2823,7 +2898,7 @@
       details.setAttribute("aria-label", `Détails de ${app.name}`);
 
       const openControl = app.link
-        ? `<a class="primary-button" href="${escapeHtml(app.link)}" target="_blank" rel="noopener noreferrer" data-launch-app="${escapeHtml(app.id)}">Ouvrir</a>`
+        ? `<a class="primary-button" href="${escapeHtml(app.link)}" target="_blank" rel="noopener noreferrer" data-launch-app="${escapeHtml(app.id)}">${app.accessPolicy === "vercel-sso" ? "Connexion Vercel" : app.accessPolicy === "local-download" ? "Fichiers et installation" : "Ouvrir"}</a>`
         : `<button class="primary-button" type="button" disabled>${availabilityFor(app) === "En préparation" ? "En préparation" : "Sans lien"}</button>`;
 
       details.innerHTML = `
@@ -2856,6 +2931,19 @@
             </div>
           ` : ""}
         </div>
+        ${["real-gameplay", "real-engine-qa", "real-ui-navigation", "real-module-ui", "real-local-gameplay"].includes(app.captureType) && app.captureVersion && app.captureDate
+          ? `<p class="capture-proof">${app.captureType === "real-engine-qa"
+              ? "Images du moteur 3D · une scène jouable et quatre cadrages de QA"
+              : app.captureType === "real-local-gameplay"
+                ? "Captures natives du jeu exécuté localement"
+                : app.captureType === "real-ui-navigation"
+                  ? "Interfaces et scènes natives du jeu"
+                : app.captureType === "real-module-ui"
+                  ? app.id === "cainos"
+                    ? "CainOS réel · bureau, archives, sélection et duel Encore"
+                    : "Interfaces natives du jeu"
+                  : "Images prises dans le jeu"} · version ${escapeHtml(app.captureVersion)} · ${escapeHtml(app.captureDate)}</p>`
+          : ""}
         <div class="tag-row">
           <span class="tag">${escapeHtml(app.category)}</span>
           ${isNewApp(app) ? '<span class="tag new-tag">Nouveau</span>' : ""}
@@ -2865,6 +2953,9 @@
         <h2>${escapeHtml(app.name)}</h2>
         <p class="pitch">${escapeHtml(app.pitch)}</p>
         <p>${escapeHtml(app.description)}</p>
+        ${app.mediaPendingReview ? '<p class="access-note" role="note">Jeu retrouvé · lien et titre vérifiés. Aucune capture ni illustration certifiée du build n’est encore disponible dans cette fiche ; les visuels seront ajoutés uniquement après validation du vrai jeu.</p>' : ""}
+        ${app.accessPolicy === "vercel-sso" ? '<p class="access-note" role="note">Accès restreint : ce domaine demande une connexion Vercel. Il ne s’agit pas d’un jeu ouvert au public sans authentification.</p>' : ""}
+        ${app.accessPolicy === "local-download" ? '<p class="access-note" role="note">Distribution locale : le lien ouvre le dépôt GitHub et ses instructions. Ce bouton ne lance pas le jeu dans le navigateur. Aucun visuel ni capture 1:1 n’a été inventé.</p>' : ""}
         <div class="meta-list">
           ${gameTaxonomyMetaMarkup(app)}
           <div class="meta-item"><span>Statut</span><strong>${statusLabel(app)}</strong></div>
@@ -2908,7 +2999,7 @@
       showcaseTitle.textContent = app.name;
       showcaseBody.style.setProperty("--showcase-image", cssImage(app, 0));
       const openControl = app.link
-        ? `<a class="primary-button" href="${escapeHtml(app.link)}" target="_blank" rel="noopener noreferrer" data-launch-app="${escapeHtml(app.id)}">Ouvrir</a>`
+        ? `<a class="primary-button" href="${escapeHtml(app.link)}" target="_blank" rel="noopener noreferrer" data-launch-app="${escapeHtml(app.id)}">${app.accessPolicy === "vercel-sso" ? "Connexion Vercel" : app.accessPolicy === "local-download" ? "Fichiers et installation" : "Ouvrir"}</a>`
         : `<button class="primary-button" type="button" disabled>${availabilityFor(app) === "En préparation" ? "En préparation" : "Sans lien"}</button>`;
       showcaseBody.innerHTML = `
         <div class="showcase-image"></div>
@@ -2976,11 +3067,35 @@
 
     function mediaTargets(app) {
       const targets = [
-        { label: "Illustration OpenAI", url: sanitizeImageUrl(app.presentation) },
-        { label: "Illustration précédente", url: sanitizeImageUrl(app.previousPresentation) },
-        { label: "Aperçu", url: sanitizeImageUrl(app.image) },
+        ...(!app.mediaPendingReview && !PENDING_VISUAL_REVIEWS.has(app.id) && app.presentationReview !== "pending-fidelity" ? [{
+          label: app.presentationReview === "source-native-title-screen"
+            ? "Écran titre réel du jeu"
+            : app.captureType === "real-local-gameplay" ? "Écran titre réel du jeu local" : "Illustration conceptuelle",
+          url: sanitizeImageUrl(app.presentation)
+        }] : []),
+        { label: ["real-gameplay", "real-local-gameplay"].includes(app.captureType) ? "Aperçu du jeu réel" : app.captureType === "real-engine-qa"
+          ? "Rendu natif WebGL2 · cadrage QA" : app.captureType === "real-ui-navigation"
+            ? "Aperçu de l’interface réelle"
+            : app.captureType === "real-module-ui"
+              ? app.id === "cainos" ? "Aperçu du bureau CainOS" : "Aperçu de l’interface réelle" : "Aperçu", url: sanitizeImageUrl(app.image) },
         ...(Array.isArray(app.gallery) ? app.gallery.map((url, index) => ({
-          label: `Capture ${index + 1}`,
+          label: app.galleryLabels?.[index] || `Capture ${index + 1}`,
+          url: sanitizeImageUrl(url)
+        })) : []),
+        ...(adminMode && (PENDING_VISUAL_REVIEWS.has(app.id) || app.presentationReview === "pending-fidelity") ? [{
+          label: "Concept en attente de fidélité · archive",
+          url: sanitizeImageUrl(app.presentation)
+        }] : []),
+        ...(adminMode && app.previousPresentation ? [{
+          label: "Ancienne illustration · archive",
+          url: sanitizeImageUrl(app.previousPresentation)
+        }] : []),
+        ...(adminMode && app.previousPreview ? [{
+          label: "Ancien aperçu · archive",
+          url: sanitizeImageUrl(app.previousPreview)
+        }] : []),
+        ...(adminMode && Array.isArray(app.previousScreenshots) ? app.previousScreenshots.map((url, index) => ({
+          label: `Ancienne capture ${index + 1} · archive`,
           url: sanitizeImageUrl(url)
         })) : [])
       ];
@@ -3024,8 +3139,11 @@
       apps.forEach((app) => {
         const targets = mediaTargets(app);
         const missing = [];
-        if (!sanitizeImageUrl(app.presentation)) missing.push("Illustration absente");
-        if (!sanitizeImageUrl(app.image)) missing.push("Capture absente");
+        if (app.mediaPendingReview) missing.push("Nouveau jeu · aucun visuel approuvé (0/5)");
+        else {
+          if (!sanitizeImageUrl(app.presentation)) missing.push("Illustration absente");
+          if (!sanitizeImageUrl(app.image)) missing.push("Capture absente");
+        }
         mediaHealthById.set(app.id, { missing, checked: false });
         targets.filter((target) => isSameOriginHttp(target.url)).forEach((target) => {
           queue.push({ appId: app.id, ...target });
@@ -3174,6 +3292,32 @@
       }
     }
 
+
+    // Archives are never loaded by the public gallery.
+    // This is UI separation, not authentication: the static assets are public.
+    async function loadAdminArchives() {
+      if (!adminMode) return;
+      try {
+        const response = await fetch("assets/app-gallery-admin.json", { cache: "no-cache" });
+        if (!response.ok) throw new Error("Archives indisponibles");
+        const data = await response.json();
+        const archive = data.previousPresentations || {};
+        const previewHistory = data.previousPreviews || {};
+        const screenshotHistory = data.previousScreenshots || {};
+        if (!adminMode) return;
+        apps = apps.map((app) => normalizeApp({
+          ...app,
+          previousPresentation: sanitizeImageUrl(archive[app.id]),
+          previousPreview: sanitizeImageUrl(previewHistory[app.id]),
+          previousScreenshots: Array.isArray(screenshotHistory[app.id]) ? screenshotHistory[app.id] : []
+        }));
+        mediaViewById.clear();
+        renderGrid();
+      } catch (error) {
+        console.warn("Archives visuelles non chargées:", error);
+      }
+    }
+
     async function loadAppGallery() {
       try {
         const response = await fetch("assets/app-gallery.json", { cache: "no-cache" });
@@ -3187,12 +3331,20 @@
           const rawImages = Array.isArray(entry) ? entry : entry?.images;
           if (!Array.isArray(rawImages)) return app;
           const gallery = [...new Set(rawImages.map(sanitizeImageUrl).filter(Boolean))].slice(0, 10);
-          const previousPresentation = Array.isArray(entry)
-            ? ""
-            : sanitizeImageUrl(entry?.previousPresentation);
-          return normalizeApp({ ...app, previousPresentation, gallery });
+          // The public gallery is deliberately free of archival artwork.
+          return normalizeApp({
+            ...app,
+            previousPresentation: "", previousPreview: "", previousScreenshots: [],
+            gallery,
+            galleryLabels: Array.isArray(entry?.labels) ? entry.labels : [],
+            captureType: String(entry?.captureType || ""),
+            captureVersion: String(entry?.captureVersion || ""),
+            captureDate: String(entry?.captureDate || ""),
+            presentationReview: String(entry?.presentationReview || "")
+          });
         });
         renderGrid();
+        if (adminMode) await loadAdminArchives();
       } catch (error) {
         console.warn("Galeries supplémentaires indisponibles:", error);
       }
@@ -3200,7 +3352,7 @@
 
     async function checkOnlineStatus() {
       const webApps = apps.filter((app) => (
-        availabilityFor(app) === "Disponible" && /^https?:/i.test(app.link)
+        availabilityFor(app) === "Disponible" && app.accessPolicy !== "local-download" && /^https?:/i.test(app.link)
       ));
       apps.forEach((app) => {
         onlineStatus[app.id] = availabilityFor(app) === "En préparation"
@@ -3419,9 +3571,16 @@
 
     document.getElementById("adminButton").addEventListener("click", (event) => {
       adminMode = !adminMode;
+      mediaViewById.clear();
+      if (!adminMode) {
+        apps = apps.map((app) => normalizeApp({
+          ...app, previousPresentation: "", previousPreview: "", previousScreenshots: []
+        }));
+      }
       event.currentTarget.textContent = adminMode ? "Quitter l'édition" : "Mode édition";
       event.currentTarget.setAttribute("aria-pressed", String(adminMode));
       render();
+      if (adminMode) void loadAdminArchives();
     });
 
     document.getElementById("resetButton").addEventListener("click", () => {

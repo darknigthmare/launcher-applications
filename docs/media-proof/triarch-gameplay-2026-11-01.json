@@ -1,0 +1,108 @@
+{
+  "captureType": "native-browser-gameplay",
+  "notGeneratedArt": true,
+  "source": "https://triarche-ciel-rouge.vercel.app/",
+  "capturedAt": "2026-11-01T10:04:16.390Z",
+  "runtimeVersion": "1.0.0",
+  "contentCounts": {
+    "updates": 10,
+    "classes": 4,
+    "specs": 5,
+    "enemies": 16,
+    "alienMissions": 7,
+    "humanMissions": 7,
+    "operations": 13
+  },
+  "viewport": "1280x720",
+  "browser": "headless Chrome/Chromium through CDP",
+  "preview": {
+    "path": "assets/previews/triarche-ciel-rouge.jpg",
+    "sha256": "26029397c63e0ed8c9a598f4c71078486ef7e206ada50d33b465231b11a5d50e",
+    "bytes": 59956
+  },
+  "archivedOriginalScreenshots": [
+    "assets/screenshots/previous/triarche-ciel-rouge/01.png",
+    "assets/screenshots/previous/triarche-ciel-rouge/02.png",
+    "assets/screenshots/previous/triarche-ciel-rouge/03.png",
+    "assets/screenshots/previous/triarche-ciel-rouge/04.png",
+    "assets/screenshots/previous/triarche-ciel-rouge/05.png"
+  ],
+  "archivedOriginalPreview": "assets/previews/previous/triarche-ciel-rouge.jpg",
+  "scenes": [
+    {
+      "slot": 1,
+      "label": "Campagne Alien — arrivée",
+      "mission": "a01-arrival",
+      "faction": "alien",
+      "mode": "alienCampaign",
+      "path": "assets/screenshots/triarche-ciel-rouge/01.png",
+      "sha256": "6498e097449b4e35233d512d8a6258511aa9d96254cbbf8e375b75bdb0d1b428",
+      "bytes": 259417,
+      "verifiedState": "playing",
+      "boss": false,
+      "convoy": 0,
+      "sectors": 12
+    },
+    {
+      "slot": 2,
+      "label": "Campagne humaine — première ombre",
+      "mission": "h01-first-shadow",
+      "faction": "human",
+      "mode": "humanCampaign",
+      "path": "assets/screenshots/triarche-ciel-rouge/02.png",
+      "sha256": "862dabcd171c6130ced773481564f8f6d805555b4c6fcb3382284789e0814852",
+      "bytes": 273022,
+      "verifiedState": "playing",
+      "boss": false,
+      "convoy": 0,
+      "sectors": 0
+    },
+    {
+      "slot": 3,
+      "label": "Opération — conquête urbaine",
+      "mission": "sector-conquest",
+      "faction": "alien",
+      "mode": "operation",
+      "path": "assets/screenshots/triarche-ciel-rouge/03.png",
+      "sha256": "c9388f9e8238fc0a013c932c24681bf4420cd5db156b3dca2ac18e4da1c17963",
+      "bytes": 274216,
+      "verifiedState": "playing",
+      "boss": false,
+      "convoy": 0,
+      "sectors": 12
+    },
+    {
+      "slot": 4,
+      "label": "Opération — convoi d'évacuation",
+      "mission": "convoy",
+      "faction": "human",
+      "mode": "operation",
+      "path": "assets/screenshots/triarche-ciel-rouge/04.png",
+      "sha256": "6eef0f4d69254222ce1fd5aea0ab5c1772bc474e3899c72060eebaaca5ff2e75",
+      "bytes": 246368,
+      "verifiedState": "playing",
+      "boss": false,
+      "convoy": 3,
+      "sectors": 0
+    },
+    {
+      "slot": 5,
+      "label": "Opération — chasse aux colosses",
+      "mission": "boss-rush-human",
+      "faction": "human",
+      "mode": "operation",
+      "path": "assets/screenshots/triarche-ciel-rouge/05.png",
+      "sha256": "310c293bf320dd43101bf824260fbc52fa2b7e3400ef4ae71987f6bc6b630ddf",
+      "bytes": 281325,
+      "verifiedState": "playing",
+      "boss": true,
+      "convoy": 0,
+      "sectors": 0
+    }
+  ],
+  "limitations": [
+    "Captures issues du déploiement public à l'instant du test",
+    "Ne garantissent pas une fidélité d'illustration promotionnelle 1:1",
+    "Ne prouvent pas les performances sur GPU physique"
+  ]
+}

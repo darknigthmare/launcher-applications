@@ -1,0 +1,136 @@
+{
+  "captureType": "native-local-browser-gameplay",
+  "notGeneratedArt": true,
+  "source": "https://github.com/darknigthmare/Parallaxe_Protocole9",
+  "sourceCommit": "fa9cf6306705c750106467d0d6caddf96767b0e7",
+  "version": "0.4.1",
+  "capturedAt": "2026-11-02T04:45:15.853Z",
+  "localUrl": "http://127.0.0.1:4174/",
+  "resolution": "1280x720",
+  "browser": "Chromium CDP / SwiftShader WebGL 2",
+  "distribution": {
+    "type": "official-precompiled-pc-lan-zip",
+    "file": "PARALLAXE_Jeu_PC_LAN_v0.4.1.zip",
+    "url": "https://github.com/darknigthmare/Parallaxe_Protocole9/blob/main/public/downloads/PARALLAXE_Jeu_PC_LAN_v0.4.1.zip",
+    "sha256": "7b19158d79e326e4bf3b753679221eb27f67dfb1a7ec16b3449ebf366dca21f6",
+    "repositoryHeadAtRetrieval": "569bdedfab3a46f7753ac08c70651a2b399ff60d",
+    "sourceCommit": "fa9cf6306705c750106467d0d6caddf96767b0e7"
+  },
+  "presentation": {
+    "path": "assets/presentations/parallaxe-protocole-9.png",
+    "sha256": "88e186ec116015dd4362e08bca18fbdc8c6ce9ec5187dcc1c06284ef39dff9d4",
+    "bytes": 945187,
+    "kind": "real native title with Chalet preview"
+  },
+  "preview": {
+    "path": "assets/previews/parallaxe-protocole-9.jpg",
+    "sha256": "f270fde1b06e578b884e74bc9b5f2d4ae429eccd19524fb278135a8a8526cb68",
+    "bytes": 151519,
+    "kind": "real solo Chalet reference"
+  },
+  "scenes": [
+    {
+      "slot": 1,
+      "label": "Choix du parcours — entraînement solo au Chalet de service",
+      "kind": "real-mission-setup",
+      "path": "assets/screenshots/parallaxe-protocole-9/01.png",
+      "sha256": "66d851ed8446acae7926f3c33b7a3d3fe872cd30ac22bf9d6950516092d45324",
+      "bytes": 250310,
+      "observed": {
+        "title": "PARALLAXE — Protocole 9",
+        "phase": "",
+        "place": "",
+        "perception": "",
+        "modal": "Apprendre à douter.",
+        "canvas": 1280,
+        "graphicsError": false,
+        "text": "PARALLAXE\nPROGRAMME D’OBSERVATION · 09\nLE PROTOCOLE\nEXPÉRIENCE COOPÉRATIVE\n04 LIEUX — PROTOCOLE 09\nPARALLAXE\nPROTOCOLE 9\n\nVous êtes au même endroit.\nVous ne voyez pas la même chose.\n\nSaint-Clair\nTerminus 09\nAile blanche\nChalet de service\nJouer en coopération\n2 à 4 inspecteurs · salon privé\nS’exercer seul\nDeux perceptions, un inspecteur\nArchives\n00\nParamètres\n+\nCHALET DE SERVICE\n\n04 · Le module témoin\n\nFRÉQUENCE 09   /   LE SILENCE A UNE VOIX\nÀ JOUER AU CASQUE\nOBSERVER. COMMUNIQUER. DOUTER.\nÉDITION JOUABLE\n0.4.1\nPARALLAXE / PROTOCOLE 09\nApprendre à douter.\n\nInspectez le lieu en solo, puis passez d’une perception à l’autre avec Tab. Une seule différence suffit pour signaler une anomalie.\n\nVOTRE PARCOURS\nLa traversée\n3 lieux · 3 validations par lieu\nLieu au choix\n9 validations consécutives\nSECTEUR 01\nSaint-Clair\nL’hôtel sans neuvième étage\n\nBois sombre, réception silencieuse et reflets trop familiers.\n\nSECTEUR 02\nTerminus 09\nLe dernier quai\n\nQuai vide, rails parallèles et tunnel sans départ.\n\nSECTEUR 03\nAile blanche\nLa clinique de nuit\n\nPoste de soins, rideaux d’isolement et lits sous surveillance.\n\nSECTEUR 04\nChalet de service\nLe module témoin\n\nUne table, une tasse, un carnet et un foyer froid dans un chalet de bois assemblé sous un hangar.\n\nChaque erreur remet les neuf validations de ce lieu à zéro.\n\n01\nProtocole standard\n\nTrois erreurs terminent la session. La progression suit les règles du parcours choisi.\n\n02\nObservation libre\n\nLa même enquête, sans limite d’erreurs. Prenez le temps de comprendre chaque détail.\n\nGRAINE DE SESSION\nfacultatif · même graine, même séquence\nEntrer dans l’observatoire"
+      }
+    },
+    {
+      "slot": 2,
+      "label": "Chalet de service — passage de référence en perception Alpha",
+      "kind": "real-solo-webgl-reference",
+      "path": "assets/screenshots/parallaxe-protocole-9/02.png",
+      "sha256": "9f75c42ea8a84b2f6a386449abaa70da1e885c4408eb68aa6b68f7f1325d88dc",
+      "bytes": 887682,
+      "observed": {
+        "title": "PARALLAXE — Protocole 9",
+        "phase": "PASSAGE DE RÉFÉRENCE",
+        "place": "Chalet de service · Inspection autonome",
+        "perception": "α\nPERCEPTION ALPHA",
+        "modal": "",
+        "canvas": 1280,
+        "graphicsError": false,
+        "text": "PROGRAMME PARALLAXE\nPASSAGE DE RÉFÉRENCE\nChalet de service · Inspection autonome\nPROTOCOLE DE SORTIE\n0 / 09\nα\nPERCEPTION ALPHA\nRien d’anormal ici. Mémorisez les détails.\nVoir le protocole\nCliquez dans le lieu pour regarder autour de vous\nENTRAÎNEMENT SOLO\n\nUn seul lieu. Deux observations.\n\nTab\nPasser en perception β\nERREURS\n3 = RUPTURE\nRéférence mémorisée\nTester le talkie\nZQSD\n/\nWASD\nSe déplacer\nE\nSignaler\nF\nLampe\nJ\nCarnet\nT\nTalkie\nÉchap\nPause\nPassage de référence : observez le lieu avant sa première altération."
+      }
+    },
+    {
+      "slot": 3,
+      "label": "Carnet — références du chalet et règles de comparaison",
+      "kind": "real-reference-journal",
+      "path": "assets/screenshots/parallaxe-protocole-9/03.png",
+      "sha256": "985998bff72184a8c40c9ceb19d487f9317f60b374e9867faa8177b3c86dfd8d",
+      "bytes": 291558,
+      "observed": {
+        "title": "PARALLAXE — Protocole 9",
+        "phase": "PASSAGE DE RÉFÉRENCE",
+        "place": "Chalet de service · Inspection autonome",
+        "perception": "α\nPERCEPTION ALPHA",
+        "modal": "Chalet de service · référence.",
+        "canvas": 1280,
+        "graphicsError": false,
+        "text": "PROGRAMME PARALLAXE\nPASSAGE DE RÉFÉRENCE\nChalet de service · Inspection autonome\nPROTOCOLE DE SORTIE\n0 / 09\nα\nPERCEPTION ALPHA\nRien d’anormal ici. Mémorisez les détails.\nVoir le protocole\nENTRAÎNEMENT SOLO\n\nUn seul lieu. Deux observations.\n\nTab\nPasser en perception β\nERREURS\n3 = RUPTURE\nRéférence mémorisée\nTester le talkie\nZQSD\n/\nWASD\nSe déplacer\nE\nSignaler\nF\nLampe\nJ\nCarnet\nT\nTalkie\nÉchap\nPause\nPARALLAXE / PROTOCOLE 09\nChalet de service · référence.\n\nLe premier passage est votre référence. Une altération chez un seul inspecteur suffit à rendre le lieu anormal.\n\n01\nRepère 1\n\nLa table possède quatre pieds et un plateau de 2,10 m sur 1,40 m, éloigné des deux murs. La tasse et le carnet reposent dessus.\n\n02\nRepère 2\n\nLe garde-corps délimite la même baie d’observation pour tous ; le passage le long du mur droit reste ouvert, même si la table paraît différente.\n\n03\nRepère 3\n\nLe foyer du mur droit est vide et éteint. Le fond du conduit ne comporte ni visage ni yeux ; observez-le depuis le bord du tapis.\n\n04\nRepère 4\n\nLe miroir reproduit votre corps. La fenêtre montre les fermes fixes du hangar, sans personne derrière la vitre.\n\n05\nRepère 5\n\nLes lampes diffusent une lumière chaude et stable. Les poutres et les lames du plancher restent à leur place.\n\n06\nRepère 6\n\nLe panneau SORTIE et le terminal sont au fond. Le code RELAIS peut varier entre passages mais doit être identique pour tous dans le même passage.\n\n07\nRepère 7\n\nL’étalonnage radio transmet 1, 2, 3 après le code RELAIS. Un problème de liaison ne constitue pas une anomalie du chalet.\n\n08\nRepère 8\n\nLes inspecteurs gardent leur badge, leur taille et leurs pieds au sol. Le talkie reste dans la main droite, même sans microphone. Les yeux sous la visière ne suivent pas indépendamment l’observateur.\n\n09\nRepère 9\n\nLe reflet adopte la même posture et porte le même numéro de badge que le corps réel. Le siège témoin reste vide.\n\n10\nRepère 10\n\nSans coéquipier présent, les mannequins témoins numérotés T1 et T2 restent sur leurs socles près du miroir et apparaissent aussi dans le reflet. Ce sont des repères, pas des membres de l’équipe ; ils ne changent pas le compteur de présence.\n\n11\nRepère 11\n\nLe contrôle radio émet le code"
+      }
+    },
+    {
+      "slot": 4,
+      "label": "Inspection 01 — comparaison réelle en perception Bêta",
+      "kind": "real-solo-perception-switch",
+      "path": "assets/screenshots/parallaxe-protocole-9/04.png",
+      "sha256": "31cd297edfc882c9cce001d82011342392d8d0af92c063451ae6cc386d8a06ab",
+      "bytes": 896602,
+      "observed": {
+        "title": "PARALLAXE — Protocole 9",
+        "phase": "INSPECTION 01",
+        "place": "Chalet de service · Inspection autonome",
+        "perception": "β\nPERCEPTION BÊTA",
+        "modal": "",
+        "canvas": 1280,
+        "graphicsError": false,
+        "text": "PROGRAMME PARALLAXE\nINSPECTION 01\nChalet de service · Inspection autonome\nPROTOCOLE DE SORTIE\n0 / 09\nβ\nPERCEPTION BÊTA\nInspectez les deux perceptions avant de décider.\nCliquez dans le lieu pour regarder autour de vous\nENTRAÎNEMENT SOLO\n\nUn seul lieu. Deux observations.\n\nTab\nPasser en perception α\nERREURS\n3 = RUPTURE\nV\nDiagnostic\nTester le talkie\nZQSD\n/\nWASD\nSe déplacer\nE\nSignaler\nF\nLampe\nJ\nCarnet\nT\nTalkie\nÉchap\nPause\nPerception BÊTA. Comparez le même objet."
+      }
+    },
+    {
+      "slot": 5,
+      "label": "Terminal de diagnostic — décision entre anomalie et conformité",
+      "kind": "real-diagnosis-ui",
+      "path": "assets/screenshots/parallaxe-protocole-9/05.png",
+      "sha256": "3661573ad892f693ece6587c15979349eae79cdbad02806b79684a5eba2e9561",
+      "bytes": 240466,
+      "observed": {
+        "title": "PARALLAXE — Protocole 9",
+        "phase": "INSPECTION 01",
+        "place": "Chalet de service · Inspection autonome",
+        "perception": "β\nPERCEPTION BÊTA",
+        "modal": "La réalité concorde-t-elle ?",
+        "canvas": 1280,
+        "graphicsError": false,
+        "text": "PROGRAMME PARALLAXE\nINSPECTION 01\nChalet de service · Inspection autonome\nPROTOCOLE DE SORTIE\n0 / 09\nβ\nPERCEPTION BÊTA\nInspectez les deux perceptions avant de décider.\nENTRAÎNEMENT SOLO\n\nUn seul lieu. Deux observations.\n\nTab\nPasser en perception α\nERREURS\n3 = RUPTURE\nV\nDiagnostic\nTester le talkie\nZQSD\n/\nWASD\nSe déplacer\nE\nSignaler\nF\nLampe\nJ\nCarnet\nT\nTalkie\nÉchap\nPause\nPARALLAXE / PROTOCOLE 09\nTERMINAL DE DIAGNOSTIC\nLa réalité concorde-t-elle ?\n\nAvez-vous regardé les deux perceptions ? Une anomalie présente dans une seule version compte pour l’inspection entière.\n\nAucune anomalie\n\nNous avons tout comparé.\nLe lieu est conforme.\n\nVALIDER LE PASSAGE\nAnomalie présente\n\nAu moins une perception\nrévèle une altération.\n\nSIGNALER L’ALTÉRATION\n\nUn mauvais diagnostic remet les neuf validations à zéro."
+      }
+    }
+  ],
+  "overview": {
+    "runtimeVersionPrinted": true,
+    "soloReferenceEntered": true,
+    "perceptionBetaObserved": true,
+    "diagnosticOpened": true
+  },
+  "limitations": [
+    "Official portable 0.4.1 build, not the hosted private edition or an unreleased source revision",
+    "Solo training at the Chalet only; no LAN multiplayer, microphone, TURN or campaign-completion certification",
+    "Software WebGL rendering proves native scenes, not performance on a physical GPU",
+    "No direct game state, anomaly or progress injection; ordinary UI controls only"
+  ],
+  "gameId": "parallaxe-protocole-9"
+}

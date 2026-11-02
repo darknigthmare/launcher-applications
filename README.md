@@ -1,10 +1,65 @@
 # Mon Launcher
 
-Launcher personnel statique qui réunit les applications, jeux et outils publiés sur Vercel.
+Launcher personnel pour les jeux et outils web, et les jeux distribués localement sur GitHub.
 
-Le catalogue public contient **140 applications**, dont **127 jeux**.
+Version **1.15.0** · **158 fiches, dont 145 jeux** · [Ouvrir le launcher](https://launcher-applications.vercel.app/) · [PR #17](https://github.com/darknigthmare/launcher-applications/pull/17)
 
-Version publique : [launcher-applications.vercel.app](https://launcher-applications.vercel.app/)
+## Version 1.15 — Catalogue et galeries actualisés (2 novembre 2026)
+
+**AVP Blood Arena — Relance technique 0.1.0** est ajouté comme prototype à télécharger : aucun déploiement Vercel n’existe, et les anciennes versions 0.30/0.36 ne sont pas restaurées. **SOMA//MASSILIA** est corrigé de 0.1.0 à **0.6.0**, confirmé par les sources et son manifeste public. Les 140 fiches historiques sont conservées, avec **18 jeux retrouvés** au total, dont **six distributions locales**. [Sources et couverture des 174 dépôts](docs/CATALOGUE_AUDIT_2026-11-02.md).
+
+Ce lot apporte **20 nouvelles captures natives dans 4 galeries**, avec un écran réel et un aperçu par jeu :
+
+- **RIFTCASTERS 3D — MODERN SKIES** : [preuve native](docs/media-proof/riftcasters-anglers-local-860-2026-11-02.json) ; version 8.6.0.
+- **DIVA PULSE — Studio de rythme** : [preuve native](docs/media-proof/diva-pulse-local-v37-2026-11-02.json) ; version 37.0.0.
+- **PARALLAXE — PROTOCOLE 9** : [preuve native](docs/media-proof/parallaxe-local-041-2026-11-02.json) ; version 0.4.1.
+- **AVP BLOOD ARENA — RELANCE TECHNIQUE** : [preuve native](docs/media-proof/avp-blood-arena-local-010-2026-11-02.json) ; version 0.1.0.
+
+Ces captures proviennent des sources exactes exécutées localement, sans génération d’illustration. DIVA PULSE montre notamment une démonstration en **Autoplay assisté**, pas une performance manuelle. Leurs limites, versions et SHA sont enregistrés dans chaque preuve. Les vues locales d’un jeu web sont distinguées d’une capture de production.
+
+Le suivi totalise **105 captures documentées dans 21 galeries**. **655 captures historiques** attendent encore une comparaison au build et **6 jeux retrouvés** attendent leur première galerie (30 emplacements). Les visuels natifs prouvent le rendu observé, sans certification globale de fidélité canonique 1:1. Les anciennes images sont conservées. [Matrice média](docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json).
+
+Les légendes de Resident Evil B.O.W. Protocol, Reclaimed et des autres galeries ne reprennent plus les mentions propres au terminal Codec ou à la simulation GPS d’un autre jeu. Le cache PWA **shell v31 / médias v2** recharge le catalogue et revalide les images mises à jour. Les favoris et personnalisations sont conservés lors de la migration du catalogue enregistré.
+
+Le [contrôle réel des 158 destinations](docs/link-proof/live-links-2026-11-02.json) relève **151 sites accessibles, six dépôts de téléchargement, un accès Vercel protégé** et aucun lien cassé. Une réponse HTTP ne garantit pas la version du jeu ni sa jouabilité complète. Malaise Party affiche sa connexion requise ; les jeux locaux ouvrent **Fichiers et installation**.
+
+Pour vérifier le lot :
+
+```sh
+npm test
+npm run test:browser  # Chromium installé, Node.js 22 ou supérieur
+npm run links:check
+```
+
+Le test navigateur sert automatiquement le site en local et contrôle les fiches, les commandes de galerie, le cache PWA, la migration des anciennes données, les favoris, les archives et le mobile. Les rapports et captures de test restent dans `.reports/`. La CI exécute l’audit, les tests de destinations et ce parcours navigateur.
+
+**Limite maintenue :** le mode édition n’est pas une authentification admin ; le dépôt et ses archives restent publics. La PR conserve les travaux non terminés dans ses rapports. La publication Vercel doit être reliée au SHA vérifié, indépendamment de l’état de fusion de la PR.
+
+## Version 1.14 — Première réconciliation (1er novembre 2026)
+
+La branche précédente réunissait 157 fiches dont 144 jeux : 17 jeux retrouvés ajoutés aux 140 fiches historiques, sans suppression. Dix productions web, cinq éditions locales et deux mini-jeux d’anthologies ont été distingués. Le dernier état de cette vague documentait 85 captures dans 17 galeries. [Inventaire des découvertes](docs/RECOVERED_GAMES_2026-11-01.md) · [audit des distributions locales](docs/GITHUB_ONLY_GAMES_AUDIT_2026-11-01.md).
+
+---
+
+## Version 1.13 — Actualisation des fiches et séparation des archives (1er novembre 2026)
+
+Cette mise à jour conserve les **140 fiches existantes** et leur historique. Trois adresses publiques ont été **rétablies après vérification du véritable jeu** (Brèche Multiverselle, Vortex Command et PREDATOR: HIVE WARRIORS). L'alias d'équipe de Malaise Party demande une connexion Vercel : ce jeu est désormais indiqué comme protégé, sans prétendre qu'un HTTP 200 signifie qu'il est accessible. Douze descriptions et accroches gagnent en précision diégétique d'après leurs sources GitHub. [Preuves des destinations et de la redirection SSO](docs/LINK_IDENTITY_SSO_2026-11-01.md).
+
+Les **112 illustrations précédentes** ne sont plus chargées ni listées par les galeries publiques : `assets/app-gallery.json` ne conserve que les captures et `assets/app-gallery-admin.json` indexe les anciens visuels, consultables depuis le mode édition local. **Attention : le mode édition n'est pas authentifié, et les fichiers ainsi que le dépôt demeurent publics.** Une véritable exclusivité administrateur nécessitera une authentification et un stockage privé des originaux.
+
+Une [matrice de revue des 157 fiches et galeries](docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json) distingue **non revu**, **à refaire** et **accepté** sans certifier le 1:1 sans preuve. **45 captures sur les 700 historiques** ont été renouvelées sur **neuf galeries originales**, et **dix captures supplémentaires** proviennent de deux nouvelles fiches (DEADLINE et B.O.W. Protocol), soit **55 captures vérifiées au total** (TRIARCHE, DEADWALL, Yautja: Apex Hunt, MOUSTIQUE, WORLD HIVE WARS, Shadow Codec Ops, CainOS, AVP HUNT // HIVE TCG et Vortex Command). Les **655 autres** attendent encore une revue. Les neuf anciennes séries historiques et leurs neuf aperçus ont été archivés ; aucune image d'archive n'a été effacée. Les sources et preuves sont rassemblées dans [l'audit](docs/LAUNCHER_FIDELITY_AUDIT_2026-11-01.md). Les illustrations promotionnelles non vérifiées ne sont pas déclarées « fidèles 1:1 ».
+
+La [réconciliation exhaustive des 172 dépôts GitHub et 162 projets Vercel](docs/GITHUB_ONLY_GAMES_AUDIT_2026-11-01.md) a réintégré **15 jeux auparavant omis** dans une première vague : dix titres web ou réintégrations déployées, plus **cinq éditions à télécharger sur GitHub**. Deux mini-jeux des anthologies d’août ont ensuite été ajoutés séparément (DIVA PULSE, Dernière Ligne, Fallout Marseille — MISTRAL, PARALLAXE — Protocole 9 et Massilia Cyberpunk). Les fiches locales affichent **Fichiers et installation** au lieu de « Ouvrir », et aucun média n'est inventé. Les projets vides, les DLC privés et les environnements de test restent recensés hors du rayon Jeux.
+
+La [correspondance des 13 productions prioritaires avec leur SHA et leur statut](docs/PRODUCTION_DEPLOYMENTS_2026-11-01.md) distingue les builds réellement publiés des sources plus récentes. Les captures MOUSTIQUE comprennent **une vue de vol libre jouable et quatre cadrages de QA du moteur WebGL2**, explicitement étiquetés. WORLD HIVE WARS présente les cinq écrans de campagne `map / colony / defense / squad / codex` depuis une nouvelle partie en **simulation privée**, sans adresse GPS ni sauvegarde préfabriquée ; ce sont des interfaces réelles, pas des combats CONTACT. Shadow Codec Ops présente un tableau natif de **31 missions Side Ops**, et non une scène de combat artificielle : le rendu Phaser headless n'était pas représentatif. CainOS a été photographié après sa calibration réelle, puis Encore montre ses neuf modes, ses 14 combattants, ses douze arènes et une arène de combat correctement cadrée. Les previews et les illustrations ne remplacent jamais une démonstration de l'interface réelle.
+
+Pour contrôler les **157 destinations** (sites publics, dépôts à télécharger et accès SSO) sans modifier les alias à l'aveugle :
+
+    npm run links:check
+
+Le contrôle HTTP est également prévu quotidiennement via GitHub Actions et conserve un rapport en artefact. Il ne certifie pas à lui seul que le lien pointe sur le dernier contenu fonctionnel.
+
+---
 
 ## Version 1.12 — Six créations sortent des archives
 
@@ -16,7 +71,6 @@ Le launcher compte désormais **140 applications**, **127 jeux**, **140 aperçus
 
 ---
 
-## Version 1.11 — Quatre archives deviennent quatre mondes jouables
 ## Version 1.11 — Quatre archives deviennent quatre mondes jouables
 
 ECHO RIFT, OMBRE//GEEK, SON OF A…! — Legacy Forge et VEILBOUND — Les Visages du Monde Brisé rejoignent le launcher après leur séparation en dépôts GitHub et productions Vercel dédiés.
@@ -135,7 +189,7 @@ Le fichier `assets/upcoming-games.json` fournit également des valeurs par défa
 2. Renseigner `releaseState` (`upcoming` ou `published`) et `addedAt` au format ISO. Une entrée `published` doit avoir un lien ; une entrée `upcoming` ne doit pas en inventer.
 3. Pour un jeu, renseigner `gameKind`, l’un des huit `genre` et, pour un fan-game, `baseGame`.
 4. Générer une présentation dédiée avec OpenAI `image_gen`, la placer sous `assets/presentations/`, puis enregistrer sa provenance et son SHA-256 dans `assets/openai-art-manifest.json`. Ajouter aussi un aperçu distinct sous `assets/previews/`.
-5. Ajouter au moins cinq vues sous `assets/screenshots/<id>/` et les référencer dans `assets/app-gallery.json`. Si l’application remplace une présentation existante, déplacer l’ancien visuel sous `assets/presentations/previous/` et renseigner `previousPresentation` dans l’objet de galerie, à côté de `images`.
+5. Ajouter au moins cinq vues sous `assets/screenshots/<id>/` et les référencer dans `assets/app-gallery-admin.json`. Si l’application remplace une présentation existante, déplacer l’ancien visuel sous `assets/presentations/previous/` et renseigner `previousPresentation` dans l’objet de galerie, à côté de `images`.
 6. Ajouter le symbole `icon-<id>` dans `assets/app-icons.svg`.
 7. Ajouter la version correspondante à `assets/catalogue-updates.js`, dans l’ordre décroissant des dates.
 8. Incrémenter `CACHE_NAME` dans `sw.js` si le shell change, puis exécuter `npm test` et vérifier le rendu desktop/mobile.

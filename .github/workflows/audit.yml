@@ -19,5 +19,7 @@ jobs:
         uses: actions/setup-node@v7
         with:
           node-version: 22
-      - name: Vérifier le catalogue et les fichiers statiques
-        run: npm run audit
+      - name: Vérifier le catalogue, les fichiers statiques et les destinations
+        run: npm test
+      - name: Vérifier les fiches, galeries et migrations dans Chromium
+        run: npm run test:browser

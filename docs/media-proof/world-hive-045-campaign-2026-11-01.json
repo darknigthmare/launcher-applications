@@ -1,0 +1,158 @@
+{
+  "captureType": "native-browser-campaign-ui",
+  "notGeneratedArt": true,
+  "source": "https://world-hive-wars.vercel.app/",
+  "sourceRuntimeVersion": "0.45.0",
+  "sourceDeployment": {
+    "gitSha": "80ce99282b12",
+    "vercelId": "dpl_AiQV6pxL4fRpuigUUrJ268qSsNyw",
+    "status": "READY"
+  },
+  "capturedAt": "2026-11-01T11:13:01.774Z",
+  "viewport": "1280x720",
+  "browser": "headless Chromium / CDP",
+  "initialState": {
+    "title": "WORLD HIVE WARS — Alien : Frontière coloniale",
+    "appReady": true,
+    "entryPhase": "closed",
+    "activeScreen": "map",
+    "locationMode": "private",
+    "playerOnboarded": true,
+    "colony": "Bastion-01",
+    "modalOpen": false,
+    "screenVisible": true,
+    "resourceCount": 6
+  },
+  "privateSimulation": true,
+  "saveInjected": false,
+  "realOnboarding": true,
+  "preview": {
+    "path": "assets/previews/world-hive-wars.jpg",
+    "sha256": "4eafdfcb82faa4676e20b98e87c3f040a0b1a278843294f4d98adf1f18437302",
+    "bytes": 127377,
+    "sourceScreen": "map"
+  },
+  "archives": {
+    "previousScreenshots": [
+      "assets/screenshots/previous/world-hive-wars/01.webp",
+      "assets/screenshots/previous/world-hive-wars/02.webp",
+      "assets/screenshots/previous/world-hive-wars/03.webp",
+      "assets/screenshots/previous/world-hive-wars/04.webp",
+      "assets/screenshots/previous/world-hive-wars/05.webp"
+    ],
+    "previousPreview": "assets/previews/previous/world-hive-wars.webp"
+  },
+  "scenes": [
+    {
+      "slot": 1,
+      "label": "Carte tactique — secteur en simulation privée",
+      "kind": "real-campaign-interface",
+      "screen": "map",
+      "path": "assets/screenshots/world-hive-wars/01.png",
+      "bytes": 575853,
+      "sha256": "eecb6f9013260bd8f7ef225c599675296ae7d2933d7c4c54bfb6a6caa46d8fc1",
+      "uiState": {
+        "title": "WORLD HIVE WARS — Alien : Frontière coloniale",
+        "appReady": true,
+        "entryPhase": "closed",
+        "activeScreen": "map",
+        "locationMode": "private",
+        "playerOnboarded": true,
+        "colony": "Bastion-01",
+        "modalOpen": false,
+        "screenVisible": true,
+        "resourceCount": 6
+      }
+    },
+    {
+      "slot": 2,
+      "label": "Bastion Kestrel — modules et réserves",
+      "kind": "real-campaign-interface",
+      "screen": "colony",
+      "path": "assets/screenshots/world-hive-wars/02.png",
+      "bytes": 113479,
+      "sha256": "027d439880354d9f84c94ed4e0ff09d1c7664eae8ddb8f9b131bc3920cbf0f40",
+      "uiState": {
+        "title": "WORLD HIVE WARS — Alien : Frontière coloniale",
+        "appReady": true,
+        "entryPhase": "closed",
+        "activeScreen": "colony",
+        "locationMode": "private",
+        "playerOnboarded": true,
+        "colony": "Bastion-01",
+        "modalOpen": false,
+        "screenVisible": true,
+        "resourceCount": 6
+      }
+    },
+    {
+      "slot": 3,
+      "label": "Périmètre colonial — préparation des défenses",
+      "kind": "real-campaign-interface",
+      "screen": "defense",
+      "path": "assets/screenshots/world-hive-wars/03.png",
+      "bytes": 767096,
+      "sha256": "2edfa0a351e86b1880332fc04b3c20a3b1647237a7a009a7d4dadf3552e9568f",
+      "uiState": {
+        "title": "WORLD HIVE WARS — Alien : Frontière coloniale",
+        "appReady": true,
+        "entryPhase": "closed",
+        "activeScreen": "defense",
+        "locationMode": "private",
+        "playerOnboarded": true,
+        "colony": "Bastion-01",
+        "modalOpen": false,
+        "screenVisible": true,
+        "resourceCount": 6
+      }
+    },
+    {
+      "slot": 4,
+      "label": "Colonial Marines — équipe et équipements",
+      "kind": "real-campaign-interface",
+      "screen": "squad",
+      "path": "assets/screenshots/world-hive-wars/04.png",
+      "bytes": 123484,
+      "sha256": "c6bf4501a1dead083d55a96c00e67309e6cf24194a8747965e50d6d2e54ec0ea",
+      "uiState": {
+        "title": "WORLD HIVE WARS — Alien : Frontière coloniale",
+        "appReady": true,
+        "entryPhase": "closed",
+        "activeScreen": "squad",
+        "locationMode": "private",
+        "playerOnboarded": true,
+        "colony": "Bastion-01",
+        "modalOpen": false,
+        "screenVisible": true,
+        "resourceCount": 6
+      }
+    },
+    {
+      "slot": 5,
+      "label": "Archives MU/TH/UR — recherches et dossiers",
+      "kind": "real-campaign-interface",
+      "screen": "codex",
+      "path": "assets/screenshots/world-hive-wars/05.png",
+      "bytes": 115443,
+      "sha256": "1957dc2cbc83eb6a24d935974688a795bdf1a14908173c1f92b3041da59c4723",
+      "uiState": {
+        "title": "WORLD HIVE WARS — Alien : Frontière coloniale",
+        "appReady": true,
+        "entryPhase": "closed",
+        "activeScreen": "codex",
+        "locationMode": "private",
+        "playerOnboarded": true,
+        "colony": "Bastion-01",
+        "modalOpen": false,
+        "screenVisible": true,
+        "resourceCount": 6
+      }
+    }
+  ],
+  "limitations": [
+    "Interface de campagne réelle, pas scènes CONTACT en combat",
+    "Aucune garantie de fidélité 1:1 des illustrations promotionnelles",
+    "Aucune position réelle ni compte connecté",
+    "Le runtime 0.45.0 est identifié par son écran, non prouvé directement par un SHA interne"
+  ]
+}

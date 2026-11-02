@@ -1,0 +1,129 @@
+{
+  "captureType": "native-browser-game-player-menu",
+  "notGeneratedArt": true,
+  "source": "https://resident-evil-bow-protocol.vercel.app/",
+  "sourceVersion": "v0.7.3 R20",
+  "runtimeVersion": null,
+  "capturedAt": "2026-11-01T15:18:22.812Z",
+  "viewport": "1280x720",
+  "presentation": {
+    "path": "assets/presentations/resident-evil-bow-protocol.png",
+    "sha256": "b6128d8f0491a5804d693c65a6926168db4fcaadb060e8fd84dcdf15ffefcbbd",
+    "bytes": 669800,
+    "kind": "actual entry screen"
+  },
+  "preview": {
+    "path": "assets/previews/resident-evil-bow-protocol.jpg",
+    "sha256": "1c3e41a3253cb8ef0bfc7f8798fd09ebb9f220b156f97145638a9a5178ce8d20",
+    "bytes": 145962,
+    "kind": "real Tyrant menu"
+  },
+  "scenes": [
+    {
+      "slot": 1,
+      "label": "Confinement — Tyrant et terminal principal",
+      "kind": "native-player-menu",
+      "view": "home",
+      "subject": "TYRANT",
+      "path": "assets/screenshots/resident-evil-bow-protocol/01.png",
+      "sha256": "e38588e61de743ef0130ecdfbde55846d47e4a78de91465c26f8f6b0768a46e0",
+      "bytes": 1021955,
+      "state": {
+        "view": "home",
+        "title": "Resident Evil — B.O.W. Protocol",
+        "bootHidden": true,
+        "specimen": "TYRANT",
+        "origin": "Resident Evil 2 · 2019",
+        "imageLoaded": true,
+        "menuItems": 7,
+        "archives": 3
+      }
+    },
+    {
+      "slot": 2,
+      "label": "Confinement — Licker, dossier RE2",
+      "kind": "native-player-menu",
+      "view": "home",
+      "subject": "LICKER",
+      "path": "assets/screenshots/resident-evil-bow-protocol/02.png",
+      "sha256": "81ae576dd4733ad8cbffd2143bc0c2363d2cc0a91e6cdff003745004cc6d941c",
+      "bytes": 1068661,
+      "state": {
+        "view": "home",
+        "title": "Resident Evil — B.O.W. Protocol",
+        "bootHidden": true,
+        "specimen": "LICKER",
+        "origin": "Resident Evil 2 · 2019",
+        "imageLoaded": true,
+        "menuItems": 7,
+        "archives": 3
+      }
+    },
+    {
+      "slot": 3,
+      "label": "Confinement — Nemesis, dossier RE3",
+      "kind": "native-player-menu",
+      "view": "home",
+      "subject": "NEMESIS",
+      "path": "assets/screenshots/resident-evil-bow-protocol/03.png",
+      "sha256": "2c997e472ab5771002607261c31f4baa05f5868c1e394865acf0f9a65b1e6e18",
+      "bytes": 1069167,
+      "state": {
+        "view": "home",
+        "title": "Resident Evil — B.O.W. Protocol",
+        "bootHidden": true,
+        "specimen": "NEMESIS",
+        "origin": "Resident Evil 3 · 2020",
+        "imageLoaded": true,
+        "menuItems": 7,
+        "archives": 3
+      }
+    },
+    {
+      "slot": 4,
+      "label": "Engagement — sept protocoles d'affrontement",
+      "kind": "native-player-menu",
+      "view": "modes",
+      "subject": null,
+      "path": "assets/screenshots/resident-evil-bow-protocol/04.png",
+      "sha256": "0d30e38c22013a468b27ae47f86f3dd402ae174346984f8921903ef51b06886a",
+      "bytes": 805621,
+      "state": {
+        "view": "modes",
+        "title": "Resident Evil — B.O.W. Protocol",
+        "bootHidden": true,
+        "specimen": "NEMESIS",
+        "origin": "Resident Evil 3 · 2020",
+        "imageLoaded": true,
+        "menuItems": 7,
+        "archives": 3
+      }
+    },
+    {
+      "slot": 5,
+      "label": "Archives biologiques — bestiaire et techniques",
+      "kind": "native-player-menu",
+      "view": "archives",
+      "subject": null,
+      "path": "assets/screenshots/resident-evil-bow-protocol/05.png",
+      "sha256": "391602018c10a42aea97597e82cbc6a4125605a9bb27866accddb8cf87f766a4",
+      "bytes": 785605,
+      "state": {
+        "view": "archives",
+        "title": "Resident Evil — B.O.W. Protocol",
+        "bootHidden": true,
+        "specimen": "NEMESIS",
+        "origin": "Resident Evil 3 · 2020",
+        "imageLoaded": true,
+        "menuItems": 7,
+        "archives": 3
+      }
+    }
+  ],
+  "disclosure": "Images are actual player menu / specimen / operations / archives views. No claim of animated fights, canon-complete BOW roster, or visual franchise 1:1.",
+  "limitations": [
+    "R20 menu validated, no live versus fight captured",
+    "Creature PNGs are provided by the game; their likeness is not externally certified",
+    "One combat roster is not proof of all 115 fighters"
+  ]
+}

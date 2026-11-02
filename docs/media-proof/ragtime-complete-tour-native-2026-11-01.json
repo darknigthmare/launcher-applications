@@ -1,0 +1,145 @@
+{
+  "captureType": "source-native-browser-rhythm-boss",
+  "notGeneratedArt": true,
+  "source": "https://ragtime-rumble-complete-tour.vercel.app/",
+  "sourceRepository": "darknigthmare/ragtime-rumble-complete-tour",
+  "sourceVersion": "3.2.0-alpha.3",
+  "sourceCommit": "5c8b32609033301e118921656f8588a7274810ad",
+  "deploymentId": "dpl_GCLqcWzt8W5ActXTDfs7LB8kzbbK",
+  "capturedAt": "2026-11-01T18:45:31.348Z",
+  "viewport": "1280x720",
+  "engine": "real HTML5 Canvas2D + actual DOM; no fabricated art",
+  "presentation": {
+    "path": "assets/presentations/ragtime-rumble-complete-tour.png",
+    "sha256": "10d9f8e09af12cbbb838b9f10bde391ec3d3e3bd97b56c5442ec1e0b9a25158d",
+    "bytes": 465145
+  },
+  "preview": {
+    "path": "assets/previews/ragtime-rumble-complete-tour.jpg",
+    "sha256": "3c4cb50da03f33de0700fa67dd60555bcb0e42598bf50e08ff0e6461a2635a81",
+    "bytes": 138010,
+    "kind": "live combat screenshot"
+  },
+  "scenes": [
+    {
+      "slot": 1,
+      "label": "Rideau fermé — choix de la tournée",
+      "kind": "real-main-menu",
+      "path": "assets/screenshots/ragtime-rumble-complete-tour/01.png",
+      "sha256": "10d9f8e09af12cbbb838b9f10bde391ec3d3e3bd97b56c5442ec1e0b9a25158d",
+      "bytes": 465145,
+      "observed": {
+        "version": "3.2.0-alpha.3",
+        "ready": true,
+        "phase": "menu",
+        "tour": false,
+        "editor": false,
+        "pause": false,
+        "menu": true,
+        "bossAlive": true,
+        "playerAlive": true,
+        "perspective": "CLASSIC_SIDE",
+        "score": 0,
+        "elapsed": 0,
+        "canvasReady": true
+      }
+    },
+    {
+      "slot": 2,
+      "label": "Tournée — trois scènes et sélection du morceau",
+      "kind": "real-tour-selection",
+      "path": "assets/screenshots/ragtime-rumble-complete-tour/02.png",
+      "sha256": "42c9beed7b0d509a7a4b388f218accc5fadf2bab80fcdeb3e71e21943b9473bc",
+      "bytes": 234029,
+      "observed": {
+        "version": "3.2.0-alpha.3",
+        "ready": true,
+        "phase": "menu",
+        "tour": true,
+        "editor": false,
+        "pause": false,
+        "menu": false,
+        "bossAlive": true,
+        "playerAlive": true,
+        "perspective": "CLASSIC_SIDE",
+        "score": 0,
+        "elapsed": 0,
+        "canvasReady": true
+      }
+    },
+    {
+      "slot": 3,
+      "label": "Studio — éditeur de partitions et pistes rythmiques",
+      "kind": "real-score-editor",
+      "path": "assets/screenshots/ragtime-rumble-complete-tour/03.png",
+      "sha256": "1d990cad44938b67657a4af5ccf1ba8b2a9ca6b99291ad51b36943b0982eb20a",
+      "bytes": 161744,
+      "observed": {
+        "version": "3.2.0-alpha.3",
+        "ready": true,
+        "phase": "menu",
+        "tour": false,
+        "editor": true,
+        "pause": false,
+        "menu": false,
+        "bossAlive": true,
+        "playerAlive": true,
+        "perspective": "CLASSIC_SIDE",
+        "score": 0,
+        "elapsed": 0,
+        "canvasReady": true
+      }
+    },
+    {
+      "slot": 4,
+      "label": "Maestro Bellows — affrontement rythmique en direct",
+      "kind": "real-boss-combat",
+      "path": "assets/screenshots/ragtime-rumble-complete-tour/04.png",
+      "sha256": "c78991c48121fecef8e84523c2b7dd2fa6eb9899848065509d30d72a76531ef5",
+      "bytes": 560952,
+      "observed": {
+        "version": "3.2.0-alpha.3",
+        "ready": true,
+        "phase": "playing",
+        "tour": false,
+        "editor": false,
+        "pause": false,
+        "menu": false,
+        "bossAlive": true,
+        "playerAlive": true,
+        "perspective": "CLASSIC_SIDE",
+        "score": 0,
+        "elapsed": 2.672199546485261,
+        "canvasReady": true
+      }
+    },
+    {
+      "slot": 5,
+      "label": "Entracte — vraie pause en combat",
+      "kind": "real-combat-pause",
+      "path": "assets/screenshots/ragtime-rumble-complete-tour/05.png",
+      "sha256": "2c8aa718ab4324a1081fa47f7be5d08345d67cf2ab4c40c20857dd99738b6113",
+      "bytes": 263306,
+      "observed": {
+        "version": "3.2.0-alpha.3",
+        "ready": true,
+        "phase": "paused",
+        "tour": false,
+        "editor": false,
+        "pause": true,
+        "menu": false,
+        "bossAlive": true,
+        "playerAlive": true,
+        "perspective": "CLASSIC_SIDE",
+        "score": 0,
+        "elapsed": 3.1598185941043084,
+        "canvasReady": true
+      }
+    }
+  ],
+  "limitations": [
+    "Only menu, Tour, editor, first Maestro Bellows fight and pause were directly executed",
+    "No claim that all bosses, cinematics, equipment, or game modes are 1:1 faithful",
+    "Screenshots are native 1280x720 browser captures, not reconstructed copyrighted character art"
+  ]
+}

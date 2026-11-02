@@ -1,0 +1,172 @@
+{
+  "captureType": "native-local-browser-gameplay",
+  "notGeneratedArt": true,
+  "gameId": "diva-pulse",
+  "source": "https://github.com/darknigthmare/Diva-Pulse",
+  "sourceCommit": "9a6a00412cd719fd141daa7f47fde3392d81f8a7",
+  "version": "37.0.0",
+  "htmlPath": "DIVA_PULSE_JOUER.html",
+  "sourceHtmlSha256": "61d87a5929a91331b699005c4a5582e312a84abf821460fa915091f5b4bfd8ba",
+  "capturedAt": "2026-11-02T04:46:12.128Z",
+  "browser": "Headless Chromium CDP, exact standalone HTML served on localhost; software WebGL SwiftShader",
+  "overview": {
+    "title": "DIVA PULSE — Prises fiables & brouillons protégés V37",
+    "viewport": "1280x720",
+    "nativeControlsOnly": true,
+    "liveAudioPlayingConfirmed": true
+  },
+  "presentation": {
+    "path": "assets/presentations/diva-pulse.png",
+    "sha256": "58fc6b5d4c11101a778f6b04e04f6e66b6ae7d94f5e5cb4489f575394fdea028",
+    "bytes": 404043,
+    "kind": "Actual game library/title UI; not generated keyart"
+  },
+  "preview": {
+    "path": "assets/previews/diva-pulse.jpg",
+    "sha256": "7c3fefd3ef9934cc6d0ef403b3863e1d00b12e672bbe713e53aa4cf5a4b68694",
+    "bytes": 109123,
+    "kind": "Actual local rhythm-game frame"
+  },
+  "scenes": [
+    {
+      "slot": 1,
+      "path": "assets/screenshots/diva-pulse/01.png",
+      "label": "Bibliothèque — trois instrumentaux originaux et scène de travail",
+      "kind": "actual-game-ui",
+      "sha256": "58fc6b5d4c11101a778f6b04e04f6e66b6ae7d94f5e5cb4489f575394fdea028",
+      "bytes": 404043,
+      "screen": "1280x720",
+      "state": {
+        "title": "DIVA PULSE — Prises fiables & brouillons protégés V37",
+        "view": "library",
+        "paused": false,
+        "playing": false,
+        "canvas": [
+          {
+            "width": 845,
+            "height": 720
+          },
+          {
+            "width": 700,
+            "height": 34
+          }
+        ],
+        "song": "NEON PROMISE",
+        "mode": null
+      }
+    },
+    {
+      "slot": 2,
+      "path": "assets/screenshots/diva-pulse/02.png",
+      "label": "Modules — scène 3D et silhouettes de travail",
+      "kind": "actual-game-ui",
+      "sha256": "5bdbc63b064cc65d527eb616360e502cb106ff1ac3091feba397dbef9b91bc18",
+      "bytes": 315085,
+      "screen": "1280x720",
+      "state": {
+        "title": "DIVA PULSE — Prises fiables & brouillons protégés V37",
+        "view": "wardrobe",
+        "paused": false,
+        "playing": false,
+        "canvas": [
+          {
+            "width": 845,
+            "height": 720
+          }
+        ],
+        "song": "NEON PROMISE",
+        "mode": null
+      }
+    },
+    {
+      "slot": 3,
+      "path": "assets/screenshots/diva-pulse/03.png",
+      "label": "Studio — partition et outils d’édition du rythme",
+      "kind": "actual-game-ui",
+      "sha256": "39aa3c005c3b169e8d271f9dad34b0237f888d46b3f8fa80420573320f70fae3",
+      "bytes": 102402,
+      "screen": "1280x720",
+      "state": {
+        "title": "DIVA PULSE — Prises fiables & brouillons protégés V37",
+        "view": "editor",
+        "paused": false,
+        "playing": false,
+        "canvas": [
+          {
+            "width": 794,
+            "height": 720
+          },
+          {
+            "width": 927,
+            "height": 300
+          }
+        ],
+        "song": "NEON PROMISE",
+        "mode": null
+      }
+    },
+    {
+      "slot": 4,
+      "path": "assets/screenshots/diva-pulse/04.png",
+      "label": "Neon Promise — démonstration assistée Autoplay du moteur rythmique",
+      "kind": "real-gameplay",
+      "sha256": "03ec9c37aef2fafe636a6ab0f8d18658270001cf0ad1bf61721e9541b6177a7c",
+      "bytes": 206540,
+      "screen": "1280x720",
+      "state": {
+        "title": "DIVA PULSE — Prises fiables & brouillons protégés V37",
+        "view": "game",
+        "paused": false,
+        "playing": true,
+        "canvas": [
+          {
+            "width": 1280,
+            "height": 720
+          },
+          {
+            "width": 1280,
+            "height": 720
+          }
+        ],
+        "song": "NEON PROMISE",
+        "mode": "autoplay"
+      }
+    },
+    {
+      "slot": 5,
+      "path": "assets/screenshots/diva-pulse/05.png",
+      "label": "Live — pause et commandes de reprise",
+      "kind": "actual-game-ui",
+      "sha256": "f52ad2360ee951ad28fcc2df2413d9b6d453d1abf149b83cf7c9cb5f8a9206ee",
+      "bytes": 128356,
+      "screen": "1280x720",
+      "state": {
+        "title": "DIVA PULSE — Prises fiables & brouillons protégés V37",
+        "view": "game",
+        "paused": true,
+        "playing": false,
+        "canvas": [
+          {
+            "width": 1280,
+            "height": 720
+          },
+          {
+            "width": 1280,
+            "height": 720
+          }
+        ],
+        "song": "NEON PROMISE",
+        "mode": "autoplay"
+      }
+    }
+  ],
+  "noHistoricalMedia": true,
+  "limitations": [
+    "Exact local main source V37 captured; no Vercel deployment is claimed.",
+    "Header still displays the historical 34.0 branding; title and package identify V37.",
+    "3D figures are the game's procedural work silhouettes, not validated licensed MMD models.",
+    "Built-in original instrumental only; no imported licensed music, MMD motion or canonical visual fidelity certification.",
+    "The native Autoplay button supplies the assisted rhythm session; no manual-player performance is claimed.",
+    "A short assisted session and navigation do not certify all editor, audio latency, replay or hardware behavior."
+  ]
+}

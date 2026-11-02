@@ -1,0 +1,127 @@
+{
+  "captureType": "native-webgl-arena",
+  "notGeneratedArt": true,
+  "source": "https://riftcasters-3d.vercel.app/",
+  "capturedAt": "2026-11-01T18:36:34.469Z",
+  "sourceVersion": "1.0.0-rc.1",
+  "deploymentId": "dpl_4SZsxJCF6GgJMXwhvuVLJecS3pkg",
+  "deploymentCommit": "21ef0c45a50ff8f2ccd655d7549c4e6758990186",
+  "viewport": "1280x720",
+  "presentation": {
+    "path": "assets/presentations/riftcasters-3d.png",
+    "sha256": "020495fb3b64ff15973e150e1200b226ba2567b7eae134b098c4985e2f52b8ea",
+    "bytes": 404465
+  },
+  "preview": {
+    "path": "assets/previews/riftcasters-3d.jpg",
+    "sha256": "61f5379e1e081b9637ce73f6cf8523507246f30c2ed73e93f02199e59abdb43b",
+    "bytes": 117506
+  },
+  "scenes": [
+    {
+      "slot": 1,
+      "label": "Arche — préparation de l'arcaniste Elias Quill",
+      "kind": "character-selection",
+      "path": "assets/screenshots/riftcasters-3d/01.png",
+      "sha256": "1026aa93836a20da1d8563be9c1637dea1509a58bb47eca2a8372d7cae054ce6",
+      "bytes": 404605,
+      "observed": {
+        "phase": "menu",
+        "ready": "true",
+        "webglError": "false",
+        "canvas": 1280,
+        "menu": true,
+        "mana": 0,
+        "hudWave": "",
+        "journal": false,
+        "paused": false
+      }
+    },
+    {
+      "slot": 2,
+      "label": "Journal — paramètres et aide à la survie",
+      "kind": "actual-configuration-journal",
+      "path": "assets/screenshots/riftcasters-3d/02.png",
+      "sha256": "f81cca405ed47ee4541f45130228d0c0762036936940cf279f3a76444f8c82b0",
+      "bytes": 111856,
+      "observed": {
+        "phase": "menu",
+        "ready": "true",
+        "webglError": "false",
+        "canvas": 1280,
+        "menu": true,
+        "mana": 0,
+        "hudWave": "",
+        "journal": true,
+        "paused": false
+      }
+    },
+    {
+      "slot": 3,
+      "label": "Convergence — première vague et cockpit de sorts",
+      "kind": "live-arena-gameplay",
+      "path": "assets/screenshots/riftcasters-3d/03.png",
+      "sha256": "64a548d8289f9d8e649c936c522a976980984456502b5c8a3682c88edae76eed",
+      "bytes": 401457,
+      "observed": {
+        "phase": "playing",
+        "ready": "true",
+        "webglError": "false",
+        "canvas": 1280,
+        "menu": false,
+        "mana": 100,
+        "hudWave": "VAGUE01",
+        "journal": false,
+        "paused": false
+      }
+    },
+    {
+      "slot": 4,
+      "label": "Convergence — égide arcanique et dépense de mana",
+      "kind": "real-ability-usage",
+      "path": "assets/screenshots/riftcasters-3d/04.png",
+      "sha256": "8b73397e8bc78af24f8341a4775187f6fe9a7f63fa0557418a53c36737776f45",
+      "bytes": 412112,
+      "observed": {
+        "phase": "playing",
+        "ready": "true",
+        "webglError": "false",
+        "canvas": 1280,
+        "menu": false,
+        "mana": 80.56,
+        "hudWave": "VAGUE01",
+        "journal": false,
+        "paused": false
+      }
+    },
+    {
+      "slot": 5,
+      "label": "Convergence — transmission suspendue",
+      "kind": "real-pause-menu",
+      "path": "assets/screenshots/riftcasters-3d/05.png",
+      "sha256": "f5e8f9b9fe2f4ee7cae1077cd8a82d4de51b5a4e6dfa1fe2e97b7fb2d5c84c98",
+      "bytes": 195109,
+      "observed": {
+        "phase": "paused",
+        "ready": "true",
+        "webglError": "false",
+        "canvas": 1280,
+        "menu": false,
+        "mana": 0,
+        "hudWave": "",
+        "journal": false,
+        "paused": false
+      }
+    }
+  ],
+  "spellEvidence": {
+    "manaBefore": 100,
+    "manaAfter": 80.56,
+    "phase": "playing"
+  },
+  "limitations": [
+    "WebGL scenes rendered via Chromium SwiftShader, not physical GPU benchmark",
+    "Only first wave, character creation, real active spell and pause are proven",
+    "No claim of completed boss encounter or comprehensive fidelity 1:1 of all arcanists"
+  ]
+}

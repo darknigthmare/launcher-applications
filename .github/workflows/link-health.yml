@@ -1,0 +1,36 @@
+name: Launcher — contrôle quotidien des liens publics
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "index.html"
+      - "assets/recent-games.js"
+      - "scripts/check-live-links.mjs"
+      - "scripts/link-destination-classifier.mjs"
+      - "scripts/link-destination-classifier.test.mjs"
+      - ".github/workflows/link-health.yml"
+  schedule:
+    - cron: "15 5 * * *"
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Contrôler les liens du catalogue sans modifier les alias
+        run: npm run links:check
+      - name: Conserver le diagnostic détaillé
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: launcher-links-${{ github.run_number }}
+          path: .reports/live-link-status.json
+          if-no-files-found: warn

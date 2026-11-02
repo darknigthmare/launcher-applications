@@ -1,6 +1,6 @@
 const CACHE_PREFIX = "launcher-";
-const CACHE_NAME = "launcher-shell-v28";
-const RUNTIME_CACHE = "launcher-media-runtime-v1";
+const CACHE_NAME = "launcher-shell-v31";
+const RUNTIME_CACHE = "launcher-media-runtime-v2";
 const MAX_RUNTIME_ENTRIES = 120;
 const APP_SHELL = [
   "/index.html",
@@ -38,7 +38,11 @@ async function storeRuntimeMedia(request, response) {
 }
 
 self.addEventListener("install", (event) => {
-  event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_SHELL)).then(() => self.skipWaiting()));
+  // A new worker must fetch the new catalogue, even if the HTTP cache still
+  // considers a previous release's scripts and manifests fresh.
+  event.waitUntil(caches.open(CACHE_NAME)
+    .then((cache) => cache.addAll(APP_SHELL.map((url) => new Request(url, { cache: "reload" }))))
+    .then(() => self.skipWaiting()));
 });
 
 self.addEventListener("activate", (event) => {
@@ -78,7 +82,8 @@ self.addEventListener("fetch", (event) => {
   }
 
   if (/^\/assets\/(?:previews|presentations|screenshots)\//.test(url.pathname)) {
-    const networkResponse = fetch(request);
+    // Galleries reuse stable filenames: revalidate refreshed native captures.
+    const networkResponse = fetch(request, { cache: "no-cache" });
     const updatePromise = networkResponse
       .then((response) => {
         if (!isCacheableResponse(response, "image/")) return;
