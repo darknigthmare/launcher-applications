@@ -1,5 +1,23 @@
 window.LAUNCHER_RELEASES = [
   {
+    "version": "1.15.0",
+    "date": "2026-11-02",
+    "title": "Catalogue à jour et nouvelles galeries natives",
+    "highlights": [
+      "158 fiches dont 145 jeux : AVP Blood Arena rejoint les téléchargements locaux comme prototype 0.1.0, distinct des versions historiques non restaurées. SOMA//MASSILIA passe de 0.1.0 à 0.6.0, version confirmée par son manifeste public.",
+      "20 nouvelles captures réelles dans 4 galeries, avec écrans natifs, aperçus, SHA sources et empreintes des images. Le suivi compte 105 captures documentées ; 6 jeux retrouvés attendent encore leurs médias. Aucune fidélité canonique 1:1 n’est présumée.",
+      "Les légendes correspondent aux jeux photographiés. Le cache PWA est renouvelé pour récupérer les fiches et images actualisées, tout en conservant les favoris et les noms personnalisés.",
+      "158 liens contrôlés : 151 sites accessibles, six dépôts de téléchargement et Malaise Party avec connexion Vercel requise. Tests de destinations et parcours Chromium exécutés dans la CI."
+    ],
+    "appIds": [
+      "avp-blood-arena",
+      "soma-massilia",
+      "riftcasters-chaos-anglers",
+      "diva-pulse",
+      "parallaxe-protocole-9"
+    ]
+  },
+  {
     version: "1.14.0",
     date: "2026-11-01",
     title: "Jeux retrouvés — portes et archives",

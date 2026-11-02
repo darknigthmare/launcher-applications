@@ -1,5 +1,7 @@
 # Launcher Games — Revue liens, fiches et visuels (2026-11-01)
 
+> **Instantané historique du 1er novembre.** Les ajouts et corrections du 2 novembre sont suivis dans [l’audit actuel](CATALOGUE_AUDIT_2026-11-02.md), le [README](../README.md) et la [matrice média actualisée](MEDIA_FIDELITY_MATRIX_2026-11-01.json). Les nombres et mentions « pas encore intégré » ci-dessous décrivent l’état initial, pas le catalogue actuel.
+
 ## Portée vérifiée
 
 - Source du launcher : `darknigthmare/launcher-applications` (branche principale trouvée sur `e3da5a7`, version 1.12.0, 30 août 2026).

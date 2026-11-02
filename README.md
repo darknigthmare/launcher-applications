@@ -1,20 +1,43 @@
 # Mon Launcher
 
-Launcher personnel qui réunit les jeux et outils accessibles sur Vercel, ainsi que les jeux indépendants distribués à télécharger depuis GitHub.
+Launcher personnel pour les jeux et outils web, et les jeux distribués localement sur GitHub.
 
-La PR #17 propose **157 fiches, dont 144 jeux** ; la version publique peut encore afficher le catalogue historique tant que cette branche n'est pas fusionnée.
+Version **1.15.0** · **158 fiches, dont 145 jeux** · [Ouvrir le launcher](https://launcher-applications.vercel.app/) · [PR #17](https://github.com/darknigthmare/launcher-applications/pull/17)
 
-Version publique : [launcher-applications.vercel.app](https://launcher-applications.vercel.app/)
+## Version 1.15 — Catalogue et galeries actualisés (2 novembre 2026)
 
-## Version candidate 1.14 — Jeux oubliés et titres d'origine
+**AVP Blood Arena — Relance technique 0.1.0** est ajouté comme prototype à télécharger : aucun déploiement Vercel n’existe, et les anciennes versions 0.30/0.36 ne sont pas restaurées. **SOMA//MASSILIA** est corrigé de 0.1.0 à **0.6.0**, confirmé par les sources et son manifeste public. Les 140 fiches historiques sont conservées, avec **18 jeux retrouvés** au total, dont **six distributions locales**. [Sources et couverture des 174 dépôts](docs/CATALOGUE_AUDIT_2026-11-02.md).
 
-La branche candidate ajoute **17 jeux retrouvés** au catalogue sans supprimer les **140 anciennes fiches** : dix pages Vercel identifiées, cinq jeux distribués localement depuis leurs dépôts GitHub et deux mini-jeux distincts trouvés dans les anthologies d’août. Le total devient **157 applications dont 144 jeux**. Le bouton et le badge distinguent une page Jouer d'une page de téléchargement.
+Ce lot apporte **20 nouvelles captures natives dans 4 galeries**, avec un écran réel et un aperçu par jeu :
 
-Les jeux nouvellement retrouvés ne reçoivent aucune illustration ni capture de gameplay imaginaire. Deux nouveaux mini-jeux sont distingués des éditions séparées : « DON’T LOOK WHEN THEY SAY SOLEIL » et « Maid Café Simulator Deluxe ». Pour **DEADLINE: Outbreak**, un écran titre réel, un aperçu et cinq captures natives de la mission d'ouverture ont été enregistrés avec leurs SHA-256. **Resident Evil: B.O.W. Protocol** possède lui aussi son écran d'entrée et cinq vraies vues des spécimens Tyrant, Licker et Nemesis, des sept modes et des archives (R20). **Ce ne sont pas des captures de combat animé** ; l'intégrale 1:1 de chaque créature reste non certifiée. **Dernière Ligne — Zéro Repli 0.44.2** a désormais son véritable écran titre, un aperçu de la nuit et **cinq captures natives** (campagnes, préparation, trois phases de combat), enregistrées depuis le fichier HTML local exact du commit `d3d4bb04abea` dans [la preuve native](docs/media-proof/derniere-ligne-local-0442-2026-11-01.json). Quatre autres distributions locales attendent encore leurs captures. **Mass Effect — Relay Chronicles 0.3.0** possède son [véritable écran titre, la Normandy 2D/3D et cinq vues jouées](docs/media-proof/mass-effect-relay-native-2026-11-01.json). **Yu-Gi-Oh! Hologram Duel 2.5D** possède [cinq vues natives vérifiées](docs/media-proof/yugioh-hologram-native-2026-11-01.json) : sélection du deck, campagne solo, Atlas des Terrains, duel compact et Vue Arène (le mode Vue Réelle 3D reste à recapturer). Ces prises de vue n'impliquent pas une fidélité canonique 1:1 des personnages ou monstres ; elles prouvent le rendu des jeux. **RIFTCASTERS 3D — Convergence** a aussi son [jeu WebGL réel et cinq scènes](docs/media-proof/riftcasters-convergence-native-2026-11-01.json) : préparation d'Elias Quill, journal, arène, Égide activée avec consommation effective de mana et pause. **Ragtime Rumble — Complete Tour 3.2.0-alpha.3** possède maintenant [cinq images source-native](docs/media-proof/ragtime-complete-tour-native-2026-11-01.json) : menu, tournée, éditeur, vrai combat contre Maestro Bellows et pause. **80 captures réparties dans 16 galeries** sont désormais documentées, pour 157 fiches ; **10 nouvelles fiches** attendent encore des prises de vue vérifiables. Les anciennes illustrations restent archivées.
+- **RIFTCASTERS 3D — MODERN SKIES** : [preuve native](docs/media-proof/riftcasters-anglers-local-860-2026-11-02.json) ; version 8.6.0.
+- **DIVA PULSE — Studio de rythme** : [preuve native](docs/media-proof/diva-pulse-local-v37-2026-11-02.json) ; version 37.0.0.
+- **PARALLAXE — PROTOCOLE 9** : [preuve native](docs/media-proof/parallaxe-local-041-2026-11-02.json) ; version 0.4.1.
+- **AVP BLOOD ARENA — RELANCE TECHNIQUE** : [preuve native](docs/media-proof/avp-blood-arena-local-010-2026-11-02.json) ; version 0.1.0.
 
-[Retrouvailles et doublons vérifiés](docs/RECOVERED_GAMES_2026-11-01.md) · [matrice exhaustive des médias](docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json) · [diagnostic des URLs](docs/LINK_IDENTITY_SSO_2026-11-01.md)
+Ces captures proviennent des sources exactes exécutées localement, sans génération d’illustration. DIVA PULSE montre notamment une démonstration en **Autoplay assisté**, pas une performance manuelle. Leurs limites, versions et SHA sont enregistrés dans chaque preuve. Les vues locales d’un jeu web sont distinguées d’une capture de production.
 
-**Important :** la version 1.14 est dans la PR en cours de validation. Tant que la PR n'est pas fusionnée, la production peut afficher une version plus ancienne. Le mode édition local ne possède pas de véritable authentification admin, et les fichiers publics ne deviennent pas confidentiels du seul fait de leur masquage dans l'UI.
+Le suivi totalise **105 captures documentées dans 21 galeries**. **655 captures historiques** attendent encore une comparaison au build et **6 jeux retrouvés** attendent leur première galerie (30 emplacements). Les visuels natifs prouvent le rendu observé, sans certification globale de fidélité canonique 1:1. Les anciennes images sont conservées. [Matrice média](docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json).
+
+Les légendes de Resident Evil B.O.W. Protocol, Reclaimed et des autres galeries ne reprennent plus les mentions propres au terminal Codec ou à la simulation GPS d’un autre jeu. Le cache PWA **shell v31 / médias v2** recharge le catalogue et revalide les images mises à jour. Les favoris et personnalisations sont conservés lors de la migration du catalogue enregistré.
+
+Le [contrôle réel des 158 destinations](docs/link-proof/live-links-2026-11-02.json) relève **151 sites accessibles, six dépôts de téléchargement, un accès Vercel protégé** et aucun lien cassé. Une réponse HTTP ne garantit pas la version du jeu ni sa jouabilité complète. Malaise Party affiche sa connexion requise ; les jeux locaux ouvrent **Fichiers et installation**.
+
+Pour vérifier le lot :
+
+```sh
+npm test
+npm run test:browser  # Chromium installé, Node.js 22 ou supérieur
+npm run links:check
+```
+
+Le test navigateur sert automatiquement le site en local et contrôle les fiches, les commandes de galerie, le cache PWA, la migration des anciennes données, les favoris, les archives et le mobile. Les rapports et captures de test restent dans `.reports/`. La CI exécute l’audit, les tests de destinations et ce parcours navigateur.
+
+**Limite maintenue :** le mode édition n’est pas une authentification admin ; le dépôt et ses archives restent publics. La PR conserve les travaux non terminés dans ses rapports. La publication Vercel doit être reliée au SHA vérifié, indépendamment de l’état de fusion de la PR.
+
+## Version 1.14 — Première réconciliation (1er novembre 2026)
+
+La branche précédente réunissait 157 fiches dont 144 jeux : 17 jeux retrouvés ajoutés aux 140 fiches historiques, sans suppression. Dix productions web, cinq éditions locales et deux mini-jeux d’anthologies ont été distingués. Le dernier état de cette vague documentait 85 captures dans 17 galeries. [Inventaire des découvertes](docs/RECOVERED_GAMES_2026-11-01.md) · [audit des distributions locales](docs/GITHUB_ONLY_GAMES_AUDIT_2026-11-01.md).
 
 ---
 
@@ -48,7 +71,6 @@ Le launcher compte désormais **140 applications**, **127 jeux**, **140 aperçus
 
 ---
 
-## Version 1.11 — Quatre archives deviennent quatre mondes jouables
 ## Version 1.11 — Quatre archives deviennent quatre mondes jouables
 
 ECHO RIFT, OMBRE//GEEK, SON OF A…! — Legacy Forge et VEILBOUND — Les Visages du Monde Brisé rejoignent le launcher après leur séparation en dépôts GitHub et productions Vercel dédiés.

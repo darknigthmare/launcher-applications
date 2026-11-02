@@ -1477,11 +1477,26 @@
     "captureProof": "docs/media-proof/riftcasters-convergence-native-2026-11-01.json"
   },
   "riftcasters-chaos-anglers": {
-    "images": [],
-    "captureType": "pending-source-review",
-    "presentationReview": "pending-fidelity",
-    "labels": [],
-    "captureNote": "Fiche publiable avec lien vérifié; aucun visuel du gameplay accepté avant capture sur une vraie version et vérification."
+    "images": [
+      "assets/screenshots/riftcasters-chaos-anglers/01.png",
+      "assets/screenshots/riftcasters-chaos-anglers/02.png",
+      "assets/screenshots/riftcasters-chaos-anglers/03.png",
+      "assets/screenshots/riftcasters-chaos-anglers/04.png",
+      "assets/screenshots/riftcasters-chaos-anglers/05.png"
+    ],
+    "captureType": "real-local-gameplay",
+    "presentationReview": "source-native-title-screen",
+    "labels": [
+      "Menu Modern Skies — préparation de la relève",
+      "Paramètres — commandes, rendu et vue de l’expédition",
+      "Carrière — progression et rang de relève",
+      "Affectation — choix de K-13 ou du Bassin Gris-17",
+      "K-13 — première relève en vue subjective"
+    ],
+    "captureSource": "https://riftcasters-chaos-anglers.vercel.app/",
+    "captureVersion": "8.6.0",
+    "captureDate": "2026-11-02",
+    "captureProof": "docs/media-proof/riftcasters-anglers-local-860-2026-11-02.json"
   },
   "reclaimed-after-dark": {
     "images": [
@@ -1557,11 +1572,27 @@
     "captureNote": "Fiche publiable avec lien vérifié; aucun visuel du gameplay accepté avant capture sur une vraie version et vérification."
   },
   "diva-pulse": {
-    "images": [],
-    "labels": [],
-    "captureType": "pending-source-review",
-    "presentationReview": "pending-fidelity",
-    "captureNote": "Jeu distribué via son dépôt GitHub. Aucune capture de gameplay ou illustration 1:1 n'est certifiée ; accès local via les instructions de l'auteur."
+    "images": [
+      "assets/screenshots/diva-pulse/01.png",
+      "assets/screenshots/diva-pulse/02.png",
+      "assets/screenshots/diva-pulse/03.png",
+      "assets/screenshots/diva-pulse/04.png",
+      "assets/screenshots/diva-pulse/05.png"
+    ],
+    "labels": [
+      "Bibliothèque — trois instrumentaux originaux et scène de travail",
+      "Modules — scène 3D et silhouettes de travail",
+      "Studio — partition et outils d’édition du rythme",
+      "Neon Promise — démonstration assistée Autoplay du moteur rythmique",
+      "Live — pause et commandes de reprise"
+    ],
+    "captureType": "real-local-gameplay",
+    "captureSource": "https://github.com/darknigthmare/Diva-Pulse",
+    "captureVersion": "37.0.0",
+    "captureDate": "2026-11-02",
+    "captureProof": "docs/media-proof/diva-pulse-local-v37-2026-11-02.json",
+    "presentationReview": "source-verified",
+    "captureNote": "V37 local : bibliothèque, modules de travail, éditeur, démonstration assistée Autoplay sur Neon Promise et pause réelle. Aucun modèle MMD officiel importé."
   },
   "derniere-ligne-zero-repli": {
     "images": [
@@ -1594,11 +1625,26 @@
     "captureNote": "Jeu distribué via son dépôt GitHub. Aucune capture de gameplay ou illustration 1:1 n'est certifiée ; accès local via les instructions de l'auteur."
   },
   "parallaxe-protocole-9": {
-    "images": [],
-    "labels": [],
-    "captureType": "pending-source-review",
-    "presentationReview": "pending-fidelity",
-    "captureNote": "Jeu distribué via son dépôt GitHub. Aucune capture de gameplay ou illustration 1:1 n'est certifiée ; accès local via les instructions de l'auteur."
+    "images": [
+      "assets/screenshots/parallaxe-protocole-9/01.png",
+      "assets/screenshots/parallaxe-protocole-9/02.png",
+      "assets/screenshots/parallaxe-protocole-9/03.png",
+      "assets/screenshots/parallaxe-protocole-9/04.png",
+      "assets/screenshots/parallaxe-protocole-9/05.png"
+    ],
+    "labels": [
+      "Choix du parcours — entraînement solo au Chalet de service",
+      "Chalet de service — passage de référence en perception Alpha",
+      "Carnet — références du chalet et règles de comparaison",
+      "Inspection 01 — comparaison réelle en perception Bêta",
+      "Terminal de diagnostic — décision entre anomalie et conformité"
+    ],
+    "captureType": "real-local-gameplay",
+    "presentationReview": "source-native-title-screen",
+    "captureSource": "https://github.com/darknigthmare/Parallaxe_Protocole9",
+    "captureVersion": "0.4.1",
+    "captureDate": "2026-11-02",
+    "captureProof": "docs/media-proof/parallaxe-local-041-2026-11-02.json"
   },
   "massilia-cyberpunk": {
     "images": [],
@@ -1622,5 +1668,27 @@
     "presentationReview": "pending-fidelity",
     "captureSource": "https://jeux-restaures-aout-2026.vercel.app/#maid-cafe",
     "captureNote": "Mini-jeu réellement jouable dans une collection publique. Le hash est vérifié en navigateur ; aucun PNG ou écran 1:1 validé pour cette fiche."
+  },
+  "avp-blood-arena": {
+    "images": [
+      "assets/screenshots/avp-blood-arena/01.png",
+      "assets/screenshots/avp-blood-arena/02.png",
+      "assets/screenshots/avp-blood-arena/03.png",
+      "assets/screenshots/avp-blood-arena/04.png",
+      "assets/screenshots/avp-blood-arena/05.png"
+    ],
+    "labels": [
+      "Règles du Circuit — Nexus, déplacements et conditions de victoire",
+      "Dock 17 — sélection d’un Colonial Marine face à la Ruche",
+      "Dock 17 — déplacement réel et dépense d’un point d’action",
+      "Deuxième manche — capacité défensive et réponse de l’IA",
+      "Ruines — Clan Yautja et Marines en mode deux joueurs locaux"
+    ],
+    "captureType": "real-local-gameplay",
+    "presentationReview": "source-native-title-screen",
+    "captureSource": "https://github.com/darknigthmare/avp-blood-arena",
+    "captureVersion": "0.1.0",
+    "captureDate": "2026-11-02",
+    "captureProof": "docs/media-proof/avp-blood-arena-local-010-2026-11-02.json"
   }
 }

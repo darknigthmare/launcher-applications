@@ -102,6 +102,58 @@
       "captureProof": "docs/media-proof/reclaimed-blackwater-200-native-2026-11-01.json",
       "sourceType": "Actual Blackwater game menu, campaign dossiers, workbench, briefing and deployed expedition",
       "version": "2.0.0 — Vercel production SHA 42db6a4f7372f6af442cf0c351cd7332d0989754"
+    },
+    {
+      "id": "parallaxe-protocole-9",
+      "provider": "PARALLAXE official portable 0.4.1 / Chromium CDP",
+      "generator": "native-local-file-capture",
+      "presentation": "assets/presentations/parallaxe-protocole-9.png",
+      "preview": "assets/previews/parallaxe-protocole-9.jpg",
+      "sha256": "88e186ec116015dd4362e08bca18fbdc8c6ce9ec5187dcc1c06284ef39dff9d4",
+      "sourceUrl": "https://github.com/darknigthmare/Parallaxe_Protocole9",
+      "sourceCommit": "fa9cf6306705c750106467d0d6caddf96767b0e7",
+      "captureProof": "docs/media-proof/parallaxe-local-041-2026-11-02.json",
+      "sourceType": "Official portable 0.4.1 title and solo Chalet reference, perception and diagnosis; no LAN/network certification",
+      "version": "0.4.1"
+    },
+    {
+      "id": "diva-pulse",
+      "provider": "Game Runtime / Chromium CDP",
+      "generator": "native-local-file-capture",
+      "presentation": "assets/presentations/diva-pulse.png",
+      "preview": "assets/previews/diva-pulse.jpg",
+      "sha256": "58fc6b5d4c11101a778f6b04e04f6e66b6ae7d94f5e5cb4489f575394fdea028",
+      "sourceUrl": "https://github.com/darknigthmare/Diva-Pulse",
+      "sourceCommit": "9a6a00412cd719fd141daa7f47fde3392d81f8a7",
+      "captureProof": "docs/media-proof/diva-pulse-local-v37-2026-11-02.json",
+      "sourceType": "Actual V37 local library/title, work silhouettes and native assisted rhythm gameplay; not invented keyart",
+      "version": "37.0.0"
+    },
+    {
+      "id": "avp-blood-arena",
+      "provider": "AVP Blood Arena official technical prototype 0.1.0 / Chromium CDP",
+      "generator": "native-local-file-capture",
+      "presentation": "assets/presentations/avp-blood-arena.png",
+      "preview": "assets/previews/avp-blood-arena.jpg",
+      "sha256": "c9b992516c6e3136359db5e1f9b568642b41bd75bd7d1641beb447ba0532ddd0",
+      "sourceUrl": "https://github.com/darknigthmare/avp-blood-arena",
+      "sourceCommit": "c2e2d71f7d87bac2f9065061e99a7a5129d091c6",
+      "captureProof": "docs/media-proof/avp-blood-arena-local-010-2026-11-02.json",
+      "sourceType": "Actual technical prototype title, rules, tactical movement and defence, AI turn and local two-player mode. No claim to restore historic 0.30/0.36.",
+      "version": "0.1.0"
+    },
+    {
+      "id": "riftcasters-chaos-anglers",
+      "provider": "Riftcasters Chaos Anglers Modern Skies 8.6.0 / local Chromium CDP",
+      "generator": "native-local-browser-capture",
+      "presentation": "assets/presentations/riftcasters-chaos-anglers.png",
+      "preview": "assets/previews/riftcasters-chaos-anglers.jpg",
+      "sha256": "c0c886de3e8967093a7b60f2da9ca6e348956c1e0fcc3422f22f977bc4eff94f",
+      "sourceUrl": "https://riftcasters-chaos-anglers.vercel.app/",
+      "sourceCommit": "52ced7248d5a2586aa00aef866a2cd54b881b24f",
+      "captureProof": "docs/media-proof/riftcasters-anglers-local-860-2026-11-02.json",
+      "sourceType": "Native local title, settings, career, world selection and initial K-13 gameplay; HTML byte-matched to HTTPS production.",
+      "version": "8.6.0"
     }
   ]
 }

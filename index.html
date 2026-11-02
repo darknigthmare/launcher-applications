@@ -2137,7 +2137,8 @@
     const PENDING_VISUAL_REVIEWS = new Set([
       "triarche-ciel-rouge", "deadwall-last-enclosure",
       "yautja-apex-hunt", "moustique-the-video-game",
-      "world-hive-wars", "shadow-codec-ops", "cainos", "avp-hunt-hive-tcg"
+      "world-hive-wars", "shadow-codec-ops", "cainos", "avp-hunt-hive-tcg",
+      "vortex-command"
     ]);
     const appIconIds = new Set(starterApps.map((app) => app.id));
     const stage = document.getElementById("stage");
@@ -2934,13 +2935,13 @@
           ? `<p class="capture-proof">${app.captureType === "real-engine-qa"
               ? "Images du moteur 3D · une scène jouable et quatre cadrages de QA"
               : app.captureType === "real-local-gameplay"
-                ? "Captures natives du jeu local · campagne, préparation et combat vérifiés"
+                ? "Captures natives du jeu exécuté localement"
                 : app.captureType === "real-ui-navigation"
-                  ? "Interfaces natives du jeu · campagne en simulation privée, sans GPS"
+                  ? "Interfaces et scènes natives du jeu"
                 : app.captureType === "real-module-ui"
                   ? app.id === "cainos"
                     ? "CainOS réel · bureau, archives, sélection et duel Encore"
-                    : "Interfaces natives du terminal · Codec, Side Ops, campagne et CQC"
+                    : "Interfaces natives du jeu"
                   : "Images prises dans le jeu"} · version ${escapeHtml(app.captureVersion)} · ${escapeHtml(app.captureDate)}</p>`
           : ""}
         <div class="tag-row">
@@ -3067,14 +3068,16 @@
     function mediaTargets(app) {
       const targets = [
         ...(!app.mediaPendingReview && !PENDING_VISUAL_REVIEWS.has(app.id) && app.presentationReview !== "pending-fidelity" ? [{
-          label: app.captureType === "real-local-gameplay" ? "Écran titre réel du jeu local" : "Illustration conceptuelle",
+          label: app.presentationReview === "source-native-title-screen"
+            ? "Écran titre réel du jeu"
+            : app.captureType === "real-local-gameplay" ? "Écran titre réel du jeu local" : "Illustration conceptuelle",
           url: sanitizeImageUrl(app.presentation)
         }] : []),
         { label: ["real-gameplay", "real-local-gameplay"].includes(app.captureType) ? "Aperçu du jeu réel" : app.captureType === "real-engine-qa"
           ? "Rendu natif WebGL2 · cadrage QA" : app.captureType === "real-ui-navigation"
-            ? "Aperçu de la campagne · interface réelle"
+            ? "Aperçu de l’interface réelle"
             : app.captureType === "real-module-ui"
-              ? app.id === "cainos" ? "Aperçu du bureau CainOS" : "Aperçu du terminal Codec" : "Aperçu", url: sanitizeImageUrl(app.image) },
+              ? app.id === "cainos" ? "Aperçu du bureau CainOS" : "Aperçu de l’interface réelle" : "Aperçu", url: sanitizeImageUrl(app.image) },
         ...(Array.isArray(app.gallery) ? app.gallery.map((url, index) => ({
           label: app.galleryLabels?.[index] || `Capture ${index + 1}`,
           url: sanitizeImageUrl(url)

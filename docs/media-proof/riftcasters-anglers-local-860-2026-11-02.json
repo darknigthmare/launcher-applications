@@ -1,0 +1,112 @@
+{
+  "captureType": "native-local-browser-gameplay",
+  "notGeneratedArt": true,
+  "gameId": "riftcasters-chaos-anglers",
+  "source": "https://riftcasters-chaos-anglers.vercel.app/",
+  "sourceRepository": "https://github.com/darknigthmare/riftcasters-chaos-anglers",
+  "sourceCommit": "52ced7248d5a2586aa00aef866a2cd54b881b24f",
+  "browserSource": "http://127.0.0.1:9377/",
+  "capturedAt": "2026-11-02T04:51:45.265Z",
+  "version": "8.6.0",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "productionByteMatch": {
+    "productionUrl": "https://riftcasters-chaos-anglers.vercel.app/",
+    "sourcePath": "pwa/index.html",
+    "sha256": "4fb05dba692a09ceac7f0e283cf2eb254825a13161df3f4bebd098312c08e3b3",
+    "matches": true
+  },
+  "deploymentId": "dpl_4coHKeSDsxuznUftmsRBJ4jPqWC4",
+  "presentation": {
+    "path": "assets/presentations/riftcasters-chaos-anglers.png",
+    "sha256": "c0c886de3e8967093a7b60f2da9ca6e348956c1e0fcc3422f22f977bc4eff94f",
+    "bytes": 763918,
+    "kind": "native local title menu"
+  },
+  "preview": {
+    "path": "assets/previews/riftcasters-chaos-anglers.jpg",
+    "sha256": "bf6ebf13e51c961a96ddfaf2f16cc37ed427f3be025e07c8ffc76dca24634665",
+    "bytes": 140793,
+    "kind": "native local K-13 gameplay"
+  },
+  "scenes": [
+    {
+      "slot": 1,
+      "label": "Menu Modern Skies — préparation de la relève",
+      "path": "assets/screenshots/riftcasters-chaos-anglers/01.png",
+      "sha256": "c0c886de3e8967093a7b60f2da9ca6e348956c1e0fcc3422f22f977bc4eff94f",
+      "bytes": 763918,
+      "kind": "real-title-menu",
+      "observed": {
+        "verification": "Native CDP screenshot; labels describe the pixels actually captured. No reconstructed DOM or invented state."
+      }
+    },
+    {
+      "slot": 2,
+      "label": "Paramètres — commandes, rendu et vue de l’expédition",
+      "path": "assets/screenshots/riftcasters-chaos-anglers/02.png",
+      "sha256": "dc70753f3ece27dd4c1665a1bbc29284e5af63cc782243b2a234aaf50250b092",
+      "bytes": 261965,
+      "kind": "real-settings-ui",
+      "observed": {
+        "verification": "Native CDP screenshot; labels describe the pixels actually captured. No reconstructed DOM or invented state."
+      }
+    },
+    {
+      "slot": 3,
+      "label": "Carrière — progression et rang de relève",
+      "path": "assets/screenshots/riftcasters-chaos-anglers/03.png",
+      "sha256": "c9c4db88fd24785a58684ea1cef390aef3e19ac93051e04cd221b78e8c710cf0",
+      "bytes": 213367,
+      "kind": "real-career-ui",
+      "observed": {
+        "verification": "Native CDP screenshot; labels describe the pixels actually captured. No reconstructed DOM or invented state."
+      }
+    },
+    {
+      "slot": 4,
+      "label": "Affectation — choix de K-13 ou du Bassin Gris-17",
+      "path": "assets/screenshots/riftcasters-chaos-anglers/04.png",
+      "sha256": "1aa2a852bc3a9ea8e4fc0a15950da5e093e4a82b4ac7cc7cfc8cd24ebd22185c",
+      "bytes": 465849,
+      "kind": "real-world-selection",
+      "observed": {
+        "verification": "Native CDP screenshot; labels describe the pixels actually captured. No reconstructed DOM or invented state."
+      }
+    },
+    {
+      "slot": 5,
+      "label": "K-13 — première relève en vue subjective",
+      "path": "assets/screenshots/riftcasters-chaos-anglers/05.png",
+      "sha256": "dc063b36431fc889cfeae2e93d87fe63108ab6d2f6d5462344106446c5f459d7",
+      "bytes": 734258,
+      "kind": "real-local-3d-gameplay",
+      "observed": {
+        "verification": "Native CDP screenshot; labels describe the pixels actually captured. No reconstructed DOM or invented state."
+      }
+    }
+  ],
+  "runtimeEvidence": {
+    "modernSkiesModuleVersion": "8.6.0",
+    "legacyVersionLabel": "8.4.0",
+    "legacyDocumentTitle": "RIFTCASTERS 3D — Greywater Uprising",
+    "webgl": "WebGL 2",
+    "skiesLoaded": 12,
+    "world": "k13",
+    "initialPlayerPosition": {
+      "x": 0,
+      "y": 0,
+      "z": -66
+    },
+    "introCompletedThrough": "Actual dialogueContinue control clicked twice"
+  },
+  "limitations": [
+    "Browser rendered an untouched local checkout; its HTML was byte-identical to HTTPS production at capture time.",
+    "Chromium software WebGL; no physical GPU performance certification.",
+    "The legacy global version/title can revert to 8.4.0 while the installed Modern Skies module remains 8.6.0; source was not patched.",
+    "Only initial K-13 gameplay, title and menus observed. No inventory, fishing catch, boss, Greywater campaign or full-game completion is claimed."
+  ],
+  "completionNote": "Five distinct native views preserved: title, settings, career, world selection, initial K-13. Inventory shortcut did not open a view, so inventory is excluded."
+}

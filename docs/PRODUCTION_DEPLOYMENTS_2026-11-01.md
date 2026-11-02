@@ -1,5 +1,7 @@
 # État des productions Vercel des 13 fiches prioritaires — 1er novembre 2026
 
+> **Instantané historique du 1er novembre.** Les ajouts et corrections du 2 novembre sont suivis dans [l’audit actuel](CATALOGUE_AUDIT_2026-11-02.md), le [README](../README.md) et la [matrice média actualisée](MEDIA_FIDELITY_MATRIX_2026-11-01.json). Les nombres et mentions « pas encore intégré » ci-dessous décrivent l’état initial, pas le catalogue actuel.
+
 Relevé effectué sur les déploiements de **production** de l'équipe Vercel `darknigthmares-projects`. La date est en UTC. **Un statut READY prouve la construction et la publication du déploiement indiqué, pas l'exécution de tous les parcours du jeu.** Les alias du launcher ont été testés indépendamment en HTTP (140/140 accessibles). Un commit source plus récent que la publication ne doit pas être présenté comme déjà en ligne.
 
 | Jeu | Dernier déploiement de production consulté | État | Commit de déploiement | ID Vercel | Conclusion |

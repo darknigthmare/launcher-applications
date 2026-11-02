@@ -33,3 +33,23 @@ test("login/403 or protection header cannot be classified as publicly reachable"
   assert.equal(classifyLinkDestination({requestedUrl,effectiveUrl:requestedUrl,status:200,
     headers:{"x-vercel-protection":"required"}}).state,"auth-required");
 });
+
+test("same-origin Vercel authentication document is not a public game",()=>{
+  assert.equal(classifyLinkDestination({requestedUrl,status:200,
+    body:"<!doctype html><html><head><title>Vercel Authentication</title></head>"}).state,"auth-required");
+  assert.equal(classifyLinkDestination({requestedUrl,status:200,
+    body:"<title>Account sign-in</title><p>Authentication required to save your game</p>"}).state,"reachable");
+});
+
+test("protection headers are case-insensitive and both headers are examined",()=>{
+  assert.equal(classifyLinkDestination({requestedUrl,status:200,
+    headers:{"X-Vercel-Protection":"required"}}).state,"auth-required");
+  assert.equal(classifyLinkDestination({requestedUrl,status:200,
+    headers:new Headers({"x-vercel-protection":"enabled","x-vercel-authenticated":"required"})}).state,"auth-required");
+});
+
+test("unfinished redirects and HTTPS downgrades require review",()=>{
+  assert.equal(classifyLinkDestination({requestedUrl,status:302}).state,"needs-review");
+  assert.equal(classifyLinkDestination({requestedUrl,status:200,
+    effectiveUrl:requestedUrl.replace("https:","http:")}).state,"needs-review");
+});

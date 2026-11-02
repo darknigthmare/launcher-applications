@@ -55,12 +55,14 @@ window.LAUNCHER_RECENT_GAMES = [
   },
   {
     "id": "soma-massilia",
+    "sourceRepository": "https://github.com/darknigthmare/soma-massilia",
+    "sourceVersion": "0.6.0",
     "name": "SOMA//MASSILIA — La Chair sous Licence",
     "category": "Jeux",
     "gameKind": "Jeux originaux",
     "genre": "RPG & progression",
     "baseGame": "",
-    "description": "Action-RPG raycasté situé à Néo-Massilia en 2197, où le corps est un abonnement et l’identité une clause révocable. Trois enveloppes — Mistral-3, Môle-9 et Sibylle-6 — et trois méthodes d’entrée — Chair, Cortex et Spectre — transforment infiltration, combat, piratage et sabotage dans cette Vertical Slice 0.1.0.",
+    "description": "Action-RPG cyberpunk solo situé à Néo-Massilia en 2197, où le corps est un abonnement et l’identité une clause révocable. La version 0.6.0 poursuit La Dette de Chair et six opérations compactes : combats en vue subjective, ordres tactiques du Cortex et piratage du Spectre influencent factions, recrutements et cinq conclusions. Trois châssis, huit implants et la Cellule NULL accompagnent cette reconstruction originale, distincte du projet géographique local Massilia Cyberpunk.",
     "pitch": "Choisis un corps loué, signe sous contrainte et pirate la clause qui possède encore ton pouls.",
     "tags": [
       "Jeu original",
@@ -69,7 +71,7 @@ window.LAUNCHER_RECENT_GAMES = [
       "Infiltration",
       "Piratage",
       "Raycasting",
-      "Vertical Slice"
+      "Campagne solo"
     ],
     "icon": "SM",
     "link": "https://soma-massilia.vercel.app",
@@ -2448,9 +2450,9 @@ window.LAUNCHER_RECENT_GAMES = [
     "releaseState": "published",
     "addedAt": "2026-11-01",
     "status": "Vercel",
-    "mediaPendingReview": true,
-    "presentation": "",
-    "image": "",
+    "mediaPendingReview": false,
+    "presentation": "assets/presentations/riftcasters-chaos-anglers.png",
+    "image": "assets/previews/riftcasters-chaos-anglers.jpg",
     "id": "riftcasters-chaos-anglers",
     "name": "RIFTCASTERS 3D — MODERN SKIES",
     "gameKind": "Jeux originaux",
@@ -2470,7 +2472,9 @@ window.LAUNCHER_RECENT_GAMES = [
       "Modern Skies"
     ],
     "accent": "#418eaa",
-    "recoveredGame": true
+    "recoveredGame": true,
+    "sourceVersion": "8.6.0",
+    "sourceRepository": "https://github.com/darknigthmare/riftcasters-chaos-anglers"
   },
   {
     "category": "Jeux",
@@ -2589,9 +2593,9 @@ window.LAUNCHER_RECENT_GAMES = [
     "releaseState": "published",
     "addedAt": "2026-11-01",
     "status": "GitHub · téléchargement local",
-    "mediaPendingReview": true,
-    "presentation": "",
-    "image": "",
+    "mediaPendingReview": false,
+    "presentation": "assets/presentations/diva-pulse.png",
+    "image": "assets/previews/diva-pulse.jpg",
     "id": "diva-pulse",
     "name": "DIVA PULSE — Studio de rythme",
     "gameKind": "Jeux originaux",
@@ -2599,7 +2603,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "baseGame": "",
     "icon": "DP",
     "link": "https://github.com/darknigthmare/Diva-Pulse",
-    "description": "Dans le Studio Pulse, chaque morceau attend sa partition. Édite cinq difficultés, synchronise les notes grâce à AutoMap, règle la chorégraphie, les plans de caméra et les lumières avec Director, puis enregistre tes prises. Les bibliothèques et projets MMD viennent de tes imports : aucun catalogue musical sous licence n'est préinstallé. La version V37 est encore en PR, distincte du lecteur principal déjà distribué.",
+    "description": "Dans le Studio Pulse, édite cinq difficultés, synchronise les notes avec AutoMap et dirige la scène avec Auto Show et Director. Le build local V37 distribue trois instrumentaux originaux et une Académie de six leçons. Les modèles MMD et musiques sous licence viennent de tes imports ; les silhouettes procédurales de travail ne certifient aucune fidélité MMD. Les captures montrent le vrai build local, dont une démonstration assistée Autoplay.",
     "pitch": "La scène s'allume, mais la partition reste à écrire. Compose ton rythme, calibre la prise et dirige le spectacle.",
     "tags": [
       "Jeu original",
@@ -2613,7 +2617,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "accent": "#ae65e8",
     "accessPolicy": "local-download",
     "sourceRepository": "https://github.com/darknigthmare/Diva-Pulse",
-    "sourceVersion": "V34 main · V37 PR (non fusionnée)",
+    "sourceVersion": "37.0.0",
     "recoveredGame": true
   },
   {
@@ -2685,9 +2689,9 @@ window.LAUNCHER_RECENT_GAMES = [
     "releaseState": "published",
     "addedAt": "2026-11-01",
     "status": "GitHub · téléchargement local",
-    "mediaPendingReview": true,
-    "presentation": "",
-    "image": "",
+    "mediaPendingReview": false,
+    "presentation": "assets/presentations/parallaxe-protocole-9.png",
+    "image": "assets/previews/parallaxe-protocole-9.jpg",
     "id": "parallaxe-protocole-9",
     "name": "PARALLAXE — PROTOCOLE 9",
     "gameKind": "Jeux originaux",
@@ -2807,5 +2811,38 @@ window.LAUNCHER_RECENT_GAMES = [
     "image": "",
     "recoveredGame": true,
     "accent": "#d5ae81"
+  },
+  {
+    "id": "avp-blood-arena",
+    "name": "AVP BLOOD ARENA — RELANCE TECHNIQUE",
+    "category": "Jeux",
+    "gameKind": "Fan games",
+    "genre": "Stratégie & tactique",
+    "baseGame": "Alien vs. Predator",
+    "description": "Le Circuit des neuf factions ouvre ses arènes : récupère le Nexus, protège ton porteur et marque au terme de matchs tactiques au tour par tour, en solo contre l’IA ou à deux en local. Cette relance technique 0.1.0 propose un moteur autonome et un codex ; elle est distincte des versions historiques 0.30 et 0.36 encore non restaurées. Quatorze des dix-huit profils sportifs restent provisoires. Télécharge le dépôt puis sers son dossier avec un serveur HTTP local ; aucun déploiement public du jeu n’est encore disponible.",
+    "pitch": "Récupère le Nexus, ouvre une brèche et porte ton équipe jusqu’au but adverse.",
+    "tags": [
+      "Fan game",
+      "Alien vs. Predator",
+      "Sport tactique",
+      "Tour par tour",
+      "Solo",
+      "Multijoueur local",
+      "Prototype",
+      "Jeu local"
+    ],
+    "icon": "BA",
+    "link": "https://github.com/darknigthmare/avp-blood-arena",
+    "releaseState": "published",
+    "addedAt": "2026-11-02",
+    "status": "GitHub · téléchargement local",
+    "accessPolicy": "local-download",
+    "sourceRepository": "https://github.com/darknigthmare/avp-blood-arena",
+    "sourceVersion": "0.1.0",
+    "mediaPendingReview": false,
+    "presentation": "assets/presentations/avp-blood-arena.png",
+    "image": "assets/previews/avp-blood-arena.jpg",
+    "recoveredGame": true,
+    "accent": "#b2da56"
   }
 ];

@@ -31,21 +31,44 @@ async function check(app) {
   const url = new URL(app.link);
   if (url.protocol !== "https:") return { ...app, state: "needs-review", reason: "protocole non HTTPS" };
   let lastError = "";
-  for (const method of ["HEAD", "GET"]) {
+  // GET observes the actual authentication page too: HEAD alone can report 200
+  // while the same URL serves a Vercel gate rather than the game document.
+  for (let attempt = 0; attempt < 2; attempt++) {
     try {
       const response = await fetch(url.href, {
-        method,
+        method: "GET",
         redirect: "follow",
         signal: AbortSignal.timeout(10000),
-        headers: { "user-agent": "LauncherGames-LinkAudit/1.13 (+github.com/darknigthmare/launcher-applications)" }
+        headers: { "user-agent": "LauncherGames-LinkAudit (+github.com/darknigthmare/launcher-applications)" }
       });
-      await response.body?.cancel();
-      if (method === "HEAD" && [405, 501].includes(response.status)) continue;
+      let body = "";
+      // Inspect only the document head; avoid downloading complete game bundles
+      // or holding an unbounded response in the audit process.
+      if (response.body && /text\/html/i.test(response.headers.get("content-type") || "")) {
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+        let bytesRead = 0;
+        try {
+          while (bytesRead < 65536) {
+            const { value, done } = await reader.read();
+            if (done) break;
+            const remaining = 65536 - bytesRead;
+            body += decoder.decode(value.subarray(0, remaining), { stream: true });
+            bytesRead += value.length;
+            if (/<\/head\s*>/i.test(body)) break;
+          }
+        } finally {
+          await reader.cancel();
+        }
+      } else {
+        await response.body?.cancel();
+      }
       const classification = classifyLinkDestination({
         requestedUrl: app.link,
         effectiveUrl: response.url,
         status: response.status,
-        headers: { "x-vercel-protection": response.headers.get("x-vercel-protection") }
+        headers: response.headers,
+        body
       });
       const result = app.accessPolicy === "local-download" && classification.state === "reachable"
         ? { state:"download-available", reason:"Dépôt GitHub accessible : téléchargement/installation locale, pas un jeu hébergé" }

@@ -7,6 +7,8 @@ on:
       - "index.html"
       - "assets/recent-games.js"
       - "scripts/check-live-links.mjs"
+      - "scripts/link-destination-classifier.mjs"
+      - "scripts/link-destination-classifier.test.mjs"
       - ".github/workflows/link-health.yml"
   schedule:
     - cron: "15 5 * * *"
@@ -23,7 +25,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "24"
-      - name: Contrôler les 140 liens sans modifier les alias
+      - name: Contrôler les liens du catalogue sans modifier les alias
         run: npm run links:check
       - name: Conserver le diagnostic détaillé
         if: always()

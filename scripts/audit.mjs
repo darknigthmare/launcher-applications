@@ -355,11 +355,10 @@ for (const id of offlineGithubGameIds) {
   assert(Boolean(app), `jeu hors Vercel retrouvé : ${id}`);
   if (!app) continue;
   assert(app.accessPolicy === "local-download", `fichiers à télécharger clairement étiquetés pour ${id}`);
-  const hasGenuineHordeProof = id === "derniere-ligne-zero-repli" &&
-    app.mediaPendingReview === false && Boolean(app.image && app.presentation) &&
-    app.sourceVersion === "0.44.2" &&
-    await exists("docs/media-proof/derniere-ligne-local-0442-2026-11-01.json");
-  assert((app.mediaPendingReview === true && !app.image && !app.presentation) || hasGenuineHordeProof,
+  // Native proof is checked below against the manifest, actual files and source
+  // revision for every illustrated recovered game, including downloadable games.
+  const hasNativeMedia = app.mediaPendingReview === false && Boolean(app.image && app.presentation);
+  assert((app.mediaPendingReview === true && !app.image && !app.presentation) || hasNativeMedia,
     `aucun média fictif pour le jeu local ${id} ; les captures doivent avoir leur preuve native`);
   assert(app.link?.startsWith("https://github.com/darknigthmare/") && app.sourceRepository === app.link,
     `le vrai dépôt du jeu est associé à ${id}`);
@@ -562,6 +561,8 @@ for (const app of recoveredWithNativeMedia) {
     `vues natives documentées pour ${app.id}`);
   assert(source?.captureProof && await exists(source.captureProof),
     `rapport de capture effective du jeu retrouvé ${app.id}`);
+  assert(/^[a-f0-9]{64}$/.test(String(source?.sha256 || "")),
+    `empreinte de présentation native obligatoire pour ${app.id}`);
   if(source?.sha256 && await exists(source.presentation)) {
     const bytes = await readFile(path.join(root, source.presentation));
     assert(createHash("sha256").update(bytes).digest("hex") === source.sha256,
@@ -630,13 +631,54 @@ for (const app of recoveredWithNativeMedia) {
     `preuve des scènes natives conservée pour ${app.id}`);
   if (!evidencePath || !(await exists(evidencePath))) continue;
   const evidence = JSON.parse(await readFile(path.join(root, evidencePath), "utf8"));
+  const manifest = nativeEntries.find((entry) => entry.id === app.id);
   assert(evidence.notGeneratedArt === true,
     `captures réellement produites par un moteur pour ${app.id}`);
+  assert(gallery?.captureProof === evidencePath && manifest?.captureProof === evidencePath,
+    `galerie, matrice et manifeste relient la même preuve de ${app.id}`);
+  assert(evidence.source === manifest?.sourceUrl,
+    `source du manifeste identique à la preuve de ${app.id}`);
+  assert(Number.isFinite(Date.parse(evidence.capturedAt || "")),
+    `date de capture enregistrée pour ${app.id}`);
+  if (evidence.captureType === "native-local-browser-gameplay") {
+    assert(gallery?.captureType === "real-local-gameplay" &&
+      /^[a-f0-9]{40}$/.test(String(evidence.sourceCommit || "")) &&
+      manifest?.sourceCommit === evidence.sourceCommit,
+      `capture locale et révision exacte publiquement identifiées pour ${app.id}`);
+    if (app.accessPolicy !== "local-download") {
+      assert(evidence.sourceRepository === app.sourceRepository && evidence.source === app.link,
+        `source locale du jeu web ${app.id} rattachée à sa production officielle`);
+      assert(/^http:\/\/(?:127\.0\.0\.1|localhost)(?::\d+)?\//.test(String(evidence.browserSource || "")),
+        `adresse du navigateur local consignée pour ${app.id}`);
+      const match = evidence.productionByteMatch;
+      assert(match?.matches === true && match?.productionUrl === app.link &&
+        Boolean(match?.sourcePath) && /^[a-f0-9]{64}$/.test(String(match?.sha256 || "")),
+        `comparaison binaire locale/production consignée pour ${app.id}`);
+    }
+  }
+  if (app.accessPolicy === "local-download") {
+    assert(evidence.captureType === "native-local-browser-gameplay" && gallery?.captureType === "real-local-gameplay",
+      `la capture du jeu à télécharger ${app.id} est identifiée comme locale`);
+    assert(evidence.gameId === app.id && evidence.source === app.sourceRepository && evidence.source === app.link,
+      `identité du jeu local ${app.id} reliée à son véritable dépôt`);
+    assert(/^[a-f0-9]{40}$/.test(String(evidence.sourceCommit || "")) && manifest?.sourceCommit === evidence.sourceCommit,
+      `révision complète de la source locale ${app.id} conservée`);
+    assert(Boolean(evidence.version) && app.sourceVersion === evidence.version && gallery?.captureVersion === evidence.version,
+      `version locale ${app.id} cohérente entre source et galerie`);
+  }
   assert(Array.isArray(evidence.scenes) && evidence.scenes.length === 5,
     `cinq scènes de provenance native pour ${app.id}`);
   assert(Array.isArray(gallery?.images) && gallery.images.length === 5 &&
     Array.isArray(gallery?.labels) && gallery.labels.length === 5,
     `galerie native structurée pour ${app.id}`);
+  // Earlier proofs used a fixed 1280×720 capture. New captures may declare a
+  // larger real viewport when the original interface needs the extra room.
+  const viewport = evidence.viewport && typeof evidence.viewport === "object"
+    ? evidence.viewport : { width: 1280, height: 720 };
+  const validViewport = Number.isInteger(viewport.width) && Number.isInteger(viewport.height) &&
+    viewport.width >= 320 && viewport.width <= 8192 &&
+    viewport.height >= 240 && viewport.height <= 8192;
+  assert(validViewport, `dimensions de capture déclarées valides pour ${app.id}`);
   for (let index = 0; index < 5; index++) {
     const scene = evidence.scenes?.[index];
     const relativePath = gallery?.images?.[index];
@@ -648,10 +690,14 @@ for (const app of recoveredWithNativeMedia) {
     const pixels = await readFile(path.join(root, relativePath));
     assert(scene?.sha256 === createHash("sha256").update(pixels).digest("hex"),
       `empreinte SHA-256 de la capture réelle ${index + 1} de ${app.id}`);
-    assert(pixels.subarray(0, 8).toString("hex") === "89504e470d0a1a0a",
-      `capture réelle ${index + 1} de ${app.id} est un PNG`);
+    assert(validViewport && pixels.length >= 24 && pixels.subarray(0, 8).toString("hex") === "89504e470d0a1a0a" &&
+      pixels.readUInt32BE(16) === viewport.width && pixels.readUInt32BE(20) === viewport.height,
+      `capture réelle ${index + 1} de ${app.id} est un PNG aux dimensions déclarées ${viewport.width}×${viewport.height}`);
   }
   for (const [label,media] of [["présentation",evidence.presentation],["aperçu",evidence.preview]]) {
+    const expectedPath = label === "présentation" ? app.presentation : app.image;
+    assert(media?.path === expectedPath && /^[a-f0-9]{64}$/.test(String(media?.sha256 || "")),
+      `${label} natif de ${app.id} relié à sa fiche et à son empreinte obligatoire`);
     if (!media?.sha256 || !media?.path) continue;
     assert(await exists(media.path), `${label} source-native de ${app.id} conservé`);
     if (await exists(media.path)) {
@@ -1272,8 +1318,8 @@ for (const asset of appShell) {
 }
 assert(appShell.includes("/assets/openai-art-manifest.json"), "le manifeste OpenAI fait partie du shell hors ligne");
 assert(appShellBytes <= 5 * 1024 * 1024, "le préchargement APP_SHELL reste inférieur à 5 Mo");
-assert(serviceWorker.includes('const CACHE_NAME = "launcher-shell-v30"'), "le cache applicatif v1.14 utilise launcher-shell-v30");
-assert(serviceWorker.includes('const RUNTIME_CACHE = "launcher-media-runtime-v1"'), "le cache média différé est versionné");
+assert(serviceWorker.includes('const CACHE_NAME = "launcher-shell-v31"'), "le cache applicatif v1.15 utilise launcher-shell-v31");
+assert(serviceWorker.includes('const RUNTIME_CACHE = "launcher-media-runtime-v2"'), "le cache média renouvelé utilise launcher-media-runtime-v2");
 assert(serviceWorker.includes("const MAX_RUNTIME_ENTRIES = 120"), "le cache média différé est borné");
 assert(
   serviceWorker.includes("/^\\/assets\\/(?:previews|presentations|screenshots)\\//"),
