@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "gameId": "avp-blood-arena",
+  "checkedAt": "2026-11-09T05:02:18.257044+00:00",
+  "sourceRepository": "https://github.com/darknigthmare/avp-blood-arena",
+  "sourceCommit": "d722e728c72a8f092b515f3f21ed47fedcf84c52",
+  "productionUrl": "https://avp-blood-arena.vercel.app/",
+  "version": "0.1.0",
+  "vercel": {
+    "projectId": "prj_b6gFx5Agx5Fp686pQssE0FmhNwg7",
+    "deploymentId": "dpl_5JHhPGc3CySrJ61fTgQZT98ALb4V",
+    "state": "READY",
+    "target": "production",
+    "sourceCommit": "d722e728c72a8f092b515f3f21ed47fedcf84c52"
+  },
+  "resources": [
+    {
+      "sourcePath": "index.html",
+      "productionUrl": "https://avp-blood-arena.vercel.app/",
+      "effectiveUrl": "https://avp-blood-arena.vercel.app/",
+      "httpStatus": 200,
+      "bytes": 6995,
+      "sha256": "35199f4e05417bc4cc215c4e7c421f0e551090b7e778e12ed24e742216849127",
+      "sourceSha256": "35199f4e05417bc4cc215c4e7c421f0e551090b7e778e12ed24e742216849127",
+      "matches": true
+    },
+    {
+      "sourcePath": "style.css",
+      "productionUrl": "https://avp-blood-arena.vercel.app/style.css",
+      "effectiveUrl": "https://avp-blood-arena.vercel.app/style.css",
+      "httpStatus": 200,
+      "bytes": 6247,
+      "sha256": "741c17ff13cd0e1ae96e5ae2c3396195bc8697dda15c5fe2dfb807fc78206697",
+      "sourceSha256": "741c17ff13cd0e1ae96e5ae2c3396195bc8697dda15c5fe2dfb807fc78206697",
+      "matches": true
+    },
+    {
+      "sourcePath": "game.js",
+      "productionUrl": "https://avp-blood-arena.vercel.app/game.js",
+      "effectiveUrl": "https://avp-blood-arena.vercel.app/game.js",
+      "httpStatus": 200,
+      "bytes": 24159,
+      "sha256": "298729a92a6d2c688860ac0786d877bd36e022d41304ea0dd6518c788154cfac",
+      "sourceSha256": "298729a92a6d2c688860ac0786d877bd36e022d41304ea0dd6518c788154cfac",
+      "matches": true
+    },
+    {
+      "sourcePath": "data/alien-base.snapshot.json",
+      "productionUrl": "https://avp-blood-arena.vercel.app/data/alien-base.snapshot.json",
+      "effectiveUrl": "https://avp-blood-arena.vercel.app/data/alien-base.snapshot.json",
+      "httpStatus": 200,
+      "bytes": 27310,
+      "sha256": "9693ff317f82178177acf4464a453490e512423831c9ab9472efef9e0d43ab67",
+      "sourceSha256": "9693ff317f82178177acf4464a453490e512423831c9ab9472efef9e0d43ab67",
+      "matches": true
+    },
+    {
+      "sourcePath": "data/blood-arena.profiles.json",
+      "productionUrl": "https://avp-blood-arena.vercel.app/data/blood-arena.profiles.json",
+      "effectiveUrl": "https://avp-blood-arena.vercel.app/data/blood-arena.profiles.json",
+      "httpStatus": 200,
+      "bytes": 14714,
+      "sha256": "c462cfaf51341f9372c0fd91bf4098c42633507a080cd2af8d7e5b6fa914f4ae",
+      "sourceSha256": "c462cfaf51341f9372c0fd91bf4098c42633507a080cd2af8d7e5b6fa914f4ae",
+      "matches": true
+    },
+    {
+      "sourcePath": "data/cross-game-references.json",
+      "productionUrl": "https://avp-blood-arena.vercel.app/data/cross-game-references.json",
+      "effectiveUrl": "https://avp-blood-arena.vercel.app/data/cross-game-references.json",
+      "httpStatus": 200,
+      "bytes": 123717,
+      "sha256": "cb73a356eeaddfd59291c58d80b31a28e15f43970e729c23876e6bb3ee5087ce",
+      "sourceSha256": "cb73a356eeaddfd59291c58d80b31a28e15f43970e729c23876e6bb3ee5087ce",
+      "matches": true
+    },
+    {
+      "sourcePath": "data/alien-base.unified-blood.json",
+      "productionUrl": "https://avp-blood-arena.vercel.app/data/alien-base.unified-blood.json",
+      "effectiveUrl": "https://avp-blood-arena.vercel.app/data/alien-base.unified-blood.json",
+      "httpStatus": 200,
+      "bytes": 10360,
+      "sha256": "6ccb0400ac263ca7679fb03fb2dd727849601ee3290520631108e75b8108b7d4",
+      "sourceSha256": "6ccb0400ac263ca7679fb03fb2dd727849601ee3290520631108e75b8108b7d4",
+      "matches": true
+    },
+    {
+      "sourcePath": "data/alien-base.registry-index.json",
+      "productionUrl": "https://avp-blood-arena.vercel.app/data/alien-base.registry-index.json",
+      "effectiveUrl": "https://avp-blood-arena.vercel.app/data/alien-base.registry-index.json",
+      "httpStatus": 200,
+      "bytes": 88749,
+      "sha256": "ecf535745623548ee61e8173ff70218c2c02d5f6fb896516b7ae1dfeb07c6925",
+      "sourceSha256": "ecf535745623548ee61e8173ff70218c2c02d5f6fb896516b7ae1dfeb07c6925",
+      "matches": true
+    }
+  ],
+  "allResourceBytesMatch": true,
+  "limitations": [
+    "HTTP and byte identity do not certify a complete match or restoration of the original0.30/0.36",
+    "Historical screenshot evidence remains separate and unchanged"
+  ],
+  "browserSmoke": {
+    "checkedAt": "2026-11-09T05:02:52.626Z",
+    "origin": "public-production",
+    "sourceUnmodified": true,
+    "before": "Éclaireur d’exfiltrationPROFIL RELU DANS LES EXTRAITS V0.30PV 8/8 · PA 2 · FOR 2 · ARM 0 · MOB 7",
+    "url": "https://avp-blood-arena.vercel.app/",
+    "title": "AVP Blood Arena — Relance technique",
+    "round": "MANCHE 1 / 16",
+    "mode": "CONTRE IA",
+    "after": "Éclaireur d’exfiltrationPROFIL RELU DANS LES EXTRAITS V0.30PV 8/8 · PA 1 · FOR 2 · ARM 0 · MOB 7",
+    "teams": 9,
+    "data": "68 références, 18 profils (4 confirmés, 14 provisoires), 158 cartes TCG et 129 armes à vérifier · 494 références unifiées v2 (lecture seule, PR non fusionnée)",
+    "realMovementConfirmed": true,
+    "screenshot": {
+      "path": "docs/verification/avp-blood-public-2026-11-09.png",
+      "sha256": "6103bae1cbddeafc2746b0766b4f52eaae8b56ada75cb630b79564b951e8a0d0",
+      "width": 1440,
+      "height": 1000
+    }
+  }
+}

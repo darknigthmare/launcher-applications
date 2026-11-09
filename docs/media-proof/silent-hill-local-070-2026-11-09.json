@@ -1,0 +1,304 @@
+{
+  "captureType": "native-local-browser-gameplay",
+  "notGeneratedArt": true,
+  "gameId": "silent-hill-halo-of-flesh",
+  "source": "https://silent-hill-halo-of-flesh-darknigthmares-projects.vercel.app/",
+  "sourceRepository": "https://github.com/darknigthmare/silent-hill-halo-of-flesh",
+  "sourceCommit": "995bd2243c7326dea09d2da06a21164435ce592b",
+  "browserSource": "http://127.0.0.1:9393/",
+  "version": "0.7.0",
+  "capturedAt": "2026-11-09T05:10:59.114Z",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "productionByteMatch": {
+    "matches": true,
+    "productionUrl": "https://silent-hill-halo-of-flesh-darknigthmares-projects.vercel.app/",
+    "sourcePath": "index.html",
+    "sha256": "ff625b705ee0cdeba2809d2602645869e11bde152a792110140d0f98aeb4ba2b"
+  },
+  "runtimeFiles": [
+    {
+      "sourcePath": "index.html",
+      "productionUrl": "https://silent-hill-halo-of-flesh-darknigthmares-projects.vercel.app/index.html",
+      "sha256": "ff625b705ee0cdeba2809d2602645869e11bde152a792110140d0f98aeb4ba2b",
+      "matches": true,
+      "bytes": 8809
+    },
+    {
+      "sourcePath": "styles.css",
+      "productionUrl": "https://silent-hill-halo-of-flesh-darknigthmares-projects.vercel.app/styles.css",
+      "sha256": "d45e7ba182597cbe4c75acba7aaa9a010758014f5360eb4df23e9f30d2440825",
+      "matches": true,
+      "bytes": 20839
+    },
+    {
+      "sourcePath": "src/archive.js",
+      "productionUrl": "https://silent-hill-halo-of-flesh-darknigthmares-projects.vercel.app/src/archive.js",
+      "sha256": "e8707192b78ca786bab8d1a0861ef7fab26b6cae322b776c4a5704f7993be836",
+      "matches": true,
+      "bytes": 26035
+    },
+    {
+      "sourcePath": "src/chronicles.js",
+      "productionUrl": "https://silent-hill-halo-of-flesh-darknigthmares-projects.vercel.app/src/chronicles.js",
+      "sha256": "5959eea5d50fccc59e8a73df2a92383b8bd45827b4177ba39aeb11948ad3889f",
+      "matches": true,
+      "bytes": 6651
+    },
+    {
+      "sourcePath": "src/command.js",
+      "productionUrl": "https://silent-hill-halo-of-flesh-darknigthmares-projects.vercel.app/src/command.js",
+      "sha256": "4e8665e1bea04d53d058fa888623fa98bfff82c417453105a7dfbb4fcbc9b9ad",
+      "matches": true,
+      "bytes": 29024
+    },
+    {
+      "sourcePath": "src/data.js",
+      "productionUrl": "https://silent-hill-halo-of-flesh-darknigthmares-projects.vercel.app/src/data.js",
+      "sha256": "bea534fc27cc6228da3e52d34a8ea9b17978a4dccb8e7dd9921b783d425a07e2",
+      "matches": true,
+      "bytes": 126718
+    },
+    {
+      "sourcePath": "src/fight.js",
+      "productionUrl": "https://silent-hill-halo-of-flesh-darknigthmares-projects.vercel.app/src/fight.js",
+      "sha256": "0739f8c93cc487c82d977b5c817c86f9b5e718bcdc2a138f8b9e4cb1b0920280",
+      "matches": true,
+      "bytes": 110302
+    },
+    {
+      "sourcePath": "src/movesets.js",
+      "productionUrl": "https://silent-hill-halo-of-flesh-darknigthmares-projects.vercel.app/src/movesets.js",
+      "sha256": "4bc597393fcfaf20e38db1b43735ebbad5cc243a186f9adfabd9f2e8cb8e3714",
+      "matches": true,
+      "bytes": 53754
+    },
+    {
+      "sourcePath": "src/renderers.js",
+      "productionUrl": "https://silent-hill-halo-of-flesh-darknigthmares-projects.vercel.app/src/renderers.js",
+      "sha256": "7d6d2792c10bdf35b3b55dc415cd8a379dc2898dfcac32267a929f0dbe49a7dc",
+      "matches": true,
+      "bytes": 46811
+    },
+    {
+      "sourcePath": "src/shared.js",
+      "productionUrl": "https://silent-hill-halo-of-flesh-darknigthmares-projects.vercel.app/src/shared.js",
+      "sha256": "aa8e0efd508ed67ce31b82e26f2bac4ef34d6080857175a9f26fb36625524a51",
+      "matches": true,
+      "bytes": 7586
+    },
+    {
+      "sourcePath": "src/stage-director.js",
+      "productionUrl": "https://silent-hill-halo-of-flesh-darknigthmares-projects.vercel.app/src/stage-director.js",
+      "sha256": "7aecb63fe00b64260eb42f54d2043004bee5f3ff4942e030a949da9a35f016c8",
+      "matches": true,
+      "bytes": 46520
+    },
+    {
+      "sourcePath": "src/versus.js",
+      "productionUrl": "https://silent-hill-halo-of-flesh-darknigthmares-projects.vercel.app/src/versus.js",
+      "sha256": "55d6a2226b900d5b19a7546726904a7c0ca247acc900843364aced68f45d07e6",
+      "matches": true,
+      "bytes": 37749
+    },
+    {
+      "sourcePath": "modules/archive.css",
+      "productionUrl": "https://silent-hill-halo-of-flesh-darknigthmares-projects.vercel.app/modules/archive.css",
+      "sha256": "4c1b1388868546defa76cf83dd3ad9d015e5ac060c49bf7f4e5e981145c26a3e",
+      "matches": true,
+      "bytes": 19269
+    },
+    {
+      "sourcePath": "modules/archive.html",
+      "productionUrl": "https://silent-hill-halo-of-flesh-darknigthmares-projects.vercel.app/modules/archive.html",
+      "sha256": "cf9c4ddd98e42bdbd01dd33deda61b3bd1d8cb3ae591d31da348aad1ab40ec83",
+      "matches": true,
+      "bytes": 5873
+    },
+    {
+      "sourcePath": "modules/chronicles.css",
+      "productionUrl": "https://silent-hill-halo-of-flesh-darknigthmares-projects.vercel.app/modules/chronicles.css",
+      "sha256": "c0d0b21ba7ae27dbff689317dee8bf8a5bd4d3ca4164d7583cf5e5a1a5d8d4f5",
+      "matches": true,
+      "bytes": 6111
+    },
+    {
+      "sourcePath": "modules/chronicles.html",
+      "productionUrl": "https://silent-hill-halo-of-flesh-darknigthmares-projects.vercel.app/modules/chronicles.html",
+      "sha256": "085ef8fb1bd4a63a9d5a03c6485d62dfe3250b33a383731b73fcece52d0eb275",
+      "matches": true,
+      "bytes": 2517
+    },
+    {
+      "sourcePath": "modules/combat-academy.html",
+      "productionUrl": "https://silent-hill-halo-of-flesh-darknigthmares-projects.vercel.app/modules/combat-academy.html",
+      "sha256": "aec646facb287a1f3eb722c51a3d5bf72e4474ebb6b30ad8d5a264e8f1f82ef1",
+      "matches": true,
+      "bytes": 535
+    },
+    {
+      "sourcePath": "modules/finisher-archive.html",
+      "productionUrl": "https://silent-hill-halo-of-flesh-darknigthmares-projects.vercel.app/modules/finisher-archive.html",
+      "sha256": "d33f8ee0aab6e8e9848e59239233571893173e80b33c0b21d2a318a627149d09",
+      "matches": true,
+      "bytes": 511
+    },
+    {
+      "sourcePath": "modules/roster-command.html",
+      "productionUrl": "https://silent-hill-halo-of-flesh-darknigthmares-projects.vercel.app/modules/roster-command.html",
+      "sha256": "ffc4ae4a02eadcfa0a12841f6b9945669e4d3f742b33ca1f46e04c307b57b6d5",
+      "matches": true,
+      "bytes": 524
+    },
+    {
+      "sourcePath": "modules/unified-versus.html",
+      "productionUrl": "https://silent-hill-halo-of-flesh-darknigthmares-projects.vercel.app/modules/unified-versus.html",
+      "sha256": "6d1d77342d11dfbb62d99f7269f0da9fba09c474d482def633fbc2bc723f991f",
+      "matches": true,
+      "bytes": 7739
+    },
+    {
+      "sourcePath": "modules/versus.css",
+      "productionUrl": "https://silent-hill-halo-of-flesh-darknigthmares-projects.vercel.app/modules/versus.css",
+      "sha256": "84a4321059d142e7cbf7805bf3ed4fc3b9d8c3f8e3923d1a873022c95373f644",
+      "matches": true,
+      "bytes": 13561
+    }
+  ],
+  "releaseRef": {
+    "deploymentId": "dpl_BPkyMcWHt4yJmys5NgNX17iB5HaS",
+    "gitCommit": "995bd2243c7326dea09d2da06a21164435ce592b"
+  },
+  "presentation": {
+    "path": "assets/presentations/silent-hill-halo-of-flesh.png",
+    "sha256": "d81ea5c46fef7b92cd9a322187929e82cf58566698d5821f187a8a05eba81846",
+    "bytes": 861880,
+    "kind": "actual public 0.7.0 command terminal"
+  },
+  "preview": {
+    "path": "assets/previews/silent-hill-halo-of-flesh.jpg",
+    "sha256": "9ee32e413647f29ec19993c3342345f9ac3ea0155e959e36ce926b89304f538e",
+    "bytes": 123249,
+    "kind": "actual native training fight"
+  },
+  "scenes": [
+    {
+      "slot": 1,
+      "label": "Halo of Flesh — terminal publié 0.7.0",
+      "kind": "real-native-title",
+      "path": "assets/screenshots/silent-hill-halo-of-flesh/01.png",
+      "sha256": "d81ea5c46fef7b92cd9a322187929e82cf58566698d5821f187a8a05eba81846",
+      "bytes": 861880,
+      "observed": {
+        "title": "SILENT HILL: HALO OF FLESH",
+        "url": "http://127.0.0.1:9393/",
+        "heading": "",
+        "rosterPage": "",
+        "selectedOne": "",
+        "selectedTwo": "",
+        "stage": "",
+        "dossierMoves": 0,
+        "fightVisible": false,
+        "trainingPanelVisible": false,
+        "qaBridgePresent": false
+      }
+    },
+    {
+      "slot": 2,
+      "label": "Observation — sélection des manifestations et du lieu",
+      "kind": "real-native-fighter-selection",
+      "path": "assets/screenshots/silent-hill-halo-of-flesh/02.png",
+      "sha256": "22f6dfd9b8d8e170b3c8aec56a47dbcad86d969ce4efbb0242600ee3c1fe6a66",
+      "bytes": 373245,
+      "observed": {
+        "title": "Halo of Flesh — Versus",
+        "url": "http://127.0.0.1:9393/modules/unified-versus.html?mode=training",
+        "heading": "OBSERVATION",
+        "rosterPage": "PAGE 1 / 8 · 230/230",
+        "selectedOne": "Red Pyramid Thing — Great Knife",
+        "selectedTwo": "Sakura Head",
+        "stage": "LAKEVIEW HOTEL — OTHERWORLD",
+        "dossierMoves": 0,
+        "fightVisible": false,
+        "trainingPanelVisible": false,
+        "qaBridgePresent": false
+      }
+    },
+    {
+      "slot": 3,
+      "label": "Dossier — vingt mouvements du sujet sélectionné",
+      "kind": "real-native-moveset-dossier",
+      "path": "assets/screenshots/silent-hill-halo-of-flesh/03.png",
+      "sha256": "d3aa608e409fdbd2a8564998b4068df7a2271d771419888e6027f1cff0807edc",
+      "bytes": 257054,
+      "observed": {
+        "title": "Halo of Flesh — Versus",
+        "url": "http://127.0.0.1:9393/modules/unified-versus.html?mode=training",
+        "heading": "OBSERVATION",
+        "rosterPage": "PAGE 1 / 8 · 230/230",
+        "selectedOne": "Red Pyramid Thing — Great Knife",
+        "selectedTwo": "Sakura Head",
+        "stage": "LAKEVIEW HOTEL — OTHERWORLD",
+        "dossierMoves": 20,
+        "fightVisible": false,
+        "trainingPanelVisible": false,
+        "qaBridgePresent": false
+      }
+    },
+    {
+      "slot": 4,
+      "label": "Salle d’observation — duel natif en silhouettes procédurales",
+      "kind": "real-native-training-gameplay",
+      "path": "assets/screenshots/silent-hill-halo-of-flesh/04.png",
+      "sha256": "811fd0dac577c233a6525e74fa970fc2ddc1b39e7db266e81f4f1e1ff4583a0a",
+      "bytes": 565375,
+      "observed": {
+        "title": "Halo of Flesh — Versus",
+        "url": "http://127.0.0.1:9393/modules/unified-versus.html?mode=training",
+        "heading": "OBSERVATION",
+        "rosterPage": "PAGE 1 / 8 · 230/230",
+        "selectedOne": "Red Pyramid Thing — Great Knife",
+        "selectedTwo": "Sakura Head",
+        "stage": "LAKEVIEW HOTEL — OTHERWORLD",
+        "dossierMoves": 20,
+        "fightVisible": true,
+        "trainingPanelVisible": false,
+        "qaBridgePresent": false
+      }
+    },
+    {
+      "slot": 5,
+      "label": "Observation — commandes publiques du laboratoire de combat",
+      "kind": "real-native-training-controls",
+      "path": "assets/screenshots/silent-hill-halo-of-flesh/05.png",
+      "sha256": "4013eb3f2db92d5fee8df6ed03d07986fa3045428cc37ca33c11945ef8f339cd",
+      "bytes": 536077,
+      "observed": {
+        "title": "Halo of Flesh — Versus",
+        "url": "http://127.0.0.1:9393/modules/unified-versus.html?mode=training",
+        "heading": "OBSERVATION",
+        "rosterPage": "PAGE 1 / 8 · 230/230",
+        "selectedOne": "Red Pyramid Thing — Great Knife",
+        "selectedTwo": "Sakura Head",
+        "stage": "LAKEVIEW HOTEL — OTHERWORLD",
+        "dossierMoves": 20,
+        "fightVisible": true,
+        "trainingPanelVisible": true,
+        "qaBridgePresent": false
+      }
+    }
+  ],
+  "inputEvidence": {
+    "action": "ArrowRight held 350ms through actual Chromium keyboard events",
+    "qaBridge": false,
+    "note": "No internal engine snapshot was exposed in the normal public build; movement distance or hits are not certified."
+  },
+  "limitations": [
+    "Browser rendered the exact published 0.7.0 source locally, with all root/src/modules runtime HTML, CSS and JavaScript byte-verified over normal HTTPS.",
+    "The source repository has newer 0.9.x work. These screenshots intentionally document the older build still served by the public alias.",
+    "The published 0.7.0 renderer draws procedural silhouettes. No newer illustrated sprites, canonical 1:1 artwork, full campaign or successful attack sequence is claimed.",
+    "Only native selection, dossier, initial training fight and observation controls were inspected. No QA bridge or injected game state was used."
+  ]
+}

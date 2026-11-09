@@ -1,0 +1,176 @@
+{
+  "captureType": "native-local-production-html",
+  "notGeneratedArt": true,
+  "gameId": "maid-cafe-simulator-deluxe",
+  "source": "https://jeux-restaures-aout-2026.vercel.app/#maid-cafe",
+  "browserSource": "http://127.0.0.1:42479/#maid-cafe",
+  "capturedAt": "2026-11-09T05:02:16.153Z",
+  "version": "Collection restaurée août 2026",
+  "viewport": {
+    "width": 1600,
+    "height": 1000
+  },
+  "selfContainedHtml": true,
+  "sourceHtmlSha256": "a5faf85a88441deb2f2adac9c209a30c33500be6dd2ef773333b956a3bbf6de6",
+  "sourceSnapshotPath": "docs/media-proof/source/august-restored-2026-11-09.html",
+  "productionByteMatch": {
+    "productionUrl": "https://jeux-restaures-aout-2026.vercel.app/#maid-cafe",
+    "sourcePath": "docs/media-proof/source/august-restored-2026-11-09.html",
+    "sha256": "a5faf85a88441deb2f2adac9c209a30c33500be6dd2ef773333b956a3bbf6de6",
+    "matches": true,
+    "checkedAt": "2026-11-09T05:02:30.451474+00:00",
+    "method": "TLS-verified HTTP GET of public collection; URL fragment selects native game from unchanged self-contained HTML"
+  },
+  "presentation": {
+    "path": "assets/presentations/maid-cafe-simulator-deluxe.png",
+    "sha256": "fa92402839435f95da7cf57dec2b8c788a21bf599be9a3136eae18e52ed146e0",
+    "bytes": 95965,
+    "kind": "Actual game interface including native title; no separate title menu exists"
+  },
+  "preview": {
+    "path": "assets/previews/maid-cafe-simulator-deluxe.jpg",
+    "sha256": "4f9b78071470255b1f89b835faf57e23ededc449186b6f6ebccbdcfb24504684",
+    "bytes": 102681,
+    "kind": "Actual mini-game interface after ordinary control input"
+  },
+  "scenes": [
+    {
+      "slot": 1,
+      "label": "Maid Café — service restauré et commandes natives",
+      "kind": "native-initial-game-interface",
+      "path": "assets/screenshots/maid-cafe-simulator-deluxe/01.png",
+      "sha256": "fa92402839435f95da7cf57dec2b8c788a21bf599be9a3136eae18e52ed146e0",
+      "bytes": 95965,
+      "observed": {
+        "anchor": "maid-cafe",
+        "title": "Maid Café Simulator Deluxe",
+        "mode": "manage",
+        "score": 0,
+        "life": 100,
+        "time": 70,
+        "primary": "Servir",
+        "secondary": "Incident",
+        "log": "",
+        "advancing": false,
+        "phase": 0,
+        "canvas": {
+          "width": 900,
+          "height": 560
+        },
+        "text": "Score 0\nVie 100 · Temps 70\nVersion restaurée jouable\n\nServez la commande affichée.\n\nServir\nIncident\nRecommencer"
+      }
+    },
+    {
+      "slot": 2,
+      "label": "Premier service — commande honorée et 80 points",
+      "kind": "native-first-service",
+      "path": "assets/screenshots/maid-cafe-simulator-deluxe/02.png",
+      "sha256": "813c4800bf0d1c15891b155899871c48925963e9396af7ef6fb5fc842c3ba6bc",
+      "bytes": 97567,
+      "observed": {
+        "anchor": "maid-cafe",
+        "title": "Maid Café Simulator Deluxe",
+        "mode": "manage",
+        "score": 80,
+        "life": 100,
+        "time": 70,
+        "primary": "Servir",
+        "secondary": "Incident",
+        "log": "› Dessert servi.\n",
+        "advancing": false,
+        "phase": 0,
+        "canvas": {
+          "width": 900,
+          "height": 560
+        },
+        "text": "Score 80\nVie 100 · Temps 70\nVersion restaurée jouable\n\nServez la commande affichée.\n\nServir\nIncident\n› Dessert servi.\n\nRecommencer"
+      }
+    },
+    {
+      "slot": 3,
+      "label": "Second service — commandes enchaînées et 160 points",
+      "kind": "native-second-service",
+      "path": "assets/screenshots/maid-cafe-simulator-deluxe/03.png",
+      "sha256": "6e753b12ce904c13e0e45e8aa46db79aa816053f221d8b0986f39344567a7829",
+      "bytes": 99168,
+      "observed": {
+        "anchor": "maid-cafe",
+        "title": "Maid Café Simulator Deluxe",
+        "mode": "manage",
+        "score": 160,
+        "life": 100,
+        "time": 70,
+        "primary": "Servir",
+        "secondary": "Incident",
+        "log": "› Accueil servi.\n› Dessert servi.\n",
+        "advancing": false,
+        "phase": 0,
+        "canvas": {
+          "width": 900,
+          "height": 560
+        },
+        "text": "Score 160\nVie 100 · Temps 70\nVersion restaurée jouable\n\nServez la commande affichée.\n\nServir\nIncident\n› Accueil servi.\n› Dessert servi.\n\nRecommencer"
+      }
+    },
+    {
+      "slot": 4,
+      "label": "Incident — conséquence native et vie réduite à 95",
+      "kind": "native-incident-control",
+      "path": "assets/screenshots/maid-cafe-simulator-deluxe/04.png",
+      "sha256": "bb7225b4addcafd2426c0595d6f43bd32da2057874009fa0ccf38b9a7c186e43",
+      "bytes": 101140,
+      "observed": {
+        "anchor": "maid-cafe",
+        "title": "Maid Café Simulator Deluxe",
+        "mode": "manage",
+        "score": 160,
+        "life": 95,
+        "time": 70,
+        "primary": "Servir",
+        "secondary": "Incident",
+        "log": "› Incident mal géré.\n› Accueil servi.\n› Dessert servi.\n",
+        "advancing": false,
+        "phase": 0,
+        "canvas": {
+          "width": 900,
+          "height": 560
+        },
+        "text": "Score 160\nVie 95 · Temps 70\nVersion restaurée jouable\n\nServez la commande affichée.\n\nServir\nIncident\n› Incident mal géré.\n› Accueil servi.\n› Dessert servi.\n\nRecommencer"
+      }
+    },
+    {
+      "slot": 5,
+      "label": "Recommencer — score, vie et chronomètre réinitialisés",
+      "kind": "native-reset-control",
+      "path": "assets/screenshots/maid-cafe-simulator-deluxe/05.png",
+      "sha256": "0a240110bc6e81129ba689b1edaf351ca18e0b4316c45f3290f2cad3baaaf68b",
+      "bytes": 96007,
+      "observed": {
+        "anchor": "maid-cafe",
+        "title": "Maid Café Simulator Deluxe",
+        "mode": "manage",
+        "score": 0,
+        "life": 100,
+        "time": 70,
+        "primary": "Servir",
+        "secondary": "Incident",
+        "log": "",
+        "advancing": false,
+        "phase": 0,
+        "canvas": {
+          "width": 900,
+          "height": 560
+        },
+        "text": "Score 0\nVie 100 · Temps 70\nVersion restaurée jouable\n\nServez la commande affichée.\n\nServir\nIncident\nRecommencer"
+      }
+    }
+  ],
+  "limitations": [
+    "Captured from a byte-identical local copy of the public self-contained anthology HTML, not a browser visiting the hosted origin.",
+    "This is the small restored 2D anthology mini-game. Its canvas is intentionally simple; no standalone 3D edition or invented environment is represented.",
+    "Serving and incidents are ordinary native buttons. No customers, recipes or complex cafe simulation were added.",
+    "Five observable UI states only: no full 70-second session, victory, complete campaign, music or network mode certification.",
+    "No direct game-state, score, health, timer or gameplay-source mutation was used."
+  ],
+  "sourceRetrievalProof": "docs/media-proof/source/august-restored-2026-11-09.json"
+}

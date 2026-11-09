@@ -725,22 +725,24 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Action & tir",
     "baseGame": "",
-    "description": "Le jeu accepte une musique locale choisie par le joueur. L’analyse et la génération de la mission sont réalisées entièrement dans le navigateur, sans transfert du fichier audio.",
-    "pitch": "Le jeu accepte une musique locale choisie par le joueur. L’analyse et la génération de la mission sont réalisées entièrement dans le navigateur, sans transfert du fichier audio.",
+    "description": "La bataille est déjà terminée : récupère les projectiles à rebours, évite les paradoxes et rembobine la musique pour corriger tes erreurs. La version 1.6.0 réunit treize missions de campagne, quatre boss et 130 Chrono-épreuves, avec six difficultés et onze vaisseaux. Le mode Arcade conserve l’analyse de tes musiques personnelles entièrement sur l’appareil, sans téléversement.",
+    "pitch": "Remonte la partition de la bataille et récupère les tirs avant que le temps ne se referme.",
     "tags": [
       "Jeu original",
       "Action & tir",
-      "Survie",
       "Rythme",
-      "Stratégie",
-      "Action"
+      "Retour temporel",
+      "Campagne",
+      "Musique locale"
     ],
     "icon": "CR",
     "link": "https://chrono-recoil.vercel.app",
     "status": "Vercel",
     "accent": "#e949d3",
     "presentation": "assets/presentations/chrono-recoil.webp",
-    "image": "assets/previews/chrono-recoil.webp"
+    "image": "assets/previews/chrono-recoil.webp",
+    "sourceRepository": "https://github.com/darknigthmare/chrono-recoil",
+    "sourceVersion": "1.6.0"
   },
   {
     "id": "dicebound-rpg",
@@ -2366,9 +2368,9 @@ window.LAUNCHER_RECENT_GAMES = [
     "releaseState": "published",
     "addedAt": "2026-11-01",
     "status": "Vercel",
-    "mediaPendingReview": true,
-    "presentation": "",
-    "image": "",
+    "mediaPendingReview": false,
+    "presentation": "assets/presentations/digital-circus-encore.png",
+    "image": "assets/previews/digital-circus-encore.jpg",
     "id": "digital-circus-encore",
     "name": "DIGITAL CIRCUS — ENCORE",
     "gameKind": "Fan games",
@@ -2376,7 +2378,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "baseGame": "The Amazing Digital Circus",
     "icon": "DC",
     "link": "https://digital-circus-encore.vercel.app/",
-    "description": "Une scène de combat autonome se détache du terminal CainOS. Entre dans Digital Circus — Encore pour choisir une confrontation et découvrir les arènes d'une simulation qui transforme le spectacle en duel. Cette édition possède sa propre adresse de jeu, distincte du bureau CainOS ; les effectifs, costumes et séquences ne seront annoncés fidèles 1:1 qu'après comparaison avec son moteur.",
+    "description": "La version autonome d’Encore quitte le bureau CainOS pour sa propre scène. Quatorze artistes, douze arènes et neuf modes ouvrent duels, répétitions, histoires et tournoi. Le laboratoire permet de travailler déplacements, garde et techniques, avec commandes et répertoire accessibles pendant le duel. Les captures prouvent le build public 0.7.0 et un entraînement Pomni/Jax ; elles ne certifient ni toutes les animations ni une fidélité canonique 1:1.",
     "pitch": "Le rideau ne tombe pas : entre dans le programme Encore et choisis ton duel.",
     "tags": [
       "Digital Circus",
@@ -2386,7 +2388,9 @@ window.LAUNCHER_RECENT_GAMES = [
       "Fan game"
     ],
     "accent": "#c95bc5",
-    "recoveredGame": true
+    "recoveredGame": true,
+    "sourceRepository": "https://github.com/darknigthmare/CainOS",
+    "sourceVersion": "0.7.0"
   },
   {
     "category": "Jeux",
@@ -2565,9 +2569,9 @@ window.LAUNCHER_RECENT_GAMES = [
     "releaseState": "published",
     "addedAt": "2026-11-01",
     "status": "Vercel",
-    "mediaPendingReview": true,
-    "presentation": "",
-    "image": "",
+    "mediaPendingReview": false,
+    "presentation": "assets/presentations/silent-hill-halo-of-flesh.png",
+    "image": "assets/previews/silent-hill-halo-of-flesh.jpg",
     "id": "silent-hill-halo-of-flesh",
     "name": "SILENT HILL — HALO OF FLESH",
     "gameKind": "Fan games",
@@ -2575,18 +2579,20 @@ window.LAUNCHER_RECENT_GAMES = [
     "baseGame": "Silent Hill",
     "icon": "SH",
     "link": "https://silent-hill-halo-of-flesh-darknigthmares-projects.vercel.app/",
-    "description": "Un terminal rassemble les créatures, dossiers et affrontements de Silent Hill. Choisis une Chronique, un versus, un rituel, un boss ou une session d'entraînement, puis consulte les archives de profils et de niveaux. Les images fixes et prototypes sont documentés selon leur source ; les animations complètes et la fidélité 1:1 de toutes les créatures ne sont pas certifiées. La dernière tentative de déploiement du projet est en erreur : l'adresse sert une version publiée antérieure.",
+    "description": "Un terminal rassemble manifestations, dossiers et confrontations de Silent Hill. Choisis Chroniques, duel, descente, rite, boss ou entraînement, puis consulte les mouvements et les lieux. L’adresse publique sert toujours la version 0.7.0 : un prototype de combat 2D aux silhouettes procédurales, désormais montré par de vraies captures. Les travaux source plus récents restent distincts de ce build ; ni leurs illustrations ni une fidélité canonique 1:1 ne sont promises ici.",
     "pitch": "La radio grésille. Choisis une enquête, ouvre un dossier et traverse l'Autre Monde.",
     "tags": [
       "Silent Hill",
-      "Combat",
-      "Créatures",
+      "Combat 2D",
+      "Silhouettes procédurales",
       "Archives",
       "Fan game",
-      "Version antérieure"
+      "Build public 0.7.0"
     ],
     "accent": "#768f87",
-    "recoveredGame": true
+    "recoveredGame": true,
+    "sourceRepository": "https://github.com/darknigthmare/silent-hill-halo-of-flesh",
+    "sourceVersion": "0.7.0"
   },
   {
     "category": "Jeux",
@@ -2657,9 +2663,9 @@ window.LAUNCHER_RECENT_GAMES = [
     "releaseState": "published",
     "addedAt": "2026-11-01",
     "status": "GitHub · téléchargement local",
-    "mediaPendingReview": true,
-    "presentation": "",
-    "image": "",
+    "mediaPendingReview": false,
+    "presentation": "assets/presentations/fallout-marseille-mistral.png",
+    "image": "assets/previews/fallout-marseille-mistral.jpg",
     "id": "fallout-marseille-mistral",
     "name": "FALLOUT MARSEILLE — MISTRAL",
     "gameKind": "Fan games",
@@ -2667,7 +2673,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "baseGame": "Fallout",
     "icon": "FM",
     "link": "https://github.com/darknigthmare/fallout-Marseille",
-    "description": "Le Mistral a laissé des quartiers brisés entre les docks, les collines et les routes de Marseille. Explore la ville en vue FPS, consulte le Pip-Boy, équipe-toi et affronte les factions, tout en conservant les traces des décisions et des fouilles. Le projet v0.50 intègre les routes et bâtiments d'après les données IGN et OSM, mais l'architecture détaillée et les intérieurs restent partiellement interprétés : aucune fidélité visuelle intégrale 1:1 n'est annoncée.",
+    "description": "Le Mistral a laissé des quartiers brisés entre les docks, les collines et les routes de Marseille. Explore les scènes en vue FPS, consulte le Pip-Boy, équipe-toi et retrouve carte, radio et holodisques. Le jeu local v0.50.0 propose une Exploration libre avec progression préremplie ; les captures de Canebière–Belsunce montrent cette scène narrative, sans prétendre à une campagne accomplie ni à une reproduction géographique intégrale 1:1.",
     "pitch": "Les cartes sont anciennes. Les routes, elles, existent encore. Quitte l'abri et retrouve Marseille sous le Mistral.",
     "tags": [
       "Fan game",
@@ -2681,7 +2687,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "accent": "#d3ad5a",
     "accessPolicy": "local-download",
     "sourceRepository": "https://github.com/darknigthmare/fallout-Marseille",
-    "sourceVersion": "0.50",
+    "sourceVersion": "0.50.0",
     "recoveredGame": true
   },
   {
@@ -2721,9 +2727,9 @@ window.LAUNCHER_RECENT_GAMES = [
     "releaseState": "published",
     "addedAt": "2026-11-01",
     "status": "GitHub · téléchargement local",
-    "mediaPendingReview": true,
-    "presentation": "",
-    "image": "",
+    "mediaPendingReview": false,
+    "presentation": "assets/presentations/massilia-cyberpunk.png",
+    "image": "assets/previews/massilia-cyberpunk.jpg",
     "id": "massilia-cyberpunk",
     "name": "MASSILIA CYBERPUNK — MARSEILLE AUGMENTÉE",
     "gameKind": "Jeux originaux",
@@ -2731,7 +2737,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "baseGame": "",
     "icon": "MC",
     "link": "https://github.com/darknigthmare/massilia-cyberpunk",
-    "description": "Marseille ne dort plus sous ses néons. Ouvre le Cortex tactique, intercepte les contacts radio et prépare une surcharge netrunner avant de traverser les rues de la ville augmentée. Le dépôt v0.72 suit le relief IGN, les bâtiments OSM et les corridors du centre. Pour jouer, télécharge la copie complète et lance-la localement avec Python ; les façades sans relevé restent des interprétations, jamais des copies architecturales garanties 1:1.",
+    "description": "Branche le Cortex tactique, traverse les rues du centre et consulte la carte des lieux découverts de Marseille augmentée. La version locale 0.76.0 associe exploration FPS et interface de cyberdeck. Le paquet testé couvre 168 cellules du centre, soit environ 10,5 km² ; il ne contient pas le cache complet de la métropole. La scène affiche elle-même ses données comme non certifiées : ni façades, reliefs ni intérieurs ne sont garantis 1:1. Ce jeu installable reste distinct de SOMA//MASSILIA.",
     "pitch": "Branche le Cortex, parcours Marseille sous surveillance et écoute les signaux de la ville.",
     "tags": [
       "Jeu original",
@@ -2745,7 +2751,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "accent": "#45dbcb",
     "accessPolicy": "local-download",
     "sourceRepository": "https://github.com/darknigthmare/massilia-cyberpunk",
-    "sourceVersion": "0.72",
+    "sourceVersion": "0.76.0",
     "recoveredGame": true
   },
   {
@@ -2774,9 +2780,9 @@ window.LAUNCHER_RECENT_GAMES = [
     "sourceCollectionUrl": "https://jeux-restaures-aout-2026.vercel.app/",
     "sourceAnchor": "soleil",
     "sourceVersion": "Restauré le 2–5 août 2026",
-    "mediaPendingReview": true,
-    "presentation": "",
-    "image": "",
+    "mediaPendingReview": false,
+    "presentation": "assets/presentations/dont-look-when-they-say-soleil.png",
+    "image": "assets/previews/dont-look-when-they-say-soleil.jpg",
     "recoveredGame": true,
     "accent": "#d06a6c"
   },
@@ -2806,9 +2812,9 @@ window.LAUNCHER_RECENT_GAMES = [
     "sourceCollectionUrl": "https://jeux-restaures-aout-2026.vercel.app/",
     "sourceAnchor": "maid-cafe",
     "sourceVersion": "Restauré le 2–5 août 2026",
-    "mediaPendingReview": true,
-    "presentation": "",
-    "image": "",
+    "mediaPendingReview": false,
+    "presentation": "assets/presentations/maid-cafe-simulator-deluxe.png",
+    "image": "assets/previews/maid-cafe-simulator-deluxe.jpg",
     "recoveredGame": true,
     "accent": "#d5ae81"
   },
@@ -2819,7 +2825,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Fan games",
     "genre": "Stratégie & tactique",
     "baseGame": "Alien vs. Predator",
-    "description": "Le Circuit des neuf factions ouvre ses arènes : récupère le Nexus, protège ton porteur et marque au terme de matchs tactiques au tour par tour, en solo contre l’IA ou à deux en local. Cette relance technique 0.1.0 propose un moteur autonome et un codex ; elle est distincte des versions historiques 0.30 et 0.36 encore non restaurées. Quatorze des dix-huit profils sportifs restent provisoires. Télécharge le dépôt puis sers son dossier avec un serveur HTTP local ; aucun déploiement public du jeu n’est encore disponible.",
+    "description": "Le Circuit des neuf factions ouvre ses arènes : récupère le Nexus, protège ton porteur et marque au terme de matchs tactiques au tour par tour, en solo contre l’IA ou à deux en local. Cette relance technique 0.1.0 propose un moteur autonome et un codex ; elle est distincte des versions historiques 0.30 et 0.36 encore non restaurées. Quatorze des dix-huit profils sportifs restent provisoires. Le prototype se joue maintenant directement dans le navigateur ; les fichiers restent disponibles dans son dépôt public.",
     "pitch": "Récupère le Nexus, ouvre une brèche et porte ton équipe jusqu’au but adverse.",
     "tags": [
       "Fan game",
@@ -2829,14 +2835,13 @@ window.LAUNCHER_RECENT_GAMES = [
       "Solo",
       "Multijoueur local",
       "Prototype",
-      "Jeu local"
+      "Navigateur"
     ],
     "icon": "BA",
-    "link": "https://github.com/darknigthmare/avp-blood-arena",
+    "link": "https://avp-blood-arena.vercel.app/",
     "releaseState": "published",
     "addedAt": "2026-11-02",
-    "status": "GitHub · téléchargement local",
-    "accessPolicy": "local-download",
+    "status": "Vercel",
     "sourceRepository": "https://github.com/darknigthmare/avp-blood-arena",
     "sourceVersion": "0.1.0",
     "mediaPendingReview": false,

@@ -1,0 +1,202 @@
+{
+  "captureType": "native-local-browser-gameplay",
+  "notGeneratedArt": true,
+  "gameId": "fallout-marseille-mistral",
+  "source": "https://github.com/darknigthmare/fallout-Marseille",
+  "sourceCommit": "38a0bd2aff02303dc6c80357915eaf45225eeef2",
+  "version": "0.50.0",
+  "htmlPath": "index.html",
+  "sourceHtmlSha256": "c2de30922906540451f80349c7e1923cb148a458558939fb1d610d980c31dda8",
+  "capturedAt": "2026-11-09T05:07:56.819Z",
+  "browser": "Headless Chromium CDP; native game server on localhost; software WebGL SwiftShader",
+  "overview": {
+    "title": "Fallout : Mistral · v0.50 · Les routes retrouvées",
+    "viewport": "1280x720",
+    "nativeControlsOnly": true,
+    "mode": "Official Exploration libre button",
+    "nativeMovementObserved": {
+      "before": [
+        0,
+        1.65,
+        112
+      ],
+      "after": [
+        0.38325000000000004,
+        1.65,
+        111.425125
+      ]
+    },
+    "localData": {
+      "version": "0.50.0",
+      "vector": {
+        "expected": 5884,
+        "pbf": 4557,
+        "officialEmpty": 1327,
+        "missing": 0,
+        "invalid": 0,
+        "bytes": 86973739,
+        "examples": []
+      },
+      "terrain": {
+        "expected": 8,
+        "valid": 8,
+        "missing": 0,
+        "invalid": 0,
+        "samples": 174944,
+        "noData": 32424,
+        "examples": []
+      },
+      "complete": true,
+      "scope": "Fichiers effectivement présents sur le disque du serveur local. Aucun téléchargement.",
+      "inspectedAt": "2026-11-09T05:07:31Z"
+    }
+  },
+  "presentation": {
+    "path": "assets/presentations/fallout-marseille-mistral.png",
+    "sha256": "4d6738b3999f6c06b5cf1214e0f10c7eb62390b4b0a609bbf9dbc2611b8880ff",
+    "bytes": 780764,
+    "kind": "Actual native game title/menu; not generated keyart"
+  },
+  "preview": {
+    "path": "assets/previews/fallout-marseille-mistral.jpg",
+    "sha256": "5d474a2da07e0fb6a46afb8e48010147f92ecff6a48753e5c8a2f62282e07547",
+    "bytes": 134641,
+    "kind": "Actual local free-exploration gameplay frame"
+  },
+  "scenes": [
+    {
+      "slot": 1,
+      "path": "assets/screenshots/fallout-marseille-mistral/01.png",
+      "label": "Canebière–Belsunce — arrivée du mode exploration libre",
+      "kind": "real-gameplay",
+      "sha256": "9bcbffe634958ecf81ef3995fa926eb9f57bcaf5a9ffc089163f5e6fcb04f9b4",
+      "bytes": 983907,
+      "screen": "1280x720",
+      "state": {
+        "title": "Fallout : Mistral · v0.50 · Les routes retrouvées",
+        "mode": "PLAYING",
+        "world": "canebiere",
+        "nativeGameMode": "free",
+        "player": {
+          "position": [
+            0,
+            1.65,
+            112
+          ],
+          "zone": "canebiere"
+        },
+        "location": "Marseille · Canebière–Belsunce",
+        "visibleText": "PROVENCE · 2297\nMarseille · Canebière–Belsunce\nN · 000°\nNO\nN\nNE\n—\nCHAPITRE VI TERMINÉ\n\nLe pays d’Aubagne dispose désormais de règles communes pour les noms, les trains, l’argile et les secours.\n\nPV\n217\nPA\n105\nRAD\n0\nCARABINE DU MISTRAL\n24/300\nCHARGEUR PLEIN\nARME\nARMURE\nMB\nCOMPAGNON\nMireille · 25\nNIV 26\n0 / 1260 XP · 26 PT\nArmure assistée T-51 · Cargaison d’If ajoutée à l’équipement.\nQUÊTE MISE À JOUR\n\nSUIVI · MASQUER\nI · Sac\nT · Relais\nM · Plan\n1 · Pistolet 10 mm\n2 · Vide\n3 · Vide\n4 · Vide\nN · Grenade 0\nX · Visée\nCRIT 0 % · G : aptitudes & dossier\n○ LAMPE [L]"
+      }
+    },
+    {
+      "slot": 2,
+      "path": "assets/screenshots/fallout-marseille-mistral/02.png",
+      "label": "Canebière–Belsunce — déplacement réel dans la scène narrative",
+      "kind": "real-gameplay",
+      "sha256": "c67f843f1ea5d07371b0e808862dcd272af108cd204e9ab9ecf33bf35c8982c5",
+      "bytes": 994600,
+      "screen": "1280x720",
+      "state": {
+        "title": "Fallout : Mistral · v0.50 · Les routes retrouvées",
+        "mode": "PLAYING",
+        "world": "canebiere",
+        "nativeGameMode": "free",
+        "player": {
+          "position": [
+            0.38325000000000004,
+            1.65,
+            111.425125
+          ],
+          "zone": "canebiere"
+        },
+        "location": "Marseille · Canebière–Belsunce",
+        "visibleText": "PROVENCE · 2297\nMarseille · Canebière–Belsunce\nN · 000°\nNO\nN\nNE\n—\nCHAPITRE VI TERMINÉ\n\nLe pays d’Aubagne dispose désormais de règles communes pour les noms, les trains, l’argile et les secours.\n\nPV\n217\nPA\n105\nRAD\n0\nCARABINE DU MISTRAL\n24/300\nCHARGEUR PLEIN\nARME\nARMURE\nMB\nCOMPAGNON\nMireille · 25\nNIV 26\n0 / 1260 XP · 26 PT\nQUÊTE MISE À JOUR\n\nSUIVI · MASQUER\nI · Sac\nT · Relais\nM · Plan\n1 · Pistolet 10 mm\n2 · Vide\n3 · Vide\n4 · Vide\nN · Grenade 0\nX · Visée\nCRIT 0 % · G : aptitudes & dossier\n○ LAMPE [L]"
+      }
+    },
+    {
+      "slot": 3,
+      "path": "assets/screenshots/fallout-marseille-mistral/03.png",
+      "label": "Pip-Boy — inventaire de l’exploration libre",
+      "kind": "actual-game-ui",
+      "sha256": "0d211d4d08f355a7fba34a04f478d1a3a0813293c7b30d344bd2d10e01e5a510",
+      "bytes": 387487,
+      "screen": "1280x720",
+      "state": {
+        "title": "Fallout : Mistral · v0.50 · Les routes retrouvées",
+        "mode": "PIP",
+        "world": "canebiere",
+        "nativeGameMode": "free",
+        "player": {
+          "position": [
+            0.38325000000000004,
+            1.65,
+            111.425125
+          ],
+          "zone": "canebiere"
+        },
+        "location": "Marseille · Canebière–Belsunce",
+        "visibleText": "PROVENCE · 2297\nMarseille · Canebière–Belsunce\nN · 000°\nNO\nN\nNE\n—\nCHAPITRE VI TERMINÉ\n\nLe pays d’Aubagne dispose désormais de règles communes pour les noms, les trains, l’argile et les secours.\n\nPV\n217\nPA\n105\nRAD\n0\nCARABINE DU MISTRAL\n24/300\nCHARGEUR PLEIN\nARME\nARMURE\nMB\nCOMPAGNON\nMireille · 25\nNIV 26\n0 / 1260 XP · 26 PT\nQUÊTE MISE À JOUR\n\nPIP-BOY\nMODÈLE 3000 · ADAPTATION MISTRAL\n09:30\nMarseille · Canebière–Belsunce\nSORTIR [TAB]\nSTAT\nINV\nDATA\nMAP\nRADIO\nARMES\nTENUES\nAIDE\nDIVERS\nBRIC-À-BRAC\nCOMPOSANTS\nMUNITIONS\nEXPLOSIFS\nMINES\n⌕\nNOM\nVALEUR\nPOIDS\nARMES\n304\nAETERNUS\n1\nAIGUILLE CONCORDE\n1\nAIGUILLE DES VEILLEURS\n1\nAIGUILLE DU MISTRAL\n1\nAIGUILLEUR DE LA CITERNE\n1\nAIGUILLON ÉLECTRIQUE\n1\nALL-AMERICAN\n1\nARBALÈTE DES CALANQUES\n1\nARC DES VEILLEURS\n1\nARC DU GARLABAN\n1\nARC SALIN DE LA CIOTAT\n1\nARME DE SCÈNE T-05\n1\nATOMISEUR EXTRATERRESTRE\n1\nAUTOCANON DES CARRIÈRES\n1\n◀\n1 / 22\n▶\nILLUSTRATION DE FAMILLE · PAS UN MODÈLE UNIQUE\nAeternus\n\nGatling laser à alimentation expérimentale.\n\nQTÉ\n1\nPOIDS UNIT.\n9 kg\nVALEUR BASE\n1117\nDÉGÂTS BASE\n26\nPORTÉE\n90 m\nCHARGEUR\n500 / 500\nMUNITIONS\nCœurs à fusion\nÉTAT\n92 / 100\n\n-13 dégâts de base / équipé\nComparaison nominale ; usure, avantages et cible modifient le résultat final.\n\nÉQUIPER\nFAVORIS\n1\n2\n3\n4\nINSTALLER KIT DE TERRAIN V0.13\n\nCoût du mod : Pièces d’arme 2 · Ferraille 3. Présence à l’établi obligatoire.\n\nAeternus\nÉQUIPER\nFAVORI 1\nPV\n217 / 217\nPA\n105 / 105\nPOIDS 2 514,8/50\nCAPS 2 600\nNIV 26\nQ/E : modes · A/D : rubriques · ↑/↓ : sélection\nRÉGLAGE\nDU MODE\nSELECT\nCRT\n⏻\nROBCO\nPERSONAL INFORMATION PROCESSOR\nATELIER A-03\nRÉVISION 030 · FAN PROJECT\nRÉGLAGES"
+      }
+    },
+    {
+      "slot": 4,
+      "path": "assets/screenshots/fallout-marseille-mistral/04.png",
+      "label": "Pip-Boy — carte et lieux du mode libre",
+      "kind": "actual-game-ui",
+      "sha256": "19d5fa72b0d7511e2d489614a5d5f9fe1c073a2d999ecfdb46845dd2cbb18d4b",
+      "bytes": 342042,
+      "screen": "1280x720",
+      "state": {
+        "title": "Fallout : Mistral · v0.50 · Les routes retrouvées",
+        "mode": "PIP",
+        "world": "canebiere",
+        "nativeGameMode": "free",
+        "player": {
+          "position": [
+            0.38325000000000004,
+            1.65,
+            111.425125
+          ],
+          "zone": "canebiere"
+        },
+        "location": "Marseille · Canebière–Belsunce",
+        "visibleText": "PROVENCE · 2297\nMarseille · Canebière–Belsunce\nN · 000°\nNO\nN\nNE\n—\nCHAPITRE VI TERMINÉ\n\nLe pays d’Aubagne dispose désormais de règles communes pour les noms, les trains, l’argile et les secours.\n\nPV\n217\nPA\n105\nRAD\n0\nCARABINE DU MISTRAL\n24/300\nCHARGEUR PLEIN\nARME\nARMURE\nMB\nCOMPAGNON\nMireille · 25\nNIV 26\n0 / 1260 XP · 26 PT\nQUÊTE MISE À JOUR\n\nPIP-BOY\nMODÈLE 3000 · ADAPTATION MISTRAL\n09:30\nMarseille · Canebière–Belsunce\nSORTIR [TAB]\nSTAT\nINV\nDATA\nMAP\nRADIO\nPLAN LOCAL\nLIEUX CONNUS\nPÉRIMÈTRE PRÉVU\nCACHE TERRITOIRE\nRELIEF IGN\nLIEUX ET VOYAGES\nCORRIDORS\nPACK LOCAL\nCONTINUITÉ\nPLAN DE LA SCÈNE · Marseille · Canebière–Belsunce\nREZ-DE-CHAUSSÉE\n−\n+\nEFFACER LE REPÈRE\n\nCliquez sur une destination accessible. Le trajet contourne les obstacles ; il ne déplace pas le personnage.\n\nPlan des intérieurs fictifs. Murs, services, joueur et passage entre étages sont issus de la scène chargée — pas du cadastre. Le zoom permet un déplacement par défilement.\n\nPV\n217 / 217\nPA\n105 / 105\nPOIDS 2 514,8/50\nCAPS 2 600\nNIV 26\nQ/E : modes · A/D : rubriques · ↑/↓ : sélection\nRÉGLAGE\nDU MODE\nSELECT\nCRT\n⏻\nROBCO\nPERSONAL INFORMATION PROCESSOR\nATELIER A-03\nRÉVISION 030 · FAN PROJECT\nRÉGLAGES"
+      }
+    },
+    {
+      "slot": 5,
+      "path": "assets/screenshots/fallout-marseille-mistral/05.png",
+      "label": "Pip-Boy — radio et holodisques",
+      "kind": "actual-game-ui",
+      "sha256": "0dd624d7fac3a931d09733223a65e6b83c3ad02f86de6ed8b2e6227d3f5aae30",
+      "bytes": 422751,
+      "screen": "1280x720",
+      "state": {
+        "title": "Fallout : Mistral · v0.50 · Les routes retrouvées",
+        "mode": "PIP",
+        "world": "canebiere",
+        "nativeGameMode": "free",
+        "player": {
+          "position": [
+            0.38325000000000004,
+            1.65,
+            111.425125
+          ],
+          "zone": "canebiere"
+        },
+        "location": "Marseille · Canebière–Belsunce",
+        "visibleText": "PROVENCE · 2297\nMarseille · Canebière–Belsunce\nN · 000°\nNO\nN\nNE\n—\nCHAPITRE VI TERMINÉ\n\nLe pays d’Aubagne dispose désormais de règles communes pour les noms, les trains, l’argile et les secours.\n\nPV\n217\nPA\n105\nRAD\n0\nCARABINE DU MISTRAL\n24/300\nCHARGEUR PLEIN\nARME\nARMURE\nMB\nCOMPAGNON\nMireille · 25\nNIV 26\n0 / 1260 XP · 26 PT\nQUÊTE MISE À JOUR\n\nPIP-BOY\nMODÈLE 3000 · ADAPTATION MISTRAL\n09:30\nMarseille · Canebière–Belsunce\nSORTIR [TAB]\nSTAT\nINV\nDATA\nMAP\nRADIO\nSTATIONS\nHOLODISQUES\nJEUX\nFRÉQUENCES\n19\nRADIO MISTRAL\n103.7\nBULLETINS DES ATELIERS\nCANAL DES RETOURS\n96.4\nSECOURS DU LITTORAL\nVOIX DES RELAIS\n—\nAPPROVISIONNEMENTS LOCAUX\nCANAL 13 — RONDS-POINTS LIBRES\n—\nTÉMOIGNAGES ET AVERTISSEMENTS\nLIGUE DES CENT TRÊVES\n—\nCOCHONNET ET ENGAGEMENTS TENUS\nLAZARET — L’AUTRE RIVE\n—\nACCUEIL ET TRAVERSÉES\nM.A.D.A.M.E. — COHÉRENCE CIVIQUE\nA-03\nSTATUT, CONTRADICTIONS ET PROJECTION\nÉTATS GÉNÉRAUX DU MISTRAL\n60.7\nMOTIONS, VOTE ET RATIFICATION\nPOSTE RESTANTE — LA TOURNÉE CONTINUE\n—\nREÇUS ET RÉCLAMATIONS DES RELAIS\nLA CROIX VERTE — GARDE ET RECOURS\n—\nPLANNING DES OFFICINES ET SUIVI DU LOT\nLES PARTIES COMMUNES — PROCÈS-VERBAL\n—\nLES TRAVAUX NE SE VOTENT PAS TOUT SEULS\nMUTUELLE PHOCÉENNE — RECOURS ET REÇUS\n—\nUNE RÉSERVE FINIE ; DES PREUVES QUI RESTENT\nNOTAIRES — LES MINUTES RESTENT\n—\nUNE PRÉSENCE N’EST PAS UNE ERREUR DE CLASSEMENT\nLA FÊTE DES VOISINS — SANS UNANIMITÉ FORCÉE\n—\nUN REPAS NE REMPLACE PAS UN ACTE\n◀\n1 / 2\n▶\n103.7\nMHz · fréquence fictive\nTRANSCRIPTION RADIO — PAS DE FLUX AUDIO\nRadio Mistral\n\nStation disponible. Activez-la pour lire le bulletin lié à votre progression.\n\nRECEVOIR LES BULLETINS\nCONDITIONS LOCALES\n\nCiel clair · 09:30\n\nPV\n217 / 217\nPA\n105 / 105\nPOIDS 2 514,8/50\nCAPS 2 600\nNIV 26\nQ/E : modes · A/D : rubriques · ↑/↓ : sélection\nRÉGLAGE\nDU MODE\nSELECT\nCRT\n⏻\nROBCO\nPERSONAL INFORMATION "
+      }
+    }
+  ],
+  "noHistoricalMedia": true,
+  "limitations": [
+    "Local build at the recorded commit only; no Vercel deployment is claimed.",
+    "The official Exploration libre button starts with native prefilled progression and equipment. These images do not represent an earned campaign completion.",
+    "The displayed Canebière–Belsunce is the game's authored narrative scene, not a survey-accurate geographical street reconstruction.",
+    "Bundled geographic data were prepared offline and audited separately; the two gameplay images do not certify every geographic tile or architectural detail.",
+    "Only movement and three Pip-Boy screens are captured. No combat, quest completion, map travel or holotape playback is claimed.",
+    "Actual renderer provenance does not certify canonical Fallout models or 1:1 Marseille architecture."
+  ]
+}

@@ -1,0 +1,462 @@
+{
+  "captureType": "native-local-browser-gameplay",
+  "notGeneratedArt": true,
+  "gameId": "digital-circus-encore",
+  "source": "https://digital-circus-encore.vercel.app/",
+  "sourceRepository": "https://github.com/darknigthmare/CainOS",
+  "sourceCommit": "146a68cc87ea088a4dbcf76694115118fc9ed775",
+  "browserSource": "http://127.0.0.1:9392/combat/index.html?standalone=1",
+  "version": "0.7.0",
+  "capturedAt": "2026-11-09T05:03:35.414Z",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "productionByteMatch": {
+    "matches": true,
+    "productionUrl": "https://digital-circus-encore.vercel.app/",
+    "sourcePath": "docs/media-proof/production-html/digital-circus-entry-2026-11-09.html",
+    "sha256": "eecfdddcd2404f921eb86258344eeb38d8a9a837aa273389434a3410e95a55bd"
+  },
+  "runtimeFiles": [
+    {
+      "sourcePath": "combat/app.mjs",
+      "productionUrl": "https://digital-circus-encore.vercel.app/combat/app.mjs",
+      "sha256": "c8cb069f639173b855ed83bcaecfda234df4cb36eb0ff6e14e5dae1213b77e9e",
+      "matches": true,
+      "bytes": 90979
+    },
+    {
+      "sourcePath": "combat/audio-ambiences.mjs",
+      "productionUrl": "https://digital-circus-encore.vercel.app/combat/audio-ambiences.mjs",
+      "sha256": "a9215db919126923cc412bfd0f1febf7c92aea89f95defeeecea2cea31c8b086",
+      "matches": true,
+      "bytes": 4241
+    },
+    {
+      "sourcePath": "combat/audio.mjs",
+      "productionUrl": "https://digital-circus-encore.vercel.app/combat/audio.mjs",
+      "sha256": "f1f4a5c6070704e9d107a1b16093b226a3f2385e816d136e22e9ef8502489524",
+      "matches": true,
+      "bytes": 23029
+    },
+    {
+      "sourcePath": "combat/bindings.mjs",
+      "productionUrl": "https://digital-circus-encore.vercel.app/combat/bindings.mjs",
+      "sha256": "8352b4a92afb27a85220b21feb5b7f53b34a2c4eabfedff2f400259329988969",
+      "matches": true,
+      "bytes": 6045
+    },
+    {
+      "sourcePath": "combat/costume-fidelity.mjs",
+      "productionUrl": "https://digital-circus-encore.vercel.app/combat/costume-fidelity.mjs",
+      "sha256": "a346156fc0f1107a72a2d6a8b331aeba3122f631a95941a2e9b0a6b9d36dd3d6",
+      "matches": true,
+      "bytes": 34274
+    },
+    {
+      "sourcePath": "combat/costume-refinements.mjs",
+      "productionUrl": "https://digital-circus-encore.vercel.app/combat/costume-refinements.mjs",
+      "sha256": "117abb88f261c71c6e03dd43a344ef1babb0b34d9f8107ac3b5898f2d3682de3",
+      "matches": true,
+      "bytes": 10082
+    },
+    {
+      "sourcePath": "combat/data.mjs",
+      "productionUrl": "https://digital-circus-encore.vercel.app/combat/data.mjs",
+      "sha256": "3fa8fd8d3eb71c0336c3df0f31b43723841e8cbedf2554e516c8332c92fa3a9f",
+      "matches": true,
+      "bytes": 40695
+    },
+    {
+      "sourcePath": "combat/engine.mjs",
+      "productionUrl": "https://digital-circus-encore.vercel.app/combat/engine.mjs",
+      "sha256": "b8d0a3f93117cd2f92bac1f712a6371e35099a0da1c599cbf91633b780bf7807",
+      "matches": true,
+      "bytes": 49471
+    },
+    {
+      "sourcePath": "combat/fidelity.mjs",
+      "productionUrl": "https://digital-circus-encore.vercel.app/combat/fidelity.mjs",
+      "sha256": "2968ab0feace983b9c59e9da9e1c1b4c4817bff395a4af5053a8c96be0f61a1f",
+      "matches": true,
+      "bytes": 36332
+    },
+    {
+      "sourcePath": "combat/finisher-catalog.mjs",
+      "productionUrl": "https://digital-circus-encore.vercel.app/combat/finisher-catalog.mjs",
+      "sha256": "43b36230680673ba44d75f370fa0b7ab77be0a90f1c08d282be830b1969750f7",
+      "matches": true,
+      "bytes": 20099
+    },
+    {
+      "sourcePath": "combat/finisher-gallery.mjs",
+      "productionUrl": "https://digital-circus-encore.vercel.app/combat/finisher-gallery.mjs",
+      "sha256": "df89b9a91fc20af8f47743cfe34475743a17ea6d6310ab71f73e27464c9c6944",
+      "matches": true,
+      "bytes": 3750
+    },
+    {
+      "sourcePath": "combat/finishers.mjs",
+      "productionUrl": "https://digital-circus-encore.vercel.app/combat/finishers.mjs",
+      "sha256": "ac52ef944daa984d77d64838554d0e135d9a710fde2c6e1bb452e7ac31502636",
+      "matches": true,
+      "bytes": 3980
+    },
+    {
+      "sourcePath": "combat/icon.svg",
+      "productionUrl": "https://digital-circus-encore.vercel.app/combat/icon.svg",
+      "sha256": "9306b192eaaa246307b0d0d13262ca21f0a913ad123eb1bc1c1adf94890ec19b",
+      "matches": true,
+      "bytes": 410
+    },
+    {
+      "sourcePath": "combat/index.html",
+      "productionUrl": "https://digital-circus-encore.vercel.app/combat/index.html",
+      "sha256": "9df0816414b14ae8a52d18e4230170329570733f170e6564001bfa0162d4d921",
+      "matches": true,
+      "bytes": 2391
+    },
+    {
+      "sourcePath": "combat/input.mjs",
+      "productionUrl": "https://digital-circus-encore.vercel.app/combat/input.mjs",
+      "sha256": "d73bf83967fa65ceb0776eefe9f1c4f26bf1d9cfaa40c5f430da26df3a19a34c",
+      "matches": true,
+      "bytes": 9454
+    },
+    {
+      "sourcePath": "combat/manifest.webmanifest",
+      "productionUrl": "https://digital-circus-encore.vercel.app/combat/manifest.webmanifest",
+      "sha256": "3a7f78eb5c4cc3f7c90784a8bcba425dc91fdc1e1c401fc26b3a81f12d4534aa",
+      "matches": true,
+      "bytes": 641
+    },
+    {
+      "sourcePath": "combat/menu-navigation.mjs",
+      "productionUrl": "https://digital-circus-encore.vercel.app/combat/menu-navigation.mjs",
+      "sha256": "01a70de0683eb8237ca93bc9da0f79a360b963cd44064460fa22c0c84fcd2614",
+      "matches": true,
+      "bytes": 3464
+    },
+    {
+      "sourcePath": "combat/offline-manifest.mjs",
+      "productionUrl": "https://digital-circus-encore.vercel.app/combat/offline-manifest.mjs",
+      "sha256": "bbeb85f11ce95ba7785d5143cfc97ce1016997f6bac090d27a4f26a95eb85604",
+      "matches": true,
+      "bytes": 3764
+    },
+    {
+      "sourcePath": "combat/offline.mjs",
+      "productionUrl": "https://digital-circus-encore.vercel.app/combat/offline.mjs",
+      "sha256": "704b87db56c26365c770c46df33a0ebfa6c2639d1b97df8183794dfb8417e4c9",
+      "matches": true,
+      "bytes": 7875
+    },
+    {
+      "sourcePath": "combat/progression.mjs",
+      "productionUrl": "https://digital-circus-encore.vercel.app/combat/progression.mjs",
+      "sha256": "a5a3d697b034146464d0c315a2a5dc5891557caf1a58ad1d8dd8551a5f585f15",
+      "matches": true,
+      "bytes": 14523
+    },
+    {
+      "sourcePath": "combat/render-finishers.mjs",
+      "productionUrl": "https://digital-circus-encore.vercel.app/combat/render-finishers.mjs",
+      "sha256": "918dc6b0700ea86e174b1450b2dc207cc5a7b4656314cc6e6c617bfca5ac8d7d",
+      "matches": true,
+      "bytes": 15766
+    },
+    {
+      "sourcePath": "combat/render-poses.mjs",
+      "productionUrl": "https://digital-circus-encore.vercel.app/combat/render-poses.mjs",
+      "sha256": "44a17b62cd7304f1a81b1454e4e8b902f8712d9b0a462f92b09626e8fe554268",
+      "matches": true,
+      "bytes": 14705
+    },
+    {
+      "sourcePath": "combat/render-presentation.mjs",
+      "productionUrl": "https://digital-circus-encore.vercel.app/combat/render-presentation.mjs",
+      "sha256": "370469edb54fe87cfa4f649984cf8c6dfb77419b018dbb1d8fedc432b9fe607e",
+      "matches": true,
+      "bytes": 6722
+    },
+    {
+      "sourcePath": "combat/render-sequences.mjs",
+      "productionUrl": "https://digital-circus-encore.vercel.app/combat/render-sequences.mjs",
+      "sha256": "1ce5fab94146618b77d46b7b16feb2af2b52eb912a992488fa5fd2e4e3b4b9af",
+      "matches": true,
+      "bytes": 5427
+    },
+    {
+      "sourcePath": "combat/render-stage-motion.mjs",
+      "productionUrl": "https://digital-circus-encore.vercel.app/combat/render-stage-motion.mjs",
+      "sha256": "e22d518a1245be13379a019159b4c8f24535e19a704508286d5b1ed38ced9b77",
+      "matches": true,
+      "bytes": 5668
+    },
+    {
+      "sourcePath": "combat/render-stage-scenery.mjs",
+      "productionUrl": "https://digital-circus-encore.vercel.app/combat/render-stage-scenery.mjs",
+      "sha256": "52c298e861af7873b2f94ece106e0f708ebd5573d0f900f02c45c2cecd14c528",
+      "matches": true,
+      "bytes": 18094
+    },
+    {
+      "sourcePath": "combat/render.mjs",
+      "productionUrl": "https://digital-circus-encore.vercel.app/combat/render.mjs",
+      "sha256": "b3d71717a00934e3fd25441a6ce57f01c03bf1466fc5ba707e1b16f8999c237b",
+      "matches": true,
+      "bytes": 46430
+    },
+    {
+      "sourcePath": "combat/session.mjs",
+      "productionUrl": "https://digital-circus-encore.vercel.app/combat/session.mjs",
+      "sha256": "81c3110c0e12f74bd9de882e76e5a16a27bca78dfc5fee6f2e232e519d00ba27",
+      "matches": true,
+      "bytes": 13523
+    },
+    {
+      "sourcePath": "combat/sprite-catalog.mjs",
+      "productionUrl": "https://digital-circus-encore.vercel.app/combat/sprite-catalog.mjs",
+      "sha256": "41ad2ff416eef0d9426dd8ec17218a35b0c6a016a6dbf73e8e96a1f86d1a2172",
+      "matches": true,
+      "bytes": 97532
+    },
+    {
+      "sourcePath": "combat/stories.mjs",
+      "productionUrl": "https://digital-circus-encore.vercel.app/combat/stories.mjs",
+      "sha256": "190053639de11b83a1f1279174fb948afe1db28a2ccb8f4a453c1be10aa72aac",
+      "matches": true,
+      "bytes": 60055
+    },
+    {
+      "sourcePath": "combat/story-presentation.mjs",
+      "productionUrl": "https://digital-circus-encore.vercel.app/combat/story-presentation.mjs",
+      "sha256": "90306f54215c2f4045ff191496d3f9ed871e6982fe1bff06757514834d0cc7c8",
+      "matches": true,
+      "bytes": 6826
+    },
+    {
+      "sourcePath": "combat/style.css",
+      "productionUrl": "https://digital-circus-encore.vercel.app/combat/style.css",
+      "sha256": "dfe28cefe07885893801de05cf3fce937045393ba84f09012c58e89c2ba4a6cb",
+      "matches": true,
+      "bytes": 45396
+    },
+    {
+      "sourcePath": "combat/training.mjs",
+      "productionUrl": "https://digital-circus-encore.vercel.app/combat/training.mjs",
+      "sha256": "b36aaaea76cdb3b6e20ef95c2f52ae2be04ecf5f4421cf16f80dca97f44cfece",
+      "matches": true,
+      "bytes": 4807
+    }
+  ],
+  "releaseRef": {
+    "deploymentId": "dpl_26QLt1718rKDBnbYPCkC6JfNtTgm",
+    "gitCommit": "146a68cc87ea088a4dbcf76694115118fc9ed775"
+  },
+  "presentation": {
+    "path": "assets/presentations/digital-circus-encore.png",
+    "sha256": "dbd9820a2e53bc2a044b6767ed1c8c156e9d8d096119d3da8e36329960db14c1",
+    "bytes": 432920,
+    "kind": "actual standalone native home"
+  },
+  "preview": {
+    "path": "assets/previews/digital-circus-encore.jpg",
+    "sha256": "86303fe0f80f258b88683ff7500e111fce880250e12213fca4341ea15a0cfdb9",
+    "bytes": 102654,
+    "kind": "actual training duel"
+  },
+  "scenes": [
+    {
+      "slot": 1,
+      "label": "Encore — accueil autonome et neuf modes de jeu",
+      "kind": "real-standalone-title",
+      "path": "assets/screenshots/digital-circus-encore/01.png",
+      "sha256": "dbd9820a2e53bc2a044b6767ed1c8c156e9d8d096119d3da8e36329960db14c1",
+      "bytes": 432920,
+      "observed": {
+        "title": "Digital Circus — Encore · Le Grand Duel",
+        "version": "0.7.0",
+        "screen": "home",
+        "ready": false,
+        "paused": false,
+        "modeCount": 9,
+        "fighterCount": 0,
+        "arenaCount": 0,
+        "dialog": null
+      }
+    },
+    {
+      "slot": 2,
+      "label": "Combattants — dossier de Pomni et techniques adaptées",
+      "kind": "real-fighter-codex",
+      "path": "assets/screenshots/digital-circus-encore/02.png",
+      "sha256": "f5e45486bdc8de2e025521a1c0c408089bc1e0b43f5adafcebd378e17fd202f2",
+      "bytes": 323507,
+      "observed": {
+        "title": "Digital Circus — Encore · Le Grand Duel",
+        "version": "0.7.0",
+        "screen": "codex",
+        "ready": false,
+        "paused": false,
+        "modeCount": 0,
+        "fighterCount": 0,
+        "arenaCount": 0,
+        "dialog": null
+      }
+    },
+    {
+      "slot": 3,
+      "label": "Répétitions — sélection parmi quatorze artistes et douze arènes",
+      "kind": "real-fighter-and-arena-selection",
+      "path": "assets/screenshots/digital-circus-encore/03.png",
+      "sha256": "91c7bc1e9de6acb4e009591a63be0633f3c9a916ca8d1134db3dee229341bee5",
+      "bytes": 519507,
+      "observed": {
+        "title": "Digital Circus — Encore · Le Grand Duel",
+        "version": "0.7.0",
+        "screen": "select",
+        "ready": false,
+        "paused": false,
+        "modeCount": 0,
+        "fighterCount": 14,
+        "arenaCount": 12,
+        "dialog": null
+      }
+    },
+    {
+      "slot": 4,
+      "label": "Entraînement — déplacement réel de Pomni face à Jax",
+      "kind": "real-native-training-gameplay",
+      "path": "assets/screenshots/digital-circus-encore/04.png",
+      "sha256": "d73ae3435a9c45fac3d4dbb0de993667959d741aed16dbc2016bff1451a21ba7",
+      "bytes": 294852,
+      "observed": {
+        "title": "Digital Circus — Encore · Le Grand Duel",
+        "version": "0.7.0",
+        "screen": "fight",
+        "ready": true,
+        "paused": false,
+        "phase": "fight",
+        "frame": 61,
+        "fighters": [
+          {
+            "id": "pomni",
+            "x": 537.6959999999999,
+            "y": 568,
+            "state": "idle"
+          },
+          {
+            "id": "jax",
+            "x": 900,
+            "y": 568,
+            "state": "idle"
+          }
+        ],
+        "modeCount": 0,
+        "fighterCount": 0,
+        "arenaCount": 0,
+        "dialog": null
+      }
+    },
+    {
+      "slot": 5,
+      "label": "Techniques — commandes du combattant dans le vrai duel",
+      "kind": "real-movelist-interface",
+      "path": "assets/screenshots/digital-circus-encore/05.png",
+      "sha256": "538d7281bb249793ff321a044e8519c2bfcf6df43ce34512a0f9c85a6f8e6cd7",
+      "bytes": 103121,
+      "observed": {
+        "title": "Digital Circus — Encore · Le Grand Duel",
+        "version": "0.7.0",
+        "screen": "fight",
+        "ready": true,
+        "paused": true,
+        "phase": "fight",
+        "frame": 96,
+        "fighters": [
+          {
+            "id": "pomni",
+            "x": 537.6959999999999,
+            "y": 568,
+            "state": "idle"
+          },
+          {
+            "id": "jax",
+            "x": 900,
+            "y": 568,
+            "state": "idle"
+          }
+        ],
+        "modeCount": 0,
+        "fighterCount": 0,
+        "arenaCount": 0,
+        "dialog": "Le répertoire"
+      }
+    }
+  ],
+  "inputEvidence": {
+    "action": "KeyD held 550ms through Chromium Input.dispatchKeyEvent",
+    "before": {
+      "title": "Digital Circus — Encore · Le Grand Duel",
+      "version": "0.7.0",
+      "screen": "fight",
+      "ready": true,
+      "paused": false,
+      "phase": "fight",
+      "frame": 26,
+      "fighters": [
+        {
+          "id": "pomni",
+          "x": 380,
+          "y": 568,
+          "state": "idle"
+        },
+        {
+          "id": "jax",
+          "x": 900,
+          "y": 568,
+          "state": "idle"
+        }
+      ],
+      "modeCount": 0,
+      "fighterCount": 0,
+      "arenaCount": 0,
+      "dialog": null
+    },
+    "after": {
+      "title": "Digital Circus — Encore · Le Grand Duel",
+      "version": "0.7.0",
+      "screen": "fight",
+      "ready": true,
+      "paused": false,
+      "phase": "fight",
+      "frame": 58,
+      "fighters": [
+        {
+          "id": "pomni",
+          "x": 537.6959999999999,
+          "y": 568,
+          "state": "walk"
+        },
+        {
+          "id": "jax",
+          "x": 900,
+          "y": 568,
+          "state": "idle"
+        }
+      ],
+      "modeCount": 0,
+      "fighterCount": 0,
+      "arenaCount": 0,
+      "dialog": null
+    },
+    "moved": true
+  },
+  "limitations": [
+    "Browser rendered the exact published combat revision locally; public HTTPS root response and all combat HTML/CSS/modules were byte-verified.",
+    "Only the introductory training duel and native interfaces are evidenced. No tournament, story completion, finale or full roster animation review is claimed.",
+    "Illustrations belong to the shipped fan-game source. Native screenshots do not certify canonical 1:1 costumes, characters or animation."
+  ]
+}

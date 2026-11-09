@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-09T05:05:33.478087+00:00",
+  "githubRepositoryCount": 175,
+  "vercelDistinctProjectCount": 162,
+  "scope": "Nominal catalogue coverage and source tree recheck of historical exclusions; exact public identity checked separately for corrected entries",
+  "newUnmatchedRepository": {
+    "name": "Yautja_Base",
+    "decision": "documentary-reference-not-game",
+    "sourceReadme": "https://github.com/darknigthmare/Yautja_Base/blob/main/README.md",
+    "readmeBlob": "e1f806ff8846e3cf045a68dfc7ab39646d754766",
+    "documentaryEntries": 481,
+    "certifiedVisualAssets": 0
+  },
+  "historicalExcludedTrees": [
+    {
+      "repository": "AngelOfTheDead",
+      "treeSha": "997a269067c90d0f6bc0cce17b8b319c03d87515",
+      "filesExcludingAgentTooling": [
+        "README.md"
+      ],
+      "truncated": false
+    },
+    {
+      "repository": "FollowTheWhiteRabbit",
+      "treeSha": "fb30de3c7a1f13dc9c0aab4991fd8e4e7170f045",
+      "filesExcludingAgentTooling": [
+        "README.md"
+      ],
+      "truncated": false
+    },
+    {
+      "repository": "GideonProject",
+      "treeSha": "f32e21fdc1d885f70bc35e72569c6bbf4e424d2e",
+      "filesExcludingAgentTooling": [
+        "README.md"
+      ],
+      "truncated": false
+    },
+    {
+      "repository": "HeroInWheelchair",
+      "treeSha": "b0a9612088f77dc1c09ef029e5d5f70de5150503",
+      "filesExcludingAgentTooling": [
+        "README.md"
+      ],
+      "truncated": false
+    },
+    {
+      "repository": "ImpossibleMission",
+      "treeSha": "d1e67b219c1cc154d65dacfe5370009386ccd9b8",
+      "filesExcludingAgentTooling": [
+        "README.md"
+      ],
+      "truncated": false
+    },
+    {
+      "repository": "MGSVRmissions",
+      "treeSha": "b16aa42f1f08c0529edde730b75314ec783f2762",
+      "filesExcludingAgentTooling": [
+        "README.md"
+      ],
+      "truncated": false
+    },
+    {
+      "repository": "QuidditchVR",
+      "treeSha": "2596480be9cf29d838a70cc2ce2512caee9c6a7e",
+      "filesExcludingAgentTooling": [],
+      "truncated": false
+    },
+    {
+      "repository": "StargateNoLimitVR",
+      "treeSha": "f5e61aac43cd4a1ac857013eb286388b8c122985",
+      "filesExcludingAgentTooling": [
+        "README.md"
+      ],
+      "truncated": false
+    },
+    {
+      "repository": "TheInterview",
+      "treeSha": "28ea377fb47d0ab343ca3438ce802bdc1f32393a",
+      "filesExcludingAgentTooling": [
+        ".gitignore",
+        "README.md"
+      ],
+      "truncated": false
+    },
+    {
+      "repository": "VHS",
+      "treeSha": "536e7497f5d85fd63d43f760325f8bf3c13c77d5",
+      "filesExcludingAgentTooling": [
+        "README.md"
+      ],
+      "truncated": false
+    },
+    {
+      "repository": "VRmania",
+      "treeSha": "1d442dc704650e14d93ec62dd80e50239308512b",
+      "filesExcludingAgentTooling": [
+        "README.md"
+      ],
+      "truncated": false
+    },
+    {
+      "repository": "XenoVR",
+      "treeSha": "4fa168787a97610eeeca7b0868efdd893387b291",
+      "filesExcludingAgentTooling": [],
+      "truncated": false
+    },
+    {
+      "repository": "Death-Stranding-2D",
+      "treeSha": "793d204ee5f6c5db6f1c70b055da721ef8e317de",
+      "filesExcludingAgentTooling": [
+        "README.md"
+      ],
+      "truncated": false
+    },
+    {
+      "repository": "TheHive",
+      "treeSha": "625028e214fd9f48e38bfc3cfa228c778109875c",
+      "filesExcludingAgentTooling": [
+        "README.md"
+      ],
+      "truncated": false
+    }
+  ],
+  "limitations": [
+    "Repository count includes tools, private references and skeletons; it is not a count of games",
+    "Vercel pagination from-token is inclusive; 100+63 rows contain one repeated boundary project and represent162distinctprojects",
+    "Name matching alone does not certify runtime identity or gameplay"
+  ]
+}

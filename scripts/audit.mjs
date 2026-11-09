@@ -640,13 +640,26 @@ for (const app of recoveredWithNativeMedia) {
     `source du manifeste identique à la preuve de ${app.id}`);
   assert(Number.isFinite(Date.parse(evidence.capturedAt || "")),
     `date de capture enregistrée pour ${app.id}`);
-  if (evidence.captureType === "native-local-browser-gameplay") {
-    assert(gallery?.captureType === "real-local-gameplay" &&
-      /^[a-f0-9]{40}$/.test(String(evidence.sourceCommit || "")) &&
-      manifest?.sourceCommit === evidence.sourceCommit,
-      `capture locale et révision exacte publiquement identifiées pour ${app.id}`);
-    if (app.accessPolicy !== "local-download") {
-      assert(evidence.sourceRepository === app.sourceRepository && evidence.source === app.link,
+  const isLocalCapture = ["native-local-browser-gameplay", "native-local-production-html"].includes(evidence.captureType);
+  if (isLocalCapture) {
+    assert(gallery?.captureType === "real-local-gameplay",
+      `exécution locale clairement identifiée pour ${app.id}`);
+    if (evidence.captureType === "native-local-browser-gameplay") {
+      assert(/^[a-f0-9]{40}$/.test(String(evidence.sourceCommit || "")) &&
+        manifest?.sourceCommit === evidence.sourceCommit,
+        `révision exacte de la source locale conservée pour ${app.id}`);
+    }
+    const isRepositoryCapture = evidence.captureType === "native-local-browser-gameplay" &&
+      evidence.source === app.sourceRepository &&
+      /^https:\/\/github\.com\/[^/]+\/[^/]+\/?$/.test(String(evidence.source || ""));
+    if (isRepositoryCapture) {
+      // A game may gain a public deployment after an older source capture. Keep
+      // that gallery's original Git provenance rather than claiming a new web capture.
+      assert(evidence.gameId === app.id && Boolean(evidence.version) &&
+        gallery?.captureVersion === evidence.version,
+        `identité et version de la capture issue du dépôt conservées pour ${app.id}`);
+    } else if (app.accessPolicy !== "local-download") {
+      assert(evidence.source === app.link,
         `source locale du jeu web ${app.id} rattachée à sa production officielle`);
       assert(/^http:\/\/(?:127\.0\.0\.1|localhost)(?::\d+)?\//.test(String(evidence.browserSource || "")),
         `adresse du navigateur local consignée pour ${app.id}`);
@@ -654,6 +667,26 @@ for (const app of recoveredWithNativeMedia) {
       assert(match?.matches === true && match?.productionUrl === app.link &&
         Boolean(match?.sourcePath) && /^[a-f0-9]{64}$/.test(String(match?.sha256 || "")),
         `comparaison binaire locale/production consignée pour ${app.id}`);
+      if (evidence.captureType === "native-local-production-html") {
+        // Some restored minigames have only a public, self-contained HTML
+        // distribution. Its real binary identity replaces an invented Git SHA.
+        assert(evidence.selfContainedHtml === true &&
+          /^[a-f0-9]{64}$/.test(String(evidence.sourceHtmlSha256 || "")) &&
+          evidence.sourceHtmlSha256 === match?.sha256 &&
+          manifest?.sourceHtmlSha256 === evidence.sourceHtmlSha256,
+          `HTML de production autonome identifié par son SHA-256 pour ${app.id}`);
+        const snapshotPath = evidence.sourceSnapshotPath;
+        assert(Boolean(snapshotPath) && match?.sourcePath === snapshotPath && await exists(snapshotPath),
+          `HTML exact de la capture de production conservé pour ${app.id}`);
+        if (snapshotPath && await exists(snapshotPath)) {
+          const snapshot = await readFile(path.join(root, snapshotPath));
+          assert(createHash("sha256").update(snapshot).digest("hex") === evidence.sourceHtmlSha256,
+            `empreinte du fichier HTML source vérifiée pour ${app.id}`);
+        }
+      } else {
+        assert(evidence.sourceRepository === app.sourceRepository,
+          `dépôt du jeu web exécuté localement conservé pour ${app.id}`);
+      }
     }
   }
   if (app.accessPolicy === "local-download") {
@@ -668,6 +701,8 @@ for (const app of recoveredWithNativeMedia) {
   }
   assert(Array.isArray(evidence.scenes) && evidence.scenes.length === 5,
     `cinq scènes de provenance native pour ${app.id}`);
+  assert(new Set((evidence.scenes || []).map((scene) => scene.sha256)).size === 5,
+    `cinq contenus de capture distincts pour ${app.id}`);
   assert(Array.isArray(gallery?.images) && gallery.images.length === 5 &&
     Array.isArray(gallery?.labels) && gallery.labels.length === 5,
     `galerie native structurée pour ${app.id}`);
@@ -1318,8 +1353,8 @@ for (const asset of appShell) {
 }
 assert(appShell.includes("/assets/openai-art-manifest.json"), "le manifeste OpenAI fait partie du shell hors ligne");
 assert(appShellBytes <= 5 * 1024 * 1024, "le préchargement APP_SHELL reste inférieur à 5 Mo");
-assert(serviceWorker.includes('const CACHE_NAME = "launcher-shell-v31"'), "le cache applicatif v1.15 utilise launcher-shell-v31");
-assert(serviceWorker.includes('const RUNTIME_CACHE = "launcher-media-runtime-v2"'), "le cache média renouvelé utilise launcher-media-runtime-v2");
+assert(serviceWorker.includes('const CACHE_NAME = "launcher-shell-v32"'), "le cache applicatif v1.16 utilise launcher-shell-v32");
+assert(serviceWorker.includes('const RUNTIME_CACHE = "launcher-media-runtime-v3"'), "le cache média renouvelé utilise launcher-media-runtime-v3");
 assert(serviceWorker.includes("const MAX_RUNTIME_ENTRIES = 120"), "le cache média différé est borné");
 assert(
   serviceWorker.includes("/^\\/assets\\/(?:previews|presentations|screenshots)\\//"),

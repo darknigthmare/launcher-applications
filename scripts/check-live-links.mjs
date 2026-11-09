@@ -5,12 +5,21 @@
  * Ne change jamais un alias sur la seule base d'un échec temporaire.
  */
 import { readFile, mkdir, writeFile } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import { resolve } from "node:path";
 import { classifyLinkDestination } from "./link-destination-classifier.mjs";
 
 const root = process.cwd();
 const html = await readFile(resolve(root, "index.html"), "utf8");
 const recentSource = await readFile(resolve(root, "assets/recent-games.js"), "utf8");
+// Keep the identity of the exact catalogue strings checked, even if another
+// task updates a file while the network requests are still in progress.
+const inputSha256 = Object.fromEntries([
+  ["index.html", html],
+  ["assets/recent-games.js", recentSource],
+  ["scripts/check-live-links.mjs", await readFile(new URL(import.meta.url), "utf8")],
+  ["scripts/link-destination-classifier.mjs", await readFile(new URL("./link-destination-classifier.mjs", import.meta.url), "utf8")]
+].map(([file, source]) => [file, createHash("sha256").update(source).digest("hex")]));
 const beforeRecent = html.slice(html.indexOf("const starterApps = ["), html.indexOf("starterApps.push(..."));
 if (!beforeRecent.startsWith("const starterApps = [")) throw new Error("Catalogue principal introuvable");
 const primary = [...beforeRecent.matchAll(/\{\s*id:\s*"([^"]+)"([\s\S]*?)(?=\n\s*\},|\n\s*\];)/g)].map((match) => ({
@@ -97,6 +106,8 @@ const counts = Object.fromEntries(["reachable", "download-available", "auth-requ
 const report = {
   generatedAt: new Date().toISOString(),
   scope: "Contrôle des URLs publiques, dépôts à télécharger et redirections Vercel SSO — réponse HTTP non suffisante pour certifier le gameplay",
+  method: "GET, redirects followed, first 64 KiB of HTML document head inspected for Vercel Authentication; at most 6 concurrent requests; no HTTP body stored",
+  inputSha256,
   total: results.length,
   counts,
   results

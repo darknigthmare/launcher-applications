@@ -154,6 +154,84 @@
       "captureProof": "docs/media-proof/riftcasters-anglers-local-860-2026-11-02.json",
       "sourceType": "Native local title, settings, career, world selection and initial K-13 gameplay; HTML byte-matched to HTTPS production.",
       "version": "8.6.0"
+    },
+    {
+      "id": "dont-look-when-they-say-soleil",
+      "provider": "Game Runtime / Chromium CDP",
+      "generator": "native-local-production-html-capture",
+      "presentation": "assets/presentations/dont-look-when-they-say-soleil.png",
+      "preview": "assets/previews/dont-look-when-they-say-soleil.jpg",
+      "sha256": "047afc7286cdbb7eb1681bbd78ca24b9cac3c55e08cc1ba453a253818ea2f695",
+      "sourceUrl": "https://jeux-restaures-aout-2026.vercel.app/#soleil",
+      "sourceHtmlSha256": "a5faf85a88441deb2f2adac9c209a30c33500be6dd2ef773333b956a3bbf6de6",
+      "captureProof": "docs/media-proof/soleil-restored-local-2026-11-09.json",
+      "sourceType": "Actual restored anthology mini-game interface with title and HUD; local exact production HTML, no synthetic artwork or separate title menu",
+      "version": "Collection restaurée août 2026"
+    },
+    {
+      "id": "maid-cafe-simulator-deluxe",
+      "provider": "Game Runtime / Chromium CDP",
+      "generator": "native-local-production-html-capture",
+      "presentation": "assets/presentations/maid-cafe-simulator-deluxe.png",
+      "preview": "assets/previews/maid-cafe-simulator-deluxe.jpg",
+      "sha256": "fa92402839435f95da7cf57dec2b8c788a21bf599be9a3136eae18e52ed146e0",
+      "sourceUrl": "https://jeux-restaures-aout-2026.vercel.app/#maid-cafe",
+      "sourceHtmlSha256": "a5faf85a88441deb2f2adac9c209a30c33500be6dd2ef773333b956a3bbf6de6",
+      "captureProof": "docs/media-proof/maid-cafe-restored-local-2026-11-09.json",
+      "sourceType": "Actual restored anthology mini-game interface with title and HUD; local exact production HTML, no synthetic artwork or separate title menu",
+      "version": "Collection restaurée août 2026"
+    },
+    {
+      "id": "digital-circus-encore",
+      "provider": "Digital Circus Encore 0.7.0 / native Chromium CDP",
+      "generator": "native-local-browser-capture",
+      "presentation": "assets/presentations/digital-circus-encore.png",
+      "preview": "assets/previews/digital-circus-encore.jpg",
+      "sha256": "dbd9820a2e53bc2a044b6767ed1c8c156e9d8d096119d3da8e36329960db14c1",
+      "sourceUrl": "https://digital-circus-encore.vercel.app/",
+      "sourceCommit": "146a68cc87ea088a4dbcf76694115118fc9ed775",
+      "captureProof": "docs/media-proof/digital-circus-local-070-2026-11-09.json",
+      "sourceType": "Actual standalone title, fighter codex, selection, initial training duel and movelist; exact published source runtime byte-verified.",
+      "version": "0.7.0"
+    },
+    {
+      "id": "fallout-marseille-mistral",
+      "provider": "Fallout Marseille Mistral v0.50.0 / Chromium CDP",
+      "generator": "native-local-file-capture",
+      "presentation": "assets/presentations/fallout-marseille-mistral.png",
+      "preview": "assets/previews/fallout-marseille-mistral.jpg",
+      "sha256": "4d6738b3999f6c06b5cf1214e0f10c7eb62390b4b0a609bbf9dbc2611b8880ff",
+      "sourceUrl": "https://github.com/darknigthmare/fallout-Marseille",
+      "sourceCommit": "38a0bd2aff02303dc6c80357915eaf45225eeef2",
+      "captureProof": "docs/media-proof/fallout-mistral-local-050-2026-11-09.json",
+      "sourceType": "Actual native title and local free-exploration Canebière narrative scene, movement and Pip-Boy interfaces. Official free mode prefilled progression is not earned campaign progress.",
+      "version": "0.50.0"
+    },
+    {
+      "id": "silent-hill-halo-of-flesh",
+      "provider": "Silent Hill Halo of Flesh published 0.7.0 / Chromium CDP",
+      "generator": "native-local-browser-capture",
+      "presentation": "assets/presentations/silent-hill-halo-of-flesh.png",
+      "preview": "assets/previews/silent-hill-halo-of-flesh.jpg",
+      "sha256": "d81ea5c46fef7b92cd9a322187929e82cf58566698d5821f187a8a05eba81846",
+      "sourceUrl": "https://silent-hill-halo-of-flesh-darknigthmares-projects.vercel.app/",
+      "sourceCommit": "995bd2243c7326dea09d2da06a21164435ce592b",
+      "captureProof": "docs/media-proof/silent-hill-local-070-2026-11-09.json",
+      "sourceType": "Actual public 0.7.0 terminal, selection, dossier, procedural 2D training fight and public observation controls. No newer 0.9.x illustrated assets.",
+      "version": "0.7.0"
+    },
+    {
+      "id": "massilia-cyberpunk",
+      "provider": "Massilia Cyberpunk 0.76.0 / native Chromium CDP",
+      "generator": "native-local-file-capture",
+      "presentation": "assets/presentations/massilia-cyberpunk.png",
+      "preview": "assets/previews/massilia-cyberpunk.jpg",
+      "sha256": "dba45870bcad2700508e6f108e00eabb583b3639613db174d0de37dd84874f0c",
+      "sourceUrl": "https://github.com/darknigthmare/massilia-cyberpunk",
+      "sourceCommit": "25e517c07c0ec62fd29771b6167a0875d300fda2",
+      "captureProof": "docs/media-proof/massilia-cyberpunk-local-076-2026-11-09.json",
+      "sourceType": "Actual native 0.76 title, initial centre-street FPS exploration and walk, Cortex and cartography interfaces. Only the 168 centre-cell source package; no full metropolis cache or certified geography.",
+      "version": "0.76.0"
     }
   ]
 }

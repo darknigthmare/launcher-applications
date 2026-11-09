@@ -1,0 +1,203 @@
+{
+  "captureType": "native-local-browser-gameplay",
+  "notGeneratedArt": true,
+  "gameId": "massilia-cyberpunk",
+  "source": "https://github.com/darknigthmare/massilia-cyberpunk",
+  "sourceCommit": "25e517c07c0ec62fd29771b6167a0875d300fda2",
+  "version": "0.76.0",
+  "capturedAt": "2026-11-09T05:11:29.273Z",
+  "localUrl": "http://127.0.0.1:9396/SOMA_MASSILIA_URBAIN_v0_76.html",
+  "htmlPath": "game/SOMA_MASSILIA_URBAIN_v0_76.html",
+  "sourceHtmlSha256": "f3fd9d42c17db7835e95a33034ca25a442c7e3909121877795004142acf6d97a",
+  "browser": "Chromium CDP / SwiftShader WebGL 2, fresh local profile",
+  "resolution": "1280x720",
+  "build": {
+    "command": "python3 lancer.py --prepare-only",
+    "report": "game/data/v76/BUILD_REPORT.json",
+    "version": "0.76.0",
+    "sha256": "f3fd9d42c17db7835e95a33034ca25a442c7e3909121877795004142acf6d97a",
+    "bytes": 67286602,
+    "originalFilesVerified": 27
+  },
+  "presentation": {
+    "path": "assets/presentations/massilia-cyberpunk.png",
+    "sha256": "dba45870bcad2700508e6f108e00eabb583b3639613db174d0de37dd84874f0c",
+    "bytes": 952255,
+    "kind": "Actual native v0.76 title/menu screen"
+  },
+  "preview": {
+    "path": "assets/previews/massilia-cyberpunk.jpg",
+    "sha256": "23ea3105fc1f89b6722df17632a42ad520df5e4226d993acbc78333fb9f9e08d",
+    "bytes": 191901,
+    "kind": "Actual local centre-street exploration"
+  },
+  "scenes": [
+    {
+      "slot": 1,
+      "label": "Marseille réelle — arrivée dans la cellule de départ",
+      "kind": "real-local-webgl-exploration",
+      "path": "assets/screenshots/massilia-cyberpunk/01.png",
+      "sha256": "cd4d775ed5bc295ee1b8cf9aca86a1d1cc8f8d41058e90e57df7cdb7cf057ed6",
+      "bytes": 464021,
+      "screen": "1280x720",
+      "observed": {
+        "title": "SOMA//MASSILIA 0.76 — Marseille augmentée",
+        "version": "0.76.0",
+        "zone": "geo:V52-MC-33",
+        "geographicDistrict": true,
+        "paused": false,
+        "position": {
+          "x": 0,
+          "y": 8.290000171661378,
+          "z": 0
+        },
+        "selectedPlace": null,
+        "openPanels": [],
+        "body": "SOMA//MASSILIA 0.76\nJ1 · 21:24 · Soirée\nMarseille · Cours Belsunce / Rue de la Providence\nCellule NULL · Nuit claire · 21:24\nGARE SAINT-CHARLES\nBoulevard d’Athènes\n125 m · Marseille · La Canebière / Allée Léon Gambetta\n[G] Rencontrer Sofia Amari · Le Résonance\nACTE III · 0.45\nVille ouverte\nAppel disponible · Un homme derrière la balise\nStation Zéro\nCALCAIRE / VILLE\nNuit claire\ncontinuité urbaine 0.42\nINCONNU\n0\nprochain palier 80\n1440 CR\nF6 DOSSIERS\nCONTINUITÉ SAUVEGARDÉE\nLieu découvert — Carrefour City\nNV 1\n0/336 XP\nINTÉGRITÉ\n100/104\nBLINDAGE\n65/120\nDETTE\n28\nTENSION\n12\nMÉMOIRE\n100\nF1 · 2\nGel de réparation somatique\nF2 · 1\nPatch de blindage\nF3 · 1\nCellule neurale\nF4 · 0\nTampon mnésique\nMARSEILLE CENTRE · TRAME DE VÉRITÉ\nV52-MC-33 · Rue de la Providence / Rue Magenta\nSOURCE DÉCLARÉE · STAGED NON CERTIFIÉ · cache 1/13\nAncrer la Canebière · 1/10\nIGN · 6.57 m · grille 25 m · non certifié\nPRÉCISION · HANCHE\nP-12 TRAME · 100 % stabilité\nDEBOUT · 1,72 M\nARME BASSE\nP-12 TRAME\n12 / 72\nSEMI\nCORTEX TACTIQUE · MAJ+F1\n\nCyberdeck 100 · charge neurale 0%\n\nà l’arrêt · silencieux · suspicion 0%\n\nMaj+F2 Écho · Maj+F3 Rempart · Maj+F4 Ancrage\n\nDonnées : © contributeurs OpenStreetMap · ODbL 1.0 · extrait BBBike\n/* SOMA v75 terrain: explicit source-only 5 m centre pilot. */ /* SOMA v76 architecture: source-bound Atlas conflict audit. */"
+      }
+    },
+    {
+      "slot": 2,
+      "label": "Rue du centre — déplacement à pied et HUD du jeu",
+      "kind": "real-local-webgl-exploration",
+      "path": "assets/screenshots/massilia-cyberpunk/02.png",
+      "sha256": "8715234a3f3fd611a50be3a2a086b78625918d6feb2b40532d9084e7ccee6013",
+      "bytes": 522838,
+      "screen": "1280x720",
+      "observed": {
+        "title": "SOMA//MASSILIA 0.76 — Marseille augmentée",
+        "version": "0.76.0",
+        "zone": "geo:V52-MC-33",
+        "geographicDistrict": true,
+        "paused": false,
+        "position": {
+          "x": 0,
+          "y": 8.235906863476224,
+          "z": 2.504320000000001
+        },
+        "selectedPlace": null,
+        "openPanels": [],
+        "body": "SOMA//MASSILIA 0.76\nJ1 · 21:25 · Soirée\nMarseille · Cours Belsunce / Rue de la Providence\nCellule NULL · Nuit claire · 21:25\nGARE SAINT-CHARLES\nBoulevard d’Athènes\n125 m · Marseille · La Canebière / Allée Léon Gambetta\n[G] Rencontrer Sofia Amari · Le Résonance\nACTE III · 0.45\nVille ouverte\nAppel disponible · Un homme derrière la balise\nStation Zéro\nCALCAIRE / VILLE\nNuit claire\ncontinuité urbaine 0.42\nINCONNU\n0\nprochain palier 80\n1440 CR\nF6 DOSSIERS\nLieu découvert — Carrefour City\nNV 1\n0/336 XP\nINTÉGRITÉ\n100/104\nBLINDAGE\n65/120\nDETTE\n28\nTENSION\n12\nMÉMOIRE\n100\nF1 · 2\nGel de réparation somatique\nF2 · 1\nPatch de blindage\nF3 · 1\nCellule neurale\nF4 · 0\nTampon mnésique\nMARSEILLE CENTRE · TRAME DE VÉRITÉ\nV52-MC-33 · Rue de la Providence / Rue Magenta\nSOURCE DÉCLARÉE · STAGED NON CERTIFIÉ · cache 3/13\nAncrer la Canebière · 1/10\nIGN · 6.52 m · grille 25 m · non certifié\nPRÉCISION · HANCHE\nP-12 TRAME · 100 % stabilité\nDEBOUT · 1,72 M\nARME BASSE\nP-12 TRAME\n12 / 72\nSEMI\nCORTEX TACTIQUE · MAJ+F1\n\nCyberdeck 100 · charge neurale 0%\n\nà l’arrêt · silencieux · suspicion 0%\n\nMaj+F2 Écho · Maj+F3 Rempart · Maj+F4 Ancrage\n\nDonnées : © contributeurs OpenStreetMap · ODbL 1.0 · extrait BBBike\n/* SOMA v75 terrain: explicit source-only 5 m centre pilot. */ /* SOMA v76 architecture: source-bound Atlas conflict audit. */"
+      }
+    },
+    {
+      "slot": 3,
+      "label": "Cortex tactique — protocoles et état du cyberdeck",
+      "kind": "actual-game-ui",
+      "path": "assets/screenshots/massilia-cyberpunk/03.png",
+      "sha256": "1d80c1a6992197ca11e428515e00a1bd7e020d0f76549561e69b1010d262d106",
+      "bytes": 179255,
+      "screen": "1280x720",
+      "observed": {
+        "title": "SOMA//MASSILIA 0.76 — Marseille augmentée",
+        "version": "0.76.0",
+        "zone": "geo:V52-MC-33",
+        "geographicDistrict": true,
+        "paused": true,
+        "position": {
+          "x": 0,
+          "y": 8.235906863476224,
+          "z": 2.504320000000001
+        },
+        "selectedPlace": null,
+        "openPanels": [
+          {
+            "id": "v70-tactics",
+            "title": "Cortex tactique"
+          }
+        ],
+        "body": "/* SOMA v75 terrain: explicit source-only 5 m centre pilot. */ /* SOMA v76 architecture: source-bound Atlas conflict audit. */\nCORTEX TACTIQUE\n\nTrois protocoles actifs alimentés par votre cyberdeck. Les puces et talents existants restent pris en compte par le combat et la discrétion.\n\nCyberdeck 100 / 100\nCharge neurale 0 / 100\nTension 12 / 100\nÉcho de trame · Maj+F2\n\nLit les corps dans votre champ de vue à 24 m pendant 5 s : rôle, intégrité et conseil tactique. Les obstacles restent opaques.\n\nCharge +16 · tension à partir de +1\n\nPrêt · attente 12 s\n\nActiver · 12 énergie\nRempart cortical · Maj+F3\n\nRéduit les impacts de combat de 55 %, jusqu’à 40 points absorbés, pendant 4 s.\n\nCharge +32 · tension à partir de +3\n\nPrêt · attente 24 s\n\nActiver · 28 énergie\nAncrage réflexe · Maj+F4\n\nRéduit de 35 % le recul de visée pendant 5 s. Ne modifie ni dégâts ni portée.\n\nCharge +24 · tension à partir de +2\n\nPrêt · attente 20 s\n\nActiver · 24 énergie\n\nUnités visibles · Écho de trame\nActivez Écho pour lire les unités visibles.\nIntrusion urbaine\n\nVisez une machine à moins de 18 m, sans obstacle.\n\nÉcran optique · 9 énergieVerrou moteur · 11 énergieDéconnexion arme · 14 énergie\n\nRempart et Ancrage interrompent l’accès aux hacks pendant leur activation. Écho reste compatible. Les implants cessent au chargement ; les délais et la charge neurale restent enregistrés.\n\nREVENIR À LA RUE"
+      }
+    },
+    {
+      "slot": 4,
+      "label": "Carte du joueur — lieux et itinéraires disponibles",
+      "kind": "actual-game-ui",
+      "path": "assets/screenshots/massilia-cyberpunk/04.png",
+      "sha256": "041e8c7b6c07921496b94730351af1b4339b4d27717258e17ccdea9aa903b7c4",
+      "bytes": 143618,
+      "screen": "1280x720",
+      "observed": {
+        "title": "SOMA//MASSILIA 0.76 — Marseille augmentée",
+        "version": "0.76.0",
+        "zone": "geo:V52-MC-33",
+        "geographicDistrict": true,
+        "paused": true,
+        "position": {
+          "x": 0,
+          "y": 8.235906863476224,
+          "z": 2.504320000000001
+        },
+        "selectedPlace": null,
+        "openPanels": [
+          {
+            "id": "exploration62",
+            "title": "Marseille, à découvrir"
+          }
+        ],
+        "body": "/* SOMA v75 terrain: explicit source-only 5 m centre pilot. */ /* SOMA v76 architecture: source-bound Atlas conflict audit. */\nSOMA // CARTOGRAPHIE PERSONNELLE\nMarseille, à découvrir\n\n3 lieux découverts · 0 voyages\n\nRetour au terrain M / Échap\nTout\nTransports\nSoins\nCommerces\nAteliers\nCulture\nVie urbaine\nRepères\nDécouverts seulement\nFavoris\nMe centrer\n−\n+\n\n47 signaux proches non identifiés\n\nC\nCarrefour City\nCommerces · 13 m\nV\nHÃ´tel Sainte-Marie\nVie urbaine · 23 m\nC\nTech Mobile\nCommerces · 26 m\nGlisser pour déplacer · molette pour zoomer · ? = lieu à approcher\n\nApprochez les repères inconnus pour découvrir leur nom. Sélectionnez ensuite un lieu pour le suivre ou y revenir.\n\nCarnet local · copie de secours automatique\nExporter le carnet\nImporter le carnet\nEffacer les découvertes\n© contributeurs OpenStreetMap · positions sources ; accès et activités de gameplay distincts.\nSauvegarde groupée"
+      }
+    },
+    {
+      "slot": 5,
+      "label": "Cartographie — fiche d’un lieu réellement découvert",
+      "kind": "actual-game-ui",
+      "path": "assets/screenshots/massilia-cyberpunk/05.png",
+      "sha256": "bbcda218808b3c50d61cdea8d4cb0ed3e16644d3539fb82144fe455880e6ff25",
+      "bytes": 156009,
+      "screen": "1280x720",
+      "observed": {
+        "title": "SOMA//MASSILIA 0.76 — Marseille augmentée",
+        "version": "0.76.0",
+        "zone": "geo:V52-MC-33",
+        "geographicDistrict": true,
+        "paused": true,
+        "position": {
+          "x": 0,
+          "y": 8.235906863476224,
+          "z": 2.504320000000001
+        },
+        "selectedPlace": "Carrefour City",
+        "openPanels": [
+          {
+            "id": "exploration62",
+            "title": "Marseille, à découvrir"
+          }
+        ],
+        "body": "/* SOMA v75 terrain: explicit source-only 5 m centre pilot. */ /* SOMA v76 architecture: source-bound Atlas conflict audit. */\nSOMA // CARTOGRAPHIE PERSONNELLE\nMarseille, à découvrir\n\n3 lieux découverts · 0 voyages\n\nRetour au terrain M / Échap\nTout\nTransports\nSoins\nCommerces\nAteliers\nCulture\nVie urbaine\nRepères\nDécouverts seulement\nFavoris\nMe centrer\n−\n+\n\n47 signaux proches non identifiés\n\nC\nCarrefour City\nCommerces · 13 m\nV\nHÃ´tel Sainte-Marie\nVie urbaine · 23 m\nC\nTech Mobile\nCommerces · 26 m\nGlisser pour déplacer · molette pour zoomer · ? = lieu à approcher\nCarrefour City\n\nCommerces · 13 m\n\nPosition issue d’OpenStreetMap. Service et intérieur non garantis jouables. Arrivée recherchée à l’extérieur, à 32 m maximum.\nSuivre ce lieu\n☆ Ajouter aux favoris\nVoyage rapide à pied\n\nAccès contrôlé après chargement. Pas de soin, de paiement ni de duplication de véhicule.\n\nCarnet local · copie de secours automatique\nExporter le carnet\nImporter le carnet\nEffacer les découvertes\n© contributeurs OpenStreetMap · positions sources ; accès et activités de gameplay distincts.\nSauvegarde groupée"
+      }
+    }
+  ],
+  "noHistoricalMedia": true,
+  "overview": {
+    "runtimeVersionPrinted": "SOMA//MASSILIA 0.76 — Marseille augmentée",
+    "geographicDistrictEntered": true,
+    "nativeWalk": {
+      "before": {
+        "x": 0,
+        "y": 8.290000171661378,
+        "z": 0
+      },
+      "after": {
+        "x": 0,
+        "y": 8.235906863476224,
+        "z": 2.504320000000001
+      },
+      "inputs": [
+        {
+          "code": "KeyW",
+          "durationMs": 850
+        }
+      ]
+    },
+    "nativeControlsOnly": true
+  },
+  "limitations": [
+    "Exact v0.76 source-built local distribution; no Vercel hosting is claimed.",
+    "The clone includes 168 centre cells (10.5 km²); the external full metropolitan cache was not installed or certified.",
+    "The captured street HUD explicitly labels its data STAGED NON CERTIFIÉ and uses the historical 25 m grid; no certified NGF scene or 5 m pilot is claimed.",
+    "Only a short initial walk and native menus are captured; no full campaign, mission completion, combat or 92-commune traversal is claimed.",
+    "Source geography, estimated architecture and artistic facades remain distinct; screenshots do not establish architectural 1:1 fidelity.",
+    "SwiftShader is software WebGL, not evidence of performance on player hardware."
+  ]
+}

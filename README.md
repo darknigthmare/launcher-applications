@@ -2,7 +2,38 @@
 
 Launcher personnel pour les jeux et outils web, et les jeux distribués localement sur GitHub.
 
-Version **1.15.0** · **158 fiches, dont 145 jeux** · [Ouvrir le launcher](https://launcher-applications.vercel.app/) · [PR #17](https://github.com/darknigthmare/launcher-applications/pull/17)
+Version du dépôt **1.16.0** · **158 fiches, dont 145 jeux** · [Ouvrir le launcher](https://launcher-applications.vercel.app/)
+
+## Version 1.16 — Galeries restantes et fiches à jour (9 novembre 2026)
+
+Cette vague ajoute **30 captures natives dans 6 galeries**, avec un écran d’entrée et un aperçu par jeu :
+
+- **DIGITAL CIRCUS — ENCORE** — [preuve native](docs/media-proof/digital-circus-local-070-2026-11-09.json), version 0.7.0.
+- **SILENT HILL — HALO OF FLESH** — [preuve native](docs/media-proof/silent-hill-local-070-2026-11-09.json), version 0.7.0.
+- **FALLOUT MARSEILLE — MISTRAL** — [preuve native](docs/media-proof/fallout-mistral-local-050-2026-11-09.json), version 0.50.0.
+- **MASSILIA CYBERPUNK — MARSEILLE AUGMENTÉE** — [preuve native](docs/media-proof/massilia-cyberpunk-local-076-2026-11-09.json), version 0.76.0.
+- **DON’T LOOK WHEN THEY SAY « SOLEIL »** — [preuve native](docs/media-proof/soleil-restored-local-2026-11-09.json), version Collection restaurée août 2026.
+- **Maid Café Simulator Deluxe** — [preuve native](docs/media-proof/maid-cafe-restored-local-2026-11-09.json), version Collection restaurée août 2026.
+
+Les captures sont prises dans les moteurs réels. Les sources exactes, versions, scènes, cadrages et empreintes sont enregistrés dans les preuves. Les mini-jeux SOLEIL et Maid Café conservent leur interface 2D minimaliste ; aucun faux écran titre ou décor ne leur est ajouté. Les captures exécutées localement restent identifiées comme telles. Lorsque le jeu n’existe qu’en HTML public autonome, le snapshot exact et son SHA remplacent une révision Git qui n’existe pas.
+
+Le total devient **135 captures documentées dans 27 galeries**. Les 18 fiches retrouvées ont désormais cinq captures chacune. Les **655 captures historiques** restantes attendent une comparaison aux builds actuels. La matrice suit l’origine et la fraîcheur des images sans annoncer une fidélité canonique 1:1 globale. [Matrice média](docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json).
+
+**AVP Blood Arena** ouvre désormais son prototype web public : huit ressources correspondent au commit déployé, et un vrai déplacement a été vérifié dans Chromium. Sa galerie locale antérieure conserve sa preuve d’origine. **Chrono Recoil** décrit la production **1.6.0**, confirmée par son manifeste. **Massilia Cyberpunk** est recapturé depuis sa distribution locale actuelle, sans lui inventer un hébergement. Le [recoupement de 175 dépôts et 162 projets Vercel](docs/CATALOGUE_AUDIT_2026-11-09.md) conserve les 158 fiches : les bases documentaires ne sont pas ajoutées comme jeux autonomes.
+
+Le launcher distingue maintenant **Présentation personnalisée** et **Aperçu personnalisé** des médias natifs officiels. Une couverture conservée dans le navigateur ne reçoit plus la provenance d’une autre image. Les légendes des mini-jeux décrivent une interface native lorsqu’aucun écran titre séparé n’existe. Le cache PWA passe à **shell v32 / médias v3**, avec conservation des favoris et des personnalisations.
+
+Le [diagnostic des 158 destinations](docs/link-proof/live-links-2026-11-09.json) relève **152 sites accessibles, un téléchargement confirmé, un accès Vercel protégé et quatre pages GitHub à revérifier après des délais ou erreurs réseau temporaires**, sans lien explicitement cassé. Les cinq distributions locales restent référencées. Une réponse HTTP n’atteste pas l’intégralité du gameplay. La version publique dépend du dernier déploiement Vercel READY ; le statut de publication et son SHA figurent dans la PR de livraison.
+
+```sh
+npm test
+npm run test:browser  # Chromium installé, Node.js 22 ou supérieur
+npm run links:check
+```
+
+L’audit vérifie les fichiers, versions, sources et SHA ; le test navigateur couvre notamment les galeries, les visuels personnalisés, le cache, les migrations, les favoris et le mobile. Les sorties restent dans `.reports/`. Le mode édition et les archives restent publics, sans authentification administrateur serveur.
+
+---
 
 ## Version 1.15 — Catalogue et galeries actualisés (2 novembre 2026)
 

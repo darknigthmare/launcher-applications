@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "gameId": "chrono-recoil",
+  "checkedAt": "2026-11-09T05:04:38.055132+00:00",
+  "productionUrl": "https://chrono-recoil.vercel.app",
+  "manifestUrl": "https://chrono-recoil.vercel.app/release.json",
+  "effectiveUrl": "https://chrono-recoil.vercel.app/release.json",
+  "httpStatus": 200,
+  "manifestSha256": "26b32d5712fddc7c903bf569153a50d238ecfb05aea00e034fdf134b836931ae",
+  "manifest": {
+    "schemaVersion": 1,
+    "version": "1.6.0",
+    "commit": "2bf2373c8cf5c1a140481684298e3f5e6b93c408",
+    "builtAt": "2026-08-30T08:23:06.000Z",
+    "dirty": false
+  },
+  "sourceRepository": "https://github.com/darknigthmare/chrono-recoil",
+  "sourceReadmeUrl": "https://github.com/darknigthmare/chrono-recoil/blob/2bf2373c8cf5c1a140481684298e3f5e6b93c408/README.md",
+  "sourceReadmeBlob": "f01c38c56b5b8ead733b85c67e5a8669b6838136",
+  "sourceClaims": {
+    "campaignMissions": 13,
+    "trials": 130,
+    "bosses": 4,
+    "difficulties": 6,
+    "playableShips": 11
+  },
+  "sourceClaimsMatchManifestVersion": true,
+  "limitations": [
+    "Manifest identity and source documentation are checked; campaign was not replayed end-to-end in this audit",
+    "Existing gallery images remain pending comparison with the actual build",
+    "Source main is not assumed to be the public deployment revision"
+  ]
+}
