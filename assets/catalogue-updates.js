@@ -1,5 +1,26 @@
 window.LAUNCHER_RELEASES = [
   {
+    "version": "1.16.0",
+    "date": "2026-11-09",
+    "title": "Galeries retrouvées et fiches actualisées",
+    "highlights": [
+      "30 nouvelles captures natives dans 6 galeries, avec sources exactes et empreintes vérifiables. Le catalogue conserve 158 fiches dont 145 jeux et compte 135 captures documentées dans 27 galeries.",
+      "AVP Blood Arena est maintenant jouable sur son adresse web publique vérifiée ; ses anciennes captures locales sont conservées. Chrono Recoil décrit la version publiée 1.6.0, et Massilia distingue la version de sa distribution locale de son ancien état 0.72.",
+      "Une présentation ou un aperçu personnalisé ne reprend plus l’étiquette ni la provenance de l’image native officielle. Les mini-jeux sans écran titre ont une légende adaptée ; les favoris et les personnalisations restent conservés.",
+      "Cache PWA shell v32 / médias v3. Contrôle de 158 liens : 152 sites accessibles, un téléchargement confirmé, un accès Vercel protégé et quatre pages GitHub à revérifier après des erreurs réseau temporaires. Les captures attestent le rendu observé, sans certification canonique 1:1."
+    ],
+    "appIds": [
+      "digital-circus-encore",
+      "silent-hill-halo-of-flesh",
+      "fallout-marseille-mistral",
+      "massilia-cyberpunk",
+      "dont-look-when-they-say-soleil",
+      "maid-cafe-simulator-deluxe",
+      "avp-blood-arena",
+      "chrono-recoil"
+    ]
+  },
+  {
     "version": "1.15.0",
     "date": "2026-11-02",
     "title": "Catalogue à jour et nouvelles galeries natives",

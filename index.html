@@ -2932,7 +2932,7 @@
           ` : ""}
         </div>
         ${["real-gameplay", "real-engine-qa", "real-ui-navigation", "real-module-ui", "real-local-gameplay"].includes(app.captureType) && app.captureVersion && app.captureDate
-          ? `<p class="capture-proof">${app.captureType === "real-engine-qa"
+          ? `<p class="capture-proof">Galerie officielle · ${app.captureType === "real-engine-qa"
               ? "Images du moteur 3D · une scène jouable et quatre cadrages de QA"
               : app.captureType === "real-local-gameplay"
                 ? "Captures natives du jeu exécuté localement"
@@ -3065,15 +3065,25 @@
       `;
     }
 
+    function isPersonalizedMedia(app, field) {
+      const url = sanitizeImageUrl(app[field]);
+      const official = starterApps.find((starter) => starter.id === app.id);
+      return Boolean(url && (!official || url !== sanitizeImageUrl(official[field])));
+    }
+
     function mediaTargets(app) {
+      const personalizedPresentation = isPersonalizedMedia(app, "presentation");
+      const personalizedPreview = isPersonalizedMedia(app, "image");
       const targets = [
-        ...(!app.mediaPendingReview && !PENDING_VISUAL_REVIEWS.has(app.id) && app.presentationReview !== "pending-fidelity" ? [{
-          label: app.presentationReview === "source-native-title-screen"
+        ...(!app.mediaPendingReview && (personalizedPresentation || (!PENDING_VISUAL_REVIEWS.has(app.id) && app.presentationReview !== "pending-fidelity")) ? [{
+          label: personalizedPresentation ? "Présentation personnalisée" : app.presentationReview === "source-native-interface"
+            ? "Interface native du jeu" : app.presentationReview === "source-native-title-screen"
             ? "Écran titre réel du jeu"
-            : app.captureType === "real-local-gameplay" ? "Écran titre réel du jeu local" : "Illustration conceptuelle",
+            : app.captureType === "real-local-gameplay" ? "Écran titre réel du jeu local"
+              : app.recoveredGame && !app.captureType ? "Présentation" : "Illustration conceptuelle",
           url: sanitizeImageUrl(app.presentation)
         }] : []),
-        { label: ["real-gameplay", "real-local-gameplay"].includes(app.captureType) ? "Aperçu du jeu réel" : app.captureType === "real-engine-qa"
+        { label: personalizedPreview ? "Aperçu personnalisé" : ["real-gameplay", "real-local-gameplay"].includes(app.captureType) ? "Aperçu du jeu réel" : app.captureType === "real-engine-qa"
           ? "Rendu natif WebGL2 · cadrage QA" : app.captureType === "real-ui-navigation"
             ? "Aperçu de l’interface réelle"
             : app.captureType === "real-module-ui"
@@ -3082,7 +3092,7 @@
           label: app.galleryLabels?.[index] || `Capture ${index + 1}`,
           url: sanitizeImageUrl(url)
         })) : []),
-        ...(adminMode && (PENDING_VISUAL_REVIEWS.has(app.id) || app.presentationReview === "pending-fidelity") ? [{
+        ...(adminMode && !personalizedPresentation && (PENDING_VISUAL_REVIEWS.has(app.id) || app.presentationReview === "pending-fidelity") ? [{
           label: "Concept en attente de fidélité · archive",
           url: sanitizeImageUrl(app.presentation)
         }] : []),

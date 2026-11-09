@@ -23,8 +23,8 @@ const results=[];
 async function verify(expression,label){assert.equal(await browser.evaluate(expression),true,label);results.push(label);}
 try {
  await browser.waitFor("typeof apps !== 'undefined' && apps.find(a=>a.id==='resident-evil-bow-protocol')?.captureType==='real-module-ui'");
- await browser.waitFor("(async()=>Boolean(navigator.serviceWorker.controller) && (await caches.keys()).includes('launcher-shell-v31'))()",30000);
- await verify("(async()=>{const c=await caches.open('launcher-shell-v31');return !!(await c.match('/assets/app-gallery.json')) && !!(await c.match('/assets/recent-games.js'));})()",'Updated PWA shell caches current catalogue and gallery');
+ await browser.waitFor("(async()=>Boolean(navigator.serviceWorker.controller) && (await caches.keys()).includes('launcher-shell-v32'))()",30000);
+ await verify("(async()=>{const c=await caches.open('launcher-shell-v32');return !!(await c.match('/assets/app-gallery.json')) && !!(await c.match('/assets/recent-games.js'));})()",'Updated PWA shell caches current catalogue and gallery');
  await verify("apps.length === starterApps.length && apps.length >= 158",'Complete catalogue renders');
  await verify("apps.filter(a=>a.category==='Jeux').length===apps.length-13",'Game count matches catalogue');
  await verify("!adminMode && apps.every(a=>!a.previousPresentation && !a.previousPreview && !a.previousScreenshots.length)",'Public galleries omit historical archives');
@@ -34,8 +34,11 @@ try {
  await verify("document.querySelector('.detail-media-label').textContent==='Aperçu de l’interface réelle' && document.querySelector('[data-detail-media=\"1\"]').getAttribute('aria-pressed')==='true'",'Gallery controls select the correct native preview');
  await browser.evaluate("selectApp('reclaimed-after-dark')");
  await verify("!document.getElementById('details').textContent.includes('sans GPS') && document.querySelector('.capture-proof').textContent.includes('Interfaces et scènes natives')",'Reclaimed has no unrelated GPS campaign claim');
- await browser.evaluate("selectApp(apps.find(a=>a.accessPolicy==='local-download' && a.mediaPendingReview).id)");
+ await browser.evaluate("selectApp('dont-look-when-they-say-soleil')");
+ await verify("document.querySelector('.detail-media-label').textContent==='Interface native du jeu' && apps.find(a=>a.id==='dont-look-when-they-say-soleil').gallery.length===5",'Restored mini-game interface is not mislabeled as a title screen');
+ await browser.evaluate("apps.push(normalizeApp({id:'browser-pending-fixture',name:'Fiche sans médias',category:'Jeux',link:'https://github.com/darknigthmare/launcher-applications',accessPolicy:'local-download',mediaPendingReview:true}));selectApp('browser-pending-fixture')");
  await verify("document.querySelector('#details a.primary-button').textContent==='Fichiers et installation' && document.querySelector('#details a.primary-button').href.startsWith('https://github.com/') && document.getElementById('details').textContent.includes('Visuels en vérification')",'Missing-media local game has usable honest card');
+ await browser.evaluate("apps=apps.filter(a=>a.id!=='browser-pending-fixture');selectApp('deadline-outbreak')");
  await browser.evaluate("document.getElementById('adminButton').click()");
  await browser.waitFor("apps.some(a=>a.previousPresentation)");
  await browser.evaluate("document.getElementById('adminButton').click()");
@@ -44,7 +47,16 @@ try {
  await browser.call('Page.reload',{ignoreCache:true});
  await browser.waitFor("typeof apps!=='undefined' && apps.find(a=>a.id==='deadline-outbreak')?.captureType==='real-gameplay'");
  await verify("apps.length===starterApps.length && apps.find(a=>a.id==='deadline-outbreak').mediaPendingReview===false && apps.find(a=>a.id==='deadline-outbreak').image.includes('/previews/') && apps.find(a=>a.id==='deadline-outbreak').link==='https://deadline-outbreak.vercel.app/' && favorites.has('deadline-outbreak') && apps.find(a=>a.id==='deadline-outbreak').name==='Mon nom personnalisé'",'Old stored catalogue receives official media and links while preserving favorite and custom name');
- await browser.evaluate("localStorage.clear();selectApp('deadline-outbreak')");
+ await browser.evaluate("localStorage.setItem(storeKey, JSON.stringify([{id:'deadline-outbreak',name:'Couverture personnalisée',presentation:'assets/launcher-icon.svg',image:'assets/apple-touch-icon.png'}]))");
+ await browser.call('Page.reload',{ignoreCache:true});
+ await browser.waitFor("apps.find(a=>a.id==='deadline-outbreak')?.captureType==='real-gameplay'");
+ await browser.evaluate("selectApp('deadline-outbreak')");
+ await verify("mediaTargets(apps.find(a=>a.id==='deadline-outbreak'))[0].label==='Présentation personnalisée' && mediaTargets(apps.find(a=>a.id==='deadline-outbreak'))[1].label==='Aperçu personnalisé' && document.querySelector('.detail-media-label').textContent==='Présentation personnalisée' && apps.find(a=>a.id==='deadline-outbreak').presentation.endsWith('/assets/launcher-icon.svg')",'Custom stored media remains personalized after official gallery provenance loads');
+ await verify("mediaTargets(apps.find(a=>a.id==='deadline-outbreak')).slice(2).every(t=>t.label!=='Présentation personnalisée' && t.label!=='Aperçu personnalisé') && apps.find(a=>a.id==='deadline-outbreak').gallery.length===5",'Official native screenshots remain available beside personalized images');
+ await browser.evaluate("localStorage.clear()");
+ await browser.call('Page.reload',{ignoreCache:true});
+ await browser.waitFor("apps.find(a=>a.id==='deadline-outbreak')?.captureType==='real-gameplay'");
+ await browser.evaluate("selectApp('deadline-outbreak')");
  await mkdir(resolve(root,'.reports'),{recursive:true});
  await writeFile(resolve(root,'.reports/launcher-desktop.png'),await browser.capture());
  await browser.call('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});

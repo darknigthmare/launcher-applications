@@ -1,0 +1,176 @@
+{
+  "captureType": "native-local-production-html",
+  "notGeneratedArt": true,
+  "gameId": "dont-look-when-they-say-soleil",
+  "source": "https://jeux-restaures-aout-2026.vercel.app/#soleil",
+  "browserSource": "http://127.0.0.1:42479/#soleil",
+  "capturedAt": "2026-11-09T05:02:14.466Z",
+  "version": "Collection restaurée août 2026",
+  "viewport": {
+    "width": 1600,
+    "height": 1000
+  },
+  "selfContainedHtml": true,
+  "sourceHtmlSha256": "a5faf85a88441deb2f2adac9c209a30c33500be6dd2ef773333b956a3bbf6de6",
+  "sourceSnapshotPath": "docs/media-proof/source/august-restored-2026-11-09.html",
+  "productionByteMatch": {
+    "productionUrl": "https://jeux-restaures-aout-2026.vercel.app/#soleil",
+    "sourcePath": "docs/media-proof/source/august-restored-2026-11-09.html",
+    "sha256": "a5faf85a88441deb2f2adac9c209a30c33500be6dd2ef773333b956a3bbf6de6",
+    "matches": true,
+    "checkedAt": "2026-11-09T05:02:30.451474+00:00",
+    "method": "TLS-verified HTTP GET of public collection; URL fragment selects native game from unchanged self-contained HTML"
+  },
+  "presentation": {
+    "path": "assets/presentations/dont-look-when-they-say-soleil.png",
+    "sha256": "047afc7286cdbb7eb1681bbd78ca24b9cac3c55e08cc1ba453a253818ea2f695",
+    "bytes": 99445,
+    "kind": "Actual game interface including native title; no separate title menu exists"
+  },
+  "preview": {
+    "path": "assets/previews/dont-look-when-they-say-soleil.jpg",
+    "sha256": "b8afa27a6c5e4f73a98e3fcd1a50090aaa6f5ed96926b044972adad15090f46b",
+    "bytes": 113743,
+    "kind": "Actual mini-game interface after ordinary control input"
+  },
+  "scenes": [
+    {
+      "slot": 1,
+      "label": "SOLEIL — épreuve restaurée et commandes Avancer / Stop",
+      "kind": "native-initial-game-interface",
+      "path": "assets/screenshots/dont-look-when-they-say-soleil/01.png",
+      "sha256": "047afc7286cdbb7eb1681bbd78ca24b9cac3c55e08cc1ba453a253818ea2f695",
+      "bytes": 99445,
+      "observed": {
+        "anchor": "soleil",
+        "title": "DON’T LOOK WHEN THEY SAY “SOLEIL”",
+        "mode": "freeze",
+        "score": 0,
+        "life": 100,
+        "time": 70,
+        "primary": "Avancer",
+        "secondary": "Stop",
+        "log": "",
+        "advancing": false,
+        "phase": 0,
+        "canvas": {
+          "width": 900,
+          "height": 560
+        },
+        "text": "Score 0\nVie 100 · Temps 70\nVersion restaurée jouable\n\nAvancez uniquement hors du signal.\n\nAvancer\nStop\nRecommencer"
+      }
+    },
+    {
+      "slot": 2,
+      "label": "Avancer — progression du score avant la zone de pénalité",
+      "kind": "native-advancing-state",
+      "path": "assets/screenshots/dont-look-when-they-say-soleil/02.png",
+      "sha256": "b17840f6d5e70f045a3463503ca052f3e7422e8b02c23741b83fa1f120210b67",
+      "bytes": 99589,
+      "observed": {
+        "anchor": "soleil",
+        "title": "DON’T LOOK WHEN THEY SAY “SOLEIL”",
+        "mode": "freeze",
+        "score": 6,
+        "life": 100,
+        "time": 69,
+        "primary": "Avancer",
+        "secondary": "Stop",
+        "log": "",
+        "advancing": true,
+        "phase": 0.6600000000000004,
+        "canvas": {
+          "width": 900,
+          "height": 560
+        },
+        "text": "Score 6\nVie 100 · Temps 69\nVersion restaurée jouable\n\nAvancez uniquement hors du signal.\n\nAvancer\nStop\nRecommencer"
+      }
+    },
+    {
+      "slot": 3,
+      "label": "Signal — pénalités réellement affichées pendant le mouvement",
+      "kind": "native-signal-penalty",
+      "path": "assets/screenshots/dont-look-when-they-say-soleil/03.png",
+      "sha256": "5f47ebda63b9299388595b016bf6f834f1f57547222a88d07f8a652c3cde9148",
+      "bytes": 112019,
+      "observed": {
+        "anchor": "soleil",
+        "title": "DON’T LOOK WHEN THEY SAY “SOLEIL”",
+        "mode": "freeze",
+        "score": 24,
+        "life": 94,
+        "time": 66,
+        "primary": "Avancer",
+        "secondary": "Stop",
+        "log": "› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n",
+        "advancing": true,
+        "phase": 2.719999999999986,
+        "canvas": {
+          "width": 900,
+          "height": 560
+        },
+        "text": "Score 24\nVie 94 · Temps 66\nVersion restaurée jouable\n\nAvancez uniquement hors du signal.\n\nAvancer\nStop\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n\nRecommencer"
+      }
+    },
+    {
+      "slot": 4,
+      "label": "Stop — mouvement interrompu et points de vie stabilisés",
+      "kind": "native-stop-control",
+      "path": "assets/screenshots/dont-look-when-they-say-soleil/04.png",
+      "sha256": "4290152310545fbce26af8d20be6f2973673e307c3dcb5cb2e251ead35d2ff5c",
+      "bytes": 112258,
+      "observed": {
+        "anchor": "soleil",
+        "title": "DON’T LOOK WHEN THEY SAY “SOLEIL”",
+        "mode": "freeze",
+        "score": 24,
+        "life": 93,
+        "time": 65,
+        "primary": "Avancer",
+        "secondary": "Stop",
+        "log": "› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n",
+        "advancing": false,
+        "phase": 2.809999999999984,
+        "canvas": {
+          "width": 900,
+          "height": 560
+        },
+        "text": "Score 24\nVie 93 · Temps 65\nVersion restaurée jouable\n\nAvancez uniquement hors du signal.\n\nAvancer\nStop\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n› Le signal vous voit.\n\nRecommencer"
+      }
+    },
+    {
+      "slot": 5,
+      "label": "Recommencer — score, vie et chronomètre réinitialisés",
+      "kind": "native-reset-control",
+      "path": "assets/screenshots/dont-look-when-they-say-soleil/05.png",
+      "sha256": "e3087c4e5f11b8321eca17fa7a127565186aeddc0b3c9ce993e3e98b1bf93d80",
+      "bytes": 99498,
+      "observed": {
+        "anchor": "soleil",
+        "title": "DON’T LOOK WHEN THEY SAY “SOLEIL”",
+        "mode": "freeze",
+        "score": 0,
+        "life": 100,
+        "time": 70,
+        "primary": "Avancer",
+        "secondary": "Stop",
+        "log": "",
+        "advancing": false,
+        "phase": 0,
+        "canvas": {
+          "width": 900,
+          "height": 560
+        },
+        "text": "Score 0\nVie 100 · Temps 70\nVersion restaurée jouable\n\nAvancez uniquement hors du signal.\n\nAvancer\nStop\nRecommencer"
+      }
+    }
+  ],
+  "limitations": [
+    "Captured from a byte-identical local copy of the public self-contained anthology HTML, not a browser visiting the hosted origin.",
+    "This is the small restored 2D anthology mini-game. Its canvas is intentionally simple; no standalone 3D edition or invented environment is represented.",
+    "The source penalizes movement in a timed phase; the canvas does not draw a separate SOLEIL warning. Only actual controls, score, health and penalty log are pictured.",
+    "Five observable UI states only: no full 70-second session, victory, complete campaign, music or network mode certification.",
+    "No direct game-state, score, health, timer or gameplay-source mutation was used."
+  ],
+  "sourceRetrievalProof": "docs/media-proof/source/august-restored-2026-11-09.json"
+}

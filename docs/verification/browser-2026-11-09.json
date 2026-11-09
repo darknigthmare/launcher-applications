@@ -1,0 +1,29 @@
+{
+  "testedAt": "2026-11-09T05:13:14.416Z",
+  "target": "local static source",
+  "passed": 14,
+  "results": [
+    "Updated PWA shell caches current catalogue and gallery",
+    "Complete catalogue renders",
+    "Game count matches catalogue",
+    "Public galleries omit historical archives",
+    "BOW native title and captions match game",
+    "Gallery controls select the correct native preview",
+    "Reclaimed has no unrelated GPS campaign claim",
+    "Restored mini-game interface is not mislabeled as a title screen",
+    "Missing-media local game has usable honest card",
+    "Leaving edit mode clears archives",
+    "Old stored catalogue receives official media and links while preserving favorite and custom name",
+    "Custom stored media remains personalized after official gallery provenance loads",
+    "Official native screenshots remain available beside personalized images",
+    "Mobile viewport has no page overflow"
+  ],
+  "version": "1.16.0",
+  "inputSha256": {
+    "index.html": "391f49540b00e7c9faf5d9633f47bffbe4bd473118892c8b73ba05026314cdd6",
+    "sw.js": "0f7c09d0728cd25421663e315e70b378d9a784006af2e35149ef611231eb913d",
+    "assets/recent-games.js": "7eb20a27affdb75aac8570b6c382da6d55be84ebefed46bdbeb5e4b280419cc3",
+    "assets/app-gallery.json": "ee2af28ecc1f068a4fa60aa2669110b40a518c49d5880275e5afc78262ce5b6c",
+    "scripts/browser-smoke.mjs": "ee4a0f5fe1876cde945132dd7ed26750d97ae39ed858f8341c4975ddfb3d6870"
+  }
+}

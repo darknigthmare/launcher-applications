@@ -1,0 +1,88 @@
+{
+  "generatedAt": "2026-11-09T05:14:25.232Z",
+  "scope": "Contrôle des URLs publiques, dépôts à télécharger et redirections Vercel SSO — réponse HTTP non suffisante pour certifier le gameplay",
+  "method": "GET, redirects followed, first 64 KiB of HTML document head inspected for Vercel Authentication; at most 6 concurrent requests; no HTTP body stored",
+  "total": 158,
+  "counts": {
+    "reachable": 152,
+    "download-available": 1,
+    "auth-required": 1,
+    "needs-review": 4,
+    "broken": 0,
+    "no-link": 0
+  },
+  "inputSha256": {
+    "index.html": "391f49540b00e7c9faf5d9633f47bffbe4bd473118892c8b73ba05026314cdd6",
+    "assets/recent-games.js": "7eb20a27affdb75aac8570b6c382da6d55be84ebefed46bdbeb5e4b280419cc3",
+    "scripts/check-live-links.mjs": "9feb924906080063372f8b9ce1c9f10f32886ebdd399a938f5139564649b9a94",
+    "scripts/link-destination-classifier.mjs": "2f0698ea621d89da8947ccdfb773931d7f576fe58843b9bdd895717e3a71733b"
+  },
+  "endpointsRequiringAttention": [
+    {
+      "id": "malaise-party",
+      "name": "MALAISE PARTY — Le Studio des Absents",
+      "state": "auth-required",
+      "httpStatus": 200,
+      "reason": "Redirection vers l'authentification Vercel — le jeu n'est pas accessible sans session",
+      "checkedAt": "2026-11-09T05:14:04.982Z",
+      "requestedUrl": "https://malaise-party-darknigthmares-projects.vercel.app",
+      "effectiveUrl": "https://vercel.com/login"
+    },
+    {
+      "id": "derniere-ligne-zero-repli",
+      "name": "DERNIÈRE LIGNE — ZÉRO REPLI",
+      "state": "needs-review",
+      "reason": "The operation was aborted due to timeout",
+      "checkedAt": "2026-11-09T05:14:25.062Z",
+      "retryError": "HTTP Error 504: Gateway Timeout",
+      "requestedUrl": "https://github.com/darknigthmare/The-Horde-The-Last-Stand",
+      "effectiveUrl": ""
+    },
+    {
+      "id": "fallout-marseille-mistral",
+      "name": "FALLOUT MARSEILLE — MISTRAL",
+      "state": "needs-review",
+      "httpStatus": 504,
+      "reason": "Erreur temporaire ou limitation, nouvelle vérification requise",
+      "checkedAt": "2026-11-09T05:14:16.366Z",
+      "retryError": "HTTP Error 504: Gateway Timeout",
+      "requestedUrl": "https://github.com/darknigthmare/fallout-Marseille",
+      "effectiveUrl": "https://github.com/darknigthmare/fallout-Marseille"
+    },
+    {
+      "id": "parallaxe-protocole-9",
+      "name": "PARALLAXE — PROTOCOLE 9",
+      "state": "needs-review",
+      "reason": "The operation was aborted due to timeout",
+      "checkedAt": "2026-11-09T05:14:25.216Z",
+      "retryError": "HTTP Error 504: Gateway Timeout",
+      "requestedUrl": "https://github.com/darknigthmare/Parallaxe_Protocole9",
+      "effectiveUrl": ""
+    },
+    {
+      "id": "massilia-cyberpunk",
+      "name": "MASSILIA CYBERPUNK — MARSEILLE AUGMENTÉE",
+      "state": "needs-review",
+      "reason": "The operation was aborted due to timeout",
+      "checkedAt": "2026-11-09T05:14:25.232Z",
+      "retryError": "HTTP Error 504: Gateway Timeout",
+      "requestedUrl": "https://github.com/darknigthmare/massilia-cyberpunk",
+      "effectiveUrl": ""
+    }
+  ],
+  "limitations": [
+    "HTTP reachability does not certify current build identity, gameplay or visual fidelity.",
+    "Download availability means the source/distribution repository is reachable; installation has a separate native-source audit.",
+    "Input hashes identify the exact catalogue strings read at audit start; later editorial or media changes do not retroactively update this snapshot.",
+    "Four GitHub download pages timed out or returned temporary504 during the finalGET and a focusedTLSretry; they remain needs-review rather than broken."
+  ],
+  "initialCounts": {
+    "reachable": 152,
+    "download-available": 0,
+    "auth-required": 1,
+    "needs-review": 5,
+    "broken": 0,
+    "no-link": 0
+  },
+  "targetedRetryMethod": "GET TLS, first64KiB,35s timeout, two concurrentrequests, exactsameGitHubURLs"
+}

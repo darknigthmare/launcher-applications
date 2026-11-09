@@ -1426,11 +1426,27 @@
     "captureProof": "docs/media-proof/resident-evil-bow-r20-2026-11-01.json"
   },
   "digital-circus-encore": {
-    "images": [],
-    "captureType": "pending-source-review",
-    "presentationReview": "pending-fidelity",
-    "labels": [],
-    "captureNote": "Fiche publiable avec lien vérifié; aucun visuel du gameplay accepté avant capture sur une vraie version et vérification."
+    "images": [
+      "assets/screenshots/digital-circus-encore/01.png",
+      "assets/screenshots/digital-circus-encore/02.png",
+      "assets/screenshots/digital-circus-encore/03.png",
+      "assets/screenshots/digital-circus-encore/04.png",
+      "assets/screenshots/digital-circus-encore/05.png"
+    ],
+    "captureType": "real-local-gameplay",
+    "presentationReview": "source-native-title-screen",
+    "labels": [
+      "Encore — accueil autonome et neuf modes de jeu",
+      "Combattants — dossier de Pomni et techniques adaptées",
+      "Répétitions — sélection parmi quatorze artistes et douze arènes",
+      "Entraînement — déplacement réel de Pomni face à Jax",
+      "Techniques — commandes du combattant dans le vrai duel"
+    ],
+    "captureNote": "Runtime 0.7.0 exact servi localement ; réponse d’entrée publique et33 fichiers HTML/CSS/modules vérifiés identiques au commit déployé. Aucun combat inventé.",
+    "captureSource": "https://digital-circus-encore.vercel.app/",
+    "captureVersion": "0.7.0",
+    "captureDate": "2026-11-09",
+    "captureProof": "docs/media-proof/digital-circus-local-070-2026-11-09.json"
   },
   "yugioh-25d-holograms": {
     "images": [
@@ -1565,11 +1581,27 @@
     "captureProof": "docs/media-proof/ragtime-complete-tour-native-2026-11-01.json"
   },
   "silent-hill-halo-of-flesh": {
-    "images": [],
-    "captureType": "pending-source-review",
-    "presentationReview": "pending-fidelity",
-    "labels": [],
-    "captureNote": "Fiche publiable avec lien vérifié; aucun visuel du gameplay accepté avant capture sur une vraie version et vérification."
+    "images": [
+      "assets/screenshots/silent-hill-halo-of-flesh/01.png",
+      "assets/screenshots/silent-hill-halo-of-flesh/02.png",
+      "assets/screenshots/silent-hill-halo-of-flesh/03.png",
+      "assets/screenshots/silent-hill-halo-of-flesh/04.png",
+      "assets/screenshots/silent-hill-halo-of-flesh/05.png"
+    ],
+    "captureType": "real-local-gameplay",
+    "presentationReview": "source-native-title-screen",
+    "labels": [
+      "Halo of Flesh — terminal publié 0.7.0",
+      "Observation — sélection des manifestations et du lieu",
+      "Dossier — vingt mouvements du sujet sélectionné",
+      "Salle d’observation — duel natif en silhouettes procédurales",
+      "Observation — commandes publiques du laboratoire de combat"
+    ],
+    "captureNote": "Build public 0.7.0 exact servi localement et vérifié sur 21 fichiers. Rendu 2D en silhouettes procédurales ; aucune image des versions source 0.9.x importée.",
+    "captureSource": "https://silent-hill-halo-of-flesh-darknigthmares-projects.vercel.app/",
+    "captureVersion": "0.7.0",
+    "captureDate": "2026-11-09",
+    "captureProof": "docs/media-proof/silent-hill-local-070-2026-11-09.json"
   },
   "diva-pulse": {
     "images": [
@@ -1618,11 +1650,27 @@
     "captureNote": "Trois captures de vraie phase combat et deux écrans de navigation/briefing du build local 0.44.2."
   },
   "fallout-marseille-mistral": {
-    "images": [],
-    "labels": [],
-    "captureType": "pending-source-review",
-    "presentationReview": "pending-fidelity",
-    "captureNote": "Jeu distribué via son dépôt GitHub. Aucune capture de gameplay ou illustration 1:1 n'est certifiée ; accès local via les instructions de l'auteur."
+    "images": [
+      "assets/screenshots/fallout-marseille-mistral/01.png",
+      "assets/screenshots/fallout-marseille-mistral/02.png",
+      "assets/screenshots/fallout-marseille-mistral/03.png",
+      "assets/screenshots/fallout-marseille-mistral/04.png",
+      "assets/screenshots/fallout-marseille-mistral/05.png"
+    ],
+    "labels": [
+      "Canebière–Belsunce — arrivée du mode exploration libre",
+      "Canebière–Belsunce — déplacement réel dans la scène narrative",
+      "Pip-Boy — inventaire de l’exploration libre",
+      "Pip-Boy — carte et lieux du mode libre",
+      "Pip-Boy — radio et holodisques"
+    ],
+    "captureType": "real-local-gameplay",
+    "presentationReview": "source-verified",
+    "captureNote": "Captures locales du mode natif Exploration libre : niveau 26 et chapitre VI préremplis par ce choix officiel. Aucun parcours de campagne ou relevé architectural 1:1 certifié.",
+    "captureSource": "https://github.com/darknigthmare/fallout-Marseille",
+    "captureVersion": "0.50.0",
+    "captureDate": "2026-11-09",
+    "captureProof": "docs/media-proof/fallout-mistral-local-050-2026-11-09.json"
   },
   "parallaxe-protocole-9": {
     "images": [
@@ -1647,27 +1695,73 @@
     "captureProof": "docs/media-proof/parallaxe-local-041-2026-11-02.json"
   },
   "massilia-cyberpunk": {
-    "images": [],
-    "captureType": "pending-source-review",
-    "presentationReview": "pending-fidelity",
-    "labels": [],
-    "captureNote": "Jeu local dont les fichiers et les instructions sont vérifiés. Pas de screenshot du build produit."
+    "images": [
+      "assets/screenshots/massilia-cyberpunk/01.png",
+      "assets/screenshots/massilia-cyberpunk/02.png",
+      "assets/screenshots/massilia-cyberpunk/03.png",
+      "assets/screenshots/massilia-cyberpunk/04.png",
+      "assets/screenshots/massilia-cyberpunk/05.png"
+    ],
+    "captureType": "real-local-gameplay",
+    "presentationReview": "source-native-title-screen",
+    "labels": [
+      "Marseille réelle — arrivée dans la cellule de départ",
+      "Rue du centre — déplacement à pied et HUD du jeu",
+      "Cortex tactique — protocoles et état du cyberdeck",
+      "Carte du joueur — lieux et itinéraires disponibles",
+      "Cartographie — fiche d’un lieu réellement découvert"
+    ],
+    "captureNote": "Source locale 0.76.0 : centre de 168 cellules seulement. Le HUD indique SOURCE DÉCLARÉE · STAGED NON CERTIFIÉ ; aucun cache métropolitain complet ni précision géographique 1:1 certifiés.",
+    "captureSource": "https://github.com/darknigthmare/massilia-cyberpunk",
+    "captureVersion": "0.76.0",
+    "captureDate": "2026-11-09",
+    "captureProof": "docs/media-proof/massilia-cyberpunk-local-076-2026-11-09.json"
   },
   "dont-look-when-they-say-soleil": {
-    "images": [],
-    "labels": [],
-    "captureType": "pending-source-review",
-    "presentationReview": "pending-fidelity",
+    "images": [
+      "assets/screenshots/dont-look-when-they-say-soleil/01.png",
+      "assets/screenshots/dont-look-when-they-say-soleil/02.png",
+      "assets/screenshots/dont-look-when-they-say-soleil/03.png",
+      "assets/screenshots/dont-look-when-they-say-soleil/04.png",
+      "assets/screenshots/dont-look-when-they-say-soleil/05.png"
+    ],
+    "labels": [
+      "SOLEIL — épreuve restaurée et commandes Avancer / Stop",
+      "Avancer — progression du score avant la zone de pénalité",
+      "Signal — pénalités réellement affichées pendant le mouvement",
+      "Stop — mouvement interrompu et points de vie stabilisés",
+      "Recommencer — score, vie et chronomètre réinitialisés"
+    ],
+    "captureType": "real-local-gameplay",
+    "presentationReview": "source-native-interface",
     "captureSource": "https://jeux-restaures-aout-2026.vercel.app/#soleil",
-    "captureNote": "Mini-jeu réellement jouable dans une collection publique. Le hash est vérifié en navigateur ; aucun PNG ou écran 1:1 validé pour cette fiche."
+    "captureNote": "Interface native du mini-jeu restauré, exécutée localement depuis une copie HTML identique à la production. Rendu 2D minimal : carré, commandes et HUD ; aucun décor ou mode inventé.",
+    "captureVersion": "Collection restaurée août 2026",
+    "captureDate": "2026-11-09",
+    "captureProof": "docs/media-proof/soleil-restored-local-2026-11-09.json"
   },
   "maid-cafe-simulator-deluxe": {
-    "images": [],
-    "labels": [],
-    "captureType": "pending-source-review",
-    "presentationReview": "pending-fidelity",
+    "images": [
+      "assets/screenshots/maid-cafe-simulator-deluxe/01.png",
+      "assets/screenshots/maid-cafe-simulator-deluxe/02.png",
+      "assets/screenshots/maid-cafe-simulator-deluxe/03.png",
+      "assets/screenshots/maid-cafe-simulator-deluxe/04.png",
+      "assets/screenshots/maid-cafe-simulator-deluxe/05.png"
+    ],
+    "labels": [
+      "Maid Café — service restauré et commandes natives",
+      "Premier service — commande honorée et 80 points",
+      "Second service — commandes enchaînées et 160 points",
+      "Incident — conséquence native et vie réduite à 95",
+      "Recommencer — score, vie et chronomètre réinitialisés"
+    ],
+    "captureType": "real-local-gameplay",
+    "presentationReview": "source-native-interface",
     "captureSource": "https://jeux-restaures-aout-2026.vercel.app/#maid-cafe",
-    "captureNote": "Mini-jeu réellement jouable dans une collection publique. Le hash est vérifié en navigateur ; aucun PNG ou écran 1:1 validé pour cette fiche."
+    "captureNote": "Interface native du mini-jeu restauré, exécutée localement depuis une copie HTML identique à la production. Rendu 2D minimal : carré, commandes et HUD ; aucun décor ou mode inventé.",
+    "captureVersion": "Collection restaurée août 2026",
+    "captureDate": "2026-11-09",
+    "captureProof": "docs/media-proof/maid-cafe-restored-local-2026-11-09.json"
   },
   "avp-blood-arena": {
     "images": [
