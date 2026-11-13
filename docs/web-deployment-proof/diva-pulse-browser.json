@@ -1,0 +1,156 @@
+{
+  "id": "diva-pulse",
+  "url": "https://diva-pulse.vercel.app/",
+  "checkedAt": "2026-11-13T08:05:59.333Z",
+  "nativeControlsOnly": true,
+  "checks": [
+    {
+      "label": "public initial identity",
+      "state": {
+        "url": "https://diva-pulse.vercel.app/",
+        "title": "DIVA PULSE — Prises fiables & brouillons protégés V37",
+        "body": "DIVA//PULSE\nÉCOUTE & MONTAGE 34.0\nJOUER\nMODULES\nSTUDIO\nRÉGLAGES\n⛶\nLOCAL / SAUVÉ\nRHYTHM / CREATE / PERFORM\nLA SCÈNE\nEST À TOI.\n\nTa musique. Ta partition. Ton spectacle.\n\n01 / SÉLECTION MUSICALE\n03\n♡\n＋\n5 difficultés automatiques\nDépose tes audios ou utilise ＋\nSpectacle automatique\nClasser\nOrdre de la bibliothèque\nTitre A → Z\nTempo croissant\nDurée croissante\nAjouts récents\n▶ Écouter 15 s\n◇\nNEON PROMISE\nORIGINAL · 128 BPM · 01:02\n01\n◎\nGLASS ORBIT\nORIGINAL · 110 BPM · 01:04\n02\n✳\nSAKURA VOLTAGE\nORIGINAL · 156 BPM · 01:04\n03\n♫ Setlists\nGérer le morceau\nContrôler la partition\nPartitions disponibles 0\n◇ Académie · 6 leçons\n↳ Importer DSC / JSON / MIDI\nSauvegarder la bibliothèque\nLIVE PREVIEW / 3D\nNEON ARENA\nMIKU • SILHOUETTES DE TRAVAIL\nPersonnaliser la scène ↗\nINSTRUMENTAL ORIGINAL\n♡\nNEON PROMISE\n\nDIVA PULSE · instrumental original\n\n128\nBPM\n01:02\nDURÉE\n116\nNOTES\n—\nRECORD\nEASY\nNORMAL\nHARD\nEXTREME\nEX EXTREME\n\n0 accords · 6 HOLD · 0 slides\n\nAUTO SHOW\n\nSpectacle préparé · 9 phrases · mouvements procéduraux · 0 piste(s) protégée(s)\n\nSPECTACLE · AUTO / MANUEL\nLANCER LE LIVE\n▶\nPV\nCLIP\nEntraînement\nAutoplay\nGénérer / compléter les niveaux\nD △ F □ J × K ○ S ‹ L ›\nCLAVIER · MANETTE · TACTILE\nComment jouer ?",
+        "canvases": [
+          {
+            "width": 300,
+            "height": 150,
+            "visible": true
+          },
+          {
+            "width": 700,
+            "height": 34,
+            "visible": true
+          },
+          {
+            "width": 300,
+            "height": 150,
+            "visible": false
+          },
+          {
+            "width": 300,
+            "height": 150,
+            "visible": false
+          },
+          {
+            "width": 300,
+            "height": 150,
+            "visible": false
+          },
+          {
+            "width": 300,
+            "height": 150,
+            "visible": false
+          }
+        ]
+      }
+    },
+    {
+      "nativeControl": "button.nav[data-view='editor']"
+    },
+    {
+      "label": "editor opened",
+      "state": {
+        "view": "editor",
+        "song": "NEON PROMISE"
+      }
+    },
+    {
+      "nativeControl": "button.nav[data-view='library']"
+    },
+    {
+      "nativeControl": "#autoButton"
+    },
+    {
+      "label": "native autoplay gameplay",
+      "state": {
+        "title": "DIVA PULSE — Prises fiables & brouillons protégés V37",
+        "view": "game",
+        "playing": true,
+        "paused": false,
+        "song": "NEON PROMISE",
+        "stageAvailable": true
+      }
+    },
+    {
+      "nativeControl": "#pauseButton"
+    },
+    {
+      "label": "native pause",
+      "state": {
+        "view": "game",
+        "paused": true
+      }
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "docs/web-deployment-proof/diva-pulse-title.png",
+      "sha256": "e011068a829e3f3e376f99b2c953c393ebed1a917627dc406ccf8d2a2140918b",
+      "bytes": 401278,
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "path": "docs/web-deployment-proof/diva-pulse-play.png",
+      "sha256": "5c107170efdd5655cd219d95b952c4844cda465c50982a6558e9d541694108b7",
+      "bytes": 187973,
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      }
+    }
+  ],
+  "playable": true,
+  "initial": {
+    "url": "https://diva-pulse.vercel.app/",
+    "title": "DIVA PULSE — Prises fiables & brouillons protégés V37",
+    "body": "DIVA//PULSE\nÉCOUTE & MONTAGE 34.0\nJOUER\nMODULES\nSTUDIO\nRÉGLAGES\n⛶\nLOCAL / SAUVÉ\nRHYTHM / CREATE / PERFORM\nLA SCÈNE\nEST À TOI.\n\nTa musique. Ta partition. Ton spectacle.\n\n01 / SÉLECTION MUSICALE\n03\n♡\n＋\n5 difficultés automatiques\nDépose tes audios ou utilise ＋\nSpectacle automatique\nClasser\nOrdre de la bibliothèque\nTitre A → Z\nTempo croissant\nDurée croissante\nAjouts récents\n▶ Écouter 15 s\n◇\nNEON PROMISE\nORIGINAL · 128 BPM · 01:02\n01\n◎\nGLASS ORBIT\nORIGINAL · 110 BPM · 01:04\n02\n✳\nSAKURA VOLTAGE\nORIGINAL · 156 BPM · 01:04\n03\n♫ Setlists\nGérer le morceau\nContrôler la partition\nPartitions disponibles 0\n◇ Académie · 6 leçons\n↳ Importer DSC / JSON / MIDI\nSauvegarder la bibliothèque\nLIVE PREVIEW / 3D\nNEON ARENA\nMIKU • SILHOUETTES DE TRAVAIL\nPersonnaliser la scène ↗\nINSTRUMENTAL ORIGINAL\n♡\nNEON PROMISE\n\nDIVA PULSE · instrumental original\n\n128\nBPM\n01:02\nDURÉE\n116\nNOTES\n—\nRECORD\nEASY\nNORMAL\nHARD\nEXTREME\nEX EXTREME\n\n0 accords · 6 HOLD · 0 slides\n\nAUTO SHOW\n\nSpectacle préparé · 9 phrases · mouvements procéduraux · 0 piste(s) protégée(s)\n\nSPECTACLE · AUTO / MANUEL\nLANCER LE LIVE\n▶\nPV\nCLIP\nEntraînement\nAutoplay\nGénérer / compléter les niveaux\nD △ F □ J × K ○ S ‹ L ›\nCLAVIER · MANETTE · TACTILE\nComment jouer ?",
+    "canvases": [
+      {
+        "width": 300,
+        "height": 150,
+        "visible": true
+      },
+      {
+        "width": 700,
+        "height": 34,
+        "visible": true
+      },
+      {
+        "width": 300,
+        "height": 150,
+        "visible": false
+      },
+      {
+        "width": 300,
+        "height": 150,
+        "visible": false
+      },
+      {
+        "width": 300,
+        "height": 150,
+        "visible": false
+      },
+      {
+        "width": 300,
+        "height": 150,
+        "visible": false
+      }
+    ]
+  },
+  "gameplay": {
+    "title": "DIVA PULSE — Prises fiables & brouillons protégés V37",
+    "view": "game",
+    "playing": true,
+    "paused": false,
+    "song": "NEON PROMISE",
+    "stageAvailable": true
+  },
+  "limitations": [
+    "Short native assisted Autoplay session and editor navigation only; manual timing, imported media and all editor/PWA flows are not certified."
+  ],
+  "verifiedAt": "2026-11-13T08:06:07.673Z",
+  "title": "DIVA PULSE — Prises fiables & brouillons protégés V37"
+}

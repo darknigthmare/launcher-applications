@@ -1,0 +1,182 @@
+{
+  "id": "derniere-ligne-zero-repli",
+  "url": "https://derniere-ligne-zero-repli.vercel.app/",
+  "checkedAt": "2026-11-13T08:06:34.512Z",
+  "nativeControlsOnly": true,
+  "checks": [
+    {
+      "label": "public initial identity",
+      "state": {
+        "url": "https://derniere-ligne-zero-repli.vercel.app/",
+        "title": "Dernière Ligne — Poste stabilisé 0.44.2",
+        "body": "DÉFENSE 2D · SURVIE TACTIQUE\nDERNIÈRE\nLIGNE\nZÉRO REPLI\n\nUn poste. Une barricade. Aucun repli.\nPréparez la défense, choisissez votre route et tenez jusqu’au convoi.\n\nACCUEIL\n01\nREPRENDRE\n02\nCAMPAGNES\n03\nMODES DE JEU\n04\nDOSSIERS\n05\nOPTIONS\n06\nPOSTE DE COMMANDEMENT\nLe dernier poste\nRANG 0\nRECRUE\nLE CONVOI ATTEND VOTRE SIGNAL\nUNE NUIT DE PLUS.\nPERSONNE DERRIÈRE.\n\nPréparez vos armes, répartissez vos réserves et gardez le poste. Quand les grilles cèdent, il n’y a plus de repli.\n\nCHOISIR UNE CAMPAGNE\nAPPRENDRE À TENIR\nLA ROUTE RESTE OUVERTE TANT QUE VOUS TENEZ.\nVersion 0.44.2 · Poste stabilisé\nCLAVIER / SOURIS\nCONVOI // TERMINAL DE DEFENSE\nDERNIERE\nLIGNE\nZERO REPLI\nPOSTE 07 · SYNCHRONISATION LOCALE · 0.44.2\nPOSTE 07\n//\nRESEAU LOCAL\n//\n0.44.2\n↑↓←→NAVIGUER\nENTRÉEVALIDER\nÉCHAPRETOUR\nF10PLEIN ÉCRAN",
+        "canvases": [
+          {
+            "width": 1440,
+            "height": 810,
+            "visible": true
+          }
+        ]
+      }
+    },
+    {
+      "nativeControl": "#dl403-hubNav button[data-page='campaigns']"
+    },
+    {
+      "label": "campaign list",
+      "state": {
+        "page": "campaigns",
+        "buttons": [
+          {
+            "id": "",
+            "text": "ACCUEIL01"
+          },
+          {
+            "id": "",
+            "text": "REPRENDRE02"
+          },
+          {
+            "id": "",
+            "text": "CAMPAGNES03"
+          },
+          {
+            "id": "",
+            "text": "MODES DE JEU04"
+          },
+          {
+            "id": "",
+            "text": "DOSSIERS05"
+          },
+          {
+            "id": "",
+            "text": "OPTIONS06"
+          },
+          {
+            "id": "dl403-back",
+            "text": "‹ ACCUEIL"
+          },
+          {
+            "id": "newCampaign",
+            "text": "01LA ROUTE DU CONVOIACTE I · 24 nuits vers la côte›"
+          },
+          {
+            "id": "newRelief",
+            "text": "02LIGNES DE SECOURSACTE II · 12 nuits pour revenir›"
+          },
+          {
+            "id": "northCampaignBtn",
+            "text": "03LES CENDRES DU NORDFRONT III-A · 16 nuits à Valcendre›"
+          },
+          {
+            "id": "metroCampaignBtn",
+            "text": "04LES PROFONDEURSFRONT III-B · 12 trajets de la Ligne M›"
+          },
+          {
+            "id": "airMenuButton",
+            "text": "05CIEL OUVERTACTE IV · 12 sorties de convergence›"
+          },
+          {
+            "id": "highwayCampaignBtn",
+            "text": "VIAUTOROUTE12 TRAVERSÉES · 4 VÉHICULES"
+          },
+          {
+            "id": "waterCampaignBtn",
+            "text": "VIIEAUX NOIRES12 TRAVERSÉES · 4 BATEAUX"
+          },
+          {
+            "id": "towerCampaignBtn",
+            "text": "VIIIASCENSION12 ÉTAGES · CABINE MOBILE"
+          },
+          {
+            "id": "darkCampaignBtn",
+            "text": "IXZONE NOIRE12 SECTEURS · 6 CIRCUITS"
+          }
+        ]
+      }
+    },
+    {
+      "nativeControl": "#newCampaign"
+    },
+    {
+      "nativeControl": "#v20SkipTrain"
+    },
+    {
+      "label": "native preparation",
+      "state": {
+        "title": "Dernière Ligne — Poste stabilisé 0.44.2",
+        "phase": "camp",
+        "button": "TENIR LA NUIT 01 →"
+      }
+    },
+    {
+      "nativeControl": "#startWaveBtn"
+    },
+    {
+      "nativeControl": "#v18CinemaSkip"
+    },
+    {
+      "label": "native night combat",
+      "state": {
+        "title": "Dernière Ligne — Poste stabilisé 0.44.2",
+        "phase": "combat",
+        "canvas": 1440,
+        "pauseAvailable": true,
+        "text": "NUIT\n01 / 24\nBARRICADE\n340\nSURVIVANT\n100\n⛶\n♪\nⅡ\nDÉPÔT 07 · 0/16\nASSAUT 1 / 3\nLE SIGNAL\nLATÉRALE → · TENIR LE PÉRIMÈTRE\nCIEL COUVERT\nCLEURRE 1\nTPRIORITÉ : AUTO\nPISTOLET\n12 / ∞\n1\n2\n3\nR\nG ·\n2\nF ·\n1\nV ·\n1\n•\n\nSéquence ajoutée au Journal de route.\n\nSOURIS / TACTILE"
+      }
+    },
+    {
+      "nativeControl": "#pauseBtn"
+    },
+    {
+      "label": "native pause",
+      "state": {
+        "phase": "paused"
+      }
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "docs/web-deployment-proof/derniere-ligne-zero-repli-title.png",
+      "sha256": "9672a326e732d1857502880cd6f5c82a4751e111a49cbb4292079fa46b896fd8",
+      "bytes": 734993,
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "path": "docs/web-deployment-proof/derniere-ligne-zero-repli-combat.png",
+      "sha256": "c235c0cfab2f2de26cd9eb81121d9c6f634c5101cbfc2a7a04d10e017e073d3f",
+      "bytes": 808580,
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      }
+    }
+  ],
+  "playable": true,
+  "initial": {
+    "url": "https://derniere-ligne-zero-repli.vercel.app/",
+    "title": "Dernière Ligne — Poste stabilisé 0.44.2",
+    "body": "DÉFENSE 2D · SURVIE TACTIQUE\nDERNIÈRE\nLIGNE\nZÉRO REPLI\n\nUn poste. Une barricade. Aucun repli.\nPréparez la défense, choisissez votre route et tenez jusqu’au convoi.\n\nACCUEIL\n01\nREPRENDRE\n02\nCAMPAGNES\n03\nMODES DE JEU\n04\nDOSSIERS\n05\nOPTIONS\n06\nPOSTE DE COMMANDEMENT\nLe dernier poste\nRANG 0\nRECRUE\nLE CONVOI ATTEND VOTRE SIGNAL\nUNE NUIT DE PLUS.\nPERSONNE DERRIÈRE.\n\nPréparez vos armes, répartissez vos réserves et gardez le poste. Quand les grilles cèdent, il n’y a plus de repli.\n\nCHOISIR UNE CAMPAGNE\nAPPRENDRE À TENIR\nLA ROUTE RESTE OUVERTE TANT QUE VOUS TENEZ.\nVersion 0.44.2 · Poste stabilisé\nCLAVIER / SOURIS\nCONVOI // TERMINAL DE DEFENSE\nDERNIERE\nLIGNE\nZERO REPLI\nPOSTE 07 · SYNCHRONISATION LOCALE · 0.44.2\nPOSTE 07\n//\nRESEAU LOCAL\n//\n0.44.2\n↑↓←→NAVIGUER\nENTRÉEVALIDER\nÉCHAPRETOUR\nF10PLEIN ÉCRAN",
+    "canvases": [
+      {
+        "width": 1440,
+        "height": 810,
+        "visible": true
+      }
+    ]
+  },
+  "gameplay": {
+    "title": "Dernière Ligne — Poste stabilisé 0.44.2",
+    "phase": "combat",
+    "canvas": 1440,
+    "pauseAvailable": true,
+    "text": "NUIT\n01 / 24\nBARRICADE\n340\nSURVIVANT\n100\n⛶\n♪\nⅡ\nDÉPÔT 07 · 0/16\nASSAUT 1 / 3\nLE SIGNAL\nLATÉRALE → · TENIR LE PÉRIMÈTRE\nCIEL COUVERT\nCLEURRE 1\nTPRIORITÉ : AUTO\nPISTOLET\n12 / ∞\n1\n2\n3\nR\nG ·\n2\nF ·\n1\nV ·\n1\n•\n\nSéquence ajoutée au Journal de route.\n\nSOURIS / TACTILE"
+  },
+  "limitations": [
+    "Opening native convoy campaign preparation, night 01 combat and pause only; other campaigns and completion are not certified."
+  ],
+  "verifiedAt": "2026-11-13T08:06:49.223Z",
+  "title": "Dernière Ligne — Poste stabilisé 0.44.2"
+}

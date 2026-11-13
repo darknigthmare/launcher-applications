@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "scope": "team",
+  "teamId": "team_VrIjq2UWV6VaHZr7DdQFwvfu",
+  "observedOnProject": "parallaxe-protocole-9",
+  "observedAt": "2026-11-13T08:10:59.209Z",
+  "reportedBy": "Parallaxe deployment owner",
+  "httpStatus": 402,
+  "error": "payment_required",
+  "code": "api-deployments-free-per-day",
+  "message": "Resource is limited - try again in 24 hours (more than 100)",
+  "retryAfterSeconds": 86400,
+  "independentCorroboration": {
+    "sourcePullRequest": "https://github.com/darknigthmare/Parallaxe_Protocole9/pull/6",
+    "checkedCommit": "1d48658f655091567bb45ef3d44fd93184d4071c",
+    "context": "Vercel",
+    "state": "failure",
+    "targetUrl": "https://vercel.com/darknigthmares-projects?upgradeToPro=build-rate-limit"
+  },
+  "scopeLimitation": "This is the team quota observed on Parallaxe; it is not a separately attempted or rejected Fallout deployment."
+}

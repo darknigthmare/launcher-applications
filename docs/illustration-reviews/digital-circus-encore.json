@@ -1,0 +1,28 @@
+{
+  "id": "digital-circus-encore",
+  "asset": "assets/illustrations/digital-circus-encore.png",
+  "sha256": "c2f21a264c50bb323a61f913679036480e09558efa822d96fb93ed0365ad76a9",
+  "references": [
+    {
+      "path": "assets/screenshots/digital-circus-encore/04.png",
+      "sha256": "d73ae3435a9c45fac3d4dbb0de993667959d741aed16dbc2016bff1451a21ba7"
+    },
+    {
+      "path": "assets/screenshots/digital-circus-encore/01.png",
+      "sha256": "dbd9820a2e53bc2a044b6767ed1c8c156e9d8d096119d3da8e36329960db14c1"
+    },
+    {
+      "path": "assets/screenshots/digital-circus-encore/02.png",
+      "sha256": "f5e45486bdc8de2e025521a1c0c408089bc1e0b43f5adafcebd378e17fd202f2"
+    }
+  ],
+  "reviewedAt": "2026-11-13T06:32:06.300805+00:00",
+  "provider": "OpenAI",
+  "generator": "image_gen",
+  "prompt": "Generate one landscape 16:9 game illustration faithful to the ACTUAL browser game pixel sprites in these native screenshots. Reference ONE is the real playable stage: a simple flat 2D toy lounge, turquoise curved walls, broad orange/yellow scalloped ceiling trim, a round red-and-lime-green door with yellow rim in the center, purple sofa at left, blue sofa center, orange sofa right with small round brown table, orange and cream perspective checkerboard floor. Keep exactly that scene and the same two shipped sprite designs. Pomni is the short chibi pixel-art jester in reference, huge round pale face, the same mismatched detailed eyes and short brown hair, red/blue two-point jester cap with gold trim and bells, tiny alternating red/blue costume with gold round buttons, mismatched red/blue gloves and small boots. Jax is the taller skinny purple rabbit sprite, very long upright ears, half-lidded yellow eyes, broad toothy mischievous grin, pink overalls with yellow buttons and yellow gloves, exactly matching the game reference proportions. Pomni stands left-center and Jax right-center at their native height ratio, ready for a playful duel but without added attack effects. Make a clean single illustration using crisp blocky pixel-art characters with the same sprite shading, on the simple flat geometric background of the shipped game. Remove the page chrome, all HUD, health bars, text, names, numbers and logos. Do not change to glossy3D characters, smooth animation-film art, painted realism or different franchise costumes. Do not add weapons, extra characters or new scenery. Preserve the recognizable actual game sprites rather than redesigning them. One coherent scene, no montage.",
+  "verdict": "accepted",
+  "differences": [
+    "Les barres de vie, textes et autres éléments du HUD sont retirés.",
+    "Les pixels des sprites et la perspective du carrelage sont recomposés : le costume rouge/bleu, les clochettes, les yeux de Pomni, les oreilles et la salopette rose de Jax ainsi que les trois canapés restent cohérents avec le build. Ce ne sont pas les bitmaps originaux, ni une certification pixel pour pixel."
+  ]
+}

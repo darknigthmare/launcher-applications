@@ -1,0 +1,24 @@
+{
+  "id": "yautja-apex-hunt",
+  "asset": "assets/illustrations/yautja-apex-hunt.png",
+  "sha256": "a8c34f3407aa578a3db1aa73daf5ee05594c3bb585a705afeaa6d379475609ef",
+  "references": [
+    {
+      "path": "assets/screenshots/yautja-apex-hunt/05.png",
+      "sha256": "783e0e77359365f4d68eb80d8cf8bd7373d0243ca2a34d115a054e6309968f8d"
+    },
+    {
+      "path": "assets/screenshots/yautja-apex-hunt/01.png",
+      "sha256": "1476756572f9379e2a624f19ef6735e2c3658f2352dd34d4a742b8d5d008e14e"
+    }
+  ],
+  "reviewedAt": "2026-11-13T06:48:01.388465+00:00",
+  "provider": "OpenAI",
+  "generator": "image_gen",
+  "prompt": "Create one landscape 16:9 standalone illustration extremely faithful to the actual crude low-poly browser-game mesh and environment in these native screenshots. Use the FIRST image's real jungle scene. Keep exactly its small front-facing toy-like hunter model: narrow olive-green arms and body, crosshatched grey diamond-net pattern across the torso, oversized plain light-grey spherical shoulder pads, the same flat beige-grey mask-like face with its small dark eye openings, sparse short dark dreadlock pieces with yellow bands, very simple grey angular thigh/hip blocks, long extremely thin straight light-grey shin pieces with small yellow strips, and small blocky grey feet. Preserve the strange simplified shipped proportions and details rather than fixing or upgrading the design. Reference TWO confirms the same exact primitive mesh in the spaceship; use it for gear and body shape only. Place this same small model on the native jungle clearing: mottled grey-green ground texture, sparse tiny faceted green plants, a single large simple bark-textured tree trunk directly behind the hunter, distant rows of identical narrow polygonal trunks with spiky palm-like green crowns, dark teal low-poly hills and star-speckled night sky. Keep the third-person game camera and modest low-detail geometry. Remove all screen HUD, touch controls, text, title, logo, status bars, crosshair and labels. Do not add a Goliath, xenomorph, enemy, new hunter, dramatic blade pose, new weapon, film-accurate armored Predator body or cinematic realistic anatomy. Do not add trophies, gore, smoke or explosions. No spaceship pods in this jungle scene. The result must honestly resemble this native browser game, not generic Predator poster art. One coherent low-poly game-world illustration, no montage.",
+  "verdict": "accepted",
+  "differences": [
+    "Le HUD et les commandes tactiles sont retirés pour cadrer la clairière.",
+    "Le maillage du visage, quelques jonctions de l’armure, le placement des plantes et le cadrage du tronc sont recomposés. Les proportions étroites du chasseur low-poly, ses épaulières sphériques et ses jambes très fines sont conservées ; aucun Predator cinématographique ou Goliath absent des captures n’est inventé."
+  ]
+}

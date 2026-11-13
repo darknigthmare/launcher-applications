@@ -1,0 +1,42 @@
+{
+  "reviewedAt": "2026-11-13",
+  "tool": "image_gen.imagegen",
+  "illustrations": 27,
+  "referenceMethod": "Actual native capture references; separate source-game fidelity review by a different agent",
+  "conclusion": "Suitable as source-faithful generated illustrations, not native gameplay screenshots or pixel-identical/canonical certification.",
+  "observedDifferences": [
+    "Reframing and recomposition",
+    "Resampled outlines, lighting and native geometry spacing",
+    "Small face, costume and surface details",
+    "Regenerated, non-authoritative microtext/card print"
+  ],
+  "assets": [
+    "avp-blood-arena",
+    "avp-hunt-hive-tcg",
+    "cainos",
+    "deadline-outbreak",
+    "deadwall-last-enclosure",
+    "derniere-ligne-zero-repli",
+    "digital-circus-encore",
+    "diva-pulse",
+    "dont-look-when-they-say-soleil",
+    "fallout-marseille-mistral",
+    "maid-cafe-simulator-deluxe",
+    "mass-effect-relay-chronicles",
+    "massilia-cyberpunk",
+    "moustique-the-video-game",
+    "parallaxe-protocole-9",
+    "ragtime-rumble-complete-tour",
+    "reclaimed-after-dark",
+    "resident-evil-bow-protocol",
+    "riftcasters-3d",
+    "riftcasters-chaos-anglers",
+    "shadow-codec-ops",
+    "silent-hill-halo-of-flesh",
+    "triarche-ciel-rouge",
+    "vortex-command",
+    "world-hive-wars",
+    "yautja-apex-hunt",
+    "yugioh-25d-holograms"
+  ]
+}

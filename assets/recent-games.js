@@ -6,7 +6,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Survie & horreur",
     "baseGame": "",
-    "description": "Survival horror archéologique 2,5D situé sous le plateau de Gizeh en 1926. Six chapitres, 89 éléments interactifs, six familles de menaces, dix-huit archives, seize succès et quatre fins dépendent d’un projecteur que le joueur doit maintenir en vie tandis qu’Aziz retient ce que les fresques emprisonnent.",
+    "description": "Sous le plateau de Gizeh, en 1926, les fresques retiennent des ombres qu'il ne faut pas réveiller. Maintiens le grand projecteur en vie, explore les vestiges et rassemble les archives. Chaque déplacement et chaque choix pèsent sur ce qu'Aziz pourra encore contenir.",
     "pitch": "Sous Gizeh, maintiens le grand projecteur allumé avant que les fresques ne libèrent leurs ombres.",
     "tags": [
       "Jeu original",
@@ -14,8 +14,7 @@ window.LAUNCHER_RECENT_GAMES = [
       "Archéologie",
       "2,5D",
       "Lumière",
-      "Choix narratifs",
-      "PWA"
+      "Choix narratifs"
     ],
     "icon": "AZ",
     "link": "https://aziz-la-lumiere-dort.vercel.app",
@@ -33,7 +32,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Fan games",
     "genre": "Gestion & simulation",
     "baseGame": "SCP Foundation",
-    "description": "Jeu de gestion complet où une direction de Site construit sa couverture régionale, organise les installations de surface, creuse un complexe de confinement vertical et rédige ses procédures face aux crises. Ressources, personnel, renseignement, éthique et suspicion évoluent au fil de la campagne Deep Protocol.",
+    "description": "Prends la direction d'un Site de la Fondation : construis sa couverture régionale, organise les installations de surface et creuse le complexe de confinement. Recrute le personnel, répartis les ressources et prépare tes procédures face aux crises. Tes décisions engagent le renseignement, l'éthique et la suspicion qui entourent le Site.",
     "pitch": "Bâtis la couverture, sécurise les anomalies et maintiens ton Site en vie pendant chaque crise.",
     "tags": [
       "Fan game",
@@ -62,7 +61,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "RPG & progression",
     "baseGame": "",
-    "description": "Action-RPG cyberpunk solo situé à Néo-Massilia en 2197, où le corps est un abonnement et l’identité une clause révocable. La version 0.6.0 poursuit La Dette de Chair et six opérations compactes : combats en vue subjective, ordres tactiques du Cortex et piratage du Spectre influencent factions, recrutements et cinq conclusions. Trois châssis, huit implants et la Cellule NULL accompagnent cette reconstruction originale, distincte du projet géographique local Massilia Cyberpunk.",
+    "description": "À Néo-Massilia en 2197, ton corps est un abonnement et ton identité une clause révocable. Choisis ton châssis et tes implants, combats, donne tes ordres au Cortex ou pirate avec le Spectre. Tes décisions au fil de La Dette de Chair et des opérations de la Cellule NULL influencent les factions, les recrutements et l’issue de ta dette.",
     "pitch": "Choisis un corps loué, signe sous contrainte et pirate la clause qui possède encore ton pouls.",
     "tags": [
       "Jeu original",
@@ -70,7 +69,6 @@ window.LAUNCHER_RECENT_GAMES = [
       "Cyberpunk",
       "Infiltration",
       "Piratage",
-      "Raycasting",
       "Campagne solo"
     ],
     "icon": "SM",
@@ -89,7 +87,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Fan games",
     "genre": "Puzzle & cartes",
     "baseGame": "Alien vs. Predator",
-    "description": "Le terminal de commandement ouvre un conflit de cartes entre Ruche, Chasse et forces humaines. Constitue un deck de trente cartes dans un arsenal de 158, déploie tes unités sur trois voies et maîtrise les effets de Couvée, Sang acide, Trophée et Pathogène. Huit missions de campagne, boosters et collection fonctionnent hors ligne.",
+    "description": "Le terminal de commandement ouvre un conflit de cartes entre Ruche, Chasse et forces humaines. Constitue ton deck, déploie tes unités sur trois voies et maîtrise les effets de Couvée, Sang acide, Trophée et Pathogène. Mène les opérations de campagne et développe ta collection pour préparer les prochains engagements.",
     "pitch": "Déploie tes unités sur trois voies : la Couvée et la Chasse attendent ton ordre.",
     "tags": [
       "Fan game",
@@ -116,7 +114,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Aventure & exploration",
     "baseGame": "",
-    "description": "Action-RPG d’exploration dans la cité morte de Nox Arca. Le joueur choisit un partenaire vivant, restaure ses quartiers, affronte des créatures, développe le lien d’Unisson et reconstitue le Codex à travers une campagne jouable au clavier, à la manette ou au tactile.",
+    "description": "La cité morte de Nox Arca attend d'être réveillée. Choisis un partenaire vivant, restaure les quartiers et affronte les créatures qui les parcourent. Développe le lien d'Unisson avec ton compagnon et rassemble les pages du Codex pour redonner une âme à la Cité des Échos.",
     "pitch": "Réveille Nox Arca, lie-toi à une créature et rends une âme à la Cité des Échos.",
     "tags": [
       "Jeu original",
@@ -124,8 +122,7 @@ window.LAUNCHER_RECENT_GAMES = [
       "Action-RPG",
       "Compagnon",
       "Reconstruction",
-      "Codex",
-      "Sauvegarde locale"
+      "Codex"
     ],
     "icon": "EB",
     "link": "https://echobound.vercel.app",
@@ -143,7 +140,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Gestion & simulation",
     "baseGame": "",
-    "description": "D-17 n'est pas une forteresse achevée : il faut encore la nourrir, la défendre et l'approvisionner. Explore les routes et les haltes, fouille les bâtiments, gère le sac et les stocks, puis installe ateliers, couchages et récupérateurs. Pluie, combustible, matériaux et temps de travail existent réellement ; chaque expédition expose la colonie aux hordes.",
+    "description": "D-17 tient encore, mais la colonie manque de vivres, de matériaux et de protection. Explore les routes et les haltes, fouille les bâtiments et ramène ce que ton sac peut porter. Installe ateliers, couchages et récupérateurs ; entre pluie, combustible et temps de travail, chaque réparation doit être préparée avant l'arrivée des hordes.",
     "pitch": "D-17 tient encore. Rapporte les ressources, remets les haltes en état et renforce l'enceinte.",
     "tags": [
       "Jeu original",
@@ -170,7 +167,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Rythme & arcade",
     "baseGame": "",
-    "description": "Blind test de science-fiction complet réunissant 72 échos originaux, une course solo, un party local simultané à quatre, une faille infinie et une campagne Archive Run en cinq secteurs. Le musée sonore, les modules de résonance et l’atelier audio personnel prolongent chaque partie.",
+    "description": "Reconnais les échos qui traversent la faille et retrouve les sons des cinq secteurs de l'Archive. Lance une course solo, partage une partie à quatre ou tiens dans la faille infinie. Le musée sonore, les modules de résonance et l'atelier audio prolongent ton exploration.",
     "pitch": "Reconnais les échos, traverse la faille et sauve les cinq secteurs de l’Archive.",
     "tags": [
       "Jeu original",
@@ -197,8 +194,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Puzzle & cartes",
     "baseGame": "",
-    "description": "Quiz visuel complet autour de 52 silhouettes vectorielles originales. Six modes — Arcade, Contre-la-montre, Survie, Duel local, Défi quotidien et Entraînement — combinent combos, indices, collection, expérience, statistiques et parties de deux à quatre joueurs.",
-    "pitch": "Déchiffre les silhouettes, complète ta collection et domine les six modes de jeu.",
+    "description": "Une silhouette suffit-elle à reconnaître ce qui se cache derrière l'ombre ? Déchiffre les formes, utilise les indices et enchaîne les réponses pour compléter ta collection. Choisis l'Arcade, la course contre la montre ou la Survie, puis défie les autres joueurs en duel.",
+    "pitch": "Regarde l'ombre, trouve la réponse et garde ton combo en vie.",
     "tags": [
       "Jeu original",
       "Puzzle & cartes",
@@ -224,7 +221,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "RPG & progression",
     "baseGame": "",
-    "description": "Action-RPG roguelite où deux origines forgent un héritier unique. Douze vagues, trois royaumes, trois boss, mutations, pouvoirs fusionnés et décisions d’éducation alimentent une dynastie persistante dont chaque enfant peut devenir le parent de la génération suivante.",
+    "description": "Deux origines forgent un héritier unique. Traverse les royaumes, affronte les vagues et leurs boss, puis fais évoluer mutations et pouvoirs fusionnés. Tes décisions d'éducation façonnent une dynastie où chaque enfant peut transmettre son héritage à la génération suivante.",
     "pitch": "Fusionne deux lignées, forge leur héritier et bâtis une dynastie à travers les Fractures.",
     "tags": [
       "Jeu original",
@@ -232,8 +229,7 @@ window.LAUNCHER_RECENT_GAMES = [
       "Action",
       "Roguelite",
       "Dynastie",
-      "Boss",
-      "Sauvegarde locale"
+      "Boss"
     ],
     "icon": "SOA",
     "link": "https://son-of-a-legacy-forge.vercel.app",
@@ -251,7 +247,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Aventure & exploration",
     "baseGame": "",
-    "description": "Aventure d’action complète à travers sept zones d’un monde fracturé. Huit formes jouables transforment combat, exploration et réactions sociales, tandis que six boss, cinq Sceaux Primordiaux, des secrets et trois conclusions structurent la campagne.",
+    "description": "Le monde s'est fracturé en sept zones. Change de masque pour maîtriser huit formes, trouver de nouveaux passages et modifier tes rencontres. Cherche les Sceaux Primordiaux, découvre les secrets des lieux et affronte les gardiens qui séparent les fragments du monde.",
     "pitch": "Change de masque, maîtrise huit formes et réunis les Sceaux du Monde Brisé.",
     "tags": [
       "Jeu original",
@@ -278,7 +274,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Rythme & arcade",
     "baseGame": "",
-    "description": "Défi musical local où un jingle original et son logo animé apparaissent, puis le joueur le reproduit au micro. L’analyse dans le navigateur note mélodie, rythme, durée et netteté sans envoyer l’audio sur un serveur.",
+    "description": "Écoute le jingle, observe son logo animé et reproduis-le au micro. Retrouve sa mélodie, son rythme et sa durée pour améliorer ta prestation au prochain essai.",
     "pitch": "Écoute un jingle original, reproduis-le au micro et vise le score parfait.",
     "tags": [
       "Jeu original",
@@ -286,7 +282,6 @@ window.LAUNCHER_RECENT_GAMES = [
       "Musique",
       "Microphone",
       "Score",
-      "PWA",
       "Hors ligne"
     ],
     "icon": "JD",
@@ -305,7 +300,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Puzzle & cartes",
     "baseGame": "",
-    "description": "Jeu original de rangement tactique où chaque objet occupe une forme précise dans une mallette à grille. Douze contrats, modes aléatoire et bac à sable combinent rotation, chargement, soins, accessoires et optimisation du score.",
+    "description": "Chaque objet doit trouver sa place dans la mallette. Fais pivoter armes, soins et accessoires sur la grille, puis combine ton équipement pour remplir les contrats. Les formes se répondent, mais l'espace manque toujours au moment du dernier chargement.",
     "pitch": "Range, pivote et combine ton équipement pour résoudre chaque mallette tactique.",
     "tags": [
       "Jeu original",
@@ -332,7 +327,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Gestion & simulation",
     "baseGame": "",
-    "description": "Jeu 2D de collection, décoration et gestion légère où le joueur compose sa vitrine idéale. Il achète objets et étagères, organise librement ses pièces, améliore le prestige de la galerie et accueille des visiteurs.",
+    "description": "Compose ta vitrine idéale : choisis les objets, installe les étagères et organise les pièces de ta collection. Fais évoluer la décoration et le prestige de la galerie pour accueillir les visiteurs dans un lieu qui te ressemble.",
     "pitch": "Collectionne, expose et transforme ta pièce en galerie de rêve.",
     "tags": [
       "Jeu original",
@@ -340,8 +335,7 @@ window.LAUNCHER_RECENT_GAMES = [
       "Collection",
       "Décoration",
       "Créativité",
-      "Progression",
-      "Sauvegarde locale"
+      "Progression"
     ],
     "icon": "VV",
     "link": "https://vitrineverse.vercel.app",
@@ -359,13 +353,12 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Aventure & exploration",
     "baseGame": "",
-    "description": "Jeu d’action-aventure 3D sous Godot où PIP, une araignée sauteuse, équipe un outil différent sur chacune de ses huit pattes. Trois régions, seize outils, cinq ennemis, trois boss et une progression permanente composent la campagne.",
-    "pitch": "Équipe huit outils, explore trois régions et révèle le trésor de PIP.",
+    "description": "PIP, une araignée sauteuse, peut équiper un outil différent sur chacune de ses huit pattes. Explore trois régions, adapte ton équipement aux ennemis et aux boss, puis conserve tes découvertes pour poursuivre la chasse au trésor.",
+    "pitch": "Huit pattes, huit outils : trouve le passage qui mène au trésor de PIP.",
     "tags": [
       "Jeu original",
       "Aventure & exploration",
       "Action",
-      "Godot",
       "3D",
       "Boss",
       "Progression"
@@ -386,7 +379,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Aventure & exploration",
     "baseGame": "",
-    "description": "Aventure mobile pixel-art complète où les pas font progresser une exploratrice à travers sept univers — fantasy, cyberpunk, horreur, science-fiction, jungle et monde céleste — avec quêtes, rencontres à choix et refuge évolutif.",
+    "description": "Chaque pas fait progresser Élyra à travers sept univers. Accomplis les quêtes, choisis l'issue de tes rencontres et retrouve ton refuge pour le faire évoluer. Des territoires fantastiques aux villes cyberpunk, la marche ouvre la suite de son voyage.",
     "pitch": "Un pas dans la vraie vie, une nouvelle histoire dans l’un des sept mondes d’Élyra.",
     "tags": [
       "Jeu original",
@@ -413,8 +406,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Aventure & exploration",
     "baseGame": "",
-    "description": "Survival horror 3D narratif original, jouable intégralement dans un navigateur.",
-    "pitch": "Survival horror 3D narratif original, jouable intégralement dans un navigateur.",
+    "description": "Depuis le Site Orphée, compose les sept glyphes du passage et pars explorer des mondes inconnus. Prépare ton équipement, accomplis tes objectifs et trouve une extraction avant que les dangers du lieu ne t’emportent. Chaque retour laisse des traces : contamination, décisions et échos menacent aussi ceux restés au Site.",
+    "pitch": "Compose les glyphes, traverse le Seuil et découvre ce qui te suit au retour.",
     "tags": [
       "Jeu original",
       "Aventure & exploration",
@@ -437,8 +430,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Survie & horreur",
     "baseGame": "",
-    "description": "Jeu d’horreur 3D original de compétition mortelle, jouable dans un navigateur de bureau au clavier et à la souris ou avec une manette standard. La campagne complète réunit quatre épreuves, des concurrents contrôlés par IA, une créature traquant le bruit, une mécanique de miroir, une finale compét…",
-    "pitch": "Jeu d’horreur 3D original de compétition mortelle, jouable dans un navigateur de bureau au clavier et à la souris ou avec une manette standard. La campagne complète réunit quatre épreuves, des concurrents contrôlés par IA, une créature traquant le bruit, une mécanique de miroir, une finale compét…",
+    "description": "Entre dans une compétition mortelle où quatre épreuves mettent ta survie en jeu. Affronte les autres concurrents, surveille tes reflets et mesure le bruit de tes déplacements : une créature est à l’écoute.",
+    "pitch": "Quatre épreuves à traverser. Un reflet à surveiller. Aucun bruit à laisser derrière toi.",
     "tags": [
       "Jeu original",
       "Survie & horreur",
@@ -461,8 +454,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Rythme & arcade",
     "baseGame": "",
-    "description": "Le projet est original : il reprend l’idée générale d’un jeu piloté par la musique, mais n’utilise ni code, ni image, ni musique, ni marque provenant de Beat Hazard, Rift of the NecroDancer, Groove Coaster, Melody's Escape ou d’un autre jeu existant.",
-    "pitch": "Le projet est original : il reprend l’idée générale d’un jeu piloté par la musique, mais n’utilise ni code, ni image, ni musique, ni marque provenant de Beat Hazard, Rift of the NecroDancer, Groove Coaster, Melody's Escape ou d’un autre jeu existant.",
+    "description": "Ton morceau devient un terrain d’épreuve. Cours sur les voies de Pulse Runner, survis aux attaques de Hazard Arena ou prépare tes actions au rythme de Beat Grid. Pulsations, intensité et ruptures de la musique transforment les obstacles et les affrontements.",
+    "pitch": "Choisis un morceau, entre dans son rythme et tiens jusqu’à la dernière pulsation.",
     "tags": [
       "Jeu original",
       "Rythme & arcade",
@@ -485,8 +478,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Survie & horreur",
     "baseGame": "",
-    "description": "Jeu d’horreur à la première personne où les créatures n’existent visuellement que dans le miroir tenu au-dessus de l’épaule.",
-    "pitch": "Jeu d’horreur à la première personne où les créatures n’existent visuellement que dans le miroir tenu au-dessus de l’épaule.",
+    "description": "Tiens le miroir au-dessus de ton épaule et observe ce que tes yeux ne voient pas directement. Les créatures n'apparaissent que dans son reflet : garde-les en vue pendant que tu explores les lieux.",
+    "pitch": "Regarde dans le miroir avant de croire que le passage est libre.",
     "tags": [
       "Jeu original",
       "Survie & horreur",
@@ -509,8 +502,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Stratégie & tactique",
     "baseGame": "",
-    "description": "Jeu d’action et de conduite post-apocalyptique original en HTML5 Canvas. Le joueur pilote le Vesper, dernier véhicule capable d’escorter un cœur de purification de Cinder jusqu’à Haven.",
-    "pitch": "Jeu d’action et de conduite post-apocalyptique original en HTML5 Canvas. Le joueur pilote le Vesper, dernier véhicule capable d’escorter un cœur de purification de Cinder jusqu’à Haven.",
+    "description": "Pilote le Vesper, dernier véhicule capable d’escorter un cœur de purification de Cinder jusqu’à Haven. Tiens le convoi en mouvement et ouvre sa route dans un monde post-apocalyptique.",
+    "pitch": "Le cœur de purification doit atteindre Haven. Prends le volant du dernier convoi.",
     "tags": [
       "Jeu original",
       "Stratégie & tactique",
@@ -533,8 +526,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Action & tir",
     "baseGame": "",
-    "description": "Fractal Chaos est un jeu d’action–roguelite original jouable dans un navigateur. Les armes ne sont pas des fusils ou des sorts classiques : le joueur matérialise des courbes récursives néon inspirées des courbes de Lévy, Dragon, Twin Dragon et Terdragon. Chaque tracé devient une zone de dégâts pe…",
-    "pitch": "Fractal Chaos est un jeu d’action–roguelite original jouable dans un navigateur. Les armes ne sont pas des fusils ou des sorts classiques : le joueur matérialise des courbes récursives néon inspirées des courbes de Lévy, Dragon, Twin Dragon et Terdragon. Chaque tracé devient une zone de dégâts pe…",
+    "description": "Matérialise des courbes récursives néon pour en faire tes armes. Les tracés de Lévy, Dragon, Twin Dragon et Terdragon dessinent tes zones d’attaque au fil des affrontements.",
+    "pitch": "Trace tes armes dans la faille et fais de chaque courbe une zone de danger.",
     "tags": [
       "Jeu original",
       "Action & tir",
@@ -581,8 +574,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Aventure & exploration",
     "baseGame": "",
-    "description": "Croq’Collect est un jeu 3D original où le joueur achète des paquets de céréales, prépare réellement chaque portion, termine le paquet puis ouvre la capsule cachée au fond pour enrichir sa vitrine de figurines.",
-    "pitch": "Croq’Collect est un jeu 3D original où le joueur achète des paquets de céréales, prépare réellement chaque portion, termine le paquet puis ouvre la capsule cachée au fond pour enrichir sa vitrine de figurines.",
+    "description": "Choisis tes céréales, prépare chaque portion et termine le paquet pour atteindre la capsule cachée au fond. Ouvre-la, découvre la figurine et trouve-lui une place dans ta vitrine avant de chercher le prochain trésor.",
+    "pitch": "Le paquet se vide. Le trésor t'attend tout au fond.",
     "tags": [
       "Jeu original",
       "Aventure & exploration",
@@ -605,8 +598,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Aventure & exploration",
     "baseGame": "",
-    "description": "trois relais à calibrer sous pression, avec checkpoint après chaque activation ; - huit cassettes placées différemment selon la seed de l’expédition ; - quatre piles de secours pour gérer la lampe ; - IA en états roam, search et chase, sensible au bruit, à la distance, à la visibilité et à la l…",
-    "pitch": "trois relais à calibrer sous pression, avec checkpoint après chaque activation ; - huit cassettes placées différemment selon la seed de l’expédition ; - quatre piles de secours pour gérer la lampe ; - IA en états roam, search et chase, sensible au bruit, à la distance, à la visibilité et à la l…",
+    "description": "Explore la forêt pour retrouver les cassettes et remettre trois relais en service. Chaque calibration exige de tenir sous pression ; économise les piles de ta lampe et surveille tes déplacements, car la menace réagit à ce qu’elle voit et entend.",
+    "pitch": "Retrouve les cassettes, rallume les relais et ménage la lumière qui te reste.",
     "tags": [
       "Jeu original",
       "Aventure & exploration",
@@ -653,8 +646,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Survie & horreur",
     "baseGame": "",
-    "description": "CARRION WALK est une édition jouable de survie inversée dans laquelle le joueur incarne un zombie lent, vulnérable et en décomposition dans une ville systémique. La force vient de la patience, de la contamination et de la horde, pas d’un héros surpuissant.",
-    "pitch": "CARRION WALK est une édition jouable de survie inversée dans laquelle le joueur incarne un zombie lent, vulnérable et en décomposition dans une ville systémique. La force vient de la patience, de la contamination et de la horde, pas d’un héros surpuissant.",
+    "description": "Tu es un zombie lent, vulnérable et rongé par la décomposition. Avance dans la ville avec patience, propage la contamination et rassemble la horde. Chaque rencontre exige de choisir quand approcher et quand attendre.",
+    "pitch": "Garde tes forces, laisse la contamination gagner les rues et rassemble la horde.",
     "tags": [
       "Jeu original",
       "Survie & horreur",
@@ -677,8 +670,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Rythme & arcade",
     "baseGame": "",
-    "description": "FEATHER BEAT est un jeu de rythme original jouable dans un navigateur, construit autour de parades nuptiales d’oiseaux. Le joueur frappe quatre directions comme dans un jeu de danse d’arcade, tandis que chaque réussite fait progresser la chorégraphie de l’oiseau, transforme le décor et alimente l…",
-    "pitch": "FEATHER BEAT est un jeu de rythme original jouable dans un navigateur, construit autour de parades nuptiales d’oiseaux. Le joueur frappe quatre directions comme dans un jeu de danse d’arcade, tandis que chaque réussite fait progresser la chorégraphie de l’oiseau, transforme le décor et alimente l…",
+    "description": "Fais danser ton oiseau au rythme de sa parade nuptiale. Enchaîne les quatre directions : chaque réussite prolonge sa chorégraphie et fait évoluer le décor.",
+    "pitch": "Trouve le rythme et laisse ta parade prendre son envol.",
     "tags": [
       "Jeu original",
       "Rythme & arcade",
@@ -701,8 +694,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Survie & horreur",
     "baseGame": "",
-    "description": "Le Paradis se présente comme un lieu de paix, de beauté et de perfection. En réalité, il supprime les souvenirs, les contradictions et jusqu’à l’identité des âmes qu’il juge « impures ». L’Enfer, monstrueux en apparence, est devenu le dernier refuge de ceux qui refusent d’être effacés.",
-    "pitch": "Le Paradis se présente comme un lieu de paix, de beauté et de perfection. En réalité, il supprime les souvenirs, les contradictions et jusqu’à l’identité des âmes qu’il juge « impures ». L’Enfer, monstrueux en apparence, est devenu le dernier refuge de ceux qui refusent d’être effacés.",
+    "description": "Le Paradis promet la paix, mais efface les souvenirs et l'identité des âmes qu'il juge impures. L'Enfer est devenu le refuge de celles qui refusent de disparaître. Découvre ce qui se cache derrière le salut et ce qu'il reste à préserver de soi.",
+    "pitch": "Les portes du Paradis sont ouvertes. Tes souvenirs y survivront-ils ?",
     "tags": [
       "Jeu original",
       "Survie & horreur",
@@ -725,7 +718,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Action & tir",
     "baseGame": "",
-    "description": "La bataille est déjà terminée : récupère les projectiles à rebours, évite les paradoxes et rembobine la musique pour corriger tes erreurs. La version 1.6.0 réunit treize missions de campagne, quatre boss et 130 Chrono-épreuves, avec six difficultés et onze vaisseaux. Le mode Arcade conserve l’analyse de tes musiques personnelles entièrement sur l’appareil, sans téléversement.",
+    "description": "La bataille est déjà terminée : récupère les projectiles à rebours, évite les paradoxes et rembobine la musique pour corriger tes erreurs. Choisis ton vaisseau, traverse les missions et leurs boss, puis mesure ta maîtrise dans les Chrono-épreuves ou sur tes propres morceaux.",
     "pitch": "Remonte la partition de la bataille et récupère les tirs avant que le temps ne se referme.",
     "tags": [
       "Jeu original",
@@ -751,8 +744,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "RPG & progression",
     "baseGame": "",
-    "description": "Le projet est une application web statique sans dépendance d'exécution, sans compte, sans télémétrie et sans service distant requis pour jouer.",
-    "pitch": "Le projet est une application web statique sans dépendance d'exécution, sans compte, sans télémétrie et sans service distant requis pour jouer.",
+    "description": "À chaque tour, transforme une main de cinq dés en attaque, garde, soin ou altération. Choisis ta route parmi les combats, événements, boutiques et camps ; prépare ton héros avant d’affronter les élites et les boss. Chaque détour change ce que tu peux risquer au prochain lancer.",
+    "pitch": "Cinq dés en main : choisis ce que tu gardes, ce que tu relances et ce que tu risques.",
     "tags": [
       "Jeu original",
       "RPG & progression",
@@ -775,15 +768,14 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Puzzle & cartes",
     "baseGame": "",
-    "description": "Glisser ou flèches : déplacer la vue. - Molette, pincement, + / - : zoomer. - Double toucher ou R : recentrer. - Entrée : valider la mission ; H : demander un indice. - Ctrl/Cmd + Z, Ctrl/Cmd + Y : annuler et rétablir. - Manette : stick gauche pour déplacer, gâchettes pour zoomer, A pour valide…",
-    "pitch": "Glisser ou flèches : déplacer la vue. - Molette, pincement, + / - : zoomer. - Double toucher ou R : recentrer. - Entrée : valider la mission ; H : demander un indice. - Ctrl/Cmd + Z, Ctrl/Cmd + Y : annuler et rétablir. - Manette : stick gauche pour déplacer, gâchettes pour zoomer, A pour valide…",
+    "description": "La fractale est ton terrain, ton énigme et ton outil. Observe une signature récursive, règle sa construction et retrouve sa géométrie. Les épreuves de silhouette, d’équilibre et de mémoire demandent de changer ta façon de regarder les motifs.",
+    "pitch": "Observe le motif, ajuste ses courbes et retrouve la signature cachée dans la fractale.",
     "tags": [
       "Jeu original",
       "Puzzle & cartes",
       "Aventure",
       "Stratégie",
-      "Puzzle",
-      "PWA"
+      "Puzzle"
     ],
     "icon": "FC",
     "link": "https://fractal-chaos-studio.vercel.app",
@@ -799,8 +791,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Puzzle & cartes",
     "baseGame": "",
-    "description": "ECHO//WEAVE est un jeu musical procédural local dans lequel la musique ne crée ni une piste à suivre, ni une pluie de notes, ni une arène de tir. Elle découpe le temps en phrases et transforme les gestes du joueur en mémoires autonomes.",
-    "pitch": "ECHO//WEAVE est un jeu musical procédural local dans lequel la musique ne crée ni une piste à suivre, ni une pluie de notes, ni une arène de tir. Elle découpe le temps en phrases et transforme les gestes du joueur en mémoires autonomes.",
+    "description": "La musique découpe le temps en phrases et transforme tes gestes en mémoires autonomes. Joue avec ces échos, laisse-les poursuivre leur mouvement et tisse les traces de ta présence au fil du morceau.",
+    "pitch": "Fais un geste, écoute son écho et tisse la phrase suivante.",
     "tags": [
       "Jeu original",
       "Puzzle & cartes",
@@ -823,15 +815,14 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Stratégie & tactique",
     "baseGame": "",
-    "description": "Jeu original de survivor-like / bullet heaven 2D vu du dessus, conçu comme une expérience autonome sans reprendre l’univers, les personnages, les textes, les images ni le code d’une autre œuvre.",
-    "pitch": "Jeu original de survivor-like / bullet heaven 2D vu du dessus, conçu comme une expérience autonome sans reprendre l’univers, les personnages, les textes, les images ni le code d’une autre œuvre.",
+    "description": "Tiens face aux ennemis et fais pleuvoir tes tirs autour de toi. Dans cette survie vue du dessus, chaque instant gagné prolonge le combat.",
+    "pitch": "Garde les ennemis à distance et tiens une seconde de plus.",
     "tags": [
       "Jeu original",
       "Stratégie & tactique",
       "Rythme",
       "Stratégie",
-      "Action",
-      "PWA"
+      "Action"
     ],
     "icon": "EF",
     "link": "https://eclipse-frontline-afterfall.vercel.app",
@@ -847,8 +838,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Survie & horreur",
     "baseGame": "",
-    "description": "Jeu d’horreur et d’humour noir en pseudo-3D rétro, jouable dans un navigateur moderne sur ordinateur et téléphone. Version professionnelle 1.1.0 du 9 août 2026.",
-    "pitch": "Jeu d’horreur et d’humour noir en pseudo-3D rétro, jouable dans un navigateur moderne sur ordinateur et téléphone. Version professionnelle 1.1.0 du 9 août 2026.",
+    "description": "Quatre promeneurs ont disparu autour d’un rocher dont la cavité prend la silhouette de celui qui le regarde. Envoyé de nuit pour un contrôle géologique, relève les empreintes et aligne tes postures avec la pierre. Chaque silhouette complétée rapproche le Correspondant, une copie minérale que ta lampe peut figer.",
+    "pitch": "Relève les empreintes sans perdre de vue ce qui prend ta forme.",
     "tags": [
       "Jeu original",
       "Survie & horreur",
@@ -871,8 +862,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Gestion & simulation",
     "baseGame": "",
-    "description": "Le projet ne se limite pas à un écran de démonstration : il comprend une campagne complète, une économie, un mini-jeu de réanimation, des besoins continus, une personnalité émergente, des missions, des événements, des améliorations, des sauvegardes et plusieurs conclusions.",
-    "pitch": "Le projet ne se limite pas à un écran de démonstration : il comprend une campagne complète, une économie, un mini-jeu de réanimation, des besoins continus, une personnalité émergente, des missions, des événements, des améliorations, des sauvegardes et plusieurs conclusions.",
+    "description": "Assemble un revenant à partir de neuf modules biologiques, puis accompagne-le pendant quatorze jours. Équilibre ses besoins, conduis la réanimation et choisis comment le soigner ou l’éduquer. Les ressources manquent et la ville observe : ses réactions comme tes méthodes décident de l’issue de l’expérience.",
+    "pitch": "Donne-lui un corps, ramène-le à la vie et assume ce qu’il devient.",
     "tags": [
       "Jeu original",
       "Gestion & simulation",
@@ -895,8 +886,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Aventure & exploration",
     "baseGame": "",
-    "description": "ENCREVIVANTE est un jeu narratif original de type livre dont vous êtes le héros. La page de gauche porte le récit ; la page de droite met chaque lieu en mouvement sur Canvas. Les choix modifient les statistiques, les objets, les personnages préservés, les informations découvertes et la fin obtenue.",
-    "pitch": "ENCREVIVANTE est un jeu narratif original de type livre dont vous êtes le héros. La page de gauche porte le récit ; la page de droite met chaque lieu en mouvement sur Canvas. Les choix modifient les statistiques, les objets, les personnages préservés, les informations découvertes et la fin obtenue.",
+    "description": "Ouvre un livre dont les pages mettent les lieux en mouvement. Choisis ta route, rassemble les objets utiles et décide quels personnages préserver. Les informations découvertes et les décisions prises changent le récit jusqu’à sa conclusion.",
+    "pitch": "Tourne la page, choisis ton passage et découvre ce que le livre retient de toi.",
     "tags": [
       "Jeu original",
       "Aventure & exploration",
@@ -919,8 +910,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Gestion & simulation",
     "baseGame": "",
-    "description": "Jeu de survie-aventure en vue du dessus, jouable au clavier, à la manette ou sur écran tactile, sans dépendance d’exécution externe.",
-    "pitch": "Jeu de survie-aventure en vue du dessus, jouable au clavier, à la manette ou sur écran tactile, sans dépendance d’exécution externe.",
+    "description": "Dans l’Outback de Kurrana, cherche de l’eau, construis ton nid et protège tes œufs. Guide tes trois petits à travers le territoire jusqu’au sanctuaire, puis poursuis l’exploration au fil des rencontres.",
+    "pitch": "Trouve l’eau, protège le nid et mène tes petits jusqu’au sanctuaire.",
     "tags": [
       "Jeu original",
       "Gestion & simulation",
@@ -943,15 +934,14 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Action & tir",
     "baseGame": "",
-    "description": "STEEL STRIDE est un twin-stick shooter tactique en vue de dessus centré sur des marcheurs de combat. Le projet est un jeu HTML5 autonome, sans dépendance externe, jouable au clavier/souris, à la manette ou sur écran tactile.",
-    "pitch": "STEEL STRIDE est un twin-stick shooter tactique en vue de dessus centré sur des marcheurs de combat. Le projet est un jeu HTML5 autonome, sans dépendance externe, jouable au clavier/souris, à la manette ou sur écran tactile.",
+    "description": "Pilote un marcheur de combat et dirige tes tirs dans les affrontements vus du dessus. Déplacement et visée se répondent : choisis tes positions pour tenir le front.",
+    "pitch": "Mets le marcheur en mouvement, garde tes cibles en joue et tiens le front.",
     "tags": [
       "Jeu original",
       "Action & tir",
       "Rythme",
       "Stratégie",
-      "Action",
-      "PWA"
+      "Action"
     ],
     "icon": "SS",
     "link": "https://steel-stride-walker-front.vercel.app",
@@ -967,8 +957,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Gestion & simulation",
     "baseGame": "",
-    "description": "Hearts & Horns est un jeu web complet mêlant gestion de bar, visual novel romantique, dating sim et mini-jeux. L’univers et les cinq héroïnes sont originaux. Tous les personnages romançables sont explicitement adultes.",
-    "pitch": "Hearts & Horns est un jeu web complet mêlant gestion de bar, visual novel romantique, dating sim et mini-jeux. L’univers et les cinq héroïnes sont originaux. Tous les personnages romançables sont explicitement adultes.",
+    "description": "Tiens le Maid-Bar de Minuit, assure le service et découvre les cinq héroïnes adultes qui l’animent. Entre gestion du comptoir, mini-jeux et rencontres, tes journées laissent aussi place aux liens amoureux.",
+    "pitch": "Assure le service de minuit et découvre qui restera après le dernier verre.",
     "tags": [
       "Jeu original",
       "Gestion & simulation",
@@ -991,8 +981,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Fan games",
     "genre": "Stratégie & tactique",
     "baseGame": "Alien",
-    "description": "Au bastion colonial, chaque signal doit être vérifié avant l'engagement. Parcours le théâtre de campagne, rassemble des ressources, prépare les spécialistes et ouvre les opérations CONTACT face aux menaces xénomorphes. Le registre sépare les équipements réellement jouables, les archives consultables et les dossiers encore à documenter.",
-    "pitch": "Le signal est confirmé. Prépare l'escouade, sécurise le relais et ramène tout le monde au Bastion.",
+    "description": "Au bastion colonial, chaque signal doit être vérifié avant l’engagement. Parcours le théâtre de campagne, rassemble les ressources, prépare les spécialistes et ouvre les opérations CONTACT face aux menaces xénomorphes.",
+    "pitch": "Le signal est confirmé. Prépare l’escouade, sécurise le relais et ramène tout le monde au Bastion.",
     "tags": [
       "Fan game",
       "Stratégie & tactique",
@@ -1014,8 +1004,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Fan games",
     "genre": "Action & tir",
     "baseGame": "40 franchises du jeu vidéo",
-    "description": "Jeu de plateforme et d’action 2D conçu comme un fan game familial privé pour Tiffany. L’aventure comprend 41 mondes, 42 armes, 41 reliques, des boss, des objectifs propres à chaque univers et une progression persistante d’un portail à l’autre.",
-    "pitch": "Jeu de plateforme et d’action 2D conçu comme un fan game familial privé pour Tiffany. L’aventure comprend 41 mondes, 42 armes, 41 reliques, des boss, des objectifs propres à chaque univers et une progression persistante d’un portail à l’autre.",
+    "description": "Accompagne Tiffany de portail en portail à travers les mondes du Pixelverse. Récupère les armes et les reliques, accomplis les objectifs de chaque univers et affronte les boss qui en gardent le passage.",
+    "pitch": "Franchis les portails, découvre chaque monde et rassemble ses trésors avec Tiffany.",
     "tags": [
       "Fan game",
       "Action & tir",
@@ -1037,8 +1027,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Survie & horreur",
     "baseGame": "",
-    "description": "Jeu d’horreur interactif autonome dans un faux réseau de livestreams. Vous incarnez le modérateur de nuit chargé de surveiller plusieurs chaînes. La plupart du temps, il ne se passe rien. Parfois, un reflet ne suit pas la bonne personne, une porte apparaît dans un mur impossible ou le chat parle…",
-    "pitch": "Jeu d’horreur interactif autonome dans un faux réseau de livestreams. Vous incarnez le modérateur de nuit chargé de surveiller plusieurs chaînes. La plupart du temps, il ne se passe rien. Parfois, un reflet ne suit pas la bonne personne, une porte apparaît dans un mur impossible ou le chat parle…",
+    "description": "Tu es le modérateur de nuit d’un réseau de livestreams. Surveille les chaînes et reste attentif aux écarts : un reflet qui ne suit plus sa personne, une porte dans un mur impossible ou un message du chat peuvent annoncer que le flux a changé.",
+    "pitch": "Surveille les directs. Quelque chose vient de bouger hors du cadre.",
     "tags": [
       "Jeu original",
       "Survie & horreur",
@@ -1060,8 +1050,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Fan games",
     "genre": "RPG & progression",
     "baseGame": "Alien",
-    "description": "Prototype complet de jeu mobile géolocalisé de type chasse/collection, centré sur les Xénomorphes. Le projet est une PWA statique : aucun compte, serveur, abonnement, token cartographique ou asset externe n’est nécessaire pour lancer la version actuelle.",
-    "pitch": "Prototype complet de jeu mobile géolocalisé de type chasse/collection, centré sur les Xénomorphes. Le projet est une PWA statique : aucun compte, serveur, abonnement, token cartographique ou asset externe n’est nécessaire pour lancer la version actuelle.",
+    "description": "Pars sur les traces des Xénomorphes dans une chasse géolocalisée. Repère les signaux, poursuis tes découvertes et enrichis ta collection.",
+    "pitch": "Suis le signal et retrouve ce qui se cache autour de toi.",
     "tags": [
       "Fan game",
       "RPG & progression",
@@ -1083,8 +1073,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Fan games",
     "genre": "RPG & progression",
     "baseGame": "Digimon",
-    "description": "Prototype mobile/PWA fan-made inspiré du principe d’un jeu de chasse géolocalisé, transposé dans un univers Digimon.",
-    "pitch": "Prototype mobile/PWA fan-made inspiré du principe d’un jeu de chasse géolocalisé, transposé dans un univers Digimon.",
+    "description": "Pars à la recherche de Digimon dans une chasse géolocalisée et rassemble ta collection au fil de tes déplacements.",
+    "pitch": "Pars sur les traces des Digimon et agrandis ta collection.",
     "tags": [
       "Fan game",
       "RPG & progression",
@@ -1106,8 +1096,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Fan games",
     "genre": "RPG & progression",
     "baseGame": "Yu-Gi-Oh!",
-    "description": "Prototype fan non officiel de jeu de chasse GPS, de capture et de duel de monstres, conçu comme une boucle « GO-like » autour des monstres de Yu-Gi-Oh!.",
-    "pitch": "Prototype fan non officiel de jeu de chasse GPS, de capture et de duel de monstres, conçu comme une boucle « GO-like » autour des monstres de Yu-Gi-Oh!.",
+    "description": "Parcours le monde à la recherche de monstres de Yu-Gi-Oh!, capture-les et engage tes découvertes dans des duels.",
+    "pitch": "Suis la piste des monstres, capture-les et prépare ton prochain duel.",
     "tags": [
       "Fan game",
       "RPG & progression",
@@ -1129,15 +1119,14 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Gestion & simulation",
     "baseGame": "",
-    "description": "Un idle game cosmique original, jouable dans un navigateur, où une petite créature du Néant doit avaler tout ce que le joueur trouve. Chaque objet reste représenté dans son corps translucide et rejoint un catalogue intérieur permanent.",
-    "pitch": "Un idle game cosmique original, jouable dans un navigateur, où une petite créature du Néant doit avaler tout ce que le joueur trouve. Chaque objet reste représenté dans son corps translucide et rejoint un catalogue intérieur permanent.",
+    "description": "Une petite créature du Néant attend son prochain repas. Trouve les objets à lui faire avaler et observe-les prendre place dans son corps translucide. Chaque trouvaille enrichit le catalogue qu'elle porte en elle.",
+    "pitch": "Nourris le Néant et découvre ce qui restera visible dans son ventre.",
     "tags": [
       "Jeu original",
       "Gestion & simulation",
       "Gestion",
       "Action",
-      "Collection",
-      "PWA"
+      "Collection"
     ],
     "icon": "LV",
     "link": "https://le-vide-doit-manger.vercel.app",
@@ -1153,8 +1142,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Puzzle & cartes",
     "baseGame": "",
-    "description": "Quatre poissons-mémoires — Aube, Miette, Silex et Noct — transportent les derniers souvenirs du village noyé de Valdormante. Le joueur doit les guider jusqu’à la mer avant que le Veilleur et sa barque hantée ne les rattrapent.",
-    "pitch": "Quatre poissons-mémoires — Aube, Miette, Silex et Noct — transportent les derniers souvenirs du village noyé de Valdormante. Le joueur doit les guider jusqu’à la mer avant que le Veilleur et sa barque hantée ne les rattrapent.",
+    "description": "Aube, Miette, Silex et Noct portent les derniers souvenirs du village noyé de Valdormante. Guide les quatre poissons-mémoires jusqu'à la mer avant que le Veilleur et sa barque hantée ne les rattrapent.",
+    "pitch": "La barque remonte le fleuve. Fais passer les souvenirs de Valdormante jusqu'à la mer.",
     "tags": [
       "Jeu original",
       "Puzzle & cartes",
@@ -1177,8 +1166,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Gestion & simulation",
     "baseGame": "",
-    "description": "Jeu 3D autonome d’inspection, de gestion et d’horreur liminale. Vous incarnez l’employé d’un péage isolé pendant le service de nuit. Chaque véhicule doit être contrôlé avant de recevoir l’un des trois verdicts : OUVRIR, REFUSER ou VERROUILLER.",
-    "pitch": "Jeu 3D autonome d’inspection, de gestion et d’horreur liminale. Vous incarnez l’employé d’un péage isolé pendant le service de nuit. Chaque véhicule doit être contrôlé avant de recevoir l’un des trois verdicts : OUVRIR, REFUSER ou VERROUILLER.",
+    "description": "Tu assures le service de nuit d'un péage isolé. Contrôle chaque véhicule, observe ses détails et décide s'il faut ouvrir, refuser ou verrouiller le passage. La barrière attend ton verdict.",
+    "pitch": "Un véhicule approche. Observe avant de lever la barrière.",
     "tags": [
       "Jeu original",
       "Gestion & simulation",
@@ -1222,8 +1211,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Puzzle & cartes",
     "baseGame": "",
-    "description": "État : vertical slice complet et jouable, avec boucle de victoire, défaite, trois difficultés et interface ordinateur/mobile.",
-    "pitch": "État : vertical slice complet et jouable, avec boucle de victoire, défaite, trois difficultés et interface ordinateur/mobile.",
+    "description": "Dans une chambre industrielle, guide les blocs qui tombent au fond du puits tout en surveillant la pièce autour de toi. Termine les lignes pour repousser le Vide, récupère les fragments et ménage la batterie de ta lampe avant de gagner la sortie.",
+    "pitch": "Garde un œil sur le puits et l’autre sur la porte. Le Vide approche.",
     "tags": [
       "Jeu original",
       "Puzzle & cartes",
@@ -1246,8 +1235,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "RPG & progression",
     "baseGame": "",
-    "description": "Suture Noire est un jeu d’horreur tactique original, jouable dans le navigateur, où chaque créature est un organisme procédural unique. Le joueur explore un monastère biologique condamné, capture des Vestiges, puis consomme deux parents dans un rituel de fusion pour créer une nouvelle descendance…",
-    "pitch": "Suture Noire est un jeu d’horreur tactique original, jouable dans le navigateur, où chaque créature est un organisme procédural unique. Le joueur explore un monastère biologique condamné, capture des Vestiges, puis consomme deux parents dans un rituel de fusion pour créer une nouvelle descendance…",
+    "description": "Explore un monastère biologique condamné et capture ses Vestiges. Choisis deux parents pour le rituel de fusion : leur sacrifice fait naître une descendance dont les traits renouvellent tes possibilités.",
+    "pitch": "Capture les Vestiges, choisis les parents et prépare l’héritier du Gouffre.",
     "tags": [
       "Jeu original",
       "RPG & progression",
@@ -1270,8 +1259,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Survie & horreur",
     "baseGame": "",
-    "description": "Jeu d'horreur cosmique original inspiré du motif universel de la spirale, sans reprendre les personnages ni le scénario d'une œuvre existante.",
-    "pitch": "Jeu d'horreur cosmique original inspiré du motif universel de la spirale, sans reprendre les personnages ni le scénario d'une œuvre existante.",
+    "description": "Explore les lieux gagnés par la spirale, photographie ce que tu découvres et brise les sceaux rencontrés sur ta route. L’horreur cosmique se dévoile à mesure que tu t’approches du motif.",
+    "pitch": "Observe la spirale, photographie ses traces et trouve les sceaux à briser.",
     "tags": [
       "Jeu original",
       "Survie & horreur",
@@ -1294,8 +1283,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Gestion & simulation",
     "baseGame": "",
-    "description": "Prototype web complet d'une application de nostalgie interactive : un musée numérique où les utilisateurs retrouvent des objets et produits disparus, les manipulent en 3D et enregistrent leurs souvenirs.",
-    "pitch": "Prototype web complet d'une application de nostalgie interactive : un musée numérique où les utilisateurs retrouvent des objets et produits disparus, les manipulent en 3D et enregistrent leurs souvenirs.",
+    "description": "Parcours un musée d’objets et de produits disparus. Examine-les en trois dimensions, manipule-les et consigne les souvenirs qu’ils font revenir.",
+    "pitch": "Retrouve un objet oublié et laisse remonter le souvenir qui l’accompagne.",
     "tags": [
       "Jeu original",
       "Gestion & simulation",
@@ -1340,8 +1329,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Survie & horreur",
     "baseGame": "",
-    "description": "Un jeu d’horreur 3D original qui transforme le Snake des anciens téléphones en cauchemar de survie, enfermé dans la mémoire d’un appareil qui ne devrait plus fonctionner.",
-    "pitch": "Un jeu d’horreur 3D original qui transforme le Snake des anciens téléphones en cauchemar de survie, enfermé dans la mémoire d’un appareil qui ne devrait plus fonctionner.",
+    "description": "Un ancien téléphone continue de fonctionner alors qu'il ne le devrait plus. Entre dans sa mémoire, retrouve les règles de Snake et affronte le cauchemar de survie qui s'y est installé.",
+    "pitch": "L'écran se rallume. Le jeu n'a pas attendu ton retour pour continuer.",
     "tags": [
       "Jeu original",
       "Survie & horreur",
@@ -1364,15 +1353,14 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Action & tir",
     "baseGame": "",
-    "description": "Rail shooter 3D de science-fiction original, complet et jouable hors ligne. La caméra progresse automatiquement sur un rail cinématique pendant que le joueur affronte soldats, drones, créatures, exosquelettes et titans gargantuesques.",
-    "pitch": "Rail shooter 3D de science-fiction original, complet et jouable hors ligne. La caméra progresse automatiquement sur un rail cinématique pendant que le joueur affronte soldats, drones, créatures, exosquelettes et titans gargantuesques.",
+    "description": "Le trajet t’emporte au cœur des affrontements : vise les soldats, drones et créatures qui surgissent devant toi. Les exosquelettes et les titans ferment la route ; garde tes tirs sur leurs positions pendant que le parcours avance.",
+    "pitch": "La route avance. Les titans l’attendent. Garde-les en joue.",
     "tags": [
       "Jeu original",
       "Action & tir",
       "Gestion",
       "Action",
-      "3D",
-      "PWA"
+      "3D"
     ],
     "icon": "RT",
     "link": "https://rift-titan-protocol.vercel.app",
@@ -1388,8 +1376,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Gestion & simulation",
     "baseGame": "",
-    "description": "RETRO//ROOM est le premier prototype jouable du concept de chambre 3D servant d’interface physique à une collection de jeux rétro.",
-    "pitch": "RETRO//ROOM est le premier prototype jouable du concept de chambre 3D servant d’interface physique à une collection de jeux rétro.",
+    "description": "Entre dans une chambre en trois dimensions pour retrouver une collection de jeux rétro. Explore la pièce et rejoins les jeux à travers les objets qui les représentent.",
+    "pitch": "Pousse la porte de ta chambre rétro et retrouve le prochain jeu à lancer.",
     "tags": [
       "Jeu original",
       "Gestion & simulation",
@@ -1412,8 +1400,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Rythme & arcade",
     "baseGame": "",
-    "description": "Le projet est livré avec son code TypeScript, son build JavaScript prêt à lancer, ses tests automatisés, une piste de démonstration synthétisée localement et une documentation destinée à une reprise dans Codex.",
-    "pitch": "Le projet est livré avec son code TypeScript, son build JavaScript prêt à lancer, ses tests automatisés, une piste de démonstration synthétisée localement et une documentation destinée à une reprise dans Codex.",
+    "description": "Laisse ton morceau tracer le rail. Frappe les notes, tiens les accords et accompagne les impulsions latérales pendant que le parcours réagit à la musique. Chaque enchaînement nourrit ton combo et ton énergie de synchronisation.",
+    "pitch": "Entre sur le rail, tiens le rythme et poursuis le combo jusqu’à la dernière note.",
     "tags": [
       "Jeu original",
       "Rythme & arcade",
@@ -1459,8 +1447,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Rythme & arcade",
     "baseGame": "",
-    "description": "Jeu de course antigravité original inspiré par la sensation de vitesse des racers futuristes et des bolides à doubles propulseurs, sans utiliser les noms, personnages, véhicules ou environnements protégés de licences existantes.",
-    "pitch": "Jeu de course antigravité original inspiré par la sensation de vitesse des racers futuristes et des bolides à doubles propulseurs, sans utiliser les noms, personnages, véhicules ou environnements protégés de licences existantes.",
+    "description": "Prends les commandes d’un bolide antigravité à doubles propulseurs et cherche la trajectoire qui conserve ta vitesse.",
+    "pitch": "Aligne tes propulseurs, choisis ta trajectoire et lance-toi dans la course.",
     "tags": [
       "Jeu original",
       "Rythme & arcade",
@@ -1505,8 +1493,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Fan games",
     "genre": "Rythme & arcade",
     "baseGame": "Mr Bean",
-    "description": "Jeu fan-made autonome en HTML5/Canvas réunissant 20 chapitres jouables inspirés des principales incarnations à l’écran de Mr Bean : les quatorze épisodes classiques, les deux longs métrages, la série animée — y compris sa quatrième saison diffusée en 2025 —, la cérémonie d’ouverture de Londres 20…",
-    "pitch": "Jeu fan-made autonome en HTML5/Canvas réunissant 20 chapitres jouables inspirés des principales incarnations à l’écran de Mr Bean : les quatorze épisodes classiques, les deux longs métrages, la série animée — y compris sa quatrième saison diffusée en 2025 —, la cérémonie d’ouverture de Londres 20…",
+    "description": "Avec Mr Bean, l'examen, le grand magasin, les vacances et même un simple déménagement tournent au chaos. Traverse vingt chapitres de comédie : observe, conduis, vise, garde l'équilibre ou retrouve le bon rythme selon la situation. Atteins les objectifs de chaque épreuve et transforme les catastrophes en étoiles.",
+    "pitch": "Un examen à passer, une valise à fermer, Teddy à retrouver : avec Bean, rien ne se déroule comme prévu.",
     "tags": [
       "Fan game",
       "Rythme & arcade",
@@ -1535,8 +1523,7 @@ window.LAUNCHER_RECENT_GAMES = [
       "Action & tir",
       "Survie",
       "Action",
-      "3D",
-      "PWA"
+      "3D"
     ],
     "icon": "MT",
     "link": "https://moustique-the-video-game.vercel.app",
@@ -1552,8 +1539,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Gestion & simulation",
     "baseGame": "",
-    "description": "Jeu de gestion/service original jouable dans un navigateur, conçu comme un vertical slice professionnel sans dépendance externe obligatoire.",
-    "pitch": "Jeu de gestion/service original jouable dans un navigateur, conçu comme un vertical slice professionnel sans dépendance externe obligatoire.",
+    "description": "Derrière le comptoir du Moonlit Maid Café, accueille les clients, lis leurs commandes et passe d'un poste à l'autre pour préparer le service. Sers avant que leur patience ne s'épuise, puis réinvestis tes recettes dans le personnel, l'équipement, la carte et la décoration. Chaque journée apporte ses objectifs et ses rencontres.",
+    "pitch": "Les clients attendent : prépare les commandes, tiens le service et fais grandir ton café.",
     "tags": [
       "Jeu original",
       "Gestion & simulation",
@@ -1574,8 +1561,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Fan games",
     "genre": "Action & tir",
     "baseGame": "Mèmes historiques d’Internet",
-    "description": "Jeu de combat 2D arcade fan-made dans lequel de véritables icônes historiques de la culture Internet s’affrontent : Trollface, Rage Guy, Forever Alone, Me Gusta, Nyan Cat, Trololo Man, Doge, Keyboard Cat, Grumpy Cat, This Is Fine, Philosoraptor et Dancing Banana.",
-    "pitch": "Jeu de combat 2D arcade fan-made dans lequel de véritables icônes historiques de la culture Internet s’affrontent : Trollface, Rage Guy, Forever Alone, Me Gusta, Nyan Cat, Trololo Man, Doge, Keyboard Cat, Grumpy Cat, This Is Fine, Philosoraptor et Dancing Banana.",
+    "description": "Trollface, Nyan Cat, Doge et les autres légendes du Web se retrouvent dans l'arène. Enchaîne attaques, garde et combos, charge ta viralité et déclenche le super de ton combattant. Affronte les rivaux de l'Arcade ou défie un autre joueur en duel local.",
+    "pitch": "Charge ta viralité, trouve l'ouverture et impose ton mème dans l'arène.",
     "tags": [
       "Fan game",
       "Action & tir",
@@ -1596,14 +1583,13 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Action & tir",
     "baseGame": "",
-    "description": "MANGA//BREAK est un jeu d’action 2D original dans lequel le joueur ne visite pas seulement un univers dessiné comme un manga : il combat à l’intérieur d’un véritable manuscrit japonais vivant. Les cases sont des arènes, les marges sont des zones dangereuses, les doubles pages accueillent les boss…",
-    "pitch": "MANGA//BREAK est un jeu d’action 2D original dans lequel le joueur ne visite pas seulement un univers dessiné comme un manga : il combat à l’intérieur d’un véritable manuscrit japonais vivant. Les cases sont des arènes, les marges sont des zones dangereuses, les doubles pages accueillent les boss…",
+    "description": "Tu combats à l'intérieur d'un manuscrit vivant : ses cases forment les arènes, ses marges cachent les dangers et ses doubles pages abritent les boss. Enchaîne frappes, esquives et gardes parfaites, dépense ton encre pour libérer tes techniques et choisis les embranchements du récit.",
+    "pitch": "Brise le cadre, garde ton encre et réécris l'issue du prochain combat.",
     "tags": [
       "Jeu original",
       "Action & tir",
       "Rythme",
       "Action",
-      "PWA",
       "Narratif"
     ],
     "icon": "MB",
@@ -1620,8 +1606,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Survie & horreur",
     "baseGame": "",
-    "description": "KIDZ-TV: AFTER HOURS est un survival horror complet jouable dans un navigateur, construit autour d’un moteur raycast 3D et d’imposteurs 2D orientés vers la caméra. Le joueur explore les studios abandonnés d’une émission jeunesse fictive des années 1980–1990, traverse physiquement les téléviseurs…",
-    "pitch": "KIDZ-TV: AFTER HOURS est un survival horror complet jouable dans un navigateur, construit autour d’un moteur raycast 3D et d’imposteurs 2D orientés vers la caméra. Le joueur explore les studios abandonnés d’une émission jeunesse fictive des années 1980–1990, traverse physiquement les téléviseurs…",
+    "description": "Les studios d'une ancienne émission jeunesse continuent de tourner après la fermeture. Passe de l'antenne aux coulisses, respecte les consignes de la caméra et traverse les téléviseurs pour entrer dans leurs épisodes. Tes décisions à l'écran changent les passages et les menaces du studio ; rassemble les archives avant que les mascottes ne cessent de jouer leur rôle.",
+    "pitch": "Souris. La caméra se souvient. Entre dans l'épisode et trouve le raccord qui te ramènera aux coulisses.",
     "tags": [
       "Jeu original",
       "Survie & horreur",
@@ -1642,17 +1628,17 @@ window.LAUNCHER_RECENT_GAMES = [
     "name": "HARMONIC TERRAFORM",
     "category": "Jeux",
     "gameKind": "Jeux originaux",
-    "genre": "Gestion & simulation",
+    "genre": "Rythme & arcade",
     "baseGame": "",
-    "description": "Production canonique : harmonic-terraform.vercel.app. Une réponse HTTP ou un déploiement Vercel Ready ne suffit pas à déclarer une version publiable : chaque révision doit aussi franchir le QA automatisé et le parcours navigateur décrits dans le runbook de release.",
-    "pitch": "Production canonique : harmonic-terraform.vercel.app. Une réponse HTTP ou un déploiement Vercel Ready ne suffit pas à déclarer une version publiable : chaque révision doit aussi franchir le QA automatisé et le parcours navigateur décrits dans le runbook de release.",
+    "description": "Ton morceau façonne le monde sous tes pas : les graves sculptent le relief, les médiums dressent les plateformes et les aigus alimentent les dangers. Saute, change de fréquence et charge une impulsion pour traverser les obstacles. Chaque mouvement de la musique ouvre une nouvelle portion du parcours.",
+    "pitch": "Choisis ton morceau, trouve sa fréquence et traverse le monde qu'il fait naître.",
     "tags": [
       "Jeu original",
-      "Gestion & simulation",
-      "Gestion",
+      "Rythme & arcade",
+      "Plateforme",
+      "Musique",
       "Rythme",
-      "Action",
-      "PWA"
+      "Exploration"
     ],
     "icon": "HT",
     "link": "https://harmonic-terraform.vercel.app",
@@ -1668,8 +1654,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Gestion & simulation",
     "baseGame": "",
-    "description": "Le mode web est une PWA responsive consacrée à l’exploration de la collection. L’application Electron ajoute l’indexation locale et le lancement réel de Steam, PCSX2, RPCS3, RetroArch, Dolphin et de profils personnalisés.",
-    "pitch": "Le mode web est une PWA responsive consacrée à l’exploration de la collection. L’application Electron ajoute l’indexation locale et le lancement réel de Steam, PCSX2, RPCS3, RetroArch, Dolphin et de profils personnalisés.",
+    "description": "Entre dans ta salle de collection et découvre chaque jeu comme un objet à conserver. Ouvre les boîtiers, examine les jaquettes, feuillette les fascicules et manipule les disques ou les cartouches. Retrouve tes titres dans les rayonnages, organise ta bibliothèque et progresse dans les rangs d'Archiviste.",
+    "pitch": "Un boîtier à ouvrir, un fascicule à parcourir : redécouvre les jeux de ta collection.",
     "tags": [
       "Jeu original",
       "Gestion & simulation",
@@ -1692,8 +1678,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Survie & horreur",
     "baseGame": "",
-    "description": "BLACK GOSPEL est un rail shooter horrifique autonome inspiré du rythme des bornes d’arcade, mais construit autour d’une mécanique originale d’anatomie profane : les créatures possèdent des organes offensifs, des protections et un nœud d’âme qu’il faut exciser avant qu’une mauvaise mise à mort ne…",
-    "pitch": "BLACK GOSPEL est un rail shooter horrifique autonome inspiré du rythme des bornes d’arcade, mais construit autour d’une mécanique originale d’anatomie profane : les créatures possèdent des organes offensifs, des protections et un nœud d’âme qu’il faut exciser avant qu’une mauvaise mise à mort ne…",
+    "description": "Les créatures de BLACK GOSPEL ne meurent pas toutes au premier coup fatal. Vise leurs organes offensifs, brise leurs protections et révèle le nœud d'âme avant de l'exciser. Une mise à mort mal conduite peut déclencher la Seconde Mort ; choisis tes cibles et ta route à travers la liturgie.",
+    "pitch": "Révèle le nœud d'âme et excise-le avant que le cadavre ne se relève.",
     "tags": [
       "Jeu original",
       "Survie & horreur",
@@ -1716,8 +1702,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Fan games",
     "genre": "Rythme & arcade",
     "baseGame": "Gogo’s Crazy Bones",
-    "description": "Bounce Arena est un jeu d’adresse, de physique et de collection hors ligne. Cette édition fan non officielle propose une campagne complète, des défis rejouables, une progression persistante et des contrôles adaptés à la souris, au tactile, au clavier et à la manette. Toute l’interface, le code, l…",
-    "pitch": "Bounce Arena est un jeu d’adresse, de physique et de collection hors ligne. Cette édition fan non officielle propose une campagne complète, des défis rejouables, une progression persistante et des contrôles adaptés à la souris, au tactile, au clavier et à la manette. Toute l’interface, le code, l…",
+    "description": "Compose une équipe de figurines, règle la puissance de ton lancer et cherche le ricochet décisif. Éjecte tes adversaires de l'anneau, touche les cibles ou exploite les obstacles pour battre tes records. Les étapes de campagne et les défis font progresser ta collection et ouvrent de nouvelles façons de jouer.",
+    "pitch": "Vise, tire en arrière et relâche : un bon ricochet peut renverser toute l'arène.",
     "tags": [
       "Fan game",
       "Rythme & arcade",
@@ -1737,17 +1723,17 @@ window.LAUNCHER_RECENT_GAMES = [
     "name": "BLACK SIGNAL: BASTION ZERO",
     "category": "Jeux",
     "gameKind": "Jeux originaux",
-    "genre": "Stratégie & tactique",
+    "genre": "Survie & horreur",
     "baseGame": "",
-    "description": "FPS de survie en hordes 3D avec monstres 2D imposteurs, horreur cyber-démoniaque, liminale, zombie et cosmique. Le projet livre une boucle de jeu complète et immédiatement jouable : vagues à anomalies déterministes, boss, quatre armes, expérience, mutations, boutique, méta-progression, sauvegarde…",
-    "pitch": "FPS de survie en hordes 3D avec monstres 2D imposteurs, horreur cyber-démoniaque, liminale, zombie et cosmique. Le projet livre une boucle de jeu complète et immédiatement jouable : vagues à anomalies déterministes, boss, quatre armes, expérience, mutations, boutique, méta-progression, sauvegarde…",
+    "description": "Bastion Zero n'est que le début de l'incursion. Traverse des arènes gagnées par les anomalies, défends leurs relais et résiste aux vagues de créatures. Prépare ton arsenal entre les assauts, combine les mutations et choisis jusqu'où pousser la survie face aux affrontements majeurs.",
+    "pitch": "Sécurise le relais, choisis ta mutation et tiens jusqu'à la prochaine accalmie.",
     "tags": [
       "Jeu original",
-      "Stratégie & tactique",
-      "Stratégie",
-      "Horreur",
-      "Survie",
-      "Rythme"
+      "Survie & horreur",
+      "FPS",
+      "Hordes",
+      "Arènes",
+      "Roguelite"
     ],
     "icon": "BS",
     "link": "https://black-signal-bastion-zero.vercel.app",
@@ -1811,8 +1797,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Survie & horreur",
     "baseGame": "",
-    "description": "Jeu d’horreur psychologique original en vue subjective. Evan Vale croit vivre dans une petite ville parfaite. En réalité, Hollowbrook est un immense plateau de télévision et chaque personne de son entourage joue un rôle. Le joueur l’ignore au début, puis découvre que sa routine, ses souvenirs et…",
-    "pitch": "Jeu d’horreur psychologique original en vue subjective. Evan Vale croit vivre dans une petite ville parfaite. En réalité, Hollowbrook est un immense plateau de télévision et chaque personne de son entourage joue un rôle. Le joueur l’ignore au début, puis découvre que sa routine, ses souvenirs et…",
+    "description": "Evan Vale suit sa routine dans une petite ville qui semble parfaite. Explore Hollowbrook, parle aux habitants et relève les anomalies de continuité qui fissurent ce quotidien. Les caméras surveillent tes écarts : joue ton rôle pour détourner les soupçons, rassemble les preuves et cherche un passage vers les coulisses.",
+    "pitch": "Souris à la caméra, puis regarde ce qui a changé pendant que tu jouais ton rôle.",
     "tags": [
       "Jeu original",
       "Survie & horreur",
@@ -1835,8 +1821,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Fan games",
     "genre": "Puzzle & cartes",
     "baseGame": "Jeu de plateau Petits Poissons",
-    "description": "Le principe du plateau est volontairement conservé : les quatre poissons commencent ensemble sur la plaque centrale marquée de leurs quatre emplacements, cinq plaques les séparent de la mer, cinq autres séparent la barque des poissons, et le dé comporte quatre faces poisson ainsi que deux faces p…",
-    "pitch": "Le principe du plateau est volontairement conservé : les quatre poissons commencent ensemble sur la plaque centrale marquée de leurs quatre emplacements, cinq plaques les séparent de la mer, cinq autres séparent la barque des poissons, et le dé comporte quatre faces poisson ainsi que deux faces p…",
+    "description": "Quatre poissons tentent de rejoindre la mer tandis qu'une barque vivante se rapproche. Lance le dé, avance la couleur désignée ou retire la plaque qui sépare les pêcheurs de leurs proies. Chaque morceau de fleuve arraché peut condamner un poisson ; vois qui atteindra la mer et qui finira dans la cale.",
+    "pitch": "Les poissons cherchent la mer. La barque leur arrache le fleuve sous les nageoires.",
     "tags": [
       "Fan game",
       "Puzzle & cartes",
@@ -1879,8 +1865,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Survie & horreur",
     "baseGame": "",
-    "description": "Date Lieu Archive --- --- --- 29 mai 1919 Príncipe Les étoiles déplacées 30 juin 1973 Sahara — Concorde 001 Plus vite que l’ombre 11 août 1999 France 11:11 14 octobre 2023 Nouveau-Mexique L’Anneau 8 avril 2024 États-Unis Les gens immobiles 12 août 2026 Espagne Demain dans six jours 2 août 2027 Lo…",
-    "pitch": "Date Lieu Archive --- --- --- 29 mai 1919 Príncipe Les étoiles déplacées 30 juin 1973 Sahara — Concorde 001 Plus vite que l’ombre 11 août 1999 France 11:11 14 octobre 2023 Nouveau-Mexique L’Anneau 8 avril 2024 États-Unis Les gens immobiles 12 août 2026 Espagne Demain dans six jours 2 août 2027 Lo…",
+    "description": "D'une éclipse à l'autre, explore des archives astronomiques contaminées par des présences. Observe les lieux avec la caméra spectrale, rassemble les preuves et découvre la règle surnaturelle de chaque archive. Ménage ta lumière, ton souffle et ta lucidité ; les impulsions photoniques ne repoussent les menaces que temporairement.",
+    "pitch": "L'éclipse approche de la totalité. Observe, révèle et trouve l'extraction avant que ta lucidité ne cède.",
     "tags": [
       "Jeu original",
       "Survie & horreur",
@@ -1927,8 +1913,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Gestion & simulation",
     "baseGame": "",
-    "description": "Terra Testudo est un jeu de construction, d’exploration et de défense jouable dans un navigateur. Le joueur commence avec une petite maison sur le dos d’un tortillon, développe une ville vivante, nourrit la créature qui la porte, puis fait évoluer celle-ci jusqu’à la forme de tortue-monde elder c…",
-    "pitch": "Terra Testudo est un jeu de construction, d’exploration et de défense jouable dans un navigateur. Le joueur commence avec une petite maison sur le dos d’un tortillon, développe une ville vivante, nourrit la créature qui la porte, puis fait évoluer celle-ci jusqu’à la forme de tortue-monde elder c…",
+    "description": "Une petite maison repose sur le dos de ton tortillon. Bâtis sur sa carapace, nourris la créature et veille à la vitalité de la ville qu'elle porte. Explore l'archipel, échange avec les autres civilisations et repousse les raids pendant que ton compagnon grandit jusqu'à devenir une tortue-monde.",
+    "pitch": "Fais vivre la ville, protège sa carapace et accompagne ton tortillon jusqu'à l'âge des mondes.",
     "tags": [
       "Jeu original",
       "Gestion & simulation",
@@ -1951,8 +1937,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Action & tir",
     "baseGame": "",
-    "description": "Jeu d’action tactique en hélicoptère réalisé en HTML5 Canvas, JavaScript et Web Audio. Le projet est un jeu web autonome : il n’utilise ni Unreal Engine ni l’univers Stargate.",
-    "pitch": "Jeu d’action tactique en hélicoptère réalisé en HTML5 Canvas, JavaScript et Web Audio. Le projet est un jeu web autonome : il n’utilise ni Unreal Engine ni l’univers Stargate.",
+    "description": "Prends les commandes d'un hélicoptère de combat et prépare tes opérations depuis la carte tactique. Neutralise les défenses, retrouve les survivants et récupère carburant ou munitions au treuil. Choisis ton appareil et ton copilote, surveille tes réserves et reviens au point de ravitaillement quand la mission le permet.",
+    "pitch": "Garde assez de carburant pour revenir et assez de place au treuil pour ceux qui attendent encore.",
     "tags": [
       "Jeu original",
       "Action & tir",
@@ -1974,7 +1960,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "RPG & progression",
     "baseGame": "",
-    "description": "Action-RPG de chasse science-fiction où chaque titan vivant devient boss, terrain d’escalade et donjon organique.",
+    "description": "Agrippe-toi aux titans vivants, escalade leur corps et ouvre une brèche pour les explorer de l'intérieur. La chasse se poursuit dans leurs profondeurs organiques, où leurs défenses te séparent des points vitaux.",
     "pitch": "Accroche-toi aux bio-colosses, ouvre une brèche et combats leurs défenses de l’intérieur.",
     "tags": [
       "Jeu original",
@@ -2000,7 +1986,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Survie & horreur",
     "baseGame": "",
-    "description": "FPS de horde horrifique original mêlant doctrines de combat, armes rituelles, Souillure et boss biomécaniques.",
+    "description": "Les vagues du Nexus mettent chaque doctrine de combat à l'épreuve. Arme-toi de reliques rituelles, maîtrise la Souillure et prépare-toi à affronter les boss biomécaniques au milieu de la horde.",
     "pitch": "Tiens le seuil, brise la liturgie et survis aux vagues du Nexus.",
     "tags": [
       "Jeu original",
@@ -2026,7 +2012,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Fan games",
     "genre": "Gestion & simulation",
     "baseGame": "Star Wars (Jawas)",
-    "description": "Fan-game de gestion communautaire jawa : récupère, répare et échange ferraille et droïdes depuis un char des sables itinérant.",
+    "description": "Depuis ton char des sables itinérant, récupère la ferraille et les droïdes abandonnés dans le désert. Répare tes trouvailles, négocie les échanges et fais prospérer ta communauté de récupérateurs.",
     "pitch": "Explore le désert, négocie tes trouvailles et fais prospérer ton clan de récupérateurs.",
     "tags": [
       "Fan-game",
@@ -2052,7 +2038,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Rythme & arcade",
     "baseGame": "",
-    "description": "Course arcade originale où huit architectures de mechas affrontent des circuits extrêmes entre boosts, dégâts et surchauffe.",
+    "description": "Le Circuit Zero met les châssis à l'épreuve. Choisis parmi huit architectures de mechas, prends les virages à pleine vitesse et déclenche tes boosts sans laisser les dégâts ou la surchauffe t'arrêter.",
     "pitch": "Choisis ton châssis, maîtrise l’overdrive et domine le Circuit Zero.",
     "tags": [
       "Jeu original",
@@ -2078,7 +2064,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Rythme & arcade",
     "baseGame": "",
-    "description": "Kart arcade original, humoristique et non explicite, avec pilotes spécialisés, objets, drift et championnat dans un monde cellulaire abstrait.",
+    "description": "Le Grand Prix traverse un monde cellulaire où les courants bousculent la course. Choisis ton pilote, négocie les dérapages et utilise objets et capacités pour remonter le peloton jusqu'à la ligne d'arrivée.",
     "pitch": "Dérape dans les courants, déclenche tes capacités et franchis la ligne avant la concurrence.",
     "tags": [
       "Jeu original",
@@ -2104,7 +2090,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Rythme & arcade",
     "baseGame": "",
-    "description": "Course rythmique originale où les notes propulsent des véhicules-instruments sur des routes qui réagissent à la musique.",
+    "description": "Les véhicules-instruments prennent la route au son de tes notes. Frappe le rythme pour les propulser, charge ton riff et garde la cadence dans les virages d'un parcours qui réagit à la musique.",
     "pitch": "Frappe le tempo, charge ton riff et transforme chaque virage en solo.",
     "tags": [
       "Jeu original",
@@ -2130,7 +2116,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Fan games",
     "genre": "Survie & horreur",
     "baseGame": "The Backrooms",
-    "description": "Jeu autonome d’exploration liminale avec trois niveaux, inventaire, batterie, entités, contrôles tactiles et fins multiples.",
+    "description": "Perdu dans les espaces liminaux, explore les niveaux et rassemble ce qui peut encore t'aider à sortir. Garde un œil sur l'inventaire et la batterie de ta lumière, déchiffre les lieux et évite les entités qui les parcourent.",
     "pitch": "Gère ta lumière, déchiffre les espaces impossibles et trouve une sortie avant que le silence ne te trouve.",
     "tags": [
       "Fan-game",
@@ -2163,8 +2149,7 @@ window.LAUNCHER_RECENT_GAMES = [
       "Survie & horreur",
       "Party game",
       "Multijoueur local",
-      "Mini-jeux",
-      "PWA"
+      "Mini-jeux"
     ],
     "icon": "MP",
     "link": "https://malaise-party-darknigthmares-projects.vercel.app",
@@ -2183,14 +2168,13 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Action & tir",
     "baseGame": "",
-    "description": "Prototype autonome de combat d’arène Canvas où attaque, garde, pression et score s’affrontent dans des manches chronométrées.",
+    "description": "Dans l'arène néon, alterne attaque et garde pendant une manche chronométrée. Marque des points à l'offensive, réduis la pression en défendant et cherche le meilleur score avant la dernière seconde.",
     "pitch": "Lis l’adversaire, casse son rythme et impose ton protocole dans l’arène néon.",
     "tags": [
       "Jeu original",
       "Action & tir",
       "Arène",
       "Combat",
-      "Canvas",
       "Arcade"
     ],
     "icon": "NC",
@@ -2209,15 +2193,15 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Stratégie & tactique",
     "baseGame": "",
-    "description": "Prototype autonome de stratégie spatiale : étends ton contrôle de nœud en nœud et domine le système avant la fin du chronomètre.",
-    "pitch": "Calcule chaque expansion, sécurise l’antimatière et transforme une poignée de nœuds en empire.",
+    "description": "Prends le contrôle d'un réseau stellaire et exploite l'antimatière sans rompre son confinement. Répartis tes ressources, commande tes unités et fortifie les secteurs avant de céder le tour à l'intelligence rivale. Les opérations de campagne mettent tes doctrines à l'épreuve au fil de six opérations successives.",
+    "pitch": "Contiens l'antimatière, sécurise tes secteurs et impose ta doctrine au prochain tour.",
     "tags": [
       "Jeu original",
       "Stratégie & tactique",
       "Espace",
       "Antimatière",
       "Conquête",
-      "Canvas"
+      "Tour par tour"
     ],
     "icon": "PA",
     "link": "https://planck-antimatter-dominion.vercel.app",
@@ -2235,14 +2219,13 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Fan games",
     "genre": "Action & tir",
     "baseGame": "The House of the Dead",
-    "description": "Fan-game de rail-shooter gothique en 2.5D construit avec Godot 4, pensé comme une recréation jouable et originale.",
+    "description": "Traverse les couloirs du sanatorium sur la ligne de tir. Vise les menaces qui surgissent, protège les survivants et cherche à gagner le passage suivant avant que la nuit ne t'emporte.",
     "pitch": "Avance sur la ligne de tir, protège les survivants et traverse le sanatorium avant l’aube.",
     "tags": [
       "Fan-game",
       "Action & tir",
       "Rail-shooter",
       "2.5D",
-      "Godot",
       "Horreur"
     ],
     "icon": "HD",
@@ -2261,15 +2244,14 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Action & tir",
     "baseGame": "",
-    "description": "Boss rush 2D original en HTML5 Canvas opposant six machines transformables dans un circuit de duels mécaniques.",
-    "pitch": "Adapte ta forme, brise les routines des colosses et ferme le Circuit dans l’œil de la tempête.",
+    "description": "Riva Spark affronte les machines transformables du Circuit de Cassian Voltério. Lis leurs phases, adapte ta forme et trouve le moment de rompre leur défense. Après les six machines de la campagne, la Forge ouvre vingt-quatre affrontements supplémentaires et leurs contrats de maîtrise.",
+    "pitch": "Lis la machine, change de forme et fais de chaque phase l'ouverture dont Riva a besoin.",
     "tags": [
       "Jeu original",
       "Action & tir",
       "Boss rush",
       "Mechas",
-      "Transformations",
-      "PWA"
+      "Transformations"
     ],
     "icon": "GB",
     "link": "https://gearstorm-boss-circuit.vercel.app",
@@ -2321,7 +2303,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "baseGame": "Mass Effect",
     "icon": "ME",
     "link": "https://masseffectrelaychronicles.vercel.app/",
-    "description": "Le relais s'ouvre sur une Citadelle à parcourir et une Normandy à préparer. Forme ton groupe de trois, rejoins le briefing, puis gagne Eden Prime au moyen de la carte galactique. Les combats à jauge ATB, l'inventaire et les Chroniques autonomes prolongent cette campagne adaptée en sprites 2D devant des décors 3D. L'intégrale Mass Effect fidèle 1:1 reste un chantier, pas un contenu déjà certifié.",
+    "description": "Le relais s'ouvre sur une Citadelle à parcourir et une Normandy à préparer. Forme ton groupe de trois, rejoins le briefing, puis gagne Eden Prime au moyen de la carte galactique. Gère les jauges de combat, équipe ton groupe et poursuis les Chroniques de l'équipage.",
     "pitch": "Réunis l'équipage, règle les équipements et franchis le relais vers Eden Prime.",
     "tags": [
       "Mass Effect",
@@ -2350,7 +2332,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "baseGame": "Resident Evil",
     "icon": "RE",
     "link": "https://resident-evil-bow-protocol.vercel.app/",
-    "description": "Le centre de confinement a rouvert ses dossiers B.O.W. : sélectionne le protocole, examine les sujets et lance les confrontations depuis l'interface tactique. Le catalogue distingue 115 combattants principaux, les prototypes isolés et les exercices contextuels. Les sprites indépendants de plusieurs créatures existent déjà ; leur animation intégrale et la reconstitution 1:1 du roster restent en production.",
+    "description": "Le centre de confinement a rouvert ses dossiers B.O.W. Examine les sujets, consulte les archives biologiques et choisis le protocole de confrontation. Explore le répertoire des techniques et prépare les affrontements proposés par les différents modes.",
     "pitch": "Ouvre le confinement, consulte le dossier du sujet et engage le protocole.",
     "tags": [
       "Resident Evil",
@@ -2378,7 +2360,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "baseGame": "The Amazing Digital Circus",
     "icon": "DC",
     "link": "https://digital-circus-encore.vercel.app/",
-    "description": "La version autonome d’Encore quitte le bureau CainOS pour sa propre scène. Quatorze artistes, douze arènes et neuf modes ouvrent duels, répétitions, histoires et tournoi. Le laboratoire permet de travailler déplacements, garde et techniques, avec commandes et répertoire accessibles pendant le duel. Les captures prouvent le build public 0.7.0 et un entraînement Pomni/Jax ; elles ne certifient ni toutes les animations ni une fidélité canonique 1:1.",
+    "description": "La scène d'Encore accueille quatorze artistes, douze arènes et neuf modes de duel. Choisis ton interprète, répète déplacements, garde et techniques dans le laboratoire, puis entre en scène pour une histoire ou un tournoi. Consulte les commandes et le répertoire pendant le combat pour préparer ta prochaine ouverture.",
     "pitch": "Le rideau ne tombe pas : entre dans le programme Encore et choisis ton duel.",
     "tags": [
       "Digital Circus",
@@ -2407,14 +2389,14 @@ window.LAUNCHER_RECENT_GAMES = [
     "baseGame": "Yu-Gi-Oh!",
     "icon": "YG",
     "link": "https://yugioh-25d-holograms.vercel.app/",
-    "description": "Le plateau holographique prend vie : prépare un deck, choisis ton duelliste et convoque des monstres dans un duel à règles EDOPro exécutées en WebAssembly. Bascule entre plateau tactique et Vue Réelle, explore l'Atlas des Jetons et fais progresser ta collection d'avatars. Les formes 3D sont des adaptations stylisées documentées, non des reproductions intégrales certifiées des illustrations.",
+    "description": "Le plateau holographique prend vie : prépare ton deck, choisis ton duelliste et convoque tes monstres. Passe du plateau tactique à la Vue Réelle, explore l'Atlas des Jetons et développe ta collection d'avatars au fil des duels.",
     "pitch": "Le disque de duel s'allume. Choisis ton deck et matérialise la prochaine invocation.",
     "tags": [
       "Yu-Gi-Oh!",
       "Cartes",
       "Hologrammes",
-      "EDOPro",
-      "WebAssembly",
+      "Deckbuilding",
+      "Duels",
       "Fan game"
     ],
     "accent": "#986cd9",
@@ -2435,7 +2417,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "baseGame": "",
     "icon": "RC",
     "link": "https://riftcasters-3d.vercel.app/",
-    "description": "L'Arche se fissure sous cinq failles instables. Incarne l'un des quatre arcanistes, assemble tes quinze voies d'amélioration et résiste jusqu'au Tyran de la Convergence, un affrontement en trois phases. Expédition, Endurance, extraction au camp, sauvegardes et douze succès dessinent une carrière solo en arène 3D. Ce jeu est distinct de Riftcasters — Modern Skies.",
+    "description": "L'Arche se fissure sous cinq failles instables. Incarne l'un des quatre arcanistes, assemble tes voies d'amélioration et résiste jusqu'au Tyran de la Convergence. Pars en expédition, tiens en Endurance et rejoins le camp pour organiser ton extraction et préparer le prochain affrontement.",
     "pitch": "Cinq failles. Quatre disciplines. Stabilise l'Arche avant l'arrivée du Tyran.",
     "tags": [
       "Jeu original",
@@ -2464,7 +2446,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "baseGame": "",
     "icon": "RS",
     "link": "https://riftcasters-chaos-anglers.vercel.app/",
-    "description": "Reprends la relève sur K-13 et Greywater, où les changements de ciel, d'heure et de météo accompagnent la campagne. Le portail Modern Skies réorganise les dossiers, le monde et la progression ; la Cloueuse de quai et ses mouvements en vue rapprochée participent aux opérations Greywater Uprising et Full Shift. Cette branche 8.6.0 n'est pas l'arena-survivor Convergence.",
+    "description": "Reprends la relève sur K-13 et Greywater, où les changements de ciel, d'heure et de météo accompagnent les opérations. Consulte les dossiers, prépare ton affectation et prends la Cloueuse de quai pour avancer à travers les secteurs de Greywater Uprising et Full Shift.",
     "pitch": "Rejoins Greywater : les ciels changent, mais la relève attend toujours son opérateur.",
     "tags": [
       "Jeu original",
@@ -2551,7 +2533,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "baseGame": "",
     "icon": "RT",
     "link": "https://ragtime-rumble-complete-tour.vercel.app/",
-    "description": "La tournée s'étend au-delà des trois salles : Maestro Bellows, Lady Syncopa et Baron Brass imposent leurs rythmes et leurs phases, entre tirs, parades et transitions de perspective. Dance Break, Riff Duel, section FPS et vue de dessus se succèdent sans arrêter le morceau. Cette édition complète ajoute duo local, éditeur, calibration et défi quotidien ; les boss et attaques encore seulement décrits restent exclus des promesses de gameplay.",
+    "description": "La tournée bat son plein : Maestro Bellows, Lady Syncopa et Baron Brass imposent leurs rythmes entre tirs, parades et changements de perspective. Passe du Dance Break au Riff Duel, tiens les sections en vue subjective ou de dessus et garde le morceau en mouvement. Prépare tes partitions dans l'éditeur ou partage la scène en duo local.",
     "pitch": "Accorde la scène, garde le tempo et affronte Bellows dans toutes ses perspectives.",
     "tags": [
       "Jeu original",
@@ -2579,15 +2561,15 @@ window.LAUNCHER_RECENT_GAMES = [
     "baseGame": "Silent Hill",
     "icon": "SH",
     "link": "https://silent-hill-halo-of-flesh-darknigthmares-projects.vercel.app/",
-    "description": "Un terminal rassemble manifestations, dossiers et confrontations de Silent Hill. Choisis Chroniques, duel, descente, rite, boss ou entraînement, puis consulte les mouvements et les lieux. L’adresse publique sert toujours la version 0.7.0 : un prototype de combat 2D aux silhouettes procédurales, désormais montré par de vraies captures. Les travaux source plus récents restent distincts de ce build ; ni leurs illustrations ni une fidélité canonique 1:1 ne sont promises ici.",
-    "pitch": "La radio grésille. Choisis une enquête, ouvre un dossier et traverse l'Autre Monde.",
+    "description": "La radio grésille entre manifestations et dossiers de Silent Hill. Choisis ton personnage et entre dans les Chroniques, les duels, les descentes ou les rites. Consulte les mouvements, prépare tes confrontations et entraîne-toi avant d'affronter les figures qui attendent dans l'Autre Monde.",
+    "pitch": "La radio grésille. Prépare tes mouvements et affronte ce qui attend dans l'Autre Monde.",
     "tags": [
       "Silent Hill",
       "Combat 2D",
-      "Silhouettes procédurales",
+      "Duel",
       "Archives",
-      "Fan game",
-      "Build public 0.7.0"
+      "Entraînement",
+      "Fan game"
     ],
     "accent": "#768f87",
     "recoveredGame": true,
@@ -2598,7 +2580,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "category": "Jeux",
     "releaseState": "published",
     "addedAt": "2026-11-01",
-    "status": "GitHub · téléchargement local",
+    "status": "Vercel",
     "mediaPendingReview": false,
     "presentation": "assets/presentations/diva-pulse.png",
     "image": "assets/previews/diva-pulse.jpg",
@@ -2608,20 +2590,18 @@ window.LAUNCHER_RECENT_GAMES = [
     "genre": "Rythme & arcade",
     "baseGame": "",
     "icon": "DP",
-    "link": "https://github.com/darknigthmare/Diva-Pulse",
-    "description": "Dans le Studio Pulse, édite cinq difficultés, synchronise les notes avec AutoMap et dirige la scène avec Auto Show et Director. Le build local V37 distribue trois instrumentaux originaux et une Académie de six leçons. Les modèles MMD et musiques sous licence viennent de tes imports ; les silhouettes procédurales de travail ne certifient aucune fidélité MMD. Les captures montrent le vrai build local, dont une démonstration assistée Autoplay.",
+    "link": "https://diva-pulse.vercel.app/",
+    "description": "Le Studio Pulse attend ta partition. Édite les notes sur cinq difficultés, synchronise-les avec AutoMap et dirige la scène avec Auto Show et Director. Travaille tes gestes dans l'Académie, joue les instrumentaux proposés ou compose ton spectacle à partir de tes propres imports.",
     "pitch": "La scène s'allume, mais la partition reste à écrire. Compose ton rythme, calibre la prise et dirige le spectacle.",
     "tags": [
       "Jeu original",
       "Rythme & arcade",
       "AutoMap",
-      "MMD",
       "Éditeur",
-      "Jeu local",
-      "Sans musique préinstallée"
+      "Scène",
+      "Apprentissage"
     ],
     "accent": "#ae65e8",
-    "accessPolicy": "local-download",
     "sourceRepository": "https://github.com/darknigthmare/Diva-Pulse",
     "sourceVersion": "37.0.0",
     "recoveredGame": true
@@ -2630,7 +2610,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "category": "Jeux",
     "releaseState": "published",
     "addedAt": "2026-11-01",
-    "status": "GitHub · téléchargement local",
+    "status": "Vercel",
     "mediaPendingReview": false,
     "presentation": "assets/presentations/derniere-ligne-zero-repli.png",
     "image": "assets/previews/derniere-ligne-zero-repli.jpg",
@@ -2640,8 +2620,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "genre": "Action & tir",
     "baseGame": "",
     "icon": "DL",
-    "link": "https://github.com/darknigthmare/The-Horde-The-Last-Stand",
-    "description": "Le jour, prépare ton poste de défense, répartis le budget, charge les armes et vérifie les voies de repli. La nuit, résiste aux hordes de morts-vivants jusqu'à l'aube sur des routes et scénarios distincts. Les sauvegardes conservent les campagnes indépendantes, et une défaite permet de retrouver les préparatifs exacts plutôt que les ressources d'une autre route. Jeu HTML/JavaScript local et hors ligne, version source 0.44.2.",
+    "link": "https://derniere-ligne-zero-repli.vercel.app/",
+    "description": "Le jour, prépare ton poste de défense, répartis le budget, charge les armes et repère les voies de repli. La nuit, résiste aux hordes de morts-vivants jusqu'à l'aube. Chaque route demande ses propres préparatifs : choisis où engager tes ressources avant que le prochain assaut ne commence.",
     "pitch": "Les routes sont coupées. Compte tes munitions, tiens le poste et traverse la nuit sans repli.",
     "tags": [
       "Jeu original",
@@ -2649,11 +2629,9 @@ window.LAUNCHER_RECENT_GAMES = [
       "Zombies",
       "Survie",
       "Dernier rempart",
-      "Hors ligne",
-      "Jeu local"
+      "Hors ligne"
     ],
     "accent": "#d65b48",
-    "accessPolicy": "local-download",
     "sourceRepository": "https://github.com/darknigthmare/The-Horde-The-Last-Stand",
     "sourceVersion": "0.44.2",
     "recoveredGame": true
@@ -2662,7 +2640,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "category": "Jeux",
     "releaseState": "published",
     "addedAt": "2026-11-01",
-    "status": "GitHub · téléchargement local",
+    "status": "Publication en attente",
     "mediaPendingReview": false,
     "presentation": "assets/presentations/fallout-marseille-mistral.png",
     "image": "assets/previews/fallout-marseille-mistral.jpg",
@@ -2672,8 +2650,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "genre": "RPG & progression",
     "baseGame": "Fallout",
     "icon": "FM",
-    "link": "https://github.com/darknigthmare/fallout-Marseille",
-    "description": "Le Mistral a laissé des quartiers brisés entre les docks, les collines et les routes de Marseille. Explore les scènes en vue FPS, consulte le Pip-Boy, équipe-toi et retrouve carte, radio et holodisques. Le jeu local v0.50.0 propose une Exploration libre avec progression préremplie ; les captures de Canebière–Belsunce montrent cette scène narrative, sans prétendre à une campagne accomplie ni à une reproduction géographique intégrale 1:1.",
+    "link": "https://fallout-marseille-mistral.vercel.app/",
+    "description": "Le Mistral a laissé des quartiers brisés entre les docks, les collines et les routes de Marseille. Parcours les scènes en exploration libre, consulte le Pip-Boy et prépare ton équipement. Carte, radio et holodisques t'accompagnent dans les rues de Canebière–Belsunce.",
     "pitch": "Les cartes sont anciennes. Les routes, elles, existent encore. Quitte l'abri et retrouve Marseille sous le Mistral.",
     "tags": [
       "Fan game",
@@ -2681,11 +2659,10 @@ window.LAUNCHER_RECENT_GAMES = [
       "RPG & progression",
       "Marseille",
       "Exploration FPS",
-      "Pip-Boy",
-      "Jeu local"
+      "Pip-Boy"
     ],
     "accent": "#d3ad5a",
-    "accessPolicy": "local-download",
+    "accessPolicy": "deployment-pending",
     "sourceRepository": "https://github.com/darknigthmare/fallout-Marseille",
     "sourceVersion": "0.50.0",
     "recoveredGame": true
@@ -2694,7 +2671,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "category": "Jeux",
     "releaseState": "published",
     "addedAt": "2026-11-01",
-    "status": "GitHub · téléchargement local",
+    "status": "Publication en attente",
     "mediaPendingReview": false,
     "presentation": "assets/presentations/parallaxe-protocole-9.png",
     "image": "assets/previews/parallaxe-protocole-9.jpg",
@@ -2704,20 +2681,18 @@ window.LAUNCHER_RECENT_GAMES = [
     "genre": "Survie & horreur",
     "baseGame": "",
     "icon": "P9",
-    "link": "https://github.com/darknigthmare/Parallaxe_Protocole9",
-    "description": "Deux à quatre inspecteurs franchissent le même seuil sans percevoir les mêmes anomalies. Dans le Chalet de service, compare les reflets, transmets tes observations par radio et rends un diagnostic commun avant que le lieu ne se referme. La version source 0.4.1 documente 96 anomalies et des décalages de perception, ainsi qu'un entraînement solo. Le site hébergé reste privé ; le dépôt fournit un jeu PC/réseau local et les instructions d'installation.",
+    "link": "https://parallaxe-protocole-9.vercel.app/",
+    "description": "Des inspecteurs franchissent le même seuil sans percevoir les mêmes anomalies. Dans le Chalet de service, mémorise les lieux, compare les reflets et confronte les perceptions avant de rendre ton diagnostic. Exerce-toi seul ou partage tes observations par radio pour décider avec les autres inspecteurs.",
     "pitch": "Nous sommes au même endroit. Pourquoi ne voyons-nous pas la même chose ? Compare les preuves avant de conclure.",
     "tags": [
       "Jeu original",
       "Survie & horreur",
       "Coopération",
       "Observation",
-      "2 à 4 joueurs",
-      "Réseau local",
-      "Jeu local"
+      "2 à 4 joueurs"
     ],
     "accent": "#75a5c2",
-    "accessPolicy": "local-download",
+    "accessPolicy": "deployment-pending",
     "sourceRepository": "https://github.com/darknigthmare/Parallaxe_Protocole9",
     "sourceVersion": "0.4.1",
     "recoveredGame": true
@@ -2726,7 +2701,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "category": "Jeux",
     "releaseState": "published",
     "addedAt": "2026-11-01",
-    "status": "GitHub · téléchargement local",
+    "status": "Vercel",
     "mediaPendingReview": false,
     "presentation": "assets/presentations/massilia-cyberpunk.png",
     "image": "assets/previews/massilia-cyberpunk.jpg",
@@ -2736,8 +2711,8 @@ window.LAUNCHER_RECENT_GAMES = [
     "genre": "Aventure & exploration",
     "baseGame": "",
     "icon": "MC",
-    "link": "https://github.com/darknigthmare/massilia-cyberpunk",
-    "description": "Branche le Cortex tactique, traverse les rues du centre et consulte la carte des lieux découverts de Marseille augmentée. La version locale 0.76.0 associe exploration FPS et interface de cyberdeck. Le paquet testé couvre 168 cellules du centre, soit environ 10,5 km² ; il ne contient pas le cache complet de la métropole. La scène affiche elle-même ses données comme non certifiées : ni façades, reliefs ni intérieurs ne sont garantis 1:1. Ce jeu installable reste distinct de SOMA//MASSILIA.",
+    "link": "https://massilia-cyberpunk.vercel.app/",
+    "description": "Branche le Cortex tactique et parcours les rues du centre de Marseille augmentée. Consulte la carte des lieux découverts, explore les secteurs accessibles et garde ton cyberdeck à portée pour lire les informations de la ville.",
     "pitch": "Branche le Cortex, parcours Marseille sous surveillance et écoute les signaux de la ville.",
     "tags": [
       "Jeu original",
@@ -2745,13 +2720,11 @@ window.LAUNCHER_RECENT_GAMES = [
       "Marseille",
       "Netrunner",
       "Exploration",
-      "3D",
-      "Jeu local"
+      "3D"
     ],
     "accent": "#45dbcb",
-    "accessPolicy": "local-download",
     "sourceRepository": "https://github.com/darknigthmare/massilia-cyberpunk",
-    "sourceVersion": "0.76.0",
+    "sourceVersion": "0.78.0",
     "recoveredGame": true
   },
   {
@@ -2761,15 +2734,14 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Survie & horreur",
     "baseGame": "",
-    "description": "Dans les archives du 2 au 5 août, un jeu de lumière réduit chaque pas à un risque. Progresse uniquement hors du signal « SOLEIL » ; au signal, arrête-toi et protège tes 100 points de vie avant la fin des 70 secondes. Les commandes Avancer, Stop et Recommencer règlent cette épreuve de réflexes, distincte du jeu d'horreur 3D SOLEIL MORT.",
-    "pitch": "La consigne tombe : « SOLEIL ». Immobilise-toi avant qu'il soit trop tard.",
+    "description": "Une seule décision rythme l'épreuve : avancer ou s'arrêter. Fais monter ton score avec Avancer, utilise Stop pour interrompre la progression et évite les pénalités qui rongent tes points de vie. Le chronomètre tourne ; préserve tes forces avant de recommencer pour améliorer ton résultat.",
+    "pitch": "Avance tant que tu le peux. Arrête-toi avant que la pénalité n'épuise tes forces.",
     "tags": [
       "Jeu original",
       "Survie & horreur",
       "Mini-jeu",
       "Réflexes",
-      "Arcade",
-      "Collection historique"
+      "Arcade"
     ],
     "icon": "SO",
     "link": "https://jeux-restaures-aout-2026.vercel.app/#soleil",
@@ -2793,15 +2765,14 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Jeux originaux",
     "genre": "Gestion & simulation",
     "baseGame": "",
-    "description": "Au Maid Café de la collection restaurée, les commandes ne peuvent plus attendre. Sers-les avant que la patience ne soit épuisée, surveille ton score, les 100 points de vie et le chronomètre de 70 secondes ; un incident peut bousculer ton service. Cette épreuve arcade utilise Servir, Incident et Recommencer : ce n'est pas l'édition Moonlit Maid Café Simulator.",
-    "pitch": "Le comptoir se remplit. La patience se vide. Assure le service avant la dernière seconde.",
+    "description": "Au comptoir du Maid Café, enchaîne les services pour faire monter ton score avant la fin du chronomètre. Chaque commande servie rapporte des points ; les incidents coûtent des points de vie. Recommence le service pour améliorer ton résultat.",
+    "pitch": "Assure les services, garde le rythme et évite les incidents jusqu'à la dernière seconde.",
     "tags": [
       "Jeu original",
       "Gestion & simulation",
       "Mini-jeu",
       "Service",
-      "Arcade",
-      "Collection historique"
+      "Arcade"
     ],
     "icon": "MC",
     "link": "https://jeux-restaures-aout-2026.vercel.app/#maid-cafe",
@@ -2825,7 +2796,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "gameKind": "Fan games",
     "genre": "Stratégie & tactique",
     "baseGame": "Alien vs. Predator",
-    "description": "Le Circuit des neuf factions ouvre ses arènes : récupère le Nexus, protège ton porteur et marque au terme de matchs tactiques au tour par tour, en solo contre l’IA ou à deux en local. Cette relance technique 0.1.0 propose un moteur autonome et un codex ; elle est distincte des versions historiques 0.30 et 0.36 encore non restaurées. Quatorze des dix-huit profils sportifs restent provisoires. Le prototype se joue maintenant directement dans le navigateur ; les fichiers restent disponibles dans son dépôt public.",
+    "description": "Le Circuit ouvre ses arènes : choisis ta faction, récupère le Nexus et protège le porteur jusqu'au but adverse. Déplace tes joueurs, garde assez de points d'action pour leurs capacités et prépare la réponse de l'autre équipe. Dispute les matchs tactiques contre l'IA ou à deux en local.",
     "pitch": "Récupère le Nexus, ouvre une brèche et porte ton équipe jusqu’au but adverse.",
     "tags": [
       "Fan game",
@@ -2833,9 +2804,7 @@ window.LAUNCHER_RECENT_GAMES = [
       "Sport tactique",
       "Tour par tour",
       "Solo",
-      "Multijoueur local",
-      "Prototype",
-      "Navigateur"
+      "Multijoueur local"
     ],
     "icon": "BA",
     "link": "https://avp-blood-arena.vercel.app/",

@@ -1,0 +1,30 @@
+{
+  "checkedAt": "2026-11-13T06:31:16.639059+00:00",
+  "checks": [
+    {
+      "requestedUrl": "https://malaise-party.vercel.app/",
+      "httpStatus": 404,
+      "effectiveUrl": "https://malaise-party.vercel.app/"
+    },
+    {
+      "requestedUrl": "https://imperium-march.vercel.app/",
+      "effectiveUrl": "https://imperium-march.vercel.app/",
+      "httpStatus": 200,
+      "title": [
+        "ORDRE DE CENDRE — ImperiumMarch"
+      ],
+      "bytes": 22230
+    }
+  ],
+  "imperiumSource": {
+    "repository": "https://github.com/darknigthmare/ImperiumMarch",
+    "readmeBlob": "125316ab11737eb4e408f384058a7e16cdb9d3a3",
+    "version": "0.12.0",
+    "identity": "ORDRE DE CENDRE",
+    "projectId": "prj_ggDB98oddkTTzVPiGQrtxnj7frcr",
+    "deploymentId": "dpl_5QCqm8qWwfcGuSvrgteNznwCZ5x7",
+    "state": "READY",
+    "target": "production"
+  },
+  "decision": "Candidate documented only; no extra game card in this batch"
+}

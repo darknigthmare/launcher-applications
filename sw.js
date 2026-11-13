@@ -1,6 +1,6 @@
 const CACHE_PREFIX = "launcher-";
-const CACHE_NAME = "launcher-shell-v32";
-const RUNTIME_CACHE = "launcher-media-runtime-v3";
+const CACHE_NAME = "launcher-shell-v34";
+const RUNTIME_CACHE = "launcher-media-runtime-v5";
 const MAX_RUNTIME_ENTRIES = 120;
 const APP_SHELL = [
   "/index.html",
@@ -11,6 +11,7 @@ const APP_SHELL = [
   "/assets/apple-touch-icon.png",
   "/assets/app-icons.svg",
   "/assets/app-gallery.json",
+  "/assets/illustration-manifest.json",
   "/assets/openai-art-manifest.json",
   "/assets/recent-games.js",
   "/assets/catalogue-updates.js",
@@ -81,7 +82,7 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  if (/^\/assets\/(?:previews|presentations|screenshots)\//.test(url.pathname)) {
+  if (/^\/assets\/(?:previews|presentations|screenshots|illustrations)\//.test(url.pathname)) {
     // Galleries reuse stable filenames: revalidate refreshed native captures.
     const networkResponse = fetch(request, { cache: "no-cache" });
     const updatePromise = networkResponse

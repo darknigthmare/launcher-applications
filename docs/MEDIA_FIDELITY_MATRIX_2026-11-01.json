@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-09",
-  "catalogueVersion": "1.16.0",
+  "generatedAt": "2026-11-13",
+  "catalogueVersion": "1.18.0",
   "purpose": "Matrice exhaustive des médias du launcher. Non-revu ne signifie pas non fidèle. Ne pas publier de captures reconstituées comme de vrais screenshots.",
   "summary": {
     "entries": 158,
@@ -15,7 +15,10 @@
     "sourceVerifiedGalleries": 27,
     "mediaPendingGames": 0,
     "expectedScreenshotSlots": 790,
-    "missingNewGameScreenshots": 0
+    "missingNewGameScreenshots": 0,
+    "illustrationCount": 27,
+    "acceptedIllustrationCount": 27,
+    "illustrationAwaitingReviewCount": 0
   },
   "statuses": {
     "artFidelity": [
@@ -91,7 +94,10 @@
       "captureVerifiedAt": "2026-11-01T13:23:23.001Z",
       "reviewer": null,
       "notes": "CainOS 0.98 : bureau et archives après calibration effectuée via UI. Encore 0.7 source : 9 modes, 14 combattants, 12 arènes, vrai duel en entraînement. Les anciens cinq menus sont conservés. Aucune prétention de fidélité canon 1:1.",
-      "screenshotCaptureProof": "docs/media-proof/cainos-encore-070-2026-11-01.json"
+      "screenshotCaptureProof": "docs/media-proof/cainos-encore-070-2026-11-01.json",
+      "illustration": "assets/illustrations/cainos.png",
+      "illustrationReview": "docs/illustration-reviews/cainos.json",
+      "illustrationStatus": "accepted"
     },
     {
       "id": "la-petite-fiole",
@@ -218,7 +224,10 @@
       "captureVerifiedAt": "2026-11-01T11:38:51.485Z",
       "reviewer": null,
       "notes": "Cinq vues réelles Shadow Codec 3.10 : accueil, transmission Codec, panneau de missions Side Ops (pas un combat simulé), Campaign Ops et CQC Versus intégré. Le moteur Phaser est chargé mais son rendu headless était sombre. Original intégral archivé; fidélité des affiches non certifiée.",
-      "screenshotCaptureProof": "docs/media-proof/shadow-codec-3100-modules-2026-11-01.json"
+      "screenshotCaptureProof": "docs/media-proof/shadow-codec-3100-modules-2026-11-01.json",
+      "illustration": "assets/illustrations/shadow-codec-ops.png",
+      "illustrationReview": "docs/illustration-reviews/shadow-codec-ops.json",
+      "illustrationStatus": "accepted"
     },
     {
       "id": "jigsaw-mastermind",
@@ -363,7 +372,10 @@
       "captureVerifiedAt": "2026-11-01T14:02:38.514Z",
       "reviewer": null,
       "notes": "URL publique retenue après vérification HTTP 200 et titre du jeu ; l'alias d'équipe Vercel redirigeait vers une authentification SSO. La version la plus récente du code n'est pas certifiée par le titre HTML. Captures natives RTS 1.0.0 vérifiées indépendamment.",
-      "screenshotCaptureProof": "docs/media-proof/vortex-command-rts-2026-11-01.json"
+      "screenshotCaptureProof": "docs/media-proof/vortex-command-rts-2026-11-01.json",
+      "illustration": "assets/illustrations/vortex-command.png",
+      "illustrationReview": "docs/illustration-reviews/vortex-command.json",
+      "illustrationStatus": "accepted"
     },
     {
       "id": "ragtime-rumble",
@@ -472,7 +484,10 @@
       "captureVerifiedAt": "2026-11-01T10:04:16.359Z",
       "reviewer": null,
       "notes": "Cinq véritables scènes de gameplay Canvas 2D recapturées depuis l'alias de production. Révision esthétique humaine 1:1 encore ouverte; anciennes captures sauvegardées en archives.",
-      "screenshotCaptureProof": "docs/media-proof/triarch-gameplay-2026-11-01.json"
+      "screenshotCaptureProof": "docs/media-proof/triarch-gameplay-2026-11-01.json",
+      "illustration": "assets/illustrations/triarche-ciel-rouge.png",
+      "illustrationReview": "docs/illustration-reviews/triarche-ciel-rouge.json",
+      "illustrationStatus": "accepted"
     },
     {
       "id": "hive-ascension",
@@ -833,7 +848,10 @@
       "captureVerifiedAt": "2026-11-01T10:44:27.119Z",
       "reviewer": null,
       "notes": "5 captures authentiques du renderer 3D : croiseur, console des contrats, armurerie, paquetage, chasse. Aucun déplacement manuel non vérifié revendiqué ; illustration promotionnelle non évaluée 1:1.",
-      "screenshotCaptureProof": "docs/media-proof/yautja-apex-gameplay-2026-11-01.json"
+      "screenshotCaptureProof": "docs/media-proof/yautja-apex-gameplay-2026-11-01.json",
+      "illustration": "assets/illustrations/yautja-apex-hunt.png",
+      "illustrationReview": "docs/illustration-reviews/yautja-apex-hunt.json",
+      "illustrationStatus": "accepted"
     },
     {
       "id": "valkyrie-sweeper-dark-siege",
@@ -942,7 +960,10 @@
       "captureVerifiedAt": "2026-11-01T13:43:28.824Z",
       "reviewer": null,
       "notes": "Five actual first-use UI states: 3-lane duel, 30-card deck, 158-card collection, opened 9-card booster, 8-mission campaign. Original 5 gallery screenshots and preview archived. Visual canon 1:1 still not reviewed.",
-      "screenshotCaptureProof": "docs/media-proof/avp-tcg-gameplay-2026-11-01.json"
+      "screenshotCaptureProof": "docs/media-proof/avp-tcg-gameplay-2026-11-01.json",
+      "illustration": "assets/illustrations/avp-hunt-hive-tcg.png",
+      "illustrationReview": "docs/illustration-reviews/avp-hunt-hive-tcg.json",
+      "illustrationStatus": "accepted"
     },
     {
       "id": "echobound",
@@ -979,7 +1000,10 @@
       "captureVerifiedAt": "2026-11-01T10:17:52.432Z",
       "reviewer": null,
       "notes": "Deux scènes de terrain, trois écrans authentiques du poste de commandement 1.74.0. Mise en situation native sans téléporter le joueur; archives conservées. Contrôle graphique 1:1 de l'illustration encore ouvert.",
-      "screenshotCaptureProof": "docs/media-proof/deadwall-gameplay-2026-11-01.json"
+      "screenshotCaptureProof": "docs/media-proof/deadwall-gameplay-2026-11-01.json",
+      "illustration": "assets/illustrations/deadwall-last-enclosure.png",
+      "illustrationReview": "docs/illustration-reviews/deadwall-last-enclosure.json",
+      "illustrationStatus": "accepted"
     },
     {
       "id": "echo-rift",
@@ -1593,7 +1617,10 @@
       "captureVerifiedAt": "2026-11-01T11:13:01.763Z",
       "reviewer": null,
       "notes": "Cinq interfaces natives de la campagne réellement déployée, créée depuis l'onboarding en simulation privée (aucune injection de sauvegarde, aucune position GPS). Représente carte, Bastion, défense en attente, équipe et Codex; ne prouve pas l'exécution des raids CONTACT.",
-      "screenshotCaptureProof": "docs/media-proof/world-hive-045-campaign-2026-11-01.json"
+      "screenshotCaptureProof": "docs/media-proof/world-hive-045-campaign-2026-11-01.json",
+      "illustration": "assets/illustrations/world-hive-wars.png",
+      "illustrationReview": "docs/illustration-reviews/world-hive-wars.json",
+      "illustrationStatus": "accepted"
     },
     {
       "id": "tiffany-pixelverse-omniverse",
@@ -2008,7 +2035,10 @@
       "captureVerifiedAt": "2026-11-01T10:49:59.854Z",
       "reviewer": null,
       "notes": "Une image de vol libre réellement jouable, quatre vues cadrées par les outils QA du vrai moteur WebGL2. Les versions précédentes WebP sont conservées en archive. Ne pas confondre cadrage de caméra QA avec progression naturelle.",
-      "screenshotCaptureProof": "docs/media-proof/moustique-webgl2-2026-11-01.json"
+      "screenshotCaptureProof": "docs/media-proof/moustique-webgl2-2026-11-01.json",
+      "illustration": "assets/illustrations/moustique-the-video-game.png",
+      "illustrationReview": "docs/illustration-reviews/moustique-the-video-game.json",
+      "illustrationStatus": "accepted"
     },
     {
       "id": "moonlit-maid-cafe-simulator",
@@ -2589,7 +2619,10 @@
       "discoveredAt": "2026-11-01",
       "identityVerification": "HTML product title matched on public host, HTTP 200 without Vercel login, GitHub Actions discovery audit",
       "notes": "Vrai titre, création, personnalisation, dialogue d'Anderson, Normandy 2D/3D et équipement capturés sur le jeu public. Aucune prétention de Mass Effect intégral ou sprites 1:1.",
-      "screenshotCaptureProof": "docs/media-proof/mass-effect-relay-native-2026-11-01.json"
+      "screenshotCaptureProof": "docs/media-proof/mass-effect-relay-native-2026-11-01.json",
+      "illustration": "assets/illustrations/mass-effect-relay-chronicles.png",
+      "illustrationReview": "docs/illustration-reviews/mass-effect-relay-chronicles.json",
+      "illustrationStatus": "accepted"
     },
     {
       "id": "resident-evil-bow-protocol",
@@ -2611,7 +2644,10 @@
       "discoveredAt": "2026-11-01",
       "identityVerification": "HTML product title matched on public host, HTTP 200 without Vercel login, GitHub Actions discovery audit",
       "notes": "Cinq vraies vues de l'interface joueur B.O.W. Protocol (spécimens, modes et archives) ; il ne s'agit pas de captures de combat ni de sprites certifiés 1:1.",
-      "screenshotCaptureProof": "docs/media-proof/resident-evil-bow-r20-2026-11-01.json"
+      "screenshotCaptureProof": "docs/media-proof/resident-evil-bow-r20-2026-11-01.json",
+      "illustration": "assets/illustrations/resident-evil-bow-protocol.png",
+      "illustrationReview": "docs/illustration-reviews/resident-evil-bow-protocol.json",
+      "illustrationStatus": "accepted"
     },
     {
       "id": "digital-circus-encore",
@@ -2633,7 +2669,10 @@
       "discoveredAt": "2026-11-01",
       "identityVerification": "HTML product title matched on public host, HTTP 200 without Vercel login, GitHub Actions discovery audit",
       "notes": "Cinq vues natives propres à l’adresse autonome : accueil, Pomni/codex, sélection 14 artistes / 12 arènes, duel d’entraînement avec déplacement réel, techniques. Aucun bureau CainOS réutilisé ; aucune campagne ou animation 1:1 certifiée.",
-      "screenshotCaptureProof": "docs/media-proof/digital-circus-local-070-2026-11-09.json"
+      "screenshotCaptureProof": "docs/media-proof/digital-circus-local-070-2026-11-09.json",
+      "illustration": "assets/illustrations/digital-circus-encore.png",
+      "illustrationReview": "docs/illustration-reviews/digital-circus-encore.json",
+      "illustrationStatus": "accepted"
     },
     {
       "id": "yugioh-25d-holograms",
@@ -2655,7 +2694,10 @@
       "discoveredAt": "2026-11-01",
       "identityVerification": "HTML product title matched on public host, HTTP 200 without Vercel login, GitHub Actions discovery audit",
       "notes": "5 vues réelles du simulateur : decks, parcours solo, atlas de Terrain, duel compact et Vue Arène (Vue Réelle 3D encore à capturer). Ne certifie ni avatars ni modèles 1:1 aux illustrations.",
-      "screenshotCaptureProof": "docs/media-proof/yugioh-hologram-native-2026-11-01.json"
+      "screenshotCaptureProof": "docs/media-proof/yugioh-hologram-native-2026-11-01.json",
+      "illustration": "assets/illustrations/yugioh-25d-holograms.png",
+      "illustrationReview": "docs/illustration-reviews/yugioh-25d-holograms.json",
+      "illustrationStatus": "accepted"
     },
     {
       "id": "riftcasters-3d",
@@ -2677,7 +2719,10 @@
       "discoveredAt": "2026-11-01",
       "identityVerification": "HTML product title matched on public host, HTTP 200 without Vercel login, GitHub Actions discovery audit",
       "notes": "5 vues réelles : sélection arcaniste, journal de bord, arène 3D, égide consommant du mana, pause. Pas de boss ni campagne complète certifiés par les images.",
-      "screenshotCaptureProof": "docs/media-proof/riftcasters-convergence-native-2026-11-01.json"
+      "screenshotCaptureProof": "docs/media-proof/riftcasters-convergence-native-2026-11-01.json",
+      "illustration": "assets/illustrations/riftcasters-3d.png",
+      "illustrationReview": "docs/illustration-reviews/riftcasters-3d.json",
+      "illustrationStatus": "accepted"
     },
     {
       "id": "riftcasters-chaos-anglers",
@@ -2699,7 +2744,10 @@
       "discoveredAt": "2026-11-01",
       "identityVerification": "HTML product title matched on public host, HTTP 200 without Vercel login, GitHub Actions discovery audit",
       "notes": "Cinq vues natives : titre, paramètres, carrière, affectation et premier gameplay K-13. Captures locales de la copie HTML exacte du site public. Inventaire non observé ; pêche, campagne Greywater et boss non certifiés.",
-      "screenshotCaptureProof": "docs/media-proof/riftcasters-anglers-local-860-2026-11-02.json"
+      "screenshotCaptureProof": "docs/media-proof/riftcasters-anglers-local-860-2026-11-02.json",
+      "illustration": "assets/illustrations/riftcasters-chaos-anglers.png",
+      "illustrationReview": "docs/illustration-reviews/riftcasters-chaos-anglers.json",
+      "illustrationStatus": "accepted"
     },
     {
       "id": "reclaimed-after-dark",
@@ -2721,7 +2769,10 @@
       "discoveredAt": "2026-11-01",
       "identityVerification": "HTML product title matched on public host, HTTP 200 without Vercel login, GitHub Actions discovery audit",
       "notes": "5 captures natives: refuge, dossiers, atelier, briefing, première zone de jeu. Cette preuve de rendu ne certifie pas toute la campagne ni les personnages en 1:1.",
-      "screenshotCaptureProof": "docs/media-proof/reclaimed-blackwater-200-native-2026-11-01.json"
+      "screenshotCaptureProof": "docs/media-proof/reclaimed-blackwater-200-native-2026-11-01.json",
+      "illustration": "assets/illustrations/reclaimed-after-dark.png",
+      "illustrationReview": "docs/illustration-reviews/reclaimed-after-dark.json",
+      "illustrationStatus": "accepted"
     },
     {
       "id": "deadline-outbreak",
@@ -2743,7 +2794,10 @@
       "discoveredAt": "2026-11-01",
       "identityVerification": "HTML product title matched on public host, HTTP 200 without Vercel login, GitHub Actions discovery audit",
       "notes": "Titre et cinq vues réelles capturés sur la page du jeu. Aucun rendu promotionnel 1:1 inventé; les captures reflètent seulement l'ouverture de campagne.",
-      "screenshotCaptureProof": "docs/media-proof/deadline-outbreak-native-2026-11-01.json"
+      "screenshotCaptureProof": "docs/media-proof/deadline-outbreak-native-2026-11-01.json",
+      "illustration": "assets/illustrations/deadline-outbreak.png",
+      "illustrationReview": "docs/illustration-reviews/deadline-outbreak.json",
+      "illustrationStatus": "accepted"
     },
     {
       "id": "ragtime-rumble-complete-tour",
@@ -2765,7 +2819,10 @@
       "discoveredAt": "2026-11-01",
       "identityVerification": "HTML product title matched on public host, HTTP 200 without Vercel login, GitHub Actions discovery audit",
       "notes": "Cinq captures réelles : menu, Tournée, éditeur de partitions, combat Maestro Bellows en cours, pause. Visuels source-native; la fidélité 1:1 à tout contenu de référence reste non certifiée.",
-      "screenshotCaptureProof": "docs/media-proof/ragtime-complete-tour-native-2026-11-01.json"
+      "screenshotCaptureProof": "docs/media-proof/ragtime-complete-tour-native-2026-11-01.json",
+      "illustration": "assets/illustrations/ragtime-rumble-complete-tour.png",
+      "illustrationReview": "docs/illustration-reviews/ragtime-rumble-complete-tour.json",
+      "illustrationStatus": "accepted"
     },
     {
       "id": "silent-hill-halo-of-flesh",
@@ -2787,113 +2844,136 @@
       "discoveredAt": "2026-11-01",
       "identityVerification": "HTML product title matched on public host, HTTP 200 without Vercel login, GitHub Actions discovery audit",
       "notes": "Cinq vues natives du build publié 0.7.0 : terminal, sélection, dossier 20 mouvements, duel initial 2D et commandes Observation. Silhouettes procédurales du vrai moteur ; aucun sprite ou prétendu jeu 3D issu de 0.9.x. Aucun état QA injecté.",
-      "screenshotCaptureProof": "docs/media-proof/silent-hill-local-070-2026-11-09.json"
+      "screenshotCaptureProof": "docs/media-proof/silent-hill-local-070-2026-11-09.json",
+      "illustration": "assets/illustrations/silent-hill-halo-of-flesh.png",
+      "illustrationReview": "docs/illustration-reviews/silent-hill-halo-of-flesh.json",
+      "illustrationStatus": "accepted"
     },
     {
       "id": "diva-pulse",
       "name": "DIVA PULSE — Studio de rythme",
-      "productionLink": "https://github.com/darknigthmare/Diva-Pulse",
+      "productionLink": "https://diva-pulse.vercel.app/",
       "presentation": "assets/presentations/diva-pulse.png",
       "preview": "assets/previews/diva-pulse.jpg",
       "screenshotCount": 5,
       "historicalIllustrationStored": false,
       "priority": "P0",
       "sourceVersionVerified": "37.0.0 · repository 9a6a00412cd7",
-      "productionVersionVerified": null,
+      "productionVersionVerified": "37.0.0 · production Vercel dpl_4DfRbVaVE479mDW3J49k3UZxxHyG · 9bbf125cba1f20f49634a4cf49a346d87b2f013e",
       "artFidelity": "not-reviewed",
       "previewFidelity": "source-verified",
       "screenshotFreshness": "up-to-date",
       "captureVerifiedAt": "2026-11-02T04:46:12.128Z",
       "reviewer": null,
-      "accessPolicy": "local-download",
-      "notes": "Cinq captures natives du HTML autonome V37 exact exécuté sur localhost : bibliothèque originale, modules (silhouettes de travail), éditeur, Autoplay assisté et pause. Le README reste en retard sur le titre/package V37. Aucun déploiement Vercel, modèle MMD officiel ni fidélité canonique 1:1 prétendus.",
+      "notes": "Historique des captures : Cinq captures natives du HTML autonome V37 exact exécuté sur localhost : bibliothèque originale, modules (silhouettes de travail), éditeur, Autoplay assisté et pause. Le README reste en retard sur le titre/package V37. Aucun déploiement Vercel, modèle MMD officiel ni fidélité canonique 1:1 prétendus.",
       "mediaPendingReview": false,
-      "screenshotCaptureProof": "docs/media-proof/diva-pulse-local-v37-2026-11-02.json"
+      "screenshotCaptureProof": "docs/media-proof/diva-pulse-local-v37-2026-11-02.json",
+      "illustration": "assets/illustrations/diva-pulse.png",
+      "illustrationReview": "docs/illustration-reviews/diva-pulse.json",
+      "illustrationStatus": "accepted",
+      "webDeploymentProof": "docs/WEB_GAME_DEPLOYMENTS_2026-11-13.json",
+      "webSourceVersionVerified": "37.0.0"
     },
     {
       "id": "derniere-ligne-zero-repli",
       "name": "DERNIÈRE LIGNE — ZÉRO REPLI",
-      "productionLink": "https://github.com/darknigthmare/The-Horde-The-Last-Stand",
+      "productionLink": "https://derniere-ligne-zero-repli.vercel.app/",
       "presentation": "assets/presentations/derniere-ligne-zero-repli.png",
       "preview": "assets/previews/derniere-ligne-zero-repli.jpg",
       "screenshotCount": 5,
       "historicalIllustrationStored": false,
       "priority": "P0",
       "sourceVersionVerified": "0.44.2 · repository d3d4bb04abea",
-      "productionVersionVerified": null,
+      "productionVersionVerified": "0.44.2 · production Vercel dpl_E21GJkbFMprcQRjah1yHP8GaqXFS · bbbd3ef5afefcc9005c4f7a57f8282281dcb9d42",
       "artFidelity": "not-reviewed",
       "previewFidelity": "source-verified",
       "screenshotFreshness": "up-to-date",
       "captureVerifiedAt": "2026-11-01T15:39:11.916Z",
       "reviewer": null,
-      "accessPolicy": "local-download",
-      "notes": "Capture native du véritable HTML 0.44.2 (5 PNG et aperçu JPEG) : menu campagnes, préparation et trois scènes de combat. Pas de production Vercel inventée, aucune fidélité inter-franchise 1:1 présumée.",
+      "notes": "Historique des captures : Capture native du véritable HTML 0.44.2 (5 PNG et aperçu JPEG) : menu campagnes, préparation et trois scènes de combat. Pas de production Vercel inventée, aucune fidélité inter-franchise 1:1 présumée.",
       "screenshotCaptureProof": "docs/media-proof/derniere-ligne-local-0442-2026-11-01.json",
-      "mediaPendingReview": false
+      "mediaPendingReview": false,
+      "illustration": "assets/illustrations/derniere-ligne-zero-repli.png",
+      "illustrationReview": "docs/illustration-reviews/derniere-ligne-zero-repli.json",
+      "illustrationStatus": "accepted",
+      "webDeploymentProof": "docs/WEB_GAME_DEPLOYMENTS_2026-11-13.json",
+      "webSourceVersionVerified": "0.44.2"
     },
     {
       "id": "fallout-marseille-mistral",
       "name": "FALLOUT MARSEILLE — MISTRAL",
-      "productionLink": "https://github.com/darknigthmare/fallout-Marseille",
+      "productionLink": "https://fallout-marseille-mistral.vercel.app/",
       "presentation": "assets/presentations/fallout-marseille-mistral.png",
       "preview": "assets/previews/fallout-marseille-mistral.jpg",
       "screenshotCount": 5,
       "historicalIllustrationStored": false,
       "priority": "P0",
       "sourceVersionVerified": "Source release 0.50.0 exact 38a0bd2aff02303dc6c80357915eaf45225eeef2; feature labels 0.53/0.56 are not release numbers.",
-      "productionVersionVerified": "Local downloadable source only; native Exploration libre and Pip-Boy observed. No hosted build certified.",
+      "productionVersionVerified": "Publication en attente ; aucun parcours public de cette livraison complète validé.",
       "artFidelity": "not-reviewed",
       "previewFidelity": "source-verified",
       "screenshotFreshness": "up-to-date",
       "captureVerifiedAt": "2026-11-09T05:07:56.819Z",
       "reviewer": null,
-      "accessPolicy": "local-download",
-      "notes": "Cinq vues natives de l’Exploration libre : arrivée narrative Canebière–Belsunce, déplacement réel, inventaire, carte et radio. Niveau 26/chapitre VI initialisés par le mode libre ; aucune campagne gagnée ou fidélité géographique intégrale revendiquée.",
+      "accessPolicy": "deployment-pending",
+      "notes": "Historique des captures : Cinq vues natives de l’Exploration libre : arrivée narrative Canebière–Belsunce, déplacement réel, inventaire, carte et radio. Niveau 26/chapitre VI initialisés par le mode libre ; aucune campagne gagnée ou fidélité géographique intégrale revendiquée.",
       "mediaPendingReview": false,
-      "screenshotCaptureProof": "docs/media-proof/fallout-mistral-local-050-2026-11-09.json"
+      "screenshotCaptureProof": "docs/media-proof/fallout-mistral-local-050-2026-11-09.json",
+      "illustration": "assets/illustrations/fallout-marseille-mistral.png",
+      "illustrationReview": "docs/illustration-reviews/fallout-marseille-mistral.json",
+      "illustrationStatus": "accepted",
+      "webDeploymentProof": "docs/WEB_GAME_DEPLOYMENTS_2026-11-13.json"
     },
     {
       "id": "parallaxe-protocole-9",
       "name": "PARALLAXE — PROTOCOLE 9",
-      "productionLink": "https://github.com/darknigthmare/Parallaxe_Protocole9",
+      "productionLink": "https://parallaxe-protocole-9.vercel.app/",
       "presentation": "assets/presentations/parallaxe-protocole-9.png",
       "preview": "assets/previews/parallaxe-protocole-9.jpg",
       "screenshotCount": 5,
       "historicalIllustrationStored": false,
       "priority": "P0",
       "sourceVersionVerified": "Official portable ZIP 0.4.1 build fa9cf6306705c750106467d0d6caddf96767b0e7",
-      "productionVersionVerified": "Official portable solo WebGL observed locally; hosted private site not tested",
+      "productionVersionVerified": "Publication en attente ; aucun parcours public de cette livraison complète validé.",
       "artFidelity": "not-reviewed",
       "previewFidelity": "source-verified",
       "screenshotFreshness": "up-to-date",
       "captureVerifiedAt": "2026-11-02T04:45:15.853Z",
       "reviewer": null,
-      "accessPolicy": "local-download",
-      "notes": "Cinq vues natives du portable officiel : préparation solo, Chalet de référence Alpha, carnet, inspection Bêta et diagnostic. Pas de certification coopérative réseau ou campagne complète.",
+      "accessPolicy": "deployment-pending",
+      "notes": "Historique des captures : Cinq vues natives du portable officiel : préparation solo, Chalet de référence Alpha, carnet, inspection Bêta et diagnostic. Pas de certification coopérative réseau ou campagne complète.",
       "mediaPendingReview": false,
-      "screenshotCaptureProof": "docs/media-proof/parallaxe-local-041-2026-11-02.json"
+      "screenshotCaptureProof": "docs/media-proof/parallaxe-local-041-2026-11-02.json",
+      "illustration": "assets/illustrations/parallaxe-protocole-9.png",
+      "illustrationReview": "docs/illustration-reviews/parallaxe-protocole-9.json",
+      "illustrationStatus": "accepted",
+      "webDeploymentProof": "docs/WEB_GAME_DEPLOYMENTS_2026-11-13.json"
     },
     {
       "id": "massilia-cyberpunk",
       "name": "MASSILIA CYBERPUNK — MARSEILLE AUGMENTÉE",
-      "productionLink": "https://github.com/darknigthmare/massilia-cyberpunk",
+      "productionLink": "https://massilia-cyberpunk.vercel.app/",
       "presentation": "assets/presentations/massilia-cyberpunk.png",
       "preview": "assets/previews/massilia-cyberpunk.jpg",
       "screenshotCount": 5,
       "historicalIllustrationStored": false,
       "priority": "P0",
       "sourceVersionVerified": "Local source 0.76.0 25e517c07c0ec62fd29771b6167a0875d300fda2; built HTML SHA-256 f3fd9d42c17db7835e95a33034ca25a442c7e3909121877795004142acf6d97a",
-      "productionVersionVerified": "Local downloaded source built and observed in native WebGL; no hosted release certified. 168 centre cells / 10.5 km² only.",
+      "productionVersionVerified": "0.78.0 · production Vercel dpl_HdedWdTD6mGtRngZMEj35M5QKavx · 8dc3e0f9ee5155c361468924947100ba44cd3bc8",
       "artFidelity": "not-reviewed",
       "previewFidelity": "source-verified",
-      "screenshotFreshness": "up-to-date",
+      "screenshotFreshness": "requires-build-comparison",
       "captureVerifiedAt": "2026-11-09T05:11:29.273Z",
       "reviewer": null,
-      "accessPolicy": "local-download",
-      "notes": "Cinq vues natives : arrivée, marche réelle, Cortex, carte et fiche de lieu. HUD source déclarée/staged non certifié : pas de géographie NGF, architecture 1:1 ou cache complet 92 communes revendiqués. Distinct de SOMA//MASSILIA.",
+      "notes": "Historique des captures : Cinq vues natives : arrivée, marche réelle, Cortex, carte et fiche de lieu. HUD source déclarée/staged non certifié : pas de géographie NGF, architecture 1:1 ou cache complet 92 communes revendiqués. Distinct de SOMA//MASSILIA. La production web est maintenant en 0.78 ; ces captures 0.76 restent historiques et demandent une nouvelle comparaison de rendu.",
       "mediaPendingReview": false,
       "discoveredAt": "2026-11-01",
-      "screenshotCaptureProof": "docs/media-proof/massilia-cyberpunk-local-076-2026-11-09.json"
+      "screenshotCaptureProof": "docs/media-proof/massilia-cyberpunk-local-076-2026-11-09.json",
+      "illustration": "assets/illustrations/massilia-cyberpunk.png",
+      "illustrationReview": "docs/illustration-reviews/massilia-cyberpunk.json",
+      "illustrationStatus": "accepted",
+      "webDeploymentProof": "docs/WEB_GAME_DEPLOYMENTS_2026-11-13.json",
+      "webSourceVersionVerified": "0.78.0"
     },
     {
       "id": "dont-look-when-they-say-soleil",
@@ -2916,7 +2996,10 @@
       "sourceAnchor": "soleil",
       "notes": "Mini-jeu natif de la collection : cinq états observables des commandes, score, vie et chronomètre. Canvas 2D volontairement minimal (carré blanc), distinct des productions standalone 3D. Pas de session complète ou de victoire certifiée.",
       "mediaPendingReview": false,
-      "screenshotCaptureProof": "docs/media-proof/soleil-restored-local-2026-11-09.json"
+      "screenshotCaptureProof": "docs/media-proof/soleil-restored-local-2026-11-09.json",
+      "illustration": "assets/illustrations/dont-look-when-they-say-soleil.png",
+      "illustrationReview": "docs/illustration-reviews/dont-look-when-they-say-soleil.json",
+      "illustrationStatus": "accepted"
     },
     {
       "id": "maid-cafe-simulator-deluxe",
@@ -2939,7 +3022,10 @@
       "sourceAnchor": "maid-cafe",
       "notes": "Mini-jeu natif de la collection : cinq états observables des commandes, score, vie et chronomètre. Canvas 2D volontairement minimal (carré blanc), distinct des productions standalone 3D. Pas de session complète ou de victoire certifiée.",
       "mediaPendingReview": false,
-      "screenshotCaptureProof": "docs/media-proof/maid-cafe-restored-local-2026-11-09.json"
+      "screenshotCaptureProof": "docs/media-proof/maid-cafe-restored-local-2026-11-09.json",
+      "illustration": "assets/illustrations/maid-cafe-simulator-deluxe.png",
+      "illustrationReview": "docs/illustration-reviews/maid-cafe-simulator-deluxe.json",
+      "illustrationStatus": "accepted"
     },
     {
       "id": "avp-blood-arena",
@@ -2961,7 +3047,10 @@
       "mediaPendingReview": false,
       "discoveredAt": "2026-11-02",
       "screenshotCaptureProof": "docs/media-proof/avp-blood-arena-local-010-2026-11-02.json",
-      "productionIdentityProof": "docs/link-proof/avp-blood-arena-public-2026-11-09.json"
+      "productionIdentityProof": "docs/link-proof/avp-blood-arena-public-2026-11-09.json",
+      "illustration": "assets/illustrations/avp-blood-arena.png",
+      "illustrationReview": "docs/illustration-reviews/avp-blood-arena.json",
+      "illustrationStatus": "accepted"
     }
   ]
 }

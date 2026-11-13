@@ -1,4 +1,62 @@
 window.LAUNCHER_RELEASES = [
+{
+  "version": "1.18.0",
+  "date": "2026-11-13",
+  "title": "Nouveaux hébergements des jeux",
+  "highlights": [
+    "DIVA PULSE et Dernière Ligne ouvrent maintenant leur version web publique avec Jouer. Les anciens liens de fichiers enregistrés dans le navigateur sont remplacés en conservant les favoris et les noms personnalisés.",
+    "Massilia Cyberpunk dispose de sa version web 0.78 et de ses 168 cellules cartographiques fournies. Les illustrations et captures du catalogue restent conservées.",
+    "Les cinq projets de jeu sont créés. Fallout Mistral et Parallaxe restent en publication en attente tant que leur nouvelle version web complète ne peut pas être vérifiée.",
+    "Le catalogue distingue les jeux disponibles des publications en attente et conserve les sources, les versions des captures et les preuves des déploiements. Cache PWA shell v34 / médias v5."
+  ],
+  "appIds": [
+    "diva-pulse",
+    "derniere-ligne-zero-repli",
+    "massilia-cyberpunk",
+    "fallout-marseille-mistral",
+    "parallaxe-protocole-9"
+  ]
+},
+  {
+    "version": "1.17.0",
+    "date": "2026-11-13",
+    "title": "Illustrations des jeux et récits diégétiques",
+    "highlights": [
+      "27 illustrations sont créées à partir des vues natives des jeux et revues par comparaison. Les styles 2D, pixel et low-poly restent ceux des références ; les captures originales et leurs preuves sont conservées.",
+      "Les descriptions et accroches présentent désormais les lieux, objectifs et actions du joueur. Les versions, procédures de QA et avertissements techniques restent dans les documents de suivi et le mode édition.",
+      "Les jeux web s’ouvrent avec Jouer. Un dépôt de fichiers n’est plus proposé comme installation : les cinq adresses web encore non confirmées ont un bouton désactivé explicite, sans adresse inventée.",
+      "Les illustrations validées sont chargées depuis leur propre manifeste ; les couvertures personnalisées, favoris et galeries natives restent conservés. Les crédits cartographiques sont visibles. Cache PWA v33 / médias v4."
+    ],
+    "appIds": [
+      "avp-blood-arena",
+      "avp-hunt-hive-tcg",
+      "cainos",
+      "deadline-outbreak",
+      "deadwall-last-enclosure",
+      "derniere-ligne-zero-repli",
+      "digital-circus-encore",
+      "diva-pulse",
+      "dont-look-when-they-say-soleil",
+      "fallout-marseille-mistral",
+      "maid-cafe-simulator-deluxe",
+      "mass-effect-relay-chronicles",
+      "massilia-cyberpunk",
+      "moustique-the-video-game",
+      "parallaxe-protocole-9",
+      "ragtime-rumble-complete-tour",
+      "reclaimed-after-dark",
+      "resident-evil-bow-protocol",
+      "riftcasters-3d",
+      "riftcasters-chaos-anglers",
+      "shadow-codec-ops",
+      "silent-hill-halo-of-flesh",
+      "triarche-ciel-rouge",
+      "vortex-command",
+      "world-hive-wars",
+      "yautja-apex-hunt",
+      "yugioh-25d-holograms"
+    ]
+  },
   {
     "version": "1.16.0",
     "date": "2026-11-09",

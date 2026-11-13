@@ -1,0 +1,420 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-11-13T08:35:03.778511+00:00",
+  "scope": "Independent public verification of the five formerly local-only catalogue games; only completed READY records appear in deployments.",
+  "teamId": "team_VrIjq2UWV6VaHZr7DdQFwvfu",
+  "deployments": [
+    {
+      "id": "diva-pulse",
+      "url": "https://diva-pulse.vercel.app/",
+      "projectId": "prj_8DgFfcdqT0fiaBSL2dSnHEW9NKE6",
+      "deploymentId": "dpl_4DfRbVaVE479mDW3J49k3UZxxHyG",
+      "sourceRepository": "https://github.com/darknigthmare/Diva-Pulse",
+      "sourceCommit": "9bbf125cba1f20f49634a4cf49a346d87b2f013e",
+      "sourceVersion": "37.0.0",
+      "readyState": "READY",
+      "environment": "production",
+      "teamId": "team_VrIjq2UWV6VaHZr7DdQFwvfu",
+      "verifiedAt": "2026-11-13T08:06:07.673Z",
+      "browser": {
+        "title": "DIVA PULSE — Prises fiables & brouillons protégés V37",
+        "playable": true,
+        "nativeControlsOnly": true,
+        "proof": "docs/web-deployment-proof/diva-pulse-browser.json",
+        "screenshots": [
+          {
+            "path": "docs/web-deployment-proof/diva-pulse-title.png",
+            "sha256": "e011068a829e3f3e376f99b2c953c393ebed1a917627dc406ccf8d2a2140918b",
+            "bytes": 401278,
+            "viewport": {
+              "width": 1280,
+              "height": 720
+            }
+          },
+          {
+            "path": "docs/web-deployment-proof/diva-pulse-play.png",
+            "sha256": "5c107170efdd5655cd219d95b952c4844cda465c50982a6558e9d541694108b7",
+            "bytes": 187973,
+            "viewport": {
+              "width": 1280,
+              "height": 720
+            }
+          }
+        ],
+        "observedGameplay": {
+          "title": "DIVA PULSE — Prises fiables & brouillons protégés V37",
+          "view": "game",
+          "playing": true,
+          "paused": false,
+          "song": "NEON PROMISE",
+          "stageAvailable": true
+        }
+      },
+      "http": {
+        "proof": "docs/web-deployment-proof/diva-pulse-http.json",
+        "allChecks200": true,
+        "allDecodedHashesMatchSource": true,
+        "checkedFiles": 6,
+        "sourceHtmlSha256": "61d87a5929a91331b699005c4a5582e312a84abf821460fa915091f5b4bfd8ba"
+      },
+      "limitations": [
+        "Short native assisted Autoplay session and editor navigation only; manual timing, imported media and all editor/PWA flows are not certified."
+      ],
+      "ownerDeploymentProof": "docs/web-deployment-proof/diva-pulse-owner-deployment.json",
+      "sourcePullRequest": "https://github.com/darknigthmare/Diva-Pulse/pull/4",
+      "sourceConfigurationCommit": "cd6144604d76ce0479b437a096eadbc2914fb176",
+      "gameplaySourceModified": false
+    },
+    {
+      "id": "derniere-ligne-zero-repli",
+      "url": "https://derniere-ligne-zero-repli.vercel.app/",
+      "projectId": "prj_mxwpaESVQ2JW1dy2baXHzc8vyxn9",
+      "deploymentId": "dpl_E21GJkbFMprcQRjah1yHP8GaqXFS",
+      "sourceRepository": "https://github.com/darknigthmare/The-Horde-The-Last-Stand",
+      "sourceCommit": "bbbd3ef5afefcc9005c4f7a57f8282281dcb9d42",
+      "sourceVersion": "0.44.2",
+      "readyState": "READY",
+      "environment": "production",
+      "teamId": "team_VrIjq2UWV6VaHZr7DdQFwvfu",
+      "verifiedAt": "2026-11-13T08:06:49.223Z",
+      "browser": {
+        "title": "Dernière Ligne — Poste stabilisé 0.44.2",
+        "playable": true,
+        "nativeControlsOnly": true,
+        "proof": "docs/web-deployment-proof/derniere-ligne-zero-repli-browser.json",
+        "screenshots": [
+          {
+            "path": "docs/web-deployment-proof/derniere-ligne-zero-repli-title.png",
+            "sha256": "9672a326e732d1857502880cd6f5c82a4751e111a49cbb4292079fa46b896fd8",
+            "bytes": 734993,
+            "viewport": {
+              "width": 1280,
+              "height": 720
+            }
+          },
+          {
+            "path": "docs/web-deployment-proof/derniere-ligne-zero-repli-combat.png",
+            "sha256": "c235c0cfab2f2de26cd9eb81121d9c6f634c5101cbfc2a7a04d10e017e073d3f",
+            "bytes": 808580,
+            "viewport": {
+              "width": 1280,
+              "height": 720
+            }
+          }
+        ],
+        "observedGameplay": {
+          "title": "Dernière Ligne — Poste stabilisé 0.44.2",
+          "phase": "combat",
+          "canvas": 1440,
+          "pauseAvailable": true,
+          "text": "NUIT\n01 / 24\nBARRICADE\n340\nSURVIVANT\n100\n⛶\n♪\nⅡ\nDÉPÔT 07 · 0/16\nASSAUT 1 / 3\nLE SIGNAL\nLATÉRALE → · TENIR LE PÉRIMÈTRE\nCIEL COUVERT\nCLEURRE 1\nTPRIORITÉ : AUTO\nPISTOLET\n12 / ∞\n1\n2\n3\nR\nG ·\n2\nF ·\n1\nV ·\n1\n•\n\nSéquence ajoutée au Journal de route.\n\nSOURIS / TACTILE"
+        },
+        "additionalOwnerFireEvidence": {
+          "beforeAmmo": "12 / ∞",
+          "afterAmmo": "10 / ∞",
+          "action": "Native mouse aim/fire on real canvas",
+          "proof": "docs/web-deployment-proof/derniere-ligne-zero-repli-owner-deployment.json"
+        }
+      },
+      "http": {
+        "proof": "docs/web-deployment-proof/derniere-ligne-zero-repli-http.json",
+        "allChecks200": true,
+        "allDecodedHashesMatchSource": true,
+        "checkedFiles": 5,
+        "sourceHtmlSha256": "7edd451c079b5d72ab31acf6cc49aba4e805801271afd24972d36e49ba65e1d1"
+      },
+      "limitations": [
+        "Opening native convoy campaign preparation, night 01 combat and pause only; other campaigns and completion are not certified."
+      ],
+      "ownerDeploymentProof": "docs/web-deployment-proof/derniere-ligne-zero-repli-owner-deployment.json",
+      "sourcePullRequest": "https://github.com/darknigthmare/The-Horde-The-Last-Stand/pull/4",
+      "sourceConfigurationCommit": "fc0794510976016736b5942cdc40fd6f40b7e1c8",
+      "gameplaySourceModified": false
+    },
+    {
+      "id": "massilia-cyberpunk",
+      "url": "https://massilia-cyberpunk.vercel.app/",
+      "projectId": "prj_fZ3lAC9atlYfrLbBiYxxCZqFhvlW",
+      "deploymentId": "dpl_HdedWdTD6mGtRngZMEj35M5QKavx",
+      "readyState": "READY",
+      "environment": "production",
+      "teamId": "team_VrIjq2UWV6VaHZr7DdQFwvfu",
+      "sourceRepository": "https://github.com/darknigthmare/massilia-cyberpunk",
+      "sourceCommit": "8dc3e0f9ee5155c361468924947100ba44cd3bc8",
+      "sourceVersion": "0.78.0",
+      "verifiedAt": "2026-11-13T08:16:57.774Z",
+      "sourcePullRequest": "https://github.com/darknigthmare/massilia-cyberpunk/pull/8",
+      "browser": {
+        "title": "SOMA//MASSILIA 0.78 — Marseille augmentée",
+        "playable": true,
+        "nativeControlsOnly": true,
+        "proof": "docs/web-deployment-proof/massilia-cyberpunk-browser.json",
+        "screenshots": [
+          {
+            "path": "docs/web-deployment-proof/massilia-cyberpunk-title.png",
+            "sha256": "809f2f6db6a14ad61b996c89c57fa66adb837b7c43fecef1e64f2124e1a1f064",
+            "bytes": 952267,
+            "viewport": {
+              "width": 1280,
+              "height": 720
+            }
+          },
+          {
+            "path": "docs/web-deployment-proof/massilia-cyberpunk-walk.png",
+            "sha256": "e09d0ad93761dbc96fb6512a2889d3034d9675610ec7102fdf2f7b8b6152cea9",
+            "bytes": 518570,
+            "viewport": {
+              "width": 1280,
+              "height": 720
+            }
+          },
+          {
+            "path": "docs/web-deployment-proof/massilia-cyberpunk-map.png",
+            "sha256": "5590396ad5c0356735854f43882da3da694ab8fdbf7bdaf28a43d697b1acfaba",
+            "bytes": 155640,
+            "viewport": {
+              "width": 1280,
+              "height": 720
+            }
+          }
+        ],
+        "observedGameplay": {
+          "version": "0.78.0",
+          "zone": "geo:V52-MC-33",
+          "geographicDistrict": true,
+          "movement": {
+            "before": {
+              "x": 0,
+              "y": 8.290000171661378,
+              "z": 0
+            },
+            "after": {
+              "x": 0,
+              "y": 8.262324525621576,
+              "z": 1.28128
+            },
+            "inputs": [
+              {
+                "code": "KeyW",
+                "durationMs": 900
+              }
+            ]
+          }
+        }
+      },
+      "http": {
+        "proof": "docs/web-deployment-proof/massilia-cyberpunk-http.json",
+        "allChecks200": true,
+        "allExpectedHashesMatch": true,
+        "checkedFiles": 5,
+        "sourceHtmlSha256": "e550b4ed050a953b9a5f19180f451299d79ecd9e9c4eba4e2906fcbd16dd2af1",
+        "sampleProof": "docs/web-deployment-proof/massilia-cyberpunk-cell-samples.json",
+        "sampledPayloads": 12,
+        "sampledCells": 3,
+        "families": [
+          "vector",
+          "terrain",
+          "navigation",
+          "surfaces"
+        ],
+        "sampleGzipJsonParsed": true
+      },
+      "releaseProof": "docs/web-deployment-proof/massilia-cyberpunk-release.json",
+      "coverage": {
+        "cells": 168,
+        "areaKm2": 10.5,
+        "completeMetropole": false,
+        "optionalMetropoleCacheIncluded": false
+      },
+      "ownerDeploymentProof": "docs/web-deployment-proof/massilia-cyberpunk-owner-deployment.json",
+      "limitations": [
+        "Short initial geographic walk, tactical cortex and discovered-place map only; no full campaign, all168cells, combat or metropolitan-cache coverage certification.",
+        "Native distribution contains168centre cells /10.5km²; full metropolitan cache remains absent.",
+        "Native geographic UI and generated facades are not an architectural1:1 certification.",
+        "729release manifest entries were compared against the local release by the owner; independent data HTTP integrity sampling covers12payloads, not every file."
+      ]
+    }
+  ],
+  "pending": [
+    {
+      "id": "fallout-marseille-mistral",
+      "status": "deployment-pending",
+      "url": "https://fallout-marseille-mistral.vercel.app/",
+      "plannedOwnedUrl": "https://fallout-marseille-mistral.vercel.app/",
+      "projectId": "prj_GnqUcOcSOaeAOXo5CjA9UIFRQnn6",
+      "sourceRepository": "https://github.com/darknigthmare/fallout-Marseille",
+      "sourceCommit": "98085d3c9b6f33215e03892edc4c419d97ff5e83",
+      "sourceVersion": "0.50.0",
+      "sourcePullRequest": "https://github.com/darknigthmare/fallout-Marseille/pull/21",
+      "verifiedAt": "2026-11-13T08:30:47Z",
+      "urlOwnership": {
+        "verified": true,
+        "method": "Vercel list_project_domains: exact domain attached to this project with verified:true"
+      },
+      "deployments": [],
+      "deploymentListCheckedAt": "2026-11-13T08:30:47Z",
+      "publicHttp": {
+        "status": 404,
+        "checkedAt": "2026-11-13T08:24:56Z",
+        "proof": "docs/web-deployment-proof/pending-public-destinations-http.json"
+      },
+      "blocker": {
+        "scope": "team",
+        "observedOnProject": "parallaxe-protocole-9",
+        "directDeploymentAttempted": false,
+        "code": "api-deployments-free-per-day",
+        "observedAt": "2026-11-13T08:10:59.209Z",
+        "error": "Resource is limited - try again in 24 hours (more than 100)",
+        "httpStatus": 402,
+        "retryAfterSeconds": 86400,
+        "proof": "docs/web-deployment-proof/team-deployment-quota.json"
+      },
+      "localVerification": {
+        "environment": "local",
+        "publicVerification": false,
+        "proof": "docs/web-deployment-proof/fallout-marseille-mistral-local-browser.json",
+        "runtimeFilesCompared": 7761,
+        "decodedBytes": 1130533682,
+        "gzipTransportBytes": 276960249,
+        "httpFamilies": [
+          "france-vector",
+          "cadastre",
+          "terrain",
+          "enrichment",
+          "city",
+          "precise"
+        ],
+        "auditRoutes": 4,
+        "regressionTestsPassed": 8,
+        "nativeFreeMovementAndPipBoyPassed": true,
+        "geographicLoader": {
+          "activatedBy": "Existing debug delivery loader; not a native menu gameplay assertion",
+          "dataRequests200": 140,
+          "playingReached": false,
+          "lastObservedMode": "LOADING",
+          "timeoutSeconds": 240,
+          "renderer": "SwiftShader"
+        }
+      },
+      "limitations": [
+        "Official free exploration prefills level 26 and completed chapter VI; no earned campaign completion is claimed.",
+        "Canebière–Belsunce screenshot is the authored narrative scene, not surveyed street geometry.",
+        "The native geographic loader fetched real map/terrain data, but the scene did not reach PLAYING within the bounded 240-second SwiftShader trial. Completed geographical traversal, travel and rendering are not certified.",
+        "The complete data check validates every exported byte, not full campaign play or 1:1 architecture. Native LiDAR coverage remains 12 central km², not all Marseille.",
+        "Public gzip transport and gameplay remain untested until Vercel accepts a deployment.",
+        "The local export was built from the recorded base plus this hosting adaptation in the working tree. The original and adapted HTML hashes are distinct; no Git-byte identity is claimed for adapted HTML.",
+        "No public deployment exists; this game remains disabled in the launcher pending a production build and public verification.",
+        "HTTP402 was observed for the team on Parallaxe. No Fallout deployment was submitted after that known quota, and no Fallout-specific HTTP402 response is claimed."
+      ]
+    },
+    {
+      "id": "parallaxe-protocole-9",
+      "status": "deployment-pending",
+      "url": "https://parallaxe-protocole-9.vercel.app/",
+      "plannedOwnedUrl": "https://parallaxe-protocole-9.vercel.app/",
+      "projectId": "prj_NwhUwKgmysOTq5vuvtNNbwAw2br5",
+      "sourceRepository": "https://github.com/darknigthmare/Parallaxe_Protocole9",
+      "sourceCommit": "659bdd1185cf9f127b6d9d684ae60261e3813f6e",
+      "sourceVersion": "0.4.1",
+      "sourcePullRequest": "https://github.com/darknigthmare/Parallaxe_Protocole9/pull/6",
+      "verifiedAt": "2026-11-13T08:33:21Z",
+      "urlOwnership": {
+        "verified": true,
+        "method": "Vercel list_project_domains: exact domain attached to this project with verified:true"
+      },
+      "deployments": [
+        {
+          "deploymentId": "dpl_2bN9GJhrsAj4m5nu7GVefnQ2GD1n",
+          "readyState": "READY",
+          "sourceCommit": "23fd9cdbe297cad1d3962c9fa33adb6683899793",
+          "target": "production",
+          "acceptedForLaunch": false,
+          "reason": "Earlier source revision; public cooperative API returns500 and corrected source is not deployed."
+        }
+      ],
+      "publicHttp": {
+        "status": 200,
+        "title": "PARALLAXE — Protocole 9",
+        "apiStatus": 500,
+        "checkedAt": "2026-11-13T08:24:57Z",
+        "proof": "docs/web-deployment-proof/pending-public-destinations-http.json",
+        "cooperativePlayVerified": false
+      },
+      "currentPublicDefect": {
+        "code": "ERR_MODULE_NOT_FOUND",
+        "cause": "ERR_MODULE_NOT_FOUND: extensionless TypeScript import of src/vercel/session-handler reached native ESM loader",
+        "ownerObservedAt": "2026-11-13T08:21:16.620Z",
+        "correctedSourcePubliclyValidated": false
+      },
+      "blocker": {
+        "scope": "team",
+        "observedOnProject": "parallaxe-protocole-9",
+        "directDeploymentAttempted": true,
+        "attemptScope": "Owner quota-producing API attempt; not an accepted deployment of the final corrected commit.",
+        "code": "api-deployments-free-per-day",
+        "observedAt": "2026-11-13T08:10:59.209Z",
+        "error": "Resource is limited - try again in 24 hours (more than 100)",
+        "httpStatus": 402,
+        "retryAfterSeconds": 86400,
+        "proof": "docs/web-deployment-proof/team-deployment-quota.json"
+      },
+      "localVerification": {
+        "environment": "local application server with real remote Supabase database",
+        "publicVerification": false,
+        "proof": "docs/web-deployment-proof/parallaxe-protocole-9-local-backend.json",
+        "checks": {
+          "httpClients": 4,
+          "concurrentJoins": 3,
+          "consensusRounds": 9,
+          "campaignLevels": [
+            "hotel",
+            "metro",
+            "clinic"
+          ],
+          "sharedRoomPreserved": true,
+          "privateProjections": true,
+          "capacityAndAuthorization": true,
+          "staleDecisionsRejected": true,
+          "radioSignalingPrivateAndAuthenticated": true,
+          "authenticatedIceConfiguration": true,
+          "processRestartKeepsTwoPlayerIdentities": true,
+          "renderedBrowserClients": 2,
+          "nativeUiCreateJoinReferenceInspectionConsensus": true,
+          "invalidStoreTokenRejectedByAllThreeLiveRpcs": true,
+          "physicalMicrophoneOrTurnVerified": false
+        },
+        "architecture": {
+          "frontend": "Original standalone Vite frontend, original Three.js game scenes",
+          "sessionEndpoint": "GET/POST /api/session",
+          "function": "api/session.js -> build-server/session.cjs (bundled from src/vercel/entry.ts and unchanged game domain)",
+          "domainUnchanged": "src/game/session.ts",
+          "store": "Supabase private parallaxe_web schema, server-token protected REST RPC read/insert/CAS",
+          "ttlHours": 12,
+          "ephemeralFallback": false,
+          "serviceRoleRequired": false
+        }
+      },
+      "limitations": [
+        "Corrected bundle not publicly deployed or validated; current public cooperative API fails with 500.",
+        "Physical microphone quality and cross-network TURN are not tested.",
+        "An earlier deployment is READY and its frontend responds200, but this does not establish a working cooperative game. The launcher remains disabled for this entry.",
+        "Package version is0.4.1 at the final source commit; an old hardcoded0.2 network-report label is not used as source-version evidence."
+      ]
+    }
+  ],
+  "verificationMethod": [
+    "Vercel authenticated deployment metadata: intended project, exact source revision and production READY state.",
+    "Public HTTPS GET without bypass token or share link; document and shipped assets compared with SHA-256 source artifacts.",
+    "Fresh Chromium profile on the final public origin; only visible native controls change game state.",
+    "Native screenshots visually inspected; existing historical source-capture proofs remain unchanged."
+  ],
+  "limitations": [
+    "A short public smoke test does not certify campaign completion, all modes, hardware performance or exact franchise/architecture fidelity.",
+    "Source version, deployed source revision and generated/ported output are recorded separately when applicable."
+  ],
+  "summary": {
+    "expectedGames": 5,
+    "publicReadyAndPlayable": 3,
+    "publicationPending": 2
+  }
+}

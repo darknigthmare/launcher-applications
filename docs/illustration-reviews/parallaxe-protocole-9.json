@@ -1,0 +1,24 @@
+{
+  "id": "parallaxe-protocole-9",
+  "asset": "assets/illustrations/parallaxe-protocole-9.png",
+  "sha256": "817063c903b5b542da199ba21010e52891f0e003ce0005c6f03df72c260da755",
+  "provider": "OpenAI",
+  "generator": "image_gen.imagegen",
+  "prompt": "Create one clean landscape illustration for PARALLAXE — PROTOCOLE 9 by editing the supplied actual gameplay frames. Strict fidelity to this existing native 3D environment is the priority. Use the first supplied frame as the camera and composition: inside a narrow amber wooden service chalet under a dark brown ceiling, horizontal plank walls, parallel floorboards, upright posts and repeating square beams leading to a central teal door with a small window. Preserve the repeating white hanging ceiling bulbs and their warm amber glow. Keep the two simple off-white mannequin figures with teal joints and black circular bases exactly on the right of the central passage, the low wooden table and chairs on the left, the right-side interior window revealing green books, and the partially visible small black stove at lower right. Remove only all HUD, counters, instructional text, icons and bottom buttons, continuing the neighboring native surfaces in the uncovered areas. Preserve the game's restrained low-poly flat-texture style and its existing warm lighting. Do not make it photorealistic; do not add creatures, people, faces, new props, blood, fog or a different room. No typography or logos. This must remain recognizably the same actual chalet, not a generic horror illustration. Opaque background.",
+  "references": [
+    {
+      "path": "assets/screenshots/parallaxe-protocole-9/04.png",
+      "sha256": "31cd297edfc882c9cce001d82011342392d8d0af92c063451ae6cc386d8a06ab"
+    },
+    {
+      "path": "assets/screenshots/parallaxe-protocole-9/02.png",
+      "sha256": "9f75c42ea8a84b2f6a386449abaa70da1e885c4408eb68aa6b68f7f1325d88dc"
+    }
+  ],
+  "reviewedAt": "2026-11-13T06:31:37.264330+00:00",
+  "differences": [
+    "HUD and instructional overlays removed; landscape framing resampled.",
+    "Warm plank chalet, repeating beams and bulbs, two off-white/teal mannequins and teal back door retained. Small joinery, window and table details are regenerated rather than pixel-identical."
+  ],
+  "verdict": "accepted"
+}

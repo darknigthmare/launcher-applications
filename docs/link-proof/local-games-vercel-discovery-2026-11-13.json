@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-13T06:30:13.082Z",
+  "scope": "Only connected Vercel account/team and current GitHub source metadata; no invented or unowned domains were probed",
+  "teams": [
+    {
+      "id": "team_VrIjq2UWV6VaHZr7DdQFwvfu",
+      "slug": "darknigthmares-projects",
+      "plan": "hobby"
+    }
+  ],
+  "inventory": {
+    "projects": 164,
+    "gitLinkedProjectRows": 155,
+    "gitLinkedProjectDistinctIds": 154,
+    "aliases": 857,
+    "aliasPages": 9,
+    "aliasPaginationComplete": true,
+    "customDomains": 0
+  },
+  "entries": [
+    {
+      "repository": "darknigthmare/Diva-Pulse",
+      "readmeBlob": "9f211fb53ff7341c2332ed191cc455addd431153",
+      "matchingVercelProjectIds": [],
+      "homepage": null
+    },
+    {
+      "repository": "darknigthmare/The-Horde-The-Last-Stand",
+      "readmeBlob": "676a21f623e85a5248bf42bdd23560719996fca6",
+      "matchingVercelProjectIds": [],
+      "homepage": null
+    },
+    {
+      "repository": "darknigthmare/fallout-Marseille",
+      "readmeBlob": "c2658b760204c661af46b1591dd9fc65cb643a4f",
+      "matchingVercelProjectIds": [],
+      "homepage": null
+    },
+    {
+      "repository": "darknigthmare/Parallaxe_Protocole9",
+      "readmeBlob": "ad76f6850c3cff9ca83f631bab0877aa4bbdaf39",
+      "matchingVercelProjectIds": [],
+      "homepage": null
+    },
+    {
+      "repository": "darknigthmare/massilia-cyberpunk",
+      "readmeBlob": "20a316a481815ab526443b2223adb4614024295d",
+      "matchingVercelProjectIds": [],
+      "homepage": null
+    }
+  ],
+  "aliasKeywordSearches": [
+    "diva",
+    "horde",
+    "last-stand",
+    "fallout",
+    "parallaxe",
+    "protocole9",
+    "mistral",
+    "derniere",
+    "repli",
+    "massilia"
+  ],
+  "onlySimilarAliasMatch": {
+    "project": "soma-massilia",
+    "sourceRepository": "darknigthmare/soma-massilia",
+    "aliases": [
+      "soma-massilia-git-main-darknigthmares-projects.vercel.app",
+      "soma-massilia.vercel.app",
+      "soma-massilia-darknigthmares-projects.vercel.app"
+    ],
+    "decision": "Different product; never substitute for massilia-cyberpunk"
+  },
+  "unlinkedProjects": [
+    {
+      "id": "prj_I5ulmLeqBvQ4dyi5TuFa1hCOCTsd",
+      "name": "xion-path-test"
+    },
+    {
+      "id": "prj_4Qnuv71dIw8UvlqpPx84ELbiQbUw",
+      "name": "xion-level-design-lab"
+    },
+    {
+      "id": "prj_dSztZRtGsnrVB6k9Ez45K2dbKSZD",
+      "name": "xion-level-payload"
+    },
+    {
+      "id": "prj_BUYESgCIXFAQK9AaSiSZAup74UbU",
+      "name": "reclaimed-after-dark-payload-a"
+    },
+    {
+      "id": "prj_yyUr7v8AitRQ6wApeGfaUfh7RB06",
+      "name": "reclaimed-after-dark-schema-check"
+    },
+    {
+      "id": "prj_geADNgAnU5mphv0OtqCl1qojnGPG",
+      "name": "jeux-du-4-aout-2026"
+    },
+    {
+      "id": "prj_G0PRqBhO6WiJsqqdi5UMEvNIgoUO",
+      "name": "jeux-du-2-aout-2026-jouables"
+    },
+    {
+      "id": "prj_TtSzVsVZquOACOYhboFfNrfUz7RS",
+      "name": "jeux-du-2-aout-2026"
+    },
+    {
+      "id": "prj_BezUBUwW0yhENzHHXz9fIxjG1924",
+      "name": "games-du-2-aout-2026-schema-test"
+    },
+    {
+      "id": "prj_pkvD57onz8zXgNetVMYClfiRUMi9",
+      "name": "jeux-restaures-aout-2026"
+    }
+  ],
+  "knownCandidateChecks": [
+    {
+      "repository": "darknigthmare/Parallaxe_Protocole9",
+      "requestedUrl": "https://parallaxe-protocole-neuf.darknigthmare.chatgpt.site/",
+      "httpStatus": 403,
+      "decision": "Documented existing hosted site is private, not verified as public Vercel game"
+    },
+    {
+      "repository": "darknigthmare/massilia-cyberpunk",
+      "requestedUrl": "https://soma-massilia.vercel.app/",
+      "httpStatus": 200,
+      "title": "SOMA//MASSILIA — La Chair sous Licence",
+      "decision": "Different identity; already a separate launcher entry"
+    }
+  ],
+  "decision": "No verified public Vercel URL for these five source repositories in the connected account; do not invent URL replacements or conflate source downloads with playable destinations",
+  "limitations": [
+    "Another unconnected account or a URL not present in the accessible project/alias inventory may exist",
+    "No source game, Vercel project, privacy setting or deployment was changed during this read-only audit",
+    "Current source delivery requirements must be considered before any future hosting; a GitHub repository URL is not a browser game URL"
+  ]
+}

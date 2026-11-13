@@ -1,0 +1,30 @@
+{
+  "id": "derniere-ligne-zero-repli",
+  "asset": "assets/illustrations/derniere-ligne-zero-repli.png",
+  "sha256": "38c39e20662ec1df07c60fd0ad7c3b7e9225b9ee9cd969edadf8430de73fff97",
+  "provider": "OpenAI",
+  "generator": "image_gen.imagegen",
+  "prompt": "Create ONE landscape 16:9 promotional illustration by faithfully editing the FIRST native 2D game screenshot. Keep the exact side-on 2D game perspective, coarse raster/dithered sprite art mixed with simple flat environment shapes, muted rainy gray-blue/olive palette and the original scene layout. At lower right keep the same SMALL dark brown/gray armed survivor sprite facing left, in the same slightly crouched aiming pose, identical tiny head, clothes silhouette, boots, rifle shape and scale (roughly one sixth of the image height). Keep the vertical olive wooden slat barricade immediately left of the sprite with its thin diagonal metal brace. Behind them preserve the flat cracked asphalt roadway and dashed lane marks, chain-link fence, small yellow-gray bus with its same simple windows and two black wheels, large rusty corrugated metal depot rectangles on both sides, four amber floodlight panes on a pole at left, simple dark distant skyline shapes, overpass/sign framework at right, clouded dusky amber horizon and sparse rain. Remove ALL UI and text: top stats bar, floating Le Signal overlay, toast, crosshair, bottom weapon panels and buttons; replace those areas only with the exact existing background materials. Remove legible writing from physical signs rather than invent letters. Do not introduce any zombie or new character, do not enlarge/redesign the soldier, no 3D perspective, no detailed cinematic gunman, no photorealistic concept-art city, no explosions or new weapons, no logo/title. Faithful native renderer/sprite illustration, not a polished visual upgrade. Single image only.",
+  "references": [
+    {
+      "path": "assets/screenshots/derniere-ligne-zero-repli/03.png",
+      "sha256": "aa9dab6cc689a8979232d93180b966143fd4c923efb4418fba7030c3525ccdfd"
+    },
+    {
+      "path": "assets/screenshots/derniere-ligne-zero-repli/05.png",
+      "sha256": "6da184c4fc8bf15ad83ef81eb7b898e413c3794f9126b70b329c6feaf59347be"
+    },
+    {
+      "path": "assets/screenshots/derniere-ligne-zero-repli/01.png",
+      "sha256": "eda7760193cf31b358abbc0fb66475410b66527cea92ffea58464436172a51e8"
+    }
+  ],
+  "reviewedAt": "2026-11-13T06:35:53.279590+00:00",
+  "differences": [
+    "HUD et texte du signal retirés ; ciel et chaussée reconstitués sous ces overlays, inscriptions physiques neutralisées.",
+    "Nuages, pluie et répétition de l'asphalte légèrement recalculés ; détails fins du sprite non identiques pixel à pixel.",
+    "Vue latérale 2D, petit survivant, barricade, bus et dépôts gardent leur échelle et leur placement ; aucun nouvel ennemi, équipement ou décor cinématique."
+  ],
+  "verdict": "accepted",
+  "acceptanceScope": "Fidélité visuelle comparée au rendu natif référencé pour une illustration promotionnelle générée ; ce verdict ne certifie ni identité pixel à pixel, ni conformité canonique globale 1:1, ni nouvelle capture de gameplay."
+}

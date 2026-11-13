@@ -1,0 +1,30 @@
+{
+  "id": "world-hive-wars",
+  "asset": "assets/illustrations/world-hive-wars.png",
+  "sha256": "797b5dcbcb8b59fc79dcbfe27dd4f8da5c0063a309bc0c152672e5411078da9e",
+  "provider": "OpenAI",
+  "generator": "image_gen.imagegen",
+  "prompt": "Create ONE 16:9 landscape promotional illustration ONLY from the ACTUAL 2D campaign-map rendering in the FIRST reference. The second and third refs are real management UI, not evidence of a 3D battle or any creature model: DO NOT invent a battlefield, Colonial Marine character, alien/xenomorph, weapon, spacecraft, action or film scene. Preserve the first image's restrained dark green-black tactical map, very fine square grid, subtle map outlines and circular radar range lines. Preserve the tiny existing TOP-DOWN map icons at their actual scale and arrangement: one small beige-gray circular colony module near upper middle-right, little gray rectangular bunker/convoy icons, a few very small brown square nest-markers, tiny dot/beacon markers connected to existing thin pointer lines, the same dotted turquoise connection network and small blue circular beacon below-left of the round colony. These are map symbols, not full-scale buildings or a newly rendered environment. Remove every word, number, label rectangle, top resource/status UI, bottom navigation, side control and button. Extend ONLY the same blank dark gridded map into removed interface areas, preserving the original orthographic camera and linework. No fabricated legend, title, logo, models, additional bases or extra node network. A clean native-style strategic-map illustration faithfully showing the game actually observed in private simulation, never claimed to be combat. Single image only.",
+  "references": [
+    {
+      "path": "assets/screenshots/world-hive-wars/01.png",
+      "sha256": "eecb6f9013260bd8f7ef225c599675296ae7d2933d7c4c54bfb6a6caa46d8fc1"
+    },
+    {
+      "path": "assets/screenshots/world-hive-wars/02.png",
+      "sha256": "027d439880354d9f84c94ed4e0ff09d1c7664eae8ddb8f9b131bc3920cbf0f40"
+    },
+    {
+      "path": "assets/screenshots/world-hive-wars/04.png",
+      "sha256": "c6bf4501a1dead083d55a96c00e67309e6cf24194a8747965e50d6d2e54ec0ea"
+    }
+  ],
+  "reviewedAt": "2026-11-13T06:45:41.625494+00:00",
+  "differences": [
+    "HUD de campagne, commandes et libellés retirés ; grille tactique prolongée sous les zones d'interface.",
+    "Espacement de petits nœuds, traits de connexion, contours et textures des icônes légèrement recalculés ; ni coordonnées ni état stratégique exact certifiés.",
+    "Seule la carte de simulation privée réellement observée est illustrée avec ses petits symboles ; aucun Marine, Xénomorphe, combat CONTACT ou environnement 3D inventé."
+  ],
+  "verdict": "accepted",
+  "acceptanceScope": "Fidélité visuelle comparée au rendu natif référencé pour une illustration promotionnelle générée ; ce verdict ne certifie ni identité pixel à pixel, ni conformité canonique globale 1:1, ni nouvelle capture de gameplay."
+}

@@ -1,0 +1,30 @@
+{
+  "id": "deadline-outbreak",
+  "asset": "assets/illustrations/deadline-outbreak.png",
+  "sha256": "52e630d11ba41c81fda4bcc554912e654c776a70405f23bd7ecbc156ff538771",
+  "provider": "OpenAI",
+  "generator": "image_gen.imagegen",
+  "prompt": "Make ONE restrained 16:9 landscape promotional illustration for this specific minimalist 2D lane-survival game, by editing the FIRST native screenshot. Preserve its exact top-down flat game-camera language and intentionally abstract models: a small light-gray triangular commander arrow, a thin circular selection ring and orange barrel line at lower center, the same tiny colored round squad markers directly beneath it, three faint dashed vertical lanes, a few short pale-cyan and amber projectile dashes above the arrow, dark petrol-blue/black rainy asphalt with subtle scanlines and vignette. This is an abstract tactical arcade game, NOT a photorealistic zombie shooter. Remove every text label, number, button, top bar and side information panel, replacing those overlays with the same subdued dark game ground. Keep the commander and squad small at the same relative screen scale. Do not turn the arrow or dots into people or vehicles, do not add enemies, zombies, buildings, gunmen, realistic firearms, symbols, logos or title typography. Do not add a horizon, perspective, cinematic light or illustration brushwork. Preserve the original native line weights, muted cyan/amber palette and visual simplicity. A faithful clean native-render illustration with no invented content, single image only.",
+  "references": [
+    {
+      "path": "assets/screenshots/deadline-outbreak/03.png",
+      "sha256": "4ee2ed85ed5e9a0e33f9cc671577cd94ac31699c91289db11030937155e85aff"
+    },
+    {
+      "path": "assets/screenshots/deadline-outbreak/01.png",
+      "sha256": "b1bf0734d94849eaaa27612cf807ac2d0359bc3c606c2c0e4b455470194a0673"
+    },
+    {
+      "path": "assets/screenshots/deadline-outbreak/05.png",
+      "sha256": "627c0929ca1bad4d544ca048acc85eb8c3b0848adbf07bd51204315469437cbe"
+    }
+  ],
+  "reviewedAt": "2026-11-13T06:35:53.279590+00:00",
+  "differences": [
+    "HUD et panneaux retirés ; fond prolongé sous leurs anciennes emprises.",
+    "Détails de pluie, traits de projectiles et espacement des pastilles légèrement recalculés ; ni comptage d'unités ni état du gameplay certifiés par l'illustration.",
+    "Triangle, cercle de sélection et pastilles restent les abstractions 2D du jeu ; aucune escouade réaliste ou zombie inventé."
+  ],
+  "verdict": "accepted",
+  "acceptanceScope": "Fidélité visuelle comparée au rendu natif référencé pour une illustration promotionnelle générée ; ce verdict ne certifie ni identité pixel à pixel, ni conformité canonique globale 1:1, ni nouvelle capture de gameplay."
+}

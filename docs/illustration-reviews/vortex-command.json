@@ -1,0 +1,30 @@
+{
+  "id": "vortex-command",
+  "asset": "assets/illustrations/vortex-command.png",
+  "sha256": "cab0dd432da0f7369c13479be41eb6dbd5370fee87dec219064e29c0332984e4",
+  "provider": "OpenAI",
+  "generator": "image_gen.imagegen",
+  "prompt": "Create ONE 16:9 landscape promotional illustration by faithfully editing the ACTUAL FLAT TOP-DOWN RTS map in the FIRST screenshot. Retain the deliberately ABSTRACT native titan symbol, not a realistic giant monster: dark navy/charcoal compact oval body, dark burgundy round core toward its upper-right, one small bright pink point on that core, the thin coral-red body outline, a few short triangular coral dorsal marks along the top, a short curved coral extension toward the left, overlapping thin violet/purple elongated vortex loops surrounding the body and the same restrained blue-green circular glow. Keep the titan small at the same relative screen scale and position. Preserve the map's very dark green flat mottled circular ground patches, two simple horizontal gray roadway strips above and below the titan, yellow dashed road-center lines and sparse tiny green round lights. Remove all HUD: top resources, left unit menu, right information panel, bottom objective, minimap, toast, health bar, crosshair and text. Extend only the SAME existing dark map into the cleared areas. Do not render tanks, helicopters, Marines, cities, realistic buildings, a dragon/Godzilla, faces, limbs, weapons, explosions, physical vortex machinery, or any new object. Do not change the game's 2D circles/lines into 3D concept art. No logo, title or typography. One clean single image showing the exact native abstract RTS visual language, no invented cinematic battle.",
+  "references": [
+    {
+      "path": "assets/screenshots/vortex-command/02.png",
+      "sha256": "afa658cd61cc5e4294ff9b561920932cb04024883181ce6375d2dec4383be82b"
+    },
+    {
+      "path": "assets/screenshots/vortex-command/01.png",
+      "sha256": "59f386e26ea23151aa8c7635504e33b3fd853e1a678d1c3fc1b25b48b8f34191"
+    },
+    {
+      "path": "assets/screenshots/vortex-command/03.png",
+      "sha256": "d8c15390ee5bce6e50a40a2416e7b1c0b1f3c4387ea168b82fa7e7a718317d83"
+    }
+  ],
+  "reviewedAt": "2026-11-13T06:45:41.625494+00:00",
+  "differences": [
+    "HUD, barre de vie, viseur et minimap retirés ; terrain abstrait prolongé sous les panneaux.",
+    "Contours des ellipses, éclat du halo et répartition des disques de terrain légèrement recalculés ; pas d'identité pixel à pixel.",
+    "Le titan demeure le petit symbole 2D abstrait, avec noyau et boucles violettes, entre les deux routes natives ; aucun monstre cinématographique, blindé ou décor 3D ajouté."
+  ],
+  "verdict": "accepted",
+  "acceptanceScope": "Fidélité visuelle comparée au rendu natif référencé pour une illustration promotionnelle générée ; ce verdict ne certifie ni identité pixel à pixel, ni conformité canonique globale 1:1, ni nouvelle capture de gameplay."
+}

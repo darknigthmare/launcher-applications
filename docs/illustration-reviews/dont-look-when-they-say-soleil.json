@@ -1,0 +1,24 @@
+{
+  "id": "dont-look-when-they-say-soleil",
+  "asset": "assets/illustrations/dont-look-when-they-say-soleil.png",
+  "sha256": "3e8130933cbf4d48a9c8386a5f37776919b3ea58867c8f4b20d18a8188d917cd",
+  "provider": "OpenAI",
+  "generator": "image_gen.imagegen",
+  "prompt": "Create a strictly faithful minimalist landscape illustration for the supplied actual mini-game DON'T LOOK WHEN THEY SAY SOLEIL. The native game really is this minimal: a single small solid white square on a flat very dark blue-black rectangular playfield. Do NOT invent an illustrated world from the title. Remove all surrounding archive sidebar, headings, score/health text, control buttons, borders and UI panels, and use ONLY the actual central playfield as the entire clean image. Background should remain an almost uniform very dark navy-black, approximately #080c14. Place one crisp flat solid white square at the center, about 2.7 percent of total image width. Keep the edges perfectly simple and square. No gradients, lighting effects, horizon, scenery, people, silhouettes, sun, puppet, monster, shadows, decorative particles, texture, logo or text. This deliberately sparse image must truthfully reflect the supplied tiny 2D game rather than a more detailed game that does not exist. Wide landscape, opaque background.",
+  "references": [
+    {
+      "path": "assets/screenshots/dont-look-when-they-say-soleil/01.png",
+      "sha256": "047afc7286cdbb7eb1681bbd78ca24b9cac3c55e08cc1ba453a253818ea2f695"
+    },
+    {
+      "path": "assets/screenshots/dont-look-when-they-say-soleil/03.png",
+      "sha256": "5f47ebda63b9299388595b016bf6f834f1f57547222a88d07f8a652c3cde9148"
+    }
+  ],
+  "reviewedAt": "2026-11-13T06:34:39.368857+00:00",
+  "differences": [
+    "Archive interface and HUD removed; crop expanded to the actual minimal dark playfield.",
+    "Single white square retained without invented scenery. Generated background has a slight grain and square scale/position is recomposed; not a pixel-identical capture."
+  ],
+  "verdict": "accepted"
+}

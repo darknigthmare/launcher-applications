@@ -1,0 +1,24 @@
+{
+  "id": "maid-cafe-simulator-deluxe",
+  "asset": "assets/illustrations/maid-cafe-simulator-deluxe.png",
+  "sha256": "ac436a84de7493a745bab9e0ca8a1393064c3b08f76ee0e8e1db811a32475b54",
+  "provider": "OpenAI",
+  "generator": "image_gen.imagegen",
+  "prompt": "Create one STRICTLY reference-faithful landscape illustration for the actual restored mini-game Maid Café Simulator Deluxe shown in these screenshots. The game renderer is intentionally minimal and the screenshots do NOT show a maid, café room, food, customers or furniture. Do not invent any of those. Keep ONLY its actual central playfield: a flat very dark navy-black field, approximately #080c14, with one small sharp solid white square centered, about 2.7 percent of image width. Remove the archive sidebar, headings, score/health counters, right-hand Servir/Incident panel and all other user-interface text, lines, borders and buttons. The actual white-square-on-dark-field visual is what must be represented, even though the title suggests a richer setting. Do not add an anime character, café décor, cups, pastries, symbol, illustration, shadow, lighting, textures, particles, logo, or typography. Keep the image plain and opaque, wide landscape, as faithful to the primitive 2D playfield as possible.",
+  "references": [
+    {
+      "path": "assets/screenshots/maid-cafe-simulator-deluxe/01.png",
+      "sha256": "fa92402839435f95da7cf57dec2b8c788a21bf599be9a3136eae18e52ed146e0"
+    },
+    {
+      "path": "assets/screenshots/maid-cafe-simulator-deluxe/03.png",
+      "sha256": "6e753b12ce904c13e0e45e8aa46db79aa816053f221d8b0986f39344567a7829"
+    }
+  ],
+  "reviewedAt": "2026-11-13T06:35:24.111663+00:00",
+  "differences": [
+    "Archive interface and all HUD removed; framed as the actual minimal dark playfield.",
+    "White square and dark field retained. Generated background grain and square scale differ slightly; no maid, café interior, food or customer was invented."
+  ],
+  "verdict": "accepted"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "fallout-marseille-mistral",
+  "asset": "assets/illustrations/fallout-marseille-mistral.png",
+  "sha256": "7dcfe3ff4bdd8d3d3e969c057b9b8b637fb4b717998960abb996f8a8c3763d1e",
+  "provider": "OpenAI",
+  "generator": "image_gen.imagegen",
+  "prompt": "Create one clean landscape illustration for the actual game Fallout Marseille Mistral from the supplied native screenshots. This is a strict reference-preserving edit, not a reimagining of the Fallout franchise. Use the FIRST screenshot as the exact scene and camera: its low-poly blocky first-person renderer, straight tram tracks running to the vanishing point, simple orange/tan rectangular Marseille buildings, square yellow windows, thin black streetlamps, spherical green shrubs in orange planters, flat oval grey clouds and blue-grey daylight sky. Preserve the exact blocky dark-grey rifle, brown forearm and small green wrist display in the same bottom-right position. Remove all HUD overlays, panels, letters, numbers, compass and interface buttons. Fill only the areas uncovered by removing the HUD using a direct continuation of adjacent existing geometry. Keep the native deliberately primitive flat-shaded polygon style; do not add realism, textures, ruins, monsters, characters, posters, logos, smoke, new architecture or new equipment. Keep the wide composition and all major scene geometry as close to the reference as possible. No written title or typography. Output only the clean illustration, with an opaque background.",
+  "references": [
+    {
+      "path": "assets/screenshots/fallout-marseille-mistral/01.png",
+      "sha256": "9bcbffe634958ecf81ef3995fa926eb9f57bcaf5a9ffc089163f5e6fcb04f9b4"
+    },
+    {
+      "path": "assets/screenshots/fallout-marseille-mistral/02.png",
+      "sha256": "c67f843f1ea5d07371b0e808862dcd272af108cd204e9ab9ecf33bf35c8982c5"
+    }
+  ],
+  "reviewedAt": "2026-11-13T06:30:03.074324+00:00",
+  "differences": [
+    "HUD, compass, counters and buttons removed to expose the native scene.",
+    "Generated frame is resampled and slightly recomposed; low-poly tram corridor, planters, lamps, rifle and wrist display remain recognizably faithful. It is not pixel-identical to the capture."
+  ],
+  "verdict": "accepted"
+}

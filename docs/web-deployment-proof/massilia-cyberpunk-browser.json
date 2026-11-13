@@ -1,0 +1,214 @@
+{
+  "id": "massilia-cyberpunk",
+  "url": "https://massilia-cyberpunk.vercel.app/",
+  "checkedAt": "2026-11-13T08:16:30.220Z",
+  "nativeControlsOnly": true,
+  "checks": [
+    {
+      "label": "public native title",
+      "state": {
+        "title": "SOMA//MASSILIA 0.78 — Marseille augmentée",
+        "url": "https://massilia-cyberpunk.vercel.app/",
+        "version": "0.78.0",
+        "zone": "station-exterior",
+        "geographicDistrict": false,
+        "paused": true,
+        "position": {
+          "x": 0,
+          "y": 1.72,
+          "z": 25
+        },
+        "selectedPlace": null,
+        "openPanels": [
+          {
+            "id": "boot",
+            "title": ""
+          }
+        ],
+        "body": "UN CORPS À CRÉDIT. UNE VILLE À REPRENDRE.\n\nSOMA//\nMASSILIA\nCONTINUITÉ DE TERRAIN\n0.78\n\nLa ville réelle, les vies augmentées. Explorez les rues et les reliefs de Marseille, entre façades méditerranéennes, fenêtres éclairées et néons de quartier.\n\nReprendre sans se perdre. Ouvrez la carte avec M pour retrouver vos lieux découverts et vos itinéraires, ou le menu Pause pour missions, équipement et sauvegarde. Les outils de production sont rangés hors des menus joueur.\nEXPLORER MARSEILLE RÉELLE\nSURVOLER LA MÉTROPOLE\nREPRENDRE\nNOUVELLE CONTINUITÉ\nOPTIONS\n\n168 cellules sources · 10.5 km² de cellules · relief IGN à 25 m. Région encore partielle.\n\nDossiers & premières étapes\nCommandes & accessibilité\nLes visages de Massilia\nCARTE RÉELLE PARTIELLE · LIEUX À DÉCOUVRIR · MISSIONS PERSISTANTES\nVÉHICULES · IMPLANTS · CONSÉQUENCES\n/* SOMA v75 terrain: explicit source-only 5 m centre pilot. */ /* SOMA v76 architecture: source-bound Atlas conflict audit. */ /* SOMA v77 architecture: distinguish calculated reference and IGN roof statistics. */",
+        "resources": []
+      }
+    },
+    {
+      "nativeControl": "#v54-explore"
+    },
+    {
+      "label": "native geographic district entered",
+      "state": {
+        "title": "SOMA//MASSILIA 0.78 — Marseille augmentée",
+        "url": "https://massilia-cyberpunk.vercel.app/",
+        "version": "0.78.0",
+        "zone": "geo:V52-MC-33",
+        "geographicDistrict": true,
+        "paused": false,
+        "position": {
+          "x": 0,
+          "y": 8.290000171661378,
+          "z": 0
+        },
+        "selectedPlace": null,
+        "openPanels": [],
+        "body": "SOMA//MASSILIA 0.78\nJ1 · 21:24 · Soirée\nMarseille · Cours Belsunce / Rue de la Providence\nCellule NULL · Nuit claire · 21:24\nGARE SAINT-CHARLES\nBoulevard d’Athènes\n125 m · Marseille · La Canebière / Allée Léon Gambetta\n[G] Rencontrer Sofia Amari · Le Résonance\nACTE III · 0.45\nVille ouverte\nAppel disponible · Un homme derrière la balise\nStation Zéro\nCALCAIRE / VILLE\nNuit claire\ncontinuité urbaine 0.42\nINCONNU\n0\nprochain palier 80\n1440 CR\nF6 DOSSIERS\nCONTINUITÉ SAUVEGARDÉE\nLieu découvert — Carrefour City\nNV 1\n0/336 XP\nINTÉGRITÉ\n100/104\nBLINDAGE\n65/120\nDETTE\n28\nTENSION\n12\nMÉMOIRE\n100\nF1 · 2\nGel de réparation somatique\nF2 · 1\nPatch de blindage\nF3 · 1\nCellule neurale\nF4 · 0\nTampon mnésique\nMARSEILLE CENTRE · TRAME DE VÉRITÉ\nV52-MC-33 · Rue de la Providence / Rue Magenta\nSOURCE DÉCLARÉE · STAGED NON CERTIFIÉ · cache 1/13\nAncrer la Canebière · 1/10\nIGN · 6.57 m · grille 25 m · non certifié\nPRÉCISION · HANCHE\nP-12 TRAME · 100 % stabilité\nDEBOUT · 1,72 M\nARME BASSE\nP-12 TRAME\n12 / 72\nSEMI\nCORTEX TACTIQUE · MAJ+F1\n\nCyberdeck 100 · charge neurale 0%\n\nà l’arrêt · silencieux · suspicion 0%\n\nMaj+F2 Écho · Maj+F3 Rempart · Maj+F4 Ancrage\n\nDonnées : © contributeurs OpenStreetMap · ODbL 1.0 · extrait BBBike\n/* SOMA v75 terrain: explicit source-only 5 m centre pilot. */ /* SOMA v76 architecture: source-bound Atlas conflict audit. */ /* SOMA v77 architecture: distinguish calculated reference and IGN roof statistics. */",
+        "resources": []
+      }
+    },
+    {
+      "label": "native walk",
+      "state": {
+        "title": "SOMA//MASSILIA 0.78 — Marseille augmentée",
+        "url": "https://massilia-cyberpunk.vercel.app/",
+        "version": "0.78.0",
+        "zone": "geo:V52-MC-33",
+        "geographicDistrict": true,
+        "paused": false,
+        "position": {
+          "x": 0,
+          "y": 8.262324525621576,
+          "z": 1.28128
+        },
+        "selectedPlace": null,
+        "openPanels": [],
+        "body": "SOMA//MASSILIA 0.78\nJ1 · 21:25 · Soirée\nMarseille · Cours Belsunce / Rue de la Providence\nCellule NULL · Nuit claire · 21:25\nGARE SAINT-CHARLES\nBoulevard d’Athènes\n125 m · Marseille · La Canebière / Allée Léon Gambetta\n[G] Rencontrer Sofia Amari · Le Résonance\nACTE III · 0.45\nVille ouverte\nAppel disponible · Un homme derrière la balise\nStation Zéro\nCALCAIRE / VILLE\nNuit claire\ncontinuité urbaine 0.42\nINCONNU\n0\nprochain palier 80\n1440 CR\nF6 DOSSIERS\nCONTINUITÉ SAUVEGARDÉE\nLieu découvert — Carrefour City\nNV 1\n0/336 XP\nINTÉGRITÉ\n100/104\nBLINDAGE\n65/120\nDETTE\n28\nTENSION\n12\nMÉMOIRE\n100\nF1 · 2\nGel de réparation somatique\nF2 · 1\nPatch de blindage\nF3 · 1\nCellule neurale\nF4 · 0\nTampon mnésique\nMARSEILLE CENTRE · TRAME DE VÉRITÉ\nV52-MC-33 · Rue de la Providence / Rue Magenta\nSOURCE DÉCLARÉE · STAGED NON CERTIFIÉ · cache 2/13\nAncrer la Canebière · 1/10\nIGN · 6.54 m · grille 25 m · non certifié\nPRÉCISION · HANCHE\nP-12 TRAME · 100 % stabilité\nDEBOUT · 1,72 M\nARME BASSE\nP-12 TRAME\n12 / 72\nSEMI\nCORTEX TACTIQUE · MAJ+F1\n\nCyberdeck 100 · charge neurale 0%\n\nà l’arrêt · silencieux · suspicion 0%\n\nMaj+F2 Écho · Maj+F3 Rempart · Maj+F4 Ancrage\n\nDonnées : © contributeurs OpenStreetMap · ODbL 1.0 · extrait BBBike\n/* SOMA v75 terrain: explicit source-only 5 m centre pilot. */ /* SOMA v76 architecture: source-bound Atlas conflict audit. */ /* SOMA v77 architecture: distinguish calculated reference and IGN roof statistics. */",
+        "resources": []
+      }
+    },
+    {
+      "label": "native tactical cortex",
+      "state": {
+        "title": "SOMA//MASSILIA 0.78 — Marseille augmentée",
+        "url": "https://massilia-cyberpunk.vercel.app/",
+        "version": "0.78.0",
+        "zone": "geo:V52-MC-33",
+        "geographicDistrict": true,
+        "paused": true,
+        "position": {
+          "x": 0,
+          "y": 8.262324525621576,
+          "z": 1.28128
+        },
+        "selectedPlace": null,
+        "openPanels": [
+          {
+            "id": "v70-tactics",
+            "title": "Cortex tactique"
+          }
+        ],
+        "body": "Lieu découvert — Carrefour City\n/* SOMA v75 terrain: explicit source-only 5 m centre pilot. */ /* SOMA v76 architecture: source-bound Atlas conflict audit. */ /* SOMA v77 architecture: distinguish calculated reference and IGN roof statistics. */\nCORTEX TACTIQUE\n\nTrois protocoles actifs alimentés par votre cyberdeck. Les puces et talents existants restent pris en compte par le combat et la discrétion.\n\nCyberdeck 100 / 100\nCharge neurale 0 / 100\nTension 12 / 100\nÉcho de trame · Maj+F2\n\nLit les corps dans votre champ de vue à 24 m pendant 5 s : rôle, intégrité et conseil tactique. Les obstacles restent opaques.\n\nCharge +16 · tension à partir de +1\n\nPrêt · attente 12 s\n\nActiver · 12 énergie\nRempart cortical · Maj+F3\n\nRéduit les impacts de combat de 55 %, jusqu’à 40 points absorbés, pendant 4 s.\n\nCharge +32 · tension à partir de +3\n\nPrêt · attente 24 s\n\nActiver · 28 énergie\nAncrage réflexe · Maj+F4\n\nRéduit de 35 % le recul de visée pendant 5 s. Ne modifie ni dégâts ni portée.\n\nCharge +24 · tension à partir de +2\n\nPrêt · attente 20 s\n\nActiver · 24 énergie\n\nUnités visibles · Écho de trame\nActivez Écho pour lire les unités visibles.\nIntrusion urbaine\n\nVisez une machine à moins de 18 m, sans obstacle.\n\nÉcran optique · 9 énergieVerrou moteur · 11 énergieDéconnexion arme · 14 énergie\n\nRempart et Ancrage interrompent l’accès aux hacks pendant leur activation. Écho reste compatible. Les implants cessent au chargement ; les délais et la charge neurale restent enregistrés.\n\nREVENIR À LA RUE",
+        "resources": []
+      }
+    },
+    {
+      "nativeControl": "[data-v70-close]"
+    },
+    {
+      "nativeControl": "#v62-list button.v62-place"
+    },
+    {
+      "label": "native map place",
+      "state": {
+        "title": "SOMA//MASSILIA 0.78 — Marseille augmentée",
+        "url": "https://massilia-cyberpunk.vercel.app/",
+        "version": "0.78.0",
+        "zone": "geo:V52-MC-33",
+        "geographicDistrict": true,
+        "paused": true,
+        "position": {
+          "x": 0,
+          "y": 8.262324525621576,
+          "z": 1.28128
+        },
+        "selectedPlace": "Carrefour City",
+        "openPanels": [
+          {
+            "id": "exploration62",
+            "title": "Marseille, à découvrir"
+          }
+        ],
+        "body": "Lieu découvert — Carrefour City\n/* SOMA v75 terrain: explicit source-only 5 m centre pilot. */ /* SOMA v76 architecture: source-bound Atlas conflict audit. */ /* SOMA v77 architecture: distinguish calculated reference and IGN roof statistics. */\nSOMA // CARTOGRAPHIE PERSONNELLE\nMarseille, à découvrir\n\n3 lieux découverts · 0 voyages\n\nRetour au terrain M / Échap\nTout\nTransports\nSoins\nCommerces\nAteliers\nCulture\nVie urbaine\nRepères\nDécouverts seulement\nFavoris\nMe centrer\n−\n+\n\n46 signaux proches non identifiés\n\nC\nCarrefour City\nCommerces · 12 m\nV\nHôtel Sainte-Marie\nVie urbaine · 22 m\nC\nTech Mobile\nCommerces · 24 m\nGlisser pour déplacer · molette pour zoomer · ? = lieu à approcher\nCarrefour City\n\nCommerces · 12 m\n\nPosition issue d’OpenStreetMap. Service et intérieur non garantis jouables. Arrivée recherchée à l’extérieur, à 32 m maximum.\nSuivre ce lieu\n☆ Ajouter aux favoris\nVoyage rapide à pied\n\nAccès contrôlé après chargement. Pas de soin, de paiement ni de duplication de véhicule.\n\nCarnet local · copie de secours automatique\nExporter le carnet\nImporter le carnet\nEffacer les découvertes\n© contributeurs OpenStreetMap · positions sources ; accès et activités de gameplay distincts.\nSauvegarde groupée",
+        "resources": []
+      }
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "docs/web-deployment-proof/massilia-cyberpunk-title.png",
+      "sha256": "809f2f6db6a14ad61b996c89c57fa66adb837b7c43fecef1e64f2124e1a1f064",
+      "bytes": 952267,
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "path": "docs/web-deployment-proof/massilia-cyberpunk-walk.png",
+      "sha256": "e09d0ad93761dbc96fb6512a2889d3034d9675610ec7102fdf2f7b8b6152cea9",
+      "bytes": 518570,
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "path": "docs/web-deployment-proof/massilia-cyberpunk-map.png",
+      "sha256": "5590396ad5c0356735854f43882da3da694ab8fdbf7bdaf28a43d697b1acfaba",
+      "bytes": 155640,
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      }
+    }
+  ],
+  "playable": true,
+  "initial": {
+    "title": "SOMA//MASSILIA 0.78 — Marseille augmentée",
+    "url": "https://massilia-cyberpunk.vercel.app/",
+    "version": "0.78.0",
+    "zone": "station-exterior",
+    "geographicDistrict": false,
+    "paused": true,
+    "position": {
+      "x": 0,
+      "y": 1.72,
+      "z": 25
+    },
+    "selectedPlace": null,
+    "openPanels": [
+      {
+        "id": "boot",
+        "title": ""
+      }
+    ],
+    "body": "UN CORPS À CRÉDIT. UNE VILLE À REPRENDRE.\n\nSOMA//\nMASSILIA\nCONTINUITÉ DE TERRAIN\n0.78\n\nLa ville réelle, les vies augmentées. Explorez les rues et les reliefs de Marseille, entre façades méditerranéennes, fenêtres éclairées et néons de quartier.\n\nReprendre sans se perdre. Ouvrez la carte avec M pour retrouver vos lieux découverts et vos itinéraires, ou le menu Pause pour missions, équipement et sauvegarde. Les outils de production sont rangés hors des menus joueur.\nEXPLORER MARSEILLE RÉELLE\nSURVOLER LA MÉTROPOLE\nREPRENDRE\nNOUVELLE CONTINUITÉ\nOPTIONS\n\n168 cellules sources · 10.5 km² de cellules · relief IGN à 25 m. Région encore partielle.\n\nDossiers & premières étapes\nCommandes & accessibilité\nLes visages de Massilia\nCARTE RÉELLE PARTIELLE · LIEUX À DÉCOUVRIR · MISSIONS PERSISTANTES\nVÉHICULES · IMPLANTS · CONSÉQUENCES\n/* SOMA v75 terrain: explicit source-only 5 m centre pilot. */ /* SOMA v76 architecture: source-bound Atlas conflict audit. */ /* SOMA v77 architecture: distinguish calculated reference and IGN roof statistics. */",
+    "resources": []
+  },
+  "title": "SOMA//MASSILIA 0.78 — Marseille augmentée",
+  "gameplay": {
+    "version": "0.78.0",
+    "zone": "geo:V52-MC-33",
+    "geographicDistrict": true,
+    "movement": {
+      "before": {
+        "x": 0,
+        "y": 8.290000171661378,
+        "z": 0
+      },
+      "after": {
+        "x": 0,
+        "y": 8.262324525621576,
+        "z": 1.28128
+      },
+      "inputs": [
+        {
+          "code": "KeyW",
+          "durationMs": 900
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "Short initial geographic walk, tactical cortex and discovered-place map only; no full campaign, all168cells, combat or metropolitan-cache coverage certification.",
+    "Native distribution contains168centre cells /10.5km²; full metropolitan cache remains absent.",
+    "Native geographic UI and generated facades are not an architectural1:1 certification."
+  ],
+  "verifiedAt": "2026-11-13T08:16:57.774Z"
+}

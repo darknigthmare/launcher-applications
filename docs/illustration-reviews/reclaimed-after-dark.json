@@ -1,0 +1,30 @@
+{
+  "id": "reclaimed-after-dark",
+  "asset": "assets/illustrations/reclaimed-after-dark.png",
+  "sha256": "c435e01d69b8ebc6fea97ae82d7a4bb596375d3b6135ff0273ab9e16c0d410f1",
+  "provider": "OpenAI",
+  "generator": "image_gen.imagegen",
+  "prompt": "Create ONE landscape 16:9 promotional illustration by faithfully editing the FIRST attached native gameplay screenshot. The two other images only establish this game's identity and subdued black/amber/cyan palette; do NOT use their cinematic background as a different game scene. Match the first image's actual top-down orthographic 2D game renderer: near-black wet stone harbor ground, large flat corrugated shipping-container rectangles in the same positions and scale, small square wall vents, the tiny original player near left with its actual triangular desaturated blue flashlight beam pointing toward the relay at upper-left center, circular outlined relay terminals. Keep the original restrained dark textures, simple sprite silhouettes, camera height, layout and proportions. Remove ALL HUD, menu panels, frames, tutorial text, counters and relay text labels; reconstruct only the same ground underneath those overlays. No text, no title, no logo, no invented props, no new character or monster, no 3D/isometric perspective, no cinematic restaging, no photorealism, no generic zombie poster. The composition must remain recognizably this exact playable container-yard scene and its tiny scale. This is promotional art derived from a screenshot, not a claim of new gameplay. Return the single image only.",
+  "references": [
+    {
+      "path": "assets/screenshots/reclaimed-after-dark/05.png",
+      "sha256": "6cb1628f9f38528f719efb1bf47cc05614af3a925070101ba1d77abcf3c0d987"
+    },
+    {
+      "path": "assets/screenshots/reclaimed-after-dark/01.png",
+      "sha256": "0d0638efa917174b2adcbf6d4f366fc34c520d14a42695bf248ebac5c8bb50c5"
+    },
+    {
+      "path": "assets/screenshots/reclaimed-after-dark/04.png",
+      "sha256": "089f4b8bd0fbfa118a7e27c8f9b6e47be2c81a7db069f3991f2159232efc4bc6"
+    }
+  ],
+  "reviewedAt": "2026-11-13T06:35:53.279590+00:00",
+  "differences": [
+    "HUD, tutoriel et libellés retirés ; les surfaces qui étaient masquées sont reconstituées, pas capturées.",
+    "Textures et faisceau légèrement plus lisibles ; quelques contours et positions de détail varient après génération.",
+    "Vue strictement de dessus, échelle minuscule du joueur, conteneurs et relais conservés ; aucune nouvelle scène ni créature."
+  ],
+  "verdict": "accepted",
+  "acceptanceScope": "Fidélité visuelle comparée au rendu natif référencé pour une illustration promotionnelle générée ; ce verdict ne certifie ni identité pixel à pixel, ni conformité canonique globale 1:1, ni nouvelle capture de gameplay."
+}

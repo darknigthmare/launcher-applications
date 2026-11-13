@@ -1,0 +1,28 @@
+{
+  "id": "riftcasters-3d",
+  "asset": "assets/illustrations/riftcasters-3d.png",
+  "sha256": "2a9a16fe487b29e6f283787be944885e89676293b97cfc84f827e376337215d5",
+  "references": [
+    {
+      "path": "assets/screenshots/riftcasters-3d/03.png",
+      "sha256": "64a548d8289f9d8e649c936c522a976980984456502b5c8a3682c88edae76eed"
+    },
+    {
+      "path": "assets/screenshots/riftcasters-3d/04.png",
+      "sha256": "8b73397e8bc78af24f8341a4775187f6fe9a7f63fa0557418a53c36737776f45"
+    },
+    {
+      "path": "assets/screenshots/riftcasters-3d/01.png",
+      "sha256": "1026aa93836a20da1d8563be9c1637dea1509a58bb47eca2a8372d7cae054ce6"
+    }
+  ],
+  "reviewedAt": "2026-11-13T06:35:18.996182+00:00",
+  "provider": "OpenAI",
+  "generator": "image_gen",
+  "prompt": "Generate a single landscape 16:9 illustration strictly faithful to the native low-detail geometric WebGL browser game in these references, with no screen UI. Preserve the same elevated slightly oblique camera and exactly this visual language: a nearly black circular arena seen as an ellipse, a very fine dark blue square floor grid, thin desaturated blue circular perimeter, a sparse ring of simple tall narrow blue and violet rectangular prism pillars. Near the lower-left of center is the tiny shipped player avatar, merely a blue faceted cone-shaped body with a plain pale-grey spherical head, standing inside a pale grey-green outlined ring. At upper-center is the same violet rift: several thick pastel-purple tubular torus loops intertwined into a loose three-dimensional knot, tiny floating lavender and pale-grey cubes around it, a thin purple circular ground marking and restrained violet light underneath. The SECOND reference shows the same player inside a delicate spherical wireframe aegis; include that exact modest wireframe bubble around the simple blue-cone avatar. Keep the native scale and arrangement, dark sparse palette and rudimentary untextured geometry. Remove all HUD, words, menus, title, numbers, icons and labels. Do not add a realistic human wizard, facial features, hands, robes, magic staff, weapons, enemies, architecture, intricate fantasy stonework or dramatic cinematic effects. Do not upgrade the native game to glossy realism. It must look like a clean illustration made from this exact browser renderer's primitive shapes, one coherent arena scene.",
+  "verdict": "accepted",
+  "differences": [
+    "Le HUD, les titres et les commandes sont retirés pour cadrer l’arène seule.",
+    "La caméra, l’espacement des piliers, les boucles de la faille et le maillage de l’égide sont recomposés. Les primitives réellement jouées — cône bleu, tête sphérique claire, anneaux violets, cubes et grille — sont conservées sans inventer un personnage détaillé ou un autre style graphique."
+  ]
+}

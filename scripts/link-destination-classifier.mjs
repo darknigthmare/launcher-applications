@@ -37,3 +37,14 @@ export function classifyLinkDestination({requestedUrl,effectiveUrl,status,header
   }
   return {state:"broken",reason:"Échec HTTP explicite sur l'URL du launcher"};
 }
+
+/** Preserve the HTTP observation while keeping an unpublished game disabled. */
+export function applyPublicationPolicy(result, accessPolicy) {
+  if(accessPolicy!=="deployment-pending")return result;
+  return {...result,
+    destinationState:result.state,
+    destinationReason:result.reason||"",
+    state:"publication-pending",
+    reason:"Publication Vercel en attente ; le lancement reste désactivé dans le launcher"
+  };
+}

@@ -1,0 +1,143 @@
+{
+  "id": "massilia-cyberpunk",
+  "url": "https://massilia-cyberpunk.vercel.app/",
+  "deploymentId": "dpl_HdedWdTD6mGtRngZMEj35M5QKavx",
+  "readyState": "READY",
+  "verifiedAt": "2026-11-13T08:16:29.935Z",
+  "sourceRepository": "https://github.com/darknigthmare/massilia-cyberpunk",
+  "sourceCommit": "8dc3e0f9ee5155c361468924947100ba44cd3bc8",
+  "browser": {
+    "title": "SOMA//MASSILIA 0.78 — Marseille augmentée",
+    "playable": true,
+    "version": "0.78.0"
+  },
+  "limitations": [
+    "Provided 168-cell centre only; optional full metropolitan cache is absent.",
+    "Short native movement and menu smoke, not a complete campaign or performance certification."
+  ],
+  "version": "0.78.0",
+  "coverage": {
+    "cells": 168,
+    "areaKm2": 10.5,
+    "completeMetropole": false,
+    "optionalMetropoleCacheIncluded": false
+  },
+  "checks": [
+    "Native v0.78 starts",
+    "Native keyboard movement changes position in provided centre",
+    "Cortex opens with native shortcut",
+    "Native cartography opens",
+    "Discovered-place detail opens",
+    "Manifest and eight original gzip cell assets load and decode with matching SHA"
+  ],
+  "movement": {
+    "before": {
+      "x": 0,
+      "y": 8.290000171661378,
+      "z": 0
+    },
+    "after": {
+      "x": 0,
+      "y": 8.233390895667222,
+      "z": 2.6208000000000014
+    }
+  },
+  "assets": {
+    "htmlSha256": "e550b4ed050a953b9a5f19180f451299d79ecd9e9c4eba4e2906fcbd16dd2af1",
+    "publicChecks": [
+      {
+        "path": "/",
+        "status": 200,
+        "bytes": 67338716,
+        "sha256": "e550b4ed050a953b9a5f19180f451299d79ecd9e9c4eba4e2906fcbd16dd2af1",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "path": "SOMA_MASSILIA_URBAIN_v0_78.html",
+        "status": 200,
+        "bytes": 67338716,
+        "sha256": "e550b4ed050a953b9a5f19180f451299d79ecd9e9c4eba4e2906fcbd16dd2af1",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "path": "metropole-viewer-v78.html",
+        "status": 200,
+        "bytes": 1802867,
+        "sha256": "44ffd606b3ecbe2f34e5b49356573187e095273b9ac05277f952d8d2dad2e326",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "path": "data/v69/world/manifest.json",
+        "status": 200,
+        "bytes": 178967,
+        "sha256": "443d24d1acb87fa3e264392a953b95b27d966e7eb1ff64abf3bcc9d157b10b21",
+        "contentType": "application/json; charset=utf-8"
+      }
+    ],
+    "manifestPathsMatched": 729,
+    "nativeFileHashesMatched": 728,
+    "buildMetadataDifferences": [
+      "data/v78/LAUNCH_CACHE.json"
+    ],
+    "cellSamples": [
+      {
+        "path": "tiles/V52-MC-11.vector.json.gz",
+        "role": "vector",
+        "status": 200,
+        "sha256": "96768eb7f0916de29d84c602b73b21e1a364204763a4f9368e72c518c37c2708",
+        "jsonKeys": 12
+      },
+      {
+        "path": "tiles/V52-MC-11.terrain.json.gz",
+        "role": "terrain",
+        "status": 200,
+        "sha256": "8f3dcbeda6481381fbf49b7931efbbf095d2209c1e3dac7a9a0762cbc2ef05c5",
+        "jsonKeys": 9
+      },
+      {
+        "path": "tiles/V52-MC-11.navigation.json.gz",
+        "role": "navigation",
+        "status": 200,
+        "sha256": "b8a462ae9ca8825a48a6b9e23d0fd13f68fb49f40dd5346e60d53ed6128e2ba7",
+        "jsonKeys": 14
+      },
+      {
+        "path": "tiles/V52-MC-11.surfaces.json.gz",
+        "role": "surfaces",
+        "status": 200,
+        "sha256": "f6c96ef02d487edd73f23bcd3fe4732bf5862de898f9248a351bf3c4db2d9ec5",
+        "jsonKeys": 7
+      },
+      {
+        "path": "tiles/V52-MC-W06-S06.vector.json.gz",
+        "role": "vector",
+        "status": 200,
+        "sha256": "278f46bb326a9a0938d68fcdb27b6db191025603726b37c323877f2e53027bf1",
+        "jsonKeys": 12
+      },
+      {
+        "path": "tiles/V52-MC-W06-S06.terrain.json.gz",
+        "role": "terrain",
+        "status": 200,
+        "sha256": "22f96ef5fd97f51d3ffb7b688783fc2fcfe108714a01deefe163fe8e61293602",
+        "jsonKeys": 9
+      },
+      {
+        "path": "tiles/V52-MC-W06-S06.navigation.json.gz",
+        "role": "navigation",
+        "status": 200,
+        "sha256": "412ed1ae1150f9649b68411625443ee1fca9ef14789f0224b33afe1fc6e3bffe",
+        "jsonKeys": 14
+      },
+      {
+        "path": "tiles/V52-MC-W06-S06.surfaces.json.gz",
+        "role": "surfaces",
+        "status": 200,
+        "sha256": "bd1bf545ba1e992cf370cdfd5afa77dbb6adf598ca8ae54d2eb7d6bcd87bef54",
+        "jsonKeys": 7
+      }
+    ],
+    "hashComparisonScope": "729 public release-manifest entries compared with local release-manifest; direct public GET checks comprise four listed entry/viewer/world files plus eight browser cell samples. This is not a GET of every729 file."
+  },
+  "proofFiles": {}
+}
