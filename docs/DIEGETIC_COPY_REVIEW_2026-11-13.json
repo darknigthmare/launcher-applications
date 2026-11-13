@@ -1,0 +1,2375 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-13T06:35:45.529348+00:00",
+  "scope": "All112recentcatalogueentries; description,pitch,tags plus two source-attested genre corrections. Inline historical catalogue handled separately by root.",
+  "reviewedIds": [
+    "aziz-la-lumiere-dort",
+    "scp-foundation-site-director",
+    "soma-massilia",
+    "avp-hunt-hive-tcg",
+    "echobound",
+    "deadwall-last-enclosure",
+    "echo-rift",
+    "ombre-geek",
+    "son-of-a-legacy-forge",
+    "veilbound-les-visages-du-monde-brise",
+    "jingle-duel",
+    "black-case-inventory-protocol",
+    "vitrineverse",
+    "pip-le-tresor-des-huit-pattes",
+    "elyra-grand-pas",
+    "le-seuil-noir-protocole-orphee",
+    "le-registre-creux-les-epreuves-du-solde",
+    "echo-drive",
+    "derriere-le-tain",
+    "dustline-last-convoy",
+    "fractal-chaos-recursive-rift",
+    "chord-of-dread",
+    "croq-collect-le-tresor-au-fond-du-paquet",
+    "echo-forest",
+    "l-envers-service-de-nuit",
+    "carrion-walk-la-faim-des-rues",
+    "feather-beat-parade-nuptiale",
+    "l-envers-du-salut",
+    "chrono-recoil",
+    "dicebound-rpg",
+    "fractal-chaos-studio",
+    "echo-weave",
+    "eclipse-frontline-afterfall",
+    "le-rocher-qui-te-connait",
+    "lazarus-assembly",
+    "encrevivante-le-livre-qui-vous-regarde",
+    "emu-simulator-la-longue-marche",
+    "steel-stride-walker-front",
+    "hearts-and-horns-maid-bar",
+    "world-hive-wars",
+    "tiffany-pixelverse-omniverse",
+    "dead-feed",
+    "xeno-trace",
+    "digirift-go",
+    "duel-spirits-worldbound",
+    "le-vide-doit-manger",
+    "la-riviere-des-absents",
+    "voie-13-peage-de-nuit",
+    "vesper-rite-les-dettes-de-la-maison-creuse",
+    "tetracrypt-the-well",
+    "suture-noire-les-heritiers-du-gouffre",
+    "spiralis-prototype",
+    "souvenirs-retrouves",
+    "soleil-mort",
+    "snake-no-signal",
+    "rift-titan-protocol",
+    "retro-room-prototype",
+    "pulse-rail",
+    "nocturne-dead-frequency",
+    "neon-rift-racers",
+    "neon-descent",
+    "mr-bean-total-chaos-collection",
+    "moustique-the-video-game",
+    "moonlit-maid-cafe-simulator",
+    "meme-battle-internet-legends",
+    "manga-break-le-dernier-brouillon",
+    "kidz-tv-after-hours",
+    "harmonic-terraform",
+    "gamevault-room-3d",
+    "black-gospel-the-ninth-cadaver",
+    "bounce-arena-prototype-fan-jouable",
+    "black-signal-bastion-zero",
+    "astral-dominion",
+    "arcade-null-high-score-protocol",
+    "good-morning-hollowbrook",
+    "petits-poissons-red-tide",
+    "brigade-premier-degre",
+    "umbra-les-heures-noires",
+    "nocturne-signal",
+    "terra-testudo-les-mondes-dos",
+    "strike-command-desert-thunder",
+    "intravore",
+    "nexus-of-torment",
+    "jawa-the-duskmen",
+    "mecha-overdrive",
+    "spermatozoid-kart-omega",
+    "riff-rush",
+    "backrooms-liminal-escape",
+    "malaise-party",
+    "neon-clash-arena-protocol",
+    "planck-antimatter-dominion",
+    "the-house-of-the-dead-25d",
+    "gearstorm-boss-circuit",
+    "aliens-tantalus-frontier",
+    "mass-effect-relay-chronicles",
+    "resident-evil-bow-protocol",
+    "digital-circus-encore",
+    "yugioh-25d-holograms",
+    "riftcasters-3d",
+    "riftcasters-chaos-anglers",
+    "reclaimed-after-dark",
+    "deadline-outbreak",
+    "ragtime-rumble-complete-tour",
+    "silent-hill-halo-of-flesh",
+    "diva-pulse",
+    "derniere-ligne-zero-repli",
+    "fallout-marseille-mistral",
+    "parallaxe-protocole-9",
+    "massilia-cyberpunk",
+    "dont-look-when-they-say-soleil",
+    "maid-cafe-simulator-deluxe",
+    "avp-blood-arena"
+  ],
+  "summary": {
+    "reviewedEntries": 112,
+    "changedEntries": 99,
+    "descriptionsChanged": 97,
+    "pitchesChanged": 61,
+    "tagSetsChanged": 27,
+    "genresChanged": 2,
+    "inlineChangedEntries": 19,
+    "totalChangedEntriesIncludingInline": 118
+  },
+  "sourceEvidence": {
+    "primaryReadmes": [
+      {
+        "id": "mr-bean-total-chaos-collection",
+        "sha": "c69f290357b8bd94dcf467a8989a3466f65eda6b",
+        "url": "https://github.com/darknigthmare/mr-bean-total-chaos-collection/blob/main/README.md",
+        "bytes": 6032
+      },
+      {
+        "id": "moonlit-maid-cafe-simulator",
+        "sha": "7468c27b37550546c7a534e44534d307619135df",
+        "url": "https://github.com/darknigthmare/moonlit-maid-cafe-simulator/blob/main/README.md",
+        "bytes": 1427
+      },
+      {
+        "id": "meme-battle-internet-legends",
+        "sha": "d06fceb5daeb541ccb7d09806c4b63bc22362408",
+        "url": "https://github.com/darknigthmare/meme-battle-internet-legends/blob/main/README.md",
+        "bytes": 3847
+      },
+      {
+        "id": "manga-break-le-dernier-brouillon",
+        "sha": "7579bb8d98028fb235fd38fca779a4cd53e2fc7a",
+        "url": "https://github.com/darknigthmare/manga-break-le-dernier-brouillon/blob/main/README.md",
+        "bytes": 5961
+      },
+      {
+        "id": "kidz-tv-after-hours",
+        "sha": "88c21e47ce128988866e6a237f44817474e210f5",
+        "url": "https://github.com/darknigthmare/kidz-tv-after-hours/blob/main/README.md",
+        "bytes": 8446
+      },
+      {
+        "id": "harmonic-terraform",
+        "sha": "b4654170d64241a1220c6e7a337dde2ad96d42eb",
+        "url": "https://github.com/darknigthmare/harmonic-terraform/blob/main/README.md",
+        "bytes": 8749
+      },
+      {
+        "id": "gamevault-room-3d",
+        "sha": "64b7d9a659048f1a2fd0b045cd90e1e385dae199",
+        "url": "https://github.com/darknigthmare/gamevault-room-3d/blob/main/README.md",
+        "bytes": 11930
+      },
+      {
+        "id": "black-gospel-the-ninth-cadaver",
+        "sha": "f841932f1e80719f51fce0b355054a5fccf72f2f",
+        "url": "https://github.com/darknigthmare/black-gospel-the-ninth-cadaver/blob/main/README.md",
+        "bytes": 11944
+      },
+      {
+        "id": "bounce-arena-prototype-fan-jouable",
+        "sha": "e393223e2f5841bc74cf3245b36d496c2f2b88dc",
+        "url": "https://github.com/darknigthmare/bounce-arena-prototype-fan-jouable/blob/main/README.md",
+        "bytes": 8276
+      },
+      {
+        "id": "black-signal-bastion-zero",
+        "sha": "355affd0827c85256b92be5df5a8cb0df723345e",
+        "url": "https://github.com/darknigthmare/black-signal-bastion-zero/blob/main/README.md",
+        "bytes": 12821
+      },
+      {
+        "id": "good-morning-hollowbrook",
+        "sha": "2e421986bd6d7f5a7e88b24019ee6d8cb70bd14f",
+        "url": "https://github.com/darknigthmare/good-morning-hollowbrook/blob/main/README.md",
+        "bytes": 9689
+      },
+      {
+        "id": "petits-poissons-red-tide",
+        "sha": "664a1b59bccd25cf4e5f749cc0b91e36f53432ea",
+        "url": "https://github.com/darknigthmare/petits-poissons-red-tide/blob/main/README.md",
+        "bytes": 6484
+      },
+      {
+        "id": "umbra-les-heures-noires",
+        "sha": "b50880b52ce192c55f8afe9921627b35ec221e41",
+        "url": "https://github.com/darknigthmare/umbra-les-heures-noires/blob/main/README.md",
+        "bytes": 6626
+      },
+      {
+        "id": "terra-testudo-les-mondes-dos",
+        "sha": "21d3f71b89a53cf0f56274b02c80e87009523a79",
+        "url": "https://github.com/darknigthmare/terra-testudo-les-mondes-dos/blob/main/README.md",
+        "bytes": 6056
+      },
+      {
+        "id": "strike-command-desert-thunder",
+        "sha": "c716ad6e8a38b6d33e6208af82ace9c720ff6880",
+        "url": "https://github.com/darknigthmare/strike-command-desert-thunder/blob/main/README.md",
+        "bytes": 2793
+      },
+      {
+        "id": "neon-clash-arena-protocol",
+        "sha": "65b1456a3ab2ccc616ad306bd2d9708c6cd137a6",
+        "url": "https://github.com/darknigthmare/neon-clash-arena-protocol/blob/main/README.md",
+        "bytes": 734
+      },
+      {
+        "id": "planck-antimatter-dominion",
+        "sha": "e2685b19b277489359c90feb2ad0c557a19f87f7",
+        "url": "https://github.com/darknigthmare/planck-antimatter-dominion/blob/main/README.md",
+        "bytes": 2590
+      },
+      {
+        "id": "the-house-of-the-dead-25d",
+        "error": "gh: Not Found (HTTP 404)"
+      },
+      {
+        "id": "gearstorm-boss-circuit",
+        "sha": "c0d0e2c11073e4cf7aa60a5fd3fac4473c82740c",
+        "url": "https://github.com/darknigthmare/gearstorm-boss-circuit/blob/main/README.md",
+        "bytes": 16670
+      }
+    ],
+    "additionalReadmesReviewed": {
+      "le-seuil-noir-protocole-orphee": "README.md read through GitHub connector on 2026-11-13; core premise and actions used, no source version claimed deployed",
+      "echo-drive": "README.md read through GitHub connector on 2026-11-13; core premise and actions used, no source version claimed deployed",
+      "dicebound-rpg": "README.md read through GitHub connector on 2026-11-13; core premise and actions used, no source version claimed deployed",
+      "pulse-rail": "README.md read through GitHub connector on 2026-11-13; core premise and actions used, no source version claimed deployed",
+      "tetracrypt-the-well": "README.md read through GitHub connector on 2026-11-13; core premise and actions used, no source version claimed deployed",
+      "lazarus-assembly": "README.md read through GitHub connector on 2026-11-13; core premise and actions used, no source version claimed deployed",
+      "le-rocher-qui-te-connait": "README.md read through GitHub connector on 2026-11-13; core premise and actions used, no source version claimed deployed",
+      "fractal-chaos-studio": "README.md read through GitHub connector on 2026-11-13; core premise and actions used, no source version claimed deployed",
+      "emu-simulator-la-longue-marche": "README.md read through GitHub connector on 2026-11-13; core premise and actions used, no source version claimed deployed",
+      "spiralis-prototype": "README.md read through GitHub connector on 2026-11-13; core premise and actions used, no source version claimed deployed"
+    },
+    "publicDocuments": [
+      {
+        "id": "planck-antimatter-dominion",
+        "httpStatus": 200,
+        "url": "https://planck-antimatter-dominion.vercel.app/",
+        "title": "PLANCK: ANTIMATTER DOMINION",
+        "bytes": 12337,
+        "scripts": [
+          "/src/main.js"
+        ],
+        "versionEvidence": [
+          "au tour par tour.\">",
+          "Campagne</h2></div><span id=\"campaign-progress\" class=\"progress-label\">0 / 6</span></div>"
+        ]
+      },
+      {
+        "id": "gearstorm-boss-circuit",
+        "httpStatus": 200,
+        "url": "https://gearstorm-boss-circuit.vercel.app/",
+        "title": "GEARSTORM: Boss Circuit v2.11.0",
+        "bytes": 39796,
+        "scripts": [
+          "pwa-update-v2.11.0.js",
+          "story.js",
+          "expansion-story.js",
+          "boss-roster.js",
+          "performance-records.js",
+          "game.js"
+        ],
+        "versionEvidence": [
+          "v2.11.0 — Riva Spark affronte 30 machines pour rendre six districts et vingt-quatre services à ",
+          "v2.11.0\" />",
+          "v2.11.0\" />",
+          "Campagne narrative et Forge d’entraînement.\" />",
+          "v2.11.0</title>",
+          "Forge aligne vingt-quatre boss qui connaissent leurs règles — et te les annoncent.</p>",
+          "version\">",
+          "Forge annoncées avant d’agir</span></li>",
+          "Forge</strong><small id=\"continue-forge-detail\">Le checkpoint sait quelle machine vient ensuite",
+          "Campagne · boss déjà débloqués</button>",
+          "Forge <span aria-hidden=\"true\">→</span></button>",
+          "Forge // règles rendues publiques</span>"
+        ]
+      },
+      {
+        "id": "black-signal-bastion-zero",
+        "httpStatus": 200,
+        "url": "https://black-signal-bastion-zero.vercel.app/",
+        "title": "BLACK SIGNAL: BASTION ZERO",
+        "bytes": 33674,
+        "scripts": [
+          "./src/main.js"
+        ],
+        "versionEvidence": [
+          "Campagne, incursions et survie infinie dans un FPS roguelite d'horreur hors ligne.\" />",
+          "version\">VERSION 2.0.1 // BUILD CODEX</p>"
+        ]
+      },
+      {
+        "id": "harmonic-terraform",
+        "httpStatus": 200,
+        "url": "https://harmonic-terraform.vercel.app/",
+        "title": "HARMONIC TERRAFORM",
+        "bytes": 15025,
+        "scripts": [
+          "src/main.js"
+        ],
+        "versionEvidence": []
+      }
+    ],
+    "nativeEvidence": "Existing pinned docs/media-proof/* and docs/link-proof/* for recovered games, in particular the18recoveredentries. Their engine, source, availability and fidelity limits remain in these evidence files and the matrix."
+  },
+  "policy": [
+    "Use the world, playerrole,actions andstakes; do not fabricate proper names, lore or extra mechanics.",
+    "Source README is evidence of premise and mechanics, not an automatic certification of deployed completeness. No new source version is presented as public solely from README.",
+    "Keep access, distribution, identity and provenance in metadata; remove implementation, QA and certification prose from cards.",
+    "Minimal anthology renderers remain minimal: no invented light signal, cafe customer animation or recipes.",
+    "OnlyHARMONIC andBLACKSIGNAL genre changes: publicHTML plus matching README attest musicplatformer andhorrorFPS."
+  ],
+  "changes": [
+    {
+      "id": "aziz-la-lumiere-dort",
+      "fields": [
+        "tags",
+        "description"
+      ],
+      "before": {
+        "tags": [
+          "Jeu original",
+          "Survie & horreur",
+          "Archéologie",
+          "2,5D",
+          "Lumière",
+          "Choix narratifs",
+          "PWA"
+        ],
+        "description": "Survival horror archéologique 2,5D situé sous le plateau de Gizeh en 1926. Six chapitres, 89 éléments interactifs, six familles de menaces, dix-huit archives, seize succès et quatre fins dépendent d’un projecteur que le joueur doit maintenir en vie tandis qu’Aziz retient ce que les fresques emprisonnent."
+      },
+      "after": {
+        "tags": [
+          "Jeu original",
+          "Survie & horreur",
+          "Archéologie",
+          "2,5D",
+          "Lumière",
+          "Choix narratifs"
+        ],
+        "description": "Sous le plateau de Gizeh, en 1926, les fresques retiennent des ombres qu'il ne faut pas réveiller. Maintiens le grand projecteur en vie, explore les vestiges et rassemble les archives. Chaque déplacement et chaque choix pèsent sur ce qu'Aziz pourra encore contenir."
+      }
+    },
+    {
+      "id": "scp-foundation-site-director",
+      "fields": [
+        "description"
+      ],
+      "before": {
+        "description": "Jeu de gestion complet où une direction de Site construit sa couverture régionale, organise les installations de surface, creuse un complexe de confinement vertical et rédige ses procédures face aux crises. Ressources, personnel, renseignement, éthique et suspicion évoluent au fil de la campagne Deep Protocol."
+      },
+      "after": {
+        "description": "Prends la direction d'un Site de la Fondation : construis sa couverture régionale, organise les installations de surface et creuse le complexe de confinement. Recrute le personnel, répartis les ressources et prépare tes procédures face aux crises. Tes décisions engagent le renseignement, l'éthique et la suspicion qui entourent le Site."
+      }
+    },
+    {
+      "id": "soma-massilia",
+      "fields": [
+        "tags",
+        "description"
+      ],
+      "before": {
+        "tags": [
+          "Jeu original",
+          "RPG & progression",
+          "Cyberpunk",
+          "Infiltration",
+          "Piratage",
+          "Raycasting",
+          "Campagne solo"
+        ],
+        "description": "Action-RPG cyberpunk solo situé à Néo-Massilia en 2197, où le corps est un abonnement et l’identité une clause révocable. La version 0.6.0 poursuit La Dette de Chair et six opérations compactes : combats en vue subjective, ordres tactiques du Cortex et piratage du Spectre influencent factions, recrutements et cinq conclusions. Trois châssis, huit implants et la Cellule NULL accompagnent cette reconstruction originale, distincte du projet géographique local Massilia Cyberpunk."
+      },
+      "after": {
+        "tags": [
+          "Jeu original",
+          "RPG & progression",
+          "Cyberpunk",
+          "Infiltration",
+          "Piratage",
+          "Campagne solo"
+        ],
+        "description": "À Néo-Massilia en 2197, ton corps est un abonnement et ton identité une clause révocable. Choisis ton châssis et tes implants, combats, donne tes ordres au Cortex ou pirate avec le Spectre. Tes décisions au fil de La Dette de Chair et des opérations de la Cellule NULL influencent les factions, les recrutements et l’issue de ta dette."
+      }
+    },
+    {
+      "id": "avp-hunt-hive-tcg",
+      "fields": [
+        "description"
+      ],
+      "before": {
+        "description": "Le terminal de commandement ouvre un conflit de cartes entre Ruche, Chasse et forces humaines. Constitue un deck de trente cartes dans un arsenal de 158, déploie tes unités sur trois voies et maîtrise les effets de Couvée, Sang acide, Trophée et Pathogène. Huit missions de campagne, boosters et collection fonctionnent hors ligne."
+      },
+      "after": {
+        "description": "Le terminal de commandement ouvre un conflit de cartes entre Ruche, Chasse et forces humaines. Constitue ton deck, déploie tes unités sur trois voies et maîtrise les effets de Couvée, Sang acide, Trophée et Pathogène. Mène les opérations de campagne et développe ta collection pour préparer les prochains engagements."
+      }
+    },
+    {
+      "id": "echobound",
+      "fields": [
+        "tags",
+        "description"
+      ],
+      "before": {
+        "tags": [
+          "Jeu original",
+          "Aventure & exploration",
+          "Action-RPG",
+          "Compagnon",
+          "Reconstruction",
+          "Codex",
+          "Sauvegarde locale"
+        ],
+        "description": "Action-RPG d’exploration dans la cité morte de Nox Arca. Le joueur choisit un partenaire vivant, restaure ses quartiers, affronte des créatures, développe le lien d’Unisson et reconstitue le Codex à travers une campagne jouable au clavier, à la manette ou au tactile."
+      },
+      "after": {
+        "tags": [
+          "Jeu original",
+          "Aventure & exploration",
+          "Action-RPG",
+          "Compagnon",
+          "Reconstruction",
+          "Codex"
+        ],
+        "description": "La cité morte de Nox Arca attend d'être réveillée. Choisis un partenaire vivant, restaure les quartiers et affronte les créatures qui les parcourent. Développe le lien d'Unisson avec ton compagnon et rassemble les pages du Codex pour redonner une âme à la Cité des Échos."
+      }
+    },
+    {
+      "id": "deadwall-last-enclosure",
+      "fields": [
+        "description"
+      ],
+      "before": {
+        "description": "D-17 n'est pas une forteresse achevée : il faut encore la nourrir, la défendre et l'approvisionner. Explore les routes et les haltes, fouille les bâtiments, gère le sac et les stocks, puis installe ateliers, couchages et récupérateurs. Pluie, combustible, matériaux et temps de travail existent réellement ; chaque expédition expose la colonie aux hordes."
+      },
+      "after": {
+        "description": "D-17 tient encore, mais la colonie manque de vivres, de matériaux et de protection. Explore les routes et les haltes, fouille les bâtiments et ramène ce que ton sac peut porter. Installe ateliers, couchages et récupérateurs ; entre pluie, combustible et temps de travail, chaque réparation doit être préparée avant l'arrivée des hordes."
+      }
+    },
+    {
+      "id": "echo-rift",
+      "fields": [
+        "description"
+      ],
+      "before": {
+        "description": "Blind test de science-fiction complet réunissant 72 échos originaux, une course solo, un party local simultané à quatre, une faille infinie et une campagne Archive Run en cinq secteurs. Le musée sonore, les modules de résonance et l’atelier audio personnel prolongent chaque partie."
+      },
+      "after": {
+        "description": "Reconnais les échos qui traversent la faille et retrouve les sons des cinq secteurs de l'Archive. Lance une course solo, partage une partie à quatre ou tiens dans la faille infinie. Le musée sonore, les modules de résonance et l'atelier audio prolongent ton exploration."
+      }
+    },
+    {
+      "id": "ombre-geek",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Déchiffre les silhouettes, complète ta collection et domine les six modes de jeu.",
+        "description": "Quiz visuel complet autour de 52 silhouettes vectorielles originales. Six modes — Arcade, Contre-la-montre, Survie, Duel local, Défi quotidien et Entraînement — combinent combos, indices, collection, expérience, statistiques et parties de deux à quatre joueurs."
+      },
+      "after": {
+        "pitch": "Regarde l'ombre, trouve la réponse et garde ton combo en vie.",
+        "description": "Une silhouette suffit-elle à reconnaître ce qui se cache derrière l'ombre ? Déchiffre les formes, utilise les indices et enchaîne les réponses pour compléter ta collection. Choisis l'Arcade, la course contre la montre ou la Survie, puis défie les autres joueurs en duel."
+      }
+    },
+    {
+      "id": "son-of-a-legacy-forge",
+      "fields": [
+        "tags",
+        "description"
+      ],
+      "before": {
+        "tags": [
+          "Jeu original",
+          "RPG & progression",
+          "Action",
+          "Roguelite",
+          "Dynastie",
+          "Boss",
+          "Sauvegarde locale"
+        ],
+        "description": "Action-RPG roguelite où deux origines forgent un héritier unique. Douze vagues, trois royaumes, trois boss, mutations, pouvoirs fusionnés et décisions d’éducation alimentent une dynastie persistante dont chaque enfant peut devenir le parent de la génération suivante."
+      },
+      "after": {
+        "tags": [
+          "Jeu original",
+          "RPG & progression",
+          "Action",
+          "Roguelite",
+          "Dynastie",
+          "Boss"
+        ],
+        "description": "Deux origines forgent un héritier unique. Traverse les royaumes, affronte les vagues et leurs boss, puis fais évoluer mutations et pouvoirs fusionnés. Tes décisions d'éducation façonnent une dynastie où chaque enfant peut transmettre son héritage à la génération suivante."
+      }
+    },
+    {
+      "id": "veilbound-les-visages-du-monde-brise",
+      "fields": [
+        "description"
+      ],
+      "before": {
+        "description": "Aventure d’action complète à travers sept zones d’un monde fracturé. Huit formes jouables transforment combat, exploration et réactions sociales, tandis que six boss, cinq Sceaux Primordiaux, des secrets et trois conclusions structurent la campagne."
+      },
+      "after": {
+        "description": "Le monde s'est fracturé en sept zones. Change de masque pour maîtriser huit formes, trouver de nouveaux passages et modifier tes rencontres. Cherche les Sceaux Primordiaux, découvre les secrets des lieux et affronte les gardiens qui séparent les fragments du monde."
+      }
+    },
+    {
+      "id": "jingle-duel",
+      "fields": [
+        "tags",
+        "description"
+      ],
+      "before": {
+        "tags": [
+          "Jeu original",
+          "Rythme & arcade",
+          "Musique",
+          "Microphone",
+          "Score",
+          "PWA",
+          "Hors ligne"
+        ],
+        "description": "Défi musical local où un jingle original et son logo animé apparaissent, puis le joueur le reproduit au micro. L’analyse dans le navigateur note mélodie, rythme, durée et netteté sans envoyer l’audio sur un serveur."
+      },
+      "after": {
+        "tags": [
+          "Jeu original",
+          "Rythme & arcade",
+          "Musique",
+          "Microphone",
+          "Score",
+          "Hors ligne"
+        ],
+        "description": "Écoute le jingle, observe son logo animé et reproduis-le au micro. Retrouve sa mélodie, son rythme et sa durée pour améliorer ta prestation au prochain essai."
+      }
+    },
+    {
+      "id": "black-case-inventory-protocol",
+      "fields": [
+        "description"
+      ],
+      "before": {
+        "description": "Jeu original de rangement tactique où chaque objet occupe une forme précise dans une mallette à grille. Douze contrats, modes aléatoire et bac à sable combinent rotation, chargement, soins, accessoires et optimisation du score."
+      },
+      "after": {
+        "description": "Chaque objet doit trouver sa place dans la mallette. Fais pivoter armes, soins et accessoires sur la grille, puis combine ton équipement pour remplir les contrats. Les formes se répondent, mais l'espace manque toujours au moment du dernier chargement."
+      }
+    },
+    {
+      "id": "vitrineverse",
+      "fields": [
+        "tags",
+        "description"
+      ],
+      "before": {
+        "tags": [
+          "Jeu original",
+          "Gestion & simulation",
+          "Collection",
+          "Décoration",
+          "Créativité",
+          "Progression",
+          "Sauvegarde locale"
+        ],
+        "description": "Jeu 2D de collection, décoration et gestion légère où le joueur compose sa vitrine idéale. Il achète objets et étagères, organise librement ses pièces, améliore le prestige de la galerie et accueille des visiteurs."
+      },
+      "after": {
+        "tags": [
+          "Jeu original",
+          "Gestion & simulation",
+          "Collection",
+          "Décoration",
+          "Créativité",
+          "Progression"
+        ],
+        "description": "Compose ta vitrine idéale : choisis les objets, installe les étagères et organise les pièces de ta collection. Fais évoluer la décoration et le prestige de la galerie pour accueillir les visiteurs dans un lieu qui te ressemble."
+      }
+    },
+    {
+      "id": "pip-le-tresor-des-huit-pattes",
+      "fields": [
+        "pitch",
+        "tags",
+        "description"
+      ],
+      "before": {
+        "pitch": "Équipe huit outils, explore trois régions et révèle le trésor de PIP.",
+        "tags": [
+          "Jeu original",
+          "Aventure & exploration",
+          "Action",
+          "Godot",
+          "3D",
+          "Boss",
+          "Progression"
+        ],
+        "description": "Jeu d’action-aventure 3D sous Godot où PIP, une araignée sauteuse, équipe un outil différent sur chacune de ses huit pattes. Trois régions, seize outils, cinq ennemis, trois boss et une progression permanente composent la campagne."
+      },
+      "after": {
+        "pitch": "Huit pattes, huit outils : trouve le passage qui mène au trésor de PIP.",
+        "tags": [
+          "Jeu original",
+          "Aventure & exploration",
+          "Action",
+          "3D",
+          "Boss",
+          "Progression"
+        ],
+        "description": "PIP, une araignée sauteuse, peut équiper un outil différent sur chacune de ses huit pattes. Explore trois régions, adapte ton équipement aux ennemis et aux boss, puis conserve tes découvertes pour poursuivre la chasse au trésor."
+      }
+    },
+    {
+      "id": "elyra-grand-pas",
+      "fields": [
+        "description"
+      ],
+      "before": {
+        "description": "Aventure mobile pixel-art complète où les pas font progresser une exploratrice à travers sept univers — fantasy, cyberpunk, horreur, science-fiction, jungle et monde céleste — avec quêtes, rencontres à choix et refuge évolutif."
+      },
+      "after": {
+        "description": "Chaque pas fait progresser Élyra à travers sept univers. Accomplis les quêtes, choisis l'issue de tes rencontres et retrouve ton refuge pour le faire évoluer. Des territoires fantastiques aux villes cyberpunk, la marche ouvre la suite de son voyage."
+      }
+    },
+    {
+      "id": "le-seuil-noir-protocole-orphee",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Survival horror 3D narratif original, jouable intégralement dans un navigateur.",
+        "description": "Survival horror 3D narratif original, jouable intégralement dans un navigateur."
+      },
+      "after": {
+        "pitch": "Compose les glyphes, traverse le Seuil et découvre ce qui te suit au retour.",
+        "description": "Depuis le Site Orphée, compose les sept glyphes du passage et pars explorer des mondes inconnus. Prépare ton équipement, accomplis tes objectifs et trouve une extraction avant que les dangers du lieu ne t’emportent. Chaque retour laisse des traces : contamination, décisions et échos menacent aussi ceux restés au Site."
+      }
+    },
+    {
+      "id": "le-registre-creux-les-epreuves-du-solde",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Jeu d’horreur 3D original de compétition mortelle, jouable dans un navigateur de bureau au clavier et à la souris ou avec une manette standard. La campagne complète réunit quatre épreuves, des concurrents contrôlés par IA, une créature traquant le bruit, une mécanique de miroir, une finale compét…",
+        "description": "Jeu d’horreur 3D original de compétition mortelle, jouable dans un navigateur de bureau au clavier et à la souris ou avec une manette standard. La campagne complète réunit quatre épreuves, des concurrents contrôlés par IA, une créature traquant le bruit, une mécanique de miroir, une finale compét…"
+      },
+      "after": {
+        "pitch": "Quatre épreuves à traverser. Un reflet à surveiller. Aucun bruit à laisser derrière toi.",
+        "description": "Entre dans une compétition mortelle où quatre épreuves mettent ta survie en jeu. Affronte les autres concurrents, surveille tes reflets et mesure le bruit de tes déplacements : une créature est à l’écoute."
+      }
+    },
+    {
+      "id": "echo-drive",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Le projet est original : il reprend l’idée générale d’un jeu piloté par la musique, mais n’utilise ni code, ni image, ni musique, ni marque provenant de Beat Hazard, Rift of the NecroDancer, Groove Coaster, Melody's Escape ou d’un autre jeu existant.",
+        "description": "Le projet est original : il reprend l’idée générale d’un jeu piloté par la musique, mais n’utilise ni code, ni image, ni musique, ni marque provenant de Beat Hazard, Rift of the NecroDancer, Groove Coaster, Melody's Escape ou d’un autre jeu existant."
+      },
+      "after": {
+        "pitch": "Choisis un morceau, entre dans son rythme et tiens jusqu’à la dernière pulsation.",
+        "description": "Ton morceau devient un terrain d’épreuve. Cours sur les voies de Pulse Runner, survis aux attaques de Hazard Arena ou prépare tes actions au rythme de Beat Grid. Pulsations, intensité et ruptures de la musique transforment les obstacles et les affrontements."
+      }
+    },
+    {
+      "id": "derriere-le-tain",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Jeu d’horreur à la première personne où les créatures n’existent visuellement que dans le miroir tenu au-dessus de l’épaule.",
+        "description": "Jeu d’horreur à la première personne où les créatures n’existent visuellement que dans le miroir tenu au-dessus de l’épaule."
+      },
+      "after": {
+        "pitch": "Regarde dans le miroir avant de croire que le passage est libre.",
+        "description": "Tiens le miroir au-dessus de ton épaule et observe ce que tes yeux ne voient pas directement. Les créatures n'apparaissent que dans son reflet : garde-les en vue pendant que tu explores les lieux."
+      }
+    },
+    {
+      "id": "dustline-last-convoy",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Jeu d’action et de conduite post-apocalyptique original en HTML5 Canvas. Le joueur pilote le Vesper, dernier véhicule capable d’escorter un cœur de purification de Cinder jusqu’à Haven.",
+        "description": "Jeu d’action et de conduite post-apocalyptique original en HTML5 Canvas. Le joueur pilote le Vesper, dernier véhicule capable d’escorter un cœur de purification de Cinder jusqu’à Haven."
+      },
+      "after": {
+        "pitch": "Le cœur de purification doit atteindre Haven. Prends le volant du dernier convoi.",
+        "description": "Pilote le Vesper, dernier véhicule capable d’escorter un cœur de purification de Cinder jusqu’à Haven. Tiens le convoi en mouvement et ouvre sa route dans un monde post-apocalyptique."
+      }
+    },
+    {
+      "id": "fractal-chaos-recursive-rift",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Fractal Chaos est un jeu d’action–roguelite original jouable dans un navigateur. Les armes ne sont pas des fusils ou des sorts classiques : le joueur matérialise des courbes récursives néon inspirées des courbes de Lévy, Dragon, Twin Dragon et Terdragon. Chaque tracé devient une zone de dégâts pe…",
+        "description": "Fractal Chaos est un jeu d’action–roguelite original jouable dans un navigateur. Les armes ne sont pas des fusils ou des sorts classiques : le joueur matérialise des courbes récursives néon inspirées des courbes de Lévy, Dragon, Twin Dragon et Terdragon. Chaque tracé devient une zone de dégâts pe…"
+      },
+      "after": {
+        "pitch": "Trace tes armes dans la faille et fais de chaque courbe une zone de danger.",
+        "description": "Matérialise des courbes récursives néon pour en faire tes armes. Les tracés de Lévy, Dragon, Twin Dragon et Terdragon dessinent tes zones d’attaque au fil des affrontements."
+      }
+    },
+    {
+      "id": "croq-collect-le-tresor-au-fond-du-paquet",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Croq’Collect est un jeu 3D original où le joueur achète des paquets de céréales, prépare réellement chaque portion, termine le paquet puis ouvre la capsule cachée au fond pour enrichir sa vitrine de figurines.",
+        "description": "Croq’Collect est un jeu 3D original où le joueur achète des paquets de céréales, prépare réellement chaque portion, termine le paquet puis ouvre la capsule cachée au fond pour enrichir sa vitrine de figurines."
+      },
+      "after": {
+        "pitch": "Le paquet se vide. Le trésor t'attend tout au fond.",
+        "description": "Choisis tes céréales, prépare chaque portion et termine le paquet pour atteindre la capsule cachée au fond. Ouvre-la, découvre la figurine et trouve-lui une place dans ta vitrine avant de chercher le prochain trésor."
+      }
+    },
+    {
+      "id": "echo-forest",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "trois relais à calibrer sous pression, avec checkpoint après chaque activation ; - huit cassettes placées différemment selon la seed de l’expédition ; - quatre piles de secours pour gérer la lampe ; - IA en états roam, search et chase, sensible au bruit, à la distance, à la visibilité et à la l…",
+        "description": "trois relais à calibrer sous pression, avec checkpoint après chaque activation ; - huit cassettes placées différemment selon la seed de l’expédition ; - quatre piles de secours pour gérer la lampe ; - IA en états roam, search et chase, sensible au bruit, à la distance, à la visibilité et à la l…"
+      },
+      "after": {
+        "pitch": "Retrouve les cassettes, rallume les relais et ménage la lumière qui te reste.",
+        "description": "Explore la forêt pour retrouver les cassettes et remettre trois relais en service. Chaque calibration exige de tenir sous pression ; économise les piles de ta lampe et surveille tes déplacements, car la menace réagit à ce qu’elle voit et entend."
+      }
+    },
+    {
+      "id": "carrion-walk-la-faim-des-rues",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "CARRION WALK est une édition jouable de survie inversée dans laquelle le joueur incarne un zombie lent, vulnérable et en décomposition dans une ville systémique. La force vient de la patience, de la contamination et de la horde, pas d’un héros surpuissant.",
+        "description": "CARRION WALK est une édition jouable de survie inversée dans laquelle le joueur incarne un zombie lent, vulnérable et en décomposition dans une ville systémique. La force vient de la patience, de la contamination et de la horde, pas d’un héros surpuissant."
+      },
+      "after": {
+        "pitch": "Garde tes forces, laisse la contamination gagner les rues et rassemble la horde.",
+        "description": "Tu es un zombie lent, vulnérable et rongé par la décomposition. Avance dans la ville avec patience, propage la contamination et rassemble la horde. Chaque rencontre exige de choisir quand approcher et quand attendre."
+      }
+    },
+    {
+      "id": "feather-beat-parade-nuptiale",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "FEATHER BEAT est un jeu de rythme original jouable dans un navigateur, construit autour de parades nuptiales d’oiseaux. Le joueur frappe quatre directions comme dans un jeu de danse d’arcade, tandis que chaque réussite fait progresser la chorégraphie de l’oiseau, transforme le décor et alimente l…",
+        "description": "FEATHER BEAT est un jeu de rythme original jouable dans un navigateur, construit autour de parades nuptiales d’oiseaux. Le joueur frappe quatre directions comme dans un jeu de danse d’arcade, tandis que chaque réussite fait progresser la chorégraphie de l’oiseau, transforme le décor et alimente l…"
+      },
+      "after": {
+        "pitch": "Trouve le rythme et laisse ta parade prendre son envol.",
+        "description": "Fais danser ton oiseau au rythme de sa parade nuptiale. Enchaîne les quatre directions : chaque réussite prolonge sa chorégraphie et fait évoluer le décor."
+      }
+    },
+    {
+      "id": "l-envers-du-salut",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Le Paradis se présente comme un lieu de paix, de beauté et de perfection. En réalité, il supprime les souvenirs, les contradictions et jusqu’à l’identité des âmes qu’il juge « impures ». L’Enfer, monstrueux en apparence, est devenu le dernier refuge de ceux qui refusent d’être effacés.",
+        "description": "Le Paradis se présente comme un lieu de paix, de beauté et de perfection. En réalité, il supprime les souvenirs, les contradictions et jusqu’à l’identité des âmes qu’il juge « impures ». L’Enfer, monstrueux en apparence, est devenu le dernier refuge de ceux qui refusent d’être effacés."
+      },
+      "after": {
+        "pitch": "Les portes du Paradis sont ouvertes. Tes souvenirs y survivront-ils ?",
+        "description": "Le Paradis promet la paix, mais efface les souvenirs et l'identité des âmes qu'il juge impures. L'Enfer est devenu le refuge de celles qui refusent de disparaître. Découvre ce qui se cache derrière le salut et ce qu'il reste à préserver de soi."
+      }
+    },
+    {
+      "id": "chrono-recoil",
+      "fields": [
+        "description"
+      ],
+      "before": {
+        "description": "La bataille est déjà terminée : récupère les projectiles à rebours, évite les paradoxes et rembobine la musique pour corriger tes erreurs. La version 1.6.0 réunit treize missions de campagne, quatre boss et 130 Chrono-épreuves, avec six difficultés et onze vaisseaux. Le mode Arcade conserve l’analyse de tes musiques personnelles entièrement sur l’appareil, sans téléversement."
+      },
+      "after": {
+        "description": "La bataille est déjà terminée : récupère les projectiles à rebours, évite les paradoxes et rembobine la musique pour corriger tes erreurs. Choisis ton vaisseau, traverse les missions et leurs boss, puis mesure ta maîtrise dans les Chrono-épreuves ou sur tes propres morceaux."
+      }
+    },
+    {
+      "id": "dicebound-rpg",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Le projet est une application web statique sans dépendance d'exécution, sans compte, sans télémétrie et sans service distant requis pour jouer.",
+        "description": "Le projet est une application web statique sans dépendance d'exécution, sans compte, sans télémétrie et sans service distant requis pour jouer."
+      },
+      "after": {
+        "pitch": "Cinq dés en main : choisis ce que tu gardes, ce que tu relances et ce que tu risques.",
+        "description": "À chaque tour, transforme une main de cinq dés en attaque, garde, soin ou altération. Choisis ta route parmi les combats, événements, boutiques et camps ; prépare ton héros avant d’affronter les élites et les boss. Chaque détour change ce que tu peux risquer au prochain lancer."
+      }
+    },
+    {
+      "id": "fractal-chaos-studio",
+      "fields": [
+        "pitch",
+        "tags",
+        "description"
+      ],
+      "before": {
+        "pitch": "Glisser ou flèches : déplacer la vue. - Molette, pincement, + / - : zoomer. - Double toucher ou R : recentrer. - Entrée : valider la mission ; H : demander un indice. - Ctrl/Cmd + Z, Ctrl/Cmd + Y : annuler et rétablir. - Manette : stick gauche pour déplacer, gâchettes pour zoomer, A pour valide…",
+        "tags": [
+          "Jeu original",
+          "Puzzle & cartes",
+          "Aventure",
+          "Stratégie",
+          "Puzzle",
+          "PWA"
+        ],
+        "description": "Glisser ou flèches : déplacer la vue. - Molette, pincement, + / - : zoomer. - Double toucher ou R : recentrer. - Entrée : valider la mission ; H : demander un indice. - Ctrl/Cmd + Z, Ctrl/Cmd + Y : annuler et rétablir. - Manette : stick gauche pour déplacer, gâchettes pour zoomer, A pour valide…"
+      },
+      "after": {
+        "pitch": "Observe le motif, ajuste ses courbes et retrouve la signature cachée dans la fractale.",
+        "tags": [
+          "Jeu original",
+          "Puzzle & cartes",
+          "Aventure",
+          "Stratégie",
+          "Puzzle"
+        ],
+        "description": "La fractale est ton terrain, ton énigme et ton outil. Observe une signature récursive, règle sa construction et retrouve sa géométrie. Les épreuves de silhouette, d’équilibre et de mémoire demandent de changer ta façon de regarder les motifs."
+      }
+    },
+    {
+      "id": "echo-weave",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "ECHO//WEAVE est un jeu musical procédural local dans lequel la musique ne crée ni une piste à suivre, ni une pluie de notes, ni une arène de tir. Elle découpe le temps en phrases et transforme les gestes du joueur en mémoires autonomes.",
+        "description": "ECHO//WEAVE est un jeu musical procédural local dans lequel la musique ne crée ni une piste à suivre, ni une pluie de notes, ni une arène de tir. Elle découpe le temps en phrases et transforme les gestes du joueur en mémoires autonomes."
+      },
+      "after": {
+        "pitch": "Fais un geste, écoute son écho et tisse la phrase suivante.",
+        "description": "La musique découpe le temps en phrases et transforme tes gestes en mémoires autonomes. Joue avec ces échos, laisse-les poursuivre leur mouvement et tisse les traces de ta présence au fil du morceau."
+      }
+    },
+    {
+      "id": "eclipse-frontline-afterfall",
+      "fields": [
+        "pitch",
+        "tags",
+        "description"
+      ],
+      "before": {
+        "pitch": "Jeu original de survivor-like / bullet heaven 2D vu du dessus, conçu comme une expérience autonome sans reprendre l’univers, les personnages, les textes, les images ni le code d’une autre œuvre.",
+        "tags": [
+          "Jeu original",
+          "Stratégie & tactique",
+          "Rythme",
+          "Stratégie",
+          "Action",
+          "PWA"
+        ],
+        "description": "Jeu original de survivor-like / bullet heaven 2D vu du dessus, conçu comme une expérience autonome sans reprendre l’univers, les personnages, les textes, les images ni le code d’une autre œuvre."
+      },
+      "after": {
+        "pitch": "Garde les ennemis à distance et tiens une seconde de plus.",
+        "tags": [
+          "Jeu original",
+          "Stratégie & tactique",
+          "Rythme",
+          "Stratégie",
+          "Action"
+        ],
+        "description": "Tiens face aux ennemis et fais pleuvoir tes tirs autour de toi. Dans cette survie vue du dessus, chaque instant gagné prolonge le combat."
+      }
+    },
+    {
+      "id": "le-rocher-qui-te-connait",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Jeu d’horreur et d’humour noir en pseudo-3D rétro, jouable dans un navigateur moderne sur ordinateur et téléphone. Version professionnelle 1.1.0 du 9 août 2026.",
+        "description": "Jeu d’horreur et d’humour noir en pseudo-3D rétro, jouable dans un navigateur moderne sur ordinateur et téléphone. Version professionnelle 1.1.0 du 9 août 2026."
+      },
+      "after": {
+        "pitch": "Relève les empreintes sans perdre de vue ce qui prend ta forme.",
+        "description": "Quatre promeneurs ont disparu autour d’un rocher dont la cavité prend la silhouette de celui qui le regarde. Envoyé de nuit pour un contrôle géologique, relève les empreintes et aligne tes postures avec la pierre. Chaque silhouette complétée rapproche le Correspondant, une copie minérale que ta lampe peut figer."
+      }
+    },
+    {
+      "id": "lazarus-assembly",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Le projet ne se limite pas à un écran de démonstration : il comprend une campagne complète, une économie, un mini-jeu de réanimation, des besoins continus, une personnalité émergente, des missions, des événements, des améliorations, des sauvegardes et plusieurs conclusions.",
+        "description": "Le projet ne se limite pas à un écran de démonstration : il comprend une campagne complète, une économie, un mini-jeu de réanimation, des besoins continus, une personnalité émergente, des missions, des événements, des améliorations, des sauvegardes et plusieurs conclusions."
+      },
+      "after": {
+        "pitch": "Donne-lui un corps, ramène-le à la vie et assume ce qu’il devient.",
+        "description": "Assemble un revenant à partir de neuf modules biologiques, puis accompagne-le pendant quatorze jours. Équilibre ses besoins, conduis la réanimation et choisis comment le soigner ou l’éduquer. Les ressources manquent et la ville observe : ses réactions comme tes méthodes décident de l’issue de l’expérience."
+      }
+    },
+    {
+      "id": "encrevivante-le-livre-qui-vous-regarde",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "ENCREVIVANTE est un jeu narratif original de type livre dont vous êtes le héros. La page de gauche porte le récit ; la page de droite met chaque lieu en mouvement sur Canvas. Les choix modifient les statistiques, les objets, les personnages préservés, les informations découvertes et la fin obtenue.",
+        "description": "ENCREVIVANTE est un jeu narratif original de type livre dont vous êtes le héros. La page de gauche porte le récit ; la page de droite met chaque lieu en mouvement sur Canvas. Les choix modifient les statistiques, les objets, les personnages préservés, les informations découvertes et la fin obtenue."
+      },
+      "after": {
+        "pitch": "Tourne la page, choisis ton passage et découvre ce que le livre retient de toi.",
+        "description": "Ouvre un livre dont les pages mettent les lieux en mouvement. Choisis ta route, rassemble les objets utiles et décide quels personnages préserver. Les informations découvertes et les décisions prises changent le récit jusqu’à sa conclusion."
+      }
+    },
+    {
+      "id": "emu-simulator-la-longue-marche",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Jeu de survie-aventure en vue du dessus, jouable au clavier, à la manette ou sur écran tactile, sans dépendance d’exécution externe.",
+        "description": "Jeu de survie-aventure en vue du dessus, jouable au clavier, à la manette ou sur écran tactile, sans dépendance d’exécution externe."
+      },
+      "after": {
+        "pitch": "Trouve l’eau, protège le nid et mène tes petits jusqu’au sanctuaire.",
+        "description": "Dans l’Outback de Kurrana, cherche de l’eau, construis ton nid et protège tes œufs. Guide tes trois petits à travers le territoire jusqu’au sanctuaire, puis poursuis l’exploration au fil des rencontres."
+      }
+    },
+    {
+      "id": "steel-stride-walker-front",
+      "fields": [
+        "pitch",
+        "tags",
+        "description"
+      ],
+      "before": {
+        "pitch": "STEEL STRIDE est un twin-stick shooter tactique en vue de dessus centré sur des marcheurs de combat. Le projet est un jeu HTML5 autonome, sans dépendance externe, jouable au clavier/souris, à la manette ou sur écran tactile.",
+        "tags": [
+          "Jeu original",
+          "Action & tir",
+          "Rythme",
+          "Stratégie",
+          "Action",
+          "PWA"
+        ],
+        "description": "STEEL STRIDE est un twin-stick shooter tactique en vue de dessus centré sur des marcheurs de combat. Le projet est un jeu HTML5 autonome, sans dépendance externe, jouable au clavier/souris, à la manette ou sur écran tactile."
+      },
+      "after": {
+        "pitch": "Mets le marcheur en mouvement, garde tes cibles en joue et tiens le front.",
+        "tags": [
+          "Jeu original",
+          "Action & tir",
+          "Rythme",
+          "Stratégie",
+          "Action"
+        ],
+        "description": "Pilote un marcheur de combat et dirige tes tirs dans les affrontements vus du dessus. Déplacement et visée se répondent : choisis tes positions pour tenir le front."
+      }
+    },
+    {
+      "id": "hearts-and-horns-maid-bar",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Hearts & Horns est un jeu web complet mêlant gestion de bar, visual novel romantique, dating sim et mini-jeux. L’univers et les cinq héroïnes sont originaux. Tous les personnages romançables sont explicitement adultes.",
+        "description": "Hearts & Horns est un jeu web complet mêlant gestion de bar, visual novel romantique, dating sim et mini-jeux. L’univers et les cinq héroïnes sont originaux. Tous les personnages romançables sont explicitement adultes."
+      },
+      "after": {
+        "pitch": "Assure le service de minuit et découvre qui restera après le dernier verre.",
+        "description": "Tiens le Maid-Bar de Minuit, assure le service et découvre les cinq héroïnes adultes qui l’animent. Entre gestion du comptoir, mini-jeux et rencontres, tes journées laissent aussi place aux liens amoureux."
+      }
+    },
+    {
+      "id": "world-hive-wars",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Le signal est confirmé. Prépare l'escouade, sécurise le relais et ramène tout le monde au Bastion.",
+        "description": "Au bastion colonial, chaque signal doit être vérifié avant l'engagement. Parcours le théâtre de campagne, rassemble des ressources, prépare les spécialistes et ouvre les opérations CONTACT face aux menaces xénomorphes. Le registre sépare les équipements réellement jouables, les archives consultables et les dossiers encore à documenter."
+      },
+      "after": {
+        "pitch": "Le signal est confirmé. Prépare l’escouade, sécurise le relais et ramène tout le monde au Bastion.",
+        "description": "Au bastion colonial, chaque signal doit être vérifié avant l’engagement. Parcours le théâtre de campagne, rassemble les ressources, prépare les spécialistes et ouvre les opérations CONTACT face aux menaces xénomorphes."
+      }
+    },
+    {
+      "id": "tiffany-pixelverse-omniverse",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Jeu de plateforme et d’action 2D conçu comme un fan game familial privé pour Tiffany. L’aventure comprend 41 mondes, 42 armes, 41 reliques, des boss, des objectifs propres à chaque univers et une progression persistante d’un portail à l’autre.",
+        "description": "Jeu de plateforme et d’action 2D conçu comme un fan game familial privé pour Tiffany. L’aventure comprend 41 mondes, 42 armes, 41 reliques, des boss, des objectifs propres à chaque univers et une progression persistante d’un portail à l’autre."
+      },
+      "after": {
+        "pitch": "Franchis les portails, découvre chaque monde et rassemble ses trésors avec Tiffany.",
+        "description": "Accompagne Tiffany de portail en portail à travers les mondes du Pixelverse. Récupère les armes et les reliques, accomplis les objectifs de chaque univers et affronte les boss qui en gardent le passage."
+      }
+    },
+    {
+      "id": "dead-feed",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Jeu d’horreur interactif autonome dans un faux réseau de livestreams. Vous incarnez le modérateur de nuit chargé de surveiller plusieurs chaînes. La plupart du temps, il ne se passe rien. Parfois, un reflet ne suit pas la bonne personne, une porte apparaît dans un mur impossible ou le chat parle…",
+        "description": "Jeu d’horreur interactif autonome dans un faux réseau de livestreams. Vous incarnez le modérateur de nuit chargé de surveiller plusieurs chaînes. La plupart du temps, il ne se passe rien. Parfois, un reflet ne suit pas la bonne personne, une porte apparaît dans un mur impossible ou le chat parle…"
+      },
+      "after": {
+        "pitch": "Surveille les directs. Quelque chose vient de bouger hors du cadre.",
+        "description": "Tu es le modérateur de nuit d’un réseau de livestreams. Surveille les chaînes et reste attentif aux écarts : un reflet qui ne suit plus sa personne, une porte dans un mur impossible ou un message du chat peuvent annoncer que le flux a changé."
+      }
+    },
+    {
+      "id": "xeno-trace",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Prototype complet de jeu mobile géolocalisé de type chasse/collection, centré sur les Xénomorphes. Le projet est une PWA statique : aucun compte, serveur, abonnement, token cartographique ou asset externe n’est nécessaire pour lancer la version actuelle.",
+        "description": "Prototype complet de jeu mobile géolocalisé de type chasse/collection, centré sur les Xénomorphes. Le projet est une PWA statique : aucun compte, serveur, abonnement, token cartographique ou asset externe n’est nécessaire pour lancer la version actuelle."
+      },
+      "after": {
+        "pitch": "Suis le signal et retrouve ce qui se cache autour de toi.",
+        "description": "Pars sur les traces des Xénomorphes dans une chasse géolocalisée. Repère les signaux, poursuis tes découvertes et enrichis ta collection."
+      }
+    },
+    {
+      "id": "digirift-go",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Prototype mobile/PWA fan-made inspiré du principe d’un jeu de chasse géolocalisé, transposé dans un univers Digimon.",
+        "description": "Prototype mobile/PWA fan-made inspiré du principe d’un jeu de chasse géolocalisé, transposé dans un univers Digimon."
+      },
+      "after": {
+        "pitch": "Pars sur les traces des Digimon et agrandis ta collection.",
+        "description": "Pars à la recherche de Digimon dans une chasse géolocalisée et rassemble ta collection au fil de tes déplacements."
+      }
+    },
+    {
+      "id": "duel-spirits-worldbound",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Prototype fan non officiel de jeu de chasse GPS, de capture et de duel de monstres, conçu comme une boucle « GO-like » autour des monstres de Yu-Gi-Oh!.",
+        "description": "Prototype fan non officiel de jeu de chasse GPS, de capture et de duel de monstres, conçu comme une boucle « GO-like » autour des monstres de Yu-Gi-Oh!."
+      },
+      "after": {
+        "pitch": "Suis la piste des monstres, capture-les et prépare ton prochain duel.",
+        "description": "Parcours le monde à la recherche de monstres de Yu-Gi-Oh!, capture-les et engage tes découvertes dans des duels."
+      }
+    },
+    {
+      "id": "le-vide-doit-manger",
+      "fields": [
+        "pitch",
+        "tags",
+        "description"
+      ],
+      "before": {
+        "pitch": "Un idle game cosmique original, jouable dans un navigateur, où une petite créature du Néant doit avaler tout ce que le joueur trouve. Chaque objet reste représenté dans son corps translucide et rejoint un catalogue intérieur permanent.",
+        "tags": [
+          "Jeu original",
+          "Gestion & simulation",
+          "Gestion",
+          "Action",
+          "Collection",
+          "PWA"
+        ],
+        "description": "Un idle game cosmique original, jouable dans un navigateur, où une petite créature du Néant doit avaler tout ce que le joueur trouve. Chaque objet reste représenté dans son corps translucide et rejoint un catalogue intérieur permanent."
+      },
+      "after": {
+        "pitch": "Nourris le Néant et découvre ce qui restera visible dans son ventre.",
+        "tags": [
+          "Jeu original",
+          "Gestion & simulation",
+          "Gestion",
+          "Action",
+          "Collection"
+        ],
+        "description": "Une petite créature du Néant attend son prochain repas. Trouve les objets à lui faire avaler et observe-les prendre place dans son corps translucide. Chaque trouvaille enrichit le catalogue qu'elle porte en elle."
+      }
+    },
+    {
+      "id": "la-riviere-des-absents",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Quatre poissons-mémoires — Aube, Miette, Silex et Noct — transportent les derniers souvenirs du village noyé de Valdormante. Le joueur doit les guider jusqu’à la mer avant que le Veilleur et sa barque hantée ne les rattrapent.",
+        "description": "Quatre poissons-mémoires — Aube, Miette, Silex et Noct — transportent les derniers souvenirs du village noyé de Valdormante. Le joueur doit les guider jusqu’à la mer avant que le Veilleur et sa barque hantée ne les rattrapent."
+      },
+      "after": {
+        "pitch": "La barque remonte le fleuve. Fais passer les souvenirs de Valdormante jusqu'à la mer.",
+        "description": "Aube, Miette, Silex et Noct portent les derniers souvenirs du village noyé de Valdormante. Guide les quatre poissons-mémoires jusqu'à la mer avant que le Veilleur et sa barque hantée ne les rattrapent."
+      }
+    },
+    {
+      "id": "voie-13-peage-de-nuit",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Jeu 3D autonome d’inspection, de gestion et d’horreur liminale. Vous incarnez l’employé d’un péage isolé pendant le service de nuit. Chaque véhicule doit être contrôlé avant de recevoir l’un des trois verdicts : OUVRIR, REFUSER ou VERROUILLER.",
+        "description": "Jeu 3D autonome d’inspection, de gestion et d’horreur liminale. Vous incarnez l’employé d’un péage isolé pendant le service de nuit. Chaque véhicule doit être contrôlé avant de recevoir l’un des trois verdicts : OUVRIR, REFUSER ou VERROUILLER."
+      },
+      "after": {
+        "pitch": "Un véhicule approche. Observe avant de lever la barrière.",
+        "description": "Tu assures le service de nuit d'un péage isolé. Contrôle chaque véhicule, observe ses détails et décide s'il faut ouvrir, refuser ou verrouiller le passage. La barrière attend ton verdict."
+      }
+    },
+    {
+      "id": "tetracrypt-the-well",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "État : vertical slice complet et jouable, avec boucle de victoire, défaite, trois difficultés et interface ordinateur/mobile.",
+        "description": "État : vertical slice complet et jouable, avec boucle de victoire, défaite, trois difficultés et interface ordinateur/mobile."
+      },
+      "after": {
+        "pitch": "Garde un œil sur le puits et l’autre sur la porte. Le Vide approche.",
+        "description": "Dans une chambre industrielle, guide les blocs qui tombent au fond du puits tout en surveillant la pièce autour de toi. Termine les lignes pour repousser le Vide, récupère les fragments et ménage la batterie de ta lampe avant de gagner la sortie."
+      }
+    },
+    {
+      "id": "suture-noire-les-heritiers-du-gouffre",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Suture Noire est un jeu d’horreur tactique original, jouable dans le navigateur, où chaque créature est un organisme procédural unique. Le joueur explore un monastère biologique condamné, capture des Vestiges, puis consomme deux parents dans un rituel de fusion pour créer une nouvelle descendance…",
+        "description": "Suture Noire est un jeu d’horreur tactique original, jouable dans le navigateur, où chaque créature est un organisme procédural unique. Le joueur explore un monastère biologique condamné, capture des Vestiges, puis consomme deux parents dans un rituel de fusion pour créer une nouvelle descendance…"
+      },
+      "after": {
+        "pitch": "Capture les Vestiges, choisis les parents et prépare l’héritier du Gouffre.",
+        "description": "Explore un monastère biologique condamné et capture ses Vestiges. Choisis deux parents pour le rituel de fusion : leur sacrifice fait naître une descendance dont les traits renouvellent tes possibilités."
+      }
+    },
+    {
+      "id": "spiralis-prototype",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Jeu d'horreur cosmique original inspiré du motif universel de la spirale, sans reprendre les personnages ni le scénario d'une œuvre existante.",
+        "description": "Jeu d'horreur cosmique original inspiré du motif universel de la spirale, sans reprendre les personnages ni le scénario d'une œuvre existante."
+      },
+      "after": {
+        "pitch": "Observe la spirale, photographie ses traces et trouve les sceaux à briser.",
+        "description": "Explore les lieux gagnés par la spirale, photographie ce que tu découvres et brise les sceaux rencontrés sur ta route. L’horreur cosmique se dévoile à mesure que tu t’approches du motif."
+      }
+    },
+    {
+      "id": "souvenirs-retrouves",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Prototype web complet d'une application de nostalgie interactive : un musée numérique où les utilisateurs retrouvent des objets et produits disparus, les manipulent en 3D et enregistrent leurs souvenirs.",
+        "description": "Prototype web complet d'une application de nostalgie interactive : un musée numérique où les utilisateurs retrouvent des objets et produits disparus, les manipulent en 3D et enregistrent leurs souvenirs."
+      },
+      "after": {
+        "pitch": "Retrouve un objet oublié et laisse remonter le souvenir qui l’accompagne.",
+        "description": "Parcours un musée d’objets et de produits disparus. Examine-les en trois dimensions, manipule-les et consigne les souvenirs qu’ils font revenir."
+      }
+    },
+    {
+      "id": "snake-no-signal",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Un jeu d’horreur 3D original qui transforme le Snake des anciens téléphones en cauchemar de survie, enfermé dans la mémoire d’un appareil qui ne devrait plus fonctionner.",
+        "description": "Un jeu d’horreur 3D original qui transforme le Snake des anciens téléphones en cauchemar de survie, enfermé dans la mémoire d’un appareil qui ne devrait plus fonctionner."
+      },
+      "after": {
+        "pitch": "L'écran se rallume. Le jeu n'a pas attendu ton retour pour continuer.",
+        "description": "Un ancien téléphone continue de fonctionner alors qu'il ne le devrait plus. Entre dans sa mémoire, retrouve les règles de Snake et affronte le cauchemar de survie qui s'y est installé."
+      }
+    },
+    {
+      "id": "rift-titan-protocol",
+      "fields": [
+        "pitch",
+        "tags",
+        "description"
+      ],
+      "before": {
+        "pitch": "Rail shooter 3D de science-fiction original, complet et jouable hors ligne. La caméra progresse automatiquement sur un rail cinématique pendant que le joueur affronte soldats, drones, créatures, exosquelettes et titans gargantuesques.",
+        "tags": [
+          "Jeu original",
+          "Action & tir",
+          "Gestion",
+          "Action",
+          "3D",
+          "PWA"
+        ],
+        "description": "Rail shooter 3D de science-fiction original, complet et jouable hors ligne. La caméra progresse automatiquement sur un rail cinématique pendant que le joueur affronte soldats, drones, créatures, exosquelettes et titans gargantuesques."
+      },
+      "after": {
+        "pitch": "La route avance. Les titans l’attendent. Garde-les en joue.",
+        "tags": [
+          "Jeu original",
+          "Action & tir",
+          "Gestion",
+          "Action",
+          "3D"
+        ],
+        "description": "Le trajet t’emporte au cœur des affrontements : vise les soldats, drones et créatures qui surgissent devant toi. Les exosquelettes et les titans ferment la route ; garde tes tirs sur leurs positions pendant que le parcours avance."
+      }
+    },
+    {
+      "id": "retro-room-prototype",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "RETRO//ROOM est le premier prototype jouable du concept de chambre 3D servant d’interface physique à une collection de jeux rétro.",
+        "description": "RETRO//ROOM est le premier prototype jouable du concept de chambre 3D servant d’interface physique à une collection de jeux rétro."
+      },
+      "after": {
+        "pitch": "Pousse la porte de ta chambre rétro et retrouve le prochain jeu à lancer.",
+        "description": "Entre dans une chambre en trois dimensions pour retrouver une collection de jeux rétro. Explore la pièce et rejoins les jeux à travers les objets qui les représentent."
+      }
+    },
+    {
+      "id": "pulse-rail",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Le projet est livré avec son code TypeScript, son build JavaScript prêt à lancer, ses tests automatisés, une piste de démonstration synthétisée localement et une documentation destinée à une reprise dans Codex.",
+        "description": "Le projet est livré avec son code TypeScript, son build JavaScript prêt à lancer, ses tests automatisés, une piste de démonstration synthétisée localement et une documentation destinée à une reprise dans Codex."
+      },
+      "after": {
+        "pitch": "Entre sur le rail, tiens le rythme et poursuis le combo jusqu’à la dernière note.",
+        "description": "Laisse ton morceau tracer le rail. Frappe les notes, tiens les accords et accompagne les impulsions latérales pendant que le parcours réagit à la musique. Chaque enchaînement nourrit ton combo et ton énergie de synchronisation."
+      }
+    },
+    {
+      "id": "neon-rift-racers",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Jeu de course antigravité original inspiré par la sensation de vitesse des racers futuristes et des bolides à doubles propulseurs, sans utiliser les noms, personnages, véhicules ou environnements protégés de licences existantes.",
+        "description": "Jeu de course antigravité original inspiré par la sensation de vitesse des racers futuristes et des bolides à doubles propulseurs, sans utiliser les noms, personnages, véhicules ou environnements protégés de licences existantes."
+      },
+      "after": {
+        "pitch": "Aligne tes propulseurs, choisis ta trajectoire et lance-toi dans la course.",
+        "description": "Prends les commandes d’un bolide antigravité à doubles propulseurs et cherche la trajectoire qui conserve ta vitesse."
+      }
+    },
+    {
+      "id": "mr-bean-total-chaos-collection",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Jeu fan-made autonome en HTML5/Canvas réunissant 20 chapitres jouables inspirés des principales incarnations à l’écran de Mr Bean : les quatorze épisodes classiques, les deux longs métrages, la série animée — y compris sa quatrième saison diffusée en 2025 —, la cérémonie d’ouverture de Londres 20…",
+        "description": "Jeu fan-made autonome en HTML5/Canvas réunissant 20 chapitres jouables inspirés des principales incarnations à l’écran de Mr Bean : les quatorze épisodes classiques, les deux longs métrages, la série animée — y compris sa quatrième saison diffusée en 2025 —, la cérémonie d’ouverture de Londres 20…"
+      },
+      "after": {
+        "pitch": "Un examen à passer, une valise à fermer, Teddy à retrouver : avec Bean, rien ne se déroule comme prévu.",
+        "description": "Avec Mr Bean, l'examen, le grand magasin, les vacances et même un simple déménagement tournent au chaos. Traverse vingt chapitres de comédie : observe, conduis, vise, garde l'équilibre ou retrouve le bon rythme selon la situation. Atteins les objectifs de chaque épreuve et transforme les catastrophes en étoiles."
+      }
+    },
+    {
+      "id": "moustique-the-video-game",
+      "fields": [
+        "tags"
+      ],
+      "before": {
+        "tags": [
+          "Jeu original",
+          "Action & tir",
+          "Survie",
+          "Action",
+          "3D",
+          "PWA"
+        ]
+      },
+      "after": {
+        "tags": [
+          "Jeu original",
+          "Action & tir",
+          "Survie",
+          "Action",
+          "3D"
+        ]
+      }
+    },
+    {
+      "id": "moonlit-maid-cafe-simulator",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Jeu de gestion/service original jouable dans un navigateur, conçu comme un vertical slice professionnel sans dépendance externe obligatoire.",
+        "description": "Jeu de gestion/service original jouable dans un navigateur, conçu comme un vertical slice professionnel sans dépendance externe obligatoire."
+      },
+      "after": {
+        "pitch": "Les clients attendent : prépare les commandes, tiens le service et fais grandir ton café.",
+        "description": "Derrière le comptoir du Moonlit Maid Café, accueille les clients, lis leurs commandes et passe d'un poste à l'autre pour préparer le service. Sers avant que leur patience ne s'épuise, puis réinvestis tes recettes dans le personnel, l'équipement, la carte et la décoration. Chaque journée apporte ses objectifs et ses rencontres."
+      }
+    },
+    {
+      "id": "meme-battle-internet-legends",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Jeu de combat 2D arcade fan-made dans lequel de véritables icônes historiques de la culture Internet s’affrontent : Trollface, Rage Guy, Forever Alone, Me Gusta, Nyan Cat, Trololo Man, Doge, Keyboard Cat, Grumpy Cat, This Is Fine, Philosoraptor et Dancing Banana.",
+        "description": "Jeu de combat 2D arcade fan-made dans lequel de véritables icônes historiques de la culture Internet s’affrontent : Trollface, Rage Guy, Forever Alone, Me Gusta, Nyan Cat, Trololo Man, Doge, Keyboard Cat, Grumpy Cat, This Is Fine, Philosoraptor et Dancing Banana."
+      },
+      "after": {
+        "pitch": "Charge ta viralité, trouve l'ouverture et impose ton mème dans l'arène.",
+        "description": "Trollface, Nyan Cat, Doge et les autres légendes du Web se retrouvent dans l'arène. Enchaîne attaques, garde et combos, charge ta viralité et déclenche le super de ton combattant. Affronte les rivaux de l'Arcade ou défie un autre joueur en duel local."
+      }
+    },
+    {
+      "id": "manga-break-le-dernier-brouillon",
+      "fields": [
+        "pitch",
+        "tags",
+        "description"
+      ],
+      "before": {
+        "pitch": "MANGA//BREAK est un jeu d’action 2D original dans lequel le joueur ne visite pas seulement un univers dessiné comme un manga : il combat à l’intérieur d’un véritable manuscrit japonais vivant. Les cases sont des arènes, les marges sont des zones dangereuses, les doubles pages accueillent les boss…",
+        "tags": [
+          "Jeu original",
+          "Action & tir",
+          "Rythme",
+          "Action",
+          "PWA",
+          "Narratif"
+        ],
+        "description": "MANGA//BREAK est un jeu d’action 2D original dans lequel le joueur ne visite pas seulement un univers dessiné comme un manga : il combat à l’intérieur d’un véritable manuscrit japonais vivant. Les cases sont des arènes, les marges sont des zones dangereuses, les doubles pages accueillent les boss…"
+      },
+      "after": {
+        "pitch": "Brise le cadre, garde ton encre et réécris l'issue du prochain combat.",
+        "tags": [
+          "Jeu original",
+          "Action & tir",
+          "Rythme",
+          "Action",
+          "Narratif"
+        ],
+        "description": "Tu combats à l'intérieur d'un manuscrit vivant : ses cases forment les arènes, ses marges cachent les dangers et ses doubles pages abritent les boss. Enchaîne frappes, esquives et gardes parfaites, dépense ton encre pour libérer tes techniques et choisis les embranchements du récit."
+      }
+    },
+    {
+      "id": "kidz-tv-after-hours",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "KIDZ-TV: AFTER HOURS est un survival horror complet jouable dans un navigateur, construit autour d’un moteur raycast 3D et d’imposteurs 2D orientés vers la caméra. Le joueur explore les studios abandonnés d’une émission jeunesse fictive des années 1980–1990, traverse physiquement les téléviseurs…",
+        "description": "KIDZ-TV: AFTER HOURS est un survival horror complet jouable dans un navigateur, construit autour d’un moteur raycast 3D et d’imposteurs 2D orientés vers la caméra. Le joueur explore les studios abandonnés d’une émission jeunesse fictive des années 1980–1990, traverse physiquement les téléviseurs…"
+      },
+      "after": {
+        "pitch": "Souris. La caméra se souvient. Entre dans l'épisode et trouve le raccord qui te ramènera aux coulisses.",
+        "description": "Les studios d'une ancienne émission jeunesse continuent de tourner après la fermeture. Passe de l'antenne aux coulisses, respecte les consignes de la caméra et traverse les téléviseurs pour entrer dans leurs épisodes. Tes décisions à l'écran changent les passages et les menaces du studio ; rassemble les archives avant que les mascottes ne cessent de jouer leur rôle."
+      }
+    },
+    {
+      "id": "harmonic-terraform",
+      "fields": [
+        "genre",
+        "pitch",
+        "tags",
+        "description"
+      ],
+      "before": {
+        "genre": "Gestion & simulation",
+        "pitch": "Production canonique : harmonic-terraform.vercel.app. Une réponse HTTP ou un déploiement Vercel Ready ne suffit pas à déclarer une version publiable : chaque révision doit aussi franchir le QA automatisé et le parcours navigateur décrits dans le runbook de release.",
+        "tags": [
+          "Jeu original",
+          "Gestion & simulation",
+          "Gestion",
+          "Rythme",
+          "Action",
+          "PWA"
+        ],
+        "description": "Production canonique : harmonic-terraform.vercel.app. Une réponse HTTP ou un déploiement Vercel Ready ne suffit pas à déclarer une version publiable : chaque révision doit aussi franchir le QA automatisé et le parcours navigateur décrits dans le runbook de release."
+      },
+      "after": {
+        "genre": "Rythme & arcade",
+        "pitch": "Choisis ton morceau, trouve sa fréquence et traverse le monde qu'il fait naître.",
+        "tags": [
+          "Jeu original",
+          "Rythme & arcade",
+          "Plateforme",
+          "Musique",
+          "Rythme",
+          "Exploration"
+        ],
+        "description": "Ton morceau façonne le monde sous tes pas : les graves sculptent le relief, les médiums dressent les plateformes et les aigus alimentent les dangers. Saute, change de fréquence et charge une impulsion pour traverser les obstacles. Chaque mouvement de la musique ouvre une nouvelle portion du parcours."
+      }
+    },
+    {
+      "id": "gamevault-room-3d",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Le mode web est une PWA responsive consacrée à l’exploration de la collection. L’application Electron ajoute l’indexation locale et le lancement réel de Steam, PCSX2, RPCS3, RetroArch, Dolphin et de profils personnalisés.",
+        "description": "Le mode web est une PWA responsive consacrée à l’exploration de la collection. L’application Electron ajoute l’indexation locale et le lancement réel de Steam, PCSX2, RPCS3, RetroArch, Dolphin et de profils personnalisés."
+      },
+      "after": {
+        "pitch": "Un boîtier à ouvrir, un fascicule à parcourir : redécouvre les jeux de ta collection.",
+        "description": "Entre dans ta salle de collection et découvre chaque jeu comme un objet à conserver. Ouvre les boîtiers, examine les jaquettes, feuillette les fascicules et manipule les disques ou les cartouches. Retrouve tes titres dans les rayonnages, organise ta bibliothèque et progresse dans les rangs d'Archiviste."
+      }
+    },
+    {
+      "id": "black-gospel-the-ninth-cadaver",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "BLACK GOSPEL est un rail shooter horrifique autonome inspiré du rythme des bornes d’arcade, mais construit autour d’une mécanique originale d’anatomie profane : les créatures possèdent des organes offensifs, des protections et un nœud d’âme qu’il faut exciser avant qu’une mauvaise mise à mort ne…",
+        "description": "BLACK GOSPEL est un rail shooter horrifique autonome inspiré du rythme des bornes d’arcade, mais construit autour d’une mécanique originale d’anatomie profane : les créatures possèdent des organes offensifs, des protections et un nœud d’âme qu’il faut exciser avant qu’une mauvaise mise à mort ne…"
+      },
+      "after": {
+        "pitch": "Révèle le nœud d'âme et excise-le avant que le cadavre ne se relève.",
+        "description": "Les créatures de BLACK GOSPEL ne meurent pas toutes au premier coup fatal. Vise leurs organes offensifs, brise leurs protections et révèle le nœud d'âme avant de l'exciser. Une mise à mort mal conduite peut déclencher la Seconde Mort ; choisis tes cibles et ta route à travers la liturgie."
+      }
+    },
+    {
+      "id": "bounce-arena-prototype-fan-jouable",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Bounce Arena est un jeu d’adresse, de physique et de collection hors ligne. Cette édition fan non officielle propose une campagne complète, des défis rejouables, une progression persistante et des contrôles adaptés à la souris, au tactile, au clavier et à la manette. Toute l’interface, le code, l…",
+        "description": "Bounce Arena est un jeu d’adresse, de physique et de collection hors ligne. Cette édition fan non officielle propose une campagne complète, des défis rejouables, une progression persistante et des contrôles adaptés à la souris, au tactile, au clavier et à la manette. Toute l’interface, le code, l…"
+      },
+      "after": {
+        "pitch": "Vise, tire en arrière et relâche : un bon ricochet peut renverser toute l'arène.",
+        "description": "Compose une équipe de figurines, règle la puissance de ton lancer et cherche le ricochet décisif. Éjecte tes adversaires de l'anneau, touche les cibles ou exploite les obstacles pour battre tes records. Les étapes de campagne et les défis font progresser ta collection et ouvrent de nouvelles façons de jouer."
+      }
+    },
+    {
+      "id": "black-signal-bastion-zero",
+      "fields": [
+        "genre",
+        "pitch",
+        "tags",
+        "description"
+      ],
+      "before": {
+        "genre": "Stratégie & tactique",
+        "pitch": "FPS de survie en hordes 3D avec monstres 2D imposteurs, horreur cyber-démoniaque, liminale, zombie et cosmique. Le projet livre une boucle de jeu complète et immédiatement jouable : vagues à anomalies déterministes, boss, quatre armes, expérience, mutations, boutique, méta-progression, sauvegarde…",
+        "tags": [
+          "Jeu original",
+          "Stratégie & tactique",
+          "Stratégie",
+          "Horreur",
+          "Survie",
+          "Rythme"
+        ],
+        "description": "FPS de survie en hordes 3D avec monstres 2D imposteurs, horreur cyber-démoniaque, liminale, zombie et cosmique. Le projet livre une boucle de jeu complète et immédiatement jouable : vagues à anomalies déterministes, boss, quatre armes, expérience, mutations, boutique, méta-progression, sauvegarde…"
+      },
+      "after": {
+        "genre": "Survie & horreur",
+        "pitch": "Sécurise le relais, choisis ta mutation et tiens jusqu'à la prochaine accalmie.",
+        "tags": [
+          "Jeu original",
+          "Survie & horreur",
+          "FPS",
+          "Hordes",
+          "Arènes",
+          "Roguelite"
+        ],
+        "description": "Bastion Zero n'est que le début de l'incursion. Traverse des arènes gagnées par les anomalies, défends leurs relais et résiste aux vagues de créatures. Prépare ton arsenal entre les assauts, combine les mutations et choisis jusqu'où pousser la survie face aux affrontements majeurs."
+      }
+    },
+    {
+      "id": "good-morning-hollowbrook",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Jeu d’horreur psychologique original en vue subjective. Evan Vale croit vivre dans une petite ville parfaite. En réalité, Hollowbrook est un immense plateau de télévision et chaque personne de son entourage joue un rôle. Le joueur l’ignore au début, puis découvre que sa routine, ses souvenirs et…",
+        "description": "Jeu d’horreur psychologique original en vue subjective. Evan Vale croit vivre dans une petite ville parfaite. En réalité, Hollowbrook est un immense plateau de télévision et chaque personne de son entourage joue un rôle. Le joueur l’ignore au début, puis découvre que sa routine, ses souvenirs et…"
+      },
+      "after": {
+        "pitch": "Souris à la caméra, puis regarde ce qui a changé pendant que tu jouais ton rôle.",
+        "description": "Evan Vale suit sa routine dans une petite ville qui semble parfaite. Explore Hollowbrook, parle aux habitants et relève les anomalies de continuité qui fissurent ce quotidien. Les caméras surveillent tes écarts : joue ton rôle pour détourner les soupçons, rassemble les preuves et cherche un passage vers les coulisses."
+      }
+    },
+    {
+      "id": "petits-poissons-red-tide",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Le principe du plateau est volontairement conservé : les quatre poissons commencent ensemble sur la plaque centrale marquée de leurs quatre emplacements, cinq plaques les séparent de la mer, cinq autres séparent la barque des poissons, et le dé comporte quatre faces poisson ainsi que deux faces p…",
+        "description": "Le principe du plateau est volontairement conservé : les quatre poissons commencent ensemble sur la plaque centrale marquée de leurs quatre emplacements, cinq plaques les séparent de la mer, cinq autres séparent la barque des poissons, et le dé comporte quatre faces poisson ainsi que deux faces p…"
+      },
+      "after": {
+        "pitch": "Les poissons cherchent la mer. La barque leur arrache le fleuve sous les nageoires.",
+        "description": "Quatre poissons tentent de rejoindre la mer tandis qu'une barque vivante se rapproche. Lance le dé, avance la couleur désignée ou retire la plaque qui sépare les pêcheurs de leurs proies. Chaque morceau de fleuve arraché peut condamner un poisson ; vois qui atteindra la mer et qui finira dans la cale."
+      }
+    },
+    {
+      "id": "umbra-les-heures-noires",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Date Lieu Archive --- --- --- 29 mai 1919 Príncipe Les étoiles déplacées 30 juin 1973 Sahara — Concorde 001 Plus vite que l’ombre 11 août 1999 France 11:11 14 octobre 2023 Nouveau-Mexique L’Anneau 8 avril 2024 États-Unis Les gens immobiles 12 août 2026 Espagne Demain dans six jours 2 août 2027 Lo…",
+        "description": "Date Lieu Archive --- --- --- 29 mai 1919 Príncipe Les étoiles déplacées 30 juin 1973 Sahara — Concorde 001 Plus vite que l’ombre 11 août 1999 France 11:11 14 octobre 2023 Nouveau-Mexique L’Anneau 8 avril 2024 États-Unis Les gens immobiles 12 août 2026 Espagne Demain dans six jours 2 août 2027 Lo…"
+      },
+      "after": {
+        "pitch": "L'éclipse approche de la totalité. Observe, révèle et trouve l'extraction avant que ta lucidité ne cède.",
+        "description": "D'une éclipse à l'autre, explore des archives astronomiques contaminées par des présences. Observe les lieux avec la caméra spectrale, rassemble les preuves et découvre la règle surnaturelle de chaque archive. Ménage ta lumière, ton souffle et ta lucidité ; les impulsions photoniques ne repoussent les menaces que temporairement."
+      }
+    },
+    {
+      "id": "terra-testudo-les-mondes-dos",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Terra Testudo est un jeu de construction, d’exploration et de défense jouable dans un navigateur. Le joueur commence avec une petite maison sur le dos d’un tortillon, développe une ville vivante, nourrit la créature qui la porte, puis fait évoluer celle-ci jusqu’à la forme de tortue-monde elder c…",
+        "description": "Terra Testudo est un jeu de construction, d’exploration et de défense jouable dans un navigateur. Le joueur commence avec une petite maison sur le dos d’un tortillon, développe une ville vivante, nourrit la créature qui la porte, puis fait évoluer celle-ci jusqu’à la forme de tortue-monde elder c…"
+      },
+      "after": {
+        "pitch": "Fais vivre la ville, protège sa carapace et accompagne ton tortillon jusqu'à l'âge des mondes.",
+        "description": "Une petite maison repose sur le dos de ton tortillon. Bâtis sur sa carapace, nourris la créature et veille à la vitalité de la ville qu'elle porte. Explore l'archipel, échange avec les autres civilisations et repousse les raids pendant que ton compagnon grandit jusqu'à devenir une tortue-monde."
+      }
+    },
+    {
+      "id": "strike-command-desert-thunder",
+      "fields": [
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "pitch": "Jeu d’action tactique en hélicoptère réalisé en HTML5 Canvas, JavaScript et Web Audio. Le projet est un jeu web autonome : il n’utilise ni Unreal Engine ni l’univers Stargate.",
+        "description": "Jeu d’action tactique en hélicoptère réalisé en HTML5 Canvas, JavaScript et Web Audio. Le projet est un jeu web autonome : il n’utilise ni Unreal Engine ni l’univers Stargate."
+      },
+      "after": {
+        "pitch": "Garde assez de carburant pour revenir et assez de place au treuil pour ceux qui attendent encore.",
+        "description": "Prends les commandes d'un hélicoptère de combat et prépare tes opérations depuis la carte tactique. Neutralise les défenses, retrouve les survivants et récupère carburant ou munitions au treuil. Choisis ton appareil et ton copilote, surveille tes réserves et reviens au point de ravitaillement quand la mission le permet."
+      }
+    },
+    {
+      "id": "intravore",
+      "fields": [
+        "description"
+      ],
+      "before": {
+        "description": "Action-RPG de chasse science-fiction où chaque titan vivant devient boss, terrain d’escalade et donjon organique."
+      },
+      "after": {
+        "description": "Agrippe-toi aux titans vivants, escalade leur corps et ouvre une brèche pour les explorer de l'intérieur. La chasse se poursuit dans leurs profondeurs organiques, où leurs défenses te séparent des points vitaux."
+      }
+    },
+    {
+      "id": "nexus-of-torment",
+      "fields": [
+        "description"
+      ],
+      "before": {
+        "description": "FPS de horde horrifique original mêlant doctrines de combat, armes rituelles, Souillure et boss biomécaniques."
+      },
+      "after": {
+        "description": "Les vagues du Nexus mettent chaque doctrine de combat à l'épreuve. Arme-toi de reliques rituelles, maîtrise la Souillure et prépare-toi à affronter les boss biomécaniques au milieu de la horde."
+      }
+    },
+    {
+      "id": "jawa-the-duskmen",
+      "fields": [
+        "description"
+      ],
+      "before": {
+        "description": "Fan-game de gestion communautaire jawa : récupère, répare et échange ferraille et droïdes depuis un char des sables itinérant."
+      },
+      "after": {
+        "description": "Depuis ton char des sables itinérant, récupère la ferraille et les droïdes abandonnés dans le désert. Répare tes trouvailles, négocie les échanges et fais prospérer ta communauté de récupérateurs."
+      }
+    },
+    {
+      "id": "mecha-overdrive",
+      "fields": [
+        "description"
+      ],
+      "before": {
+        "description": "Course arcade originale où huit architectures de mechas affrontent des circuits extrêmes entre boosts, dégâts et surchauffe."
+      },
+      "after": {
+        "description": "Le Circuit Zero met les châssis à l'épreuve. Choisis parmi huit architectures de mechas, prends les virages à pleine vitesse et déclenche tes boosts sans laisser les dégâts ou la surchauffe t'arrêter."
+      }
+    },
+    {
+      "id": "spermatozoid-kart-omega",
+      "fields": [
+        "description"
+      ],
+      "before": {
+        "description": "Kart arcade original, humoristique et non explicite, avec pilotes spécialisés, objets, drift et championnat dans un monde cellulaire abstrait."
+      },
+      "after": {
+        "description": "Le Grand Prix traverse un monde cellulaire où les courants bousculent la course. Choisis ton pilote, négocie les dérapages et utilise objets et capacités pour remonter le peloton jusqu'à la ligne d'arrivée."
+      }
+    },
+    {
+      "id": "riff-rush",
+      "fields": [
+        "description"
+      ],
+      "before": {
+        "description": "Course rythmique originale où les notes propulsent des véhicules-instruments sur des routes qui réagissent à la musique."
+      },
+      "after": {
+        "description": "Les véhicules-instruments prennent la route au son de tes notes. Frappe le rythme pour les propulser, charge ton riff et garde la cadence dans les virages d'un parcours qui réagit à la musique."
+      }
+    },
+    {
+      "id": "backrooms-liminal-escape",
+      "fields": [
+        "description"
+      ],
+      "before": {
+        "description": "Jeu autonome d’exploration liminale avec trois niveaux, inventaire, batterie, entités, contrôles tactiles et fins multiples."
+      },
+      "after": {
+        "description": "Perdu dans les espaces liminaux, explore les niveaux et rassemble ce qui peut encore t'aider à sortir. Garde un œil sur l'inventaire et la batterie de ta lumière, déchiffre les lieux et évite les entités qui les parcourent."
+      }
+    },
+    {
+      "id": "malaise-party",
+      "fields": [
+        "tags"
+      ],
+      "before": {
+        "tags": [
+          "Jeu original",
+          "Survie & horreur",
+          "Party game",
+          "Multijoueur local",
+          "Mini-jeux",
+          "PWA"
+        ]
+      },
+      "after": {
+        "tags": [
+          "Jeu original",
+          "Survie & horreur",
+          "Party game",
+          "Multijoueur local",
+          "Mini-jeux"
+        ]
+      }
+    },
+    {
+      "id": "neon-clash-arena-protocol",
+      "fields": [
+        "tags",
+        "description"
+      ],
+      "before": {
+        "tags": [
+          "Jeu original",
+          "Action & tir",
+          "Arène",
+          "Combat",
+          "Canvas",
+          "Arcade"
+        ],
+        "description": "Prototype autonome de combat d’arène Canvas où attaque, garde, pression et score s’affrontent dans des manches chronométrées."
+      },
+      "after": {
+        "tags": [
+          "Jeu original",
+          "Action & tir",
+          "Arène",
+          "Combat",
+          "Arcade"
+        ],
+        "description": "Dans l'arène néon, alterne attaque et garde pendant une manche chronométrée. Marque des points à l'offensive, réduis la pression en défendant et cherche le meilleur score avant la dernière seconde."
+      }
+    },
+    {
+      "id": "planck-antimatter-dominion",
+      "fields": [
+        "pitch",
+        "tags",
+        "description"
+      ],
+      "before": {
+        "pitch": "Calcule chaque expansion, sécurise l’antimatière et transforme une poignée de nœuds en empire.",
+        "tags": [
+          "Jeu original",
+          "Stratégie & tactique",
+          "Espace",
+          "Antimatière",
+          "Conquête",
+          "Canvas"
+        ],
+        "description": "Prototype autonome de stratégie spatiale : étends ton contrôle de nœud en nœud et domine le système avant la fin du chronomètre."
+      },
+      "after": {
+        "pitch": "Contiens l'antimatière, sécurise tes secteurs et impose ta doctrine au prochain tour.",
+        "tags": [
+          "Jeu original",
+          "Stratégie & tactique",
+          "Espace",
+          "Antimatière",
+          "Conquête",
+          "Tour par tour"
+        ],
+        "description": "Prends le contrôle d'un réseau stellaire et exploite l'antimatière sans rompre son confinement. Répartis tes ressources, commande tes unités et fortifie les secteurs avant de céder le tour à l'intelligence rivale. Les opérations de campagne mettent tes doctrines à l'épreuve au fil de six opérations successives."
+      }
+    },
+    {
+      "id": "the-house-of-the-dead-25d",
+      "fields": [
+        "tags",
+        "description"
+      ],
+      "before": {
+        "tags": [
+          "Fan-game",
+          "Action & tir",
+          "Rail-shooter",
+          "2.5D",
+          "Godot",
+          "Horreur"
+        ],
+        "description": "Fan-game de rail-shooter gothique en 2.5D construit avec Godot 4, pensé comme une recréation jouable et originale."
+      },
+      "after": {
+        "tags": [
+          "Fan-game",
+          "Action & tir",
+          "Rail-shooter",
+          "2.5D",
+          "Horreur"
+        ],
+        "description": "Traverse les couloirs du sanatorium sur la ligne de tir. Vise les menaces qui surgissent, protège les survivants et cherche à gagner le passage suivant avant que la nuit ne t'emporte."
+      }
+    },
+    {
+      "id": "gearstorm-boss-circuit",
+      "fields": [
+        "pitch",
+        "tags",
+        "description"
+      ],
+      "before": {
+        "pitch": "Adapte ta forme, brise les routines des colosses et ferme le Circuit dans l’œil de la tempête.",
+        "tags": [
+          "Jeu original",
+          "Action & tir",
+          "Boss rush",
+          "Mechas",
+          "Transformations",
+          "PWA"
+        ],
+        "description": "Boss rush 2D original en HTML5 Canvas opposant six machines transformables dans un circuit de duels mécaniques."
+      },
+      "after": {
+        "pitch": "Lis la machine, change de forme et fais de chaque phase l'ouverture dont Riva a besoin.",
+        "tags": [
+          "Jeu original",
+          "Action & tir",
+          "Boss rush",
+          "Mechas",
+          "Transformations"
+        ],
+        "description": "Riva Spark affronte les machines transformables du Circuit de Cassian Voltério. Lis leurs phases, adapte ta forme et trouve le moment de rompre leur défense. Après les six machines de la campagne, la Forge ouvre vingt-quatre affrontements supplémentaires et leurs contrats de maîtrise."
+      }
+    },
+    {
+      "id": "mass-effect-relay-chronicles",
+      "fields": [
+        "description"
+      ],
+      "before": {
+        "description": "Le relais s'ouvre sur une Citadelle à parcourir et une Normandy à préparer. Forme ton groupe de trois, rejoins le briefing, puis gagne Eden Prime au moyen de la carte galactique. Les combats à jauge ATB, l'inventaire et les Chroniques autonomes prolongent cette campagne adaptée en sprites 2D devant des décors 3D. L'intégrale Mass Effect fidèle 1:1 reste un chantier, pas un contenu déjà certifié."
+      },
+      "after": {
+        "description": "Le relais s'ouvre sur une Citadelle à parcourir et une Normandy à préparer. Forme ton groupe de trois, rejoins le briefing, puis gagne Eden Prime au moyen de la carte galactique. Gère les jauges de combat, équipe ton groupe et poursuis les Chroniques de l'équipage."
+      }
+    },
+    {
+      "id": "resident-evil-bow-protocol",
+      "fields": [
+        "description"
+      ],
+      "before": {
+        "description": "Le centre de confinement a rouvert ses dossiers B.O.W. : sélectionne le protocole, examine les sujets et lance les confrontations depuis l'interface tactique. Le catalogue distingue 115 combattants principaux, les prototypes isolés et les exercices contextuels. Les sprites indépendants de plusieurs créatures existent déjà ; leur animation intégrale et la reconstitution 1:1 du roster restent en production."
+      },
+      "after": {
+        "description": "Le centre de confinement a rouvert ses dossiers B.O.W. Examine les sujets, consulte les archives biologiques et choisis le protocole de confrontation. Explore le répertoire des techniques et prépare les affrontements proposés par les différents modes."
+      }
+    },
+    {
+      "id": "digital-circus-encore",
+      "fields": [
+        "description"
+      ],
+      "before": {
+        "description": "La version autonome d’Encore quitte le bureau CainOS pour sa propre scène. Quatorze artistes, douze arènes et neuf modes ouvrent duels, répétitions, histoires et tournoi. Le laboratoire permet de travailler déplacements, garde et techniques, avec commandes et répertoire accessibles pendant le duel. Les captures prouvent le build public 0.7.0 et un entraînement Pomni/Jax ; elles ne certifient ni toutes les animations ni une fidélité canonique 1:1."
+      },
+      "after": {
+        "description": "La scène d'Encore accueille quatorze artistes, douze arènes et neuf modes de duel. Choisis ton interprète, répète déplacements, garde et techniques dans le laboratoire, puis entre en scène pour une histoire ou un tournoi. Consulte les commandes et le répertoire pendant le combat pour préparer ta prochaine ouverture."
+      }
+    },
+    {
+      "id": "yugioh-25d-holograms",
+      "fields": [
+        "tags",
+        "description"
+      ],
+      "before": {
+        "tags": [
+          "Yu-Gi-Oh!",
+          "Cartes",
+          "Hologrammes",
+          "EDOPro",
+          "WebAssembly",
+          "Fan game"
+        ],
+        "description": "Le plateau holographique prend vie : prépare un deck, choisis ton duelliste et convoque des monstres dans un duel à règles EDOPro exécutées en WebAssembly. Bascule entre plateau tactique et Vue Réelle, explore l'Atlas des Jetons et fais progresser ta collection d'avatars. Les formes 3D sont des adaptations stylisées documentées, non des reproductions intégrales certifiées des illustrations."
+      },
+      "after": {
+        "tags": [
+          "Yu-Gi-Oh!",
+          "Cartes",
+          "Hologrammes",
+          "Deckbuilding",
+          "Duels",
+          "Fan game"
+        ],
+        "description": "Le plateau holographique prend vie : prépare ton deck, choisis ton duelliste et convoque tes monstres. Passe du plateau tactique à la Vue Réelle, explore l'Atlas des Jetons et développe ta collection d'avatars au fil des duels."
+      }
+    },
+    {
+      "id": "riftcasters-3d",
+      "fields": [
+        "description"
+      ],
+      "before": {
+        "description": "L'Arche se fissure sous cinq failles instables. Incarne l'un des quatre arcanistes, assemble tes quinze voies d'amélioration et résiste jusqu'au Tyran de la Convergence, un affrontement en trois phases. Expédition, Endurance, extraction au camp, sauvegardes et douze succès dessinent une carrière solo en arène 3D. Ce jeu est distinct de Riftcasters — Modern Skies."
+      },
+      "after": {
+        "description": "L'Arche se fissure sous cinq failles instables. Incarne l'un des quatre arcanistes, assemble tes voies d'amélioration et résiste jusqu'au Tyran de la Convergence. Pars en expédition, tiens en Endurance et rejoins le camp pour organiser ton extraction et préparer le prochain affrontement."
+      }
+    },
+    {
+      "id": "riftcasters-chaos-anglers",
+      "fields": [
+        "description"
+      ],
+      "before": {
+        "description": "Reprends la relève sur K-13 et Greywater, où les changements de ciel, d'heure et de météo accompagnent la campagne. Le portail Modern Skies réorganise les dossiers, le monde et la progression ; la Cloueuse de quai et ses mouvements en vue rapprochée participent aux opérations Greywater Uprising et Full Shift. Cette branche 8.6.0 n'est pas l'arena-survivor Convergence."
+      },
+      "after": {
+        "description": "Reprends la relève sur K-13 et Greywater, où les changements de ciel, d'heure et de météo accompagnent les opérations. Consulte les dossiers, prépare ton affectation et prends la Cloueuse de quai pour avancer à travers les secteurs de Greywater Uprising et Full Shift."
+      }
+    },
+    {
+      "id": "ragtime-rumble-complete-tour",
+      "fields": [
+        "description"
+      ],
+      "before": {
+        "description": "La tournée s'étend au-delà des trois salles : Maestro Bellows, Lady Syncopa et Baron Brass imposent leurs rythmes et leurs phases, entre tirs, parades et transitions de perspective. Dance Break, Riff Duel, section FPS et vue de dessus se succèdent sans arrêter le morceau. Cette édition complète ajoute duo local, éditeur, calibration et défi quotidien ; les boss et attaques encore seulement décrits restent exclus des promesses de gameplay."
+      },
+      "after": {
+        "description": "La tournée bat son plein : Maestro Bellows, Lady Syncopa et Baron Brass imposent leurs rythmes entre tirs, parades et changements de perspective. Passe du Dance Break au Riff Duel, tiens les sections en vue subjective ou de dessus et garde le morceau en mouvement. Prépare tes partitions dans l'éditeur ou partage la scène en duo local."
+      }
+    },
+    {
+      "id": "silent-hill-halo-of-flesh",
+      "fields": [
+        "tags",
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "tags": [
+          "Silent Hill",
+          "Combat 2D",
+          "Silhouettes procédurales",
+          "Archives",
+          "Fan game",
+          "Build public 0.7.0"
+        ],
+        "pitch": "La radio grésille. Choisis une enquête, ouvre un dossier et traverse l'Autre Monde.",
+        "description": "Un terminal rassemble manifestations, dossiers et confrontations de Silent Hill. Choisis Chroniques, duel, descente, rite, boss ou entraînement, puis consulte les mouvements et les lieux. L’adresse publique sert toujours la version 0.7.0 : un prototype de combat 2D aux silhouettes procédurales, désormais montré par de vraies captures. Les travaux source plus récents restent distincts de ce build ; ni leurs illustrations ni une fidélité canonique 1:1 ne sont promises ici."
+      },
+      "after": {
+        "tags": [
+          "Silent Hill",
+          "Combat 2D",
+          "Duel",
+          "Archives",
+          "Entraînement",
+          "Fan game"
+        ],
+        "pitch": "La radio grésille. Prépare tes mouvements et affronte ce qui attend dans l'Autre Monde.",
+        "description": "La radio grésille entre manifestations et dossiers de Silent Hill. Choisis ton personnage et entre dans les Chroniques, les duels, les descentes ou les rites. Consulte les mouvements, prépare tes confrontations et entraîne-toi avant d'affronter les figures qui attendent dans l'Autre Monde."
+      }
+    },
+    {
+      "id": "diva-pulse",
+      "fields": [
+        "tags",
+        "description"
+      ],
+      "before": {
+        "tags": [
+          "Jeu original",
+          "Rythme & arcade",
+          "AutoMap",
+          "MMD",
+          "Éditeur",
+          "Jeu local",
+          "Sans musique préinstallée"
+        ],
+        "description": "Dans le Studio Pulse, édite cinq difficultés, synchronise les notes avec AutoMap et dirige la scène avec Auto Show et Director. Le build local V37 distribue trois instrumentaux originaux et une Académie de six leçons. Les modèles MMD et musiques sous licence viennent de tes imports ; les silhouettes procédurales de travail ne certifient aucune fidélité MMD. Les captures montrent le vrai build local, dont une démonstration assistée Autoplay."
+      },
+      "after": {
+        "tags": [
+          "Jeu original",
+          "Rythme & arcade",
+          "AutoMap",
+          "Éditeur",
+          "Scène",
+          "Apprentissage"
+        ],
+        "description": "Le Studio Pulse attend ta partition. Édite les notes sur cinq difficultés, synchronise-les avec AutoMap et dirige la scène avec Auto Show et Director. Travaille tes gestes dans l'Académie, joue les instrumentaux proposés ou compose ton spectacle à partir de tes propres imports."
+      }
+    },
+    {
+      "id": "derniere-ligne-zero-repli",
+      "fields": [
+        "description"
+      ],
+      "before": {
+        "description": "Le jour, prépare ton poste de défense, répartis le budget, charge les armes et vérifie les voies de repli. La nuit, résiste aux hordes de morts-vivants jusqu'à l'aube sur des routes et scénarios distincts. Les sauvegardes conservent les campagnes indépendantes, et une défaite permet de retrouver les préparatifs exacts plutôt que les ressources d'une autre route. Jeu HTML/JavaScript local et hors ligne, version source 0.44.2."
+      },
+      "after": {
+        "description": "Le jour, prépare ton poste de défense, répartis le budget, charge les armes et repère les voies de repli. La nuit, résiste aux hordes de morts-vivants jusqu'à l'aube. Chaque route demande ses propres préparatifs : choisis où engager tes ressources avant que le prochain assaut ne commence."
+      }
+    },
+    {
+      "id": "fallout-marseille-mistral",
+      "fields": [
+        "description"
+      ],
+      "before": {
+        "description": "Le Mistral a laissé des quartiers brisés entre les docks, les collines et les routes de Marseille. Explore les scènes en vue FPS, consulte le Pip-Boy, équipe-toi et retrouve carte, radio et holodisques. Le jeu local v0.50.0 propose une Exploration libre avec progression préremplie ; les captures de Canebière–Belsunce montrent cette scène narrative, sans prétendre à une campagne accomplie ni à une reproduction géographique intégrale 1:1."
+      },
+      "after": {
+        "description": "Le Mistral a laissé des quartiers brisés entre les docks, les collines et les routes de Marseille. Parcours les scènes en exploration libre, consulte le Pip-Boy et prépare ton équipement. Carte, radio et holodisques t'accompagnent dans les rues de Canebière–Belsunce."
+      }
+    },
+    {
+      "id": "parallaxe-protocole-9",
+      "fields": [
+        "description"
+      ],
+      "before": {
+        "description": "Deux à quatre inspecteurs franchissent le même seuil sans percevoir les mêmes anomalies. Dans le Chalet de service, compare les reflets, transmets tes observations par radio et rends un diagnostic commun avant que le lieu ne se referme. La version source 0.4.1 documente 96 anomalies et des décalages de perception, ainsi qu'un entraînement solo. Le site hébergé reste privé ; le dépôt fournit un jeu PC/réseau local et les instructions d'installation."
+      },
+      "after": {
+        "description": "Des inspecteurs franchissent le même seuil sans percevoir les mêmes anomalies. Dans le Chalet de service, mémorise les lieux, compare les reflets et confronte les perceptions avant de rendre ton diagnostic. Exerce-toi seul ou partage tes observations par radio pour décider avec les autres inspecteurs."
+      }
+    },
+    {
+      "id": "massilia-cyberpunk",
+      "fields": [
+        "description"
+      ],
+      "before": {
+        "description": "Branche le Cortex tactique, traverse les rues du centre et consulte la carte des lieux découverts de Marseille augmentée. La version locale 0.76.0 associe exploration FPS et interface de cyberdeck. Le paquet testé couvre 168 cellules du centre, soit environ 10,5 km² ; il ne contient pas le cache complet de la métropole. La scène affiche elle-même ses données comme non certifiées : ni façades, reliefs ni intérieurs ne sont garantis 1:1. Ce jeu installable reste distinct de SOMA//MASSILIA."
+      },
+      "after": {
+        "description": "Branche le Cortex tactique et parcours les rues du centre de Marseille augmentée. Consulte la carte des lieux découverts, explore les secteurs accessibles et garde ton cyberdeck à portée pour lire les informations de la ville."
+      }
+    },
+    {
+      "id": "dont-look-when-they-say-soleil",
+      "fields": [
+        "tags",
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "tags": [
+          "Jeu original",
+          "Survie & horreur",
+          "Mini-jeu",
+          "Réflexes",
+          "Arcade",
+          "Collection historique"
+        ],
+        "pitch": "La consigne tombe : « SOLEIL ». Immobilise-toi avant qu'il soit trop tard.",
+        "description": "Dans les archives du 2 au 5 août, un jeu de lumière réduit chaque pas à un risque. Progresse uniquement hors du signal « SOLEIL » ; au signal, arrête-toi et protège tes 100 points de vie avant la fin des 70 secondes. Les commandes Avancer, Stop et Recommencer règlent cette épreuve de réflexes, distincte du jeu d'horreur 3D SOLEIL MORT."
+      },
+      "after": {
+        "tags": [
+          "Jeu original",
+          "Survie & horreur",
+          "Mini-jeu",
+          "Réflexes",
+          "Arcade"
+        ],
+        "pitch": "Avance tant que tu le peux. Arrête-toi avant que la pénalité n'épuise tes forces.",
+        "description": "Une seule décision rythme l'épreuve : avancer ou s'arrêter. Fais monter ton score avec Avancer, utilise Stop pour interrompre la progression et évite les pénalités qui rongent tes points de vie. Le chronomètre tourne ; préserve tes forces avant de recommencer pour améliorer ton résultat."
+      }
+    },
+    {
+      "id": "maid-cafe-simulator-deluxe",
+      "fields": [
+        "tags",
+        "pitch",
+        "description"
+      ],
+      "before": {
+        "tags": [
+          "Jeu original",
+          "Gestion & simulation",
+          "Mini-jeu",
+          "Service",
+          "Arcade",
+          "Collection historique"
+        ],
+        "pitch": "Le comptoir se remplit. La patience se vide. Assure le service avant la dernière seconde.",
+        "description": "Au Maid Café de la collection restaurée, les commandes ne peuvent plus attendre. Sers-les avant que la patience ne soit épuisée, surveille ton score, les 100 points de vie et le chronomètre de 70 secondes ; un incident peut bousculer ton service. Cette épreuve arcade utilise Servir, Incident et Recommencer : ce n'est pas l'édition Moonlit Maid Café Simulator."
+      },
+      "after": {
+        "tags": [
+          "Jeu original",
+          "Gestion & simulation",
+          "Mini-jeu",
+          "Service",
+          "Arcade"
+        ],
+        "pitch": "Assure les services, garde le rythme et évite les incidents jusqu'à la dernière seconde.",
+        "description": "Au comptoir du Maid Café, enchaîne les services pour faire monter ton score avant la fin du chronomètre. Chaque commande servie rapporte des points ; les incidents coûtent des points de vie. Recommence le service pour améliorer ton résultat."
+      }
+    },
+    {
+      "id": "avp-blood-arena",
+      "fields": [
+        "tags",
+        "description"
+      ],
+      "before": {
+        "tags": [
+          "Fan game",
+          "Alien vs. Predator",
+          "Sport tactique",
+          "Tour par tour",
+          "Solo",
+          "Multijoueur local",
+          "Prototype",
+          "Navigateur"
+        ],
+        "description": "Le Circuit des neuf factions ouvre ses arènes : récupère le Nexus, protège ton porteur et marque au terme de matchs tactiques au tour par tour, en solo contre l’IA ou à deux en local. Cette relance technique 0.1.0 propose un moteur autonome et un codex ; elle est distincte des versions historiques 0.30 et 0.36 encore non restaurées. Quatorze des dix-huit profils sportifs restent provisoires. Le prototype se joue maintenant directement dans le navigateur ; les fichiers restent disponibles dans son dépôt public."
+      },
+      "after": {
+        "tags": [
+          "Fan game",
+          "Alien vs. Predator",
+          "Sport tactique",
+          "Tour par tour",
+          "Solo",
+          "Multijoueur local"
+        ],
+        "description": "Le Circuit ouvre ses arènes : choisis ta faction, récupère le Nexus et protège le porteur jusqu'au but adverse. Déplace tes joueurs, garde assez de points d'action pour leurs capacités et prépare la réponse de l'autre équipe. Dispute les matchs tactiques contre l'IA ou à deux en local."
+      }
+    }
+  ],
+  "inlineAppliedChanges": [
+    {
+      "id": "cainos",
+      "before": {
+        "description": "Le terminal C&A cache une salle de contrôle, ses archives et Circus Combat — Encore. Après calibration, ouvre une arène où quatorze combattants, douze décors, neuf modes et des costumes sélectionnables composent des duels à part entière, sans confondre les fiches d'archive avec des combattants jouables.",
+        "pitch": "Calibre le terminal, franchis la console et découvre ce que le Cirque a programmé."
+      },
+      "after": {
+        "description": "Le terminal C&A dissimule sa salle de contrôle, ses archives et les arènes de Circus Combat — Encore. Calibre la console, explore les dossiers du Cirque, puis choisis ton combattant, son costume et le décor du prochain duel.",
+        "pitch": "Calibre le terminal, franchis la console et découvre ce que le Cirque a programmé."
+      }
+    },
+    {
+      "id": "shadow-codec-ops",
+      "before": {
+        "description": "Les fréquences Codec relient des opérations furtives en 2D, des archives tactiques et vingt-quatre Side Ops réparties entre douze époques. Observe les patrouilles, exploite leurs angles morts et rejoins les scènes dédiées MG1, MGS1 ou Ground Zeroes : chaque contact radio possède son contexte.",
+        "pitch": "La fréquence est ouverte. Infiltre le secteur, récupère le renseignement et évacue."
+      },
+      "after": {
+        "description": "Les fréquences Codec relient des opérations furtives et des archives tactiques à travers plusieurs époques. Observe les patrouilles, exploite leurs angles morts et accomplis les missions de MG1, MGS1 et Ground Zeroes en t'appuyant sur tes contacts radio.",
+        "pitch": "La fréquence est ouverte. Infiltre le secteur, récupère le renseignement et évacue."
+      }
+    },
+    {
+      "id": "la-petite-fiole",
+      "before": {
+        "description": "Un atelier d'apothicaire jouable, entre commandes, missions, ingredients et reputation de sorcier.",
+        "pitch": "Un chaudron, un registre scelle, et une boutique qui sent deja l'aventure magique."
+      },
+      "after": {
+        "description": "Les commandes s'accumulent dans ton atelier d'apothicaire. Rassemble les ingrédients, prépare tes potions et accomplis les missions qui feront grandir ta réputation de sorcier.",
+        "pitch": "Ouvre le registre, fais chauffer le chaudron et honore la prochaine commande."
+      }
+    },
+    {
+      "id": "jigsaw-mastermind",
+      "before": {
+        "description": "Un jeu mental autour des choix, des pieges et de la lecture froide d'une interface hostile.",
+        "pitch": "Une table de puzzle sombre ou chaque decision ressemble a une confession."
+      },
+      "after": {
+        "description": "Les pièges posent leurs conditions et chaque décision engage ta survie. Examine les indices, confronte les choix et cherche l'issue de cette épreuve mentale.",
+        "pitch": "Résous l'épreuve : chaque choix peut devenir ton prochain piège."
+      }
+    },
+    {
+      "id": "apertire-enrichment-os",
+      "before": {
+        "description": "Un faux systeme d'enrichissement scientifique, entre laboratoire froid et humour de test.",
+        "pitch": "Une interface propre, clinique, presque trop calme pour etre rassurante."
+      },
+      "after": {
+        "description": "Le laboratoire d'enrichissement attend ses prochains essais. Consulte la console scientifique et suis les procédures au milieu d'une installation aussi clinique qu'inquiétante.",
+        "pitch": "La console attend ton prochain ordre. Le laboratoire, lui, reste étrangement calme."
+      }
+    },
+    {
+      "id": "hellbound-hotel-manager",
+      "before": {
+        "description": "Un jeu de gestion d'hotel infernal ou l'accueil client devient une affaire de survie.",
+        "pitch": "Check-in, contrats douteux, chambres impossibles : la gestion descend d'un etage."
+      },
+      "after": {
+        "description": "Les portes de ton hôtel infernal s'ouvrent sur des clients, des contrats douteux et des chambres impossibles. Organise les séjours et maintiens l'établissement en activité malgré les dangers de chaque nouvel arrivant.",
+        "pitch": "Accueille les clients, tiens les comptes et survis au prochain séjour."
+      }
+    },
+    {
+      "id": "sg2d-expedition",
+      "before": {
+        "description": "Une expedition tactique en 2.5D avec campagne, exploration interstellaire et progression d'equipe.",
+        "pitch": "Monte une nouvelle expedition et pars franchir l'inconnu depuis un poste de commandement epure."
+      },
+      "after": {
+        "description": "Depuis ton poste de commandement, prépare une expédition vers d'autres mondes. Dirige ton équipe, explore les territoires inconnus et fais progresser ses membres au fil de la campagne.",
+        "pitch": "Prépare ton équipe, lance l'expédition et franchis la prochaine frontière."
+      }
+    },
+    {
+      "id": "ragtime-rumble",
+      "before": {
+        "description": "Un boss rush musical qui melange combat, danse, riffs, memoire, tournee et duo local.",
+        "pitch": "Choisis ton tempo, leve le rideau et bats chaque tete d'affiche sans quitter la mesure."
+      },
+      "after": {
+        "description": "Le rideau se lève sur une tournée où les têtes d'affiche imposent leurs épreuves musicales. Enchaîne combats, danses et riffs, retiens les séquences et garde le tempo jusqu'au prochain rappel.",
+        "pitch": "Choisis ton tempo, lève le rideau et bats chaque tête d'affiche sans quitter la mesure."
+      }
+    },
+    {
+      "id": "fossil-frontier",
+      "before": {
+        "description": "Un jeu de paleontologie complet avec expeditions, fouilles, laboratoire, musee, campagne et cooperation.",
+        "pitch": "Deterre le passe, restaure chaque squelette et transforme tes decouvertes en grand musee."
+      },
+      "after": {
+        "description": "Pars en expédition à la recherche de fossiles, mène les fouilles et rapporte tes découvertes au laboratoire. Restaure les squelettes et enrichis les collections de ton musée au fil de la campagne.",
+        "pitch": "Déterre le passé, restaure les squelettes et enrichis les collections de ton musée."
+      }
+    },
+    {
+      "id": "genomescan-bioarena",
+      "before": {
+        "description": "Un scanner genetique qui transforme codes-barres et QR codes en creatures a combattre, capturer et faire evoluer.",
+        "pitch": "Un code devient un ADN procedural, puis une nouvelle recrue pour ton bestiaire."
+      },
+      "after": {
+        "description": "Chaque code scanné révèle une nouvelle créature. Déchiffre son ADN, affronte-la dans la BioArena, puis capture et fais évoluer les recrues de ton bestiaire.",
+        "pitch": "Scanne un code, découvre sa créature et agrandis ton bestiaire."
+      }
+    },
+    {
+      "id": "snail-dette-immortelle",
+      "before": {
+        "description": "Un survival horror complet inspire du mythe de l'escargot immortel, avec campagne, survie et coop locale.",
+        "pitch": "Tu as accepte la fortune et l'immortalite. La creature, elle, n'a jamais oublie ta position."
+      },
+      "after": {
+        "description": "La fortune et l'immortalité ont un prix : un escargot qui te poursuit sans relâche. Traverse les épreuves de la campagne et repousse l'instant où la créature te rejoindra.",
+        "pitch": "Tu as accepté la fortune et l'immortalité. La créature, elle, n'a jamais oublié ta position."
+      }
+    },
+    {
+      "id": "yautja-la-longue-chasse",
+      "before": {
+        "description": "La chasse commence dans le vaisseau, pas dans l'arène. Équipe ton Yautja et poursuis des contrats en 2D latérale ; les fronts de clans, Preserve Hunt et Homeworld ouvrent des parcours distincts de commandement, de sabotage et d'exploration, dont la complétude varie selon les secteurs.",
+        "pitch": "Prépare la chasse, traverse le territoire et rapporte un trophée digne de ton clan."
+      },
+      "after": {
+        "description": "À bord du vaisseau, équipe ton Yautja avant de partir à la poursuite de ses contrats. Traverse les territoires de chasse, mène les fronts de clans et explore les parcours de Preserve Hunt et Homeworld entre commandement, sabotage et traque.",
+        "pitch": "Prépare la chasse, traverse le territoire et rapporte un trophée digne de ton clan."
+      }
+    },
+    {
+      "id": "iron-tempest",
+      "before": {
+        "description": "Un prototype narratif de combat en mecha entre tempete polaire, briefing tactique et intervention lourde.",
+        "pitch": "Le relais B-2 s'est tu. Tempest est la seule unite encore dans la fenetre meteo."
+      },
+      "after": {
+        "description": "La tempête polaire enferme ton mecha dans une étroite fenêtre d'intervention. Prends connaissance du briefing, prépare l'engagement et mène l'opération malgré les conditions extrêmes.",
+        "pitch": "Le relais B-2 s'est tu. Tempest est la seule unité encore dans la fenêtre météo."
+      }
+    },
+    {
+      "id": "hive-ascension-cycle",
+      "before": {
+        "description": "Une seconde interprétation de Hive Ascension qui suit tout le cycle biologique, de l'Ovomorphe à la Reine, avant de basculer vers un RTS organique.",
+        "pitch": "Change de vision, infiltre la station et développe une ruche capable de commander par phéromones."
+      },
+      "after": {
+        "description": "Éclos sous la forme d'un Ovomorphe et traverse les métamorphoses qui conduisent jusqu'à la Reine. Change de vision, infiltre la station et étends une ruche dont les ordres circulent par phéromones.",
+        "pitch": "Change de vision, infiltre la station et commande l'expansion de ta ruche."
+      }
+    },
+    {
+      "id": "kc-holographics",
+      "before": {
+        "description": "Un simulateur de duel holographique 2.5D avec decks prédéfinis, règles TCG strictes ou mode anime, plusieurs niveaux d'IA et dos de cartes personnalisables.",
+        "pitch": "Prépare ton deck, invoque tes cartes sur une arène holographique et affronte l'IA dans le navigateur."
+      },
+      "after": {
+        "description": "Choisis ton deck et engage un duel dans l'arène holographique. Invoque tes monstres, organise tes cartes et adapte ta stratégie aux adversaires et aux règles du duel choisi.",
+        "pitch": "Prépare ton deck, invoque tes monstres et prends l'avantage dans l'arène holographique."
+      }
+    },
+    {
+      "id": "cells-at-work-immune-alert",
+      "before": {
+        "description": "Un fan-game d'action cellulaire avec six campagnes aux rôles distincts, défense infinie, alliés IA, boss, progression permanente et commandes tactiles.",
+        "pitch": "Livre l'oxygène, élimine les agents pathogènes, colmate les blessures et coordonne les défenses de l'organisme."
+      },
+      "after": {
+        "description": "L'organisme appelle ses cellules à défendre chaque territoire menacé. Livre l'oxygène, élimine les agents pathogènes et colmate les blessures en coordonnant tes alliés au fil des campagnes.",
+        "pitch": "Livre l'oxygène, repousse les infections et coordonne les défenses de l'organisme."
+      }
+    },
+    {
+      "id": "octo-arsenal",
+      "before": {
+        "description": "Un shooter rogue-lite en Canvas 2D où un poulpe expérimental manie huit armes indépendantes face à des vagues procédurales, mutations et boss abyssaux.",
+        "pitch": "Huit bras. Huit armes. Aucune discrétion."
+      },
+      "after": {
+        "description": "Un poulpe expérimental affronte les vagues qui envahissent les profondeurs. Manie ses huit armes, choisis ses mutations et ouvre-toi un passage jusqu'aux boss abyssaux.",
+        "pitch": "Huit bras. Huit armes. Aucune discrétion."
+      }
+    },
+    {
+      "id": "echelle-cosmique-evolution-totale",
+      "before": {
+        "description": "Un jeu d'évolution en Canvas 2D qui traverse vingt échelles, de la protocellule à l'Univers, avec boss, trente mutations, écosystème autonome et modes alternatifs.",
+        "pitch": "Pars d'une membrane vivante, traverse les océans, domine la terre, absorbe les astres et dépasse l'Univers."
+      },
+      "after": {
+        "description": "Commence comme une protocellule et grandis au sein d'un écosystème vivant. Acquiers des mutations, surmonte les prédateurs et les boss, puis traverse les échelles du vivant jusqu'aux astres et à l'Univers.",
+        "pitch": "Pars d'une membrane vivante, traverse les océans et grandis jusqu'aux échelles cosmiques."
+      }
+    },
+    {
+      "id": "hellsync-choirbreach",
+      "before": {
+        "description": "Un FPS rythmique infernal où la musique importée est analysée localement pour générer la cadence, les vagues, les mutations de l'arène et le boss.",
+        "pitch": "Importe un morceau : chaque grave, accent et rupture devient une créature, une attaque ou une mutation."
+      },
+      "after": {
+        "description": "Dans l'arène infernale, ta musique impose la cadence de l'affrontement. Choisis un morceau et affronte les vagues, les mutations du terrain et le boss qu'il fait surgir.",
+        "pitch": "Choisis ton morceau et traverse l'arène au rythme de ses attaques."
+      }
+    }
+  ]
+}

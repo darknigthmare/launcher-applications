@@ -216,7 +216,9 @@ if (migrationMatch && appLoaderStart > 0 && appLoaderEnd > appLoaderStart) {
       { id: "custom-game", image: "assets/previews/custom-game.jpg" }
     ];
     const saved = [
-      { id: "world-hive-wars", image: "https://launcher-applications.vercel.app/assets/previews/world-hive-wars.webp" },
+      { id: "world-hive-wars", image: "https://launcher-applications.vercel.app/assets/previews/world-hive-wars.webp",
+        illustration: "https://example.com/unreviewed-stored-art.png",
+        illustrationAttribution: { text: "Crédit non attesté", url: "https://example.com/credit" } },
       { id: "moustique-the-video-game", image: "assets/previews/moustique-the-video-game.webp" },
       { id: "custom-game", image: "https://example.com/custom-illustration.png" }
     ];
@@ -244,6 +246,9 @@ if (migrationMatch && appLoaderStart > 0 && appLoaderEnd > appLoaderStart) {
       "preview relatif WebP MOUSTIQUE migré vers JPEG");
     assert(hydrated.find((app) => app.id === "custom-game")?.image === saved[2].image,
       "une illustration volontairement personnalisée n'est pas écrasée par la migration");
+    assert(!hydrated.find((app) => app.id === "world-hive-wars")?.illustration &&
+      !hydrated.find((app) => app.id === "world-hive-wars")?.illustrationAttribution,
+      "les illustrations et crédits conservés localement ne remplacent pas la revue officielle");
   } catch (error) {
     failures.push("Test fonctionnel de migration des aperçus: " + error.message);
   }
@@ -348,7 +353,7 @@ assert(apps.filter((app) => app?.category === "Jeux").length === 127 + recovered
   "le nombre de jeux intègre les nouvelles fiches vérifiées");
 const offlineGithubGameIds = [
   "diva-pulse", "derniere-ligne-zero-repli",
-  "fallout-marseille-mistral", "parallaxe-protocole-9"
+  "fallout-marseille-mistral", "parallaxe-protocole-9", "massilia-cyberpunk"
 ];
 for (const id of offlineGithubGameIds) {
   const app = recoveredApps.find((entry) => entry.id === id);
@@ -574,6 +579,186 @@ for (const item of nativeEntries) assert(recoveredApps.some((x)=>x.id === item.i
 
 const galleryDocument = JSON.parse(await readFile(path.join(root, "assets", "app-gallery.json"), "utf8"));
 const galleryMap = galleryDocument.galleries || galleryDocument.apps || galleryDocument;
+const legacyIllustrationIds = new Set([
+  "cainos", "shadow-codec-ops", "vortex-command", "triarche-ciel-rouge", "yautja-apex-hunt",
+  "world-hive-wars", "moustique-the-video-game", "avp-hunt-hive-tcg", "deadwall-last-enclosure"
+]);
+const legacyIllustrationApps = apps.filter((app) => legacyIllustrationIds.has(app.id) &&
+  galleryMap[app.id]?.presentationReview === "pending-fidelity");
+assert(legacyIllustrationApps.length === legacyIllustrationIds.size,
+  "les neuf anciennes présentations masquées sont suivies séparément des captures natives");
+const illustrationApps = [...recoveredApps, ...legacyIllustrationApps];
+
+// Promotional artwork has its own provenance and review. It never replaces a
+// source-native title screen, preview, or screenshot in the capture manifests.
+const illustrationManifestPath = "assets/illustration-manifest.json";
+assert(await exists(illustrationManifestPath), "le manifeste des illustrations promotionnelles est présent");
+let illustrationDocument = null;
+if (await exists(illustrationManifestPath)) {
+  try {
+    illustrationDocument = JSON.parse(await readFile(path.join(root, illustrationManifestPath), "utf8"));
+  } catch (error) {
+    failures.push(`manifeste des illustrations illisible: ${error.message}`);
+  }
+}
+assert(illustrationDocument?.schemaVersion === 1 && Array.isArray(illustrationDocument?.illustrations),
+  "le manifeste des illustrations utilise le schéma version 1");
+const illustrationEntries = Array.isArray(illustrationDocument?.illustrations) ? illustrationDocument.illustrations : [];
+assert(illustrationEntries.length === illustrationApps.length,
+  "les jeux retrouvés et les neuf présentations masquées possèdent une illustration ou un candidat en revue");
+assert(new Set(illustrationEntries.map((entry) => entry?.id)).size === illustrationEntries.length,
+  "les illustrations possèdent des identifiants uniques");
+const illustrationPaths = new Set();
+for (const entry of illustrationEntries) {
+  const app = illustrationApps.find((candidate) => candidate.id === entry?.id);
+  assert(Boolean(app), `illustration attribuée à un jeu éligible connu: ${entry?.id || "inconnu"}`);
+  if (!app) continue;
+  const expectedAsset = `assets/illustrations/${app.id}.png`;
+  assert(entry.asset === expectedAsset, `illustration distincte rangée avec le jeu ${app.id}`);
+  illustrationPaths.add(entry.asset);
+  assert(["accepted", "needs-review"].includes(entry.reviewStatus), `statut de revue explicite pour ${app.id}`);
+  assert(!app.illustration,
+    `l'illustration de ${app.id} est attribuée uniquement par son manifeste de revue`);
+  assert(entry.asset !== app.presentation && entry.asset !== app.image && !galleryMap[app.id]?.images?.includes(entry.asset),
+    `l'illustration de ${app.id} reste séparée des captures natives`);
+  assert(/^[a-f0-9]{64}$/.test(String(entry.sha256 || "")), `empreinte de l'illustration de ${app.id} renseignée`);
+  assert(await exists(entry.asset), `fichier d'illustration conservé pour ${app.id}`);
+  if (await exists(entry.asset)) {
+    await assertRasterFormat(entry.asset);
+    const bytes = await readFile(path.join(root, entry.asset));
+    assert(createHash("sha256").update(bytes).digest("hex") === entry.sha256,
+      `empreinte de l'illustration de ${app.id} vérifiée`);
+    const dimensions = await pngDimensions(entry.asset);
+    assert(dimensions?.width > 0 && dimensions?.height > 0,
+      `dimensions PNG valides sans imposer un format carré pour ${app.id}`);
+  }
+  assert(entry.review === `docs/illustration-reviews/${app.id}.json` && await exists(entry.review),
+    `revue de l'illustration de ${app.id} conservée`);
+  if (!entry.review || !(await exists(entry.review))) continue;
+  let review;
+  try {
+    review = JSON.parse(await readFile(path.join(root, entry.review), "utf8"));
+  } catch (error) {
+    failures.push(`revue d'illustration illisible pour ${app.id}: ${error.message}`);
+    continue;
+  }
+  assert(review.id === app.id && review.asset === entry.asset && review.sha256 === entry.sha256,
+    `la revue de ${app.id} porte sur les octets de l'illustration publiée`);
+  assert(review.provider === "OpenAI" && ["image_gen", "image_gen.imagegen"].includes(review.generator),
+    `outil de génération réellement employé documenté pour ${app.id}`);
+  assert(typeof review.prompt === "string" && review.prompt.trim().length > 0,
+    `prompt de génération conservé pour ${app.id}`);
+  assert(Number.isFinite(Date.parse(review.reviewedAt || "")) && review.verdict === entry.reviewStatus,
+    `date et verdict de revue cohérents pour ${app.id}`);
+  assert(Array.isArray(review.differences) && review.differences.every((difference) => typeof difference === "string"),
+    `différences observées explicitement consignées pour ${app.id}`);
+  if (app.id === "massilia-cyberpunk") {
+    assert(review.sourceAttribution?.text?.includes("OpenStreetMap") &&
+      review.sourceAttribution?.url === "https://www.openstreetmap.org/copyright",
+      "l'illustration de Massilia conserve l'attribution des données OpenStreetMap");
+  }
+  if (review.sourceAttribution) {
+    assert(typeof review.sourceAttribution.text === "string" && Boolean(review.sourceAttribution.text.trim()) &&
+      typeof review.sourceAttribution.url === "string" && review.sourceAttribution.url.startsWith("https://") &&
+      entry.attribution?.text === review.sourceAttribution.text && entry.attribution?.url === review.sourceAttribution.url &&
+      (!review.sourceAttribution.license || entry.attribution?.license === review.sourceAttribution.license),
+      `l'attribution de source de ${app.id} est transmise au manifeste public`);
+  } else {
+    assert(!entry.attribution, `aucun crédit de source n'est inventé pour ${app.id}`);
+  }
+  assert(Array.isArray(review.references) && review.references.length > 0,
+    `références réelles de génération conservées pour ${app.id}`);
+  const galleryImages = Array.isArray(galleryMap[app.id]) ? galleryMap[app.id] : galleryMap[app.id]?.images || [];
+  // The nine older covers were hidden because they were unverified concepts.
+  // Only their native preview/screenshots can guide the replacement artwork.
+  const nativeReferences = new Set([...(app.recoveredGame ? [app.presentation] : []), app.image, ...galleryImages]);
+  for (const reference of Array.isArray(review.references) ? review.references : []) {
+    assert(nativeReferences.has(reference?.path), `référence native appartenant au jeu ${app.id}: ${reference?.path}`);
+    if (!nativeReferences.has(reference?.path)) continue;
+    assert(Boolean(reference?.path) && await exists(reference.path), `référence visuelle conservée pour ${app.id}: ${reference?.path}`);
+    assert(/^[a-f0-9]{64}$/.test(String(reference?.sha256 || "")), `empreinte de référence renseignée pour ${app.id}`);
+    if (reference?.path && await exists(reference.path)) {
+      const bytes = await readFile(path.join(root, reference.path));
+      assert(createHash("sha256").update(bytes).digest("hex") === reference.sha256,
+        `référence de ${app.id} inchangée depuis sa revue: ${reference.path}`);
+    }
+  }
+}
+assert(apps.every((app) => !app.illustration && !app.illustrationAttribution),
+  "le catalogue brut ne duplique pas les illustrations ni crédits du manifeste de revue");
+// Execute the real asynchronous hydration against both review states. Stored
+// or unknown illustrations must never acquire an official generation label.
+const illustrationLoader = inlineScriptBody.match(/    async function loadIllustrations\(\) \{[\s\S]*?\n    \}/)?.[0];
+const saveAppsSource = inlineScriptBody.match(/    function saveApps\(\) \{[\s\S]*?\n    \}/)?.[0];
+assert(Boolean(illustrationLoader), "le chargement réel du manifeste d'illustrations est testable");
+assert(Boolean(saveAppsSource), "la sauvegarde locale des fiches est testable");
+if (illustrationLoader) {
+  const baseUrl = "https://launcher-applications.vercel.app/";
+  const fixtureIds = recoveredApps.slice(0, 3).map((app) => app.id);
+  const fixtureApps = fixtureIds.map((id) => ({
+    id, image: `assets/previews/${id}.jpg`, presentation: `https://example.com/custom-${id}.png`,
+    illustration: "https://example.com/untrusted-stored-illustration.png",
+    illustrationAttribution: { text: "Crédit non attesté", url: "https://example.com/credit" }
+  }));
+  const fixtureAttribution = { text: "Map data © OpenStreetMap contributors", url: "https://www.openstreetmap.org/copyright" };
+  const fixtureDocument = {
+    schemaVersion: 1,
+    illustrations: [[fixtureIds[0], "accepted"], [fixtureIds[1], "needs-review"], ["unknown-game", "accepted"]]
+      .map(([id, reviewStatus]) => ({ id, asset: `assets/illustrations/${id}.png`, sha256: "a".repeat(64),
+        reviewStatus, review: `docs/illustration-reviews/${id}.json`, attribution: fixtureAttribution }))
+  };
+  const environment = {
+    URL, console,
+    mediaViewById: new Map(),
+    apps: fixtureApps.map((app) => ({ ...app })),
+    starterApps: fixtureApps.map(({ illustration, illustrationAttribution, ...app }) => app),
+    sanitizeImageUrl: (value) => value ? new URL(value, baseUrl).href : "",
+    normalizeApp: (app) => ({ ...app, illustration: app.illustration ? new URL(app.illustration, baseUrl).href : "" }),
+    renderGrid: () => {},
+    storeKey: "test-illustration-provenance",
+    safeWrite: (key, value) => { environment.savedCatalogue = value; return true; },
+    fetch: async (url) => {
+      if (url !== "assets/illustration-manifest.json") throw new Error("Manifeste d'illustrations inattendu");
+      return { ok: true, json: async () => fixtureDocument };
+    }
+  };
+  try {
+    const hydrated = await vm.runInNewContext(`(async () => {
+      ${illustrationLoader}
+      ${saveAppsSource || ""}
+      await loadIllustrations();
+      if (typeof saveApps === "function") saveApps();
+      return apps;
+    })()`, environment, { timeout: 1200 });
+    assert(hydrated.find((app) => app.id === fixtureIds[0])?.illustration ===
+      new URL(`assets/illustrations/${fixtureIds[0]}.png`, baseUrl).href,
+      "une illustration acceptée est attribuée à sa fiche connue");
+    assert(!hydrated.find((app) => app.id === fixtureIds[1])?.illustration &&
+      !hydrated.find((app) => app.id === fixtureIds[2])?.illustration,
+      "les candidats en revue et les anciennes attributions non attestées restent exclus");
+    assert(hydrated.find((app) => app.id === fixtureIds[0])?.illustrationAttribution?.text === fixtureAttribution.text &&
+      hydrated.find((app) => app.id === fixtureIds[0])?.illustrationAttribution?.url === fixtureAttribution.url &&
+      !hydrated.find((app) => app.id === fixtureIds[1])?.illustrationAttribution &&
+      !hydrated.find((app) => app.id === fixtureIds[2])?.illustrationAttribution,
+      "les crédits de source suivent uniquement l'illustration acceptée du manifeste");
+    assert(hydrated.length === fixtureApps.length && !hydrated.some((app) => app.id === "unknown-game"),
+      "un manifeste d'illustrations ne crée pas de fiche inconnue");
+    assert(hydrated.every((app, index) => app.image === fixtureApps[index].image &&
+      app.presentation === fixtureApps[index].presentation),
+      "le chargement des illustrations préserve captures natives et présentations personnalisées");
+    assert(environment.savedCatalogue?.length === fixtureApps.length &&
+      environment.savedCatalogue.every((app) => !("illustration" in app) && !("illustrationAttribution" in app)),
+      "la sauvegarde locale n'atteste pas elle-même les illustrations officielles ni leurs crédits");
+  } catch (error) {
+    failures.push(`chargement du manifeste d'illustrations: ${error.message}`);
+  }
+}
+const illustrationFiles = await exists("assets/illustrations")
+  ? (await readdir(path.join(root, "assets/illustrations")))
+    .filter((name) => rasterExtensionPattern.test(name)).map((name) => `assets/illustrations/${name}`)
+  : [];
+for (const file of illustrationFiles) assert(illustrationPaths.has(file), `illustration référencée par sa revue: ${file}`);
+
 const archiveDocument = JSON.parse(await readFile(path.join(root, "assets", "app-gallery-admin.json"), "utf8"));
 const archiveMap = archiveDocument.previousPresentations || {};
 const fidelityMatrix = JSON.parse(await readFile(path.join(root, "docs", "MEDIA_FIDELITY_MATRIX_2026-11-01.json"), "utf8"));
@@ -1206,8 +1391,8 @@ if (await exists(hordeProofPath)) {
       "écran titre réel, empreinte non modifiée");
   }
 }
-assert(html.includes('"real-local-gameplay"') && html.includes("Fichiers et installation"),
-  "présentation local-source et accès par téléchargement dans l'interface");
+assert(html.includes('"real-local-gameplay"') && html.includes("Adresse web à confirmer"),
+  "les captures locales restent identifiées sans remplacer une adresse web manquante par une installation");
 
 let previousPresentationFiles = [];
 const previousPresentationDirectory = "assets/presentations/previous";
@@ -1352,14 +1537,24 @@ for (const asset of appShell) {
   if (assetExists) appShellBytes += (await stat(path.join(root, relativePath))).size;
 }
 assert(appShell.includes("/assets/openai-art-manifest.json"), "le manifeste OpenAI fait partie du shell hors ligne");
+assert(appShell.includes("/assets/illustration-manifest.json"), "la revue des nouvelles illustrations fait partie du shell hors ligne");
 assert(appShellBytes <= 5 * 1024 * 1024, "le préchargement APP_SHELL reste inférieur à 5 Mo");
-assert(serviceWorker.includes('const CACHE_NAME = "launcher-shell-v32"'), "le cache applicatif v1.16 utilise launcher-shell-v32");
-assert(serviceWorker.includes('const RUNTIME_CACHE = "launcher-media-runtime-v3"'), "le cache média renouvelé utilise launcher-media-runtime-v3");
+assert(serviceWorker.includes('const CACHE_NAME = "launcher-shell-v33"'), "le cache applicatif v1.17 utilise launcher-shell-v33");
+assert(serviceWorker.includes('const RUNTIME_CACHE = "launcher-media-runtime-v4"'), "le cache média renouvelé utilise launcher-media-runtime-v4");
 assert(serviceWorker.includes("const MAX_RUNTIME_ENTRIES = 120"), "le cache média différé est borné");
-assert(
-  serviceWorker.includes("/^\\/assets\\/(?:previews|presentations|screenshots)\\//"),
-  "les répertoires médias utilisent le cache différé"
-);
+const mediaRuleMatch = serviceWorker.match(/if\s*\((\/(?:\\.|[^/\n])+\/[a-z]*)\.test\(url\.pathname\)\)/);
+let mediaRule = null;
+if (mediaRuleMatch) {
+  try {
+    mediaRule = vm.runInNewContext(`(${mediaRuleMatch[1]})`, Object.create(null), { timeout: 1000 });
+  } catch (error) {
+    failures.push(`règle de cache média illisible: ${error.message}`);
+  }
+}
+assert(Boolean(mediaRule) && ["previews", "presentations", "screenshots", "illustrations"]
+  .every((directory) => mediaRule.test(`/assets/${directory}/example.png`)) &&
+  !mediaRule.test("/assets/recent-games.js"),
+  "les captures et illustrations utilisent le cache média différé");
 assert(serviceWorker.includes("key.startsWith(CACHE_PREFIX)"), "l'activation préserve les caches étrangers au launcher");
 assert(serviceWorker.includes("!response.redirected"), "les redirections ne sont pas mises en cache");
 assert(serviceWorker.includes('response.type === "basic"'), "seules les réponses same-origin sont mises en cache");
@@ -1369,8 +1564,10 @@ const mediaFiles = [...previewFiles, ...presentationFiles, ...previousPresentati
 assert(mediaFiles.length === 1092 + recoveredWithNativeMedia.length * 7,
   "les 1 092 médias historiques restent intacts, avec sept vrais médias par jeu retrouvé illustré");
 assert(new Set(mediaFiles).size === mediaFiles.length, "le compte total des médias ne contient aucun doublon");
+assert(new Set([...mediaFiles, ...illustrationFiles]).size === mediaFiles.length + illustrationFiles.length,
+  "les nouvelles illustrations sont distinctes de tous les médias historiques et natifs");
 assert(
-  !mediaFiles.some((asset) => serviceWorker.includes(`"/${asset}"`)),
+  ![...mediaFiles, ...illustrationFiles].some((asset) => serviceWorker.includes(`"/${asset}"`)),
   "les médias lourds ne bloquent pas l'installation hors ligne"
 );
 
@@ -1423,7 +1620,8 @@ if (failures.length) {
   console.log(
     `Audit réussi: ${checks.length} contrôles, ${apps.length} applications, ${previewFiles.length} aperçus, ` +
     `${presentationFiles.length} présentations, ${previousPresentationPaths.size} illustrations précédentes, ` +
-    `${galleryPaths.size} images de galerie, ${mediaFiles.length} médias au total et ` +
+    `${galleryPaths.size} images de galerie, ${mediaFiles.length} médias historiques/natifs, ` +
+    `${illustrationFiles.length} illustrations promotionnelles supplémentaires et ` +
     `${Math.round(appShellBytes / 1024)} Ko préchargés.`
   );
 }

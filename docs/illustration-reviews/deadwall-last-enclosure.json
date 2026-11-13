@@ -1,0 +1,24 @@
+{
+  "id": "deadwall-last-enclosure",
+  "asset": "assets/illustrations/deadwall-last-enclosure.png",
+  "sha256": "6cce8c754617f0f52b6471848d94ab9134ab7610337c725fab505bd17f3e7e1c",
+  "references": [
+    {
+      "path": "assets/screenshots/deadwall-last-enclosure/01.png",
+      "sha256": "51bda0dd3a04ce2a0401120afd66e5d7687887aa325af74fca24bce901c10b52"
+    },
+    {
+      "path": "assets/screenshots/deadwall-last-enclosure/02.png",
+      "sha256": "0a17508ca9e3545638dc8bedc8a33eecdc2357a15ffc57c983fdb57e961a7fb3"
+    }
+  ],
+  "reviewedAt": "2026-11-13T06:48:00.503979+00:00",
+  "provider": "OpenAI",
+  "generator": "image_gen",
+  "prompt": "Generate one landscape 16:9 standalone illustration faithfully representing the actual top-down colony browser game in these two native gameplay screenshots. Preserve the straight overhead camera, small detailed 2D/pre-rendered sprites, subdued olive-green, grey and rust-brown palette, and the same lived-in but simple map composition. The main native shelter is the large rectangular building in the upper center, with worn grey/rust corrugated roof, two long dark skylight strips, small silver roof vents and a narrow entrance on its south side. A grey asphalt road wraps around the shelter and forms a T intersection extending down the center, with a few faded pale road dashes. Keep the same small rusty cream/brown van on the lower-left road, three tiny ochre/brown survivor sprites near the intersection, muted olive grass, small scrap and wood piles to the right, thin metal fence panels, and the same flat damaged grey roof/metal panel textures along the lower sides. Use the native sprite scale: people are tiny overhead figures, not large portraits. Recompose only these existing game-world assets into a clean overhead illustration with the same roof shapes, grime textures and small objects. Remove every construction panel, resource bar, selection circle, minimap, prompt, weapon readout, text, icon, logo and label. Do not add zombies or hordes: no enemies are visible in these real references. Do not add new battles, flames, explosions, cinematic soldiers, realistic front-facing human characters or an invented sprawling fortress. Keep the top-down browser-game look instead of replacing it with a realistic apocalypse painting. Single coherent map-world illustration, not a montage.\nSTRICT CORRECTION FOR FIDELITY: There is only ONE fully visible cream/rust van, immediately below-left of the three tiny survivor sprites. Do not duplicate it anywhere. The large olive grass area on the right of the road must have only the one small rubble pile, one tiny scrap-wood pile and sparse bush already visible in the source. Do not place any cars, vans, trucks or new buildings in that right-hand grass area. A single partly cut-off dark rust cargo object at the extreme bottom-right may stay as in reference TWO. Where the source HUD obscures the world, extend plain olive ground instead of inventing more props. Do not add extra log stacks or barrels to fill negative space. The single shelter roof, T-road, one native van, three tiny survivors and two bottom-edge damaged-roof areas are the entire composition.",
+  "verdict": "accepted",
+  "differences": [
+    "Les panneaux de construction, ressources et la carte sont retirés ; les parties masquées par le HUD sont prolongées avec un sol sobre.",
+    "L’espacement des routes, débris, toitures et petits sprites est recomposé. Le refuge en tôle, son fourgon visible et les silhouettes à échelle de carte restent cohérents avec les captures. Une première variante ajoutait des fourgons à droite : elle a été écartée et régénérée pour les retirer. Aucun zombie ou combat non montré n’est ajouté."
+  ]
+}

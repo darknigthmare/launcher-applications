@@ -1,0 +1,30 @@
+{
+  "id": "silent-hill-halo-of-flesh",
+  "asset": "assets/illustrations/silent-hill-halo-of-flesh.png",
+  "sha256": "9ac917afc7dda43c30d826246c85856a93cbf8c3a01f97db883e981dffe7c794",
+  "provider": "OpenAI",
+  "generator": "image_gen.imagegen",
+  "prompt": "Create ONE 16:9 landscape promotional illustration by faithfully editing the FIRST attached native game battle screenshot. Preserve its deliberately primitive FLAT 2D vector figures exactly, not the realistic franchise characters: left figure is a small gray rounded trapezoid torso with two thin gray rounded legs and thin arms, enormous asymmetric dark charcoal polygonal pyramid helmet with thick black border and just a few pale diagonal scratch lines, and the long simple beige polygon blade held horizontally toward the right. Right figure has the same plain muted-purple trapezoid torso, thin dark rounded arms and legs, and its head is a ring of overlapping pink and gray petal shapes around a black circular center with pale pink radial spokes. Keep their actual silhouettes, limb lengths, proportions, equipment shapes, pose and relative sizes from the first screenshot. Preserve the original green-black foggy stage: flat gray wispy horizontal fog layers, distant near-black rectangular shapes, faint converging floor grid and a few tiny amber particles. Remove ALL UI, names, health bars, labels, overlay boxes and the red dashed gameplay targeting oval; fill only with the same existing floor/fog beneath them. Do not make realistic Pyramid Head, no musculature, face details, robes, blood, photorealistic blade, nurses, extra figures, new objects, logo or text. Do not upgrade this minimal game's graphics or turn it into a cinematic painting. The exact simple fan-prototype models and restrained near-black/gray/pink palette must remain recognizable. One image only.",
+  "references": [
+    {
+      "path": "assets/screenshots/silent-hill-halo-of-flesh/05.png",
+      "sha256": "4013eb3f2db92d5fee8df6ed03d07986fa3045428cc37ca33c11945ef8f339cd"
+    },
+    {
+      "path": "assets/screenshots/silent-hill-halo-of-flesh/03.png",
+      "sha256": "d3aa608e409fdbd2a8564998b4068df7a2271d771419888e6027f1cff0807edc"
+    },
+    {
+      "path": "assets/screenshots/silent-hill-halo-of-flesh/01.png",
+      "sha256": "d81ea5c46fef7b92cd9a322187929e82cf58566698d5821f187a8a05eba81846"
+    }
+  ],
+  "reviewedAt": "2026-11-13T06:35:53.279590+00:00",
+  "differences": [
+    "HUD et ovale de ciblage retirés ; brume et quadrillage reconstitués dans leurs emprises.",
+    "Répartition de la brume, particules et petits contours modifiée par la génération.",
+    "Les figurines vectorielles élémentaires, casque polygonal, lame et tête florale sont ceux du prototype ; aucune substitution par des modèles réalistes de la franchise."
+  ],
+  "verdict": "accepted",
+  "acceptanceScope": "Fidélité visuelle comparée au rendu natif référencé pour une illustration promotionnelle générée ; ce verdict ne certifie ni identité pixel à pixel, ni conformité canonique globale 1:1, ni nouvelle capture de gameplay."
+}

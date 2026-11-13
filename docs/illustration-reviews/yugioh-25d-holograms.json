@@ -1,0 +1,28 @@
+{
+  "id": "yugioh-25d-holograms",
+  "asset": "assets/illustrations/yugioh-25d-holograms.png",
+  "sha256": "1ecf4c61c379b43094eda0b19e8d22e7727edc7f4f13ca83f53dc2dded62072e",
+  "references": [
+    {
+      "path": "assets/screenshots/yugioh-25d-holograms/04.png",
+      "sha256": "58e63fa0f0d8fc073849898ada25d3a022f4dcd24a54129c622460f21905cb43"
+    },
+    {
+      "path": "assets/screenshots/yugioh-25d-holograms/05.png",
+      "sha256": "a4408226b3b9bfd29b514f810f9846b1ee2e528e92e0f754f40d188cb0ece534"
+    },
+    {
+      "path": "assets/screenshots/yugioh-25d-holograms/03.png",
+      "sha256": "d6005af9bb098dc98f76a8898201390891154f4811167dcc281e9fd689f2752f"
+    }
+  ],
+  "reviewedAt": "2026-11-13T06:32:07.170108+00:00",
+  "provider": "OpenAI",
+  "generator": "image_gen",
+  "prompt": "Create one landscape 16:9 illustration of the exact simple holographic card-duel browser game shown in the references. The first TWO images are authoritative actual gameplay. Show the same low, flat rectangular duel table from the same elevated oblique camera, midnight purple/black surroundings, thin cyan illuminated outer border, restrained blue grid on the dark table, outlined card zones with faint magenta on the far opponent side and cyan on the near player side, two small shared extra slots in the middle. Recompose the actual table into a clean full-width scene, preserving the simple low-poly 2.5D browser-rendered look and the wide empty spaces. Keep the same far-side arrangement from the source: two small brown spiral-backed facedown cards and the one small upright green-and-brown Battle Ox card/hologram toward the far-right. Keep a few of the same small existing card faces as a shallow fan along the near edge, with the same green spell / orange creature / blue ritual / purple trap color language visible in the reference. These remain small flat native cards; no giant new character painting. Reference THREE establishes that this game uses extremely simple 3D volumes; do not turn it into a realistic fantasy arena. Remove every HUD panel, log, score, text, labels, numbers and brand logos. No human duelists, no floating human hands, no huge dragons, no futuristic city, no added monsters, no invented readable card names or effects. The illustration must feel like this actual compact native game table, not generic Yu-Gi-Oh anime poster art. One scene, not a montage.",
+  "verdict": "accepted",
+  "differences": [
+    "Les textes, compteurs, journal de combat et panneaux latéraux sont retirés ; le plateau occupe l’image entière.",
+    "La perspective, l’espacement des zones et les détails miniatures des cartes sont interpolés. Le plateau cyan/violet et les cartes observées sont conservés comme références visuelles ; les dessins imprimés ne sont pas certifiés identiques pixel pour pixel et aucune nouvelle créature géante n’est ajoutée."
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "diva-pulse",
+  "asset": "assets/illustrations/diva-pulse.png",
+  "sha256": "07d626b066826e3d119593c4469d69acc9161bf400c9847b71c196e38b85bca4",
+  "provider": "OpenAI",
+  "generator": "image_gen.imagegen",
+  "prompt": "Create ONE landscape 16:9 promotional illustration by editing the FIRST native 3D gameplay screenshot, using the second screenshot only to verify the existing low-poly figure's exact geometry. Keep the same simple custom-engine WebGL mannequin, NOT a polished anime or official game model. Preserve the original chibi proportions: oversized low-poly beige rounded head, tiny mouth and restrained simple teal eyes, teal blocky bangs and long chunky twin tails, black rectangular headphones with small microphone, very simplified gray oval torso with long narrow turquoise triangular tie, conspicuous round gray shoulder/elbow joints, thin primitive forearms with black cuffs and turquoise rim, black short flared skirt with turquoise edge, pale thin legs and plain black knee-high boots with turquoise toes. Keep the existing open-arm pose and front-facing full-body camera from the first reference, and all original primitive faceted surfaces. Preserve exactly the native dark navy circular stage, concentric turquoise/purple rings on the floor, large upright turquoise and purple hoops behind the mannequin, simple equalizer-height colored rectangular posts behind her, two plain black box speakers, sparse original translucent spotlights and dark floor grid. Remove ALL HUD text, score, combo, rhythm-note circles/symbols and pause controls. Fill removed UI only with the same existing stage, no new props or lights. No title/logo, no skin/clothing detailing, no realistic fabric, no beauty-portrait face, no extra digits or accessories, no new animation pose, no cinematic rendering. It must remain the same rudimentary source-game work silhouette and original room rather than a redesigned franchise character. Return one image only.",
+  "references": [
+    {
+      "path": "assets/screenshots/diva-pulse/04.png",
+      "sha256": "03ec9c37aef2fafe636a6ab0f8d18658270001cf0ad1bf61721e9541b6177a7c"
+    },
+    {
+      "path": "assets/screenshots/diva-pulse/02.png",
+      "sha256": "5bdbc63b064cc65d527eb616360e502cb106ff1ac3091feba397dbef9b91bc18"
+    },
+    {
+      "path": "assets/screenshots/diva-pulse/01.png",
+      "sha256": "58fc6b5d4c11101a778f6b04e04f6e66b6ae7d94f5e5cb4489f575394fdea028"
+    }
+  ],
+  "reviewedAt": "2026-11-13T06:35:53.279590+00:00",
+  "differences": [
+    "HUD et notes rythmiques retirés ; éclairage et contraste de la scène plus clairs que sur la capture de gameplay.",
+    "Petits contours faciaux, facettes et répartition des barres lumineuses recalculés ; aucune identité pixel à pixel ni conformité à un modèle MMD officiel affirmée.",
+    "Proportions de mannequin simple, couettes en volumes, articulations rondes, tenue géométrique, enceintes et anneaux conservés ; pas de portrait anime ou de modèle haute définition."
+  ],
+  "verdict": "accepted",
+  "acceptanceScope": "Fidélité visuelle comparée au rendu natif référencé pour une illustration promotionnelle générée ; ce verdict ne certifie ni identité pixel à pixel, ni conformité canonique globale 1:1, ni nouvelle capture de gameplay."
+}

@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "illustrations": [
+    {
+      "id": "avp-blood-arena",
+      "asset": "assets/illustrations/avp-blood-arena.png",
+      "sha256": "f1bbf40eadf8d562152cd5823f567c26fb8110ff103c7b681e424e86dab31b73",
+      "reviewStatus": "accepted",
+      "review": "docs/illustration-reviews/avp-blood-arena.json"
+    },
+    {
+      "id": "avp-hunt-hive-tcg",
+      "asset": "assets/illustrations/avp-hunt-hive-tcg.png",
+      "sha256": "029bf1fbbedf686b0371cb5fdd98d8cd85fbdf9686d49f8c29773de8d9755781",
+      "reviewStatus": "accepted",
+      "review": "docs/illustration-reviews/avp-hunt-hive-tcg.json"
+    },
+    {
+      "id": "cainos",
+      "asset": "assets/illustrations/cainos.png",
+      "sha256": "37f9013a3809ab4369f19bc6ec6907c481a51df36540016ee85175a6da091733",
+      "reviewStatus": "accepted",
+      "review": "docs/illustration-reviews/cainos.json"
+    },
+    {
+      "id": "deadline-outbreak",
+      "asset": "assets/illustrations/deadline-outbreak.png",
+      "sha256": "52e630d11ba41c81fda4bcc554912e654c776a70405f23bd7ecbc156ff538771",
+      "reviewStatus": "accepted",
+      "review": "docs/illustration-reviews/deadline-outbreak.json"
+    },
+    {
+      "id": "deadwall-last-enclosure",
+      "asset": "assets/illustrations/deadwall-last-enclosure.png",
+      "sha256": "6cce8c754617f0f52b6471848d94ab9134ab7610337c725fab505bd17f3e7e1c",
+      "reviewStatus": "accepted",
+      "review": "docs/illustration-reviews/deadwall-last-enclosure.json"
+    },
+    {
+      "id": "derniere-ligne-zero-repli",
+      "asset": "assets/illustrations/derniere-ligne-zero-repli.png",
+      "sha256": "38c39e20662ec1df07c60fd0ad7c3b7e9225b9ee9cd969edadf8430de73fff97",
+      "reviewStatus": "accepted",
+      "review": "docs/illustration-reviews/derniere-ligne-zero-repli.json"
+    },
+    {
+      "id": "digital-circus-encore",
+      "asset": "assets/illustrations/digital-circus-encore.png",
+      "sha256": "c2f21a264c50bb323a61f913679036480e09558efa822d96fb93ed0365ad76a9",
+      "reviewStatus": "accepted",
+      "review": "docs/illustration-reviews/digital-circus-encore.json"
+    },
+    {
+      "id": "diva-pulse",
+      "asset": "assets/illustrations/diva-pulse.png",
+      "sha256": "07d626b066826e3d119593c4469d69acc9161bf400c9847b71c196e38b85bca4",
+      "reviewStatus": "accepted",
+      "review": "docs/illustration-reviews/diva-pulse.json"
+    },
+    {
+      "id": "dont-look-when-they-say-soleil",
+      "asset": "assets/illustrations/dont-look-when-they-say-soleil.png",
+      "sha256": "3e8130933cbf4d48a9c8386a5f37776919b3ea58867c8f4b20d18a8188d917cd",
+      "reviewStatus": "accepted",
+      "review": "docs/illustration-reviews/dont-look-when-they-say-soleil.json"
+    },
+    {
+      "id": "fallout-marseille-mistral",
+      "asset": "assets/illustrations/fallout-marseille-mistral.png",
+      "sha256": "7dcfe3ff4bdd8d3d3e969c057b9b8b637fb4b717998960abb996f8a8c3763d1e",
+      "reviewStatus": "accepted",
+      "review": "docs/illustration-reviews/fallout-marseille-mistral.json"
+    },
+    {
+      "id": "maid-cafe-simulator-deluxe",
+      "asset": "assets/illustrations/maid-cafe-simulator-deluxe.png",
+      "sha256": "ac436a84de7493a745bab9e0ca8a1393064c3b08f76ee0e8e1db811a32475b54",
+      "reviewStatus": "accepted",
+      "review": "docs/illustration-reviews/maid-cafe-simulator-deluxe.json"
+    },
+    {
+      "id": "mass-effect-relay-chronicles",
+      "asset": "assets/illustrations/mass-effect-relay-chronicles.png",
+      "sha256": "bd221cce643038924dcc276ca763b5d39e290acf68b512536b50f3d4a3728e09",
+      "reviewStatus": "accepted",
+      "review": "docs/illustration-reviews/mass-effect-relay-chronicles.json"
+    },
+    {
+      "id": "massilia-cyberpunk",
+      "asset": "assets/illustrations/massilia-cyberpunk.png",
+      "sha256": "afe1c549d7113f9c0f99e85af272ca07b1116bef23886bea9c8c5e6e9d0b1433",
+      "reviewStatus": "accepted",
+      "review": "docs/illustration-reviews/massilia-cyberpunk.json",
+      "attribution": {
+        "text": "Map data © OpenStreetMap contributors",
+        "url": "https://www.openstreetmap.org/copyright",
+        "license": "ODbL 1.0, source game also attributes BBbike extraction"
+      }
+    },
+    {
+      "id": "moustique-the-video-game",
+      "asset": "assets/illustrations/moustique-the-video-game.png",
+      "sha256": "56e6b16163355529edd4a92f6818d9e17ed1d1ef8aa04f67ef789a121f10f1d4",
+      "reviewStatus": "accepted",
+      "review": "docs/illustration-reviews/moustique-the-video-game.json"
+    },
+    {
+      "id": "parallaxe-protocole-9",
+      "asset": "assets/illustrations/parallaxe-protocole-9.png",
+      "sha256": "817063c903b5b542da199ba21010e52891f0e003ce0005c6f03df72c260da755",
+      "reviewStatus": "accepted",
+      "review": "docs/illustration-reviews/parallaxe-protocole-9.json"
+    },
+    {
+      "id": "ragtime-rumble-complete-tour",
+      "asset": "assets/illustrations/ragtime-rumble-complete-tour.png",
+      "sha256": "1593aa0379eb04486413f1c5eb03ba06830522d02086de3a3b331586fde310a8",
+      "reviewStatus": "accepted",
+      "review": "docs/illustration-reviews/ragtime-rumble-complete-tour.json"
+    },
+    {
+      "id": "reclaimed-after-dark",
+      "asset": "assets/illustrations/reclaimed-after-dark.png",
+      "sha256": "c435e01d69b8ebc6fea97ae82d7a4bb596375d3b6135ff0273ab9e16c0d410f1",
+      "reviewStatus": "accepted",
+      "review": "docs/illustration-reviews/reclaimed-after-dark.json"
+    },
+    {
+      "id": "resident-evil-bow-protocol",
+      "asset": "assets/illustrations/resident-evil-bow-protocol.png",
+      "sha256": "80e67bf315c2ed9a12d7dc04e3a239278e3db170b680d6d422299a4bd58d87c9",
+      "reviewStatus": "accepted",
+      "review": "docs/illustration-reviews/resident-evil-bow-protocol.json"
+    },
+    {
+      "id": "riftcasters-3d",
+      "asset": "assets/illustrations/riftcasters-3d.png",
+      "sha256": "2a9a16fe487b29e6f283787be944885e89676293b97cfc84f827e376337215d5",
+      "reviewStatus": "accepted",
+      "review": "docs/illustration-reviews/riftcasters-3d.json"
+    },
+    {
+      "id": "riftcasters-chaos-anglers",
+      "asset": "assets/illustrations/riftcasters-chaos-anglers.png",
+      "sha256": "43c3eb4f3ffa34ad82335350c28f083577e4eaa7437f9ad38e61e7ca91f319ab",
+      "reviewStatus": "accepted",
+      "review": "docs/illustration-reviews/riftcasters-chaos-anglers.json"
+    },
+    {
+      "id": "shadow-codec-ops",
+      "asset": "assets/illustrations/shadow-codec-ops.png",
+      "sha256": "72ca42617891b7fd0ba206713233ebec160064222f30142f76e21f188196a091",
+      "reviewStatus": "accepted",
+      "review": "docs/illustration-reviews/shadow-codec-ops.json"
+    },
+    {
+      "id": "silent-hill-halo-of-flesh",
+      "asset": "assets/illustrations/silent-hill-halo-of-flesh.png",
+      "sha256": "9ac917afc7dda43c30d826246c85856a93cbf8c3a01f97db883e981dffe7c794",
+      "reviewStatus": "accepted",
+      "review": "docs/illustration-reviews/silent-hill-halo-of-flesh.json"
+    },
+    {
+      "id": "triarche-ciel-rouge",
+      "asset": "assets/illustrations/triarche-ciel-rouge.png",
+      "sha256": "060630d2c6c3f6d03ebdef237189ccd7a3e277c949669b7d010c2914a768ede9",
+      "reviewStatus": "accepted",
+      "review": "docs/illustration-reviews/triarche-ciel-rouge.json"
+    },
+    {
+      "id": "vortex-command",
+      "asset": "assets/illustrations/vortex-command.png",
+      "sha256": "cab0dd432da0f7369c13479be41eb6dbd5370fee87dec219064e29c0332984e4",
+      "reviewStatus": "accepted",
+      "review": "docs/illustration-reviews/vortex-command.json"
+    },
+    {
+      "id": "world-hive-wars",
+      "asset": "assets/illustrations/world-hive-wars.png",
+      "sha256": "797b5dcbcb8b59fc79dcbfe27dd4f8da5c0063a309bc0c152672e5411078da9e",
+      "reviewStatus": "accepted",
+      "review": "docs/illustration-reviews/world-hive-wars.json"
+    },
+    {
+      "id": "yautja-apex-hunt",
+      "asset": "assets/illustrations/yautja-apex-hunt.png",
+      "sha256": "a8c34f3407aa578a3db1aa73daf5ee05594c3bb585a705afeaa6d379475609ef",
+      "reviewStatus": "accepted",
+      "review": "docs/illustration-reviews/yautja-apex-hunt.json"
+    },
+    {
+      "id": "yugioh-25d-holograms",
+      "asset": "assets/illustrations/yugioh-25d-holograms.png",
+      "sha256": "1ecf4c61c379b43094eda0b19e8d22e7727edc7f4f13ca83f53dc2dded62072e",
+      "reviewStatus": "accepted",
+      "review": "docs/illustration-reviews/yugioh-25d-holograms.json"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "testedAt": "2026-11-13T06:55:47.492Z",
+  "target": "local static source",
+  "passed": 19,
+  "results": [
+    "Only reviewed illustrations become official covers",
+    "Updated PWA shell caches current catalogue and gallery",
+    "Complete catalogue renders",
+    "Game count matches catalogue",
+    "Public galleries omit historical archives",
+    "BOW native title and captions match game",
+    "Gallery controls select the correct native preview",
+    "Public game prose omits technical QA and unrelated GPS claims",
+    "Restored mini-game interface is not mislabeled as a title screen",
+    "Unverified source repository is never presented as web play or installation",
+    "Technical capture provenance remains available in edit mode",
+    "Editing a name preserves trusted illustration and native gallery",
+    "Leaving edit mode clears archives",
+    "Old stored catalogue receives official media and links while preserving favorite and custom name",
+    "Custom stored media remains personalized after official gallery provenance loads",
+    "Official native screenshots remain available beside personalized images",
+    "Generated map-derived illustration retains its source credit",
+    "Showcase retains the map source attribution",
+    "Mobile viewport has no page overflow"
+  ],
+  "version": "1.17.0",
+  "inputSha256": {
+    "index.html": "f78fa1f314080f32e645ee18087afe884bb5eecdabdc7f23040d5c8dd207b0e9",
+    "sw.js": "1a33ac2cad4acb694d6102f63b32a742bd318e8e7c97a5da348d596c7b5d8879",
+    "assets/recent-games.js": "086b15a7b3060011e0cb31dba3bfa829a9c52cd264641c59b0daa11b84ca7177",
+    "assets/app-gallery.json": "ee2af28ecc1f068a4fa60aa2669110b40a518c49d5880275e5afc78262ce5b6c",
+    "assets/illustration-manifest.json": "c76cc8af845a42444002ed1832c98253d396d7f7b917ad41ea106034fe394c75",
+    "scripts/browser-smoke.mjs": "0da7540f5f75442437d01c5c36d1bc0d259dee3123287e0c4ce68439d4b22c9b"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "cainos",
+  "asset": "assets/illustrations/cainos.png",
+  "sha256": "37f9013a3809ab4369f19bc6ec6907c481a51df36540016ee85175a6da091733",
+  "provider": "OpenAI",
+  "generator": "image_gen.imagegen",
+  "prompt": "Create one source-faithful landscape illustration for the actual CainOS C&A mainframe game, using these native screenshots. It must depict this precise in-world beige CRT terminal and operating-system desktop, NOT a Digital Circus fight or characters. Use FIRST screenshot composition: centered chunky rounded beige monitor body, deep black inner bezel, dark teal green screen with subtle native horizontal scanlines, bottom grey Windows-95-like taskbar, eight tiny pixel desktop icons arranged three/three/two on the left (green monitor, circus tent, red clock; yellow folder, red diagnostic waveform, green tool chart; green terminal and grey bin). Preserve the two small grey round buttons, red rectangular power button and small green status LED on lower-right bezel. Preserve the native low-resolution retro-interface style and basic screen layout. Remove only the external top-right account badge and the very thin top technical reconstruction disclaimer strip. Keep the desktop icons and taskbar, but simplify any illegible small text rather than invent new files or logos. No new keyboard, mouse, cables, room, faces, characters, tent scenery, photoreal material or glossy modern technology. This is a clean faithful illustration of the existing C&A CRT interface, not an invented operating system or promotional film art. Opaque background.\nFollow-up edit: Make only this small edit to the supplied image: erase the amber outlined rectangular label reading RECONSTRUCTION CAINOS at the very top-left of the CRT screen, continuing the adjacent teal scanline desktop background smoothly. Preserve everything else exactly: monitor, all eight icons, all icon labels, taskbar, bezel, buttons and LED. Do not add anything.",
+  "references": [
+    {
+      "path": "assets/screenshots/cainos/01.png",
+      "sha256": "f176323cca5e79f64e14841e1a3d65d7504cd0988d0ea9cf441ef00f749efe5e"
+    },
+    {
+      "path": "assets/screenshots/cainos/02.png",
+      "sha256": "f9254ae4d8ebc30af41789eec60613d8158bccae0cecb52cd9904cdaf3561543"
+    }
+  ],
+  "reviewedAt": "2026-11-13T06:42:57.455058+00:00",
+  "differences": [
+    "External account badge and technical reconstruction strip removed; desktop chosen rather than Encore combat.",
+    "Native beige CRT, teal scanlined desktop, eight pixel icons, grey taskbar and bezel controls preserved. Typography, monitor rounding and icon antialiasing are regenerated; not pixel-identical."
+  ],
+  "verdict": "accepted"
+}

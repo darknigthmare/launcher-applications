@@ -1,0 +1,24 @@
+{
+  "id": "resident-evil-bow-protocol",
+  "asset": "assets/illustrations/resident-evil-bow-protocol.png",
+  "sha256": "80e67bf315c2ed9a12d7dc04e3a239278e3db170b680d6d422299a4bd58d87c9",
+  "references": [
+    {
+      "path": "assets/screenshots/resident-evil-bow-protocol/01.png",
+      "sha256": "e38588e61de743ef0130ecdfbde55846d47e4a78de91465c26f8f6b0768a46e0"
+    },
+    {
+      "path": "assets/screenshots/resident-evil-bow-protocol/02.png",
+      "sha256": "81ae576dd4733ad8cbffd2143bc0c2363d2cc0a91e6cdff003745004cc6d941c"
+    }
+  ],
+  "reviewedAt": "2026-11-13T06:29:00.093405+00:00",
+  "provider": "OpenAI",
+  "generator": "image_gen",
+  "prompt": "Create one landscape 16:9 standalone illustration faithfully based on the actual browser game's rendered assets in the references. The subject is exactly the Tyrant visible in reference ONE: massive broad-shouldered pale grey rough-faced humanoid, dark rounded-brim fedora, very high black collar, heavy black leather double-breasted belted trench coat with the same short shoulder cape panels, broad belt buckle, black gloves with visible forearm straps and buckles, heavy tall black boots with matching ankle buckles. Preserve this shipped figure's body proportions, face, clothing cut and texture, grounded standing pose with fists down. Keep the same industrial containment laboratory visible in BOTH native screenshots: high cylindrical glass tank on the right with suspended cables and rim apparatus, dark metal catwalk, pipes and grates, wet dark floor, small desaturated red equipment lights and cold blue rim-light. Recompose these same assets into a clean restrained illustration, with Tyrant near the right-center and negative space in the dark lab on the left. Remove all screen menus, HUD, names, title, writing and logos. The Licker in reference TWO is only context for the same actual laboratory, and should not appear. No combat scene, explosions, firearms, other creatures, extra tentacles, or new costume elements. Match the realistic rendered figure already present in this specific source game rather than substituting a different franchise appearance. One coherent scene, not a montage.",
+  "verdict": "accepted",
+  "differences": [
+    "Les menus et le titre du terminal sont retirés ; le cadrage du laboratoire est élargi.",
+    "Les plis du manteau, quelques sangles des bottes et les reflets au sol sont recomposés. Fedora, cape d’épaules, long manteau ceinturé, proportions et palette restent cohérents avec le Tyrant réellement affiché ; aucun combat ou autre spécimen ajouté."
+  ]
+}

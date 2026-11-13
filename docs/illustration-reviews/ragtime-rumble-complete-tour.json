@@ -1,0 +1,30 @@
+{
+  "id": "ragtime-rumble-complete-tour",
+  "asset": "assets/illustrations/ragtime-rumble-complete-tour.png",
+  "sha256": "1593aa0379eb04486413f1c5eb03ba06830522d02086de3a3b331586fde310a8",
+  "provider": "OpenAI",
+  "generator": "image_gen.imagegen",
+  "prompt": "Produce ONE 16:9 landscape promotional illustration by faithfully cleaning the FIRST reference, the actual 2D lateral game stage. Preserve the exact simple flat outlined vector/cartoon assets and their relative sizes and positions: tiny player at lower left with small beige circular face, black rounded eye/eyebrow details, triangular terracotta-brown body, circular front button, curved thin arms with beige mitten-like hands, black oval feet and the thin antenna with a little circle above the head. On the lower right retain the MUCH larger accordion boss exactly: beige round face with black moustache and narrowed eyes, black top hat with red band, brown vertical accordion bellows body, left brown panel with two columns of round beige buttons, right panel of horizontal ivory keys, thin black curved limbs and broad black oval shoes. Retain red theater curtains, beige paneled backdrop, the very simple dark audience silhouettes and wooden stage edged with small yellow bulbs. Match the intentionally elementary native shapes, thick dark-brown outlines, ochre/sepia/red palette and flat original shading. Remove every HUD panel, heart, score, bar, title, label and all text including the large translucent boss-name panel; restore only the plain same backdrop where overlays were. Do not add musical notes, instruments, extra characters, elaborate clothing, action effects, Cuphead characters, expressive new faces, painted details, 3D depth or cinematic lighting. No text/logo. It must look like this game's exact native stage illustration with its two existing figures, not a franchise-inspired redesign. Single image only.",
+  "references": [
+    {
+      "path": "assets/screenshots/ragtime-rumble-complete-tour/04.png",
+      "sha256": "c78991c48121fecef8e84523c2b7dd2fa6eb9899848065509d30d72a76531ef5"
+    },
+    {
+      "path": "assets/screenshots/ragtime-rumble-complete-tour/01.png",
+      "sha256": "10d9f8e09af12cbbb838b9f10bde391ec3d3e3bd97b56c5442ec1e0b9a25158d"
+    },
+    {
+      "path": "assets/screenshots/ragtime-rumble-complete-tour/03.png",
+      "sha256": "1d990cad44938b67657a4af5ccf1ba8b2a9ca6b99291ad51b36943b0982eb20a"
+    }
+  ],
+  "reviewedAt": "2026-11-13T06:35:53.279590+00:00",
+  "differences": [
+    "HUD et cartouche du boss retirés ; fond beige de scène reconstitué sous ces zones.",
+    "Contours et petites ombres sont lissés à la nouvelle résolution ; traits fins des visages légèrement recalculés.",
+    "Le petit joueur à antenne et le grand accordéon conservent silhouettes, pose, chapeau, dix boutons et huit touches visibles du rendu natif ; aucun personnage Cuphead substitué."
+  ],
+  "verdict": "accepted",
+  "acceptanceScope": "Fidélité visuelle comparée au rendu natif référencé pour une illustration promotionnelle générée ; ce verdict ne certifie ni identité pixel à pixel, ni conformité canonique globale 1:1, ni nouvelle capture de gameplay."
+}

@@ -1,0 +1,30 @@
+{
+  "id": "moustique-the-video-game",
+  "asset": "assets/illustrations/moustique-the-video-game.png",
+  "sha256": "56e6b16163355529edd4a92f6818d9e17ed1d1ef8aa04f67ef789a121f10f1d4",
+  "provider": "OpenAI",
+  "generator": "image_gen.imagegen",
+  "prompt": "Create ONE landscape 16:9 promotional illustration by carefully cleaning the FIRST actual WebGL game screenshot, preserving its exact unpolished low-poly custom-engine rendering and viewpoint. The actual player mosquito is TINY, near the middle of the gray wall, about two percent of the frame width: retain the same small brown segmented insect body, threadlike legs, narrow translucent wings and scale; do not enlarge it, invent macro anatomical detail or turn it into a spider. Preserve the large plain gray wall dominating the right/center, partial low-poly human at far left with the same simple brown short hair, rounded beige face/ears and dark teal shirt, and the exact simple flat-shaded furniture/TV/shelf/lamp visible behind that human. Keep the native muted gray, olive, brown and teal evening palette and very simple material shading. The second/third refs show the SAME game's deliberately plain window/balcony geometry only to verify its native visual language; do NOT combine them into this scene. Remove ALL HUD, health/energy bars, score, buttons, minimap, objective text, clock and crosshair, reconstructing only the same room/wall beneath overlays. No new object, text, title, logo, camera angle, cinematic depth of field, photorealistic insect/human, realistic textures or beauty lighting. This should remain visibly the authentic modest game scene, with a tiny native mosquito flying indoors, not a redesigned promotional poster. Return one clean image only.",
+  "references": [
+    {
+      "path": "assets/screenshots/moustique-the-video-game/01.png",
+      "sha256": "6490b57b386de158b9a3bc8dc4969b27b2a62d9b70e087f891188fc70b65b145"
+    },
+    {
+      "path": "assets/screenshots/moustique-the-video-game/02.png",
+      "sha256": "da21afb2b6794a0577cd3b0ac92ecff1cd714583156854044802deb406a9a333"
+    },
+    {
+      "path": "assets/screenshots/moustique-the-video-game/03.png",
+      "sha256": "aad6a29f55a084a523cc3c2daf13e8ff156648da60ad6f8fa29ce0bcb56b0de3"
+    }
+  ],
+  "reviewedAt": "2026-11-13T06:45:41.625494+00:00",
+  "differences": [
+    "HUD, commandes et minimap retirés ; mur et mobilier partiellement masqués sont reconstitués, pas recapturés.",
+    "Légères variations d'éclairage, de contours du visage humain et de géométrie visible du minuscule insecte ; l'anatomie détaillée n'est pas certifiée à cette échelle.",
+    "Le moustique reste très petit dans la pièce low-poly du vol libre ; aucun gros plan photoréaliste, araignée substituée ou nouveau décor composé depuis les vues QA."
+  ],
+  "verdict": "accepted",
+  "acceptanceScope": "Fidélité visuelle comparée au rendu natif référencé pour une illustration promotionnelle générée ; ce verdict ne certifie ni identité pixel à pixel, ni conformité canonique globale 1:1, ni nouvelle capture de gameplay."
+}

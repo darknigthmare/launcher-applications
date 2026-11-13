@@ -1,8 +1,28 @@
 # Mon Launcher
 
-Launcher personnel pour les jeux et outils web, et les jeux distribués localement sur GitHub.
+Version du dépôt **1.17.0** · **158 fiches, dont 145 jeux** · [Ouvrir le launcher](https://launcher-applications.vercel.app/)
 
-Version du dépôt **1.16.0** · **158 fiches, dont 145 jeux** · [Ouvrir le launcher](https://launcher-applications.vercel.app/)
+## Version 1.17 — Illustrations et récits des jeux (13 novembre 2026)
+
+**27 illustrations générées depuis les vues natives** complètent les 18 jeux retrouvés et les neuf anciennes présentations masquées en attente de revue. Chaque image conserve le style de ses références : pixels, silhouettes 2D, géométrie low-poly, figurines ou interface du jeu. Les captures originales sont conservées ; une illustration générée n’est jamais présentée comme une capture de gameplay.
+
+Les [revues individuelles](docs/illustration-reviews/) enregistrent les prompts, références, SHA et différences. Un [second passage de revue par un agent distinct](docs/ILLUSTRATION_REVIEW_2026-11-13.json) a comparé les 27 images à leurs références. Les recompositions, détails régénérés et microtextes ne sont pas certifiés identiques pixel pour pixel ou canoniques. Le [manifeste dédié](assets/illustration-manifest.json) n’affiche que les illustrations acceptées. Les crédits cartographiques de Massilia restent visibles dans la fiche et la vitrine.
+
+Les textes sont corrigés sur **118 fiches** : 99 du catalogue récent et 19 du catalogue historique intégré. Les descriptions et accroches parlent des lieux, des actions et des enjeux attestés. Les paragraphes de QA, versions, installation, code et certification sont conservés dans les [documents de revue](docs/DIEGETIC_COPY_REVIEW_2026-11-13.md) et les métadonnées de suivi, sans encombrer les descriptions destinées au joueur.
+
+Les jeux web proposent **Jouer**. Une source GitHub n’est plus proposée comme installation ou comme jeu web. Les cinq fiches **DIVA PULSE, Dernière Ligne, Fallout Mistral, Parallaxe et Massilia Cyberpunk** restent dans le filtre **À confirmer**, avec bouton désactivé, tant qu’une véritable adresse de lancement web n’est pas vérifiée. La recherche a couvert 164 projets, 857 alias et 30 variantes de nom ; les domaines homonymes d’autres produits ne sont pas associés à ces jeux. [Preuves de recherche Vercel](docs/VERCEL_LAUNCH_DISCOVERY_2026-11-13.md).
+
+Les galeries natives, favoris, couvertures personnalisées et archives sont préservés. Les illustrations sont chargées depuis leur manifeste vérifié ; une attribution stockée dans le navigateur ne suffit pas à faire approuver une image. Le mode édition expose les informations de provenance et reste sans authentification serveur. Cache PWA **shell v33 / médias v4**.
+
+```sh
+npm test
+npm run test:browser
+npm run links:check
+```
+
+La publication utilise le SHA vérifié et son déploiement READY, indiqués dans la PR de livraison. Les **655 captures historiques** non révisées restent suivies dans la matrice ; cette vague ne les requalifie pas automatiquement.
+
+---
 
 ## Version 1.16 — Galeries restantes et fiches à jour (9 novembre 2026)
 

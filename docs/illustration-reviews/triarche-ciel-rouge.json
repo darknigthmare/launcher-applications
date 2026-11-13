@@ -1,0 +1,28 @@
+{
+  "id": "triarche-ciel-rouge",
+  "asset": "assets/illustrations/triarche-ciel-rouge.png",
+  "sha256": "060630d2c6c3f6d03ebdef237189ccd7a3e277c949669b7d010c2914a768ede9",
+  "references": [
+    {
+      "path": "assets/screenshots/triarche-ciel-rouge/01.png",
+      "sha256": "6498e097449b4e35233d512d8a6258511aa9d96254cbbf8e375b75bdb0d1b428"
+    },
+    {
+      "path": "assets/screenshots/triarche-ciel-rouge/03.png",
+      "sha256": "c9388f9e8238fc0a013c932c24681bf4420cd5db156b3dca2ac18e4da1c17963"
+    },
+    {
+      "path": "assets/screenshots/triarche-ciel-rouge/02.png",
+      "sha256": "862dabcd171c6130ced773481564f8f6d805555b4c6fcb3382284789e0814852"
+    }
+  ],
+  "reviewedAt": "2026-11-13T06:47:59.599907+00:00",
+  "provider": "OpenAI",
+  "generator": "image_gen",
+  "prompt": "Generate one landscape 16:9 illustration faithful to the actual small top-down browser game shown in these native screenshots. Use the FIRST and SECOND references as authoritative for the alien player craft and its real city map: a very simple dark grey-green flattened oval craft with a pale thin outline, one bright cyan circular light on its right-front, tiny black side fins and small antenna-like projections, with three small sharp black companion drones carrying single cyan lights. Keep exactly these simple low-detail geometric sprites and their native scale above the roadway. Show the same orthogonal charcoal/grey-green street grid viewed straight down, faint dashed muted road-center markings, large plain slate-grey rectangular and L-shaped building rooftops with only thin lighter upper edges and deep black offset shadows. The third reference shows another real street block layout only; do not add its human avatar to the scene. Recompose the same alien craft and its three native drones above the central road intersection, surrounded by the same untextured block rooftops. Remove all HUD, objective banners, minimap, score, crosshair, labels, text, logos and numeric street marks. Maintain the restrained flat 2D/vector browser-rendered appearance with subtle roof extrusion, not a cinematic skyline, isometric detailed city or realistic spaceship. Do not add red sky, explosions, lasers, monsters, human soldiers, vehicles or buildings absent from the native visual vocabulary. One coherent overhead game-world illustration, no montage.",
+  "verdict": "accepted",
+  "differences": [
+    "Les objectifs, indicateurs et le réticule sont retirés.",
+    "Le réseau routier et l’espacement des toits sont recomposés ; le même appareil ovale à lumière cyan et ses petits drones géométriques sont conservés, sans substituer une scène cinématographique ou un autre type d’extraterrestre."
+  ]
+}

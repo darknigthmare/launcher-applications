@@ -1,0 +1,29 @@
+{
+  "id": "massilia-cyberpunk",
+  "asset": "assets/illustrations/massilia-cyberpunk.png",
+  "sha256": "afe1c549d7113f9c0f99e85af272ca07b1116bef23886bea9c8c5e6e9d0b1433",
+  "provider": "OpenAI",
+  "generator": "image_gen.imagegen",
+  "prompt": "Make one clean landscape game illustration from these actual SOMA//MASSILIA / Massilia Cyberpunk native 0.76 frames. This is an extremely conservative reference-preserving edit. Use the SECOND screenshot's exact viewpoint and city geometry: the simple first-person night-time low-poly Marseille street, dark almost black sky, grey-brown rectangular buildings with a strict grid of small black, yellow, magenta and cyan square windows, very tall near foreground rectangular masonry column with bright yellow window blocks, tram tracks across the grey ground at right, and the several primitive cuboid pedestrians with teal rectangular bodies and tiny brown block heads. Keep their simple native block shapes, positions and lack of facial detail. Keep the flat cyan foreground polygon at bottom-left as it appears; do not turn it into a new gun or object. Remove only HUD panels, every letter/number, map overlays, action buttons and interface lines. Continue adjacent existing surfaces where HUD was removed. Preserve the native very low-poly flat-shaded style, limited texture, angular perspective, muted grey/teal palette with sparse yellow/magenta/cyan accents. Do not upgrade to photorealistic cyberpunk, add detailed people, vehicles, weapons, neon advertising, logos, fog or new buildings. No typography. Only a faithful clean version of this exact actual game scene. Opaque background.",
+  "references": [
+    {
+      "path": "assets/screenshots/massilia-cyberpunk/01.png",
+      "sha256": "cd4d775ed5bc295ee1b8cf9aca86a1d1cc8f8d41058e90e57df7cdb7cf057ed6"
+    },
+    {
+      "path": "assets/screenshots/massilia-cyberpunk/02.png",
+      "sha256": "8715234a3f3fd611a50be3a2a086b78625918d6feb2b40532d9084e7ccee6013"
+    }
+  ],
+  "reviewedAt": "2026-11-13T06:33:17.984383+00:00",
+  "differences": [
+    "HUD and interface removed; native city view resampled.",
+    "Block pedestrians, tram tracks, masonry column, primitive buildings and colored square windows preserved. Small window/brick details and perspective are regenerated; not pixel-identical."
+  ],
+  "verdict": "accepted",
+  "sourceAttribution": {
+    "text": "Map data © OpenStreetMap contributors",
+    "url": "https://www.openstreetmap.org/copyright",
+    "license": "ODbL 1.0, source game also attributes BBbike extraction"
+  }
+}

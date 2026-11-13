@@ -1,0 +1,29 @@
+{
+  "id": "avp-hunt-hive-tcg",
+  "asset": "assets/illustrations/avp-hunt-hive-tcg.png",
+  "sha256": "029bf1fbbedf686b0371cb5fdd98d8cd85fbdf9686d49f8c29773de8d9755781",
+  "provider": "OpenAI",
+  "generator": "image_gen.imagegen",
+  "prompt": "Create one strictly native-reference-faithful landscape illustration for AVP: HUNT // HIVE TCG. This is a CARD GAME illustration, not a first-person shooter or a cinematic Alien-vs-Predator battle. Use the FIRST supplied screenshot's actual nine-card booster-opening row as the composition, preserving its nine small vertical rounded cards in the same order, native dark backgrounds, cyan/acid-green/ivory frames, energy circles, and existing artwork. The nine source cards are Working Joe, Drone Xénomorphe, Joan Lambert, Ovomorphe, Runner, Sang acide, Station Sevastopol, Protocole de… and Space Jockey. Keep each reference card's own visible silhouette and palette; do not invent new character models or replace them with generic movie art. Remove only the webpage heading, instruction text, toast notifications, NEW badges, navigation and bottom buttons. Enlarge the card row into a balanced clean landscape view with the same near-black green backdrop and restrained native acid-green accent. Preserve the card shapes and their art/name/stat regions. Small source typography may remain but do not add a slogan, title, extra faction or new card. Use the other references only to maintain this game's existing restrained three-lane-TCG visual palette; do NOT fabricate a played duel or put cards onto an unobserved battlefield. The illustration should truthfully depict the actual booster cards, never advertise a different action game. Opaque background.",
+  "references": [
+    {
+      "path": "assets/screenshots/avp-hunt-hive-tcg/04.png",
+      "sha256": "d17a47dbeb38f0300c9cdb5f42b9d9633002da238ada793a66760070e6240985"
+    },
+    {
+      "path": "assets/screenshots/avp-hunt-hive-tcg/01.png",
+      "sha256": "3ca683231ed8783a194e6042dc52b609daaf63a9c1dbc0c565fbbbf857d0a7ba"
+    },
+    {
+      "path": "assets/screenshots/avp-hunt-hive-tcg/03.png",
+      "sha256": "41a943359c2d5c626273d76458e3ba54eaa26bd786244b1ea048205f8300502e"
+    }
+  ],
+  "reviewedAt": "2026-11-13T06:46:56.704849+00:00",
+  "differences": [
+    "Native nine-card booster row enlarged; webpage headings, navigation, NEW badges, notifications and buttons removed.",
+    "Nine card identities, order, artwork silhouettes, color frames and broad layout retained. Illustration is booster-card presentation, not a fabricated played duel.",
+    "Card microtypography, small tags, numbers and illustrated details are regenerated and are not authoritative rules or pixel-identical assets."
+  ],
+  "verdict": "accepted"
+}

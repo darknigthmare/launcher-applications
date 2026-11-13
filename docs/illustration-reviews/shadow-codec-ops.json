@@ -1,0 +1,24 @@
+{
+  "id": "shadow-codec-ops",
+  "asset": "assets/illustrations/shadow-codec-ops.png",
+  "sha256": "72ca42617891b7fd0ba206713233ebec160064222f30142f76e21f188196a091",
+  "provider": "OpenAI",
+  "generator": "image_gen.imagegen",
+  "prompt": "Create a faithful landscape illustration for the actual Shadow Codec Ops terminal shown in these native screenshots. Use the FIRST reference screenshot's incoming Codec transmission composition, NOT a generic Metal Gear cinematic soldier. A nearly black dark-green monochrome CRT terminal background with subtle scanlines, a centered wide rounded rectangular transmission panel outlined in thin muted red with restrained red glow, large bright phosphor-green CALL lettering, then the actual labels Colonel Campbell and MISSION CONTROL, and a simple bright-green ACCEPT button. Preserve the native flat HTML/CRT interface style and the blurred green portrait outlines in the background; do not sharpen or invent faces. Remove the thin external edge menu/chevron handles, technical timer badges and disabled priority-lock button. Use the second reference only for its restrained green monochrome terminal palette and typography, not its long feature paragraph. No soldiers, guns, new equipment, cinematic scenes, new portraits, desktop hardware, decorative circuitry, invented operation names or photorealism. Preserve the same actual communication screen as clean promotional game art, with no extra slogan or title beyond the short native diegetic call labels. Opaque background.",
+  "references": [
+    {
+      "path": "assets/screenshots/shadow-codec-ops/02.png",
+      "sha256": "f4c7bcc5a2185975a299ef62a6416de65a27f969bd67971db6c05c61b2301f20"
+    },
+    {
+      "path": "assets/screenshots/shadow-codec-ops/01.png",
+      "sha256": "57bf65ff8a4417cbfdb002334f2a22cca749434986a014c593c7a58339ef0e52"
+    }
+  ],
+  "reviewedAt": "2026-11-13T06:44:15.638361+00:00",
+  "differences": [
+    "Edge navigation handles, expiry badges and disabled lock control removed.",
+    "Native incoming Codec CALL panel, green monospace type, red rounded border and blurred portrait outlines retained; scale, scanlines and typography regenerated. It illustrates terminal communication, not an invented combat scene."
+  ],
+  "verdict": "accepted"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "avp-blood-arena",
+  "asset": "assets/illustrations/avp-blood-arena.png",
+  "sha256": "f1bbf40eadf8d562152cd5823f567c26fb8110ff103c7b681e424e86dab31b73",
+  "provider": "OpenAI",
+  "generator": "image_gen.imagegen",
+  "prompt": "Create ONE strictly source-faithful landscape illustration for this actual AVP Blood Arena technical prototype. The native game uses an abstract top-down flat 2D tactical grid, NOT rendered Alien/Predator creatures. DO NOT invent franchise characters, anatomy, costumes, weapons or a cinematic fight. Use the FIRST reference screenshot's board only, removing all surrounding webpage headings, score bar, sidebar and text panels. Preserve its exact rectangular 24-COLUMN by 14-ROW dark teal square grid, flat colors and thin muted teal grid lines. Preserve four cyan round native Marine counters numbered 1,2,3,4 on the left and four pale green triangular native opponent counters numbered 1,2,3,4 on the right, with the same positions, tiny green health bars and selected white outline around cyan counter2. Preserve the pale yellow glowing Nexus dot and subtle circular field at the same near-center cell. Preserve the eight small square grey obstacle tiles in the same symmetric positions, the cyan left goal strip and muted brown right goal strip, and the left-side darker cyan movement-range cells from the first reference. Keep the flat UI/vector-like native appearance without adding textures, perspective, 3D chess pieces, logos or decorative lore. The numbers on the existing eight counters may remain, but add no other text. Crop neatly around the complete board with a small dark margin; do not change the board geometry. Opaque background.",
+  "references": [
+    {
+      "path": "assets/screenshots/avp-blood-arena/03.png",
+      "sha256": "bf0acafe607f548882b58517ed4a5f5c5e80d009aa960445424252e3c125cd62"
+    },
+    {
+      "path": "assets/screenshots/avp-blood-arena/05.png",
+      "sha256": "a339d4deba71a45a2bf3edb7a1f95af4549f93927f22ed7f988daf7ed1279855"
+    }
+  ],
+  "reviewedAt": "2026-11-13T06:37:22.295968+00:00",
+  "differences": [
+    "Webpage headings, score, sidebar and surrounding controls removed; board reframed as the illustration.",
+    "24×14 grid, four cyan disks, four green triangles, eight grey obstacles, selected counter2, goal strips and yellow Nexus retained from the first reference. Line texture, Nexus ring radius and counter antialiasing are regenerated rather than pixel-identical."
+  ],
+  "verdict": "accepted"
+}

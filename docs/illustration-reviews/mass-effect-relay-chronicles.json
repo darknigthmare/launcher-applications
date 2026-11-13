@@ -1,0 +1,28 @@
+{
+  "id": "mass-effect-relay-chronicles",
+  "asset": "assets/illustrations/mass-effect-relay-chronicles.png",
+  "sha256": "bd221cce643038924dcc276ca763b5d39e290acf68b512536b50f3d4a3728e09",
+  "references": [
+    {
+      "path": "assets/screenshots/mass-effect-relay-chronicles/04.png",
+      "sha256": "6dfd0e3703083a29ecf77f595ec0699cf9c00c1d829116319abcf58c8b949157"
+    },
+    {
+      "path": "assets/screenshots/mass-effect-relay-chronicles/02.png",
+      "sha256": "07a2c25802e9c4e4870dd8c9a48b1bc9dc1f120cc1b9930cd974dcb1abd72d99"
+    },
+    {
+      "path": "assets/screenshots/mass-effect-relay-chronicles/01.png",
+      "sha256": "3ec34393e62568cca7825ed9d7c3d9614d6d40f052a00e33943211c0190fae77"
+    }
+  ],
+  "reviewedAt": "2026-11-13T06:27:13.777244+00:00",
+  "provider": "OpenAI",
+  "generator": "image_gen",
+  "prompt": "Generate one standalone landscape 16:9 promotional illustration for the actual small browser game shown in these references, tightly faithful to its real visual assets. The FIRST reference is the authoritative playable view: keep the same elevated isometric camera, dark navy blue low-poly rectangular Normandy room, diagonal modular blue floor tiles, black edge pillars and cyan handrails, raised blue circular hologram platform with a delicate wireframe blue globe, and the same tiny pre-rendered human crew sprites. Keep the scale and sprite-like character proportions, including the small black-armored soldier with its existing white/red shoulder stripe; references TWO and THREE establish the shipped soldier armor and its native presentation. Compose a cleaned-up illustration of this exact room and these same assets as if rendered by this browser game. Remove only the screen HUD, menus, written labels and selection circles; maintain the low-detail 2D-sprites-in-3D look, sparse geometry and subdued cool lighting. Do not make a realistic cinematic screenshot, do not enlarge a portrait, do not redesign any armor, do not add aliens, enemies, ships, weapons or rooms absent from reference1. No text, logos, badges or borders. This is a single illustration, not a montage or UI mockup. Accuracy of the small native game's visual language takes priority over spectacle.",
+  "verdict": "accepted",
+  "differences": [
+    "Le HUD et les cercles de sélection sont volontairement retirés pour l’illustration.",
+    "Le maillage du globe et certains espacements des personnages et panneaux sont recomposés. Les silhouettes, armures noires à bandes rouges, caméra isométrique et modules bleus restent cohérents avec les captures ; il ne s’agit pas d’une reproduction pixel pour pixel."
+  ]
+}

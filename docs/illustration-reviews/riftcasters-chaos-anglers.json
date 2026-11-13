@@ -1,0 +1,24 @@
+{
+  "id": "riftcasters-chaos-anglers",
+  "asset": "assets/illustrations/riftcasters-chaos-anglers.png",
+  "sha256": "43c3eb4f3ffa34ad82335350c28f083577e4eaa7437f9ad38e61e7ca91f319ab",
+  "references": [
+    {
+      "path": "assets/screenshots/riftcasters-chaos-anglers/05.png",
+      "sha256": "dc063b36431fc889cfeae2e93d87fe63108ab6d2f6d5462344106446c5f459d7"
+    },
+    {
+      "path": "assets/screenshots/riftcasters-chaos-anglers/04.png",
+      "sha256": "1aa2a852bc3a9ea8e4fc0a15950da5e093e4a82b4ac7cc7cfc8cd24ebd22185c"
+    }
+  ],
+  "reviewedAt": "2026-11-13T06:35:19.863043+00:00",
+  "provider": "OpenAI",
+  "generator": "image_gen",
+  "prompt": "Generate one landscape 16:9 illustration faithfully representing the ACTUAL PLAYABLE WebGL browser scene in reference ONE, with all HUD removed. The playable game uses very simple untextured low-poly geometry, NOT the detailed painted concept art seen inside reference TWO's menu. Match the first-person camera standing on the same wide brown wooden dock: long flat tan/brown plank strips lead forward to a squat dark-teal rectangular harbor structure with a thin pale cyan horizontal panel and a dark flat roof, narrow paths branch left and right over still muted grey-green water, thin grey rectangular posts and rails line the paths, simple small cream sphere lamps sit on plain posts, sparse block-shaped buildings and upright rectangular stacks appear in the hazy distance. Keep the same grey-teal sky with its broad primitive pale cream/cloud forms, subdued early daylight, flat colors and rudimentary geometry. At the bottom-right keep the same very chunky geometric grey nailgun/tool visible in the actual first-person screenshot, including its simple light-grey rectangular upper barrel and angular dark-grey lower body. It has no realistic hands or extra equipment. Reference TWO may only confirm the game's deliberately simple 3D volumes in its right-hand preview; ignore its painted harbor concept, fish and cinematic imagery. Recompose only the native low-poly dock, water, simple harbor building and this exact blocky tool into a clean illustration. Remove all screen text, HUD, crosshair, logos, icons and menus. Do not add people, monsters, fishing catches, fantasy city architecture, detailed materials, realistic weapons, vegetation or dramatic effects absent from the playable scene. Preserve the humble low-poly first-person browser-game identity. Single coherent scene, not a montage.",
+  "verdict": "accepted",
+  "differences": [
+    "Le HUD et le réticule sont retirés ; le dock et l’outil occupent le cadre.",
+    "Le placement des lampes, les espacements des lattes et les formes claires du ciel sont recomposés. L’illustration conserve le rendu low-poly plat du gameplay, son quai brun, son bâtiment teal et son outil rectangulaire ; elle ne reprend pas les peintures fantasy du menu et ne certifie pas une topologie identique pixel pour pixel."
+  ]
+}

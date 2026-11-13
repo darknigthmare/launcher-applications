@@ -1,0 +1,532 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-13T06:42:43.631289+00:00",
+  "scope": "User-directed public same-name Vercel domain discovery; ownership and real identity must still be verified",
+  "candidates": 30,
+  "maxWorkers": 6,
+  "maxDocumentBytes": 65536,
+  "results": [
+    {
+      "gameId": "diva-pulse",
+      "requestedUrl": "https://diva-pulse.vercel.app/",
+      "checkedAt": "2026-11-13T06:42:42.423518+00:00",
+      "httpStatus": 404,
+      "effectiveUrl": "https://diva-pulse.vercel.app/",
+      "contentType": "text/plain; charset=utf-8",
+      "headSha256": "9eb12917c758ecaa8ea06575ad716fa2afd6e35e6608409d9f4edfdd7aa8d56d",
+      "title": [],
+      "documentBytesRead": 107,
+      "gameIdentityMarkers": [
+        "NOT_FOUND",
+        "DEPLOYMENT_NOT_FOUND"
+      ],
+      "classification": "not-found",
+      "expectedGameConfirmed": false
+    },
+    {
+      "gameId": "diva-pulse",
+      "requestedUrl": "https://divapulse.vercel.app/",
+      "checkedAt": "2026-11-13T06:42:42.424116+00:00",
+      "httpStatus": 404,
+      "effectiveUrl": "https://divapulse.vercel.app/",
+      "contentType": "text/plain; charset=utf-8",
+      "headSha256": "c01d0dae9aa54b59e49b950bb354552b947365378a6b8329ad46d768a3dd46c2",
+      "title": [],
+      "documentBytesRead": 107,
+      "gameIdentityMarkers": [
+        "NOT_FOUND",
+        "DEPLOYMENT_NOT_FOUND"
+      ],
+      "classification": "not-found",
+      "expectedGameConfirmed": false
+    },
+    {
+      "gameId": "diva-pulse",
+      "requestedUrl": "https://diva-pulse-game.vercel.app/",
+      "checkedAt": "2026-11-13T06:42:42.424532+00:00",
+      "httpStatus": 404,
+      "effectiveUrl": "https://diva-pulse-game.vercel.app/",
+      "contentType": "text/plain; charset=utf-8",
+      "headSha256": "f13ea75e130bd395ada8d52a6502102bbb4de8e1527a0eb0ef57705b9e8a7280",
+      "title": [],
+      "documentBytesRead": 107,
+      "gameIdentityMarkers": [
+        "NOT_FOUND",
+        "DEPLOYMENT_NOT_FOUND"
+      ],
+      "classification": "not-found",
+      "expectedGameConfirmed": false
+    },
+    {
+      "gameId": "diva-pulse",
+      "requestedUrl": "https://diva-pulse-darknigthmares-projects.vercel.app/",
+      "checkedAt": "2026-11-13T06:42:42.424962+00:00",
+      "httpStatus": 404,
+      "effectiveUrl": "https://diva-pulse-darknigthmares-projects.vercel.app/",
+      "contentType": "text/plain; charset=utf-8",
+      "headSha256": "a6f3cc150a2f9ff24ae1925f50e0437cfe3b2d79dc665eb678ddf1749653b318",
+      "title": [],
+      "documentBytesRead": 107,
+      "gameIdentityMarkers": [
+        "NOT_FOUND",
+        "DEPLOYMENT_NOT_FOUND"
+      ],
+      "classification": "not-found",
+      "expectedGameConfirmed": false
+    },
+    {
+      "gameId": "derniere-ligne-zero-repli",
+      "requestedUrl": "https://the-horde-the-last-stand.vercel.app/",
+      "checkedAt": "2026-11-13T06:42:42.425314+00:00",
+      "httpStatus": 404,
+      "effectiveUrl": "https://the-horde-the-last-stand.vercel.app/",
+      "contentType": "text/plain; charset=utf-8",
+      "headSha256": "d6899ecd81dba84fbdefd6a9b2ca78dca6399de9fc1d66bce2c68641ac7f3c5f",
+      "title": [],
+      "documentBytesRead": 107,
+      "gameIdentityMarkers": [
+        "NOT_FOUND",
+        "DEPLOYMENT_NOT_FOUND"
+      ],
+      "classification": "not-found",
+      "expectedGameConfirmed": false
+    },
+    {
+      "gameId": "derniere-ligne-zero-repli",
+      "requestedUrl": "https://the-horde.vercel.app/",
+      "checkedAt": "2026-11-13T06:42:42.426395+00:00",
+      "httpStatus": 200,
+      "effectiveUrl": "https://the-horde.vercel.app/",
+      "contentType": "text/html; charset=utf-8",
+      "headSha256": "fb8d361ba5c450a3287379c171c29b9fc1ba6dea90c79efd884cf5db88896943",
+      "title": [
+        "Orc Society"
+      ],
+      "documentBytesRead": 65536,
+      "gameIdentityMarkers": [],
+      "classification": "wrong-product",
+      "identityDecision": "Orc Society; different product, not Dernière Ligne — Zéro Repli",
+      "expectedGameConfirmed": false
+    },
+    {
+      "gameId": "derniere-ligne-zero-repli",
+      "requestedUrl": "https://derniere-ligne.vercel.app/",
+      "checkedAt": "2026-11-13T06:42:42.571931+00:00",
+      "httpStatus": 404,
+      "effectiveUrl": "https://derniere-ligne.vercel.app/",
+      "contentType": "text/plain; charset=utf-8",
+      "headSha256": "096ce678d8cdfe282892d8c2e097a07c67307e9f972aedef30efa912eb6efc3e",
+      "title": [],
+      "documentBytesRead": 107,
+      "gameIdentityMarkers": [
+        "NOT_FOUND",
+        "DEPLOYMENT_NOT_FOUND"
+      ],
+      "classification": "not-found",
+      "expectedGameConfirmed": false
+    },
+    {
+      "gameId": "derniere-ligne-zero-repli",
+      "requestedUrl": "https://derniere-ligne-zero-repli.vercel.app/",
+      "checkedAt": "2026-11-13T06:42:42.622276+00:00",
+      "httpStatus": 404,
+      "effectiveUrl": "https://derniere-ligne-zero-repli.vercel.app/",
+      "contentType": "text/plain; charset=utf-8",
+      "headSha256": "c3308bcb742fb6b809eec7cfb11ea135cdbee8af728e02bcb80032d8cee137bd",
+      "title": [],
+      "documentBytesRead": 107,
+      "gameIdentityMarkers": [
+        "NOT_FOUND",
+        "DEPLOYMENT_NOT_FOUND"
+      ],
+      "classification": "not-found",
+      "expectedGameConfirmed": false
+    },
+    {
+      "gameId": "derniere-ligne-zero-repli",
+      "requestedUrl": "https://zero-repli.vercel.app/",
+      "checkedAt": "2026-11-13T06:42:42.623967+00:00",
+      "httpStatus": 404,
+      "effectiveUrl": "https://zero-repli.vercel.app/",
+      "contentType": "text/plain; charset=utf-8",
+      "headSha256": "ce25a1187485059d93829ebd4a948a7697fa235d711718330e675d2c4ee4cb6f",
+      "title": [],
+      "documentBytesRead": 107,
+      "gameIdentityMarkers": [
+        "NOT_FOUND",
+        "DEPLOYMENT_NOT_FOUND"
+      ],
+      "classification": "not-found",
+      "expectedGameConfirmed": false
+    },
+    {
+      "gameId": "derniere-ligne-zero-repli",
+      "requestedUrl": "https://horde-the-last-stand.vercel.app/",
+      "checkedAt": "2026-11-13T06:42:42.625703+00:00",
+      "httpStatus": 404,
+      "effectiveUrl": "https://horde-the-last-stand.vercel.app/",
+      "contentType": "text/plain; charset=utf-8",
+      "headSha256": "cba6cc3f7d3f59fb03b0b1f55d6e16b4a86b2307cf6d72a623eaca8e9e41edf2",
+      "title": [],
+      "documentBytesRead": 107,
+      "gameIdentityMarkers": [
+        "NOT_FOUND",
+        "DEPLOYMENT_NOT_FOUND"
+      ],
+      "classification": "not-found",
+      "expectedGameConfirmed": false
+    },
+    {
+      "gameId": "derniere-ligne-zero-repli",
+      "requestedUrl": "https://the-horde-the-last-stand-darknigthmares-projects.vercel.app/",
+      "checkedAt": "2026-11-13T06:42:42.636736+00:00",
+      "httpStatus": 404,
+      "effectiveUrl": "https://the-horde-the-last-stand-darknigthmares-projects.vercel.app/",
+      "contentType": "text/plain; charset=utf-8",
+      "headSha256": "715238757aec10f4ead2db2659326e7477e1b30ca66ff3e499cd2a22379e51d0",
+      "title": [],
+      "documentBytesRead": 107,
+      "gameIdentityMarkers": [
+        "NOT_FOUND",
+        "DEPLOYMENT_NOT_FOUND"
+      ],
+      "classification": "not-found",
+      "expectedGameConfirmed": false
+    },
+    {
+      "gameId": "derniere-ligne-zero-repli",
+      "requestedUrl": "https://derniere-ligne-zero-repli-darknigthmares-projects.vercel.app/",
+      "checkedAt": "2026-11-13T06:42:42.727912+00:00",
+      "httpStatus": 404,
+      "effectiveUrl": "https://derniere-ligne-zero-repli-darknigthmares-projects.vercel.app/",
+      "contentType": "text/plain; charset=utf-8",
+      "headSha256": "f7ad7ff3d7d9f490dff0e20a1c873760abff4dd2a0ae42eb3a0d1e91df0b01b3",
+      "title": [],
+      "documentBytesRead": 107,
+      "gameIdentityMarkers": [
+        "NOT_FOUND",
+        "DEPLOYMENT_NOT_FOUND"
+      ],
+      "classification": "not-found",
+      "expectedGameConfirmed": false
+    },
+    {
+      "gameId": "fallout-marseille-mistral",
+      "requestedUrl": "https://fallout-marseille.vercel.app/",
+      "checkedAt": "2026-11-13T06:42:42.748427+00:00",
+      "httpStatus": 404,
+      "effectiveUrl": "https://fallout-marseille.vercel.app/",
+      "contentType": "text/plain; charset=utf-8",
+      "headSha256": "51c3d404e318a9a6af6f216481d678ffcb98ebffa2516d97fe274161aeb2628c",
+      "title": [],
+      "documentBytesRead": 107,
+      "gameIdentityMarkers": [
+        "NOT_FOUND",
+        "DEPLOYMENT_NOT_FOUND"
+      ],
+      "classification": "not-found",
+      "expectedGameConfirmed": false
+    },
+    {
+      "gameId": "fallout-marseille-mistral",
+      "requestedUrl": "https://fallout-mistral.vercel.app/",
+      "checkedAt": "2026-11-13T06:42:42.760443+00:00",
+      "httpStatus": 404,
+      "effectiveUrl": "https://fallout-mistral.vercel.app/",
+      "contentType": "text/plain; charset=utf-8",
+      "headSha256": "579636ea6c953b0ed31f9003e4a8afef96f17859e271304a920a0404d01adbe6",
+      "title": [],
+      "documentBytesRead": 107,
+      "gameIdentityMarkers": [
+        "NOT_FOUND",
+        "DEPLOYMENT_NOT_FOUND"
+      ],
+      "classification": "not-found",
+      "expectedGameConfirmed": false
+    },
+    {
+      "gameId": "fallout-marseille-mistral",
+      "requestedUrl": "https://fallout-marseille-mistral.vercel.app/",
+      "checkedAt": "2026-11-13T06:42:42.768757+00:00",
+      "httpStatus": 404,
+      "effectiveUrl": "https://fallout-marseille-mistral.vercel.app/",
+      "contentType": "text/plain; charset=utf-8",
+      "headSha256": "1737542766d2574ad997fcdc0ac3549a5489ebe695c9c301b06c17d43efc5b2a",
+      "title": [],
+      "documentBytesRead": 107,
+      "gameIdentityMarkers": [
+        "NOT_FOUND",
+        "DEPLOYMENT_NOT_FOUND"
+      ],
+      "classification": "not-found",
+      "expectedGameConfirmed": false
+    },
+    {
+      "gameId": "fallout-marseille-mistral",
+      "requestedUrl": "https://falloutmarseille.vercel.app/",
+      "checkedAt": "2026-11-13T06:42:42.835424+00:00",
+      "httpStatus": 404,
+      "effectiveUrl": "https://falloutmarseille.vercel.app/",
+      "contentType": "text/plain; charset=utf-8",
+      "headSha256": "6229af4f0a4d07822b9a8cd09f8b9c00e7f72e35173cdacd305d32d444ec7b10",
+      "title": [],
+      "documentBytesRead": 107,
+      "gameIdentityMarkers": [
+        "NOT_FOUND",
+        "DEPLOYMENT_NOT_FOUND"
+      ],
+      "classification": "not-found",
+      "expectedGameConfirmed": false
+    },
+    {
+      "gameId": "fallout-marseille-mistral",
+      "requestedUrl": "https://fallout-marseille-darknigthmares-projects.vercel.app/",
+      "checkedAt": "2026-11-13T06:42:42.856032+00:00",
+      "httpStatus": 404,
+      "effectiveUrl": "https://fallout-marseille-darknigthmares-projects.vercel.app/",
+      "contentType": "text/plain; charset=utf-8",
+      "headSha256": "e3547029dc4c336706c17ea812c866efd6e6030d0276c9fe2da5d7c8a8b51828",
+      "title": [],
+      "documentBytesRead": 107,
+      "gameIdentityMarkers": [
+        "NOT_FOUND",
+        "DEPLOYMENT_NOT_FOUND"
+      ],
+      "classification": "not-found",
+      "expectedGameConfirmed": false
+    },
+    {
+      "gameId": "fallout-marseille-mistral",
+      "requestedUrl": "https://fallout-mistral-darknigthmares-projects.vercel.app/",
+      "checkedAt": "2026-11-13T06:42:42.863333+00:00",
+      "httpStatus": 404,
+      "effectiveUrl": "https://fallout-mistral-darknigthmares-projects.vercel.app/",
+      "contentType": "text/plain; charset=utf-8",
+      "headSha256": "5b0222394cfd2cd13493c54e10ba233244e61f063238afabe57c20e603d4da57",
+      "title": [],
+      "documentBytesRead": 107,
+      "gameIdentityMarkers": [
+        "NOT_FOUND",
+        "DEPLOYMENT_NOT_FOUND"
+      ],
+      "classification": "not-found",
+      "expectedGameConfirmed": false
+    },
+    {
+      "gameId": "parallaxe-protocole-9",
+      "requestedUrl": "https://parallaxe-protocole9.vercel.app/",
+      "checkedAt": "2026-11-13T06:42:42.905628+00:00",
+      "httpStatus": 404,
+      "effectiveUrl": "https://parallaxe-protocole9.vercel.app/",
+      "contentType": "text/plain; charset=utf-8",
+      "headSha256": "cac94fedb089f4762316d31306cb74db84dc2ae1c954d911f18ae6befad9f63d",
+      "title": [],
+      "documentBytesRead": 107,
+      "gameIdentityMarkers": [
+        "NOT_FOUND",
+        "DEPLOYMENT_NOT_FOUND"
+      ],
+      "classification": "not-found",
+      "expectedGameConfirmed": false
+    },
+    {
+      "gameId": "parallaxe-protocole-9",
+      "requestedUrl": "https://parallaxe-protocole-9.vercel.app/",
+      "checkedAt": "2026-11-13T06:42:42.931337+00:00",
+      "httpStatus": 404,
+      "effectiveUrl": "https://parallaxe-protocole-9.vercel.app/",
+      "contentType": "text/plain; charset=utf-8",
+      "headSha256": "6354a744dea485097335ddfb7ed36bf24677732871c2bfdac5fee5947e494434",
+      "title": [],
+      "documentBytesRead": 107,
+      "gameIdentityMarkers": [
+        "NOT_FOUND",
+        "DEPLOYMENT_NOT_FOUND"
+      ],
+      "classification": "not-found",
+      "expectedGameConfirmed": false
+    },
+    {
+      "gameId": "parallaxe-protocole-9",
+      "requestedUrl": "https://parallaxe-protocole-neuf.vercel.app/",
+      "checkedAt": "2026-11-13T06:42:42.956684+00:00",
+      "httpStatus": 404,
+      "effectiveUrl": "https://parallaxe-protocole-neuf.vercel.app/",
+      "contentType": "text/plain; charset=utf-8",
+      "headSha256": "4152ce582d0f97f267a901964418153b871216d00eeef44522da15708cee1d5d",
+      "title": [],
+      "documentBytesRead": 107,
+      "gameIdentityMarkers": [
+        "NOT_FOUND",
+        "DEPLOYMENT_NOT_FOUND"
+      ],
+      "classification": "not-found",
+      "expectedGameConfirmed": false
+    },
+    {
+      "gameId": "parallaxe-protocole-9",
+      "requestedUrl": "https://parallaxe.vercel.app/",
+      "checkedAt": "2026-11-13T06:42:42.966494+00:00",
+      "httpStatus": 200,
+      "effectiveUrl": "https://parallaxe.vercel.app/",
+      "contentType": "text/html; charset=utf-8",
+      "headSha256": "5daed13f237279d37bd2be69bb1342e6c937b9bb080db9efe9bea818f59d41be",
+      "title": [
+        "Parallaxe — vos convictions face aux votes réels de l'Assemblée"
+      ],
+      "documentBytesRead": 1410,
+      "gameIdentityMarkers": [
+        "PARALLAXE"
+      ],
+      "classification": "wrong-product",
+      "identityDecision": "Civic application comparing opinions to votes in the French Assembly, not Protocole9",
+      "expectedGameConfirmed": false
+    },
+    {
+      "gameId": "parallaxe-protocole-9",
+      "requestedUrl": "https://parallaxe-protocole9-darknigthmares-projects.vercel.app/",
+      "checkedAt": "2026-11-13T06:42:43.010614+00:00",
+      "httpStatus": 404,
+      "effectiveUrl": "https://parallaxe-protocole9-darknigthmares-projects.vercel.app/",
+      "contentType": "text/plain; charset=utf-8",
+      "headSha256": "f06f96ca3a72033f87b64650d5f5ff02efb21379b83752b12cffa5e0e8fe63e8",
+      "title": [],
+      "documentBytesRead": 107,
+      "gameIdentityMarkers": [
+        "NOT_FOUND",
+        "DEPLOYMENT_NOT_FOUND"
+      ],
+      "classification": "not-found",
+      "expectedGameConfirmed": false
+    },
+    {
+      "gameId": "parallaxe-protocole-9",
+      "requestedUrl": "https://parallaxe-protocole-9-darknigthmares-projects.vercel.app/",
+      "checkedAt": "2026-11-13T06:42:43.037611+00:00",
+      "httpStatus": 404,
+      "effectiveUrl": "https://parallaxe-protocole-9-darknigthmares-projects.vercel.app/",
+      "contentType": "text/plain; charset=utf-8",
+      "headSha256": "540829db1c15631fa3bb9213e46715e10127bd4cbc5779b8fe60052cdf4ba511",
+      "title": [],
+      "documentBytesRead": 107,
+      "gameIdentityMarkers": [
+        "NOT_FOUND",
+        "DEPLOYMENT_NOT_FOUND"
+      ],
+      "classification": "not-found",
+      "expectedGameConfirmed": false
+    },
+    {
+      "gameId": "parallaxe-protocole-9",
+      "requestedUrl": "https://parallaxe-protocole-neuf-darknigthmares-projects.vercel.app/",
+      "checkedAt": "2026-11-13T06:42:43.077899+00:00",
+      "httpStatus": 404,
+      "effectiveUrl": "https://parallaxe-protocole-neuf-darknigthmares-projects.vercel.app/",
+      "contentType": "text/plain; charset=utf-8",
+      "headSha256": "6d774cb76166080a2bf94e9907816029a7d29f551d487a8fefec9c8769fd5cc9",
+      "title": [],
+      "documentBytesRead": 107,
+      "gameIdentityMarkers": [
+        "NOT_FOUND",
+        "DEPLOYMENT_NOT_FOUND"
+      ],
+      "classification": "not-found",
+      "expectedGameConfirmed": false
+    },
+    {
+      "gameId": "massilia-cyberpunk",
+      "requestedUrl": "https://massilia-cyberpunk.vercel.app/",
+      "checkedAt": "2026-11-13T06:42:43.082496+00:00",
+      "httpStatus": 404,
+      "effectiveUrl": "https://massilia-cyberpunk.vercel.app/",
+      "contentType": "text/plain; charset=utf-8",
+      "headSha256": "9327bc2accab05dd9b06cbc15e93cc8ec04886ddc2f8abdb2ee1f6682160e804",
+      "title": [],
+      "documentBytesRead": 107,
+      "gameIdentityMarkers": [
+        "NOT_FOUND",
+        "DEPLOYMENT_NOT_FOUND"
+      ],
+      "classification": "not-found",
+      "expectedGameConfirmed": false
+    },
+    {
+      "gameId": "massilia-cyberpunk",
+      "requestedUrl": "https://massilia.vercel.app/",
+      "checkedAt": "2026-11-13T06:42:43.110033+00:00",
+      "httpStatus": 200,
+      "effectiveUrl": "https://massilia.vercel.app/",
+      "contentType": "text/html",
+      "headSha256": "8012199a013cf846ace6956bce3f461229debd44f4aa052a286bf5cd50c5e8c3",
+      "title": [
+        "Projet Massilia | Association de solidarité France–Guinée"
+      ],
+      "documentBytesRead": 65536,
+      "gameIdentityMarkers": [
+        "PULSE",
+        "MARSEILLE",
+        "MASSILIA"
+      ],
+      "classification": "wrong-product",
+      "identityDecision": "France–Guinea solidarity association, not the Cyberpunk game",
+      "expectedGameConfirmed": false
+    },
+    {
+      "gameId": "massilia-cyberpunk",
+      "requestedUrl": "https://massiliacyberpunk.vercel.app/",
+      "checkedAt": "2026-11-13T06:42:43.139853+00:00",
+      "httpStatus": 404,
+      "effectiveUrl": "https://massiliacyberpunk.vercel.app/",
+      "contentType": "text/plain; charset=utf-8",
+      "headSha256": "cc9ccb1e6851f2f5b3bd4834af95c4ab8e1665cf1f9739a97b5990c34da2cb62",
+      "title": [],
+      "documentBytesRead": 107,
+      "gameIdentityMarkers": [
+        "NOT_FOUND",
+        "DEPLOYMENT_NOT_FOUND"
+      ],
+      "classification": "not-found",
+      "expectedGameConfirmed": false
+    },
+    {
+      "gameId": "massilia-cyberpunk",
+      "requestedUrl": "https://massilia-cyberpunk-darknigthmares-projects.vercel.app/",
+      "checkedAt": "2026-11-13T06:42:43.186022+00:00",
+      "httpStatus": 404,
+      "effectiveUrl": "https://massilia-cyberpunk-darknigthmares-projects.vercel.app/",
+      "contentType": "text/plain; charset=utf-8",
+      "headSha256": "a617df76e916f0d0743dc15e5ab8cfb30abe3972cd8d186dc2ca8c3e2d403c50",
+      "title": [],
+      "documentBytesRead": 107,
+      "gameIdentityMarkers": [
+        "NOT_FOUND",
+        "DEPLOYMENT_NOT_FOUND"
+      ],
+      "classification": "not-found",
+      "expectedGameConfirmed": false
+    },
+    {
+      "gameId": "massilia-cyberpunk",
+      "requestedUrl": "https://massilia-cyberpunk-marseille-augmentee.vercel.app/",
+      "checkedAt": "2026-11-13T06:42:43.189969+00:00",
+      "httpStatus": 404,
+      "effectiveUrl": "https://massilia-cyberpunk-marseille-augmentee.vercel.app/",
+      "contentType": "text/plain; charset=utf-8",
+      "headSha256": "98090737d9d807b4297f7ca692777259e2231f6f503210afb125d08694cf0f69",
+      "title": [],
+      "documentBytesRead": 107,
+      "gameIdentityMarkers": [
+        "NOT_FOUND",
+        "DEPLOYMENT_NOT_FOUND"
+      ],
+      "classification": "not-found",
+      "expectedGameConfirmed": false
+    }
+  ],
+  "summary": {
+    "not-found": 27,
+    "wrong-product": 3
+  },
+  "verifiedGameUrls": [],
+  "decision": "No named candidate verified as one of the five requested games; do not send players to same-name foreign products or404targets"
+}
