@@ -1,5 +1,7 @@
 # Préparation à l’hébergement des cinq jeux locaux — 13 novembre 2026
 
+Ce diagnostic précède la demande ultérieure de création des cinq sites. Il conserve ses observations de préparation et ses limites d’origine ; l’exécution autorisée, les adaptations effectives et les tests des nouvelles productions sont suivis dans [Jeux web publiés — vérifications](WEB_GAME_DEPLOYMENTS_2026-11-13.md).
+
 Ce relevé distingue la possibilité technique d’héberger le vrai jeu et l’existence d’une adresse publique vérifiée. Il ne crée aucun projet, ne déploie rien et ne modifie aucune source de jeu. Les sondes et recherches d’adresses sont suivies séparément par l’audit du catalogue.
 
 ## DIVA PULSE : publication statique directe possible

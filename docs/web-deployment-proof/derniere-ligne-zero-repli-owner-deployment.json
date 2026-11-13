@@ -1,0 +1,149 @@
+{
+  "id": "derniere-ligne-zero-repli",
+  "url": "https://derniere-ligne-zero-repli.vercel.app/",
+  "projectId": "prj_mxwpaESVQ2JW1dy2baXHzc8vyxn9",
+  "deploymentId": "dpl_E21GJkbFMprcQRjah1yHP8GaqXFS",
+  "readyState": "READY",
+  "target": "production",
+  "sourceRepository": "https://github.com/darknigthmare/The-Horde-The-Last-Stand",
+  "sourceCommit": "bbbd3ef5afefcc9005c4f7a57f8282281dcb9d42",
+  "gitRepositoryId": 1438215160,
+  "gitLinkVerifiedViaRepoId": true,
+  "settingsApplied": {
+    "framework": null,
+    "rootDirectory": "game",
+    "nodeVersion": "24.x",
+    "installCommand": "true",
+    "buildCommand": "set -e;o=.vercel-static; mkdir -p $o/assets/audio $o/assets/icons; cp JOUER_DERNIERE_LIGNE.html $o/index.html; cp JOUER_DERNIERE_LIGNE.html manifest.webmanifest $o; cp assets/audio/manifest.json $o/assets/audio; cp assets/icons/icon.svg $o/assets/icons",
+    "outputDirectory": ".vercel-static",
+    "ssoProtection": null,
+    "publicSource": false,
+    "directoryListing": false
+  },
+  "sourcePullRequest": "https://github.com/darknigthmare/The-Horde-The-Last-Stand/pull/4",
+  "sourceConfigurationCommit": "fc0794510976016736b5942cdc40fd6f40b7e1c8",
+  "productionAlias": [
+    "derniere-ligne-zero-repli.vercel.app",
+    "derniere-ligne-zero-repli-darknigthmares-projects.vercel.app",
+    "derniere-ligne-zero-repli-git-bb-432db4-darknigthmares-projects.vercel.app"
+  ],
+  "buildStartedAt": "2026-11-13T08:03:18.192Z",
+  "readyAt": "2026-11-13T08:03:24.944Z",
+  "projectUpgradeRequested": false,
+  "gameplaySourceModified": false,
+  "verifiedAt": "2026-11-13T08:07:12.456Z",
+  "browser": {
+    "engine": "Chromium CDP; native public HTTPS URL; normal UI actions; no test API",
+    "title": "Dernière Ligne — Poste stabilisé 0.44.2",
+    "playable": true,
+    "actions": [
+      "#dl403-hubNav button[data-page=\"campaigns\"]",
+      "#newCampaign",
+      "#v20SkipTrain",
+      "#startWaveBtn",
+      "#v18CinemaSkip",
+      "Native mouse aim/fire on the real game canvas"
+    ],
+    "state": {
+      "title": "Dernière Ligne — Poste stabilisé 0.44.2",
+      "url": "https://derniere-ligne-zero-repli.vercel.app/",
+      "phase": "combat",
+      "objective": "DÉPÔT 07 · 0/16 · 0:03 · AUCUNE CONDITION",
+      "ammo": "10 / ∞",
+      "canvas": {
+        "width": 1440,
+        "height": 810
+      },
+      "testApiPresent": false,
+      "pauseEnabled": true
+    },
+    "beforeInteraction": {
+      "phase": "combat",
+      "objective": "DÉPÔT 07 · 0/16 · 0:01 · AUCUNE CONDITION",
+      "ammo": "12 / ∞",
+      "night": "01 / 24"
+    },
+    "screenshot": "docs/web-deployment-proof/derniere-ligne-zero-repli-owner-play.png",
+    "resources": [
+      {
+        "url": "https://derniere-ligne-zero-repli.vercel.app/manifest.webmanifest",
+        "type": "link",
+        "status": 200
+      },
+      {
+        "url": "https://derniere-ligne-zero-repli.vercel.app/assets/icons/icon.svg",
+        "type": "other",
+        "status": 200
+      }
+    ],
+    "screenshotSha256": "dbc4c53840f85c2728fbdfc34749a6b8c31b8402faf4de29eddbc72ce8c63aaf"
+  },
+  "limitations": [
+    "Native campaign selection, initial preparation and first-night combat only; no completed wave or campaign claimed.",
+    "The browser uses normal UI buttons and mouse input without the optional ?test=1 API; no game state is injected."
+  ],
+  "https": {
+    "id": "derniere-ligne-zero-repli",
+    "url": "https://derniere-ligne-zero-repli.vercel.app/",
+    "checkedAt": "2026-11-13T08:06:38.904360+00:00",
+    "transport": "curl with inherited proxy and CA trust; TLS verification enabled",
+    "files": [
+      {
+        "path": "JOUER_DERNIERE_LIGNE.html",
+        "url": "https://derniere-ligne-zero-repli.vercel.app/JOUER_DERNIERE_LIGNE.html",
+        "finalUrl": "https://derniere-ligne-zero-repli.vercel.app/JOUER_DERNIERE_LIGNE.html",
+        "status": 200,
+        "tlsVerifyResult": 0,
+        "bytes": 28022243,
+        "sourceSha256": "7edd451c079b5d72ab31acf6cc49aba4e805801271afd24972d36e49ba65e1d1",
+        "publicSha256": "7edd451c079b5d72ab31acf6cc49aba4e805801271afd24972d36e49ba65e1d1",
+        "identical": true
+      },
+      {
+        "path": "assets/audio/manifest.json",
+        "url": "https://derniere-ligne-zero-repli.vercel.app/assets/audio/manifest.json",
+        "finalUrl": "https://derniere-ligne-zero-repli.vercel.app/assets/audio/manifest.json",
+        "status": 200,
+        "tlsVerifyResult": 0,
+        "bytes": 20,
+        "sourceSha256": "1f4e9f0d8a9f27b3a757aabad980e5230ac8cbb203a438ae60df176492e2f39b",
+        "publicSha256": "1f4e9f0d8a9f27b3a757aabad980e5230ac8cbb203a438ae60df176492e2f39b",
+        "identical": true
+      },
+      {
+        "path": "assets/icons/icon.svg",
+        "url": "https://derniere-ligne-zero-repli.vercel.app/assets/icons/icon.svg",
+        "finalUrl": "https://derniere-ligne-zero-repli.vercel.app/assets/icons/icon.svg",
+        "status": 200,
+        "tlsVerifyResult": 0,
+        "bytes": 295,
+        "sourceSha256": "fbafb89a82a943c99ccde2a877e598485ad6f0ff1cfc3dd4ee5f13a482b14a5d",
+        "publicSha256": "fbafb89a82a943c99ccde2a877e598485ad6f0ff1cfc3dd4ee5f13a482b14a5d",
+        "identical": true
+      },
+      {
+        "path": "index.html",
+        "url": "https://derniere-ligne-zero-repli.vercel.app/",
+        "finalUrl": "https://derniere-ligne-zero-repli.vercel.app/",
+        "status": 200,
+        "tlsVerifyResult": 0,
+        "bytes": 28022243,
+        "sourceSha256": "7edd451c079b5d72ab31acf6cc49aba4e805801271afd24972d36e49ba65e1d1",
+        "publicSha256": "7edd451c079b5d72ab31acf6cc49aba4e805801271afd24972d36e49ba65e1d1",
+        "identical": true
+      },
+      {
+        "path": "manifest.webmanifest",
+        "url": "https://derniere-ligne-zero-repli.vercel.app/manifest.webmanifest",
+        "finalUrl": "https://derniere-ligne-zero-repli.vercel.app/manifest.webmanifest",
+        "status": 200,
+        "tlsVerifyResult": 0,
+        "bytes": 487,
+        "sourceSha256": "459c75d68d59a1defa825eae737e13133b45fa0f4860937eb6546c0b375a5571",
+        "publicSha256": "459c75d68d59a1defa825eae737e13133b45fa0f4860937eb6546c0b375a5571",
+        "identical": true
+      }
+    ],
+    "allFilesIdentical": true
+  }
+}

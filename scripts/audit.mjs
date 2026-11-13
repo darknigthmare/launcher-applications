@@ -351,24 +351,100 @@ assert(new Set(recoveredApps.map((app) => app.id)).size === recoveredApps.length
 assert(apps.length === 140 + recoveredApps.length, "les 140 applications initiales sont complétées par tous les jeux retrouvés");
 assert(apps.filter((app) => app?.category === "Jeux").length === 127 + recoveredApps.length,
   "le nombre de jeux intègre les nouvelles fiches vérifiées");
-const offlineGithubGameIds = [
+const webPortGameIds = [
   "diva-pulse", "derniere-ligne-zero-repli",
   "fallout-marseille-mistral", "parallaxe-protocole-9", "massilia-cyberpunk"
 ];
-for (const id of offlineGithubGameIds) {
+for (const id of webPortGameIds) {
   const app = recoveredApps.find((entry) => entry.id === id);
-  assert(Boolean(app), `jeu hors Vercel retrouvé : ${id}`);
+  assert(Boolean(app), `jeu porté depuis sa distribution locale présent : ${id}`);
   if (!app) continue;
-  assert(app.accessPolicy === "local-download", `fichiers à télécharger clairement étiquetés pour ${id}`);
+  assert(app.accessPolicy !== "local-download", `lancement web distinct d'une installation pour ${id}`);
   // Native proof is checked below against the manifest, actual files and source
   // revision for every illustrated recovered game, including downloadable games.
   const hasNativeMedia = app.mediaPendingReview === false && Boolean(app.image && app.presentation);
   assert((app.mediaPendingReview === true && !app.image && !app.presentation) || hasNativeMedia,
     `aucun média fictif pour le jeu local ${id} ; les captures doivent avoir leur preuve native`);
-  assert(app.link?.startsWith("https://github.com/darknigthmare/") && app.sourceRepository === app.link,
-    `le vrai dépôt du jeu est associé à ${id}`);
-  assert(app.releaseState === "published" && app.status?.includes("téléchargement local"),
-    `distribution locale cohérente avec le statut de ${id}`);
+  assert(app.sourceRepository?.startsWith("https://github.com/darknigthmare/"),
+    `le dépôt source historique du jeu reste associé à ${id}`);
+  try {
+    const url = new URL(app.link);
+    assert(url.protocol === "https:" && url.hostname.endsWith(".vercel.app") && !url.username && !url.password,
+      `destination Vercel HTTPS renseignée pour ${id}`);
+  } catch {
+    failures.push(`adresse web publiée invalide pour ${id}`);
+  }
+  assert(app.releaseState === "published" && !app.status?.includes("téléchargement local"),
+    `fiche de portage web cohérente sans statut d'installation pour ${id}`);
+}
+
+// Current web launch evidence is independent of the older local screenshots.
+// READY identifies a deployment; a separate browser observation identifies a game.
+const webDeploymentsPath = "docs/WEB_GAME_DEPLOYMENTS_2026-11-13.json";
+assert(await exists(webDeploymentsPath), "les cinq déploiements de jeux disposent d'un rapport de vérification");
+let webDeploymentDocument = null;
+if (await exists(webDeploymentsPath)) {
+  try {
+    webDeploymentDocument = JSON.parse(await readFile(path.join(root, webDeploymentsPath), "utf8"));
+  } catch (error) {
+    failures.push(`rapport de déploiements web illisible: ${error.message}`);
+  }
+}
+assert(webDeploymentDocument?.schemaVersion === 1 && Array.isArray(webDeploymentDocument?.deployments),
+  "le rapport des déploiements web utilise son schéma version 1");
+const webDeployments = Array.isArray(webDeploymentDocument?.deployments) ? webDeploymentDocument.deployments : [];
+const pendingWebDeployments = Array.isArray(webDeploymentDocument?.pending) ? webDeploymentDocument.pending : [];
+const allWebDeploymentRecords = [...webDeployments, ...pendingWebDeployments];
+assert(allWebDeploymentRecords.length === webPortGameIds.length &&
+  new Set(allWebDeploymentRecords.map((deployment) => deployment?.id)).size === webPortGameIds.length &&
+  allWebDeploymentRecords.every((deployment) => webPortGameIds.includes(deployment?.id)),
+  "chaque portage dispose soit d'une preuve jouable, soit d'un blocage de publication documenté");
+for (const id of webPortGameIds) {
+  const app = recoveredApps.find((entry) => entry.id === id);
+  const readyDeployment = webDeployments.find((entry) => entry?.id === id);
+  const deployment = readyDeployment || pendingWebDeployments.find((entry) => entry?.id === id);
+  assert(Boolean(deployment), `preuve de publication ou blocage web présente pour ${id}`);
+  if (!app || !deployment) continue;
+  try {
+    assert(new URL(deployment.url).href === new URL(app.link).href,
+      `la preuve web de ${id} correspond à l'adresse réellement publiée dans le launcher`);
+  } catch {
+    failures.push(`adresse de preuve de déploiement invalide pour ${id}`);
+  }
+  assert(/^prj_[A-Za-z0-9]+$/.test(String(deployment.projectId || "")), `projet Vercel détenu identifié pour ${id}`);
+  assert(Number.isFinite(Date.parse(deployment.verifiedAt || "")), `date de vérification web renseignée pour ${id}`);
+  assert(deployment.sourceRepository === app.sourceRepository &&
+    /^[a-f0-9]{40}$/.test(String(deployment.sourceCommit || "")) && !/^0{40}$/.test(deployment.sourceCommit),
+    `dépôt et révision source du déploiement de ${id} conservés`);
+  if (typeof deployment.sourceVersion === "string") {
+    assert(app.sourceVersion === deployment.sourceVersion,
+      `la version web courante de ${id} suit sa preuve de publication, indépendamment des anciennes captures`);
+  }
+  if (!readyDeployment) {
+    assert(app.accessPolicy === "deployment-pending" && app.status?.includes("Publication en attente"),
+      `le jeu ${id} bloqué par le quota n'est pas annoncé comme jouable`);
+    assert(deployment.plannedOwnedUrl === deployment.url && deployment.browser?.playable !== true,
+      `l'adresse détenue de ${id} reste une destination prévue sans preuve de jouabilité inventée`);
+    const blocker = deployment.blocker;
+    assert(blocker?.code === "api-deployments-free-per-day" &&
+      Number.isFinite(Date.parse(blocker?.observedAt || "")) &&
+      (typeof blocker?.error === "string" && Boolean(blocker.error.trim()) ||
+        typeof blocker?.error?.message === "string" && Boolean(blocker.error.message.trim())),
+      `le refus réel du quota Vercel est daté et conservé pour ${id}`);
+    continue;
+  }
+  assert(app.accessPolicy !== "deployment-pending" &&
+    /^dpl_[A-Za-z0-9]+$/.test(String(deployment.deploymentId || "")) && deployment.readyState === "READY",
+    `déploiement Vercel READY identifié pour ${id}`);
+  assert(deployment.browser?.playable === true &&
+    typeof deployment.browser?.title === "string" && Boolean(deployment.browser.title.trim()),
+    `jeu ${id} réellement ouvert et joué dans le navigateur`);
+  if (id === "parallaxe-protocole-9") {
+    assert(deployment.browser?.coop2clients === true,
+      "la coopération Parallaxe est vérifiée avec deux clients web");
+  }
+  assert(Array.isArray(deployment.limitations) && deployment.limitations.every((item) => typeof item === "string"),
+    `limites observées du portage web de ${id} explicitement enregistrées`);
 }
 
 assert(gameGenreGroups.length === 8, "la navigation Jeux contient huit genres principaux");
@@ -482,6 +558,11 @@ for (const app of apps) {
     try {
       const url = new URL(app.link);
       assert(["https:", "http:", "steam:", "file:"].includes(url.protocol), `protocole autorisé pour ${app.id}`);
+      if (app.category === "Jeux" && releaseState === "published") {
+        assert(url.protocol === "https:" && app.accessPolicy !== "local-download" &&
+          !["github.com", "www.github.com", "raw.githubusercontent.com", "codeload.github.com"].includes(url.hostname),
+          `la destination du jeu ${app.id} est une adresse web, jamais un dépôt ou une installation locale`);
+      }
     } catch {
       failures.push(`lien invalide pour ${app.id}: ${app.link}`);
     }
@@ -881,8 +962,8 @@ for (const app of recoveredWithNativeMedia) {
       `identité du jeu local ${app.id} reliée à son véritable dépôt`);
     assert(/^[a-f0-9]{40}$/.test(String(evidence.sourceCommit || "")) && manifest?.sourceCommit === evidence.sourceCommit,
       `révision complète de la source locale ${app.id} conservée`);
-    assert(Boolean(evidence.version) && app.sourceVersion === evidence.version && gallery?.captureVersion === evidence.version,
-      `version locale ${app.id} cohérente entre source et galerie`);
+    assert(Boolean(evidence.version) && gallery?.captureVersion === evidence.version,
+      `la version de capture locale ${app.id} reste cohérente sans imposer la version du déploiement actuel`);
   }
   assert(Array.isArray(evidence.scenes) && evidence.scenes.length === 5,
     `cinq scènes de provenance native pour ${app.id}`);
@@ -1325,8 +1406,8 @@ if (await exists(avpTcgProofPath)) {
   }
 }
 
-// A downloadable game may have real source-native screenshots. Verify all
-// original in-game phases and hashes before advertising them as current media.
+// Historical source-native captures keep their original build identity even
+// after the same game gains a separately verified web deployment.
 const hordeId = "derniere-ligne-zero-repli";
 const hordeProofPath = "docs/media-proof/derniere-ligne-local-0442-2026-11-01.json";
 assert(await exists(hordeProofPath), "preuve native du jeu local Dernière Ligne présente");
@@ -1344,8 +1425,8 @@ if (await exists(hordeProofPath)) {
     "lien de provenance source, pas Vercel inventé");
   assert(proof.overview?.realCombatPhaseConfirmed && proof.overview?.title?.includes("0.44.2"),
     "première nuit jouable réellement observée");
-  assert(app?.accessPolicy === "local-download" && app?.mediaPendingReview === false,
-    "capture source vérifiée et distribution locale distincte du jeu web");
+  assert(app?.mediaPendingReview === false && app?.sourceRepository === proof.source,
+    "capture source historique vérifiée, distincte de l'adresse web de lancement actuelle");
   assert(gallery?.captureType === "real-local-gameplay" && gallery.captureProof === hordeProofPath,
     "galerie identifiée comme capture réelle locale");
   assert(gallery?.captureVersion === "0.44.2" && gallery?.presentationReview === "source-verified",
@@ -1539,8 +1620,8 @@ for (const asset of appShell) {
 assert(appShell.includes("/assets/openai-art-manifest.json"), "le manifeste OpenAI fait partie du shell hors ligne");
 assert(appShell.includes("/assets/illustration-manifest.json"), "la revue des nouvelles illustrations fait partie du shell hors ligne");
 assert(appShellBytes <= 5 * 1024 * 1024, "le préchargement APP_SHELL reste inférieur à 5 Mo");
-assert(serviceWorker.includes('const CACHE_NAME = "launcher-shell-v33"'), "le cache applicatif v1.17 utilise launcher-shell-v33");
-assert(serviceWorker.includes('const RUNTIME_CACHE = "launcher-media-runtime-v4"'), "le cache média renouvelé utilise launcher-media-runtime-v4");
+assert(serviceWorker.includes('const CACHE_NAME = "launcher-shell-v34"'), "le cache applicatif v1.18 utilise launcher-shell-v34");
+assert(serviceWorker.includes('const RUNTIME_CACHE = "launcher-media-runtime-v5"'), "le cache média renouvelé utilise launcher-media-runtime-v5");
 assert(serviceWorker.includes("const MAX_RUNTIME_ENTRIES = 120"), "le cache média différé est borné");
 const mediaRuleMatch = serviceWorker.match(/if\s*\((\/(?:\\.|[^/\n])+\/[a-z]*)\.test\(url\.pathname\)\)/);
 let mediaRule = null;
@@ -1621,7 +1702,8 @@ if (failures.length) {
     `Audit réussi: ${checks.length} contrôles, ${apps.length} applications, ${previewFiles.length} aperçus, ` +
     `${presentationFiles.length} présentations, ${previousPresentationPaths.size} illustrations précédentes, ` +
     `${galleryPaths.size} images de galerie, ${mediaFiles.length} médias historiques/natifs, ` +
-    `${illustrationFiles.length} illustrations promotionnelles supplémentaires et ` +
+    `${illustrationFiles.length} illustrations promotionnelles supplémentaires, ` +
+    `${webDeployments.length} portages web vérifiés, ${pendingWebDeployments.length} publications en attente et ` +
     `${Math.round(appShellBytes / 1024)} Ko préchargés.`
   );
 }

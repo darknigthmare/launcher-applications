@@ -1,0 +1,78 @@
+{
+  "id": "derniere-ligne-zero-repli",
+  "checks": [
+    {
+      "url": "https://derniere-ligne-zero-repli.vercel.app/",
+      "checkedAt": "2026-11-13T08:06:34Z",
+      "status": 200,
+      "finalUrl": "https://derniere-ligne-zero-repli.vercel.app/",
+      "contentType": "text/html; charset=utf-8",
+      "contentEncoding": null,
+      "transportBytes": 28022243,
+      "decodedBytes": 28022243,
+      "transportSha256": "7edd451c079b5d72ab31acf6cc49aba4e805801271afd24972d36e49ba65e1d1",
+      "decodedSha256": "7edd451c079b5d72ab31acf6cc49aba4e805801271afd24972d36e49ba65e1d1",
+      "title": "Dernière Ligne — Poste stabilisé 0.44.2",
+      "decodedSha256MatchesExpected": true,
+      "purpose": "Exact source artifact index.html"
+    },
+    {
+      "url": "https://derniere-ligne-zero-repli.vercel.app/JOUER_DERNIERE_LIGNE.html",
+      "checkedAt": "2026-11-13T08:06:35Z",
+      "status": 200,
+      "finalUrl": "https://derniere-ligne-zero-repli.vercel.app/JOUER_DERNIERE_LIGNE.html",
+      "contentType": "text/html; charset=utf-8",
+      "contentEncoding": null,
+      "transportBytes": 28022243,
+      "decodedBytes": 28022243,
+      "transportSha256": "7edd451c079b5d72ab31acf6cc49aba4e805801271afd24972d36e49ba65e1d1",
+      "decodedSha256": "7edd451c079b5d72ab31acf6cc49aba4e805801271afd24972d36e49ba65e1d1",
+      "title": "Dernière Ligne — Poste stabilisé 0.44.2",
+      "decodedSha256MatchesExpected": true,
+      "purpose": "Exact source artifact JOUER_DERNIERE_LIGNE.html"
+    },
+    {
+      "url": "https://derniere-ligne-zero-repli.vercel.app/manifest.webmanifest",
+      "checkedAt": "2026-11-13T08:06:36Z",
+      "status": 200,
+      "finalUrl": "https://derniere-ligne-zero-repli.vercel.app/manifest.webmanifest",
+      "contentType": "application/manifest+json; charset=utf-8",
+      "contentEncoding": null,
+      "transportBytes": 487,
+      "decodedBytes": 487,
+      "transportSha256": "459c75d68d59a1defa825eae737e13133b45fa0f4860937eb6546c0b375a5571",
+      "decodedSha256": "459c75d68d59a1defa825eae737e13133b45fa0f4860937eb6546c0b375a5571",
+      "decodedSha256MatchesExpected": true,
+      "purpose": "Exact source artifact manifest.webmanifest"
+    },
+    {
+      "url": "https://derniere-ligne-zero-repli.vercel.app/assets/audio/manifest.json",
+      "checkedAt": "2026-11-13T08:06:37Z",
+      "status": 200,
+      "finalUrl": "https://derniere-ligne-zero-repli.vercel.app/assets/audio/manifest.json",
+      "contentType": "application/json; charset=utf-8",
+      "contentEncoding": null,
+      "transportBytes": 20,
+      "decodedBytes": 20,
+      "transportSha256": "1f4e9f0d8a9f27b3a757aabad980e5230ac8cbb203a438ae60df176492e2f39b",
+      "decodedSha256": "1f4e9f0d8a9f27b3a757aabad980e5230ac8cbb203a438ae60df176492e2f39b",
+      "decodedSha256MatchesExpected": true,
+      "purpose": "Exact source artifact assets/audio/manifest.json"
+    },
+    {
+      "url": "https://derniere-ligne-zero-repli.vercel.app/assets/icons/icon.svg",
+      "checkedAt": "2026-11-13T08:06:37Z",
+      "status": 200,
+      "finalUrl": "https://derniere-ligne-zero-repli.vercel.app/assets/icons/icon.svg",
+      "contentType": "image/svg+xml",
+      "contentEncoding": null,
+      "transportBytes": 295,
+      "decodedBytes": 295,
+      "transportSha256": "fbafb89a82a943c99ccde2a877e598485ad6f0ff1cfc3dd4ee5f13a482b14a5d",
+      "decodedSha256": "fbafb89a82a943c99ccde2a877e598485ad6f0ff1cfc3dd4ee5f13a482b14a5d",
+      "title": "Dernière Ligne — Zéro Repli",
+      "decodedSha256MatchesExpected": true,
+      "purpose": "Exact source artifact assets/icons/icon.svg"
+    }
+  ]
+}

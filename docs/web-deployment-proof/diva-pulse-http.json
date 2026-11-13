@@ -1,0 +1,91 @@
+{
+  "id": "diva-pulse",
+  "checks": [
+    {
+      "url": "https://diva-pulse.vercel.app/",
+      "checkedAt": "2026-11-13T08:05:57Z",
+      "status": 200,
+      "finalUrl": "https://diva-pulse.vercel.app/",
+      "contentType": "text/html; charset=utf-8",
+      "contentEncoding": null,
+      "transportBytes": 922489,
+      "decodedBytes": 922489,
+      "transportSha256": "61d87a5929a91331b699005c4a5582e312a84abf821460fa915091f5b4bfd8ba",
+      "decodedSha256": "61d87a5929a91331b699005c4a5582e312a84abf821460fa915091f5b4bfd8ba",
+      "title": "DIVA PULSE — Prises fiables &amp; brouillons protégés V37",
+      "decodedSha256MatchesExpected": true,
+      "purpose": "Exact source artifact index.html"
+    },
+    {
+      "url": "https://diva-pulse.vercel.app/DIVA_PULSE_JOUER.html",
+      "checkedAt": "2026-11-13T08:05:58Z",
+      "status": 200,
+      "finalUrl": "https://diva-pulse.vercel.app/DIVA_PULSE_JOUER.html",
+      "contentType": "text/html; charset=utf-8",
+      "contentEncoding": null,
+      "transportBytes": 922489,
+      "decodedBytes": 922489,
+      "transportSha256": "61d87a5929a91331b699005c4a5582e312a84abf821460fa915091f5b4bfd8ba",
+      "decodedSha256": "61d87a5929a91331b699005c4a5582e312a84abf821460fa915091f5b4bfd8ba",
+      "title": "DIVA PULSE — Prises fiables &amp; brouillons protégés V37",
+      "decodedSha256MatchesExpected": true,
+      "purpose": "Exact source artifact DIVA_PULSE_JOUER.html"
+    },
+    {
+      "url": "https://diva-pulse.vercel.app/manifest.webmanifest",
+      "checkedAt": "2026-11-13T08:05:58Z",
+      "status": 200,
+      "finalUrl": "https://diva-pulse.vercel.app/manifest.webmanifest",
+      "contentType": "application/manifest+json; charset=utf-8",
+      "contentEncoding": null,
+      "transportBytes": 649,
+      "decodedBytes": 649,
+      "transportSha256": "827732a8743048204ef353541b100aa27106fa0d30bba1a0b2a50b238c812988",
+      "decodedSha256": "827732a8743048204ef353541b100aa27106fa0d30bba1a0b2a50b238c812988",
+      "decodedSha256MatchesExpected": true,
+      "purpose": "Exact source artifact manifest.webmanifest"
+    },
+    {
+      "url": "https://diva-pulse.vercel.app/sw.js",
+      "checkedAt": "2026-11-13T08:05:58Z",
+      "status": 200,
+      "finalUrl": "https://diva-pulse.vercel.app/sw.js",
+      "contentType": "application/javascript; charset=utf-8",
+      "contentEncoding": null,
+      "transportBytes": 1394,
+      "decodedBytes": 1394,
+      "transportSha256": "d4e69d4093587c2e2bf219f14368ce9f7df82645992b525dfab763fd218c6144",
+      "decodedSha256": "d4e69d4093587c2e2bf219f14368ce9f7df82645992b525dfab763fd218c6144",
+      "decodedSha256MatchesExpected": true,
+      "purpose": "Exact source artifact sw.js"
+    },
+    {
+      "url": "https://diva-pulse.vercel.app/icons/icon-192.png",
+      "checkedAt": "2026-11-13T08:05:59Z",
+      "status": 200,
+      "finalUrl": "https://diva-pulse.vercel.app/icons/icon-192.png",
+      "contentType": "image/png",
+      "contentEncoding": null,
+      "transportBytes": 1023,
+      "decodedBytes": 1023,
+      "transportSha256": "5691aee545505ff7282d0b1721023b696e495e1780f9eca6b246644ec577c96d",
+      "decodedSha256": "5691aee545505ff7282d0b1721023b696e495e1780f9eca6b246644ec577c96d",
+      "decodedSha256MatchesExpected": true,
+      "purpose": "Exact source artifact icons/icon-192.png"
+    },
+    {
+      "url": "https://diva-pulse.vercel.app/icons/icon-512.png",
+      "checkedAt": "2026-11-13T08:05:59Z",
+      "status": 200,
+      "finalUrl": "https://diva-pulse.vercel.app/icons/icon-512.png",
+      "contentType": "image/png",
+      "contentEncoding": null,
+      "transportBytes": 3411,
+      "decodedBytes": 3411,
+      "transportSha256": "0947ea337f9431a9ef9c202422f717b2fffafea517634f246b64c361ad58b62c",
+      "decodedSha256": "0947ea337f9431a9ef9c202422f717b2fffafea517634f246b64c361ad58b62c",
+      "decodedSha256MatchesExpected": true,
+      "purpose": "Exact source artifact icons/icon-512.png"
+    }
+  ]
+}

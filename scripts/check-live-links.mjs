@@ -7,7 +7,7 @@
 import { readFile, mkdir, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { resolve } from "node:path";
-import { classifyLinkDestination } from "./link-destination-classifier.mjs";
+import { classifyLinkDestination, applyPublicationPolicy } from "./link-destination-classifier.mjs";
 
 const root = process.cwd();
 const html = await readFile(resolve(root, "index.html"), "utf8");
@@ -36,9 +36,9 @@ if (new Set(apps.map((app) => app.id)).size !== apps.length) throw new Error("ID
 if (!apps.length) throw new Error("Catalogue vide");
 
 async function check(app) {
-  if (!app.link) return { ...app, state: "no-link", httpStatus: null };
+  if (!app.link) return applyPublicationPolicy({ ...app, state: "no-link", httpStatus: null }, app.accessPolicy);
   const url = new URL(app.link);
-  if (url.protocol !== "https:") return { ...app, state: "needs-review", reason: "protocole non HTTPS" };
+  if (url.protocol !== "https:") return applyPublicationPolicy({ ...app, state: "needs-review", reason: "protocole non HTTPS" }, app.accessPolicy);
   let lastError = "";
   // GET observes the actual authentication page too: HEAD alone can report 200
   // while the same URL serves a Vercel gate rather than the game document.
@@ -82,13 +82,14 @@ async function check(app) {
       const result = app.accessPolicy === "local-download" && classification.state === "reachable"
         ? { state:"download-available", reason:"Dépôt GitHub accessible : téléchargement/installation locale, pas un jeu hébergé" }
         : classification;
-      return { ...app, ...result, httpStatus: response.status, effectiveUrl: response.url,
-        checkedAt: new Date().toISOString() };
+      return applyPublicationPolicy({ ...app, ...result, httpStatus: response.status, effectiveUrl: response.url,
+        checkedAt: new Date().toISOString() }, app.accessPolicy);
     } catch (error) {
       lastError = String(error?.message || error);
     }
   }
-  return { ...app, state: "needs-review", reason: lastError || "erreur réseau", checkedAt: new Date().toISOString() };
+  return applyPublicationPolicy({ ...app, state: "needs-review", httpStatus: null,
+    reason: lastError || "erreur réseau", checkedAt: new Date().toISOString() }, app.accessPolicy);
 }
 
 const results = new Array(apps.length);
@@ -100,16 +101,20 @@ const workers = Array.from({ length: Math.min(6, apps.length) }, async () => {
   }
 });
 await Promise.all(workers);
-const counts = Object.fromEntries(["reachable", "download-available", "auth-required", "needs-review", "broken", "no-link"].map((state) => [
+const counts = Object.fromEntries(["reachable", "download-available", "auth-required", "publication-pending", "needs-review", "broken", "no-link"].map((state) => [
   state, results.filter((app) => app.state === state).length
+]));
+const destinationCounts = Object.fromEntries(["reachable", "download-available", "auth-required", "needs-review", "broken", "no-link"].map((state) => [
+  state, results.filter((app) => (app.destinationState || app.state) === state).length
 ]));
 const report = {
   generatedAt: new Date().toISOString(),
-  scope: "Contrôle des URLs publiques, dépôts à télécharger et redirections Vercel SSO — réponse HTTP non suffisante pour certifier le gameplay",
+  scope: "Contrôle des destinations web, publications en attente et redirections Vercel SSO — réponse HTTP non suffisante pour certifier le gameplay",
   method: "GET, redirects followed, first 64 KiB of HTML document head inspected for Vercel Authentication; at most 6 concurrent requests; no HTTP body stored",
   inputSha256,
   total: results.length,
   counts,
+  destinationCounts,
   results
 };
 await mkdir(resolve(root, ".reports"), { recursive: true });

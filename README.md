@@ -1,6 +1,16 @@
 # Mon Launcher
 
-Version du dépôt **1.17.0** · **158 fiches, dont 145 jeux** · [Ouvrir le launcher](https://launcher-applications.vercel.app/)
+Version du dépôt **1.18.0** · **158 fiches, dont 145 jeux** · [Ouvrir le launcher](https://launcher-applications.vercel.app/)
+
+## Version 1.18 — Hébergements des jeux (13 novembre 2026)
+
+Les cinq projets Vercel sont créés et liés à leurs dépôts. **DIVA PULSE**, **Dernière Ligne** et **Massilia Cyberpunk 0.78** disposent de productions publiques contrôlées : fichiers et empreintes source, parcours natifs dans Chromium, musique ou combat et déplacement réel selon le jeu. Les adresses et les preuves sont suivies dans le [rapport de déploiement](docs/WEB_GAME_DEPLOYMENTS_2026-11-13.md).
+
+Les sources d’hébergement complet de **Fallout Mistral** et de **Parallaxe** sont préparées séparément. Fallout conserve ses données cartographiques ; Parallaxe dispose d’un stockage de salons durable isolé, avec contrôle de révision atomique. **Le quota Hobby Vercel de 100 déploiements par jour bloque leurs nouvelles publications**, ainsi que la nouvelle publication du launcher. La production du launcher reste donc en **1.17** tant que ce quota n’est pas rétabli. Aucun forfait payant n’est activé.
+
+Cette PR prépare les liens web : **Jouer** pour les productions vérifiées ; **Publication en attente** désactivé pour celles qui ne le sont pas. Les anciens liens GitHub enregistrés sont migrés. Les 27 illustrations acceptées, 118 textes diégétiques, galeries natives, favoris et personnalisations sont conservés. Les versions de captures historiques restent distinctes des nouvelles versions hébergées. Cache PWA **shell v34 / médias v5**. [Note de livraison 1.18](docs/RELEASE_1.18.0_2026-11-13.md).
+
+---
 
 ## Version 1.17 — Illustrations et récits des jeux (13 novembre 2026)
 

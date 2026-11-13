@@ -1,5 +1,7 @@
 # Accès directs aux jeux — relevé du 13 novembre 2026
 
+Ce document conserve la recherche initiale, avant la création de nouveaux sites demandée ensuite par l’utilisateur. Les 404 et absences de projets ci-dessous décrivent cet instant. Les nouvelles publications et leurs contrôles de jeu public sont suivis dans [Jeux web publiés — vérifications](WEB_GAME_DEPLOYMENTS_2026-11-13.md) ; ce dernier relevé détermine les adresses désormais activables.
+
 Le catalogue actuel contient **158 fiches, dont 145 jeux**. La demande est d’ouvrir les jeux dans leur version web, sans orienter le joueur vers une installation. Les liens déjà présents ont été contrôlés et les cinq distributions GitHub restantes ont fait l’objet d’une recherche authentifiée spécifique.
 
 ## Contrôle de toutes les destinations actuelles

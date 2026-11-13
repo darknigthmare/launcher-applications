@@ -1,0 +1,62 @@
+{
+  "id": "parallaxe-protocole-9",
+  "sourceRepository": "https://github.com/darknigthmare/Parallaxe_Protocole9",
+  "sourceCommit": "659bdd1185cf9f127b6d9d684ae60261e3813f6e",
+  "pullRequest": "https://github.com/darknigthmare/Parallaxe_Protocole9/pull/6",
+  "projectId": "prj_NwhUwKgmysOTq5vuvtNNbwAw2br5",
+  "plannedOwnedUrl": "https://parallaxe-protocole-9.vercel.app",
+  "checkedAt": "2026-11-13T08:32:34.255023+00:00",
+  "status": "pending-public-coop-validation",
+  "publicCurrent": {
+    "url": "https://parallaxe-protocole-9.vercel.app",
+    "deploymentId": "dpl_2bN9GJhrsAj4m5nu7GVefnQ2GD1n",
+    "readyState": "READY",
+    "sourceCommit": "23fd9cdbe297cad1d3962c9fa33adb6683899793",
+    "httpStatus": 200,
+    "title": "PARALLAXE — Protocole 9",
+    "apiStatus": 500,
+    "apiError": "FUNCTION_INVOCATION_FAILED",
+    "runtimeCause": "ERR_MODULE_NOT_FOUND: extensionless TypeScript import of src/vercel/session-handler reached native ESM loader",
+    "observedAt": "2026-11-13T08:21:16.620Z",
+    "cooperativePlayVerified": false
+  },
+  "blockingReason": {
+    "apiStatus": 402,
+    "code": "api-deployments-free-per-day",
+    "message": "Resource is limited - try again in 24 hours (more than 100)",
+    "retryAfterSeconds": 86400,
+    "gitCheck": "Vercel failed: Deployment rate limited — retry in 24 hours.",
+    "gitCheckUrl": "https://vercel.com/darknigthmares-projects?upgradeToPro=build-rate-limit",
+    "cliFallback": "Unavailable: no Vercel CLI installation or local CLI credentials; no paid upgrade requested",
+    "observedAt": "2026-11-13T08:10:59.209Z"
+  },
+  "localRealStorageChecks": {
+    "httpClients": 4,
+    "concurrentJoins": 3,
+    "consensusRounds": 9,
+    "campaignLevels": [
+      "hotel",
+      "metro",
+      "clinic"
+    ],
+    "sharedRoomPreserved": true,
+    "privateProjections": true,
+    "capacityAndAuthorization": true,
+    "staleDecisionsRejected": true,
+    "radioSignalingPrivateAndAuthenticated": true,
+    "authenticatedIceConfiguration": true,
+    "processRestartKeepsTwoPlayerIdentities": true,
+    "renderedBrowserClients": 2,
+    "nativeUiCreateJoinReferenceInspectionConsensus": true,
+    "invalidStoreTokenRejectedByAllThreeLiveRpcs": true,
+    "physicalMicrophoneOrTurnVerified": false
+  },
+  "limitations": [
+    "Corrected bundle not publicly deployed or validated; current public cooperative API fails with 500.",
+    "Physical microphone quality and cross-network TURN are not tested."
+  ],
+  "credentialHygiene": "Temporary server env and player credentials deleted; no room IDs, room codes, player tokens, seeds, hashes, cookies or API keys retained in this selected report.",
+  "environment": "local application server with real remote Supabase database; not public Vercel validation",
+  "sourceVersion": "0.4.1",
+  "sourcePackageEvidence": "https://github.com/darknigthmare/Parallaxe_Protocole9/blob/659bdd1185cf9f127b6d9d684ae60261e3813f6e/package.json"
+}

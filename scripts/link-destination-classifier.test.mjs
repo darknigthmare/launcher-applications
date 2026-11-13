@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { classifyLinkDestination } from "./link-destination-classifier.mjs";
+import { classifyLinkDestination, applyPublicationPolicy } from "./link-destination-classifier.mjs";
 
 const requestedUrl="https://vortex-command-darknigthmares-projects.vercel.app/";
 
@@ -52,4 +52,22 @@ test("unfinished redirects and HTTPS downgrades require review",()=>{
   assert.equal(classifyLinkDestination({requestedUrl,status:302}).state,"needs-review");
   assert.equal(classifyLinkDestination({requestedUrl,status:200,
     effectiveUrl:requestedUrl.replace("https:","http:")}).state,"needs-review");
+});
+
+test("pending publication retains real HTTP observations without advertising a playable or newly broken game",()=>{
+  for(const status of [200,404]){
+    const observation={...classifyLinkDestination({requestedUrl,status}),httpStatus:status,effectiveUrl:requestedUrl};
+    const result=applyPublicationPolicy(observation,"deployment-pending");
+    assert.equal(result.state,"publication-pending");
+    assert.equal(result.destinationState,status===200?"reachable":"broken");
+    assert.equal(result.destinationReason,observation.reason);
+    assert.equal(result.httpStatus,status);
+    assert.equal(result.effectiveUrl,requestedUrl);
+  }
+});
+
+test("verified publications keep the original HTTP classification",()=>{
+  const observation=classifyLinkDestination({requestedUrl,status:404});
+  assert.deepEqual(applyPublicationPolicy(observation,""),observation);
+  assert.deepEqual(applyPublicationPolicy(observation,"vercel-sso"),observation);
 });

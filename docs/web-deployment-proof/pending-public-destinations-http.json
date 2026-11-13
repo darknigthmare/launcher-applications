@@ -1,0 +1,33 @@
+{
+  "id": "pending-public-destinations",
+  "checks": [
+    {
+      "url": "https://fallout-marseille-mistral.vercel.app/",
+      "checkedAt": "2026-11-13T08:24:56Z",
+      "error": "HTTP Error 404: Not Found",
+      "status": 404,
+      "purpose": "Owned Fallout domain, publication pending, no deployment exists"
+    },
+    {
+      "url": "https://parallaxe-protocole-9.vercel.app/",
+      "checkedAt": "2026-11-13T08:24:57Z",
+      "status": 200,
+      "finalUrl": "https://parallaxe-protocole-9.vercel.app/",
+      "contentType": "text/html; charset=utf-8",
+      "contentEncoding": null,
+      "transportBytes": 562,
+      "decodedBytes": 562,
+      "transportSha256": "1be0b365135b65aebdf7c301429a92c007d907f02c2d9642f8dcad94eda83304",
+      "decodedSha256": "1be0b365135b65aebdf7c301429a92c007d907f02c2d9642f8dcad94eda83304",
+      "title": "PARALLAXE — Protocole 9",
+      "purpose": "Owned Parallaxe domain, earlier deployed frontend only; corrected backend not publicly validated"
+    },
+    {
+      "url": "https://parallaxe-protocole-9.vercel.app/api/session",
+      "checkedAt": "2026-11-13T08:24:57Z",
+      "error": "HTTP Error 500: Internal Server Error",
+      "status": 500,
+      "purpose": "Read-only GET route probe, not room creation or cooperation validation"
+    }
+  ]
+}

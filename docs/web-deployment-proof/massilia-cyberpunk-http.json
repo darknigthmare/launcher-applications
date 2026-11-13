@@ -1,0 +1,77 @@
+{
+  "id": "massilia-cyberpunk",
+  "checks": [
+    {
+      "url": "https://massilia-cyberpunk.vercel.app/",
+      "checkedAt": "2026-11-13T08:16:28Z",
+      "status": 200,
+      "finalUrl": "https://massilia-cyberpunk.vercel.app/",
+      "contentType": "text/html; charset=utf-8",
+      "contentEncoding": null,
+      "transportBytes": 67338716,
+      "decodedBytes": 67338716,
+      "transportSha256": "e550b4ed050a953b9a5f19180f451299d79ecd9e9c4eba4e2906fcbd16dd2af1",
+      "decodedSha256": "e550b4ed050a953b9a5f19180f451299d79ecd9e9c4eba4e2906fcbd16dd2af1",
+      "title": "SOMA//MASSILIA 0.78 — Marseille augmentée",
+      "decodedSha256MatchesExpected": true,
+      "purpose": "Exact reconstructed native0.78 root HTML"
+    },
+    {
+      "url": "https://massilia-cyberpunk.vercel.app/SOMA_MASSILIA_URBAIN_v0_78.html",
+      "checkedAt": "2026-11-13T08:16:30Z",
+      "status": 200,
+      "finalUrl": "https://massilia-cyberpunk.vercel.app/SOMA_MASSILIA_URBAIN_v0_78.html",
+      "contentType": "text/html; charset=utf-8",
+      "contentEncoding": null,
+      "transportBytes": 67338716,
+      "decodedBytes": 67338716,
+      "transportSha256": "e550b4ed050a953b9a5f19180f451299d79ecd9e9c4eba4e2906fcbd16dd2af1",
+      "decodedSha256": "e550b4ed050a953b9a5f19180f451299d79ecd9e9c4eba4e2906fcbd16dd2af1",
+      "title": "SOMA//MASSILIA 0.78 — Marseille augmentée",
+      "decodedSha256MatchesExpected": true,
+      "purpose": "Named native0.78 HTML"
+    },
+    {
+      "url": "https://massilia-cyberpunk.vercel.app/metropole-viewer-v78.html",
+      "checkedAt": "2026-11-13T08:16:32Z",
+      "status": 200,
+      "finalUrl": "https://massilia-cyberpunk.vercel.app/metropole-viewer-v78.html",
+      "contentType": "text/html; charset=utf-8",
+      "contentEncoding": null,
+      "transportBytes": 1802867,
+      "decodedBytes": 1802867,
+      "transportSha256": "44ffd606b3ecbe2f34e5b49356573187e095273b9ac05277f952d8d2dad2e326",
+      "decodedSha256": "44ffd606b3ecbe2f34e5b49356573187e095273b9ac05277f952d8d2dad2e326",
+      "title": "SOMA//MASSILIA 0.78 — Survol, itinéraire & inspection",
+      "decodedSha256MatchesExpected": true,
+      "purpose": "Exact native metropolitan viewer"
+    },
+    {
+      "url": "https://massilia-cyberpunk.vercel.app/data/v69/world/manifest.json",
+      "checkedAt": "2026-11-13T08:16:32Z",
+      "status": 200,
+      "finalUrl": "https://massilia-cyberpunk.vercel.app/data/v69/world/manifest.json",
+      "contentType": "application/json; charset=utf-8",
+      "contentEncoding": null,
+      "transportBytes": 178967,
+      "decodedBytes": 178967,
+      "transportSha256": "443d24d1acb87fa3e264392a953b95b27d966e7eb1ff64abf3bcc9d157b10b21",
+      "decodedSha256": "443d24d1acb87fa3e264392a953b95b27d966e7eb1ff64abf3bcc9d157b10b21",
+      "decodedSha256MatchesExpected": true,
+      "purpose": "Native168cell world manifest"
+    },
+    {
+      "url": "https://massilia-cyberpunk.vercel.app/release.json",
+      "checkedAt": "2026-11-13T08:16:32Z",
+      "status": 200,
+      "finalUrl": "https://massilia-cyberpunk.vercel.app/release.json",
+      "contentType": "application/json; charset=utf-8",
+      "contentEncoding": null,
+      "transportBytes": 135708,
+      "decodedBytes": 135708,
+      "transportSha256": "e1b73bd8fc24e96ba1d34ca9294cad562c5a4363ce05d37007ed876679acfc85",
+      "decodedSha256": "e1b73bd8fc24e96ba1d34ca9294cad562c5a4363ce05d37007ed876679acfc85",
+      "purpose": "Public deployment provenance and coverage"
+    }
+  ]
+}

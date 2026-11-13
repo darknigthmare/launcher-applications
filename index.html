@@ -2282,7 +2282,7 @@
         presentationReview: String(source.presentationReview || "").trim().slice(0, 40),
         accent: sanitizeAccent(source.accent || fallback.accent),
         status,
-        accessPolicy: ["vercel-sso", "local-download"].includes(source.accessPolicy) ? source.accessPolicy : ["vercel-sso", "local-download"].includes(fallback.accessPolicy) ? fallback.accessPolicy : "",
+        accessPolicy: ["vercel-sso", "local-download", "deployment-pending"].includes(source.accessPolicy) ? source.accessPolicy : ["vercel-sso", "local-download", "deployment-pending"].includes(fallback.accessPolicy) ? fallback.accessPolicy : "",
         releaseState,
         addedAt
       };
@@ -2421,7 +2421,14 @@
       return `<svg aria-hidden="true" focusable="false"><use href="${escapeHtml(href)}"></use></svg>`;
     }
 
+    function launchPendingLabel(app) {
+      if (app?.accessPolicy === "deployment-pending") return "Publication en attente";
+      if (app?.accessPolicy === "local-download") return "Adresse web à confirmer";
+      return "";
+    }
+
     function availabilityFor(app) {
+      if (app?.accessPolicy === "deployment-pending") return "En préparation";
       if (app?.accessPolicy === "local-download") return "À confirmer";
       return app?.releaseState === "published" || Boolean(app?.link)
         ? "Disponible"
@@ -2443,6 +2450,7 @@
     }
 
     function statusLabel(app) {
+      if (app.accessPolicy === "deployment-pending") return "Publication en attente";
       if (availabilityFor(app) === "En préparation") return "En préparation";
       if (app.accessPolicy === "vercel-sso") return "Connexion Vercel requise";
       if (app.accessPolicy === "local-download") return "Adresse web à confirmer";
@@ -2903,8 +2911,8 @@
       details.style.setProperty("--detail-image", cssImage(app, activeMediaIndex));
       details.setAttribute("aria-label", `Détails de ${app.name}`);
 
-      const openControl = app.accessPolicy === "local-download"
-        ? '<button class="primary-button" type="button" disabled>Adresse web à confirmer</button>'
+      const openControl = launchPendingLabel(app)
+        ? `<button class="primary-button" type="button" disabled>${launchPendingLabel(app)}</button>`
         : app.link
           ? `<a class="primary-button" href="${escapeHtml(app.link)}" target="_blank" rel="noopener noreferrer" data-launch-app="${escapeHtml(app.id)}">${app.accessPolicy === "vercel-sso" ? "Connexion Vercel" : app.category === "Jeux" ? "Jouer" : "Ouvrir"}</a>`
           : `<button class="primary-button" type="button" disabled>${availabilityFor(app) === "En préparation" ? "En préparation" : "Sans lien"}</button>`;
@@ -2965,11 +2973,12 @@
         ${adminMode && app.mediaPendingReview ? '<p class="access-note" role="note">Jeu retrouvé · lien et titre vérifiés. Aucune capture ni illustration certifiée du build n’est encore disponible dans cette fiche ; les visuels seront ajoutés uniquement après validation du vrai jeu.</p>' : ""}
         ${app.accessPolicy === "vercel-sso" ? '<p class="access-note" role="note">Accès restreint : ce domaine demande une connexion Vercel. Il ne s’agit pas d’un jeu ouvert au public sans authentification.</p>' : ""}
         ${app.accessPolicy === "local-download" ? '<p class="access-note" role="note">L’adresse du jeu en ligne reste à confirmer.</p>' : ""}
+        ${app.accessPolicy === "deployment-pending" ? '<p class="access-note" role="note">Le jeu sera accessible ici après sa mise en ligne.</p>' : ""}
         <div class="meta-list">
           ${gameTaxonomyMetaMarkup(app)}
           <div class="meta-item"><span>Statut</span><strong>${statusLabel(app)}</strong></div>
-          <div class="meta-item"><span>Plateforme</span><strong>${escapeHtml(app.accessPolicy === "local-download" ? "Accès web à confirmer" : app.status || "Non renseigné")}</strong></div>
-          ${app.accessPolicy !== "local-download" || adminMode ? `<div class="meta-item"><span>${app.accessPolicy === "local-download" ? "Source" : "Lien"}</span><strong>${escapeHtml(app.link || "A configurer")}</strong></div>` : ""}
+          <div class="meta-item"><span>Plateforme</span><strong>${escapeHtml(launchPendingLabel(app) || app.status || "Non renseigné")}</strong></div>
+          ${!launchPendingLabel(app) || adminMode ? `<div class="meta-item"><span>${app.accessPolicy === "local-download" ? "Source" : "Lien"}</span><strong>${escapeHtml(app.link || "A configurer")}</strong></div>` : ""}
         </div>
         <div class="details-actions">
           ${openControl}
@@ -3007,8 +3016,8 @@
       if (!app) return;
       showcaseTitle.textContent = app.name;
       showcaseBody.style.setProperty("--showcase-image", cssImage(app, 0));
-      const openControl = app.accessPolicy === "local-download"
-        ? '<button class="primary-button" type="button" disabled>Adresse web à confirmer</button>'
+      const openControl = launchPendingLabel(app)
+        ? `<button class="primary-button" type="button" disabled>${launchPendingLabel(app)}</button>`
         : app.link
           ? `<a class="primary-button" href="${escapeHtml(app.link)}" target="_blank" rel="noopener noreferrer" data-launch-app="${escapeHtml(app.id)}">${app.accessPolicy === "vercel-sso" ? "Connexion Vercel" : app.category === "Jeux" ? "Jouer" : "Ouvrir"}</a>`
           : `<button class="primary-button" type="button" disabled>${availabilityFor(app) === "En préparation" ? "En préparation" : "Sans lien"}</button>`;

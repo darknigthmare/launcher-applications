@@ -1,4 +1,22 @@
 window.LAUNCHER_RELEASES = [
+{
+  "version": "1.18.0",
+  "date": "2026-11-13",
+  "title": "Nouveaux hébergements des jeux",
+  "highlights": [
+    "DIVA PULSE et Dernière Ligne ouvrent maintenant leur version web publique avec Jouer. Les anciens liens de fichiers enregistrés dans le navigateur sont remplacés en conservant les favoris et les noms personnalisés.",
+    "Massilia Cyberpunk dispose de sa version web 0.78 et de ses 168 cellules cartographiques fournies. Les illustrations et captures du catalogue restent conservées.",
+    "Les cinq projets de jeu sont créés. Fallout Mistral et Parallaxe restent en publication en attente tant que leur nouvelle version web complète ne peut pas être vérifiée.",
+    "Le catalogue distingue les jeux disponibles des publications en attente et conserve les sources, les versions des captures et les preuves des déploiements. Cache PWA shell v34 / médias v5."
+  ],
+  "appIds": [
+    "diva-pulse",
+    "derniere-ligne-zero-repli",
+    "massilia-cyberpunk",
+    "fallout-marseille-mistral",
+    "parallaxe-protocole-9"
+  ]
+},
   {
     "version": "1.17.0",
     "date": "2026-11-13",
