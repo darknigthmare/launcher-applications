@@ -351,25 +351,38 @@ assert(new Set(recoveredApps.map((app) => app.id)).size === recoveredApps.length
 assert(apps.length === 140 + recoveredApps.length, "les 140 applications initiales sont complétées par tous les jeux retrouvés");
 assert(apps.filter((app) => app?.category === "Jeux").length === 127 + recoveredApps.length,
   "le nombre de jeux intègre les nouvelles fiches vérifiées");
-const offlineGithubGameIds = [
-  "diva-pulse", "derniere-ligne-zero-repli",
-  "fallout-marseille-mistral", "parallaxe-protocole-9", "massilia-cyberpunk"
-];
-for (const id of offlineGithubGameIds) {
-  const app = recoveredApps.find((entry) => entry.id === id);
-  assert(Boolean(app), `jeu hors Vercel retrouvé : ${id}`);
-  if (!app) continue;
-  assert(app.accessPolicy === "local-download", `fichiers à télécharger clairement étiquetés pour ${id}`);
-  // Native proof is checked below against the manifest, actual files and source
-  // revision for every illustrated recovered game, including downloadable games.
-  const hasNativeMedia = app.mediaPendingReview === false && Boolean(app.image && app.presentation);
-  assert((app.mediaPendingReview === true && !app.image && !app.presentation) || hasNativeMedia,
-    `aucun média fictif pour le jeu local ${id} ; les captures doivent avoir leur preuve native`);
-  assert(app.link?.startsWith("https://github.com/darknigthmare/") && app.sourceRepository === app.link,
-    `le vrai dépôt du jeu est associé à ${id}`);
-  assert(app.releaseState === "published" && app.status?.includes("téléchargement local"),
-    `distribution locale cohérente avec le statut de ${id}`);
+const connectedGames = new Map([
+  ["diva-pulse", "Diva-Pulse"],
+  ["derniere-ligne-zero-repli", "The-Horde-The-Last-Stand"],
+  ["fallout-marseille-mistral", "fallout-Marseille"],
+  ["parallaxe-protocole-9", "Parallaxe_Protocole9"],
+  ["massilia-cyberpunk", "massilia-cyberpunk"],
+  ["ragtime-rumble", "ragtime-rumble"],
+  ["imperium-march", "ImperiumMarch"],
+  ["angel-of-the-dead", "AngelOfTheDead"]
+]);
+const webLaunchProof = JSON.parse(await readFile(path.join(root, "docs/link-proof/vercel-catalogue-2026-11-16.json"), "utf8"));
+assert(webLaunchProof.games.length === connectedGames.size, "les huit raccordements possèdent leur preuve distincte");
+for (const [id, repository] of connectedGames) {
+  const app = apps.find((entry) => entry.id === id);
+  const proof = webLaunchProof.games.find((entry) => entry.id === id);
+  const url = "https://" + id + ".vercel.app/";
+  assert(Boolean(app && proof), "jeu raccordé et preuve présents : " + id);
+  if (!app || !proof) continue;
+  assert(app.link === url && proof.url === url && proof.aliasVerified === true,
+    "destination canonique exacte du jeu : " + id);
+  assert(app.sourceRepository === "https://github.com/darknigthmare/" + repository && proof.sourceRepository === app.sourceRepository,
+    "dépôt source exact du jeu : " + id);
+  assert(proof.readyState === "READY" && proof.target === "production" &&
+    /^dpl_/.test(proof.deploymentId) && /^prj_/.test(proof.projectId) && /^[a-f0-9]{40}$/.test(proof.commit),
+    "production et commit identifiés : " + id);
+  assert(proof.publicHttp.status === 200 && proof.publicHttp.finalUrl === url && proof.publicHttp.sso === false && Boolean(proof.publicHttp.title),
+    "identité publique contrôlée sans page de connexion : " + id);
+  assert(!app.accessPolicy && app.releaseState !== "upcoming" && app.status === "Vercel",
+    "le bouton de lancement correspond à la production disponible : " + id);
 }
+assert(apps.find((app) => app.id === "ragtime-rumble")?.link !== apps.find((app) => app.id === "ragtime-rumble-complete-tour")?.link,
+  "Ragtime Rumble original et Complete Tour conservent deux destinations distinctes");
 
 assert(gameGenreGroups.length === 8, "la navigation Jeux contient huit genres principaux");
 
@@ -587,7 +600,8 @@ const legacyIllustrationApps = apps.filter((app) => legacyIllustrationIds.has(ap
   galleryMap[app.id]?.presentationReview === "pending-fidelity");
 assert(legacyIllustrationApps.length === legacyIllustrationIds.size,
   "les neuf anciennes présentations masquées sont suivies séparément des captures natives");
-const illustrationApps = [...recoveredApps, ...legacyIllustrationApps];
+// A text-only newly linked game has no fabricated artwork. Existing illustrated games retain every provenance check.
+const illustrationApps = [...recoveredWithNativeMedia, ...legacyIllustrationApps];
 
 // Promotional artwork has its own provenance and review. It never replaces a
 // source-native title screen, preview, or screenshot in the capture manifests.
@@ -1344,8 +1358,9 @@ if (await exists(hordeProofPath)) {
     "lien de provenance source, pas Vercel inventé");
   assert(proof.overview?.realCombatPhaseConfirmed && proof.overview?.title?.includes("0.44.2"),
     "première nuit jouable réellement observée");
-  assert(app?.accessPolicy === "local-download" && app?.mediaPendingReview === false,
-    "capture source vérifiée et distribution locale distincte du jeu web");
+  assert(app?.link === "https://derniere-ligne-zero-repli.vercel.app/" &&
+    app?.sourceRepository === proof.source && app?.mediaPendingReview === false,
+    "ouverture web vérifiée et provenance locale des captures conservée");
   assert(gallery?.captureType === "real-local-gameplay" && gallery.captureProof === hordeProofPath,
     "galerie identifiée comme capture réelle locale");
   assert(gallery?.captureVersion === "0.44.2" && gallery?.presentationReview === "source-verified",
@@ -1539,7 +1554,7 @@ for (const asset of appShell) {
 assert(appShell.includes("/assets/openai-art-manifest.json"), "le manifeste OpenAI fait partie du shell hors ligne");
 assert(appShell.includes("/assets/illustration-manifest.json"), "la revue des nouvelles illustrations fait partie du shell hors ligne");
 assert(appShellBytes <= 5 * 1024 * 1024, "le préchargement APP_SHELL reste inférieur à 5 Mo");
-assert(serviceWorker.includes('const CACHE_NAME = "launcher-shell-v33"'), "le cache applicatif v1.17 utilise launcher-shell-v33");
+assert(serviceWorker.includes('const CACHE_NAME = "launcher-shell-v34"'), "le cache applicatif v1.18 utilise launcher-shell-v34");
 assert(serviceWorker.includes('const RUNTIME_CACHE = "launcher-media-runtime-v4"'), "le cache média renouvelé utilise launcher-media-runtime-v4");
 assert(serviceWorker.includes("const MAX_RUNTIME_ENTRIES = 120"), "le cache média différé est borné");
 const mediaRuleMatch = serviceWorker.match(/if\s*\((\/(?:\\.|[^/\n])+\/[a-z]*)\.test\(url\.pathname\)\)/);

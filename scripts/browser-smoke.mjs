@@ -29,10 +29,32 @@ async function selectMedia(id,label){
 try {
  await browser.waitFor("typeof apps !== 'undefined' && illustrationsLoaded && apps.find(a=>a.id==='resident-evil-bow-protocol')?.captureType==='real-module-ui'");
  await verify(`apps.every(a=>a.illustration===(${JSON.stringify(approvedIllustrations)}[a.id] ? new URL(${JSON.stringify(approvedIllustrations)}[a.id],document.baseURI).href : ''))`,'Only reviewed illustrations become official covers');
- await browser.waitFor("(async()=>Boolean(navigator.serviceWorker.controller) && (await caches.keys()).includes('launcher-shell-v33'))()",30000);
- await verify("(async()=>{const c=await caches.open('launcher-shell-v33');return !!(await c.match('/assets/app-gallery.json')) && !!(await c.match('/assets/recent-games.js'));})()",'Updated PWA shell caches current catalogue and gallery');
+ await browser.waitFor("(async()=>Boolean(navigator.serviceWorker.controller) && (await caches.keys()).includes('launcher-shell-v34'))()",30000);
+ await verify("(async()=>{const c=await caches.open('launcher-shell-v34');return !!(await c.match('/assets/app-gallery.json')) && !!(await c.match('/assets/recent-games.js'));})()",'Updated PWA shell caches current catalogue and gallery');
  await verify("apps.length === starterApps.length && apps.length >= 158",'Complete catalogue renders');
  await verify("apps.filter(a=>a.category==='Jeux').length===apps.length-13",'Game count matches catalogue');
+ const linkedIds=['diva-pulse','derniere-ligne-zero-repli','fallout-marseille-mistral','parallaxe-protocole-9','massilia-cyberpunk','ragtime-rumble','imperium-march','angel-of-the-dead'];
+ for(const id of linkedIds){
+  await browser.evaluate(`selectApp(${JSON.stringify(id)})`);
+  await verify(`(()=>{const a=apps.find(a=>a.id===${JSON.stringify(id)});const link=document.querySelector('#details a.primary-button');return a && !a.accessPolicy && link?.textContent==='Jouer' && link.href===${JSON.stringify('https://'+id+'.vercel.app/')} && link.target==='_blank';})()`,'Verified web launch for '+id);
+ }
+ for(const id of ['imperium-march','angel-of-the-dead']){
+  await browser.evaluate(`selectApp(${JSON.stringify(id)})`);
+  await verify(`(()=>{const a=apps.find(a=>a.id===${JSON.stringify(id)});return a.mediaPendingReview && !a.image && !a.presentation && !a.illustration && document.querySelector('.detail-media-label').textContent==='Visuels à venir';})()`,'New game stays playable without invented media: '+id);
+ }
+ await browser.evaluate("localStorage.setItem(storeKey,JSON.stringify([{id:'diva-pulse',name:'Ma bibliothèque de rythme',link:'https://github.com/darknigthmare/Diva-Pulse',accessPolicy:'local-download',status:'GitHub · téléchargement local'},{id:'ragtime-rumble',name:'Ragtime Rumble — Complete Tour',link:'https://ragtime-rumble-complete-tour.vercel.app'}]));localStorage.setItem(favoriteKey,JSON.stringify(['diva-pulse','ragtime-rumble']))");
+ await browser.call('Page.reload',{ignoreCache:true});
+ await browser.waitFor("typeof apps!=='undefined' && illustrationsLoaded && apps.length===160");
+ await browser.evaluate("selectApp('diva-pulse')");
+ await verify("apps.find(a=>a.id==='diva-pulse').name==='Ma bibliothèque de rythme' && favorites.has('diva-pulse') && !apps.find(a=>a.id==='diva-pulse').accessPolicy && document.querySelector('#details a.primary-button')?.href==='https://diva-pulse.vercel.app/'",'Old local-only saved card gains public play and preserves custom name and favorite');
+ await verify("apps.find(a=>a.id==='ragtime-rumble').name==='Ragtime Rumble — Édition originale' && apps.find(a=>a.id==='ragtime-rumble').link==='https://ragtime-rumble.vercel.app/' && apps.find(a=>a.id==='ragtime-rumble-complete-tour').link!==apps.find(a=>a.id==='ragtime-rumble').link && favorites.has('ragtime-rumble')",'Former official Ragtime label and URL migrate without merging distinct editions');
+ await browser.evaluate("localStorage.setItem(storeKey,JSON.stringify([{id:'ragtime-rumble',name:'Mon boss musical'}]))");
+ await browser.call('Page.reload',{ignoreCache:true});
+ await browser.waitFor("typeof apps!=='undefined' && illustrationsLoaded && apps.length===160");
+ await verify("apps.find(a=>a.id==='ragtime-rumble').name==='Mon boss musical'",'Ragtime custom name survives edition correction');
+ await browser.evaluate("localStorage.clear()");
+ await browser.call('Page.reload',{ignoreCache:true});
+ await browser.waitFor("typeof apps!=='undefined' && illustrationsLoaded && apps.length===160");
  await verify("!adminMode && apps.every(a=>!a.previousPresentation && !a.previousPreview && !a.previousScreenshots.length)",'Public galleries omit historical archives');
  await selectMedia('resident-evil-bow-protocol','Écran titre réel du jeu');
  await verify("document.querySelector('.detail-media-label').textContent==='Écran titre réel du jeu' && !document.getElementById('details').textContent.includes('Codec, Side Ops')",'BOW native title and captions match game');

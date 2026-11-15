@@ -1,6 +1,16 @@
 # Mon Launcher
 
-Version du dépôt **1.17.0** · **158 fiches, dont 145 jeux** · [Ouvrir le launcher](https://launcher-applications.vercel.app/)
+Version du dépôt **1.18.0** · **160 fiches, dont 147 jeux** · [Ouvrir le launcher](https://launcher-applications.vercel.app/)
+
+## Version 1.18 — Jeux Vercel reliés (16 novembre 2026)
+
+**Angel of the Dead** et **ORDRE DE CENDRE — ImperiumMarch** rejoignent le catalogue. Les cinq jeux auparavant distribués localement disposent maintenant d’un lien Vercel public vérifié : DIVA PULSE, Dernière Ligne, Fallout Mistral, Parallaxe et Massilia Cyberpunk. La fiche historique de Ragtime Rumble retrouve son édition originale, distincte de Complete Tour.
+
+Le contrôle rapproche **169 projets existants et 853 alias**, puis le nouveau projet Angel, avec les fiches du launcher. Les huit destinations ajoutées ou corrigées correspondent à un déploiement de production READY, au bon dépôt et à une réponse HTTP200 identifiée. Les sites non ludiques, laboratoires et doubles publications restent distingués des jeux.
+
+Les 158 fiches antérieures, leurs médias et leurs preuves de capture restent conservés. Les deux nouveaux jeux ont un bouton Jouer actif et une mention Visuels à venir, sans fausse capture. La migration met à jour les anciennes adresses en gardant les favoris et les noms personnalisés. Cache PWA v34.
+
+Voir la [preuve des raccordements](docs/link-proof/vercel-catalogue-2026-11-16.json) et le [bilan de version](docs/RELEASE_1.18.0_2026-11-16.md).
 
 ## Version 1.17 — Illustrations et récits des jeux (13 novembre 2026)
 

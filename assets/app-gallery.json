@@ -1784,5 +1784,13 @@
     "captureVersion": "0.1.0",
     "captureDate": "2026-11-02",
     "captureProof": "docs/media-proof/avp-blood-arena-local-010-2026-11-02.json"
+  },
+  "imperium-march": {
+    "images": [],
+    "mediaPendingReview": true
+  },
+  "angel-of-the-dead": {
+    "images": [],
+    "mediaPendingReview": true
   }
 }

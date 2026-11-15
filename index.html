@@ -1618,13 +1618,14 @@
       },
       {
         id: "ragtime-rumble",
-        name: "Ragtime Rumble — Complete Tour",
+        name: "Ragtime Rumble — Édition originale",
         category: "Jeux",
-        description: "Le rideau se lève sur une tournée où les têtes d'affiche imposent leurs épreuves musicales. Enchaîne combats, danses et riffs, retiens les séquences et garde le tempo jusqu'au prochain rappel.",
-        pitch: "Choisis ton tempo, lève le rideau et bats chaque tête d'affiche sans quitter la mesure.",
-        tags: ["Rythme", "Boss Rush", "Cartoon", "Coop"],
+        description: "Le combat se joue autant à la cadence qu’à la visée. Tire sur le battement pour renforcer tes attaques, pare les projectiles roses et remplis la jauge d’Encore. Traverse les trois mouvements du boss dans un univers de cartoon animé.",
+        pitch: "Tire sur le battement, pare au bon moment et lance ton Encore pour renverser le combat.",
+        tags: ["Rythme", "Boss Rush", "Cartoon", "Run-and-gun"],
         icon: "RR",
-        link: "https://ragtime-rumble-complete-tour.vercel.app",
+        link: "https://ragtime-rumble.vercel.app/",
+        sourceRepository: "https://github.com/darknigthmare/ragtime-rumble",
         status: "Vercel",
         accent: "#d44736",
         presentation: "assets/presentations/ragtime-rumble.png",
@@ -2338,6 +2339,10 @@
           OFFICIAL_SYNC_FIELDS.forEach((field) => {
             synchronized[field] = starter[field] ?? "";
           });
+          // Correct the former official edition label while retaining custom names.
+          if (clean.id === "ragtime-rumble" && clean.name === "Ragtime Rumble — Complete Tour") {
+            synchronized.name = starter.name;
+          }
           // Official source-native captures may arrive after a user stored an
           // earlier text-only recovered game. Fill missing media without
           // overwriting any genuine personalized cover or preview.
