@@ -1,0 +1,278 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-15T23:01:32.884Z",
+  "teamId": "team_VrIjq2UWV6VaHZr7DdQFwvfu",
+  "teamSlug": "darknigthmares-projects",
+  "projectInventory": {
+    "beforeAngel": 169,
+    "includingAngel": 170,
+    "aliasSnapshot": 853,
+    "aliasPages": 9,
+    "angelAliasVerifiedSeparately": true
+  },
+  "games": [
+    {
+      "id": "imperium-march",
+      "projectId": "prj_ggDB98oddkTTzVPiGQrtxnj7frcr",
+      "projectName": "imperium-march",
+      "deploymentId": "dpl_5QCqm8qWwfcGuSvrgteNznwCZ5x7",
+      "readyState": "READY",
+      "target": "production",
+      "sourceRepository": "https://github.com/darknigthmare/ImperiumMarch",
+      "commit": "06a6b0b15c504cb5f185c407e551cb15da64270a",
+      "url": "https://imperium-march.vercel.app/",
+      "aliasVerified": true,
+      "publicHttp": {
+        "project": "imperium-march",
+        "url": "https://imperium-march.vercel.app/",
+        "status": 200,
+        "finalUrl": "https://imperium-march.vercel.app/",
+        "title": "ORDRE DE CENDRE — ImperiumMarch",
+        "sampleBytes": 22230,
+        "sampleSha256": "fafeee49d4863c1e191c5998ea085ce36977cd2a19577a45a0bbd7f7b5e1088d",
+        "sso": false,
+        "sampleOnly": true,
+        "checkedAt": "2026-11-15T22:56:38.216276+00:00"
+      },
+      "scope": "Alias de production, dépôt source et identité HTTP vérifiés. Ce contrôle ne valide pas tous les modes de jeu."
+    },
+    {
+      "id": "diva-pulse",
+      "projectId": "prj_8DgFfcdqT0fiaBSL2dSnHEW9NKE6",
+      "projectName": "diva-pulse",
+      "deploymentId": "dpl_4DfRbVaVE479mDW3J49k3UZxxHyG",
+      "readyState": "READY",
+      "target": "production",
+      "sourceRepository": "https://github.com/darknigthmare/Diva-Pulse",
+      "commit": "9bbf125cba1f20f49634a4cf49a346d87b2f013e",
+      "url": "https://diva-pulse.vercel.app/",
+      "aliasVerified": true,
+      "publicHttp": {
+        "project": "diva-pulse",
+        "url": "https://diva-pulse.vercel.app/",
+        "status": 200,
+        "finalUrl": "https://diva-pulse.vercel.app/",
+        "title": "DIVA PULSE — Prises fiables &amp; brouillons protégés V37",
+        "sampleBytes": 922489,
+        "sampleSha256": "61d87a5929a91331b699005c4a5582e312a84abf821460fa915091f5b4bfd8ba",
+        "sso": false,
+        "sampleOnly": true,
+        "checkedAt": "2026-11-15T22:56:36.468034+00:00"
+      },
+      "scope": "Alias de production, dépôt source et identité HTTP vérifiés. Ce contrôle ne valide pas tous les modes de jeu."
+    },
+    {
+      "id": "derniere-ligne-zero-repli",
+      "projectId": "prj_mxwpaESVQ2JW1dy2baXHzc8vyxn9",
+      "projectName": "derniere-ligne-zero-repli",
+      "deploymentId": "dpl_E21GJkbFMprcQRjah1yHP8GaqXFS",
+      "readyState": "READY",
+      "target": "production",
+      "sourceRepository": "https://github.com/darknigthmare/The-Horde-The-Last-Stand",
+      "commit": "bbbd3ef5afefcc9005c4f7a57f8282281dcb9d42",
+      "url": "https://derniere-ligne-zero-repli.vercel.app/",
+      "aliasVerified": true,
+      "publicHttp": {
+        "project": "derniere-ligne-zero-repli",
+        "url": "https://derniere-ligne-zero-repli.vercel.app/",
+        "status": 200,
+        "finalUrl": "https://derniere-ligne-zero-repli.vercel.app/",
+        "title": "Dernière Ligne — Poste stabilisé 0.44.2",
+        "sampleBytes": 2097152,
+        "sampleSha256": "b00d380b781e9f729441f5bb23fa34403510995f9bcf99e33be06b2698eb56a5",
+        "sso": false,
+        "sampleOnly": true,
+        "checkedAt": "2026-11-15T22:56:36.203051+00:00"
+      },
+      "scope": "Alias de production, dépôt source et identité HTTP vérifiés. Ce contrôle ne valide pas tous les modes de jeu."
+    },
+    {
+      "id": "fallout-marseille-mistral",
+      "projectId": "prj_GnqUcOcSOaeAOXo5CjA9UIFRQnn6",
+      "projectName": "fallout-marseille-mistral",
+      "deploymentId": "dpl_13rsRtKSMYy8E4VD1otUw67T2DbM",
+      "readyState": "READY",
+      "target": "production",
+      "sourceRepository": "https://github.com/darknigthmare/fallout-Marseille",
+      "commit": "98085d3c9b6f33215e03892edc4c419d97ff5e83",
+      "url": "https://fallout-marseille-mistral.vercel.app/",
+      "aliasVerified": true,
+      "publicHttp": {
+        "project": "fallout-marseille-mistral",
+        "url": "https://fallout-marseille-mistral.vercel.app/",
+        "status": 200,
+        "finalUrl": "https://fallout-marseille-mistral.vercel.app/",
+        "title": "Fallout : Mistral — v0.50 · Les routes retrouvées",
+        "sampleBytes": 2097152,
+        "sampleSha256": "44fb1d98d3d5cb2e8e5391e93817f12df954073603910bbf6436cbded1d4553e",
+        "sso": false,
+        "sampleOnly": true,
+        "checkedAt": "2026-11-15T22:56:36.725970+00:00"
+      },
+      "scope": "Alias de production, dépôt source et identité HTTP vérifiés. Ce contrôle ne valide pas tous les modes de jeu."
+    },
+    {
+      "id": "parallaxe-protocole-9",
+      "projectId": "prj_NwhUwKgmysOTq5vuvtNNbwAw2br5",
+      "projectName": "parallaxe-protocole-9",
+      "deploymentId": "dpl_2bN9GJhrsAj4m5nu7GVefnQ2GD1n",
+      "readyState": "READY",
+      "target": "production",
+      "sourceRepository": "https://github.com/darknigthmare/Parallaxe_Protocole9",
+      "commit": "23fd9cdbe297cad1d3962c9fa33adb6683899793",
+      "url": "https://parallaxe-protocole-9.vercel.app/",
+      "aliasVerified": true,
+      "publicHttp": {
+        "project": "parallaxe-protocole-9",
+        "url": "https://parallaxe-protocole-9.vercel.app/",
+        "status": 200,
+        "finalUrl": "https://parallaxe-protocole-9.vercel.app/",
+        "title": "PARALLAXE — Protocole 9",
+        "sampleBytes": 562,
+        "sampleSha256": "1be0b365135b65aebdf7c301429a92c007d907f02c2d9642f8dcad94eda83304",
+        "sso": false,
+        "sampleOnly": true,
+        "checkedAt": "2026-11-15T22:56:36.488984+00:00"
+      },
+      "scope": "Alias de production, dépôt source et identité HTTP vérifiés. Ce contrôle ne valide pas tous les modes de jeu."
+    },
+    {
+      "id": "massilia-cyberpunk",
+      "projectId": "prj_fZ3lAC9atlYfrLbBiYxxCZqFhvlW",
+      "projectName": "massilia-cyberpunk",
+      "deploymentId": "dpl_HdedWdTD6mGtRngZMEj35M5QKavx",
+      "readyState": "READY",
+      "target": "production",
+      "sourceRepository": "https://github.com/darknigthmare/massilia-cyberpunk",
+      "commit": "8dc3e0f9ee5155c361468924947100ba44cd3bc8",
+      "url": "https://massilia-cyberpunk.vercel.app/",
+      "aliasVerified": true,
+      "publicHttp": {
+        "project": "massilia-cyberpunk",
+        "url": "https://massilia-cyberpunk.vercel.app/",
+        "status": 200,
+        "finalUrl": "https://massilia-cyberpunk.vercel.app/",
+        "title": "SOMA//MASSILIA 0.78 — Marseille augmentée",
+        "sampleBytes": 2097152,
+        "sampleSha256": "06f41a1b7e19672397fcaa955106ebfae5aeadc6171a6a4b5a2cc800ea6c148e",
+        "sso": false,
+        "sampleOnly": true,
+        "checkedAt": "2026-11-15T22:56:36.413449+00:00",
+        "titleScanBytes": 10485760,
+        "contentLength": "67338716"
+      },
+      "scope": "Alias de production, dépôt source et identité HTTP vérifiés. Ce contrôle ne valide pas tous les modes de jeu."
+    },
+    {
+      "id": "angel-of-the-dead",
+      "projectId": "prj_KmcMiYyAe74QHWByJqvo265JwIgV",
+      "projectName": "angel-of-the-dead",
+      "deploymentId": "dpl_FBxK46xpyjb2fUDxTVWLtFBSK1W9",
+      "readyState": "READY",
+      "target": "production",
+      "sourceRepository": "https://github.com/darknigthmare/AngelOfTheDead",
+      "commit": "8839f74bd975e8adf6ccd7afac63dc7e717a88f6",
+      "url": "https://angel-of-the-dead.vercel.app/",
+      "aliasVerified": true,
+      "publicHttp": {
+        "project": "angel-of-the-dead",
+        "url": "https://angel-of-the-dead.vercel.app/",
+        "status": 200,
+        "finalUrl": "https://angel-of-the-dead.vercel.app/",
+        "title": "Angel of the Dead",
+        "sampleBytes": 10004,
+        "sampleSha256": "4d234de95a6ac2ff0305375d2f4ef3045484d96fbe0ec389662283d69c3f4367",
+        "sampleOnly": true,
+        "sso": false,
+        "checkedAt": "2026-11-15T22:59:42.251246+00:00"
+      },
+      "scope": "Alias de production, dépôt source et identité HTTP vérifiés. Ce contrôle ne valide pas tous les modes de jeu."
+    },
+    {
+      "id": "ragtime-rumble",
+      "projectId": "prj_hDqAs1iVM7AjHkjNtFxnjrA6AQCs",
+      "projectName": "ragtime-rumble",
+      "deploymentId": "dpl_D3ngN1QwSUentmdp4LX3cmP8wo9m",
+      "readyState": "READY",
+      "target": "production",
+      "sourceRepository": "https://github.com/darknigthmare/ragtime-rumble",
+      "commit": "0024dfed5da7af37217f09c794e0f492a50319aa",
+      "url": "https://ragtime-rumble.vercel.app/",
+      "aliasVerified": true,
+      "publicHttp": {
+        "project": "ragtime-rumble",
+        "url": "https://ragtime-rumble.vercel.app/",
+        "status": 200,
+        "finalUrl": "https://ragtime-rumble.vercel.app/",
+        "title": "Ragtime Rumble — Boss Rush Rythmique",
+        "sampleBytes": 6051,
+        "sampleSha256": "fbb89d9505b1493ccd14f121009766ffb1933103ba45e8a1965064e30d886c12",
+        "sampleOnly": true,
+        "sso": false,
+        "checkedAt": "2026-11-15T22:59:40.385374+00:00"
+      },
+      "scope": "Alias de production, dépôt source et identité HTTP vérifiés. Ce contrôle ne valide pas tous les modes de jeu."
+    }
+  ],
+  "excludedProjects": [
+    {
+      "names": [
+        "launcher-applications"
+      ],
+      "reason": "Le launcher lui-même."
+    },
+    {
+      "names": [
+        "melcreation"
+      ],
+      "reason": "Vitrine artisanale, pas un jeu."
+    },
+    {
+      "names": [
+        "resident-evil-bow-protocol-live"
+      ],
+      "reason": "Seconde publication du même jeu, dont la fiche conserve déjà le projet principal resident-evil-bow-protocol."
+    },
+    {
+      "names": [
+        "xion-path-test",
+        "xion-level-design-lab",
+        "xion-level-payload",
+        "reclaimed-after-dark-payload-a",
+        "reclaimed-after-dark-schema-check"
+      ],
+      "reason": "Laboratoires, payloads et vérifications techniques, pas des jeux autonomes supplémentaires."
+    },
+    {
+      "names": [
+        "jeux-du-4-aout-2026",
+        "jeux-du-2-aout-2026-jouables",
+        "jeux-du-2-aout-2026",
+        "games-du-2-aout-2026-schema-test"
+      ],
+      "reason": "Collections historiques et essais déjà examinés; les mini-jeux restaurés possèdent leurs fiches dans jeux-restaures-aout-2026."
+    }
+  ],
+  "preserved": {
+    "existingCards": 158,
+    "existingMediaUnchanged": true,
+    "localCaptureProofsUnchanged": true,
+    "customNamesAndFavoritesPreserved": true
+  },
+  "newCards": [
+    "imperium-march",
+    "angel-of-the-dead"
+  ],
+  "linkedExistingCards": [
+    "diva-pulse",
+    "derniere-ligne-zero-repli",
+    "fallout-marseille-mistral",
+    "parallaxe-protocole-9",
+    "massilia-cyberpunk",
+    "ragtime-rumble"
+  ],
+  "limitations": [
+    "Aucune nouvelle capture ou illustration n’est inventée pour les deux nouvelles fiches; elles annoncent Visuels à venir.",
+    "La version publique d’un jeu peut être antérieure à sa branche de travail. Cette mise à jour relie les productions constatées sans redéployer les autres jeux."
+  ]
+}

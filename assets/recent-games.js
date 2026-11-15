@@ -2580,7 +2580,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "category": "Jeux",
     "releaseState": "published",
     "addedAt": "2026-11-01",
-    "status": "GitHub · téléchargement local",
+    "status": "Vercel",
     "mediaPendingReview": false,
     "presentation": "assets/presentations/diva-pulse.png",
     "image": "assets/previews/diva-pulse.jpg",
@@ -2590,7 +2590,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "genre": "Rythme & arcade",
     "baseGame": "",
     "icon": "DP",
-    "link": "https://github.com/darknigthmare/Diva-Pulse",
+    "link": "https://diva-pulse.vercel.app/",
     "description": "Le Studio Pulse attend ta partition. Édite les notes sur cinq difficultés, synchronise-les avec AutoMap et dirige la scène avec Auto Show et Director. Travaille tes gestes dans l'Académie, joue les instrumentaux proposés ou compose ton spectacle à partir de tes propres imports.",
     "pitch": "La scène s'allume, mais la partition reste à écrire. Compose ton rythme, calibre la prise et dirige le spectacle.",
     "tags": [
@@ -2602,7 +2602,7 @@ window.LAUNCHER_RECENT_GAMES = [
       "Apprentissage"
     ],
     "accent": "#ae65e8",
-    "accessPolicy": "local-download",
+    "accessPolicy": "",
     "sourceRepository": "https://github.com/darknigthmare/Diva-Pulse",
     "sourceVersion": "37.0.0",
     "recoveredGame": true
@@ -2611,7 +2611,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "category": "Jeux",
     "releaseState": "published",
     "addedAt": "2026-11-01",
-    "status": "GitHub · téléchargement local",
+    "status": "Vercel",
     "mediaPendingReview": false,
     "presentation": "assets/presentations/derniere-ligne-zero-repli.png",
     "image": "assets/previews/derniere-ligne-zero-repli.jpg",
@@ -2621,7 +2621,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "genre": "Action & tir",
     "baseGame": "",
     "icon": "DL",
-    "link": "https://github.com/darknigthmare/The-Horde-The-Last-Stand",
+    "link": "https://derniere-ligne-zero-repli.vercel.app/",
     "description": "Le jour, prépare ton poste de défense, répartis le budget, charge les armes et repère les voies de repli. La nuit, résiste aux hordes de morts-vivants jusqu'à l'aube. Chaque route demande ses propres préparatifs : choisis où engager tes ressources avant que le prochain assaut ne commence.",
     "pitch": "Les routes sont coupées. Compte tes munitions, tiens le poste et traverse la nuit sans repli.",
     "tags": [
@@ -2631,10 +2631,10 @@ window.LAUNCHER_RECENT_GAMES = [
       "Survie",
       "Dernier rempart",
       "Hors ligne",
-      "Jeu local"
+      "Navigateur"
     ],
     "accent": "#d65b48",
-    "accessPolicy": "local-download",
+    "accessPolicy": "",
     "sourceRepository": "https://github.com/darknigthmare/The-Horde-The-Last-Stand",
     "sourceVersion": "0.44.2",
     "recoveredGame": true
@@ -2643,7 +2643,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "category": "Jeux",
     "releaseState": "published",
     "addedAt": "2026-11-01",
-    "status": "GitHub · téléchargement local",
+    "status": "Vercel",
     "mediaPendingReview": false,
     "presentation": "assets/presentations/fallout-marseille-mistral.png",
     "image": "assets/previews/fallout-marseille-mistral.jpg",
@@ -2653,7 +2653,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "genre": "RPG & progression",
     "baseGame": "Fallout",
     "icon": "FM",
-    "link": "https://github.com/darknigthmare/fallout-Marseille",
+    "link": "https://fallout-marseille-mistral.vercel.app/",
     "description": "Le Mistral a laissé des quartiers brisés entre les docks, les collines et les routes de Marseille. Parcours les scènes en exploration libre, consulte le Pip-Boy et prépare ton équipement. Carte, radio et holodisques t'accompagnent dans les rues de Canebière–Belsunce.",
     "pitch": "Les cartes sont anciennes. Les routes, elles, existent encore. Quitte l'abri et retrouve Marseille sous le Mistral.",
     "tags": [
@@ -2663,10 +2663,10 @@ window.LAUNCHER_RECENT_GAMES = [
       "Marseille",
       "Exploration FPS",
       "Pip-Boy",
-      "Jeu local"
+      "Navigateur"
     ],
     "accent": "#d3ad5a",
-    "accessPolicy": "local-download",
+    "accessPolicy": "",
     "sourceRepository": "https://github.com/darknigthmare/fallout-Marseille",
     "sourceVersion": "0.50.0",
     "recoveredGame": true
@@ -2675,7 +2675,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "category": "Jeux",
     "releaseState": "published",
     "addedAt": "2026-11-01",
-    "status": "GitHub · téléchargement local",
+    "status": "Vercel",
     "mediaPendingReview": false,
     "presentation": "assets/presentations/parallaxe-protocole-9.png",
     "image": "assets/previews/parallaxe-protocole-9.jpg",
@@ -2685,7 +2685,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "genre": "Survie & horreur",
     "baseGame": "",
     "icon": "P9",
-    "link": "https://github.com/darknigthmare/Parallaxe_Protocole9",
+    "link": "https://parallaxe-protocole-9.vercel.app/",
     "description": "Des inspecteurs franchissent le même seuil sans percevoir les mêmes anomalies. Dans le Chalet de service, mémorise les lieux, compare les reflets et confronte les perceptions avant de rendre ton diagnostic. Exerce-toi seul ou partage tes observations par radio pour décider avec les autres inspecteurs.",
     "pitch": "Nous sommes au même endroit. Pourquoi ne voyons-nous pas la même chose ? Compare les preuves avant de conclure.",
     "tags": [
@@ -2695,10 +2695,10 @@ window.LAUNCHER_RECENT_GAMES = [
       "Observation",
       "2 à 4 joueurs",
       "Réseau local",
-      "Jeu local"
+      "Navigateur"
     ],
     "accent": "#75a5c2",
-    "accessPolicy": "local-download",
+    "accessPolicy": "",
     "sourceRepository": "https://github.com/darknigthmare/Parallaxe_Protocole9",
     "sourceVersion": "0.4.1",
     "recoveredGame": true
@@ -2707,7 +2707,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "category": "Jeux",
     "releaseState": "published",
     "addedAt": "2026-11-01",
-    "status": "GitHub · téléchargement local",
+    "status": "Vercel",
     "mediaPendingReview": false,
     "presentation": "assets/presentations/massilia-cyberpunk.png",
     "image": "assets/previews/massilia-cyberpunk.jpg",
@@ -2717,7 +2717,7 @@ window.LAUNCHER_RECENT_GAMES = [
     "genre": "Aventure & exploration",
     "baseGame": "",
     "icon": "MC",
-    "link": "https://github.com/darknigthmare/massilia-cyberpunk",
+    "link": "https://massilia-cyberpunk.vercel.app/",
     "description": "Branche le Cortex tactique et parcours les rues du centre de Marseille augmentée. Consulte la carte des lieux découverts, explore les secteurs accessibles et garde ton cyberdeck à portée pour lire les informations de la ville.",
     "pitch": "Branche le Cortex, parcours Marseille sous surveillance et écoute les signaux de la ville.",
     "tags": [
@@ -2727,10 +2727,10 @@ window.LAUNCHER_RECENT_GAMES = [
       "Netrunner",
       "Exploration",
       "3D",
-      "Jeu local"
+      "Navigateur"
     ],
     "accent": "#45dbcb",
-    "accessPolicy": "local-download",
+    "accessPolicy": "",
     "sourceRepository": "https://github.com/darknigthmare/massilia-cyberpunk",
     "sourceVersion": "0.76.0",
     "recoveredGame": true
@@ -2826,5 +2826,63 @@ window.LAUNCHER_RECENT_GAMES = [
     "image": "assets/previews/avp-blood-arena.jpg",
     "recoveredGame": true,
     "accent": "#b2da56"
+  },
+  {
+    "id": "imperium-march",
+    "name": "ORDRE DE CENDRE — ImperiumMarch",
+    "description": "Pilote le marcheur de Sera Vey au service de l’Empire d’Orthe. Escorte les convois, contrôle tes appuis et tes lignes de tir, puis confronte les ordres reçus aux vies qu’ils mettent en jeu. Les traces laissées dans chaque mission accompagnent ton équipage jusqu’au prochain départ.",
+    "pitch": "Chaque pas laisse une trace. Pilote ton marcheur, protège le convoi et décide ce que ton rapport révélera.",
+    "tags": [
+      "Jeu original",
+      "Action & tir",
+      "Marcheurs",
+      "Combat tactique",
+      "Campagne",
+      "Choix narratifs"
+    ],
+    "icon": "OC",
+    "accent": "#d68b49",
+    "sourceVersion": "0.12.0",
+    "category": "Jeux",
+    "gameKind": "Jeux originaux",
+    "genre": "Action & tir",
+    "baseGame": "",
+    "link": "https://imperium-march.vercel.app/",
+    "releaseState": "published",
+    "addedAt": "2026-11-16",
+    "status": "Vercel",
+    "accessPolicy": "",
+    "sourceRepository": "https://github.com/darknigthmare/ImperiumMarch",
+    "mediaPendingReview": true,
+    "recoveredGame": true
+  },
+  {
+    "id": "angel-of-the-dead",
+    "name": "Angel of the Dead",
+    "description": "Explore Port-Cendre, observe tes cibles et découvre leurs noms et leurs visages. Utilise le Nécrologe pour agir sans te faire repérer, puis échappe aux recherches de la police. Chaque enquête demande de rester discret dans les rues de la ville.",
+    "pitch": "Un nom, un visage, une page du Nécrologe. Mène l’enquête dans Port-Cendre sans attirer la police.",
+    "tags": [
+      "Jeu original",
+      "Action & tir",
+      "FPS",
+      "Infiltration",
+      "Enquête",
+      "Monde ouvert"
+    ],
+    "icon": "AD",
+    "accent": "#b8687b",
+    "sourceVersion": "0.7.0",
+    "category": "Jeux",
+    "gameKind": "Jeux originaux",
+    "genre": "Action & tir",
+    "baseGame": "",
+    "link": "https://angel-of-the-dead.vercel.app/",
+    "releaseState": "published",
+    "addedAt": "2026-11-16",
+    "status": "Vercel",
+    "accessPolicy": "",
+    "sourceRepository": "https://github.com/darknigthmare/AngelOfTheDead",
+    "mediaPendingReview": true,
+    "recoveredGame": true
   }
 ];

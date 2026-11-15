@@ -1,5 +1,26 @@
 window.LAUNCHER_RELEASES = [
   {
+    "version": "1.18.0",
+    "date": "2026-11-16",
+    "title": "Tous les jeux publiés à portée de clic",
+    "highlights": [
+      "Angel of the Dead et ORDRE DE CENDRE rejoignent le catalogue : 160 fiches dont 147 jeux.",
+      "DIVA PULSE, Dernière Ligne, Fallout Mistral, Parallaxe et Massilia Cyberpunk s’ouvrent maintenant sur leur version Vercel vérifiée.",
+      "Ragtime Rumble retrouve l’adresse de son édition originale ; Complete Tour conserve sa fiche et son accès distincts.",
+      "Les favoris, personnalisations et galeries existantes sont conservés. Les deux nouvelles fiches annoncent leurs visuels à venir."
+    ],
+    "appIds": [
+      "imperium-march",
+      "diva-pulse",
+      "derniere-ligne-zero-repli",
+      "fallout-marseille-mistral",
+      "parallaxe-protocole-9",
+      "massilia-cyberpunk",
+      "angel-of-the-dead",
+      "ragtime-rumble"
+    ]
+  },
+  {
     "version": "1.17.0",
     "date": "2026-11-13",
     "title": "Illustrations des jeux et récits diégétiques",
