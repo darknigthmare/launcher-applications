@@ -20,76 +20,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Vérifier le domaine courant sans remplacer son alias par une variante
-        run: |
-          mkdir -p "$RUNNER_TEMP/launcher-proof"
-          node --input-type=module <<'JS'
-          import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';import {createHash} from 'node:crypto';
-          const id='parallaxe-protocole-9',url='https://parallaxe-protocole-9.vercel.app/';
-          const context={window:{}};vm.runInNewContext(fs.readFileSync('assets/recent-games.js','utf8'),context,{timeout:1000});
-          const cards=context.window.LAUNCHER_RECENT_GAMES.filter(x=>x.id===id);
-          assert.equal(cards.length,1);assert.equal(cards[0].link,url);
-          assert.equal(cards[0].sourceRepository,'https://github.com/darknigthmare/Parallaxe_Protocole9');
-          const response=await fetch(url,{signal:AbortSignal.timeout(25000),redirect:'follow'});
-          const body=await response.text(),title=body.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1]?.trim()||'';
-          const http={status:response.status,finalUrl:response.url,title,bytes:Buffer.byteLength(body),sha256:createHash('sha256').update(body).digest('hex'),checkedAt:new Date().toISOString()};
-          fs.writeFileSync(process.env.RUNNER_TEMP+'/launcher-proof/public-http.json',JSON.stringify(http,null,2));
-          fs.writeFileSync(process.env.RUNNER_TEMP+'/launcher-proof/parallaxe-response.html',body);
-          assert.equal(http.status,200);assert.equal(http.finalUrl,url);assert.match(title,/PARALLAXE/i);
-          assert.doesNotMatch(title,/Authentication Required|Login|Connexion Vercel/i);
-          fs.mkdirSync('docs',{recursive:true});
-          fs.writeFileSync('docs/parallaxe-vercel-20261116.json',JSON.stringify({date:'2026-11-16',cardId:id,url,project:'parallaxe-protocole-9',projectId:'prj_NwhUwKgmysOTq5vuvtNNbwAw2br5',deploymentId:'dpl_2bN9GJhrsAj4m5nu7GVefnQ2GD1n',publishedGameCommit:'23fd9cdbe297cad1d3962c9fa33adb6683899793',sourceBranch:'codex/vercel-coop-hosting-20261113',verifiedBy:'Current connected Vercel domain and READY production queries, followed by unauthenticated HTTP check',publicHttp:http,change:'Existing canonical card URL retained; its address is now a clickable labelled link in game details.',preserved:['catalogue data','all other game cards','media and capture provenance','favorites','customized names and images'],limits:['Not a full gameplay test.','Parallaxe PR #5 is not merged or deployed by this launcher change.'],cache:'launcher-shell-v35'},null,2)+'\n');
-          JS
-      - name: Afficher l’adresse dans la fiche et ajouter sa régression
-        run: |
-          node --input-type=module <<'JS'
-          import fs from 'node:fs';import assert from 'node:assert/strict';import vm from 'node:vm';
-          const helper=String.raw`    function parallaxeProductionAddress(app) {
-                const url = "https://parallaxe-protocole-9.vercel.app/";
-                if (app?.id !== "parallaxe-protocole-9" || app.link !== url || app.accessPolicy) return "";
-                return '<a href="'+url+'" target="_blank" rel="noopener noreferrer" data-launch-app="parallaxe-protocole-9">'+url+'</a>';
-              }
-
-          `;
-          let html=fs.readFileSync('index.html','utf8');
-          assert.equal(html.split('    function renderDetails(app) {').length,2);
-          html=html.replace('    function renderDetails(app) {',helper+'    function renderDetails(app) {');
-          const old=String.raw`<span>${app.accessPolicy === "local-download" ? "Source" : "Lien"}</span><strong>${escapeHtml(app.link || "A configurer")}</strong>`;
-          const replacement=String.raw`<span>${app.accessPolicy === "local-download" ? "Source" : parallaxeProductionAddress(app) ? "Adresse Vercel" : "Lien"}</span><strong>${parallaxeProductionAddress(app) || escapeHtml(app.link || "A configurer")}</strong>`;
-          assert.equal(html.split(old).length,2);html=html.replace(old,replacement);
-          for(const match of html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/gi))if(match[1].trim())new vm.Script(match[1]);
-          fs.writeFileSync('index.html',html);
-          const sw=fs.readFileSync('sw.js','utf8');assert.equal(sw.split('"launcher-shell-v34"').length,2);
-          fs.writeFileSync('sw.js',sw.replace('"launcher-shell-v34"','"launcher-shell-v35"'));
-          const audit=fs.readFileSync('scripts/audit.mjs','utf8');assert.ok(audit.includes('launcher-shell-v34'));
-          fs.writeFileSync('scripts/audit.mjs',audit.replaceAll('launcher-shell-v34','launcher-shell-v35'));
-          const pkg=JSON.parse(fs.readFileSync('package.json','utf8'));assert.ok(!pkg.scripts.test.includes('parallaxe-launch-link'));
-          pkg.scripts.test+=' && node --test scripts/parallaxe-launch-link.test.mjs';fs.writeFileSync('package.json',JSON.stringify(pkg,null,2)+'\n');
-          fs.writeFileSync('scripts/parallaxe-launch-link.test.mjs',String.raw`import test from 'node:test';
-          import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';import vm from 'node:vm';
-          test('Parallaxe has one verified canonical URL and an explicit safe details link',()=>{
-            const context={window:{}};vm.runInNewContext(readFileSync('assets/recent-games.js','utf8'),context,{timeout:1000});
-            const cards=context.window.LAUNCHER_RECENT_GAMES.filter(x=>x.id==='parallaxe-protocole-9');assert.equal(cards.length,1);
-            const card=cards[0],url='https://parallaxe-protocole-9.vercel.app/';assert.equal(card.link,url);assert.equal(card.accessPolicy,'');
-            assert.equal(card.sourceRepository,'https://github.com/darknigthmare/Parallaxe_Protocole9');assert.ok(card.image&&card.presentation);
-            const html=readFileSync('index.html','utf8');
-            const source=html.match(/    function parallaxeProductionAddress\(app\) \{[\s\S]*?\n    \}/)?.[0];
-            assert.ok(source);const markup=vm.runInNewContext(source+';parallaxeProductionAddress');
-            assert.match(markup(card),/href="https:\/\/parallaxe-protocole-9\.vercel\.app\/"/);
-            assert.match(markup(card),/rel="noopener noreferrer"/);
-            assert.equal(markup({...card,link:'javascript:alert(1)'}),'');assert.equal(markup({...card,id:'other'}),'');
-            assert.equal(markup({...card,accessPolicy:'vercel-sso'}),'');
-            assert.ok(html.includes('parallaxeProductionAddress(app) ? "Adresse Vercel" : "Lien"'));
-            assert.ok(html.includes('OFFICIAL_SYNC_FIELDS = ["link"'));assert.ok(html.includes('synchronized[field] = starter[field]'));
-            const proof=JSON.parse(readFileSync('docs/parallaxe-vercel-20261116.json','utf8'));assert.equal(proof.url,url);assert.equal(proof.publicHttp.status,200);
-          });
-          `);
-          JS
-      - name: Contrôler tout le catalogue
+      - name: Vérifier le domaine public et préparer uniquement la fiche demandée
+        run: node .delivery/parallaxe-link.mjs
+      - name: Contrôler le catalogue entier et l’adresse visible
         run: |
           set -o pipefail
           npm test 2>&1 | tee "$RUNNER_TEMP/launcher-proof/tests.log"
-      - name: Enregistrer uniquement la fiche et ses contrôles sur main
+      - name: Enregistrer la fiche sur main sans modifier le catalogue
         env:
           EXPECTED_SHA: ${{ github.sha }}
         run: |
@@ -98,11 +35,13 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add index.html sw.js package.json scripts/audit.mjs scripts/parallaxe-launch-link.test.mjs docs/parallaxe-vercel-20261116.json
-          git commit -m 'feat: show the verified Parallaxe Vercel address as a clickable game-detail link'
+          git rm .delivery/parallaxe-link.mjs
+          git diff --quiet HEAD -- assets/recent-games.js docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json
+          git commit -m 'feat: expose the verified Parallaxe Vercel address in its game details'
           git push origin HEAD:refs/heads/main
           git rev-parse HEAD > "$RUNNER_TEMP/launcher-proof/COMMIT.txt"
           git diff HEAD~1 HEAD > "$RUNNER_TEMP/launcher-proof/PARALLAXE_LINK.patch"
-      - name: Conserver les sources contrôlées
+      - name: Conserver les preuves
         if: always()
         run: |
           mkdir -p "$RUNNER_TEMP/launcher-proof"
