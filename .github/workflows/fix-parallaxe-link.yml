@@ -1,4 +1,4 @@
-name: Corriger le lien public de Parallaxe
+name: Vérifier et afficher l’adresse Vercel de Parallaxe
 on:
   push:
     branches: [main]
@@ -20,73 +20,76 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Corriger la fiche et ses références de contrôle
+      - name: Vérifier le domaine courant sans remplacer son alias par une variante
+        run: |
+          mkdir -p "$RUNNER_TEMP/launcher-proof"
+          node --input-type=module <<'JS'
+          import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';import {createHash} from 'node:crypto';
+          const id='parallaxe-protocole-9',url='https://parallaxe-protocole-9.vercel.app/';
+          const context={window:{}};vm.runInNewContext(fs.readFileSync('assets/recent-games.js','utf8'),context,{timeout:1000});
+          const cards=context.window.LAUNCHER_RECENT_GAMES.filter(x=>x.id===id);
+          assert.equal(cards.length,1);assert.equal(cards[0].link,url);
+          assert.equal(cards[0].sourceRepository,'https://github.com/darknigthmare/Parallaxe_Protocole9');
+          const response=await fetch(url,{signal:AbortSignal.timeout(25000),redirect:'follow'});
+          const body=await response.text(),title=body.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1]?.trim()||'';
+          const http={status:response.status,finalUrl:response.url,title,bytes:Buffer.byteLength(body),sha256:createHash('sha256').update(body).digest('hex'),checkedAt:new Date().toISOString()};
+          fs.writeFileSync(process.env.RUNNER_TEMP+'/launcher-proof/public-http.json',JSON.stringify(http,null,2));
+          fs.writeFileSync(process.env.RUNNER_TEMP+'/launcher-proof/parallaxe-response.html',body);
+          assert.equal(http.status,200);assert.equal(http.finalUrl,url);assert.match(title,/PARALLAXE/i);
+          assert.doesNotMatch(title,/Authentication Required|Login|Connexion Vercel/i);
+          fs.mkdirSync('docs',{recursive:true});
+          fs.writeFileSync('docs/parallaxe-vercel-20261116.json',JSON.stringify({date:'2026-11-16',cardId:id,url,project:'parallaxe-protocole-9',projectId:'prj_NwhUwKgmysOTq5vuvtNNbwAw2br5',deploymentId:'dpl_2bN9GJhrsAj4m5nu7GVefnQ2GD1n',publishedGameCommit:'23fd9cdbe297cad1d3962c9fa33adb6683899793',sourceBranch:'codex/vercel-coop-hosting-20261113',verifiedBy:'Current connected Vercel domain and READY production queries, followed by unauthenticated HTTP check',publicHttp:http,change:'Existing canonical card URL retained; its address is now a clickable labelled link in game details.',preserved:['catalogue data','all other game cards','media and capture provenance','favorites','customized names and images'],limits:['Not a full gameplay test.','Parallaxe PR #5 is not merged or deployed by this launcher change.'],cache:'launcher-shell-v35'},null,2)+'\n');
+          JS
+      - name: Afficher l’adresse dans la fiche et ajouter sa régression
         run: |
           node --input-type=module <<'JS'
-          import fs from 'node:fs';
-          import vm from 'node:vm';
-          import assert from 'node:assert/strict';
-          const path='assets/recent-games.js',id='parallaxe-protocole-9';
-          const oldUrl='https://parallaxe-protocole-9.vercel.app/',url='https://parallaxe-protocole9.vercel.app/';
-          const before=fs.readFileSync(path,'utf8');
-          const decode=source=>{const context={window:{}};vm.runInNewContext(source,context,{timeout:1000});return JSON.parse(JSON.stringify(context.window.LAUNCHER_RECENT_GAMES));};
-          const records=decode(before),matches=records.filter(x=>x.id===id);
-          assert.equal(matches.length,1);
-          assert.equal(matches[0].sourceRepository,'https://github.com/darknigthmare/Parallaxe_Protocole9');
-          assert.equal(matches[0].link,oldUrl);
-          const old=JSON.stringify(oldUrl),replacement=JSON.stringify(url);
-          assert.equal(before.split('"link": '+old).length,2);
-          const after=before.replace('"link": '+old,'"link": '+replacement),expected=structuredClone(records);
-          expected.find(x=>x.id===id).link=url;
-          assert.deepEqual(decode(after),expected,'Only the Parallaxe card link may change');
-          fs.writeFileSync(path,after);
-          const matrixPath='docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json';
-          const matrixText=fs.readFileSync(matrixPath,'utf8'),matrix=JSON.parse(matrixText);
-          const item=matrix.entries.filter(x=>x.id===id);assert.equal(item.length,1);assert.equal(item[0].productionLink,oldUrl);
-          const expectedMatrix=structuredClone(matrix);expectedMatrix.entries.find(x=>x.id===id).productionLink=url;
-          assert.equal(matrixText.split('"productionLink": '+old).length,2);
-          const nextMatrix=matrixText.replace('"productionLink": '+old,'"productionLink": '+replacement);
-          assert.deepEqual(JSON.parse(nextMatrix),expectedMatrix,'Capture provenance and all other media records must remain unchanged');
-          fs.writeFileSync(matrixPath,nextMatrix);
+          import fs from 'node:fs';import assert from 'node:assert/strict';import vm from 'node:vm';
+          const helper=String.raw`    function parallaxeProductionAddress(app) {
+                const url = "https://parallaxe-protocole-9.vercel.app/";
+                if (app?.id !== "parallaxe-protocole-9" || app.link !== url || app.accessPolicy) return "";
+                return '<a href="'+url+'" target="_blank" rel="noopener noreferrer" data-launch-app="parallaxe-protocole-9">'+url+'</a>';
+              }
+
+          `;
+          let html=fs.readFileSync('index.html','utf8');
+          assert.equal(html.split('    function renderDetails(app) {').length,2);
+          html=html.replace('    function renderDetails(app) {',helper+'    function renderDetails(app) {');
+          const old=String.raw`<span>${app.accessPolicy === "local-download" ? "Source" : "Lien"}</span><strong>${escapeHtml(app.link || "A configurer")}</strong>`;
+          const replacement=String.raw`<span>${app.accessPolicy === "local-download" ? "Source" : parallaxeProductionAddress(app) ? "Adresse Vercel" : "Lien"}</span><strong>${parallaxeProductionAddress(app) || escapeHtml(app.link || "A configurer")}</strong>`;
+          assert.equal(html.split(old).length,2);html=html.replace(old,replacement);
+          for(const match of html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/gi))if(match[1].trim())new vm.Script(match[1]);
+          fs.writeFileSync('index.html',html);
           const sw=fs.readFileSync('sw.js','utf8');assert.equal(sw.split('"launcher-shell-v34"').length,2);
           fs.writeFileSync('sw.js',sw.replace('"launcher-shell-v34"','"launcher-shell-v35"'));
-          const audit=fs.readFileSync('scripts/audit.mjs','utf8');
-          assert.ok(audit.includes(oldUrl)&&audit.includes('launcher-shell-v34'));
-          fs.writeFileSync('scripts/audit.mjs',audit.replaceAll(oldUrl,url).replaceAll('launcher-shell-v34','launcher-shell-v35'));
-          const pkg=JSON.parse(fs.readFileSync('package.json','utf8'));
-          assert.ok(!pkg.scripts.test.includes('parallaxe-launch-link'));
-          pkg.scripts.test+=' && node --test scripts/parallaxe-launch-link.test.mjs';
-          fs.writeFileSync('package.json',JSON.stringify(pkg,null,2)+'\n');
-          fs.writeFileSync('scripts/parallaxe-launch-link.test.mjs',`import test from 'node:test';
-          import assert from 'node:assert/strict';
-          import {readFileSync} from 'node:fs';
-          import vm from 'node:vm';
-          test('Parallaxe uses its verified production URL and retains source and media',()=>{
-            const context={window:{}};
-            vm.runInNewContext(readFileSync('assets/recent-games.js','utf8'),context,{timeout:1000});
-            const cards=context.window.LAUNCHER_RECENT_GAMES.filter(x=>x.id==='parallaxe-protocole-9');
-            assert.equal(cards.length,1);const card=cards[0];
-            assert.equal(card.link,'https://parallaxe-protocole9.vercel.app/');
-            assert.equal(card.sourceRepository,'https://github.com/darknigthmare/Parallaxe_Protocole9');
-            assert.equal(card.releaseState,'published');assert.equal(card.accessPolicy,'');
-            assert.ok(card.presentation&&card.image);
-            const matrix=JSON.parse(readFileSync('docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json','utf8'));
-            assert.equal(matrix.entries.find(x=>x.id===card.id).productionLink,card.link);
+          const audit=fs.readFileSync('scripts/audit.mjs','utf8');assert.ok(audit.includes('launcher-shell-v34'));
+          fs.writeFileSync('scripts/audit.mjs',audit.replaceAll('launcher-shell-v34','launcher-shell-v35'));
+          const pkg=JSON.parse(fs.readFileSync('package.json','utf8'));assert.ok(!pkg.scripts.test.includes('parallaxe-launch-link'));
+          pkg.scripts.test+=' && node --test scripts/parallaxe-launch-link.test.mjs';fs.writeFileSync('package.json',JSON.stringify(pkg,null,2)+'\n');
+          fs.writeFileSync('scripts/parallaxe-launch-link.test.mjs',String.raw`import test from 'node:test';
+          import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';import vm from 'node:vm';
+          test('Parallaxe has one verified canonical URL and an explicit safe details link',()=>{
+            const context={window:{}};vm.runInNewContext(readFileSync('assets/recent-games.js','utf8'),context,{timeout:1000});
+            const cards=context.window.LAUNCHER_RECENT_GAMES.filter(x=>x.id==='parallaxe-protocole-9');assert.equal(cards.length,1);
+            const card=cards[0],url='https://parallaxe-protocole-9.vercel.app/';assert.equal(card.link,url);assert.equal(card.accessPolicy,'');
+            assert.equal(card.sourceRepository,'https://github.com/darknigthmare/Parallaxe_Protocole9');assert.ok(card.image&&card.presentation);
             const html=readFileSync('index.html','utf8');
-            assert.ok(html.includes('OFFICIAL_SYNC_FIELDS = ["link"'));
-            assert.ok(html.includes('synchronized[field] = starter[field]'));
-            assert.ok(html.includes('app.link'));
+            const source=html.match(/    function parallaxeProductionAddress\(app\) \{[\s\S]*?\n    \}/)?.[0];
+            assert.ok(source);const markup=vm.runInNewContext(source+';parallaxeProductionAddress');
+            assert.match(markup(card),/href="https:\/\/parallaxe-protocole-9\.vercel\.app\/"/);
+            assert.match(markup(card),/rel="noopener noreferrer"/);
+            assert.equal(markup({...card,link:'javascript:alert(1)'}),'');assert.equal(markup({...card,id:'other'}),'');
+            assert.equal(markup({...card,accessPolicy:'vercel-sso'}),'');
+            assert.ok(html.includes('parallaxeProductionAddress(app) ? "Adresse Vercel" : "Lien"'));
+            assert.ok(html.includes('OFFICIAL_SYNC_FIELDS = ["link"'));assert.ok(html.includes('synchronized[field] = starter[field]'));
+            const proof=JSON.parse(readFileSync('docs/parallaxe-vercel-20261116.json','utf8'));assert.equal(proof.url,url);assert.equal(proof.publicHttp.status,200);
           });
           `);
-          fs.writeFileSync('docs/parallaxe-vercel-20261116.json',JSON.stringify({date:'2026-11-16',cardId:id,url,previousUrl:oldUrl,project:'parallaxe-protocole9',projectId:'prj_NwhUwKgmysOTq5vuvtNNbwAw2br5',verifiedBy:'Connected Vercel production-domain and READY deployment queries',deploymentId:'dpl_631o8k3Pp24V8cPm9ZiZk6q5jN7m',publishedGameCommit:'a2db2c315ca9b97f5d5cb9b7d9dd445720b991f9',limits:['The Parallaxe working PR is not merged by this change.','READY configuration alone is not a gameplay or human QA test.'],preserved:['all other cards','Parallaxe repository, text and media','capture provenance','favorites storage','custom titles and images'],cache:'launcher-shell-v35'},null,2)+'\n');
-          console.log('PASS: only the Parallaxe destination and matching current audit references changed.');
           JS
-      - name: Contrôler le catalogue et la régression du lien
+      - name: Contrôler tout le catalogue
         run: |
           set -o pipefail
-          mkdir -p "$RUNNER_TEMP/launcher-proof"
           npm test 2>&1 | tee "$RUNNER_TEMP/launcher-proof/tests.log"
-      - name: Enregistrer la correction demandée sur main
+      - name: Enregistrer uniquement la fiche et ses contrôles sur main
         env:
           EXPECTED_SHA: ${{ github.sha }}
         run: |
@@ -94,18 +97,16 @@ jobs:
           test "$(git ls-remote origin refs/heads/main | cut -f1)" = "$EXPECTED_SHA"
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add assets/recent-games.js sw.js package.json scripts/audit.mjs scripts/parallaxe-launch-link.test.mjs docs/parallaxe-vercel-20261116.json docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json
-          git commit -m 'fix: point Parallaxe card to verified Vercel production and refresh PWA cache'
+          git add index.html sw.js package.json scripts/audit.mjs scripts/parallaxe-launch-link.test.mjs docs/parallaxe-vercel-20261116.json
+          git commit -m 'feat: show the verified Parallaxe Vercel address as a clickable game-detail link'
           git push origin HEAD:refs/heads/main
           git rev-parse HEAD > "$RUNNER_TEMP/launcher-proof/COMMIT.txt"
           git diff HEAD~1 HEAD > "$RUNNER_TEMP/launcher-proof/PARALLAXE_LINK.patch"
-          cp docs/parallaxe-vercel-20261116.json "$RUNNER_TEMP/launcher-proof/"
-      - name: Conserver les preuves et relever la réponse publique sans identifiant
+      - name: Conserver les sources contrôlées
         if: always()
         run: |
           mkdir -p "$RUNNER_TEMP/launcher-proof"
-          tar -czf "$RUNNER_TEMP/launcher-proof/launcher-code.tar.gz" index.html assets/recent-games.js assets/catalogue-updates.js sw.js package.json scripts docs/parallaxe-vercel-20261116.json docs/MEDIA_FIDELITY_MATRIX_2026-11-01.json
-          curl --max-time 25 -sS -L -D "$RUNNER_TEMP/launcher-proof/parallaxe-headers.txt" https://parallaxe-protocole9.vercel.app/ -o "$RUNNER_TEMP/launcher-proof/parallaxe-response.html" || true
+          tar -czf "$RUNNER_TEMP/launcher-proof/launcher-code.tar.gz" index.html assets/recent-games.js assets/catalogue-updates.js sw.js package.json scripts docs/parallaxe-vercel-20261116.json || true
       - uses: actions/upload-artifact@v4
         if: always()
         with:
