@@ -1554,7 +1554,7 @@ for (const asset of appShell) {
 assert(appShell.includes("/assets/openai-art-manifest.json"), "le manifeste OpenAI fait partie du shell hors ligne");
 assert(appShell.includes("/assets/illustration-manifest.json"), "la revue des nouvelles illustrations fait partie du shell hors ligne");
 assert(appShellBytes <= 5 * 1024 * 1024, "le préchargement APP_SHELL reste inférieur à 5 Mo");
-assert(serviceWorker.includes('const CACHE_NAME = "launcher-shell-v34"'), "le cache applicatif v1.18 utilise launcher-shell-v34");
+assert(serviceWorker.includes('const CACHE_NAME = "launcher-shell-v35"'), "le cache applicatif v1.18 utilise launcher-shell-v35");
 assert(serviceWorker.includes('const RUNTIME_CACHE = "launcher-media-runtime-v4"'), "le cache média renouvelé utilise launcher-media-runtime-v4");
 assert(serviceWorker.includes("const MAX_RUNTIME_ENTRIES = 120"), "le cache média différé est borné");
 const mediaRuleMatch = serviceWorker.match(/if\s*\((\/(?:\\.|[^/\n])+\/[a-z]*)\.test\(url\.pathname\)\)/);

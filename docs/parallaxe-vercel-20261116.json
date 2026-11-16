@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-16",
+  "cardId": "parallaxe-protocole-9",
+  "url": "https://parallaxe-protocole-9.vercel.app/",
+  "project": "parallaxe-protocole-9",
+  "projectId": "prj_NwhUwKgmysOTq5vuvtNNbwAw2br5",
+  "deploymentId": "dpl_2bN9GJhrsAj4m5nu7GVefnQ2GD1n",
+  "publishedGameCommit": "23fd9cdbe297cad1d3962c9fa33adb6683899793",
+  "sourceBranch": "codex/vercel-coop-hosting-20261113",
+  "verifiedBy": "Current connected Vercel domain and READY production, then unauthenticated HTTP",
+  "publicHttp": {
+    "status": 200,
+    "finalUrl": "https://parallaxe-protocole-9.vercel.app/",
+    "title": "PARALLAXE — Protocole 9",
+    "bytes": 562,
+    "sha256": "1be0b365135b65aebdf7c301429a92c007d907f02c2d9642f8dcad94eda83304",
+    "checkedAt": "2026-11-16T04:06:33.259Z"
+  },
+  "change": "Canonical card URL retained; address now clickable and labelled in game details.",
+  "preserved": [
+    "catalogue data",
+    "all other cards",
+    "media and capture provenance",
+    "favorites",
+    "custom names and images"
+  ],
+  "limits": [
+    "HTTP identity is not a complete gameplay test.",
+    "Parallaxe PR #5 is not merged or deployed by this change."
+  ],
+  "cache": "launcher-shell-v35"
+}

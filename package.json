@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "audit": "node scripts/audit.mjs",
-    "test": "npm run audit && node --test scripts/link-destination-classifier.test.mjs",
+    "test": "npm run audit && node --test scripts/link-destination-classifier.test.mjs && node --test scripts/parallaxe-launch-link.test.mjs",
     "test:browser": "node scripts/browser-smoke.mjs",
     "sync:upcoming": "node scripts/sync-upcoming-games.mjs --write",
     "sync:check": "node scripts/sync-upcoming-games.mjs",

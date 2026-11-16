@@ -2887,6 +2887,12 @@
       renderDetails(apps.find((app) => app.id === selectedId));
     }
 
+    function parallaxeProductionAddress(app) {
+      const url = "https://parallaxe-protocole-9.vercel.app/";
+      if (app?.id !== "parallaxe-protocole-9" || app.link !== url || app.accessPolicy) return "";
+      return `<a href="${url}" target="_blank" rel="noopener noreferrer" data-launch-app="parallaxe-protocole-9">${url}</a>`;
+    }
+
     function renderDetails(app) {
       if (socialPanelController) {
         socialPanelController.destroy();
@@ -2974,7 +2980,7 @@
           ${gameTaxonomyMetaMarkup(app)}
           <div class="meta-item"><span>Statut</span><strong>${statusLabel(app)}</strong></div>
           <div class="meta-item"><span>Plateforme</span><strong>${escapeHtml(app.accessPolicy === "local-download" ? "Accès web à confirmer" : app.status || "Non renseigné")}</strong></div>
-          ${app.accessPolicy !== "local-download" || adminMode ? `<div class="meta-item"><span>${app.accessPolicy === "local-download" ? "Source" : "Lien"}</span><strong>${escapeHtml(app.link || "A configurer")}</strong></div>` : ""}
+          ${app.accessPolicy !== "local-download" || adminMode ? `<div class="meta-item"><span>${app.accessPolicy === "local-download" ? "Source" : parallaxeProductionAddress(app) ? "Adresse Vercel" : "Lien"}</span><strong>${parallaxeProductionAddress(app) || escapeHtml(app.link || "A configurer")}</strong></div>` : ""}
         </div>
         <div class="details-actions">
           ${openControl}
