@@ -5,6 +5,9 @@ import {resolve, extname, sep} from 'node:path';
 import {openNativeBrowser} from './browser-capture-common.mjs';
 // Serve exactly the committed static app when no deployment URL is provided.
 const root=process.cwd();
+const workerSource=await readFile(resolve(root,'sw.js'),'utf8');
+const expectedShellCache=workerSource.match(/^const CACHE_NAME = "(launcher-shell-v\d+)";$/m)?.[1];
+assert.ok(expectedShellCache,'The committed service worker declares one versioned shell cache');
 const server=process.env.LAUNCHER_TEST_URL ? null : createServer(async(req,res)=>{
  try {
   const pathname=decodeURIComponent(new URL(req.url,'http://localhost').pathname);
@@ -29,8 +32,8 @@ async function selectMedia(id,label){
 try {
  await browser.waitFor("typeof apps !== 'undefined' && illustrationsLoaded && apps.find(a=>a.id==='resident-evil-bow-protocol')?.captureType==='real-module-ui'");
  await verify(`apps.every(a=>a.illustration===(${JSON.stringify(approvedIllustrations)}[a.id] ? new URL(${JSON.stringify(approvedIllustrations)}[a.id],document.baseURI).href : ''))`,'Only reviewed illustrations become official covers');
- await browser.waitFor("(async()=>Boolean(navigator.serviceWorker.controller) && (await caches.keys()).includes('launcher-shell-v34'))()",30000);
- await verify("(async()=>{const c=await caches.open('launcher-shell-v34');return !!(await c.match('/assets/app-gallery.json')) && !!(await c.match('/assets/recent-games.js'));})()",'Updated PWA shell caches current catalogue and gallery');
+ await browser.waitFor(`(async()=>Boolean(navigator.serviceWorker.controller) && (await caches.keys()).includes(${JSON.stringify(expectedShellCache)}))()`,30000);
+ await verify(`(async()=>{const c=await caches.open(${JSON.stringify(expectedShellCache)});return !!(await c.match('/assets/app-gallery.json')) && !!(await c.match('/assets/recent-games.js'));})()`,'Updated PWA shell caches current catalogue and gallery');
  await verify("apps.length === starterApps.length && apps.length >= 158",'Complete catalogue renders');
  await verify("apps.filter(a=>a.category==='Jeux').length===apps.length-13",'Game count matches catalogue');
  const linkedIds=['diva-pulse','derniere-ligne-zero-repli','fallout-marseille-mistral','parallaxe-protocole-9','massilia-cyberpunk','ragtime-rumble','imperium-march','angel-of-the-dead'];
@@ -38,6 +41,8 @@ try {
   await browser.evaluate(`selectApp(${JSON.stringify(id)})`);
   await verify(`(()=>{const a=apps.find(a=>a.id===${JSON.stringify(id)});const link=document.querySelector('#details a.primary-button');return a && !a.accessPolicy && link?.textContent==='Jouer' && link.href===${JSON.stringify('https://'+id+'.vercel.app/')} && link.target==='_blank';})()`,'Verified web launch for '+id);
  }
+ await browser.evaluate("selectApp('parallaxe-protocole-9')");
+ await verify("(()=>{const links=[...document.querySelectorAll('#details a[data-launch-app=\"parallaxe-protocole-9\"]')];const address=links.find(a=>a.textContent.trim()==='https://parallaxe-protocole-9.vercel.app/');return !!address && address.href==='https://parallaxe-protocole-9.vercel.app/' && address.target==='_blank' && address.relList.contains('noopener') && address.relList.contains('noreferrer') && document.getElementById('details').textContent.includes('Adresse Vercel');})()",'Parallaxe details show the explicit safe production address as well as Play');
  for(const id of ['imperium-march','angel-of-the-dead']){
   await browser.evaluate(`selectApp(${JSON.stringify(id)})`);
   await verify(`(()=>{const a=apps.find(a=>a.id===${JSON.stringify(id)});return a.mediaPendingReview && !a.image && !a.presentation && !a.illustration && document.querySelector('.detail-media-label').textContent==='Visuels à venir';})()`,'New game stays playable without invented media: '+id);
@@ -100,7 +105,7 @@ try {
  await verify("document.documentElement.scrollWidth<=390",'Mobile viewport has no page overflow');
  const mobile=await browser.call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
  await writeFile(resolve(root,'.reports/launcher-mobile.png'),Buffer.from(mobile.data,'base64'));
- const report={testedAt:new Date().toISOString(),target:process.env.LAUNCHER_TEST_URL||'local static source',passed:results.length,results};
+ const report={testedAt:new Date().toISOString(),target:process.env.LAUNCHER_TEST_URL||'local static source',expectedShellCache,passed:results.length,results};
  await writeFile(resolve(root,'.reports/browser-smoke.json'),JSON.stringify(report,null,2)+'\n');
  console.log(JSON.stringify(report,null,2));
 } finally {await browser.close();if(server)await new Promise(resolve=>server.close(resolve));}
