@@ -1,0 +1,32 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import vm from 'node:vm';
+
+test('Parallaxe keeps its verified canonical URL and exposes a safe clickable details address',()=>{
+  const context={window:{}};
+  vm.runInNewContext(readFileSync('assets/recent-games.js','utf8'),context,{timeout:1000});
+  const cards=context.window.LAUNCHER_RECENT_GAMES.filter(x=>x.id==='parallaxe-protocole-9');
+  assert.equal(cards.length,1);
+  const card=cards[0],url='https://parallaxe-protocole-9.vercel.app/';
+  assert.equal(card.link,url);
+  assert.equal(card.accessPolicy,'');
+  assert.equal(card.sourceRepository,'https://github.com/darknigthmare/Parallaxe_Protocole9');
+  assert.ok(card.image&&card.presentation);
+  const html=readFileSync('index.html','utf8');
+  const source=html.match(/    function parallaxeProductionAddress\(app\) \{[\s\S]*?\n    \}/)?.[0];
+  assert.ok(source,'The actual details helper exists');
+  const markup=vm.runInNewContext(source+';parallaxeProductionAddress');
+  assert.match(markup(card),/href="https:\/\/parallaxe-protocole-9\.vercel\.app\/"/);
+  assert.match(markup(card),/rel="noopener noreferrer"/);
+  assert.equal(markup({...card,link:'javascript:alert(1)'}),'');
+  assert.equal(markup({...card,id:'other'}),'');
+  assert.equal(markup({...card,accessPolicy:'vercel-sso'}),'');
+  assert.ok(html.includes('parallaxeProductionAddress(app) ? "Adresse Vercel" : "Lien"'));
+  assert.ok(html.includes('OFFICIAL_SYNC_FIELDS = ["link"'));
+  assert.ok(html.includes('synchronized[field] = starter[field]'));
+  const proof=JSON.parse(readFileSync('docs/parallaxe-vercel-20261116.json','utf8'));
+  assert.equal(proof.url,url);
+  assert.equal(proof.publicHttp.status,200);
+  assert.equal(proof.publicHttp.finalUrl,url);
+});
