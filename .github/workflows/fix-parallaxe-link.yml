@@ -1,0 +1,103 @@
+name: Corriger le lien public de Parallaxe
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/fix-parallaxe-link.yml']
+permissions:
+  contents: write
+concurrency:
+  group: launcher-parallaxe-link
+  cancel-in-progress: false
+jobs:
+  repair:
+    if: github.repository == 'darknigthmare/launcher-applications' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Corriger seulement la destination de la fiche vérifiée
+        run: |
+          node --input-type=module <<'JS'
+          import fs from 'node:fs';
+          import vm from 'node:vm';
+          import assert from 'node:assert/strict';
+          const path='assets/recent-games.js', id='parallaxe-protocole-9';
+          const before=fs.readFileSync(path,'utf8');
+          const decode=source=>{const context={window:{}};vm.runInNewContext(source,context,{timeout:1000});return JSON.parse(JSON.stringify(context.window.LAUNCHER_RECENT_GAMES));};
+          const records=decode(before),matches=records.filter(x=>x.id===id);
+          assert.equal(matches.length,1);
+          assert.equal(matches[0].sourceRepository,'https://github.com/darknigthmare/Parallaxe_Protocole9');
+          assert.equal(matches[0].link,'https://parallaxe-protocole-9.vercel.app/');
+          const old='"link": "https://parallaxe-protocole-9.vercel.app/"';
+          const replacement='"link": "https://parallaxe-protocole9.vercel.app/"';
+          assert.equal(before.split(old).length,2);
+          const after=before.replace(old,replacement),expected=structuredClone(records);
+          expected.find(x=>x.id===id).link='https://parallaxe-protocole9.vercel.app/';
+          assert.deepEqual(decode(after),expected,'Only the Parallaxe link may change');
+          fs.writeFileSync(path,after);
+          const sw=fs.readFileSync('sw.js','utf8');
+          assert.equal(sw.split('"launcher-shell-v34"').length,2);
+          fs.writeFileSync('sw.js',sw.replace('"launcher-shell-v34"','"launcher-shell-v35"'));
+          const pkg=JSON.parse(fs.readFileSync('package.json','utf8'));
+          assert.ok(!pkg.scripts.test.includes('parallaxe-launch-link'));
+          pkg.scripts.test+=' && node --test scripts/parallaxe-launch-link.test.mjs';
+          fs.writeFileSync('package.json',JSON.stringify(pkg,null,2)+'\n');
+          fs.writeFileSync('scripts/parallaxe-launch-link.test.mjs',`import test from 'node:test';
+          import assert from 'node:assert/strict';
+          import {readFileSync} from 'node:fs';
+          import vm from 'node:vm';
+          test('Parallaxe uses its verified stable production URL and retains its source/media',()=>{
+            const context={window:{}};
+            vm.runInNewContext(readFileSync('assets/recent-games.js','utf8'),context,{timeout:1000});
+            const cards=context.window.LAUNCHER_RECENT_GAMES.filter(x=>x.id==='parallaxe-protocole-9');
+            assert.equal(cards.length,1);
+            const card=cards[0];
+            assert.equal(card.link,'https://parallaxe-protocole9.vercel.app/');
+            assert.equal(card.sourceRepository,'https://github.com/darknigthmare/Parallaxe_Protocole9');
+            assert.equal(card.releaseState,'published');
+            assert.equal(card.accessPolicy,'');
+            assert.ok(card.presentation&&card.image);
+            const html=readFileSync('index.html','utf8');
+            assert.match(html,/OFFICIAL_SYNC_FIELDS = \\["link"/);
+            assert.ok(html.includes('synchronized[field] = starter[field]'));
+            assert.ok(html.includes('app.link'));
+          });
+          `);
+          fs.mkdirSync('docs',{recursive:true});
+          fs.writeFileSync('docs/parallaxe-vercel-20261116.json',JSON.stringify({date:'2026-11-16',cardId:id,url:'https://parallaxe-protocole9.vercel.app/',project:'parallaxe-protocole9',projectId:'prj_NwhUwKgmysOTq5vuvtNNbwAw2br5',verifiedBy:'Connected Vercel production-domain and READY deployment queries',deploymentId:'dpl_631o8k3Pp24V8cPm9ZiZk6q5jN7m',publishedGameCommit:'a2db2c315ca9b97f5d5cb9b7d9dd445720b991f9',limits:['The Parallaxe working PR is not merged by this change.','A configured READY deployment is not a complete gameplay or human QA test.'],preserved:['other cards','Parallaxe repository, text and media','favorites storage','custom titles and images'],cache:'launcher-shell-v35'},null,2)+'\n');
+          console.log('PASS: only the Parallaxe card destination changed; catalog identities preserved.');
+          JS
+      - name: Contrôler le catalogue et la régression du lien
+        run: npm test
+      - name: Enregistrer la correction demandée sur main
+        env:
+          EXPECTED_SHA: ${{ github.sha }}
+        run: |
+          set -eu
+          test "$(git ls-remote origin refs/heads/main | cut -f1)" = "$EXPECTED_SHA"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/recent-games.js sw.js package.json scripts/parallaxe-launch-link.test.mjs docs/parallaxe-vercel-20261116.json
+          git commit -m 'fix: point Parallaxe card to its verified Vercel production and refresh the PWA cache'
+          git push origin HEAD:refs/heads/main
+          mkdir -p "$RUNNER_TEMP/launcher-proof"
+          git rev-parse HEAD > "$RUNNER_TEMP/launcher-proof/COMMIT.txt"
+          git diff HEAD~1 HEAD > "$RUNNER_TEMP/launcher-proof/PARALLAXE_LINK.patch"
+          cp docs/parallaxe-vercel-20261116.json "$RUNNER_TEMP/launcher-proof/"
+          git archive --format=tar.gz --output="$RUNNER_TEMP/launcher-proof/launcher-code.tar.gz" HEAD index.html assets/recent-games.js assets/catalogue-updates.js sw.js package.json scripts
+      - name: Relever la réponse publique sans identifiant
+        run: |
+          mkdir -p "$RUNNER_TEMP/launcher-proof"
+          curl --max-time 25 -sS -L -D "$RUNNER_TEMP/launcher-proof/parallaxe-headers.txt" https://parallaxe-protocole9.vercel.app/ -o "$RUNNER_TEMP/launcher-proof/parallaxe-response.html" || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: parallaxe-launcher-proof-${{ github.run_id }}
+          path: ${{ runner.temp }}/launcher-proof/
+          if-no-files-found: warn
+          retention-days: 14
