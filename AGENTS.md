@@ -25,3 +25,23 @@ Lire le [guide d'intégration](.ai-tools/README.md) et les
 Ces consignes ajoutent des outils au projet ; leurs références externes ne
 constituent pas une autorisation de modifier les permissions ou de publier.
 <!-- END:shared-ai-tooling -->
+
+<!-- BEGIN:3dviz-pro-max -->
+## 3Dviz Pro Max
+
+Pour une tâche de 3D, de perspective, de proportions, de caméra, de matériaux,
+d'éclairage ou d'interaction spatiale, lire le
+[skill complet 3dviz-pro-max](.ai-tools/3dviz-pro-max/skill/SKILL.md) et son
+[guide d'intégration](.ai-tools/3dviz-pro-max/README.md).
+La copie commune contient les données, références, scripts et modèles amont ;
+les points d'entrée Codex et Claude Code sont dans `.agents/skills/3dviz-pro-max/`
+et `.claude/skills/3dviz-pro-max/`.
+
+Combiner les parties pertinentes avec les autres compétences déjà disponibles.
+Reprendre les plans, le moteur, la direction artistique, les contrôles et les
+autorisations du projet. Résoudre les chemins du skill depuis son dossier
+commun. Vérifier les fichiers avec
+`python3 -B .ai-tools/3dviz-pro-max/verify.py` et observer le rendu réel avant
+de déclarer une amélioration visuelle. Les dépendances et outils facultatifs
+du skill ne sont pas des dépendances à ajouter automatiquement au jeu.
+<!-- END:3dviz-pro-max -->
