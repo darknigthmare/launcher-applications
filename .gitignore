@@ -2,3 +2,7 @@
 .env*.local
 .openai-art-work/
 .reports/
+# CodeGraph — local indexes (do not commit)
+.codegraph/
+.codegraph-wsl/
+.codegraph-*/

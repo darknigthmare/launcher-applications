@@ -45,3 +45,17 @@ commun. Vérifier les fichiers avec
 de déclarer une amélioration visuelle. Les dépendances et outils facultatifs
 du skill ne sont pas des dépendances à ajouter automatiquement au jeu.
 <!-- END:3dviz-pro-max -->
+
+<!-- BEGIN:codegraph-integration -->
+## CodeGraph (complément des autres skills)
+
+Pour explorer des symboles, dépendances, chemins d'appel ou l'impact d'un changement,
+consulter d'abord [le skill CodeGraph](.agents/skills/codegraph/SKILL.md)
+si le CLI/MCP CodeGraph est **réellement disponible** et que le projet est indexé.
+Utiliser ensuite Spec Kit, Superpowers, les skills 3D et les autres outils du
+dépôt selon le besoin. Ne pas remplacer les tests et les validations par un
+résultat de graphe. En l'absence de CodeGraph, employer les outils classiques.
+
+CodeGraph fonctionne **localement** : sa présence dans ce dépôt ne signifie
+pas que le CLI ou le serveur MCP est installé sur la machine de l'agent.
+<!-- END:codegraph-integration -->
